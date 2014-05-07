@@ -1,0 +1,3 @@
+define(
+   ({"txtSyncJob_Caption":"Sync-Auftrag:","dteStamp_Caption":"Datums-/Zeitstempel:","txtStackTrace_Caption":"STACK-TRACE:","txtErrorSequence_Caption":"Fehlersequenz:","txtSentFrom_Caption":"GESENDET VON APPLIKATION:","txtRecord_Caption":"DATENSATZ:","txtPayload_Caption":"NUTZLAST-DETAIL:","txtHttpStatus_Caption":"HTTP-Status:","txtErrorMessage_Caption":"FEHLERMELDUNG:","txtSeverity_Caption":"Schweregrad:","txtPayloadPath_Caption":"Nutzlastpfad:","txtReceivedBy_Caption":"EMPFANGEN VON APPLIKATION:","txtApplicationCode_Caption":"Anwendungscode:","usrUser_Caption":"Benutzer:","txtResourceType_Caption":"Ressourcentyp:","txtDiagnosisCode_Caption":"Diagnosecode:","txtIntegration_Caption":"INTEGRATION:"})
+);

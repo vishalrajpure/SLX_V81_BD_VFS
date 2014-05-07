@@ -1,0 +1,3 @@
+define(
+   ({"txtSyncJob_Caption":"Job di Sinc:","dteStamp_Caption":"Marcatura Data Ora:","txtStackTrace_Caption":"TRACCIA STACK:","txtErrorSequence_Caption":"Sequenza d'Errore:","txtSentFrom_Caption":"INVIATO DALL'APPLICAZIONE:","txtRecord_Caption":"RECORD:","txtPayload_Caption":"DETTAGLIO PAYLOAD:","txtHttpStatus_Caption":"Status Http:","txtErrorMessage_Caption":"MESSAGGIO DI ERRORE:","txtSeverity_Caption":"Gravità:","txtPayloadPath_Caption":"Percorso Carico Utile:","txtReceivedBy_Caption":"RICEVUTO DALL'APPLICAZIONE:","txtApplicationCode_Caption":"Codice Applicazione:","usrUser_Caption":"Utente:","txtResourceType_Caption":"Tipo Risorsa:","txtDiagnosisCode_Caption":"Diagnosi Codice:","txtIntegration_Caption":"INTEGRAZIONE:"})
+);
