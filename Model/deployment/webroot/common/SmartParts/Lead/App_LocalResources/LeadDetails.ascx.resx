@@ -282,4 +282,7 @@
   <data name="pklStatus.Caption" xml:space="preserve">
     <value>Status:</value>
   </data>
+  <data name="cmdQualifyLead.Caption" xml:space="preserve">
+    <value>Qualify Lead</value>
+  </data>
 </root>

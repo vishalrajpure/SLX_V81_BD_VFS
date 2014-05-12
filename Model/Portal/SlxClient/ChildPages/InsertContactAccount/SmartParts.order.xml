@@ -3,4 +3,5 @@
   <Item Id="af414729-aedb-4a2c-82de-dc0414653fd9">InsertContact.smartpart.xml</Item>
   <Item Id="90fd0bdc-ff17-4795-88b4-da256d1e570c">SelectAccountAddress.smartpart.xml</Item>
   <Item Id="203fb4fc-ff86-4d9f-b01c-59905d3b4cc8">ContactSearchForDuplicates.smartpart.xml</Item>
+  <Item Id="ab37f989-dd8f-4d2e-b483-1fdbc82d20c9">AddEditAddress.smartpart.xml</Item>
 </ModelItems>

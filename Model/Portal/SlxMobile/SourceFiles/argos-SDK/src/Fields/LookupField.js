@@ -20,8 +20,6 @@ define('Sage/Platform/Mobile/Fields/LookupField', [
     'dojo/_base/lang',
     'dojo/string',
     'dojo/query',
-    'dojo/has',
-    'dojo/sniff',
     'Sage/Platform/Mobile/Utility',
     'Sage/Platform/Mobile/Fields/_Field',
     'Sage/Platform/Mobile/FieldManager'
@@ -32,8 +30,6 @@ define('Sage/Platform/Mobile/Fields/LookupField', [
     lang,
     string,
     query,
-    has,
-    sniff,
     utility,
     _Field,
     FieldManager
@@ -98,7 +94,7 @@ define('Sage/Platform/Mobile/Fields/LookupField', [
          */
         widgetTemplate: new Simplate([
             '<label for="{%= $.name %}">{%: $.label %}</label>',
-            '<button class="button simpleSubHeaderButton" aria-label="{%: $.lookupLabelText %}"><span aria-hidden="true">{%: $.lookupText %}</span></button>',
+            '<button style="z-index: 5;" data-action="buttonClick" class="button simpleSubHeaderButton" aria-label="{%: $.lookupLabelText %}"><span aria-hidden="true">{%: $.lookupText %}</span></button>',
             '<input data-dojo-attach-point="inputNode" type="text" {% if ($.requireSelection) { %}readonly="readonly"{% } %} />'
         ]),
 
@@ -374,8 +370,8 @@ define('Sage/Platform/Mobile/Fields/LookupField', [
                     }, {
                         id: 'cancel',
                         side: 'left',
-                        fn: ReUI.back,
-                        scope: ReUI
+                        fn: this.reui.back,
+                        scope: this.reui
                     }]
                     }
                 },
@@ -396,7 +392,7 @@ define('Sage/Platform/Mobile/Fields/LookupField', [
 
             if (this.dependsOn && !dependentValue)
             {
-                alert(string.substitute(this.dependentErrorText, [this.getDependentLabel()]));
+                console.error(string.substitute(this.dependentErrorText, [this.getDependentLabel() || '']));
                 return false;
             }
 
@@ -416,12 +412,15 @@ define('Sage/Platform/Mobile/Fields/LookupField', [
          * Navigates to the `this.view` id passing the options created from {@link #createNavigationOptions createNavigationOptions}.
          */
         navigateToListView: function() {
-            var view = App.getView(this.view),
+            var view = this.app.getView(this.view),
                 options = this.createNavigationOptions();
             if (view && options && !this.disabled) {
                 lang.mixin(view, this.viewMixin);
                 view.show(options);
             }
+        },
+        buttonClick: function() {
+            this.navigateToListView();
         },
         /**
          * Handler for the click event, fires {@link #navigateToListView navigateToListView} if the
@@ -431,19 +430,8 @@ define('Sage/Platform/Mobile/Fields/LookupField', [
         _onClick: function(evt) {
             var buttonNode = query(evt.target).closest('.button')[0];
 
-            if (has('bb')) {
-                /*
-                 * The Blackberry Z10 has an issue where the event target of the onclick will never be the button
-                 * or span element. The event target for blackberry will alway be the input. This might be beause the
-                 * spans the entire screen, and the button overlays it.
-                 */
-                buttonNode = true;
-            }
-
-            if (!this.isDisabled() && (buttonNode || this.requireSelection))
-            {
+            if (!this.isDisabled() && (buttonNode || this.requireSelection)) {
                 event.stop(evt);
-
                 this.navigateToListView();
             }
         },
@@ -511,7 +499,7 @@ define('Sage/Platform/Mobile/Fields/LookupField', [
          */
         complete: function() {
             // todo: should there be a better way?
-            var view = App.getPrimaryActiveView();
+            var view = this.app.getPrimaryActiveView();
 
             if (view && view.get('selectionModel'))
             {
@@ -535,7 +523,7 @@ define('Sage/Platform/Mobile/Fields/LookupField', [
                     this.setSelections(selections);
                 }
 
-                ReUI.back();
+                this.reui.back();
 
                 // if the event is fired before the transition, any XMLHttpRequest created in an event handler and
                 // executing during the transition can potentially fail (status 0).  this might only be an issue with CORS

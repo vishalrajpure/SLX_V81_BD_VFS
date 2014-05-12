@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<MenuDropDownItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="3164d57a-9140-4ed6-ae93-d35a71c6ea62">
+  <ItemId>AreaMasterItemLookup</ItemId>
+  <NavUrl>javascript:Sage.Utility.Groups.showMainLookupFor('VWAREAMASTER','VWAREAMASTER.aspx');</NavUrl>
+  <LargeImageUrl />
+  <SmallImageUrl />
+  <ContextMenuId />
+  <Target />
+  <AppliedSecurity />
+</MenuDropDownItem>

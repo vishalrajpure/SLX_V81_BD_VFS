@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<ModelItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Item Id="fb34c8b0-d76d-44b7-8d8a-3de6fe1b47be">EmployeeMasterItemLookupEmp.contextmenu.xml</Item>
+  <Item Id="5949414a-f796-482c-bb08-36d4e1e4f97e">EmployeeMasterItemCreateNewGroup.contextmenu.xml</Item>
+</ModelItems>

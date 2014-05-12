@@ -14286,14 +14286,401 @@
   <data name="Owner.SyncResult.DisplayName" xml:space="preserve">
     <value>Sync History</value>
   </data>
+  <data name="Vwareamaster.Cscrcd.DisplayName" xml:space="preserve">
+    <value>Cscrcd</value>
+  </data>
+  <data name="Vwempmaster.Cstaftype.DisplayName" xml:space="preserve">
+    <value>Cstaftype</value>
+  </data>
+  <data name="Vwempmaster.Cgrade.DisplayName" xml:space="preserve">
+    <value>Cgrade</value>
+  </data>
+  <data name="Vwempmaster.Cscrcd.DisplayName" xml:space="preserve">
+    <value>Cscrcd</value>
+  </data>
+  <data name="Vwempmaster.Ctcode.DisplayName" xml:space="preserve">
+    <value>Ctcode</value>
+  </data>
+  <data name="Vwempmaster.Carea.DisplayName" xml:space="preserve">
+    <value>Carea</value>
+  </data>
+  <data name="Vwempmaster.Cempldesg.DisplayName" xml:space="preserve">
+    <value>Cempldesg</value>
+  </data>
+  <data name="Vwempmaster.Cemplname.DisplayName" xml:space="preserve">
+    <value>Cemplname</value>
+  </data>
+  <data name="Vwempmaster.Cemplcode.DisplayName" xml:space="preserve">
+    <value>Cemplcode</value>
+  </data>
+  <data name="Vwempmaster.ModifyDate.DisplayName" xml:space="preserve">
+    <value>Modifydate</value>
+  </data>
+  <data name="Vwempmaster.ModifyUser.DisplayName" xml:space="preserve">
+    <value>Modifyuser</value>
+  </data>
+  <data name="Vwempmaster.CreateDate.DisplayName" xml:space="preserve">
+    <value>Createdate</value>
+  </data>
+  <data name="Vwempmaster.CreateUser.DisplayName" xml:space="preserve">
+    <value>Createuser</value>
+  </data>
+  <data name="Vwempmaster.Empmstid.DisplayName" xml:space="preserve">
+    <value>Empmstid</value>
+  </data>
+  <data name="Vwempmaster.DisplayName" xml:space="preserve">
+    <value>Vwempmaster</value>
+  </data>
+  <data name="Vwareamaster.Csafire.DisplayName" xml:space="preserve">
+    <value>Csafire</value>
+  </data>
+  <data name="Vwareamaster.Capexzn.DisplayName" xml:space="preserve">
+    <value>Capexzn</value>
+  </data>
+  <data name="Vwareamaster.Ccrdserv.DisplayName" xml:space="preserve">
+    <value>Ccrdserv</value>
+  </data>
+  <data name="Vwareamaster.Cpoddelay.DisplayName" xml:space="preserve">
+    <value>Cpoddelay</value>
+  </data>
+  <data name="Vwareamaster.Ccntrycode.DisplayName" xml:space="preserve">
+    <value>Ccntrycode</value>
+  </data>
+  <data name="Vwareamaster.Npodscan.DisplayName" xml:space="preserve">
+    <value>Npodscan</value>
+  </data>
+  <data name="Vwareamaster.Cpodscarea.DisplayName" xml:space="preserve">
+    <value>Cpodscarea</value>
+  </data>
+  <data name="Vwareamaster.Boctroi.DisplayName" xml:space="preserve">
+    <value>Boctroi</value>
+  </data>
+  <data name="Vwareamaster.Cttcareaib.DisplayName" xml:space="preserve">
+    <value>Cttcareaib</value>
+  </data>
+  <data name="Vwareamaster.Cemailid2.DisplayName" xml:space="preserve">
+    <value>Cemailid2</value>
+  </data>
+  <data name="Vwareamaster.Cemailid1.DisplayName" xml:space="preserve">
+    <value>Cemailid1</value>
+  </data>
+  <data name="Vwareamaster.Bwebupdt.DisplayName" xml:space="preserve">
+    <value>Bwebupdt</value>
+  </data>
+  <data name="Vwareamaster.Cbillarea.DisplayName" xml:space="preserve">
+    <value>Cbillarea</value>
+  </data>
+  <data name="Vwareamaster.Cttcbrc.DisplayName" xml:space="preserve">
+    <value>Cttcbrc</value>
+  </data>
+  <data name="Vwareamaster.Npucutoff.DisplayName" xml:space="preserve">
+    <value>Npucutoff</value>
+  </data>
+  <data name="Vwareamaster.Csfcserv.DisplayName" xml:space="preserve">
+    <value>Csfcserv</value>
+  </data>
+  <data name="Vwareamaster.Capeserv.DisplayName" xml:space="preserve">
+    <value>Capeserv</value>
+  </data>
+  <data name="Vwareamaster.Cipserv.DisplayName" xml:space="preserve">
+    <value>Cipserv</value>
+  </data>
+  <data name="Vwareamaster.Ndsrcheck.DisplayName" xml:space="preserve">
+    <value>Ndsrcheck</value>
+  </data>
+  <data name="Vwareamaster.Bdpwtrest.DisplayName" xml:space="preserve">
+    <value>Bdpwtrest</value>
+  </data>
+  <data name="Vwareamaster.Nittbuff.DisplayName" xml:space="preserve">
+    <value>Nittbuff</value>
+  </data>
+  <data name="Vwareamaster.Cittlink.DisplayName" xml:space="preserve">
+    <value>Cittlink</value>
+  </data>
+  <data name="Vwareamaster.Cdpserv.DisplayName" xml:space="preserve">
+    <value>Cdpserv</value>
+  </data>
+  <data name="Vwareamaster.Coldname.DisplayName" xml:space="preserve">
+    <value>Coldname</value>
+  </data>
+  <data name="Vwareamaster.Ccslink.DisplayName" xml:space="preserve">
+    <value>Ccslink</value>
+  </data>
+  <data name="Vwareamaster.Cpbagdst.DisplayName" xml:space="preserve">
+    <value>Cpbagdst</value>
+  </data>
+  <data name="Vwareamaster.Bsfcserv.DisplayName" xml:space="preserve">
+    <value>Bsfcserv</value>
+  </data>
+  <data name="Vwareamaster.Ccluster.DisplayName" xml:space="preserve">
+    <value>Ccluster</value>
+  </data>
+  <data name="Vwareamaster.Cdpznb.DisplayName" xml:space="preserve">
+    <value>Cdpznb</value>
+  </data>
+  <data name="Vwareamaster.Csmrtzn.DisplayName" xml:space="preserve">
+    <value>Csmrtzn</value>
+  </data>
+  <data name="Vwareamaster.Cloctype.DisplayName" xml:space="preserve">
+    <value>Cloctype</value>
+  </data>
+  <data name="Vwareamaster.Csfczn.DisplayName" xml:space="preserve">
+    <value>Csfczn</value>
+  </data>
+  <data name="Vwareamaster.Bfcserv.DisplayName" xml:space="preserve">
+    <value>Bfcserv</value>
+  </data>
+  <data name="Vwareamaster.Npodbufr.DisplayName" xml:space="preserve">
+    <value>Npodbufr</value>
+  </data>
+  <data name="Vwareamaster.Cpuloc.DisplayName" xml:space="preserve">
+    <value>Cpuloc</value>
+  </data>
+  <data name="Vwareamaster.Cazone.DisplayName" xml:space="preserve">
+    <value>Cazone</value>
+  </data>
+  <data name="Vwareamaster.Cttcarea.DisplayName" xml:space="preserve">
+    <value>Cttcarea</value>
+  </data>
+  <data name="Vwareamaster.Bapeserv.DisplayName" xml:space="preserve">
+    <value>Bapeserv</value>
+  </data>
+  <data name="Vwareamaster.Bdsccode.DisplayName" xml:space="preserve">
+    <value>Bdsccode</value>
+  </data>
+  <data name="Vwareamaster.Cpodentlc.DisplayName" xml:space="preserve">
+    <value>Cpodentlc</value>
+  </data>
+  <data name="Vwareamaster.Cawbentlc.DisplayName" xml:space="preserve">
+    <value>Cawbentlc</value>
+  </data>
+  <data name="Vwareamaster.Bembargo.DisplayName" xml:space="preserve">
+    <value>Bembargo</value>
+  </data>
+  <data name="Vwareamaster.Bcmploc.DisplayName" xml:space="preserve">
+    <value>Bcmploc</value>
+  </data>
+  <data name="Vwareamaster.Cvia.DisplayName" xml:space="preserve">
+    <value>Cvia</value>
+  </data>
+  <data name="Vwareamaster.Cstatecd.DisplayName" xml:space="preserve">
+    <value>Cstatecd</value>
+  </data>
+  <data name="Vwareamaster.Cstdcode.DisplayName" xml:space="preserve">
+    <value>Cstdcode</value>
+  </data>
+  <data name="Vwareamaster.Ccontact2.DisplayName" xml:space="preserve">
+    <value>Ccontact2</value>
+  </data>
+  <data name="Vwareamaster.Ccontact1.DisplayName" xml:space="preserve">
+    <value>Ccontact1</value>
+  </data>
+  <data name="Vwareamaster.Chubb.DisplayName" xml:space="preserve">
+    <value>Chubb</value>
+  </data>
+  <data name="Vwareamaster.Chuba.DisplayName" xml:space="preserve">
+    <value>Chuba</value>
+  </data>
+  <data name="Vwareamaster.Cedp.DisplayName" xml:space="preserve">
+    <value>Cedp</value>
+  </data>
+  <data name="Vwareamaster.Cfax.DisplayName" xml:space="preserve">
+    <value>Cfax</value>
+  </data>
+  <data name="Vwareamaster.Ctlx.DisplayName" xml:space="preserve">
+    <value>Ctlx</value>
+  </data>
+  <data name="Vwareamaster.Ctel.DisplayName" xml:space="preserve">
+    <value>Ctel</value>
+  </data>
+  <data name="Vwareamaster.Cstate.DisplayName" xml:space="preserve">
+    <value>Cstate</value>
+  </data>
+  <data name="Vwareamaster.Careapin.DisplayName" xml:space="preserve">
+    <value>Careapin</value>
+  </data>
+  <data name="Vwareamaster.Careacity.DisplayName" xml:space="preserve">
+    <value>Careacity</value>
+  </data>
+  <data name="Vwareamaster.Careaadr3.DisplayName" xml:space="preserve">
+    <value>Careaadr3</value>
+  </data>
+  <data name="Vwareamaster.Careaadr2.DisplayName" xml:space="preserve">
+    <value>Careaadr2</value>
+  </data>
+  <data name="Vwareamaster.Careaadr1.DisplayName" xml:space="preserve">
+    <value>Careaadr1</value>
+  </data>
+  <data name="Vwareamaster.Caltscrcd.DisplayName" xml:space="preserve">
+    <value>Caltscrcd</value>
+  </data>
+  <data name="Vwareamaster.Calttcode.DisplayName" xml:space="preserve">
+    <value>Calttcode</value>
+  </data>
+  <data name="Vwareamaster.Caltarea.DisplayName" xml:space="preserve">
+    <value>Caltarea</value>
+  </data>
+  <data name="Vwareamaster.Cscrcddesc.DisplayName" xml:space="preserve">
+    <value>Cscrcddesc</value>
+  </data>
+  <data name="Vwareamaster.Careadesc.DisplayName" xml:space="preserve">
+    <value>Careadesc</value>
+  </data>
+  <data name="Vwpincodemaster.Cflag.DisplayName" xml:space="preserve">
+    <value>Cflag</value>
+  </data>
+  <data name="Vwpincodemaster.Ccrcrdscr.DisplayName" xml:space="preserve">
+    <value>Ccrcrdscr</value>
+  </data>
+  <data name="Vwpincodemaster.Cservflag.DisplayName" xml:space="preserve">
+    <value>Cservflag</value>
+  </data>
+  <data name="Vwpincodemaster.Cscrcd.DisplayName" xml:space="preserve">
+    <value>Cscrcd</value>
+  </data>
+  <data name="Vwpincodemaster.Carea.DisplayName" xml:space="preserve">
+    <value>Carea</value>
+  </data>
+  <data name="Vwpincodemaster.Cpindesc.DisplayName" xml:space="preserve">
+    <value>Cpindesc</value>
+  </data>
+  <data name="Vwpincodemaster.Cpincode.DisplayName" xml:space="preserve">
+    <value>Cpincode</value>
+  </data>
+  <data name="Vwpincodemaster.ModifyDate.DisplayName" xml:space="preserve">
+    <value>Modifydate</value>
+  </data>
+  <data name="Vwpincodemaster.ModifyUser.DisplayName" xml:space="preserve">
+    <value>Modifyuser</value>
+  </data>
+  <data name="Vwempmaster.Cfunction.DisplayName" xml:space="preserve">
+    <value>Cfunction</value>
+  </data>
+  <data name="Vwempmaster.Cpdacode.DisplayName" xml:space="preserve">
+    <value>Cpdacode</value>
+  </data>
+  <data name="Vwempmaster.Cempmgrcd.DisplayName" xml:space="preserve">
+    <value>Cempmgrcd</value>
+  </data>
+  <data name="Vwempmaster.Cempmgrcd1.DisplayName" xml:space="preserve">
+    <value>Cempmgrcd1</value>
+  </data>
+  <data name="Vwempmaster.Cemailid.DisplayName" xml:space="preserve">
+    <value>Cemailid</value>
+  </data>
+  <data name="Vwempmaster.Dtjoindt.DisplayName" xml:space="preserve">
+    <value>Dtjoindt</value>
+  </data>
+  <data name="Vwempmaster.Cpresent.DisplayName" xml:space="preserve">
+    <value>Cpresent</value>
+  </data>
+  <data name="Vwempmaster.Cjobrole.DisplayName" xml:space="preserve">
+    <value>Cjobrole</value>
+  </data>
+  <data name="Vwempmaster.Dbirthdt.DisplayName" xml:space="preserve">
+    <value>Dbirthdt</value>
+  </data>
+  <data name="Vwpincodemaster.DisplayName" xml:space="preserve">
+    <value>Vwpincodemaster</value>
+  </data>
+  <data name="Vwpincodemaster.Pincdmstid.DisplayName" xml:space="preserve">
+    <value>Pincdmstid</value>
+  </data>
+  <data name="Vwpincodemaster.CreateUser.DisplayName" xml:space="preserve">
+    <value>Createuser</value>
+  </data>
+  <data name="Vwpincodemaster.CreateDate.DisplayName" xml:space="preserve">
+    <value>Createdate</value>
+  </data>
+  <data name="Vwareamaster.DisplayName" xml:space="preserve">
+    <value>Vwareamaster</value>
+  </data>
+  <data name="Vwareamaster.Carea.DisplayName" xml:space="preserve">
+    <value>Carea</value>
+  </data>
+  <data name="Vwareamaster.Ctcode.DisplayName" xml:space="preserve">
+    <value>Ctcode</value>
+  </data>
+  <data name="Vwareamaster.Cgroup.DisplayName" xml:space="preserve">
+    <value>Cgroup</value>
+  </data>
+  <data name="Vwareamaster.Cbranch.DisplayName" xml:space="preserve">
+    <value>Cbranch</value>
+  </data>
+  <data name="Vwareamaster.Csubreg.DisplayName" xml:space="preserve">
+    <value>Csubreg</value>
+  </data>
+  <data name="Vwareamaster.Cregion.DisplayName" xml:space="preserve">
+    <value>Cregion</value>
+  </data>
+  <data name="Vwareamaster.Cdivision.DisplayName" xml:space="preserve">
+    <value>Cdivision</value>
+  </data>
+  <data name="Vwareamaster.ModifyDate.DisplayName" xml:space="preserve">
+    <value>Modifydate</value>
+  </data>
+  <data name="Vwareamaster.ModifyUser.DisplayName" xml:space="preserve">
+    <value>Modifyuser</value>
+  </data>
+  <data name="Vwareamaster.CreateDate.DisplayName" xml:space="preserve">
+    <value>Createdate</value>
+  </data>
+  <data name="Vwareamaster.CreateUser.DisplayName" xml:space="preserve">
+    <value>Createuser</value>
+  </data>
+  <data name="Vwareamaster.Areamstid.DisplayName" xml:space="preserve">
+    <value>Areamstid</value>
+  </data>
+  <data name="Account.LegalName.DisplayName" xml:space="preserve">
+    <value>LegalName</value>
+  </data>
+  <data name="Account.MktSegment.DisplayName" xml:space="preserve">
+    <value>MktSegment</value>
+  </data>
+  <data name="Account.DescriptionOfBusiness.DisplayName" xml:space="preserve">
+    <value>DescriptionOfBusiness</value>
+  </data>
+  <data name="QualifierAndSMpincode.DisplayName" xml:space="preserve">
+    <value>Qualifier/BranchManager Pincode Mape</value>
+  </data>
+  <data name="QualifierAndSMpincode.QualifierAndSMpincodeId.DisplayName" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="QualifierAndSMpincode.CreateUser.DisplayName" xml:space="preserve">
+    <value>Create User</value>
+  </data>
+  <data name="QualifierAndSMpincode.CreateDate.DisplayName" xml:space="preserve">
+    <value>Create Date</value>
+  </data>
+  <data name="QualifierAndSMpincode.ModifyUser.DisplayName" xml:space="preserve">
+    <value>Modify User</value>
+  </data>
+  <data name="QualifierAndSMpincode.ModifyDate.DisplayName" xml:space="preserve">
+    <value>Modify Date</value>
+  </data>
+  <data name="QualifierAndSMpincode.PincodeId.DisplayName" xml:space="preserve">
+    <value>PincodeId</value>
+  </data>
+  <data name="QualifierAndSMpincode.QualifierId.DisplayName" xml:space="preserve">
+    <value>QualifierId</value>
+  </data>
+  <data name="QualifierAndSMpincode.QualifierName.DisplayName" xml:space="preserve">
+    <value>QualifierName</value>
+  </data>
+  <data name="QualifierAndSMpincode.SalesManagerId.DisplayName" xml:space="preserve">
+    <value>SalesManagerId</value>
+  </data>
+  <data name="QualifierAndSMpincode.SalesManagerName.DisplayName" xml:space="preserve">
+    <value>SalesManagerName</value>
+  </data>
+  <data name="QualifierAndSMpincode.PinCode.DisplayName" xml:space="preserve">
+    <value>PinCode</value>
+  </data>
   <data name="Lead.BranchManagerAssignedTo.DisplayName" xml:space="preserve">
     <value>BranchManagerAssignedTo</value>
   </data>
   <data name="Lead.QualifiedON.DisplayName" xml:space="preserve">
     <value>QualifiedON</value>
-  </data>
-  <data name="Lead.QualifierID.DisplayName" xml:space="preserve">
-    <value>QualifierID</value>
   </data>
   <data name="Lead.QualifierComments.DisplayName" xml:space="preserve">
     <value>QualifierComments</value>
@@ -14304,19 +14691,7 @@
   <data name="Lead.AnyOtherInformation.DisplayName" xml:space="preserve">
     <value>AnyOtherInformation</value>
   </data>
-  <data name="Lead.LegalName.DisplayName" xml:space="preserve">
-    <value>LegalName</value>
-  </data>
   <data name="Lead.BussinessPortential.DisplayName" xml:space="preserve">
     <value>BussinessPortential</value>
-  </data>
-  <data name="Lead.Qualifier.DisplayName" xml:space="preserve">
-    <value>Qualifier</value>
-  </data>
-  <data name="User.Lead.DisplayName" xml:space="preserve">
-    <value>Lead</value>
-  </data>
-  <data name="Lead.BranchManager.DisplayName" xml:space="preserve">
-    <value>BranchManager</value>
   </data>
 </root>

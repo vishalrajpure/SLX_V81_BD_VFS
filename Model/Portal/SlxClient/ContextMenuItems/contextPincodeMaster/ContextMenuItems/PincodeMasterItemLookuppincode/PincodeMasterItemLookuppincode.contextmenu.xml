@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<MenuDropDownItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="c84937de-9691-44a1-ad01-0d7320ca7ecf">
+  <ItemId>PincodeMasterItemLookuppincode</ItemId>
+  <NavUrl>javascript:Sage.Utility.Groups.showMainLookupFor('VWPINCODEMASTER','VWPINCODEMASTER.aspx');</NavUrl>
+  <LargeImageUrl />
+  <SmallImageUrl />
+  <ContextMenuId />
+  <Target />
+  <AppliedSecurity />
+</MenuDropDownItem>

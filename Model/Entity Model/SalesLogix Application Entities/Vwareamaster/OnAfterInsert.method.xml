@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="a013d0c7-5b6c-4ee2-a237-090950b8d40d" lastModifiedUtc="2014-05-05T11:30:25.9492168Z" name="OnAfterInsert" methodType="CrudEvent" actionType="None" returnMode="None">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmEntityMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter />
+  <preExecuteTargets />
+  <methodTargets>
+    <methodTarget id="d73f2f0b-0999-4173-9468-5785050d4118" lastModifiedUtc="2014-05-05T11:30:25.8868167Z" targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterInsert" active="true">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmMethodTarget" />
+      </ExtendedPropertiesCollection>
+    </methodTarget>
+  </methodTargets>
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

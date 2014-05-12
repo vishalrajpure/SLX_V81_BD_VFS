@@ -7,17 +7,69 @@
       <ResourceKey>3e1b8a89-5ccb-49d4-ae6d-16f6d48a04a1</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName />
+          <MethodName>quickformload0</MethodName>
           <CSharpCodeSnippet>//Begin Load Action
 
-     Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
-	 pklSubType.PickListName = account.GetSubTypePickListName();
+    Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
+	pklSubType.PickListName = account.GetSubTypePickListName();
 
+	AccountName_lbl.ForeColor = System.Drawing.Color.Red;
+	MainPhone_lbl.ForeColor = System.Drawing.Color.Red;
+	Address_lbl.ForeColor = System.Drawing.Color.Red;
+	txtLegalName_lbl.ForeColor = System.Drawing.Color.Red;
 //End Load Action}</CSharpCodeSnippet>
         </CSharpSnippetActionItem>
       </Action>
       <IsDialogCloseAction>False</IsDialogCloseAction>
       <RunOnEveryRePaint>True</RunOnEveryRePaint>
+      <DialogActionResult>NoResult</DialogActionResult>
+      <PerformsUpdate>False</PerformsUpdate>
+      <AppliedSecurity />
+      <RefreshData>False</RefreshData>
+    </FormActionDefinition>
+    <FormActionDefinition>
+      <ResourceKey>db26b1e4-3497-4f08-b3d4-16c7b8509261</ResourceKey>
+      <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+        <CSharpSnippetActionItem>
+          <MethodName>quickformload1</MethodName>
+          <CSharpCodeSnippet> /*Sage.Platform.WebPortal.EntityPage page = (Sage.Platform.WebPortal.EntityPage)Page;
+
+	string script_FormatNumber = "";
+    script_FormatNumber += " function only_required(AccountName,LegalName,Phone) ";
+    script_FormatNumber += " {";
+    script_FormatNumber += "    var df = true;";
+    script_FormatNumber += "     if(original_input == '') {";
+    script_FormatNumber += "      df =  false; ";
+    script_FormatNumber += "     alert('Please Enter AccountName');}";
+    script_FormatNumber += " return df;}";
+    ScriptManager.RegisterStartupScript(page, page.GetType(), "Validate", script_FormatNumber, true);
+    btnSaveAccount.Attributes.Add("onclick", "return only_required(document.getElementById('" + AccountName.ClientID + "').value,document.getElementById('" + txtLegalName.ClientID + "').value,document.getElementById('" + MainPhone.ClientID + "').value);");
+
+string script_FormatNumber1 = "";
+script_FormatNumber1 += " function only_numeric1(original_input1) ";
+script_FormatNumber1 += " {";
+script_FormatNumber1 += "     var regex =  /^[+-]?[0-9]*(\\.[0-9]{0,5})?$/;";
+script_FormatNumber1 += "     if(!regex.test(original_input1)) {";
+script_FormatNumber1 += "     document.getElementById('" + txtmonthlyvolume.ClientID + "').value = '0.0'; ";
+script_FormatNumber1 += "     alert('Enter only Numeric');}";
+script_FormatNumber1 += " return true;}";
+ScriptManager.RegisterStartupScript(page, page.GetType(), "Validate1", script_FormatNumber1, true);
+txtmonthlyvolume.Attributes.Add("onblur", "return only_numeric1(this.value);");
+
+string script_FormatNumber2 = "";
+script_FormatNumber2 += " function only_numeric2(original_input2) ";
+script_FormatNumber2 += " {";
+script_FormatNumber2 += "     var regex = /^[+-]?[0-9]*(\\.[0-9]{0,5})?$/;";
+script_FormatNumber2 += "     if(!regex.test(original_input2)) {";
+script_FormatNumber2 += "     document.getElementById('" + txtbudgetgift.ClientID + "').value = '0'; ";
+script_FormatNumber2 += "     alert('Enter only Numeric');}";
+script_FormatNumber2 += " return true;}";
+ScriptManager.RegisterStartupScript(page, page.GetType(), "Validate2", script_FormatNumber2, true);
+txtbudgetgift.Attributes.Add("onblur", "return only_numeric2(this.value);");*/</CSharpCodeSnippet>
+        </CSharpSnippetActionItem>
+      </Action>
+      <IsDialogCloseAction>False</IsDialogCloseAction>
+      <RunOnEveryRePaint>False</RunOnEveryRePaint>
       <DialogActionResult>NoResult</DialogActionResult>
       <PerformsUpdate>False</PerformsUpdate>
       <AppliedSecurity />
@@ -67,7 +119,7 @@
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnChangeAction>
-        <Required>false</Required>
+        <Required>true</Required>
       </QFTextBox>
     </Control>
     <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
@@ -108,11 +160,48 @@
         <Required>false</Required>
       </QFTextBox>
     </Control>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPhone, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXPhone>
+        <Column>0</Column>
+        <Row>2</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>MainPhone</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>MainPhone</DataItemName>
+            <ControlItemName>Text</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>MainPhone</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>true</Required>
+      </QFSLXPhone>
+    </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXAddress, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXAddress>
         <RowSpan>4</RowSpan>
         <Column>0</Column>
-        <Row>2</Row>
+        <Row>3</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>Address</ControlId>
@@ -260,17 +349,17 @@
         </OnChangeAction>
       </QFSLXAddress>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPhone, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXPhone>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
+      <QFTextBox>
         <Column>1</Column>
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>MainPhone</ControlId>
+        <ControlId>txtLegalName</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>MainPhone</DataItemName>
+            <DataItemName>LegalName</DataItemName>
             <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
@@ -281,7 +370,7 @@
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <OnChangeAction>
-          <ResourceKey>MainPhone</ResourceKey>
+          <ResourceKey>txtLegalName</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
             <NoActionActionItem>
               <MethodName />
@@ -294,21 +383,22 @@
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnChangeAction>
-        <Required>false</Required>
-      </QFSLXPhone>
+        <Required>true</Required>
+      </QFTextBox>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPhone, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXPhone>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXPickList>
         <Column>1</Column>
         <Row>1</Row>
+        <IsReadOnly>true</IsReadOnly>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>Fax</ControlId>
+        <ControlId>pklType</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Fax</DataItemName>
-            <ControlItemName>Text</ControlItemName>
+            <DataItemName>Type</DataItemName>
+            <ControlItemName>PickListValue</ControlItemName>
             <FormatString />
             <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
@@ -318,7 +408,7 @@
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <OnChangeAction>
-          <ResourceKey>Fax</ResourceKey>
+          <ResourceKey>pklType</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
             <NoActionActionItem>
               <MethodName />
@@ -332,7 +422,17 @@
           <RefreshData>False</RefreshData>
         </OnChangeAction>
         <Required>false</Required>
-      </QFSLXPhone>
+        <AutoPostBack>true</AutoPostBack>
+        <PickListName>Account Type</PickListName>
+        <StorageMode>Text</StorageMode>
+        <NameFormatString />
+        <AllowMultiples>false</AllowMultiples>
+        <AlphaSort>false</AlphaSort>
+        <MustExistInList>true</MustExistInList>
+        <NoneEditable>true</NoneEditable>
+        <PickListId>kSYST0000382</PickListId>
+        <ValueStoredAsText>true</ValueStoredAsText>
+      </QFSLXPickList>
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPhone, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXPhone>
@@ -409,10 +509,57 @@
         <Required>false</Required>
       </QFSLXUrl>
     </Control>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXPickList>
+        <Column>1</Column>
+        <Row>4</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>Industry</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>Industry</DataItemName>
+            <ControlItemName>PickListValue</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>Industry</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+        <AutoPostBack>false</AutoPostBack>
+        <PickListName>Industry</PickListName>
+        <StorageMode>Text</StorageMode>
+        <NameFormatString />
+        <AllowMultiples>false</AllowMultiples>
+        <AlphaSort>true</AlphaSort>
+        <MustExistInList>false</MustExistInList>
+        <NoneEditable>false</NoneEditable>
+        <PickListId>kSYST0000388</PickListId>
+        <ValueStoredAsText>true</ValueStoredAsText>
+      </QFSLXPickList>
+    </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXOwner, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXOwner>
         <Column>1</Column>
-        <Row>4</Row>
+        <Row>5</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>Owner</ControlId>
@@ -451,7 +598,7 @@
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXUser, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXUser>
         <Column>1</Column>
-        <Row>5</Row>
+        <Row>6</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>AccManager</ControlId>
@@ -489,18 +636,18 @@
         <AutoPostBack>false</AutoPostBack>
       </QFSLXUser>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXPickList>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
+      <QFTextBox>
         <Column>2</Column>
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>pklType</ControlId>
+        <ControlId>txtmktsegment</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Type</DataItemName>
-            <ControlItemName>PickListValue</ControlItemName>
+            <DataItemName>MktSegment</DataItemName>
+            <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
@@ -510,36 +657,21 @@
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <OnChangeAction>
-          <ResourceKey>pklType</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
-            <CSharpSnippetActionItem>
+          <ResourceKey>txtmktsegment</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
               <MethodName />
-              <CSharpCodeSnippet>Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
-if(account != null)
-{
-		account.SubType = "";
-}</CSharpCodeSnippet>
-            </CSharpSnippetActionItem>
+            </NoActionActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
           <RunOnEveryRePaint>False</RunOnEveryRePaint>
           <DialogActionResult>NoResult</DialogActionResult>
           <PerformsUpdate>False</PerformsUpdate>
           <AppliedSecurity />
-          <RefreshData>True</RefreshData>
+          <RefreshData>False</RefreshData>
         </OnChangeAction>
         <Required>false</Required>
-        <AutoPostBack>true</AutoPostBack>
-        <PickListName>Account Type</PickListName>
-        <StorageMode>Text</StorageMode>
-        <NameFormatString />
-        <AllowMultiples>false</AllowMultiples>
-        <AlphaSort>false</AlphaSort>
-        <MustExistInList>true</MustExistInList>
-        <NoneEditable>true</NoneEditable>
-        <PickListId>kSYST0000382</PickListId>
-        <ValueStoredAsText>true</ValueStoredAsText>
-      </QFSLXPickList>
+      </QFTextBox>
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXPickList>
@@ -588,10 +720,47 @@ if(account != null)
         <ValueStoredAsText>true</ValueStoredAsText>
       </QFSLXPickList>
     </Control>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPhone, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXPhone>
+        <Column>2</Column>
+        <Row>2</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>Fax</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>Fax</DataItemName>
+            <ControlItemName>Text</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>Fax</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+      </QFSLXPhone>
+    </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXPickList>
         <Column>2</Column>
-        <Row>2</Row>
+        <Row>3</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>Status</ControlId>
@@ -635,58 +804,11 @@ if(account != null)
         <ValueStoredAsText>true</ValueStoredAsText>
       </QFSLXPickList>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXPickList>
-        <Column>2</Column>
-        <Row>3</Row>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>Industry</ControlId>
-        <DataBindings>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Industry</DataItemName>
-            <ControlItemName>PickListValue</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-        </DataBindings>
-        <ControlLabelPlacement>left</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme />
-        <OnChangeAction>
-          <ResourceKey>Industry</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-            <NoActionActionItem>
-              <MethodName />
-            </NoActionActionItem>
-          </Action>
-          <IsDialogCloseAction>False</IsDialogCloseAction>
-          <RunOnEveryRePaint>False</RunOnEveryRePaint>
-          <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>False</PerformsUpdate>
-          <AppliedSecurity />
-          <RefreshData>False</RefreshData>
-        </OnChangeAction>
-        <Required>false</Required>
-        <AutoPostBack>false</AutoPostBack>
-        <PickListName>Industry</PickListName>
-        <StorageMode>Text</StorageMode>
-        <NameFormatString />
-        <AllowMultiples>false</AllowMultiples>
-        <AlphaSort>true</AlphaSort>
-        <MustExistInList>false</MustExistInList>
-        <NoneEditable>false</NoneEditable>
-        <PickListId>kSYST0000388</PickListId>
-        <ValueStoredAsText>true</ValueStoredAsText>
-      </QFSLXPickList>
-    </Control>
     <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
       <QFTextBox>
         <RowSpan>2</RowSpan>
         <Column>2</Column>
-        <Row>4</Row>
+        <Row>5</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>BusinessDescription</ControlId>
@@ -785,38 +907,85 @@ if(account != null)
           <Action typeName="Sage.Platform.QuickForms.ActionItems.ValidationActionItem, Sage.Platform.QuickForms">
             <ValidationActionItem>
               <ValidationMethod>HasPropagationChanges</ValidationMethod>
-              <OnFail typeName="Sage.Platform.QuickForms.ActionItems.BusinessRuleActionItem, Sage.Platform.QuickForms">
-                <BusinessRuleActionItem>
-                  <BusinessRule>Save</BusinessRule>
-                  <Object>Account</Object>
-                  <Parameters />
-                  <PassResultsToNextAction>False</PassResultsToNextAction>
-                  <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.RefreshDataAction, Sage.Platform.QuickForms">
-                    <RefreshDataAction>
-                      <MethodName />
-                    </RefreshDataAction>
-                  </OnComplete>
-                </BusinessRuleActionItem>
+              <OnFail typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+                <CSharpSnippetActionItem>
+                  <MethodName>btnSaveAccount_ClickActionF</MethodName>
+                  <CSharpCodeSnippet>Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
+if(string.IsNullOrEmpty(account.AccountName))
+{
+   DialogService.ShowMessage("Please Enter the AccountName");
+   return;
+}
+if(string.IsNullOrEmpty(account.LegalName))
+{
+   DialogService.ShowMessage("Please Enter the LegalName");
+   return;
+}
+if(string.IsNullOrEmpty(account.MainPhone))
+{
+   DialogService.ShowMessage("Please Enter the MainPhone");
+   return;
+}
+if(string.IsNullOrEmpty(account.Address.Address1))
+{
+   DialogService.ShowMessage("Please Enter the Address1");
+   return;
+}
+if(string.IsNullOrEmpty(account.Address.PostalCode))
+{
+   DialogService.ShowMessage("Please Enter the PostalCode");
+   return;
+}
+else
+{
+	account.Save();
+}</CSharpCodeSnippet>
+                </CSharpSnippetActionItem>
               </OnFail>
-              <OnSuccess typeName="Sage.Platform.QuickForms.ActionItems.DialogActionItem, Sage.Platform.QuickForms">
-                <DialogActionItem>
-                  <SmartPart>UpdateAccountOptions</SmartPart>
-                  <Height>400</Height>
-                  <Width>400</Width>
-                  <Top>200</Top>
-                  <Left>200</Left>
-                  <EntityType>Account</EntityType>
-                  <ResourceKey>3c1f074c-5c3c-436e-9fb9-57e1ffbe0754</ResourceKey>
-                  <CenterDialog>True</CenterDialog>
-                </DialogActionItem>
+              <OnSuccess typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+                <CSharpSnippetActionItem>
+                  <MethodName>btnSaveAccount_ClickActionS</MethodName>
+                  <CSharpCodeSnippet>Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
+if(string.IsNullOrEmpty(account.AccountName))
+{
+   DialogService.ShowMessage("Please Enter the AccountName");
+   return;
+}
+if(string.IsNullOrEmpty(account.LegalName))
+{
+   DialogService.ShowMessage("Please Enter the LegalName");
+   return;
+}
+if(string.IsNullOrEmpty(account.MainPhone))
+{
+   DialogService.ShowMessage("Please Enter the MainPhone");
+   return;
+}
+if(string.IsNullOrEmpty(account.Address.Address1))
+{
+   DialogService.ShowMessage("Please Enter the Address1");
+   return;
+}
+if(string.IsNullOrEmpty(account.Address.PostalCode))
+{
+   DialogService.ShowMessage("Please Enter the PostalCode");
+   return;
+}
+else
+{
+	DialogService.SetSpecs(400, 400, "UpdateAccountOptions", string.Empty);
+	DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAccount);
+	DialogService.ShowDialog(); 
+}</CSharpCodeSnippet>
+                </CSharpSnippetActionItem>
               </OnSuccess>
             </ValidationActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
           <RunOnEveryRePaint>False</RunOnEveryRePaint>
           <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>True</PerformsUpdate>
-          <AppliedSecurity>ENTITIES/ACCOUNT/EDIT</AppliedSecurity>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnClickAction>
       </QFButton>
@@ -840,7 +1009,7 @@ if(account != null)
           <ResourceKey>cmdReset</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.ResetEntityActionItem, Sage.Platform.QuickForms">
             <ResetEntityActionItem>
-              <MethodName />
+              <MethodName>cmdReset_ClickAction</MethodName>
             </ResetEntityActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
@@ -877,7 +1046,7 @@ if(account != null)
               <PassResultsToNextAction>False</PassResultsToNextAction>
               <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.RedirectActionItem, Sage.Platform.QuickForms">
                 <RedirectActionItem>
-                  <MethodName />
+                  <MethodName>btnDelete_ClickActionBRC</MethodName>
                   <RawURL />
                   <MainViewEntityName>Account</MainViewEntityName>
                   <UseCurrentIdInLink>false</UseCurrentIdInLink>
@@ -933,6 +1102,10 @@ if(account != null)
     </ColumnStyle>
   </Columns>
   <Rows>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
     <RowStyle>
       <SizeType>Absolute</SizeType>
       <Height>35</Height>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="faeb833c-f5b6-4d69-b676-44240bee3074" lastModifiedUtc="2014-05-05T11:31:18.9269098Z" name="OnBeforeUpdate" methodType="CrudEvent" actionType="None" returnMode="None">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmEntityMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter />
+  <preExecuteTargets />
+  <methodTargets>
+    <methodTarget id="8d16016d-1b37-46b0-8548-74267d261898" lastModifiedUtc="2014-05-05T11:31:18.7397095Z" targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeUpdate" active="true">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmMethodTarget" />
+      </ExtendedPropertiesCollection>
+    </methodTarget>
+  </methodTargets>
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

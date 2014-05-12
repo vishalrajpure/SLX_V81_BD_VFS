@@ -6,4 +6,5 @@
   <Item Id="f4bdd0c2-64d2-4060-aaad-8cb0b0ce90cc">navSupport.navgroup.xml</Item>
   <Item Id="1b945d1b-ba15-4244-b5e7-416fc549cf22">navAdministration.navgroup.xml</Item>
   <Item Id="cee0f0b8-9674-4035-8709-89701a07c174">navIntegration.navgroup.xml</Item>
+  <Item Id="2f3a1987-beee-4390-9ea2-ad453f51befb">navBarMaster.navgroup.xml</Item>
 </ModelItems>

@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="QFTextBox.Caption" xml:space="preserve">
+    <value>Areamstid</value>
+  </data>
+  <data name="QFCheckBox.Caption" xml:space="preserve">
+    <value>Bapeserv</value>
+  </data>
+  <data name="QFCheckBox1.Caption" xml:space="preserve">
+    <value>Bcmploc</value>
+  </data>
+  <data name="QFCheckBox2.Caption" xml:space="preserve">
+    <value>Bdpwtrest</value>
+  </data>
+  <data name="QFCheckBox3.Caption" xml:space="preserve">
+    <value>Bdsccode</value>
+  </data>
+  <data name="QFCheckBox4.Caption" xml:space="preserve">
+    <value>Bembargo</value>
+  </data>
+  <data name="QFCheckBox5.Caption" xml:space="preserve">
+    <value>Bfcserv</value>
+  </data>
+  <data name="QFCheckBox6.Caption" xml:space="preserve">
+    <value>Boctroi</value>
+  </data>
+  <data name="QFCheckBox7.Caption" xml:space="preserve">
+    <value>Bsfcserv</value>
+  </data>
+  <data name="QFCheckBox8.Caption" xml:space="preserve">
+    <value>Bwebupdt</value>
+  </data>
+  <data name="QFTextBox1.Caption" xml:space="preserve">
+    <value>Caltarea</value>
+  </data>
+  <data name="QFTextBox2.Caption" xml:space="preserve">
+    <value>Caltscrcd</value>
+  </data>
+  <data name="QFTextBox3.Caption" xml:space="preserve">
+    <value>Calttcode</value>
+  </data>
+  <data name="QFCheckBox9.Caption" xml:space="preserve">
+    <value>Capeserv</value>
+  </data>
+  <data name="QFTextBox4.Caption" xml:space="preserve">
+    <value>Capexzn</value>
+  </data>
+  <data name="QFTextBox5.Caption" xml:space="preserve">
+    <value>Carea</value>
+  </data>
+  <data name="QFTextBox6.Caption" xml:space="preserve">
+    <value>Careaadr1</value>
+  </data>
+  <data name="QFTextBox7.Caption" xml:space="preserve">
+    <value>Careaadr2</value>
+  </data>
+  <data name="QFTextBox8.Caption" xml:space="preserve">
+    <value>Careaadr3</value>
+  </data>
+  <data name="QFTextBox9.Caption" xml:space="preserve">
+    <value>Careacity</value>
+  </data>
+  <data name="QFTextBox10.Caption" xml:space="preserve">
+    <value>Careadesc</value>
+  </data>
+  <data name="QFTextBox11.Caption" xml:space="preserve">
+    <value>Careapin</value>
+  </data>
+  <data name="QFTextBox12.Caption" xml:space="preserve">
+    <value>Cawbentlc</value>
+  </data>
+  <data name="QFTextBox13.Caption" xml:space="preserve">
+    <value>Cazone</value>
+  </data>
+  <data name="QFTextBox14.Caption" xml:space="preserve">
+    <value>Cbillarea</value>
+  </data>
+  <data name="QFTextBox15.Caption" xml:space="preserve">
+    <value>Cbranch</value>
+  </data>
+  <data name="QFTextBox16.Caption" xml:space="preserve">
+    <value>Ccluster</value>
+  </data>
+  <data name="QFTextBox17.Caption" xml:space="preserve">
+    <value>Ccntrycode</value>
+  </data>
+  <data name="QFTextBox18.Caption" xml:space="preserve">
+    <value>Ccontact1</value>
+  </data>
+  <data name="QFTextBox19.Caption" xml:space="preserve">
+    <value>Ccontact2</value>
+  </data>
+  <data name="QFCheckBox10.Caption" xml:space="preserve">
+    <value>Ccrdserv</value>
+  </data>
+  <data name="QFTextBox20.Caption" xml:space="preserve">
+    <value>Ccslink</value>
+  </data>
+  <data name="QFTextBox21.Caption" xml:space="preserve">
+    <value>Cdivision</value>
+  </data>
+  <data name="QFCheckBox11.Caption" xml:space="preserve">
+    <value>Cdpserv</value>
+  </data>
+  <data name="QFCheckBox12.Caption" xml:space="preserve">
+    <value>Cdpznb</value>
+  </data>
+  <data name="QFTextBox22.Caption" xml:space="preserve">
+    <value>Cedp</value>
+  </data>
+  <data name="QFTextBox23.Caption" xml:space="preserve">
+    <value>Cemailid1</value>
+  </data>
+  <data name="QFTextBox24.Caption" xml:space="preserve">
+    <value>Cemailid2</value>
+  </data>
+  <data name="QFTextBox25.Caption" xml:space="preserve">
+    <value>Cfax</value>
+  </data>
+  <data name="QFTextBox26.Caption" xml:space="preserve">
+    <value>Cgroup</value>
+  </data>
+  <data name="QFTextBox27.Caption" xml:space="preserve">
+    <value>Chuba</value>
+  </data>
+  <data name="QFTextBox28.Caption" xml:space="preserve">
+    <value>Chubb</value>
+  </data>
+  <data name="QFCheckBox13.Caption" xml:space="preserve">
+    <value>Cipserv</value>
+  </data>
+  <data name="QFTextBox29.Caption" xml:space="preserve">
+    <value>Cittlink</value>
+  </data>
+  <data name="QFCheckBox14.Caption" xml:space="preserve">
+    <value>Cloctype</value>
+  </data>
+  <data name="QFTextBox30.Caption" xml:space="preserve">
+    <value>Coldname</value>
+  </data>
+  <data name="QFTextBox31.Caption" xml:space="preserve">
+    <value>Cpbagdst</value>
+  </data>
+  <data name="QFCheckBox15.Caption" xml:space="preserve">
+    <value>Cpoddelay</value>
+  </data>
+  <data name="QFTextBox32.Caption" xml:space="preserve">
+    <value>Cpodentlc</value>
+  </data>
+  <data name="QFTextBox33.Caption" xml:space="preserve">
+    <value>Cpodscarea</value>
+  </data>
+  <data name="QFTextBox34.Caption" xml:space="preserve">
+    <value>Cpuloc</value>
+  </data>
+  <data name="QFDateTimePicker.Caption" xml:space="preserve">
+    <value>Createdate</value>
+  </data>
+  <data name="QFTextBox35.Caption" xml:space="preserve">
+    <value>Createuser</value>
+  </data>
+  <data name="QFTextBox36.Caption" xml:space="preserve">
+    <value>Cregion</value>
+  </data>
+  <data name="QFCheckBox16.Caption" xml:space="preserve">
+    <value>Csafire</value>
+  </data>
+  <data name="QFTextBox37.Caption" xml:space="preserve">
+    <value>Cscrcd</value>
+  </data>
+  <data name="QFTextBox38.Caption" xml:space="preserve">
+    <value>Cscrcddesc</value>
+  </data>
+  <data name="QFCheckBox17.Caption" xml:space="preserve">
+    <value>Csfcserv</value>
+  </data>
+  <data name="QFTextBox39.Caption" xml:space="preserve">
+    <value>Csfczn</value>
+  </data>
+  <data name="QFCheckBox18.Caption" xml:space="preserve">
+    <value>Csmrtzn</value>
+  </data>
+  <data name="QFTextBox40.Caption" xml:space="preserve">
+    <value>Cstate</value>
+  </data>
+  <data name="QFTextBox41.Caption" xml:space="preserve">
+    <value>Cstatecd</value>
+  </data>
+  <data name="QFTextBox42.Caption" xml:space="preserve">
+    <value>Cstdcode</value>
+  </data>
+  <data name="QFTextBox43.Caption" xml:space="preserve">
+    <value>Csubreg</value>
+  </data>
+  <data name="QFTextBox44.Caption" xml:space="preserve">
+    <value>Ctcode</value>
+  </data>
+  <data name="QFTextBox45.Caption" xml:space="preserve">
+    <value>Ctel</value>
+  </data>
+  <data name="QFTextBox46.Caption" xml:space="preserve">
+    <value>Ctlx</value>
+  </data>
+  <data name="QFTextBox47.Caption" xml:space="preserve">
+    <value>Cttcarea</value>
+  </data>
+  <data name="QFTextBox48.Caption" xml:space="preserve">
+    <value>Cttcareaib</value>
+  </data>
+  <data name="QFTextBox49.Caption" xml:space="preserve">
+    <value>Cttcbrc</value>
+  </data>
+  <data name="QFTextBox50.Caption" xml:space="preserve">
+    <value>Cvia</value>
+  </data>
+  <data name="QFTextBox52.Caption" xml:space="preserve">
+    <value>InstanceId</value>
+  </data>
+  <data name="QFDateTimePicker1.Caption" xml:space="preserve">
+    <value>Modifydate</value>
+  </data>
+  <data name="QFTextBox53.Caption" xml:space="preserve">
+    <value>Modifyuser</value>
+  </data>
+  <data name="QFTextBox54.Caption" xml:space="preserve">
+    <value>Ndsrcheck</value>
+  </data>
+  <data name="QFTextBox55.Caption" xml:space="preserve">
+    <value>Nittbuff</value>
+  </data>
+  <data name="QFTextBox56.Caption" xml:space="preserve">
+    <value>Npodbufr</value>
+  </data>
+  <data name="QFTextBox57.Caption" xml:space="preserve">
+    <value>Npodscan</value>
+  </data>
+  <data name="QFTextBox58.Caption" xml:space="preserve">
+    <value>Npucutoff</value>
+  </data>
+  <data name="QFTextBox59.Caption" xml:space="preserve">
+    <value>PersistentState</value>
+  </data>
+</root>

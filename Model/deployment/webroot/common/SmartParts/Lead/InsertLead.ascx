@@ -300,7 +300,7 @@ LabelPlacement="right" AutoPostBack="true"  />
    
     <asp:ImageButton runat="server" ID="cmdSaveNew"
  AlternateText="<%$ resources: cmdSaveNew.Caption %>"  ToolTip="<%$ resources: cmdSaveNew.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_New16x16"  />
-   
+ 
   <SalesLogix:PageLink ID="btnEditForm" CssClass="adminEditFormButton" runat="server" LinkType="RelativePath" ToolTip="<%$ resources: Portal, EditForm_ToolTip %>" NavigateUrl="~/FormManager.aspx?entityid=InsertLead&modeid=Detail" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=form_manager_16x16"></SalesLogix:PageLink>
  
  
@@ -547,6 +547,9 @@ protected void cmdSaveNew_ClickAction(object sender, EventArgs e) {
 	Sage.Platform.EntityFactory.Execute<Sage.SalesLogix.Entities.Lead>("Lead.SaveLead", objarray);
 	Response.Redirect("InsertLead.aspx?modeid=Insert");
 
+	
+
+
 }
 
 protected override void OnWireEventHandlers()
@@ -590,8 +593,6 @@ Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.Entit
             _runActivating = (epage.IsNewEntity || _runActivating);
 if (_runActivating) DoActivating();
 ClientBindingMgr.RegisterSaveButton(cmdSave);
-
-ClientBindingMgr.RegisterSaveButton(cmdSaveNew);
 
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
 {

@@ -7,7 +7,7 @@ define('Mobile/SalesLogix/Views/Attachment/ViewAttachment', [
     'dojo/_base/connect',
     'dojo/_base/array',
     'Mobile/SalesLogix/Format',
-     'dojo/dom-construct',
+    'dojo/dom-construct',
     'dojo/dom-attr',
     'dojo/dom-class',
     'dojo/has',
@@ -41,12 +41,15 @@ define('Mobile/SalesLogix/Views/Attachment/ViewAttachment', [
         attachDateText: 'attachment date',
         fileSizeText: 'file size',
         userText: 'user',
+        newWindowText: 'Open in new window',
         attachmentNotSupportedText: 'The attachment type is not supported for viewing.',
         attachmentDateFormatText: 'ddd M/D/YYYY h:mm a',
+        downloadingText:'Downloading attachment ...',
+        notSupportedText: 'Viewing attachments is not supported by your device.',
+
         //View Properties
         id: 'view_attachment',
         editView: '',
-        downloadingText:'Downloading attachment ...',
         security: null,
         querySelect: ['description', 'user', 'attachDate', 'fileSize', 'fileName', 'url', 'fileExists', 'remoteStatus', 'dataType'],
         resourceKind: 'attachments',
@@ -54,6 +57,10 @@ define('Mobile/SalesLogix/Views/Attachment/ViewAttachment', [
         icon: 'content/images/icons/Scale_24.png',
         orginalImageSize: { width: 0, height: 0 },
         queryInclude: ['$descriptors'],
+        dataURL: null,
+        notSupportedTemplate: new Simplate([
+            '<h2>{%= $$.notSupportedText %}</h2>'
+        ]),
         widgetTemplate: new Simplate([
             '<div id="{%= $.id %}" title="{%= $.titleText %}" class="overthrow detail panel {%= $.cls %}" {% if ($.resourceKind) { %}data-resource-kind="{%= $.resourceKind %}"{% } %}>',
             '{%! $.loadingTemplate %}',
@@ -66,10 +73,11 @@ define('Mobile/SalesLogix/Views/Attachment/ViewAttachment', [
         ]),
         attachmentViewTemplate: new Simplate([
             '<div class="attachment-viewer-label" style="white-space:nowrap;">',
-               '<label>{%= $.description + " (" + $.fileType + ")"  %}</label>',
+                '<label>{%= $.description + " (" + $.fileType + ")"  %}</label>',
             '</div>',
             '<div class="attachment-viewer-area">',
-                   '<iframe id="attachment-Iframe" src="{%= $.url %}"></iframe>',
+                '<button class="button" data-action="openNewWindow">{%: $$.newWindowText %}</button>',
+                '<iframe id="attachment-Iframe" src="{%= $.url %}"></iframe>',
             '</div>'
         ]),
         attachmentViewImageTemplate: new Simplate([
@@ -77,9 +85,12 @@ define('Mobile/SalesLogix/Views/Attachment/ViewAttachment', [
                '<label>{%= $.description + " (" + $.fileType + ")"  %}</label>',
            '</div>',
            '<div class="attachment-viewer-area">',
-               '<table><tr valign="middle"><td align="center">',
-                 '<image id="attachment-image" border="1"></image>',
-                 '</table></td></tr>',
+               '<table>',
+                   '<tr valign="middle">',
+                       '<td id="imagePlaceholder" align="center">',
+                       '</td>',
+                   '</tr>',
+               '</table>',
            '</div>'
         ]),
         attachmentViewNotSupportedTemplate: new Simplate([
@@ -103,6 +114,11 @@ define('Mobile/SalesLogix/Views/Attachment/ViewAttachment', [
         show: function(options) {
             this.inherited(arguments);
             this.attachmentViewerNode.innerHTML = "";
+            if (!has('html5-file-api')) {
+                domConstruct.place(this.notSupportedTemplate.apply({}, this), this.domNode, 'only');
+                return;
+            }
+
             //If this opened the second time we need to check to see if it is the same attachmnent and let the Process Entry function load the view.
             if (this.entry) {
                 if (options.key === this.entry.$key) {
@@ -132,6 +148,11 @@ define('Mobile/SalesLogix/Views/Attachment/ViewAttachment', [
         },
         createLayout: function() {
              return this.tools || (this.tools = []);
+        },
+        openNewWindow: function() {
+            if (this.dataURL) {
+                window.open(this.dataURL);
+            }
         },
         _loadAttachmentView: function(entry) {
             var data, am, isFile, url, viewNode, tpl, dl, description, attachmentid,fileType, self, iframe;
@@ -168,16 +189,32 @@ define('Mobile/SalesLogix/Views/Attachment/ViewAttachment', [
                         attachmentid = entry.$key;
                         //dataurl
                         am.getAttachmentFile(attachmentid, 'arraybuffer', function(responseInfo) {
-                            var rData, url, a, dataUrl, image;
+                            var rData, url, a, image, loadHandler, loaded;
 
                             rData = Utility.base64ArrayBuffer(responseInfo.response);
-                            dataUrl = 'data:' + responseInfo.contentType + ';base64,' + rData;
-                            image = dom.byId('attachment-image');
-                            image.onload = function() {
+                            self.dataURL = 'data:' + responseInfo.contentType + ';base64,' + rData;
+
+                            image = new Image();
+
+                            loadHandler = function() {
+                                if (loaded) {
+                                    return;
+                                }
+
                                 self._orginalImageSize = { width: image.width, height: image.height };
                                 self._sizeImage(self.domNode, image);
+                                domConstruct.place(image, 'imagePlaceholder', 'only');
+                                loaded = true;
                             };
-                            domAttr.set(image, 'src', dataUrl);
+
+                            image.onload = loadHandler;
+                            image.src = self.dataURL;
+
+                            if (image.complete) {
+                                loadHandler();
+                            }
+
+                            // Set download text to hidden
                             domClass.add(dl, 'display-none');
                         });
                     } else { //View file type in Iframe
@@ -189,23 +226,23 @@ define('Mobile/SalesLogix/Views/Attachment/ViewAttachment', [
                             self = this;
                             attachmentid = entry.$key;
                             am.getAttachmentFile(attachmentid, 'arraybuffer', function(responseInfo) {
-                                var rData, url, a, dataUrl, iframe;
+                                var rData, url, a, iframe;
 
                                 rData = Utility.base64ArrayBuffer(responseInfo.response);
-                                dataUrl = 'data:' + responseInfo.contentType + ';base64,' + rData;
+                                self.dataURL = 'data:' + responseInfo.contentType + ';base64,' + rData;
                                 domClass.add(dl, 'display-none');
                                 iframe = dom.byId('attachment-Iframe');
                                 iframe.onload = function() {
                                     domClass.add(dl, 'display-none');
                                 };
                                 domClass.add(dl, 'display-none');
-                                domAttr.set(iframe, 'src', dataUrl);
+                                domAttr.set(iframe, 'src', self.dataURL);
                             });
                         } else { //Only view images
                             viewNode = domConstruct.place(this.attachmentViewNotSupportedTemplate.apply(entry, this), this.attachmentViewerNode, 'last');
                         }
                     }
-                } else { //File type not allowed 
+                } else { //File type not allowed
                     viewNode = domConstruct.place(this.attachmentViewNotSupportedTemplate.apply(entry, this), this.attachmentViewerNode, 'last');
                 }
 

@@ -1557,8 +1557,90 @@
  <ref id="764f71b1-0adb-4b25-a387-b8bd0ffdfd06" url="\Entity Model\Saleslogix Speedsearch Support\IndexStatistics\OnCreate.method.xml" />
  <ref id="bd7fb838-3722-4f1e-8925-1f7e924afe68" url="\Entity Model\Saleslogix Speedsearch Support\IndexStatistics\OnBeforeDelete.method.xml" />
  <ref id="de6e57e1-15ac-4e0e-bdd5-29c5998d9b13" url="\Entity Model\Saleslogix Speedsearch Support\IndexStatistics\OnBeforeInsert.method.xml" />
- <ref id="14c409c0-9c68-4ebe-a478-911d3280e6ac" url="\Mashup Model\SummaryViewQueries.mashup.xml" />
+ <ref id="68cdd3e3-4bf5-4f9c-9b0d-266aa6e3ede8" url="\Mashup Model\SummaryViewQueries.mashup.xml" />
+ <ref id="b0a1d7be-9a1f-43f5-8b28-d16acaf7a72b" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\OnBeforeInsert.method.xml" />
+ <ref id="5a9e3ed4-2404-4299-bbba-300d0cd63829" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\OnAfterInsert.method.xml" />
+ <ref id="d7ec3baa-b8fd-44c6-ad89-be9a62e33888" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\OnBeforeUpdate.method.xml" />
+ <ref id="0d3770f6-86ae-4e34-a65a-bbd2b9f8520e" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\OnAfterUpdate.method.xml" />
+ <ref id="ec852beb-de99-4900-bf2f-e771ff1e9b76" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\OnBeforeDelete.method.xml" />
+ <ref id="5599fdf0-1201-4ea3-89b4-5f092f7a7788" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\OnAfterDelete.method.xml" />
+ <ref id="27dcdbe7-7bf8-4f22-955b-496ba741820c" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\OnCreate.method.xml" />
+ <ref id="1cb9ef9a-cb77-44cb-a2da-bf60b621b668" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnBeforeUpdate.method.xml" />
+ <ref id="af3b72fd-9b56-4487-8d58-c1b9a390d185" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\OnBeforeInsert.method.xml" />
+ <ref id="5f30a8e1-dfd0-487b-88e6-2cfd2d47685b" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\OnAfterInsert.method.xml" />
+ <ref id="756a216a-5ae6-425f-b2d4-4c6e83bab9c4" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\OnBeforeUpdate.method.xml" />
+ <ref id="51e7f5c1-26f5-445d-8eaa-d8418b5fbe77" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\OnAfterUpdate.method.xml" />
+ <ref id="695aa7d3-99d7-473b-895a-4b8781cf9967" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\OnBeforeDelete.method.xml" />
+ <ref id="8d3160b6-b7f1-460e-802b-378008822a7c" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\OnAfterDelete.method.xml" />
+ <ref id="39e17837-9b5a-42d3-8d12-0cc620d1f7f1" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\OnCreate.method.xml" />
+ <ref id="a013d0c7-5b6c-4ee2-a237-090950b8d40d" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnAfterInsert.method.xml" />
+ <ref id="1e231fdc-7b21-457d-bd72-77e1304b565c" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\OnBeforeInsert.method.xml" />
+ <ref id="725da599-36f8-44f5-aba8-f655abe605e8" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\OnAfterInsert.method.xml" />
+ <ref id="4d1ea083-99e1-4bed-9762-abc295679874" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\OnBeforeUpdate.method.xml" />
+ <ref id="d6c64d1f-f1be-498d-be73-5f214eaaba66" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\OnAfterUpdate.method.xml" />
+ <ref id="9ad4e786-fbbf-40ba-aa1b-bca74aa16e8e" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\OnBeforeDelete.method.xml" />
+ <ref id="bb96c303-0875-43f4-be2d-d13edda706b8" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\OnAfterDelete.method.xml" />
+ <ref id="8c7e1857-b875-4c9d-aa1f-eb5291f7425a" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\OnCreate.method.xml" />
+ <ref id="04e348cb-4a12-4c35-9c42-505f3fc04800" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnBeforeInsert.method.xml" />
+ <ref id="b8df0879-3d31-4300-9e10-407cc4f7df17" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\QuickForms\AreaDetail.main.quickform.xml" />
+ <ref id="1dac91c1-93fc-4f96-825e-c94e6975cfe2" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\QuickForms\PincodeMaster.main.quickform.xml" />
+ <ref id="851f674e-a48e-442c-a532-bb545ad4d9b2" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\QuickForms\EmployeeDetail.main.quickform.xml" />
+ <ref id="861ac5fe-b571-4015-a55d-bf63e400e1e7" url="\Portal\SlxClient\SlxClient.cabapp.ptl.xml" />
+ <ref id="2f3a1987-beee-4390-9ea2-ad453f51befb" url="\Portal\SlxClient\NavGroups\navBarMaster\navBarMaster.navgroup.xml" />
+ <ref id="c577d460-5531-4dc5-9318-5aceb311f0b4" url="\Portal\SlxClient\NavGroups\navBarMaster\NavItems\MasterItemAreamaster.navitem.xml" />
+ <ref id="7a612377-a9e2-431e-91b1-99fbb32ff1c4" url="\Portal\SlxClient\NavGroups\navBarMaster\NavItems\MasterItemempmaster.navitem.xml" />
+ <ref id="129fc60c-fb24-48f8-b552-4390fa226e8a" url="\Portal\SlxClient\NavGroups\navBarMaster\NavItems\MasterItemPincode.navitem.xml" />
+ <ref id="fb4e7f97-5c95-40ea-b4ff-64972d9cef21" url="\Portal\SlxClient\NavGroups\navBarMaster\NavItems\MasterItemproduct.navitem.xml" />
+ <ref id="2a25eee0-001d-4d2b-b484-32ce72b42181" url="\Portal\SlxClient\NavGroups\navBarMaster\NavItems\MasterItemCompetitor.navitem.xml" />
+ <ref id="3bc589db-d429-4b96-97be-ce2cb4a65a58" url="\Portal\SlxClient\ContextMenuItems\contextAreamaster\contextAreamaster.contextmenu.xml" />
+ <ref id="035d3fa6-30c7-407a-9de7-11604539c6b9" url="\Portal\SlxClient\ContextMenuItems\menuItemAreamaster\ContextMenuItems\contextAreaMasterItemCreateGroup\contextAreaMasterItemCreateGroup.contextmenu.xml" />
+ <ref id="b5452e88-b72f-4de5-adcf-284879c451d3" url="\Portal\SlxClient\ContextMenuItems\contextEmployeeMaster\contextEmployeeMaster.contextmenu.xml" />
+ <ref id="5949414a-f796-482c-bb08-36d4e1e4f97e" url="\Portal\SlxClient\ContextMenuItems\contextEmployeeMaster\ContextMenuItems\EmployeeMasterItemCreateNewGroup\EmployeeMasterItemCreateNewGroup.contextmenu.xml" />
+ <ref id="7fd91745-effc-4a05-816d-3195f420a438" url="\Portal\SlxClient\ContextMenuItems\contextPincodeMaster\contextPincodeMaster.contextmenu.xml" />
+ <ref id="fd0ec274-d604-4adf-ac7e-e1c8e4747b51" url="\Portal\SlxClient\ContextMenuItems\contextPincodeMaster\ContextMenuItems\PincodeMasterItemCreateNewGroup\PincodeMasterItemCreateNewGroup.contextmenu.xml" />
+ <ref id="2db7fbd9-c42f-458d-a8f7-028c57617ec8" url="\Portal\SlxClient\ChildPages\AreaDetail\AreaDetail.page.xml" />
+ <ref id="67a82998-5daa-485e-81a0-441cc4111404" url="\Portal\SlxClient\ChildPages\AreaDetail\SmartParts\AreaDetail.smartpart.xml" />
+ <ref id="5852d153-d86e-44be-ad49-a9812a957678" url="\Portal\SlxClient\ChildPages\AreaDetail\SmartParts\LiveGroupViewer.smartpart.xml" />
+ <ref id="79b2f232-b419-43bc-b673-d4134da6ffef" url="\Portal\SlxClient\ChildPages\EmployeeDetail\EmployeeDetail.page.xml" />
+ <ref id="a14d2256-7033-43cf-b6f7-4de5a299957f" url="\Portal\SlxClient\ChildPages\EmployeeDetail\SmartParts\EmployeeDetail.smartpart.xml" />
+ <ref id="46b6de68-3cd0-4713-b07d-58c252b29c9f" url="\Portal\SlxClient\ChildPages\EmployeeDetail\SmartParts\LiveGroupViewer.smartpart.xml" />
+ <ref id="1837950e-383d-4f1a-8eb0-caa6846e2f0d" url="\Portal\SlxClient\ChildPages\PincodeMaster\PincodeMaster.page.xml" />
+ <ref id="7f0dd2b6-9d1d-4fbd-ab1b-9d9f391efe1a" url="\Portal\SlxClient\ChildPages\PincodeMaster\SmartParts\PincodeMaster.smartpart.xml" />
+ <ref id="8687a825-791c-4fdb-bcf4-efabd2dd16aa" url="\Portal\SlxClient\ChildPages\PincodeMaster\SmartParts\LiveGroupViewer.smartpart.xml" />
+ <ref id="3164d57a-9140-4ed6-ae93-d35a71c6ea62" url="\Portal\SlxClient\ContextMenuItems\contextAreamaster\ContextMenuItems\AreaMasterItemLookup\AreaMasterItemLookup.contextmenu.xml" />
+ <ref id="fb34c8b0-d76d-44b7-8d8a-3de6fe1b47be" url="\Portal\SlxClient\ContextMenuItems\contextEmployeeMaster\ContextMenuItems\EmployeeMasterItemLookupEmp\EmployeeMasterItemLookupEmp.contextmenu.xml" />
+ <ref id="c84937de-9691-44a1-ad01-0d7320ca7ecf" url="\Portal\SlxClient\ContextMenuItems\contextPincodeMaster\ContextMenuItems\PincodeMasterItemLookuppincode\PincodeMasterItemLookuppincode.contextmenu.xml" />
+ <ref id="ca926004-5c2b-48f8-90fc-9017a6bda197" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnAfterUpdate.method.xml" />
+ <ref id="b4a228a4-476c-4e93-b8ac-31c6e14a56b3" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnBeforeDelete.method.xml" />
+ <ref id="7027e85d-3599-4cfb-92c5-2292fb777c0e" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnAfterDelete.method.xml" />
+ <ref id="d6dae40c-55e0-4da9-a646-842a4c21a65d" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnCreate.method.xml" />
+ <ref id="ecc23318-592b-4987-a573-e79b50d8a7c3" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\Vwareamaster.VWAREAMASTER.entity.xml" />
+ <ref id="7df23ae1-2fbf-4ca4-8dc3-698d7d5dc867" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnBeforeInsert.method.xml" />
+ <ref id="e34dd2ca-50a5-4f65-8682-2b5dbe46d2c7" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnAfterInsert.method.xml" />
+ <ref id="faeb833c-f5b6-4d69-b676-44240bee3074" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnBeforeUpdate.method.xml" />
+ <ref id="8cceaa60-e7bf-4abe-9871-a9587ae01310" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnAfterUpdate.method.xml" />
+ <ref id="483fbf4a-e923-412b-b6b3-43805e2f7d9e" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnBeforeDelete.method.xml" />
+ <ref id="1f962a3e-28d5-43f7-9fad-eb8d080ebd84" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnAfterDelete.method.xml" />
+ <ref id="1dc8e99e-a7f3-464a-a7f9-432386fcb3f7" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnCreate.method.xml" />
+ <ref id="bc5510e8-5588-4b9b-a157-7c390ccd3079" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\Vwempmaster.VWEMPMASTER.entity.xml" />
+ <ref id="e0359868-8c7f-4d49-94bc-f2e381ccf4ab" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnBeforeInsert.method.xml" />
+ <ref id="faa7b0af-76f0-4a4a-bf89-6758514aa910" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnAfterInsert.method.xml" />
+ <ref id="3e9ca303-d425-4654-99b6-dc847927be1b" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnBeforeUpdate.method.xml" />
+ <ref id="4f262711-d70c-4339-b90c-55e559e3686b" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnAfterUpdate.method.xml" />
+ <ref id="76cac880-b700-4bbd-a1c6-02dc347838ad" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnBeforeDelete.method.xml" />
+ <ref id="aa76eba1-0a65-451a-96d4-0f93f395b9f5" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnAfterDelete.method.xml" />
+ <ref id="56fc9f40-c30c-48ca-aed8-d641752e67fc" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnCreate.method.xml" />
+ <ref id="017eb719-17ed-4efb-b9e1-cd861085064b" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\Vwpincodemaster.VWPINCODEMASTER.entity.xml" />
+ <ref id="576ae752-12aa-4d36-ba13-a8cca10c89c1" url="\Entity Model\Saleslogix Application Entities\Account\QuickForms\AccountDetails.main.quickform.xml" />
+ <ref id="d8eb6792-f4ba-4c6a-adb2-6217519d4757" url="\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactDetails.main.quickform.xml" />
  <ref id="7067c649-cd9a-4498-9e87-c5851ae8a8b3" url="\Entity Model\CodeTemplates\Entity\Default-ResXClass-Saleslogix.ResXClass.codetemplate.xml" />
  <ref id="99be1b14-a8f6-4b61-8d33-b5f7592b011b" url="\Entity Model\CodeTemplates\Entity\Default-ResX-Saleslogix.ResX.codetemplate.xml" />
- <ref id="467572c8-a432-43eb-928b-f329196d15b6" url="\Entity Model\Relationships\Lead.User.467572c8a43243eb928bf329196d15b6.relationship.xml" />
+ <ref id="33138a49-3802-420d-b40a-637cb49a46ec" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnBeforeInsert.method.xml" />
+ <ref id="4bf23734-6e7f-44be-a079-6d579c5a5082" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnAfterInsert.method.xml" />
+ <ref id="3b369ead-ccaf-4674-bbcb-195501a081fd" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnBeforeUpdate.method.xml" />
+ <ref id="f09bc021-38b7-4c43-8d25-6ba90377abc4" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnAfterUpdate.method.xml" />
+ <ref id="9b9102da-a1bd-4a47-a4b6-cae9af9337f4" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnBeforeDelete.method.xml" />
+ <ref id="dd1d8585-b08f-48df-8b30-6177f30c74ad" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnAfterDelete.method.xml" />
+ <ref id="da569393-2947-4675-992e-1729ae8ee91f" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnCreate.method.xml" />
+ <ref id="cb5bb1b9-907b-4d23-974f-6bdac8d22d76" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\QualifierAndSMpincode.QUALIFIERANDSMPINCODE.entity.xml" />
 </modelItemIndex>

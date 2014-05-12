@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<ModelItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Item Id="954f7b45-62e0-4e0a-b46f-2c447c9cc38e">QualifierSMpincodeGroup.contextmenu.xml</Item>
+  <Item Id="a0e47c5f-c70c-4a93-b118-d21ef9845dfc">QualifierSMpincodeInsertNew.contextmenu.xml</Item>
+  <Item Id="ab1a2105-4760-4ade-9dde-740e4ffaada3">QualifierSMpincodeLookup.contextmenu.xml</Item>
+</ModelItems>

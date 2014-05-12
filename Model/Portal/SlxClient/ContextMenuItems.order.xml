@@ -48,4 +48,8 @@
   <Item Id="6f6bbcb8-1283-4084-af76-3cd7a24689ef">JobManagerListContextMenu.contextmenu.xml</Item>
   <Item Id="fd8da4d3-cd92-4577-ae50-053c899d4189">JobManagerNavBarContextMenu.contextmenu.xml</Item>
   <Item Id="0907616a-e35f-41fe-bc53-6d7f824f1bb9">ReportManagerListContextMenu.contextmenu.xml</Item>
+  <Item Id="3bc589db-d429-4b96-97be-ce2cb4a65a58">contextAreamaster.contextmenu.xml</Item>
+  <Item Id="b5452e88-b72f-4de5-adcf-284879c451d3">contextEmployeeMaster.contextmenu.xml</Item>
+  <Item Id="7fd91745-effc-4a05-816d-3195f420a438">contextPincodeMaster.contextmenu.xml</Item>
+  <Item Id="81a476dd-5a1a-46ea-8037-eab0befe41fc">ContextQualifierBMpincode.contextmenu.xml</Item>
 </ModelItems>

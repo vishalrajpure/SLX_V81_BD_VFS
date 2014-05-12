@@ -10,7 +10,8 @@ define('Mobile/SalesLogix/Views/Activity/Complete', [
     'Mobile/SalesLogix/Validator',
     'Mobile/SalesLogix/Template',
     'Sage/Platform/Mobile/Utility',
-    'Sage/Platform/Mobile/Edit'
+    'Sage/Platform/Mobile/Edit',
+    'moment'
 ], function(
     declare,
     array,
@@ -20,7 +21,8 @@ define('Mobile/SalesLogix/Views/Activity/Complete', [
     validator,
     template,
     utility,
-    Edit
+    Edit,
+    moment
 ) {
 
     return declare('Mobile.SalesLogix.Views.Activity.Complete', [Edit], {
@@ -198,22 +200,26 @@ define('Mobile/SalesLogix/Views/Activity/Complete', [
             var startDateField = this.fields['StartDate'],
                 startDate = startDateField.getValue();
 
+            if (!startDate) {
+                return;
+            }
+
             if (value) {
                 startDateField['dateFormatText'] = this.startingTimelessFormatText;
                 startDateField['showTimePicker'] = false;
                 startDateField['timeless'] = true;
                 if (!this.isDateTimeless(startDate)) {
-                    startDate = startDate.clone().clearTime().add({minutes: -1 * startDate.getTimezoneOffset(), seconds: 5});
+                    startDate = moment(startDate).hours(0).minutes(0).seconds(0).add({minutes: -1 * startDate.getTimezoneOffset(), seconds: 5});
                 }
-                startDateField.setValue(startDate);
+                startDateField.setValue(moment(startDate).toDate());
             } else {
                 startDateField['dateFormatText'] = this.startingFormatText;
                 startDateField['showTimePicker'] = true;
                 startDateField['timeless'] = false;
                 if (this.isDateTimeless(startDate)) {
-                    startDate = startDate.clone().add({minutes: startDate.getTimezoneOffset() + 1, seconds: -5});
+                    startDate = moment(startDate).add({minutes: startDate.getTimezoneOffset() + 1, seconds: -5});
                 }
-                startDateField.setValue(startDate);
+                startDateField.setValue(moment(startDate).toDate());
             }
         },
         isDateTimeless: function(date) {
@@ -233,9 +239,14 @@ define('Mobile/SalesLogix/Views/Activity/Complete', [
             return true;
         },
         onAsScheduledChange: function(scheduled, field) {
+            var duration, startDate, completedDate;
             if (scheduled) {
+                duration = this.fields['Duration'].getValue();
+                startDate = moment(this.fields['StartDate'].getValue());
+                completedDate = startDate.add({minutes: duration}).toDate();
+
                 this.toggleSelectField(this.fields['CompletedDate'], true);
-                this.fields['CompletedDate'].setValue(this.fields['StartDate'].getValue());
+                this.fields['CompletedDate'].setValue(completedDate);
             } else {
                 this.toggleSelectField(this.fields['CompletedDate'], false);
                 this.fields['CompletedDate'].setValue(new Date());

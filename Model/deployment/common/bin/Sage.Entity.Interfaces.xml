@@ -1244,6 +1244,16 @@
             <c>true</c> if the current object is being created.
             </summary>
         </member>
+        <member name="P:Sage.Entity.Interfaces.IQualifierAndSMpincode.InstanceId">
+            <summary>
+            Gets the unique identifier for this instance
+            </summary>
+        </member>
+        <member name="P:Sage.Entity.Interfaces.IQualifierAndSMpincode.Creating">
+            <summary>
+            <c>true</c> if the current object is being created.
+            </summary>
+        </member>
         <member name="P:Sage.Entity.Interfaces.IRemoteAttachment.InstanceId">
             <summary>
             Gets the unique identifier for this instance
@@ -1860,6 +1870,36 @@
             </summary>
         </member>
         <member name="P:Sage.Entity.Interfaces.IUserTrackingEvtExt.Creating">
+            <summary>
+            <c>true</c> if the current object is being created.
+            </summary>
+        </member>
+        <member name="P:Sage.Entity.Interfaces.IVwareamaster.InstanceId">
+            <summary>
+            Gets the unique identifier for this instance
+            </summary>
+        </member>
+        <member name="P:Sage.Entity.Interfaces.IVwareamaster.Creating">
+            <summary>
+            <c>true</c> if the current object is being created.
+            </summary>
+        </member>
+        <member name="P:Sage.Entity.Interfaces.IVwempmaster.InstanceId">
+            <summary>
+            Gets the unique identifier for this instance
+            </summary>
+        </member>
+        <member name="P:Sage.Entity.Interfaces.IVwempmaster.Creating">
+            <summary>
+            <c>true</c> if the current object is being created.
+            </summary>
+        </member>
+        <member name="P:Sage.Entity.Interfaces.IVwpincodemaster.InstanceId">
+            <summary>
+            Gets the unique identifier for this instance
+            </summary>
+        </member>
+        <member name="P:Sage.Entity.Interfaces.IVwpincodemaster.Creating">
             <summary>
             <c>true</c> if the current object is being created.
             </summary>

@@ -1,0 +1,44 @@
+4/18/2014 10:47:35 AM
+INFO  2014-04-18 16:17:20,097 - Installing bundle...
+INFO  2014-04-18 16:17:20,097 - Performing pre-install.
+INFO  2014-04-18 16:17:20,112 - Installing context item: Service Portal Template (\Portal\PortalTemplates\ServicePortalTemplate\ServicePortalTemplate.portaltemplate.xml)
+INFO  2014-04-18 16:17:20,112 - Successfully installed Service Portal Template (\Portal\PortalTemplates\ServicePortalTemplate\ServicePortalTemplate.portaltemplate.xml)
+INFO  2014-04-18 16:17:20,112 - Installing context item: UI Portal Template (\Portal\PortalTemplates\UIPortalTemplate\UIPortalTemplate.portaltemplate.xml)
+INFO  2014-04-18 16:17:20,112 - Successfully installed UI Portal Template (\Portal\PortalTemplates\UIPortalTemplate\UIPortalTemplate.portaltemplate.xml)
+INFO  2014-04-18 16:17:20,128 - Installing context item: Process Host (\Portal\ProcessHost\ProcessHost.cabsvc.ptl.xml)
+INFO  2014-04-18 16:17:20,502 - Successfully installed Process Host (\Portal\ProcessHost\ProcessHost.cabsvc.ptl.xml)
+INFO  2014-04-18 16:17:20,518 - Installing context item: SData Integration Host (\Portal\sdata\sdata.cabsvc.ptl.xml)
+INFO  2014-04-18 16:17:21,189 - Successfully installed SData Integration Host (\Portal\sdata\sdata.cabsvc.ptl.xml)
+INFO  2014-04-18 16:17:21,189 - Installing context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-04-18 16:17:26,758 - Successfully installed Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-04-18 16:17:26,758 - Installing context item: Saleslogix Customer Portal (\Portal\SLXCustomerPortal\SLXCustomerPortal.cabapp.ptl.xml)
+INFO  2014-04-18 16:17:30,424 - Successfully installed Saleslogix Customer Portal (\Portal\SLXCustomerPortal\SLXCustomerPortal.cabapp.ptl.xml)
+INFO  2014-04-18 16:17:30,424 - Installing context item: Saleslogix Job Service (\Portal\SlxJobService\SlxJobService.cabsch.ptl.xml)
+INFO  2014-04-18 16:17:30,970 - Successfully installed Saleslogix Job Service (\Portal\SlxJobService\SlxJobService.cabsch.ptl.xml)
+INFO  2014-04-18 16:17:30,970 - Saving context item: Service Portal Template (\Portal\PortalTemplates\ServicePortalTemplate\ServicePortalTemplate.portaltemplate.xml)
+INFO  2014-04-18 16:17:30,986 - Successfully saved Service Portal Template (\Portal\PortalTemplates\ServicePortalTemplate\ServicePortalTemplate.portaltemplate.xml)
+INFO  2014-04-18 16:17:30,986 - Saving context item: UI Portal Template (\Portal\PortalTemplates\UIPortalTemplate\UIPortalTemplate.portaltemplate.xml)
+INFO  2014-04-18 16:17:30,986 - Successfully saved UI Portal Template (\Portal\PortalTemplates\UIPortalTemplate\UIPortalTemplate.portaltemplate.xml)
+INFO  2014-04-18 16:17:31,001 - Saving context item: Process Host (\Portal\ProcessHost\ProcessHost.cabsvc.ptl.xml)
+INFO  2014-04-18 16:17:31,001 - Successfully saved Process Host (\Portal\ProcessHost\ProcessHost.cabsvc.ptl.xml)
+INFO  2014-04-18 16:17:31,001 - Saving context item: SData Integration Host (\Portal\sdata\sdata.cabsvc.ptl.xml)
+INFO  2014-04-18 16:17:31,017 - Successfully saved SData Integration Host (\Portal\sdata\sdata.cabsvc.ptl.xml)
+INFO  2014-04-18 16:17:31,017 - Saving context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-04-18 16:17:31,017 - Successfully saved Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-04-18 16:17:31,032 - Saving context item: Saleslogix Customer Portal (\Portal\SLXCustomerPortal\SLXCustomerPortal.cabapp.ptl.xml)
+INFO  2014-04-18 16:17:31,032 - Successfully saved Saleslogix Customer Portal (\Portal\SLXCustomerPortal\SLXCustomerPortal.cabapp.ptl.xml)
+INFO  2014-04-18 16:17:31,032 - Saving context item: Saleslogix Job Service (\Portal\SlxJobService\SlxJobService.cabsch.ptl.xml)
+INFO  2014-04-18 16:17:31,048 - Successfully saved Saleslogix Job Service (\Portal\SlxJobService\SlxJobService.cabsch.ptl.xml)
+INFO  2014-04-18 16:17:31,064 - Configuring installed items.
+INFO  2014-04-18 16:17:31,064 - Configuring Service Portal Template...
+INFO  2014-04-18 16:17:32,873 - Configuring UI Portal Template...
+INFO  2014-04-18 16:17:32,936 - Configuring Process Host...
+INFO  2014-04-18 16:17:32,951 - Configuring SData Integration Host...
+INFO  2014-04-18 16:17:32,967 - Configuring Saleslogix Client...
+INFO  2014-04-18 16:17:32,982 - Configuring Saleslogix Customer Portal...
+INFO  2014-04-18 16:17:32,982 - Configuring Saleslogix Job Service...
+INFO  2014-04-18 16:17:32,998 - Performing pre-commit to target project.
+INFO  2014-04-18 16:17:33,201 - Committing items to target project...
+INFO  2014-04-18 16:17:34,620 - Committing transactions...
+INFO  2014-04-18 16:17:35,634 - Copying bundle manifest to project.
+INFO  2014-04-18 16:17:38,068 - Install complete.

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<ModelItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Item Id="3164d57a-9140-4ed6-ae93-d35a71c6ea62">AreaMasterItemLookup.contextmenu.xml</Item>
+  <Item Id="035d3fa6-30c7-407a-9de7-11604539c6b9">contextAreaMasterItemCreateGroup.contextmenu.xml</Item>
+</ModelItems>

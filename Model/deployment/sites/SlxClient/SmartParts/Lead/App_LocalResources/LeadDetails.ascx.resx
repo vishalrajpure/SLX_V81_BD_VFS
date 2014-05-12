@@ -255,19 +255,19 @@
   <data name="txtBusinessPotential.Caption" xml:space="preserve">
     <value>Business Potential:</value>
   </data>
-  <data name="txtAnyInfo.Caption" xml:space="preserve">
+  <data name="lkpLeadEmployee.Caption" xml:space="preserve">
+    <value>Lead Employee</value>
+  </data>
+  <data name="txtAdditionInfo.Caption" xml:space="preserve">
     <value>Any Other Info:</value>
   </data>
-  <data name="lkpLeadEmployee.Caption" xml:space="preserve">
-    <value>Lead Employee:</value>
+  <data name="txtQualifier.Caption" xml:space="preserve">
+    <value>Qualifier:</value>
   </data>
-  <data name="lkpQualifier.Caption" xml:space="preserve">
-    <value>Lead Qualifier:</value>
+  <data name="txtBranchManger.Caption" xml:space="preserve">
+    <value>Branch Manger:</value>
   </data>
-  <data name="lkpBranchManager.Caption" xml:space="preserve">
-    <value>Branch Manager:</value>
-  </data>
-  <data name="dtpQualifiedOn.Caption" xml:space="preserve">
+  <data name="dtpQualifiedON.Caption" xml:space="preserve">
     <value>Qualified On:</value>
   </data>
   <data name="ownOwner.Caption" xml:space="preserve">
@@ -278,8 +278,5 @@
   </data>
   <data name="ownOwner.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="pklStatus.Caption" xml:space="preserve">
-    <value>Status:</value>
   </data>
 </root>

@@ -1,0 +1,421 @@
+<?xml version="1.0"?>
+<QuickForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="f75ee451-8403-465b-ae68-c0d2837a55ff" DefinitionType="Sage.Platform.QuickForms.QuickFormMainDetailViewDefinition, Sage.Platform.QuickForms">
+  <ActiveControl />
+  <ImagePath />
+  <LoadActions>
+    <FormActionDefinition>
+      <ResourceKey>74894bd6-736d-481d-9b96-c580442d228b</ResourceKey>
+      <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+        <CSharpSnippetActionItem>
+          <MethodName />
+          <CSharpCodeSnippet>luePincode_lbl.ForeColor = System.Drawing.Color.Red;
+luequalifire_lbl.ForeColor = System.Drawing.Color.Red;
+lueSaleManager_lbl.ForeColor = System.Drawing.Color.Red;</CSharpCodeSnippet>
+        </CSharpSnippetActionItem>
+      </Action>
+      <IsDialogCloseAction>False</IsDialogCloseAction>
+      <RunOnEveryRePaint>False</RunOnEveryRePaint>
+      <DialogActionResult>NoResult</DialogActionResult>
+      <PerformsUpdate>False</PerformsUpdate>
+      <AppliedSecurity />
+      <RefreshData>False</RefreshData>
+    </FormActionDefinition>
+  </LoadActions>
+  <Name>QualifierSMpincode</Name>
+  <ClientScriptIncludes />
+  <ClientResourceKeys />
+  <ExtendedProperties />
+  <HelpFile />
+  <ReadOnly>false</ReadOnly>
+  <GeneratePrintView>false</GeneratePrintView>
+  <Controls>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXLookup>
+        <Column>0</Column>
+        <Row>0</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>luePincode</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>PincodeId</DataItemName>
+            <ControlItemName>LookupResultValue</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>luePincode</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+        <LookupImage />
+        <LookupDialogWidth xsi:nil="true" />
+        <LookupDialogHeight xsi:nil="true" />
+        <LookupBindingMode>Object</LookupBindingMode>
+        <LookupResultValue xsi:type="xsd:string" />
+        <SeedProperty />
+        <SeedValue />
+        <DropDownDisplayProperty />
+        <AllowClearingResult>false</AllowClearingResult>
+        <AppendStringValues>false</AppendStringValues>
+        <OverrideSeedOnSearch>false</OverrideSeedOnSearch>
+        <LookupEntityName>Vwpincodemaster</LookupEntityName>
+        <LookupEntityTypeName>Sage.Entity.Interfaces.IVwpincodemaster, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
+        <AutoPostBack>false</AutoPostBack>
+        <EnableHyperLinking>false</EnableHyperLinking>
+        <InitializeLookup>false</InitializeLookup>
+        <LookupProperties />
+        <LookupPreFilters />
+      </QFSLXLookup>
+    </Control>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXLookup>
+        <Column>0</Column>
+        <Row>1</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>luequalifire</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>QualifierId</DataItemName>
+            <ControlItemName>LookupResultValue</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>luequalifire</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+        <LookupImage />
+        <LookupDialogWidth xsi:nil="true" />
+        <LookupDialogHeight xsi:nil="true" />
+        <LookupBindingMode>String</LookupBindingMode>
+        <LookupResultValue xsi:type="xsd:string" />
+        <SeedProperty />
+        <SeedValue />
+        <DropDownDisplayProperty />
+        <AllowClearingResult>false</AllowClearingResult>
+        <AppendStringValues>false</AppendStringValues>
+        <OverrideSeedOnSearch>false</OverrideSeedOnSearch>
+        <LookupEntityName>UserInfo</LookupEntityName>
+        <LookupEntityTypeName>Sage.Entity.Interfaces.IUserInfo, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
+        <AutoPostBack>false</AutoPostBack>
+        <EnableHyperLinking>false</EnableHyperLinking>
+        <InitializeLookup>false</InitializeLookup>
+        <LookupProperties>
+          <LookupProperty>
+            <PropertyName>FirstName</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>FirstName</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>LastName</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>LastName</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>Department</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Department</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>Division</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Division</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>Email</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Email</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+        </LookupProperties>
+        <LookupPreFilters />
+      </QFSLXLookup>
+    </Control>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXLookup>
+        <Column>0</Column>
+        <Row>2</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>lueSaleManager</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>SalesManagerId</DataItemName>
+            <ControlItemName>LookupResultValue</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>lueSaleManager</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+        <LookupImage />
+        <LookupDialogWidth xsi:nil="true" />
+        <LookupDialogHeight xsi:nil="true" />
+        <LookupBindingMode>String</LookupBindingMode>
+        <LookupResultValue xsi:type="xsd:string" />
+        <SeedProperty />
+        <SeedValue />
+        <DropDownDisplayProperty />
+        <AllowClearingResult>false</AllowClearingResult>
+        <AppendStringValues>false</AppendStringValues>
+        <OverrideSeedOnSearch>false</OverrideSeedOnSearch>
+        <LookupEntityName>UserInfo</LookupEntityName>
+        <LookupEntityTypeName>Sage.Entity.Interfaces.IUserInfo, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
+        <AutoPostBack>false</AutoPostBack>
+        <EnableHyperLinking>false</EnableHyperLinking>
+        <InitializeLookup>false</InitializeLookup>
+        <LookupProperties>
+          <LookupProperty>
+            <PropertyName>FirstName</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>FirstName</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>LastName</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>LastName</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>Department</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Department</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>Division</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Division</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>Email</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Email</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+        </LookupProperties>
+        <LookupPreFilters />
+      </QFSLXLookup>
+    </Control>
+  </Controls>
+  <ToolControls>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFElementSpacer, Sage.Platform.QuickForms">
+      <QFElementSpacer>
+        <Column>0</Column>
+        <Row>0</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>ac345a14f34e96a361185136d4bc24</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+      </QFElementSpacer>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFElementSpacer, Sage.Platform.QuickForms">
+      <QFElementSpacer>
+        <Column>0</Column>
+        <Row>0</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>a3e1d5043b4dd2a4067ccbd87cc052</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+      </QFElementSpacer>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFButton, Sage.Platform.QuickForms">
+      <QFButton>
+        <Column>0</Column>
+        <Row>0</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>QFButton</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>none</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <ButtonType>Icon</ButtonType>
+        <Image>[Localization!Global_Images:Save_16x16]</Image>
+        <OnClientClick />
+        <OnClickAction>
+          <ResourceKey>QFButton</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+            <CSharpSnippetActionItem>
+              <MethodName />
+              <CSharpCodeSnippet>Sage.Entity.Interfaces.IQualifierAndSMpincode Objqualifier = this.BindingSource.Current as Sage.Entity.Interfaces.IQualifierAndSMpincode;
+if(Convert.ToString(luePincode.LookupResultValue) == "")
+{
+	DialogService.ShowMessage("Please Select Pincode");
+	return;
+}
+if(Convert.ToString(luequalifire.LookupResultValue) == "")
+{
+	DialogService.ShowMessage("Please Select Qualifier");
+	return;
+}
+if(Convert.ToString(lueSaleManager.LookupResultValue) == "")
+{
+	DialogService.ShowMessage("Please Select Branch Manager");
+	return;
+}
+else
+{
+   Objqualifier.Save();	
+   Response.Redirect(string.Format("QualifierSMpincode.aspx?entityId={0}", (Objqualifier.ToString())));   
+}</CSharpCodeSnippet>
+            </CSharpSnippetActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnClickAction>
+      </QFButton>
+    </Control>
+  </ToolControls>
+  <Columns>
+    <ColumnStyle>
+      <SizeType>Percent</SizeType>
+      <Width>50</Width>
+    </ColumnStyle>
+    <ColumnStyle>
+      <SizeType>Percent</SizeType>
+      <Width>50</Width>
+    </ColumnStyle>
+  </Columns>
+  <Rows>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
+  </Rows>
+  <Description />
+  <UseEntityNameAsTitle>false</UseEntityNameAsTitle>
+  <EntityTypeName>IQualifierAndSMpincode</EntityTypeName>
+  <DefaultNamespace>Sage.Entity.Interfaces</DefaultNamespace>
+  <AssemblyName>Sage.Entity.Interfaces</AssemblyName>
+</QuickForm>

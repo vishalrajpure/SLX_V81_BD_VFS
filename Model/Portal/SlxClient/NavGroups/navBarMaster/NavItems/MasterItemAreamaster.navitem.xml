@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<NavigationItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="c577d460-5531-4dc5-9318-5aceb311f0b4">
+  <ItemId>MasterItemAreamaster</ItemId>
+  <NavUrl>VWAREAMASTER.aspx</NavUrl>
+  <LargeImageUrl>[Localization!Global_Images:qualification_32]</LargeImageUrl>
+  <SmallImageUrl>[Localization!Global_Images:qualification_24]</SmallImageUrl>
+  <ContextMenuId>contextAreamaster</ContextMenuId>
+  <Target />
+  <AppliedSecurity />
+</NavigationItem>

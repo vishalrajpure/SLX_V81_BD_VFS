@@ -169,8 +169,8 @@ Required="true"  />
 <tr>
                   <td></td>
                 <td  >
- <asp:Button runat="server" ID="cmdConvertLead"
- Text="<%$ resources: cmdConvertLead.Caption %>" CssClass="slxbutton"  />
+ <asp:Button runat="server" ID="cmdQualifyLead"
+ Text="<%$ resources: cmdQualifyLead.Caption %>" CssClass="slxbutton"  />
  
       </td>
       </tr>
@@ -184,7 +184,11 @@ Required="true"  />
   </div>
 
       </td>
-                      <td></td>
+                      <td  >
+ <asp:Button runat="server" ID="cmdConvertLead"
+ Text="<%$ resources: cmdConvertLead.Caption %>" CssClass="slxbutton"  />
+ 
+      </td>
       </tr>
 <tr>
                         <td></td>
@@ -367,7 +371,7 @@ LabelPlacement="right"  />
    <SalesLogix:GroupNavigator runat="server" ID="gpnLeadGroupNavigator" ></SalesLogix:GroupNavigator>
     <asp:ImageButton runat="server" ID="cmdUpdateLead"
  AlternateText="<%$ resources: cmdUpdateLead.Caption %>"  ToolTip="<%$ resources: cmdUpdateLead.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_16x16"  />
-   
+ 
     <asp:ImageButton runat="server" ID="cmdDeleteLead"
  AlternateText="<%$ resources: cmdDeleteLead.Caption %>"  ToolTip="<%$ resources: cmdDeleteLead.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Delete_16x16" 
  />
@@ -501,7 +505,7 @@ protected override void OnAddEntityBindings() {
                        // txtComments.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtCommentsTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Notes", txtComments, "Text");
         BindingSource.Bindings.Add(txtCommentsTextBinding);
-                    // txtAnyInfo.Text Binding
+                       // txtAnyInfo.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtAnyInfoTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AnyOtherInformation", txtAnyInfo, "Text");
         BindingSource.Bindings.Add(txtAnyInfoTextBinding);
                     // lkpLeadEmployee.LookupResultValue Binding
@@ -569,7 +573,7 @@ protected override void OnAddEntityBindings() {
       
       
     }
-                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                
 protected void cmdConvertLead_ClickAction(object sender, EventArgs e) {
 Sage.Entity.Interfaces.ILead entity = (Sage.Entity.Interfaces.ILead) this.BindingSource.Current;
 if (entity.IsCompanyNameAssigned()) {
@@ -611,49 +615,64 @@ protected void chkDoNotEmail_ChangeAction(object sender, EventArgs e) {
 
 }
 protected void cmdUpdateLead_ClickAction(object sender, EventArgs e) {
-  Sage.Entity.Interfaces.ILead _entity = BindingSource.Current as Sage.Entity.Interfaces.ILead;
-  if (_entity != null)
-  {
-    object _parent = GetParentEntity();
-    if (DialogService.ChildInsertInfo != null)
-    {
-        if (_parent != null)
-        {
-            if (DialogService.ChildInsertInfo.ParentReferenceProperty != null)
-            {
-                DialogService.ChildInsertInfo.ParentReferenceProperty.SetValue(_entity, _parent, null);
-            }
-        }
-    }
-    bool shouldSave = true;
-    Sage.Platform.WebPortal.EntityPage page = Page as Sage.Platform.WebPortal.EntityPage;
-    if (page != null)
-    {
-        if(IsInDialog() && page.ModeId.ToUpper() == "INSERT")
-        {
-            shouldSave = false;
-        }
-    }
+Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
 
-    if(shouldSave)
-    {
-       _entity.Save();
-    }
+/*
+switch(lead.Status)
+{
+	case "Dropped":
+		//// Set Owner ///
+		Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000002");
+		lead.Owner = objowner;
+		break;
+	case "Qualified":	
+		if(lead.BranchManager == null)
+		{
+			string qry = "Select Q.SALESMANAGERID  from QUALIFIERANDSMPINCODE Q " +
+				"where Q.PINCODE '"+ lead.Address.PostalCode.ToString() +"'";
 
-    if (_parent != null)
-    {
-        if (DialogService.ChildInsertInfo != null)
-        {
-           if (DialogService.ChildInsertInfo.ParentsCollectionProperty != null)
-           {
-              System.Reflection.MethodInfo _add = DialogService.ChildInsertInfo.ParentsCollectionProperty.PropertyType.GetMethod("Add");
-              _add.Invoke(DialogService.ChildInsertInfo.ParentsCollectionProperty.GetValue(_parent, null), new object[] { _entity });
-           }
-        }
-     }
-  }
 
-  
+			Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+			System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+			System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+			System.Data.DataTable dt = new System.Data.DataTable();
+			dataAdapterObj.Fill(dt);
+			
+			//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >(dt.Rows[0][0]);
+			//lead.BranchManager = BM;
+			lead.QualifiedON = DateTime.Now;
+			lead.Status = "Qualified";
+			
+			Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)"ADMIN");
+			lead.BranchManager = BM;
+			System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
+		    System.Data.DataTable dt2 = new System.Data.DataTable();
+		    dataAdapterObj2.Fill(dt2);
+		    //if (dt2.Rows.Count > 0)
+		    //{
+		    //    Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>(dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
+		    //    lead.Owner = objowner;
+		    //}
+			Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001");
+    		lead.Owner = objowner;
+		}
+		break;
+	case "Converted":
+		if(lead.BranchManager == null)
+		{
+			throw new Sage.Platform.Application.ValidationException("You are not authorize to convert lead...");			
+		}
+		else
+		{
+			throw new Sage.Platform.Application.ValidationException("Pease Convert lead via Convert Qualified Lead Button...");
+		}
+		break;
+}*/
+lead.Save();
+System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx?modeid=Detail"));
+
+
+
 }
 protected void cmdDeleteLead_ClickAction(object sender, EventArgs e) {
       object[] objarray = new object[] { this.BindingSource.Current };
@@ -712,14 +731,24 @@ if (lead != null)
 	bool doNotSolicit = System.Convert.ToBoolean(lead.DoNotSolicit);
     bool doNotEmail = System.Convert.ToBoolean(lead.DoNotEmail);
     emlEmail.Enabled = (!doNotSolicit && !doNotEmail);
-		
+	
+	if(lead.BranchManager == null)
+	{
+		cmdQualifyLead.Visible = true;
+		cmdConvertLead.Visible = false;
+	}
+	else
+	{
+		cmdQualifyLead.Visible = false;
+		cmdConvertLead.Visible = true;
+	}
+
+	
 }
 
 }
 protected override void OnFormBound()
 {
-ClientBindingMgr.RegisterSaveButton(cmdUpdateLead);
-
 cmdDeleteLead.OnClientClick = string.Format("return confirm('{0}');", Sage.Platform.WebPortal.PortalUtil.JavaScriptEncode(GetLocalResourceObject("QFButton2.ActionConfirmationMessage").ToString()));
 
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
@@ -919,6 +948,11 @@ public class LeadDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAda
     public  Sage.Platform.Controls.IPickListControl pklIndustry
     {
         get { return FindControl(ref _pklIndustry, "pklIndustry"); }
+    }
+    private Sage.Platform.Controls.IButtonControl _cmdQualifyLead;
+    public  Sage.Platform.Controls.IButtonControl cmdQualifyLead
+    {
+        get { return FindControl(ref _cmdQualifyLead, "cmdQualifyLead"); }
     }
     private Sage.Platform.Controls.IButtonControl _cmdConvertLead;
     public  Sage.Platform.Controls.IButtonControl cmdConvertLead

@@ -6462,7 +6462,7 @@
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.OpportunityClosedWonEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="lueCompetitorReplaced_OnChange" />
       <postExecuteTargets />
     </dynamicMethod>
-    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="cb7ac43c-f4b5-49fb-9685-a33ac62a3488.LoadAction1" methodReturnMode="None" returnType="System.Void">
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="2ca3b4cb-4926-47db-8a2f-fecbd28436f2.LoadAction1" methodReturnMode="None" returnType="System.Void">
       <preExecuteTargets />
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.OpportunityCompetitorsEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="LoadAction1Step1" />
       <postExecuteTargets />
@@ -6472,7 +6472,7 @@
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.OpportunityCompetitorsEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="lueAssociateCompetitor_OnChangeStep" />
       <postExecuteTargets />
     </dynamicMethod>
-    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="a751041b-2335-4e05-b935-ffd8ee3dbb9c.SetDefaultOppContactInfo" methodReturnMode="None" returnType="System.Void">
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="408b0c0d-276f-478f-b1b0-237562b90081.SetDefaultOppContactInfo" methodReturnMode="None" returnType="System.Void">
       <preExecuteTargets />
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.OpportunityContactsEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="SetDefaultOppContactInfo" />
       <postExecuteTargets />
@@ -7493,6 +7493,62 @@
       <preExecuteTargets />
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.QualificationCategoryDetailEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="OnLoad1Step" />
       <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="QualifierAndSMpincode.OnAfterDelete" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterDelete" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="QualifierAndSMpincode.OnAfterDelete.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="QualifierAndSMpincode.OnAfterInsert" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterInsert" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="QualifierAndSMpincode.OnAfterInsert.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="QualifierAndSMpincode.OnAfterUpdate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterUpdate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="QualifierAndSMpincode.OnAfterUpdate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="QualifierAndSMpincode.OnBeforeDelete" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeDelete" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="QualifierAndSMpincode.OnBeforeDelete.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="QualifierAndSMpincode.OnBeforeInsert" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeInsert" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="QualifierAndSMpincode.OnBeforeInsert.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="QualifierAndSMpincode.OnBeforeUpdate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeUpdate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="QualifierAndSMpincode.OnBeforeUpdate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="QualifierAndSMpincode.OnCreate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnCreate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="QualifierAndSMpincode.OnCreate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
     </dynamicMethod>
     <dynamicMethod xsi:type="BusinessRuleMethod" methodName="RemoteAttachment.OnAfterDelete" methodReturnMode="None" returnType="System.Void">
       <preExecuteTargets />
@@ -9855,6 +9911,174 @@
       <postExecuteTargets />
     </dynamicMethod>
     <dynamicMethod xsi:type="SimpleMethod" methodName="UserSubscription.OnCreate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwareamaster.OnAfterDelete" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterDelete" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwareamaster.OnAfterDelete.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwareamaster.OnAfterInsert" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterInsert" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwareamaster.OnAfterInsert.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwareamaster.OnAfterUpdate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterUpdate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwareamaster.OnAfterUpdate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwareamaster.OnBeforeDelete" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeDelete" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwareamaster.OnBeforeDelete.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwareamaster.OnBeforeInsert" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeInsert" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwareamaster.OnBeforeInsert.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwareamaster.OnBeforeUpdate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeUpdate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwareamaster.OnBeforeUpdate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwareamaster.OnCreate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnCreate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwareamaster.OnCreate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwempmaster.OnAfterDelete" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterDelete" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwempmaster.OnAfterDelete.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwempmaster.OnAfterInsert" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterInsert" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwempmaster.OnAfterInsert.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwempmaster.OnAfterUpdate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterUpdate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwempmaster.OnAfterUpdate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwempmaster.OnBeforeDelete" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeDelete" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwempmaster.OnBeforeDelete.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwempmaster.OnBeforeInsert" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeInsert" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwempmaster.OnBeforeInsert.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwempmaster.OnBeforeUpdate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeUpdate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwempmaster.OnBeforeUpdate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwempmaster.OnCreate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnCreate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwempmaster.OnCreate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwpincodemaster.OnAfterDelete" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterDelete" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwpincodemaster.OnAfterDelete.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwpincodemaster.OnAfterInsert" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterInsert" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwpincodemaster.OnAfterInsert.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwpincodemaster.OnAfterUpdate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterUpdate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwpincodemaster.OnAfterUpdate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwpincodemaster.OnBeforeDelete" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeDelete" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwpincodemaster.OnBeforeDelete.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwpincodemaster.OnBeforeInsert" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeInsert" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwpincodemaster.OnBeforeInsert.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwpincodemaster.OnBeforeUpdate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeUpdate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwpincodemaster.OnBeforeUpdate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Vwpincodemaster.OnCreate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnCreate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="Vwpincodemaster.OnCreate.postflush" methodReturnMode="None" returnType="System.Void">
       <targets />
     </dynamicMethod>
     <dynamicMethod xsi:type="BusinessRuleMethod" methodName="AccountSyncView.OnAfterDelete" methodReturnMode="None" returnType="System.Void">

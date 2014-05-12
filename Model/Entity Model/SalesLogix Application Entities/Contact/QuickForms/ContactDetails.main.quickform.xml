@@ -2,7 +2,26 @@
 <QuickForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="d8eb6792-f4ba-4c6a-adb2-6217519d4757" DefinitionType="Sage.Platform.QuickForms.QuickFormMainDetailViewDefinition, Sage.Platform.QuickForms">
   <ActiveControl />
   <ImagePath />
-  <LoadActions />
+  <LoadActions>
+    <FormActionDefinition>
+      <ResourceKey>1d645afe-e54b-4dad-8b18-a8498861bc8c</ResourceKey>
+      <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+        <CSharpSnippetActionItem>
+          <MethodName />
+          <CSharpCodeSnippet>nmeContactName_lbl.ForeColor = System.Drawing.Color.Red;
+lueAccountName_lbl.ForeColor = System.Drawing.Color.Red;
+phnWorkPhone.ForeColor = System.Drawing.Color.Red;
+adrContactAddress_lbl.ForeColor = System.Drawing.Color.Red;</CSharpCodeSnippet>
+        </CSharpSnippetActionItem>
+      </Action>
+      <IsDialogCloseAction>False</IsDialogCloseAction>
+      <RunOnEveryRePaint>False</RunOnEveryRePaint>
+      <DialogActionResult>NoResult</DialogActionResult>
+      <PerformsUpdate>False</PerformsUpdate>
+      <AppliedSecurity />
+      <RefreshData>False</RefreshData>
+    </FormActionDefinition>
+  </LoadActions>
   <Name>ContactDetails</Name>
   <ClientScriptIncludes />
   <ClientResourceKeys>
@@ -129,6 +148,7 @@
         <SeedValue />
         <DropDownDisplayProperty />
         <AllowClearingResult>false</AllowClearingResult>
+        <AppendStringValues>false</AppendStringValues>
         <OverrideSeedOnSearch>false</OverrideSeedOnSearch>
         <LookupEntityName>Account</LookupEntityName>
         <LookupEntityTypeName>Sage.Entity.Interfaces.IAccount, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
@@ -1285,38 +1305,117 @@
           <Action typeName="Sage.Platform.QuickForms.ActionItems.ValidationActionItem, Sage.Platform.QuickForms">
             <ValidationActionItem>
               <ValidationMethod>HasPropagationChanges</ValidationMethod>
-              <OnFail typeName="Sage.Platform.QuickForms.ActionItems.BusinessRuleActionItem, Sage.Platform.QuickForms">
-                <BusinessRuleActionItem>
-                  <BusinessRule>Save</BusinessRule>
-                  <Object>Contact</Object>
-                  <Parameters />
-                  <PassResultsToNextAction>False</PassResultsToNextAction>
-                  <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.RefreshDataAction, Sage.Platform.QuickForms">
-                    <RefreshDataAction>
-                      <MethodName>cmdSaveContactDetails_ClickActionFBRC</MethodName>
-                    </RefreshDataAction>
-                  </OnComplete>
-                </BusinessRuleActionItem>
+              <OnFail typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+                <CSharpSnippetActionItem>
+                  <MethodName />
+                  <CSharpCodeSnippet>Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Entity.Interfaces.IContact;
+if(string.IsNullOrEmpty(contact.Prefix))
+{
+  	DialogService.ShowMessage("Please Enter the Prefix");
+	return;
+}
+if(string.IsNullOrEmpty(contact.FirstName))
+{
+  	DialogService.ShowMessage("Please Enter the FirstName");
+	return;
+}
+if(contact.FirstName.Length&gt;32)
+{
+	DialogService.ShowMessage("FirstName Length has more than 32 Characters");
+	return;
+}
+if(string.IsNullOrEmpty(contact.LastName))
+{
+  	DialogService.ShowMessage("Please Enter the LastName");
+	return;
+}
+if(contact.LastName.Length&gt;32)
+{
+	DialogService.ShowMessage("LastName Length has more than 32 Characters");
+	return;
+}
+if(string.IsNullOrEmpty(contact.Mobile) &amp;&amp; string.IsNullOrEmpty(contact.WorkPhone))
+{
+	DialogService.ShowMessage("Please Enter Either the WorkPhone or Mobile Number");
+	return;
+}
+if(string.IsNullOrEmpty(contact.Address.Address1))
+{
+	DialogService.ShowMessage("Please Enter the Address1");
+	return;	
+}
+if(string.IsNullOrEmpty(contact.Address.PostalCode))
+{
+	DialogService.ShowMessage("Please Enter the PostalCode");
+	return;	
+}
+else
+{
+   contact.Save();
+}
+	</CSharpCodeSnippet>
+                </CSharpSnippetActionItem>
               </OnFail>
-              <OnSuccess typeName="Sage.Platform.QuickForms.ActionItems.DialogActionItem, Sage.Platform.QuickForms">
-                <DialogActionItem>
-                  <SmartPart>UpdateContactOptions</SmartPart>
-                  <Height>400</Height>
-                  <Width>400</Width>
-                  <Top>200</Top>
-                  <Left>200</Left>
-                  <EntityType>Contact</EntityType>
-                  <ResourceKey>0688638d-70ea-427a-9122-85aa527cfa3d</ResourceKey>
-                  <CenterDialog>True</CenterDialog>
-                </DialogActionItem>
+              <OnSuccess typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+                <CSharpSnippetActionItem>
+                  <MethodName />
+                  <CSharpCodeSnippet>Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Entity.Interfaces.IContact;
+if(string.IsNullOrEmpty(contact.Prefix))
+{
+  	DialogService.ShowMessage("Please Enter the Prefix");
+	return;
+}
+if(string.IsNullOrEmpty(contact.FirstName))
+{
+  	DialogService.ShowMessage("Please Enter the FirstName");
+	return;
+}
+if(contact.FirstName.Length&gt;32)
+{
+	DialogService.ShowMessage("FirstName Length has more than 32 Characters");
+	return;
+}
+if(string.IsNullOrEmpty(contact.LastName))
+{
+  	DialogService.ShowMessage("Please Enter the LastName");
+	return;
+}
+if(contact.LastName.Length&gt;32)
+{
+	DialogService.ShowMessage("LastName Length has more than 32 Characters");
+	return;
+}
+if(string.IsNullOrEmpty(contact.Mobile) &amp;&amp; string.IsNullOrEmpty(contact.WorkPhone))
+{
+	DialogService.ShowMessage("Please Enter Either the WorkPhone or Mobile Number");
+	return;
+}
+if(string.IsNullOrEmpty(contact.Address.Address1))
+{
+	DialogService.ShowMessage("Please Enter the Address1");
+	return;	
+}
+if(string.IsNullOrEmpty(contact.Address.PostalCode))
+{
+	DialogService.ShowMessage("Please Enter the PostalCode");
+	return;	
+}
+else
+{
+ 	DialogService.SetSpecs(400, 400, "UpdateContactOptions", string.Empty);
+	DialogService.EntityType = typeof(Sage.Entity.Interfaces.IContact);
+	DialogService.ShowDialog(); 	
+}
+	</CSharpCodeSnippet>
+                </CSharpSnippetActionItem>
               </OnSuccess>
             </ValidationActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
           <RunOnEveryRePaint>False</RunOnEveryRePaint>
           <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>True</PerformsUpdate>
-          <AppliedSecurity>ENTITIES/CONTACT/EDIT</AppliedSecurity>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnClickAction>
       </QFButton>

@@ -148,7 +148,7 @@
     <value>Owner:</value>
   </data>
   <data name="MainPhone.Caption" xml:space="preserve">
-    <value>Main:</value>
+    <value>Main Phone:</value>
   </data>
   <data name="Fax.Caption" xml:space="preserve">
     <value>Fax:</value>
@@ -200,5 +200,11 @@
   </data>
   <data name="cmdReset.ToolTip" xml:space="preserve">
     <value>Reset</value>
+  </data>
+  <data name="txtLegalName.Caption" xml:space="preserve">
+    <value>Legal Name:</value>
+  </data>
+  <data name="txtmktsegment.Caption" xml:space="preserve">
+    <value>MKT Segment:</value>
   </data>
 </root>

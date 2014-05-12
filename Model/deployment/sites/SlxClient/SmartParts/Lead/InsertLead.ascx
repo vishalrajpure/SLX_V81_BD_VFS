@@ -98,6 +98,20 @@ Required="true" AutoPostBack="true"  />
       </tr>
 <tr>
             <td  >
+ <asp:Button runat="server" ID="cmdMatchingRecords"
+ Text="<%$ resources: cmdMatchingRecords.Caption %>" CssClass="slxbutton"  />
+ 
+      </td>
+                <td  >
+<div class="slxlabel  alignleft  checkbox ">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="chkAutoSearch"  Text="<%$ resources: chkAutoSearch.Caption %>"  CssClass=""
+LabelPlacement="right" AutoPostBack="true"  />
+</div>
+      </td>
+      </tr>
+<tr>
+            <td  >
 <div class=" lbl alignleft">
     <asp:Label ID="txtBusinessPotential_lbl" AssociatedControlID="txtBusinessPotential" runat="server" Text="<%$ resources: txtBusinessPotential.Caption %>" ></asp:Label>
 </div>
@@ -112,41 +126,6 @@ Required="true" AutoPostBack="true"  />
 </div>
 
       </td>
-                <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="pklStatus_lbl" AssociatedControlID="pklStatus" runat="server" Text="<%$ resources: pklStatus.Caption %>" ></asp:Label>
- </div>   
-   <div  class="textcontrol picklist"  > 
-    <SalesLogix:PickListControl runat="server" ID="pklStatus" MustExistInList="false" MaxLength="64"  />
-  </div>
-
-      </td>
-      </tr>
-<tr>
-            <td  >
- <asp:Button runat="server" ID="cmdMatchingRecords"
- Text="<%$ resources: cmdMatchingRecords.Caption %>" CssClass="slxbutton"  />
- 
-      </td>
-                <td  >
-<div class="slxlabel  alignleft  checkbox ">
-
-  <SalesLogix:SLXCheckBox runat="server" ID="chkAutoSearch"  Text="<%$ resources: chkAutoSearch.Caption %>"  CssClass=""
-LabelPlacement="right" AutoPostBack="true"  />
-</div>
-      </td>
-      </tr>
-<tr>
-            <td rowspan="4"  >
- <div class=" lbl alignleft">
-   <asp:Label ID="adrAddress_lbl" AssociatedControlID="adrAddress" runat="server" Text="<%$ resources: adrAddress.Caption %>" ></asp:Label>
- </div>
-   <div  class="textcontrol address"  >
-    <SalesLogix:AddressControl runat="server" ID="adrAddress" AddressDescriptionPickListName="Address Description (Lead)" AddressDescriptionPickListId="kSYST0000403" ButtonToolTip="<%$ resources: adrAddress.ButtonToolTip %>" AddressToolTip="<%$ resources: adrAddress.AddressToolTip %>" >
-<AddressDescStyle Height="80"></AddressDescStyle> </SalesLogix:AddressControl>
-</div>
-
-      </td>
                 <td rowspan="2"  >
  <div class=" lbl alignleft" >
    <asp:Label ID="txtBusinessDescription_lbl" AssociatedControlID="txtBusinessDescription" runat="server" Text="<%$ resources: txtBusinessDescription.Caption %>" Visible="false" ></asp:Label>
@@ -158,7 +137,17 @@ LabelPlacement="right" AutoPostBack="true"  />
       </td>
       </tr>
 <tr>
-              </tr>
+            <td rowspan="3"  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="adrAddress_lbl" AssociatedControlID="adrAddress" runat="server" Text="<%$ resources: adrAddress.Caption %>" ></asp:Label>
+ </div>
+   <div  class="textcontrol address"  >
+    <SalesLogix:AddressControl runat="server" ID="adrAddress" AddressDescriptionPickListName="Address Description (Lead)" AddressDescriptionPickListId="kSYST0000403" ButtonToolTip="<%$ resources: adrAddress.ButtonToolTip %>" AddressToolTip="<%$ resources: adrAddress.AddressToolTip %>" >
+<AddressDescStyle Height="80"></AddressDescStyle> </SalesLogix:AddressControl>
+</div>
+
+      </td>
+            </tr>
 <tr>
                   <td rowspan="2"  >
  <div class=" lbl alignleft" >
@@ -173,38 +162,12 @@ LabelPlacement="right" AutoPostBack="true"  />
 <tr>
               </tr>
 <tr>
-            <td rowspan="3"  colspan="2" >
- <div class="twocollbl alignleft" >
-   <asp:Label ID="txtComments_lbl" AssociatedControlID="txtComments" runat="server" Text="<%$ resources: txtComments.Caption %>" ></asp:Label>
- </div>
-  <div  class="twocoltextcontrol"   >
-<asp:TextBox runat="server" ID="txtComments"  Rows="3" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
-  </div>
-
-      </td>
-            </tr>
-<tr>
-              </tr>
-<tr>
-              </tr>
-<tr>
-            <td  colspan="2" >
- <div class="twocollbl alignleft" >
-   <asp:Label ID="txtAnyInfo_lbl" AssociatedControlID="txtAnyInfo" runat="server" Text="<%$ resources: txtAnyInfo.Caption %>" ></asp:Label>
- </div>
-  <div  class="twocoltextcontrol"   >
-<asp:TextBox runat="server" ID="txtAnyInfo"  dojoType="Sage.UI.Controls.TextBox"  />
-  </div>
-
-      </td>
-            </tr>
-<tr>
             <td  >
  <div class=" lbl alignleft">
    <asp:Label ID="lkpLeadEmployee_lbl" AssociatedControlID="lkpLeadEmployee" runat="server" Text="<%$ resources: lkpLeadEmployee.Caption %>" ></asp:Label>
  </div>   
    <div  class="textcontrol"  > 
-    <SalesLogix:SlxUserControl runat="server" ID="lkpLeadEmployee"  />
+    <SalesLogix:SlxUserControl runat="server" ID="lkpLeadEmployee" Required="true"  />
   </div>
 
       </td>
@@ -231,21 +194,47 @@ LabelPlacement="right" AutoPostBack="true"  />
       </td>
       </tr>
 <tr>
+            <td  colspan="2" >
+ <div class="twocollbl alignleft" >
+   <asp:Label ID="txtAdditionInfo_lbl" AssociatedControlID="txtAdditionInfo" runat="server" Text="<%$ resources: txtAdditionInfo.Caption %>" ></asp:Label>
+ </div>
+  <div  class="twocoltextcontrol"   >
+<asp:TextBox runat="server" ID="txtAdditionInfo"  dojoType="Sage.UI.Controls.TextBox"  />
+  </div>
+
+      </td>
+            </tr>
+<tr>
+            <td rowspan="3"  colspan="2" >
+ <div class="twocollbl alignleft" >
+   <asp:Label ID="txtComments_lbl" AssociatedControlID="txtComments" runat="server" Text="<%$ resources: txtComments.Caption %>" ></asp:Label>
+ </div>
+  <div  class="twocoltextcontrol"   >
+<asp:TextBox runat="server" ID="txtComments" Required="true"  Rows="3" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
+  </div>
+
+      </td>
+            </tr>
+<tr>
+              </tr>
+<tr>
+              </tr>
+<tr>
             <td  >
  <div class=" lbl alignleft">
-   <asp:Label ID="lkpQualifier_lbl" AssociatedControlID="lkpQualifier" runat="server" Text="<%$ resources: lkpQualifier.Caption %>" ></asp:Label>
+   <asp:Label ID="txtQualifier_lbl" AssociatedControlID="txtQualifier" runat="server" Text="<%$ resources: txtQualifier.Caption %>" ></asp:Label>
  </div>   
    <div  class="textcontrol"  > 
-    <SalesLogix:SlxUserControl runat="server" ID="lkpQualifier" Enabled="false"  />
+    <SalesLogix:SlxUserControl runat="server" ID="txtQualifier" Enabled="false"  />
   </div>
 
       </td>
                 <td  >
  <div class=" lbl alignleft">
-   <asp:Label ID="dtpQualifiedOn_lbl" AssociatedControlID="dtpQualifiedOn" runat="server" Text="<%$ resources: dtpQualifiedOn.Caption %>" ></asp:Label>
+   <asp:Label ID="dtpQualifiedON_lbl" AssociatedControlID="dtpQualifiedON" runat="server" Text="<%$ resources: dtpQualifiedON.Caption %>" ></asp:Label>
  </div>
    <div  class="textcontrol datepicker"  >
-    <SalesLogix:DateTimePicker runat="server" ID="dtpQualifiedOn" Enabled="false" DisplayTime="false" />
+    <SalesLogix:DateTimePicker runat="server" ID="dtpQualifiedON" Enabled="false" DisplayTime="false" />
   </div>
 
       </td>
@@ -253,10 +242,10 @@ LabelPlacement="right" AutoPostBack="true"  />
 <tr>
             <td  >
  <div class=" lbl alignleft">
-   <asp:Label ID="lkpBranchManager_lbl" AssociatedControlID="lkpBranchManager" runat="server" Text="<%$ resources: lkpBranchManager.Caption %>" ></asp:Label>
+   <asp:Label ID="txtBranchManger_lbl" AssociatedControlID="txtBranchManger" runat="server" Text="<%$ resources: txtBranchManger.Caption %>" ></asp:Label>
  </div>   
    <div  class="textcontrol"  > 
-    <SalesLogix:SlxUserControl runat="server" ID="lkpBranchManager" Enabled="false"  />
+    <SalesLogix:SlxUserControl runat="server" ID="txtBranchManger" Enabled="false"  />
   </div>
 
       </td>
@@ -273,19 +262,19 @@ LabelPlacement="right" AutoPostBack="true"  />
 <tr>
             <td  >
  <div class=" lbl alignleft">
-   <asp:Label ID="pklIndustry_lbl" AssociatedControlID="pklIndustry" runat="server" Text="<%$ resources: pklIndustry.Caption %>" Visible="false" ></asp:Label>
+   <asp:Label ID="pklIndustry_lbl" AssociatedControlID="pklIndustry" runat="server" Text="<%$ resources: pklIndustry.Caption %>" ></asp:Label>
  </div>   
    <div  class="textcontrol picklist"  > 
-    <SalesLogix:PickListControl runat="server" ID="pklIndustry" PickListName="Industry" MustExistInList="false" NoneEditable="true" AlphaSort="true" Visible="false"  />
+    <SalesLogix:PickListControl runat="server" ID="pklIndustry" PickListName="Industry" MustExistInList="false" NoneEditable="true" AlphaSort="true"  />
   </div>
 
       </td>
                 <td  >
  <div class=" lbl alignleft" >
-   <asp:Label ID="txtSICCode_lbl" AssociatedControlID="txtSICCode" runat="server" Text="<%$ resources: txtSICCode.Caption %>" Visible="false" ></asp:Label>
+   <asp:Label ID="txtSICCode_lbl" AssociatedControlID="txtSICCode" runat="server" Text="<%$ resources: txtSICCode.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtSICCode"  dojoType="Sage.UI.Controls.TextBox" Visible="false"  />
+<asp:TextBox runat="server" ID="txtSICCode"  dojoType="Sage.UI.Controls.TextBox"  />
   </div>
 
       </td>
@@ -367,13 +356,13 @@ protected override void OnAddEntityBindings() {
                     // urlWebAddress.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding urlWebAddressTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("WebAddress", urlWebAddress, "Text");
         BindingSource.Bindings.Add(urlWebAddressTextBinding);
-                    // txtBusinessPotential.Text Binding
+                          // txtBusinessPotential.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtBusinessPotentialTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BussinessPortential", txtBusinessPotential, "Text");
         BindingSource.Bindings.Add(txtBusinessPotentialTextBinding);
-                    // pklStatus.PickListValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding pklStatusPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Status", pklStatus, "PickListValue");
-        BindingSource.Bindings.Add(pklStatusPickListValueBinding);
-                          // adrAddress.AddressCity Binding
+                    // txtBusinessDescription.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtBusinessDescriptionTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BusinessDescription", txtBusinessDescription, "Text");
+        BindingSource.Bindings.Add(txtBusinessDescriptionTextBinding);
+                    // adrAddress.AddressCity Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding adrAddressAddressCityBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.City", adrAddress, "AddressCity");
         adrAddressAddressCityBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(adrAddressAddressCityBinding);
@@ -424,33 +413,30 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding adrAddressAddressStateBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.State", adrAddress, "AddressState");
         adrAddressAddressStateBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(adrAddressAddressStateBinding);
-                    // txtBusinessDescription.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding txtBusinessDescriptionTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BusinessDescription", txtBusinessDescription, "Text");
-        BindingSource.Bindings.Add(txtBusinessDescriptionTextBinding);
                     // txtInterests.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtInterestsTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Interests", txtInterests, "Text");
         BindingSource.Bindings.Add(txtInterestsTextBinding);
-                    // txtComments.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding txtCommentsTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Notes", txtComments, "Text");
-        BindingSource.Bindings.Add(txtCommentsTextBinding);
-                    // txtAnyInfo.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding txtAnyInfoTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AnyOtherInformation", txtAnyInfo, "Text");
-        BindingSource.Bindings.Add(txtAnyInfoTextBinding);
                     // lkpLeadEmployee.LookupResultValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding lkpLeadEmployeeLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LeadEmployee", lkpLeadEmployee, "LookupResultValue");
         BindingSource.Bindings.Add(lkpLeadEmployeeLookupResultValueBinding);
                     // lueLeadSource.LookupResultValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding lueLeadSourceLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LeadSource", lueLeadSource, "LookupResultValue");
         BindingSource.Bindings.Add(lueLeadSourceLookupResultValueBinding);
-                    // lkpQualifier.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpQualifierLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Qualifier", lkpQualifier, "LookupResultValue");
-        BindingSource.Bindings.Add(lkpQualifierLookupResultValueBinding);
-                    // dtpQualifiedOn.DateTimeValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding dtpQualifiedOnDateTimeValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("QualifiedON", dtpQualifiedOn, "DateTimeValue");
-        BindingSource.Bindings.Add(dtpQualifiedOnDateTimeValueBinding);
-                    // lkpBranchManager.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpBranchManagerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BranchManager", lkpBranchManager, "LookupResultValue");
-        BindingSource.Bindings.Add(lkpBranchManagerLookupResultValueBinding);
+                    // txtAdditionInfo.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtAdditionInfoTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AnyOtherInformation", txtAdditionInfo, "Text");
+        BindingSource.Bindings.Add(txtAdditionInfoTextBinding);
+                    // txtComments.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtCommentsTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Notes", txtComments, "Text");
+        BindingSource.Bindings.Add(txtCommentsTextBinding);
+                    // txtQualifier.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtQualifierLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Qualifier", txtQualifier, "LookupResultValue");
+        BindingSource.Bindings.Add(txtQualifierLookupResultValueBinding);
+                    // dtpQualifiedON.DateTimeValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding dtpQualifiedONDateTimeValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("QualifiedON", dtpQualifiedON, "DateTimeValue");
+        BindingSource.Bindings.Add(dtpQualifiedONDateTimeValueBinding);
+                    // txtBranchManger.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtBranchMangerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BranchManager", txtBranchManger, "LookupResultValue");
+        BindingSource.Bindings.Add(txtBranchMangerLookupResultValueBinding);
                     // ownOwner.LookupResultValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding ownOwnerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Owner", ownOwner, "LookupResultValue");
         BindingSource.Bindings.Add(ownOwnerLookupResultValueBinding);
@@ -463,7 +449,7 @@ protected override void OnAddEntityBindings() {
     
    
         }
-                                                                                                                                                                               
+                                                                                                                                                                        
 protected void phnWorkPhone_ChangeAction(object sender, EventArgs e) {
 if (chkAutoSearch.Checked)
 {
@@ -672,45 +658,45 @@ public class InsertLeadAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     {
         get { return FindControl(ref _pklTitle, "pklTitle"); }
     }
-    private Sage.Platform.Controls.ICurrencyControl _txtBusinessPotential;
-    public  Sage.Platform.Controls.ICurrencyControl txtBusinessPotential
-    {
-        get { return FindControl(ref _txtBusinessPotential, "txtBusinessPotential"); }
-    }
     private Sage.Platform.Controls.IButtonControl _cmdMatchingRecords;
     public  Sage.Platform.Controls.IButtonControl cmdMatchingRecords
     {
         get { return FindControl(ref _cmdMatchingRecords, "cmdMatchingRecords"); }
+    }
+    private Sage.Platform.Controls.ICurrencyControl _txtBusinessPotential;
+    public  Sage.Platform.Controls.ICurrencyControl txtBusinessPotential
+    {
+        get { return FindControl(ref _txtBusinessPotential, "txtBusinessPotential"); }
     }
     private Sage.Platform.Controls.IAddressControl _adrAddress;
     public  Sage.Platform.Controls.IAddressControl adrAddress
     {
         get { return FindControl(ref _adrAddress, "adrAddress"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _txtComments;
-    public  Sage.Platform.Controls.ITextBoxControl txtComments
-    {
-        get { return FindControl(ref _txtComments, "txtComments"); }
-    }
-    private Sage.Platform.Controls.ITextBoxControl _txtAnyInfo;
-    public  Sage.Platform.Controls.ITextBoxControl txtAnyInfo
-    {
-        get { return FindControl(ref _txtAnyInfo, "txtAnyInfo"); }
-    }
     private Sage.Platform.Controls.IUserControl _lkpLeadEmployee;
     public  Sage.Platform.Controls.IUserControl lkpLeadEmployee
     {
         get { return FindControl(ref _lkpLeadEmployee, "lkpLeadEmployee"); }
     }
-    private Sage.Platform.Controls.IUserControl _lkpQualifier;
-    public  Sage.Platform.Controls.IUserControl lkpQualifier
+    private Sage.Platform.Controls.ITextBoxControl _txtAdditionInfo;
+    public  Sage.Platform.Controls.ITextBoxControl txtAdditionInfo
     {
-        get { return FindControl(ref _lkpQualifier, "lkpQualifier"); }
+        get { return FindControl(ref _txtAdditionInfo, "txtAdditionInfo"); }
     }
-    private Sage.Platform.Controls.IUserControl _lkpBranchManager;
-    public  Sage.Platform.Controls.IUserControl lkpBranchManager
+    private Sage.Platform.Controls.ITextBoxControl _txtComments;
+    public  Sage.Platform.Controls.ITextBoxControl txtComments
     {
-        get { return FindControl(ref _lkpBranchManager, "lkpBranchManager"); }
+        get { return FindControl(ref _txtComments, "txtComments"); }
+    }
+    private Sage.Platform.Controls.IUserControl _txtQualifier;
+    public  Sage.Platform.Controls.IUserControl txtQualifier
+    {
+        get { return FindControl(ref _txtQualifier, "txtQualifier"); }
+    }
+    private Sage.Platform.Controls.IUserControl _txtBranchManger;
+    public  Sage.Platform.Controls.IUserControl txtBranchManger
+    {
+        get { return FindControl(ref _txtBranchManger, "txtBranchManger"); }
     }
     private Sage.Platform.Controls.IPickListControl _pklIndustry;
     public  Sage.Platform.Controls.IPickListControl pklIndustry
@@ -737,11 +723,6 @@ public class InsertLeadAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     {
         get { return FindControl(ref _urlWebAddress, "urlWebAddress"); }
     }
-    private Sage.Platform.Controls.IPickListControl _pklStatus;
-    public  Sage.Platform.Controls.IPickListControl pklStatus
-    {
-        get { return FindControl(ref _pklStatus, "pklStatus"); }
-    }
     private Sage.Platform.Controls.ICheckBoxControl _chkAutoSearch;
     public  Sage.Platform.Controls.ICheckBoxControl chkAutoSearch
     {
@@ -762,10 +743,10 @@ public class InsertLeadAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     {
         get { return FindControl(ref _lueLeadSource, "lueLeadSource"); }
     }
-    private Sage.Platform.Controls.IDateTimePickerControl _dtpQualifiedOn;
-    public  Sage.Platform.Controls.IDateTimePickerControl dtpQualifiedOn
+    private Sage.Platform.Controls.IDateTimePickerControl _dtpQualifiedON;
+    public  Sage.Platform.Controls.IDateTimePickerControl dtpQualifiedON
     {
-        get { return FindControl(ref _dtpQualifiedOn, "dtpQualifiedOn"); }
+        get { return FindControl(ref _dtpQualifiedON, "dtpQualifiedON"); }
     }
     private Sage.Platform.Controls.IOwnerControl _ownOwner;
     public  Sage.Platform.Controls.IOwnerControl ownOwner

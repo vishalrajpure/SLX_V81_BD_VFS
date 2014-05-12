@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<MenuDropDownItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="7fd91745-effc-4a05-816d-3195f420a438">
+  <ItemId>contextPincodeMaster</ItemId>
+  <NavUrl />
+  <LargeImageUrl />
+  <SmallImageUrl />
+  <ContextMenuId />
+  <Target />
+  <AppliedSecurity />
+</MenuDropDownItem>

@@ -1301,7 +1301,7 @@ userOption.SetCommonOption("AutoSearch", "General", chkAutoSearch.Checked.ToStri
               <PassResultsToNextAction>False</PassResultsToNextAction>
               <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.RedirectActionItem, Sage.Platform.QuickForms">
                 <RedirectActionItem>
-                  <MethodName>cmdSave_ClickActionBRC</MethodName>
+                  <MethodName />
                   <RawURL />
                   <MainViewEntityName>Lead</MainViewEntityName>
                   <UseCurrentIdInLink>true</UseCurrentIdInLink>
@@ -1338,16 +1338,19 @@ userOption.SetCommonOption("AutoSearch", "General", chkAutoSearch.Checked.ToStri
           <ResourceKey>cmdSaveNew</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName>cmdSaveNew_ClickAction</MethodName>
+              <MethodName />
               <CSharpCodeSnippet>	object[] objarray = new object[] {  this.BindingSource.Current };
 	Sage.Platform.EntityFactory.Execute&lt;Sage.SalesLogix.Entities.Lead&gt;("Lead.SaveLead", objarray);
-	Response.Redirect("InsertLead.aspx?modeid=Insert");</CSharpCodeSnippet>
+	Response.Redirect("InsertLead.aspx?modeid=Insert");
+
+	
+</CSharpCodeSnippet>
             </CSharpSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
           <RunOnEveryRePaint>False</RunOnEveryRePaint>
           <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>True</PerformsUpdate>
+          <PerformsUpdate>False</PerformsUpdate>
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnClickAction>

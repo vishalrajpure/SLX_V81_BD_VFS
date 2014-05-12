@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<MenuDropDownItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="fd0ec274-d604-4adf-ac7e-e1c8e4747b51">
+  <ItemId>PincodeMasterItemCreateNewGroup</ItemId>
+  <NavUrl>javascript:Sage.Groups.GroupManager.CreateGroup('VWPINCODEMASTER');</NavUrl>
+  <LargeImageUrl />
+  <SmallImageUrl />
+  <ContextMenuId />
+  <Target />
+  <AppliedSecurity />
+</MenuDropDownItem>
