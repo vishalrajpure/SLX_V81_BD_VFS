@@ -147,7 +147,7 @@ makeGrid : function(runtimeConfig) {
 				,formatter: Sage.Format.abbreviationFormatter(128)
 	}
   	          ],
-		         storeOptions: {
+	 	         storeOptions: {
             resourceKind: 'ticketActivityItems',
             newItemParentReferenceProperty: 'TicketActivity',
             include: [],

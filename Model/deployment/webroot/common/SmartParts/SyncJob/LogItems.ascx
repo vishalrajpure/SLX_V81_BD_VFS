@@ -56,7 +56,7 @@ Value="Warn" />
 AutoGenerateColumns="false" CellPadding="4" CssClass="datagrid" PagerStyle-CssClass="gridPager"
 AlternatingRowStyle-CssClass="rowdk" RowStyle-CssClass="rowlt" SelectedRowStyle-CssClass="rowSelected" ShowEmptyTable="true" EnableViewState="false"
  AllowPaging="true" PageSize="15" OnPageIndexChanging="QFDataGridpage_changing" EmptyTableRowText="<%$ resources: QFDataGrid.EmptyTableRowText %>"  ExpandableRows="True" ResizableColumns="True"  OnRowCommand="QFDataGrid_RowCommand"
- DataKeyNames="item.Id"
+ DataKeyNames="InstanceId,item.Id"
  AllowSorting="true" OnSorting="QFDataGrid_Sorting"  ShowSortIcon="true"  OnPreRender="QFDataGrid_PreRender" >
 <Columns>
  <asp:CommandField ShowSelectButton="true"

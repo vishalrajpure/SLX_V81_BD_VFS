@@ -1411,10 +1411,42 @@ if (lead != null)
         <OnClientClick />
         <OnClickAction>
           <ResourceKey>cmdQualifyLead</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-            <NoActionActionItem>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+            <CSharpSnippetActionItem>
               <MethodName />
-            </NoActionActionItem>
+              <CSharpCodeSnippet>Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+
+//////////////Specify the Query for find BM///////////
+string qry = "Select Q.SALESMANAGERID  from QUALIFIERANDSMPINCODE Q " +
+				"where Q.PINCODE '"+ lead.Address.PostalCode.ToString() +"'";
+	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	System.Data.DataTable dt = new System.Data.DataTable();
+	dataAdapterObj.Fill(dt);
+	
+	Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser &gt;((object)dt.Rows[0][0].ToString());
+	lead.BranchManager = BM;
+	lead.QualifiedON = DateTime.Now;
+	lead.Status = "Qualified";
+	
+	//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser &gt;((object)"ADMIN");
+	//lead.BranchManager = BM;
+	
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
+    System.Data.DataTable dt2 = new System.Data.DataTable();
+    dataAdapterObj2.Fill(dt2);
+    if (dt2.Rows.Count &gt; 0)
+    {
+        Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
+        lead.Owner = objowner;
+    }
+	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)"SYST00000001");
+    //lead.Owner = objowner;
+	lead.Save();
+	System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx?modeid=Detail"));
+</CSharpCodeSnippet>
+            </CSharpSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
           <RunOnEveryRePaint>False</RunOnEveryRePaint>
@@ -1578,61 +1610,53 @@ if (lead != null)
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
               <MethodName />
-              <CSharpCodeSnippet>Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+              <CSharpCodeSnippet>
 
-/*
-switch(lead.Status)
-{
-	case "Dropped":
-		//// Set Owner ///
-		Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)"SYST00000002");
-		lead.Owner = objowner;
-		break;
-	case "Qualified":	
-		if(lead.BranchManager == null)
-		{
-			string qry = "Select Q.SALESMANAGERID  from QUALIFIERANDSMPINCODE Q " +
-				"where Q.PINCODE '"+ lead.Address.PostalCode.ToString() +"'";
+Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+
+//////////////Specify the Query for find BM///////////
 
 
-			Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
-			System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
-			System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
-			System.Data.DataTable dt = new System.Data.DataTable();
-			dataAdapterObj.Fill(dt);
-			
-			//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser &gt;(dt.Rows[0][0]);
-			//lead.BranchManager = BM;
-			lead.QualifiedON = DateTime.Now;
-			lead.Status = "Qualified";
-			
-			Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser&gt;((object)"ADMIN");
-			lead.BranchManager = BM;
-			System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
-		    System.Data.DataTable dt2 = new System.Data.DataTable();
-		    dataAdapterObj2.Fill(dt2);
-		    //if (dt2.Rows.Count &gt; 0)
-		    //{
-		    //    Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;(dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
-		    //    lead.Owner = objowner;
-		    //}
-			Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)"SYST00000001");
-    		lead.Owner = objowner;
-		}
-		break;
-	case "Converted":
-		if(lead.BranchManager == null)
-		{
-			throw new Sage.Platform.Application.ValidationException("You are not authorize to convert lead...");			
-		}
-		else
-		{
-			throw new Sage.Platform.Application.ValidationException("Pease Convert lead via Convert Qualified Lead Button...");
-		}
-		break;
-}*/
-lead.Save();
-System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx?modeid=Detail"));
+
+	string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
+				"where Q.PINCODE = '"+ lead.Address.PostalCode.ToString() +"'";
+
+
+	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	System.Data.DataTable dt = new System.Data.DataTable();
+	dataAdapterObj.Fill(dt);
+	
+	Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser&gt;((object)dt.Rows[0][0].ToString());
+	//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser &gt;((object)"ADMIN");
+	
+	lead.Qualifier = BM;
+	
+	qry = "select case when userID is null then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
+		"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BU') end " +
+		"From usersecurity US,VWEMPMASTER emp where emp.CEMPLCODE = US.USERCODE and US.USERID ='" + lead.LeadEmployee.Id +  "'";
+	
+	dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	dt = new System.Data.DataTable();
+	dataAdapterObj.Fill(dt);
+	
+	Sage.Entity.Interfaces.ILeadSource ls  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.ILeadSource&gt;((object)dt.Rows[0][0].ToString());	
+	lead.LeadSource = ls;
+	
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
+    System.Data.DataTable dt2 = new System.Data.DataTable();
+    dataAdapterObj2.Fill(dt2);
+    if (dt2.Rows.Count &gt; 0)
+    {
+        Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
+        lead.Owner = objowner;
+    }
+	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)"SYST00000001");
+    //lead.Owner = objowner;
+	
+	lead.Save();
+	System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx", "&amp;modeid=Detail"));
 
 </CSharpCodeSnippet>
             </CSharpSnippetActionItem>

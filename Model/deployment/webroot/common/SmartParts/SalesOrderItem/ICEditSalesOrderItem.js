@@ -98,7 +98,7 @@ makeGrid : function(runtimeConfig) {
 	editable: false
 				}
   	          ],
-		         store : new Sage.Data.ProxySDataStore({
+	 	         store : new Sage.Data.ProxySDataStore({
             service : Sage.Utility.getSDataService('proxy', true),
             resourceKind: 'commodities',
             getResourcePredicate: function() {

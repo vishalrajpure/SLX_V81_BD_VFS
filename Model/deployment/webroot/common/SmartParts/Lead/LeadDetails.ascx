@@ -574,6 +574,41 @@ protected override void OnAddEntityBindings() {
       
     }
                                                                                                                                                                                                                                 
+protected void cmdQualifyLead_ClickAction(object sender, EventArgs e) {
+Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+
+//////////////Specify the Query for find BM///////////
+string qry = "Select Q.SALESMANAGERID  from QUALIFIERANDSMPINCODE Q " +
+				"where Q.PINCODE '"+ lead.Address.PostalCode.ToString() +"'";
+	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	System.Data.DataTable dt = new System.Data.DataTable();
+	dataAdapterObj.Fill(dt);
+	
+	Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >((object)dt.Rows[0][0].ToString());
+	lead.BranchManager = BM;
+	lead.QualifiedON = DateTime.Now;
+	lead.Status = "Qualified";
+	
+	//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >((object)"ADMIN");
+	//lead.BranchManager = BM;
+	
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
+    System.Data.DataTable dt2 = new System.Data.DataTable();
+    dataAdapterObj2.Fill(dt2);
+    if (dt2.Rows.Count > 0)
+    {
+        Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
+        lead.Owner = objowner;
+    }
+	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001");
+    //lead.Owner = objowner;
+	lead.Save();
+	System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx?modeid=Detail"));
+
+
+}
 protected void cmdConvertLead_ClickAction(object sender, EventArgs e) {
 Sage.Entity.Interfaces.ILead entity = (Sage.Entity.Interfaces.ILead) this.BindingSource.Current;
 if (entity.IsCompanyNameAssigned()) {
@@ -615,61 +650,53 @@ protected void chkDoNotEmail_ChangeAction(object sender, EventArgs e) {
 
 }
 protected void cmdUpdateLead_ClickAction(object sender, EventArgs e) {
+
+
 Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
 
-/*
-switch(lead.Status)
-{
-	case "Dropped":
-		//// Set Owner ///
-		Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000002");
-		lead.Owner = objowner;
-		break;
-	case "Qualified":	
-		if(lead.BranchManager == null)
-		{
-			string qry = "Select Q.SALESMANAGERID  from QUALIFIERANDSMPINCODE Q " +
-				"where Q.PINCODE '"+ lead.Address.PostalCode.ToString() +"'";
+//////////////Specify the Query for find BM///////////
 
 
-			Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
-			System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
-			System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
-			System.Data.DataTable dt = new System.Data.DataTable();
-			dataAdapterObj.Fill(dt);
-			
-			//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >(dt.Rows[0][0]);
-			//lead.BranchManager = BM;
-			lead.QualifiedON = DateTime.Now;
-			lead.Status = "Qualified";
-			
-			Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)"ADMIN");
-			lead.BranchManager = BM;
-			System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
-		    System.Data.DataTable dt2 = new System.Data.DataTable();
-		    dataAdapterObj2.Fill(dt2);
-		    //if (dt2.Rows.Count > 0)
-		    //{
-		    //    Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>(dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
-		    //    lead.Owner = objowner;
-		    //}
-			Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001");
-    		lead.Owner = objowner;
-		}
-		break;
-	case "Converted":
-		if(lead.BranchManager == null)
-		{
-			throw new Sage.Platform.Application.ValidationException("You are not authorize to convert lead...");			
-		}
-		else
-		{
-			throw new Sage.Platform.Application.ValidationException("Pease Convert lead via Convert Qualified Lead Button...");
-		}
-		break;
-}*/
-lead.Save();
-System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx?modeid=Detail"));
+
+	string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
+				"where Q.PINCODE = '"+ lead.Address.PostalCode.ToString() +"'";
+
+
+	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	System.Data.DataTable dt = new System.Data.DataTable();
+	dataAdapterObj.Fill(dt);
+	
+	Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)dt.Rows[0][0].ToString());
+	//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >((object)"ADMIN");
+	
+	lead.Qualifier = BM;
+	
+	qry = "select case when userID is null then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
+		"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BU') end " +
+		"From usersecurity US,VWEMPMASTER emp where emp.CEMPLCODE = US.USERCODE and US.USERID ='" + lead.LeadEmployee.Id +  "'";
+	
+	dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	dt = new System.Data.DataTable();
+	dataAdapterObj.Fill(dt);
+	
+	Sage.Entity.Interfaces.ILeadSource ls  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)dt.Rows[0][0].ToString());	
+	lead.LeadSource = ls;
+	
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
+    System.Data.DataTable dt2 = new System.Data.DataTable();
+    dataAdapterObj2.Fill(dt2);
+    if (dt2.Rows.Count > 0)
+    {
+        Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
+        lead.Owner = objowner;
+    }
+	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001");
+    //lead.Owner = objowner;
+	
+	lead.Save();
+	System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx", "&modeid=Detail"));
 
 
 
@@ -700,7 +727,8 @@ protected void cmdDeleteLead_ClickActionBRCBRC(object sender, EventArgs e) {
 protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
- cmdConvertLead.Click += new EventHandler(cmdConvertLead_ClickAction);
+ cmdQualifyLead.Click += new EventHandler(cmdQualifyLead_ClickAction);
+cmdConvertLead.Click += new EventHandler(cmdConvertLead_ClickAction);
 chkDoNotSolicit.CheckedChanged += new EventHandler(chkDoNotSolicit_ChangeAction);
 chkDoNotEmail.CheckedChanged += new EventHandler(chkDoNotEmail_ChangeAction);
 cmdUpdateLead.Click += new ImageClickEventHandler(cmdUpdateLead_ClickAction);

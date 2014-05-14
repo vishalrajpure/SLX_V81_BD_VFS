@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="1934c8f5-2895-4db4-96e3-98fafcadd52e" lastModifiedUtc="2014-05-14T05:18:57.5578849Z" name="cmdQualifyLead_OnClick" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="LeadDetails">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="3cc7f1f0-006d-4304-99cb-786bc224a3a0" paramName="form" sequence="0" paramType="ILeadDetails" />
+    <OrmEntityMethodParam id="88b9b8ae-cde5-4538-ad13-c9ebab9f93bb" paramName="args" sequence="0" paramType="EventArgs" />
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets />
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>
