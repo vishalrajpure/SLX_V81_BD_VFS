@@ -14820,4 +14820,13 @@
   <data name="LeadProduct.DisplayNamePlural" xml:space="preserve">
     <value>Lead Products</value>
   </data>
+  <data name="Lead.OperatingcompId.DisplayName" xml:space="preserve">
+    <value>Operating Company Id</value>
+  </data>
+  <data name="Lead.OperatingCompany.DisplayName" xml:space="preserve">
+    <value>Operating Company</value>
+  </data>
+  <data name="AppIdMapping.Lead.DisplayName" xml:space="preserve">
+    <value>Lead</value>
+  </data>
 </root>

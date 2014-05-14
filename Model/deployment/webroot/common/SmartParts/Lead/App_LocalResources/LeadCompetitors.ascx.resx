@@ -180,4 +180,7 @@
   <data name="grdLeadCompetitors.EmptyTableRowText" xml:space="preserve">
     <value>No records match the selection criteria.</value>
   </data>
+  <data name="grdLeadCompetitors.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.ConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to remove this item?</value>
+  </data>
 </root>

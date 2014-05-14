@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="27f9e8e9-34d8-4eaf-8fd7-c70d133e6f90" lastModifiedUtc="2014-05-05T11:04:59.4541351Z" manageSchema="true" tableName="LEAD" name="Lead" displayPropertyId="551e80d8-99e8-49aa-8710-a7a6429d6192" isExtension="false" audited="true" smallImage="[Localization!Global_Images:lead_16x16]" largeImage="[Localization!Global_Images:Leads_24x24]" onBeforeInsertMethodId="facc3100-9ffd-4e83-bb86-6c62987f6a11" onAfterInsertMethodId="c222d3e7-979e-4878-b675-2fee03877ab8" onBeforeUpdateMethodId="63b07e84-8b94-42c8-961a-da9fc7fbfdae" onAfterUpdateMethodId="d63343b1-8d6e-4015-a6eb-ddcb6c1de180" onBeforeDeleteMethodId="c25bf2f2-5036-4d0a-a14e-a740444ff5ed" onAfterDeleteMethodId="dee25e24-9f9a-482f-9996-a5b1ab52d6aa" onCreateId="378fd86f-840d-4708-90b1-7802c7c93904">
+<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="27f9e8e9-34d8-4eaf-8fd7-c70d133e6f90" lastModifiedUtc="2014-05-14T08:57:40.0564489Z" manageSchema="true" tableName="LEAD" name="Lead" displayPropertyId="551e80d8-99e8-49aa-8710-a7a6429d6192" isExtension="false" audited="true" smallImage="[Localization!Global_Images:lead_16x16]" largeImage="[Localization!Global_Images:Leads_24x24]" onBeforeInsertMethodId="facc3100-9ffd-4e83-bb86-6c62987f6a11" onAfterInsertMethodId="c222d3e7-979e-4878-b675-2fee03877ab8" onBeforeUpdateMethodId="63b07e84-8b94-42c8-961a-da9fc7fbfdae" onAfterUpdateMethodId="d63343b1-8d6e-4015-a6eb-ddcb6c1de180" onBeforeDeleteMethodId="c25bf2f2-5036-4d0a-a14e-a740444ff5ed" onAfterDeleteMethodId="dee25e24-9f9a-482f-9996-a5b1ab52d6aa" onCreateId="378fd86f-840d-4708-90b1-7802c7c93904">
   <extendedMetaData />
   <ExtendedPropertiesCollection>
     <extendee type="Sage.Platform.Orm.Entities.OrmEntity">
@@ -1071,6 +1071,18 @@
           <Precision>0</Precision>
           <Scale>0</Scale>
         </DecimalDataType>
+      </SystemDataType>
+    </property>
+    <property xsi:type="OrmFieldProperty" id="d26d7d0c-87fe-4f08-9fa8-332807e83dfe" lastModifiedUtc="2014-05-14T08:57:40.0564489Z" name="OperatingcompId" audited="false" columnName="OPERATINGCOMPID" maxLength="12" precision="0" scale="0" ordinal="76" isReadOnly="false">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmFieldProperty">
+          <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">
+            <OrmEntityPropertySDataExtension generate="true" />
+          </extender>
+        </extendee>
+      </ExtendedPropertiesCollection>
+      <SystemDataType guid="30053f5a-8d40-4db1-b185-1e4128eb26cc">
+        <StandardIdDataType />
       </SystemDataType>
     </property>
   </properties>

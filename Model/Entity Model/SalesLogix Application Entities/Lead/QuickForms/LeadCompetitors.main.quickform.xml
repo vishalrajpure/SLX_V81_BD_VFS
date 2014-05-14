@@ -127,8 +127,8 @@
             <SortDirection>None</SortDirection>
             <IsSortable>false</IsSortable>
             <MultiCurrencyDependent>false</MultiCurrencyDependent>
-            <BusinessRule>Delete</BusinessRule>
-            <BusinessRuleObjectName>LeadCompetitor</BusinessRuleObjectName>
+            <BusinessRule />
+            <BusinessRuleObjectName />
             <BusinessRuleParameters />
             <AppliedSecurity />
           </QFDeleteCol>
@@ -216,7 +216,7 @@
           <ResourceKey>lueLeadCompetitor</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CodeSnippetActionItem, Sage.Platform.QuickForms">
             <CodeSnippetActionItem methodId="229bd34a-6cd1-4e8e-9256-d7caae1c4d7c">
-              <MethodName />
+              <MethodName>lueLeadCompetitor_ChangeAction</MethodName>
             </CodeSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
@@ -296,7 +296,7 @@
     </RowStyle>
   </Rows>
   <Description />
-  <UseEntityNameAsTitle>true</UseEntityNameAsTitle>
+  <UseEntityNameAsTitle>false</UseEntityNameAsTitle>
   <EntityTypeName>ILead</EntityTypeName>
   <DefaultNamespace>Sage.Entity.Interfaces</DefaultNamespace>
   <AssemblyName>Sage.Entity.Interfaces</AssemblyName>

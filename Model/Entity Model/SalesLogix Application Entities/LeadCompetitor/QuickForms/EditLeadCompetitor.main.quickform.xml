@@ -51,12 +51,10 @@
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXNumeric, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXNumeric>
-        <TabIndex>0</TabIndex>
-        <StyleScheme />
-        <ControlLabelPlacement>left</ControlLabelPlacement>
         <Column>0</Column>
         <Row>1</Row>
         <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
         <ControlId>txtRating</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
@@ -67,8 +65,10 @@
             <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
         </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
         <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
         <OnChangeAction>
           <ResourceKey>txtRating</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
@@ -205,12 +205,10 @@
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXNumeric, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXNumeric>
-        <TabIndex>0</TabIndex>
-        <StyleScheme />
-        <ControlLabelPlacement>left</ControlLabelPlacement>
         <Column>0</Column>
         <Row>5</Row>
         <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
         <ControlId>txtCompetitorShareOfWellet</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
@@ -221,8 +219,10 @@
             <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
         </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
         <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
         <OnChangeAction>
           <ResourceKey>txtCompetitorShareOfWellet</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
@@ -439,16 +439,16 @@
     </Control>
     <Control typeName="Sage.Platform.QuickForms.QFControls.QFControlsList, Sage.Platform.QuickForms.QFControls">
       <QFControlsList>
-        <TabIndex>0</TabIndex>
-        <StyleScheme>qfActionContainer</StyleScheme>
-        <ControlLabelPlacement>left</ControlLabelPlacement>
         <Column>1</Column>
         <Row>6</Row>
         <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
         <ControlId>QFControlsList</ControlId>
         <DataBindings />
+        <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
         <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme>qfActionContainer</StyleScheme>
         <Caption />
         <Controls>
           <ControlsCollection>
@@ -534,7 +534,7 @@
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>94f5f93611c453a96bfbdedbfc2cf40</ControlId>
+        <ControlId>4f5f93611c453a96bfbdedbfc2cf40</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
@@ -598,7 +598,7 @@
     </RowStyle>
   </Rows>
   <Description />
-  <UseEntityNameAsTitle>true</UseEntityNameAsTitle>
+  <UseEntityNameAsTitle>false</UseEntityNameAsTitle>
   <EntityTypeName>ILeadCompetitor</EntityTypeName>
   <DefaultNamespace>Sage.Entity.Interfaces</DefaultNamespace>
   <AssemblyName>Sage.Entity.Interfaces</AssemblyName>

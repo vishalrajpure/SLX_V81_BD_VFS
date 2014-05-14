@@ -78,6 +78,22 @@ protected int grdLeadCompetitorsDeleteColumnIndex
 
 protected void grdLeadCompetitors_RowDataBound(object sender, GridViewRowEventArgs e)
 {
+    if (e.Row.RowType == DataControlRowType.DataRow)
+    {
+        if ((grdLeadCompetitorsDeleteColumnIndex >= 0) && (grdLeadCompetitorsDeleteColumnIndex < e.Row.Cells.Count))
+        {
+            TableCell cell = e.Row.Cells[grdLeadCompetitorsDeleteColumnIndex];
+            foreach (Control c in cell.Controls)
+            {
+                LinkButton btn = c as LinkButton;
+                if (btn != null)
+                {
+                    btn.Attributes.Add("onclick", "javascript: return confirm('" + Sage.Platform.WebPortal.PortalUtil.JavaScriptEncode(GetLocalResourceObject("grdLeadCompetitors.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.ConfirmationMessage").ToString()) + "');");
+                    return;
+                }
+            }
+        }
+    }
 }
    
 protected void grdLeadCompetitors_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -305,14 +321,6 @@ dsLeadCompetitors.Bind();
 public override Sage.Platform.Application.UI.ISmartPartInfo GetSmartPartInfo(Type smartPartInfoType)
 {
     ToolsSmartPartInfo tinfo = new ToolsSmartPartInfo();
-        if (BindingSource != null)
-    {
-        if (BindingSource.Current != null)
-        {
-            tinfo.Description = BindingSource.Current.ToString();
-            tinfo.Title = BindingSource.Current.ToString();
-        }
-    }
     
     foreach (Control c in Controls)
     {

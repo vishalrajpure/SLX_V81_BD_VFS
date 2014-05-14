@@ -4,7 +4,7 @@
   <ReferencedModelId>b2741b79-02a2-4f4c-81cd-c204f82cf41c</ReferencedModelId>
   <SmartPart>\Entity Model\Saleslogix Application Entities\LeadCompetitor\QuickForms\EditLeadCompetitor.main.quickform.xml</SmartPart>
   <TargetWorkspace>DialogWorkspace</TargetWorkspace>
-  <ShowInMode>Detail</ShowInMode>
+  <ShowInMode />
   <Properties />
   <AllowRoles />
 </SmartPartMapping>
