@@ -224,7 +224,7 @@ makeGrid : function(runtimeConfig) {
 	    displayMode: 'AsControl',
     multiCurrency: isMultiCurrencyEnabled()	 //TODO: Move this method to Sage.IntegrationContractService.isMultiCurrencyEnabled()
 }
-  															 			 			,
+  																					,
 {
 		field: 'Quantity',
 				name:  OpportunityProductsgrdOppProducts_Strings['grdOppProducts_bdcfebf2_8c54_459a_97ec_00e4d92f86dc_ColumnHeading']  || 'Quantity',
@@ -288,7 +288,7 @@ makeGrid : function(runtimeConfig) {
     multiCurrency: isMultiCurrencyEnabled()	 //TODO: Move this method to Sage.IntegrationContractService.isMultiCurrencyEnabled()
 }
   																					          ],
-	 	         storeOptions: {
+		         storeOptions: {
             resourceKind: 'opportunityProducts',
             newItemParentReferenceProperty: 'Opportunity',
             include: ['Opportunity'],

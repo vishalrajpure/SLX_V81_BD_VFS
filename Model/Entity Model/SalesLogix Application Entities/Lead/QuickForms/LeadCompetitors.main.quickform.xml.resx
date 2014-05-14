@@ -183,4 +183,10 @@
   <data name="grdLeadCompetitors.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.ConfirmationMessage" xml:space="preserve">
     <value>Are you sure you want to remove this item?</value>
   </data>
+  <data name="DuplicateCompetitorMsg" xml:space="preserve">
+    <value>{0} is already associated to this opportunity.</value>
+  </data>
+  <data name="DuplicateCompetitorMsgTitle" xml:space="preserve">
+    <value>Duplicate Competitor</value>
+  </data>
 </root>
