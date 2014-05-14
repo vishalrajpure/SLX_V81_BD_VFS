@@ -5,43 +5,10 @@
   <LoadActions>
     <FormActionDefinition>
       <ResourceKey>fcad457d-a3c8-4a79-9b89-b77edf6e37c7</ResourceKey>
-      <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
-        <CSharpSnippetActionItem>
+      <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+        <NoActionActionItem>
           <MethodName />
-          <CSharpCodeSnippet>Sage.Entity.Interfaces.ILead lead = this.BindingSource.Current as Sage.Entity.Interfaces.ILead;
-if (opportunity != null)
-{
-    Sage.Platform.SData.IAppIdMappingService mappingService =
-        Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.SData.IAppIdMappingService&gt;(
-            true);
-	if (mappingService.IsIntegrationEnabled())
-	{
-		var clientContextService = PageWorkItem.Services.Get&lt;Sage.Platform.WebPortal.Services.ClientContextService&gt;();
-		if (clientContextService != null)
-		{
-			// OperatingCompany
-			if (clientContextService.CurrentContext.ContainsKey("OperatingCompany"))
-			{
-                if (lead.OperatingCompany != null)
-                {
-				    clientContextService.CurrentContext["OperatingCompany"] = lead.OperatingCompany.Id.ToString();
-                }
-                else
-                {
-                    clientContextService.CurrentContext.Remove("OperatingCompany");
-                }
-			}
-			else
-			{
-                if (lead.OperatingCompany != null)
-                {
-                    clientContextService.CurrentContext.Add("OperatingCompany", lead.OperatingCompany.Id.ToString());
-                }
-			}					
-        }
-	}
-}</CSharpCodeSnippet>
-        </CSharpSnippetActionItem>
+        </NoActionActionItem>
       </Action>
       <IsDialogCloseAction>False</IsDialogCloseAction>
       <RunOnEveryRePaint>False</RunOnEveryRePaint>

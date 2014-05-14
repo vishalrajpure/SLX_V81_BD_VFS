@@ -217,58 +217,8 @@ protected override void OnWireEventHandlers()
 
 }
 
-protected void quickformload0(object sender, EventArgs e) {
-Sage.Entity.Interfaces.ILead lead = this.BindingSource.Current as Sage.Entity.Interfaces.ILead;
-if (opportunity != null)
-{
-    Sage.Platform.SData.IAppIdMappingService mappingService =
-        Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.SData.IAppIdMappingService>(
-            true);
-	if (mappingService.IsIntegrationEnabled())
-	{
-		var clientContextService = PageWorkItem.Services.Get<Sage.Platform.WebPortal.Services.ClientContextService>();
-		if (clientContextService != null)
-		{
-			// OperatingCompany
-			if (clientContextService.CurrentContext.ContainsKey("OperatingCompany"))
-			{
-                if (lead.OperatingCompany != null)
-                {
-				    clientContextService.CurrentContext["OperatingCompany"] = lead.OperatingCompany.Id.ToString();
-                }
-                else
-                {
-                    clientContextService.CurrentContext.Remove("OperatingCompany");
-                }
-			}
-			else
-			{
-                if (lead.OperatingCompany != null)
-                {
-                    clientContextService.CurrentContext.Add("OperatingCompany", lead.OperatingCompany.Id.ToString());
-                }
-			}					
-        }
-	}
-}
-
-}
-private bool _runActivating;
-protected override void OnActivating()
-{
-_runActivating = true;
-}
-private void DoActivating()
-{
-quickformload0(this, EventArgs.Empty);
-
-}
 protected override void OnFormBound()
 {
-Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.EntityPage;
-        if (epage != null)
-            _runActivating = (epage.IsNewEntity || _runActivating);
-if (_runActivating) DoActivating();
  var entity = BindingSource.Current as Sage.Entity.Interfaces.ILead; 
  if (this.PageWorkItem.State["ModeId"].ToString() == "Insert") 
  { 
