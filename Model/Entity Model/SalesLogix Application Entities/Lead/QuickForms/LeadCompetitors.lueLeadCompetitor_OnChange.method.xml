@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="229bd34a-6cd1-4e8e-9256-d7caae1c4d7c" lastModifiedUtc="2014-05-14T07:41:03.5205421Z" name="lueLeadCompetitor_OnChange" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="LeadCompetitors">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="9c0881de-3b71-4bd1-98e3-1eabcb77fb5c" paramName="form" sequence="0" paramType="ILeadCompetitors" />
+    <OrmEntityMethodParam id="606794cc-da04-48c1-b999-69133468450f" paramName="args" sequence="0" paramType="EventArgs" />
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets>
+    <methodTarget xsi:type="OrmMethodTargetSnippet" id="2980f54c-5141-4f9c-a70c-30b9798cb25e" lastModifiedUtc="2014-05-14T07:44:47.9153767Z" targetType="Sage.BusinessRules.CodeSnippets.LeadCompetitorsEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="lueLeadCompetitor_OnChangeStep" active="true" codeSnippetId="10fa0f84-aabd-4173-8b64-7187e2768309">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmMethodTargetSnippet" />
+      </ExtendedPropertiesCollection>
+    </methodTarget>
+  </methodTargets>
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

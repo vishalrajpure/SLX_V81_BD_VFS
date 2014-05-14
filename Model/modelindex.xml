@@ -1643,4 +1643,27 @@
  <ref id="dd1d8585-b08f-48df-8b30-6177f30c74ad" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnAfterDelete.method.xml" />
  <ref id="da569393-2947-4675-992e-1729ae8ee91f" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnCreate.method.xml" />
  <ref id="cb5bb1b9-907b-4d23-974f-6bdac8d22d76" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\QualifierAndSMpincode.QUALIFIERANDSMPINCODE.entity.xml" />
+ <ref id="2b31e85d-6b22-4a99-894d-24e123304356" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\InsertLead.main.quickform.xml" />
+ <ref id="901b9f5d-180a-4cb0-88ae-f1a23a059886" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadDetails.main.quickform.xml" />
+ <ref id="1934c8f5-2895-4db4-96e3-98fafcadd52e" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadDetails.cmdQualifyLead_OnClick.method.xml" />
+ <ref id="00418cc9-ed04-4f36-93eb-5060082cbeb7" url="\Entity Model\Relationships\Lead.User.00418cc9ed044f3693eb5060082cbeb7.relationship.xml" />
+ <ref id="b867a834-01c2-4bea-a525-30fab8e348f3" url="\Entity Model\Relationships\Lead.User.b867a83401c24beaa52530fab8e348f3.relationship.xml" />
+ <ref id="f2e0b896-772b-4dc5-9ca5-bf23b5b85776" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnBeforeInsert.method.xml" />
+ <ref id="6ebe9c96-4496-4b0e-8ed6-0aa49aeffba6" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnAfterInsert.method.xml" />
+ <ref id="47fad312-ff2f-4584-9a1d-a5fc2579813e" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnBeforeUpdate.method.xml" />
+ <ref id="09b29cdc-d4c9-4ab0-b103-fdeb90bac6d9" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnAfterUpdate.method.xml" />
+ <ref id="b165890b-0205-4862-a0cf-d8f271c0ea16" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnBeforeDelete.method.xml" />
+ <ref id="aedac3a8-c350-4846-a064-e3fe99d9596a" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnAfterDelete.method.xml" />
+ <ref id="1adb85f6-1fa6-451c-9238-6fe0c7374aa7" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnCreate.method.xml" />
+ <ref id="331316b6-25d3-408d-800b-0748bd51d632" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\LeadCompetitor.LEAD_COMPETITOR.entity.xml" />
+ <ref id="2e2b42fb-3853-47e9-9942-06640259b544" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeInsert.method.xml" />
+ <ref id="c6549dcd-36e0-406b-950b-1140aa950b9e" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterInsert.method.xml" />
+ <ref id="f5d77e07-ba94-4f3e-865a-f8009c4b06ed" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeUpdate.method.xml" />
+ <ref id="1fddb1db-c4d4-4d0f-a722-34f655fa9bc6" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterUpdate.method.xml" />
+ <ref id="81827431-f2d2-4985-94a9-ce48a45ef8af" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeDelete.method.xml" />
+ <ref id="9016bfd8-141d-4e86-95e4-ce598b88676c" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterDelete.method.xml" />
+ <ref id="c22ffaed-4477-42b1-815d-a133a1cf011e" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnCreate.method.xml" />
+ <ref id="ae6e1c00-3666-4d4f-9580-c80f08a135fc" url="\Entity Model\Saleslogix Application Entities\LeadProduct\LeadProduct.LEAD_PRODUCT.entity.xml" />
+ <ref id="229bd34a-6cd1-4e8e-9256-d7caae1c4d7c" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadCompetitors.lueLeadCompetitor_OnChange.method.xml" />
+ <ref id="10fa0f84-aabd-4173-8b64-7187e2768309" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\Sage.SnippetLibrary.CSharp.@.10fa0f84-aabd-4173-8b64-7187e2768309.codesnippet.cs" />
 </modelItemIndex>

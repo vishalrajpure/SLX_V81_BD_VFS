@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<relationship xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="97950e40-cd78-4878-86dd-28264edeefef" lastModifiedUtc="2014-05-14T06:55:42.7569233Z" parentEntityId="5338ff92-de58-46e1-b222-6501d77e6d02" childEntityId="331316b6-25d3-408d-800b-0748bd51d632">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmRelationship" />
+  </ExtendedPropertiesCollection>
+  <parentProperty id="44b4f457-dd5c-466b-b59b-47e6178172a5" lastModifiedUtc="2014-05-14T06:55:31.387273Z" name="LeadCompetitors" audited="false">
+    <ExtendedPropertiesCollection>
+      <extendee type="Sage.Platform.Orm.Entities.OrmRelationProperty">
+        <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">
+          <OrmEntityPropertySDataExtension generate="true" />
+        </extender>
+      </extendee>
+    </ExtendedPropertiesCollection>
+    <SystemDataType guid="2f770d03-c93c-4605-8ae8-7cdae04830d7">
+      <RelationshipDataType />
+    </SystemDataType>
+  </parentProperty>
+  <childProperty id="e2ffe589-01ec-46ed-8265-bd350f3df2bc" lastModifiedUtc="2014-05-14T06:55:41.1568318Z" name="Competitor" audited="false" isNullable="false">
+    <ExtendedPropertiesCollection>
+      <extendee type="Sage.Platform.Orm.Entities.OrmRelationProperty">
+        <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">
+          <OrmEntityPropertySDataExtension generate="true" />
+        </extender>
+      </extendee>
+    </ExtendedPropertiesCollection>
+    <SystemDataType guid="2f770d03-c93c-4605-8ae8-7cdae04830d7">
+      <RelationshipDataType />
+    </SystemDataType>
+  </childProperty>
+  <column>
+    <OrmRelationshipColumn id="e0b1c3ab-8a3a-428a-93f0-9650d33519a6" parentPropertyId="8106762b-ea10-4c41-ac21-f1b0ba716016" childPropertyId="20a41d16-d572-477f-a242-57f799646b8c" ordinal="0" />
+  </column>
+</relationship>

@@ -27,6 +27,16 @@ AlternatingRowStyle-CssClass="rowdk" RowStyle-CssClass="rowlt" SelectedRowStyle-
     <asp:BoundField DataField="Weaknesses"
       HeaderText="<%$ resources: grdOppCompetitors.91df61c9-bfa0-4b34-b33f-d9bcfbfb0903.ColumnHeading %>"       SortExpression="Weaknesses"    >
       </asp:BoundField>
+    <asp:CheckBoxField DataField="CurrentMajorCompetitor" ReadOnly="True"
+      HeaderText="<%$ resources: grdOppCompetitors.ce453213-3bc0-42a0-8545-26a9ad5985f5.ColumnHeading %>"        >
+          </asp:CheckBoxField>
+    <asp:TemplateField   HeaderText="<%$ resources: grdOppCompetitors.e5c5aa99-5983-4577-b38a-47283aea5089.ColumnHeading %>"        >
+    <itemtemplate>
+ <SalesLogix:Currency runat="server" ID="grdOppCompetitorscol5" DisplayMode="AsText"  ExchangeRateType="BaseRate"   Text='<%#  dtsOppCompetitors.getPropertyValue(Container.DataItem, "CompetitorRate")  %>' CssClass=""  DecimalDigits="2"  />
+   </itemtemplate></asp:TemplateField>
+    <asp:BoundField DataField="CompetitorShareOfWellet"
+      HeaderText="<%$ resources: grdOppCompetitors.8b2a3dea-a970-474d-b3d0-8d51563bd14a.ColumnHeading %>"          >
+      </asp:BoundField>
   <asp:ButtonField CommandName="Edit"
   Text="<%$ resources: grdOppCompetitors.47b79b74-6484-4b2b-94fd-978b86cd3bc2.Text %>"               >
           </asp:ButtonField>
@@ -41,7 +51,7 @@ AlternatingRowStyle-CssClass="rowdk" RowStyle-CssClass="rowlt" SelectedRowStyle-
 
 <script runat="server" type="text/C#">
 
-               private int _grdOppCompetitorsdeleteColumnIndex = -2;
+                        private int _grdOppCompetitorsdeleteColumnIndex = -2;
 protected int grdOppCompetitorsDeleteColumnIndex
 {
     get
@@ -291,14 +301,10 @@ void dtsOppCompetitors_OnCurrentEntitySet(object sender, EventArgs e)
 
 protected override void OnAddEntityBindings() {
        dtsOppCompetitors.Bindings.Add(new Sage.Platform.WebPortal.Binding.WebEntityListBinding("Competitors", grdOppCompetitors ));
-   dtsOppCompetitors.BindFieldNames = new String[] { "OpportunityId","CompetitorId","Competitor.CompetitorName","Rating","Weaknesses" };
+   dtsOppCompetitors.BindFieldNames = new String[] { "OpportunityId","CompetitorId","Competitor.CompetitorName","Rating","Weaknesses","CurrentMajorCompetitor","CompetitorRate","CompetitorShareOfWellet" };
                 
      BindingSource.OnCurrentEntitySet += new EventHandler(dtsOppCompetitors_OnCurrentEntitySet);
     
-         
-      
-      
-      
     }
        
 protected void lueAssociateCompetitor_ChangeAction(object sender, EventArgs e) {
@@ -311,21 +317,15 @@ lib.Execute("OpportunityCompetitors.lueAssociateCompetitor_OnChange", methodArgs
 protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
- if (RoleSecurityService != null)
-{
-if (RoleSecurityService.HasAccess("ENTITIES/OPPORTUNITY/EDIT"))
-{
-lueAssociateCompetitor.LookupResultValueChanged += new EventHandler(lueAssociateCompetitor_ChangeAction);
-}
-}
+ lueAssociateCompetitor.LookupResultValueChanged += new EventHandler(lueAssociateCompetitor_ChangeAction);
 
 
 }
 
 protected override void OnFormBound()
 {
-grdOppCompetitors.Columns[3].Visible = (RoleSecurityService.HasAccess("Entities/Opportunity/Edit"));
-grdOppCompetitors.Columns[4].Visible = (RoleSecurityService.HasAccess("Entities/Opportunity/Edit"));
+grdOppCompetitors.Columns[6].Visible = (RoleSecurityService.HasAccess("Entities/Opportunity/Edit"));
+grdOppCompetitors.Columns[7].Visible = (RoleSecurityService.HasAccess("Entities/Opportunity/Edit"));
 ClientBindingMgr.RegisterBoundControl(lueAssociateCompetitor);
 
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
@@ -336,10 +336,6 @@ if (dtsOppCompetitors.SourceObject == null) { dtsOppCompetitors.SourceObject = B
 if (dtsOppCompetitors.SourceObject == null) { RegisterBindingsWithClient(dtsOppCompetitors); }
 dtsOppCompetitors.Bind();
 
-if (!RoleSecurityService.HasAccess("ENTITIES/OPPORTUNITY/EDIT"))
-{
-lueAssociateCompetitor.Visible = false;
-}
 
 
 }

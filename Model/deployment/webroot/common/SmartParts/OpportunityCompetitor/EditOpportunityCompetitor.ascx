@@ -95,6 +95,44 @@ LabelPlacement="left"  />
       </td>
       </tr>
 <tr>
+            <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="chkCurrentMajorCompetitor"  Text="<%$ resources: chkCurrentMajorCompetitor.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td  >
+<div class=" lbl alignleft">
+    <asp:Label ID="txtCompetitorRate_lbl" AssociatedControlID="txtCompetitorRate" runat="server" Text="<%$ resources: txtCompetitorRate.Caption %>" ></asp:Label>
+</div>
+ <div  class="textcontrol currency"  >
+    <SalesLogix:Currency
+    runat="server"
+    ID="txtCompetitorRate" 
+    ExchangeRateType="BaseRate"
+     Required="false"
+ DecimalDigits="-1"
+ />
+</div>
+
+      </td>
+      </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="txtCompetitorShareOfWellet_lbl" AssociatedControlID="txtCompetitorShareOfWellet" runat="server" Text="<%$ resources: txtCompetitorShareOfWellet.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol numeric"  > 
+    <SalesLogix:NumericControl runat="server" ID="txtCompetitorShareOfWellet"
+Strict="False" 
+ />
+  </div>
+
+      </td>
+                <td></td>
+      </tr>
+<tr>
             <td></td>
                 <td  >
 <asp:Panel runat="server" ID="QFControlsList" CssClass="controlslist qfActionContainer"
@@ -163,10 +201,19 @@ protected override void OnAddEntityBindings() {
                     // txtNotes.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtNotesTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Notes", txtNotes, "Text");
         BindingSource.Bindings.Add(txtNotesTextBinding);
+                    // chkCurrentMajorCompetitor.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkCurrentMajorCompetitorCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("CurrentMajorCompetitor", chkCurrentMajorCompetitor, "Checked");
+        BindingSource.Bindings.Add(chkCurrentMajorCompetitorCheckedBinding);
+                    // txtCompetitorRate.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtCompetitorRateTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("CompetitorRate", txtCompetitorRate, "Text");
+        BindingSource.Bindings.Add(txtCompetitorRateTextBinding);
+                    // txtCompetitorShareOfWellet.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtCompetitorShareOfWelletTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("CompetitorShareOfWellet", txtCompetitorShareOfWellet, "Text");
+        BindingSource.Bindings.Add(txtCompetitorShareOfWelletTextBinding);
              
    
 }
-                                                                             
+                                                                                                  
 protected void btnOk_ClickAction(object sender, EventArgs e) {
   Sage.Entity.Interfaces.IOpportunityCompetitor _entity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunityCompetitor;
   if (_entity != null)
@@ -308,6 +355,16 @@ public class EditOpportunityCompetitorAdapter : Sage.Platform.WebPortal.Adapters
     {
         get { return FindControl(ref _txtStrategy, "txtStrategy"); }
     }
+    private Sage.Platform.Controls.ICheckBoxControl _chkCurrentMajorCompetitor;
+    public  Sage.Platform.Controls.ICheckBoxControl chkCurrentMajorCompetitor
+    {
+        get { return FindControl(ref _chkCurrentMajorCompetitor, "chkCurrentMajorCompetitor"); }
+    }
+    private Sage.Platform.Controls.INumericControl _txtCompetitorShareOfWellet;
+    public  Sage.Platform.Controls.INumericControl txtCompetitorShareOfWellet
+    {
+        get { return FindControl(ref _txtCompetitorShareOfWellet, "txtCompetitorShareOfWellet"); }
+    }
     private Sage.Platform.Controls.ITextBoxControl _txtWebAddress;
     public  Sage.Platform.Controls.ITextBoxControl txtWebAddress
     {
@@ -327,6 +384,11 @@ public class EditOpportunityCompetitorAdapter : Sage.Platform.WebPortal.Adapters
     public  Sage.Platform.Controls.ITextBoxControl txtNotes
     {
         get { return FindControl(ref _txtNotes, "txtNotes"); }
+    }
+    private Sage.Platform.Controls.ICurrencyControl _txtCompetitorRate;
+    public  Sage.Platform.Controls.ICurrencyControl txtCompetitorRate
+    {
+        get { return FindControl(ref _txtCompetitorRate, "txtCompetitorRate"); }
     }
     private Sage.Platform.Controls.IControlsListControl _QFControlsList;
     public  Sage.Platform.Controls.IControlsListControl QFControlsList

@@ -3,4 +3,6 @@
   <Item Id="9ee780b4-a320-4771-89d0-417a36c63f31">InsertLead.smartpart.xml</Item>
   <Item Id="ee2f9345-0d14-4b55-b385-2d00742f46e4">MatchingLeadRecords.smartpart.xml</Item>
   <Item Id="03f1a17b-5ff5-470b-afa0-fa4a5d1974ff">LeadSearchForDuplicates.smartpart.xml</Item>
+  <Item Id="5847cd9b-338a-4cf4-ae2b-2e95e7a6dde1">LeadCompetitors.smartpart.xml</Item>
+  <Item Id="c4ab9e3a-f75c-46f6-b7ad-dfb2c3798b18">EditLeadCompetitor.smartpart.xml</Item>
 </ModelItems>

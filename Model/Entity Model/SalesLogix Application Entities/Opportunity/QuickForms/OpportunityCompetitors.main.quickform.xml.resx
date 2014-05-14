@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="grdOppCompetitors.dee29184-964d-4b80-9665-c6588f28be58.ColumnHeading" xml:space="preserve">
     <value>Competitor</value>
@@ -185,5 +185,14 @@
   </data>
   <data name="DuplicateCompetitorMsgTitle" xml:space="preserve">
     <value>Duplicate Competitor</value>
+  </data>
+  <data name="grdOppCompetitors.ce453213-3bc0-42a0-8545-26a9ad5985f5.ColumnHeading" xml:space="preserve">
+    <value>CurrentMajorCompetitor</value>
+  </data>
+  <data name="grdOppCompetitors.e5c5aa99-5983-4577-b38a-47283aea5089.ColumnHeading" xml:space="preserve">
+    <value>CompetitorRate</value>
+  </data>
+  <data name="grdOppCompetitors.8b2a3dea-a970-474d-b3d0-8d51563bd14a.ColumnHeading" xml:space="preserve">
+    <value>CompetitorShareOfWellet</value>
   </data>
 </root>

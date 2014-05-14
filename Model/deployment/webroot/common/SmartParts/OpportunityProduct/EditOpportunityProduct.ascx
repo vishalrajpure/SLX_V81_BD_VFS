@@ -37,110 +37,6 @@
       </tr>
 <tr>
             <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="lstbxPriceLevel_lbl" AssociatedControlID="lstbxPriceLevel" runat="server" Text="<%$ resources: lstbxPriceLevel.Caption %>" ></asp:Label>
- </div>   
-   <div  class="textcontrol select"  > 
-<asp:ListBox runat="server" ID="lstbxPriceLevel"  SelectionMode="Single" Rows="1" data-dojo-type="dijit.form.Select"  CssClass="select-control " TabIndex="2" AutoPostBack="true"  >
-</asp:ListBox>
-  </div>
-
-      </td>
-      </tr>
-<tr>
-            <td  >
-<div class=" lbl alignleft">
-    <asp:Label ID="curPrice_lbl" AssociatedControlID="curPrice" runat="server" Text="<%$ resources: curPrice.Caption %>" ></asp:Label>
-</div>
- <div  class="textcontrol currency"  >
-    <SalesLogix:Currency
-    runat="server"
-    ID="curPrice" 
-    ExchangeRateType="BaseRate"
-    ReadOnly="true"  Required="false"
- DisplayCurrencyCode="false" DecimalDigits="-1"
-TabIndex="3"  />
-</div>
-
-      </td>
-      </tr>
-<tr>
-            <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="txtDiscount_lbl" AssociatedControlID="txtDiscount" runat="server" Text="<%$ resources: txtDiscount.Caption %>" ></asp:Label>
- </div>   
-   <div  class="textcontrol numeric"  > 
-    <SalesLogix:NumericControl runat="server" ID="txtDiscount"
-TabIndex="4" FormatType="Percent" Strict="False" 
-AutoPostBack="true"  />
-  </div>
-
-      </td>
-      </tr>
-<tr>
-            <td  >
-<div class=" lbl alignleft">
-    <asp:Label ID="curCalculatedPrice_lbl" AssociatedControlID="curCalculatedPrice" runat="server" Text="<%$ resources: curCalculatedPrice.Caption %>" ></asp:Label>
-</div>
- <div  class="textcontrol currency"  >
-    <SalesLogix:Currency
-    runat="server"
-    ID="curCalculatedPrice" 
-    ExchangeRateType="BaseRate"
-     Required="false"
- DisplayCurrencyCode="false" DecimalDigits="-1"
-TabIndex="5" AutoPostBack="true"  />
-</div>
-
-      </td>
-      </tr>
-<tr>
-            <td  >
-<div class=" lbl alignleft">
-    <asp:Label ID="curMCCalcPrice_lbl" AssociatedControlID="curMCCalcPrice" runat="server" Text="<%$ resources: curMCCalcPrice.Caption %>" ></asp:Label>
-</div>
- <div  class="textcontrol currency"  >
-    <SalesLogix:Currency
-    runat="server"
-    ID="curMCCalcPrice" 
-    ExchangeRateType="EntityRate"
-     Required="false"
- DecimalDigits="-1"
-TabIndex="6" AutoPostBack="true"  />
-</div>
-
-      </td>
-      </tr>
-<tr>
-            <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="txtQuantity_lbl" AssociatedControlID="txtQuantity" runat="server" Text="<%$ resources: txtQuantity.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtQuantity"  dojoType="Sage.UI.Controls.TextBox" TabIndex="7" AutoPostBack="true"  />
-  </div>
-
-      </td>
-      </tr>
-<tr>
-            <td  >
-<div class=" lbl alignleft">
-    <asp:Label ID="curExtendedPrice_lbl" AssociatedControlID="curExtendedPrice" runat="server" Text="<%$ resources: curExtendedPrice.Caption %>" ></asp:Label>
-</div>
- <div  class="textcontrol currency"  >
-    <SalesLogix:Currency
-    runat="server"
-    ID="curExtendedPrice" 
-    ExchangeRateType="BaseRate"
-    ReadOnly="true"  Required="false"
- DisplayCurrencyCode="false" DecimalDigits="-1"
-TabIndex="8"  />
-</div>
-
-      </td>
-      </tr>
-<tr>
-            <td  >
 <asp:Panel runat="server" ID="QFControlsList" CssClass="controlslist qfActionContainer"
 >
    <asp:Button runat="server" ID="btnOK"
@@ -150,6 +46,110 @@ TabIndex="8"  />
  Text="<%$ resources: btnCancel.Caption %>" TabIndex="10" CssClass="slxbutton"  />
  
 </asp:Panel>
+      </td>
+      </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="lstbxPriceLevel_lbl" AssociatedControlID="lstbxPriceLevel" runat="server" Text="<%$ resources: lstbxPriceLevel.Caption %>" Visible="false" ></asp:Label>
+ </div>   
+   <div  class="textcontrol select"  > 
+<asp:ListBox runat="server" ID="lstbxPriceLevel"  SelectionMode="Single" Rows="1" data-dojo-type="dijit.form.Select"  CssClass="select-control " TabIndex="2" AutoPostBack="true" Visible="false"  >
+</asp:ListBox>
+  </div>
+
+      </td>
+      </tr>
+<tr>
+            <td  >
+<div class=" lbl alignleft">
+    <asp:Label ID="curPrice_lbl" AssociatedControlID="curPrice" runat="server" Text="<%$ resources: curPrice.Caption %>" Visible="false" ></asp:Label>
+</div>
+ <div  class="textcontrol currency"  >
+    <SalesLogix:Currency
+    runat="server"
+    ID="curPrice" 
+    ExchangeRateType="BaseRate"
+    ReadOnly="true"  Required="false"
+ DisplayCurrencyCode="false" DecimalDigits="-1"
+TabIndex="3" Visible="false"  />
+</div>
+
+      </td>
+      </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="txtDiscount_lbl" AssociatedControlID="txtDiscount" runat="server" Text="<%$ resources: txtDiscount.Caption %>" Visible="false" ></asp:Label>
+ </div>   
+   <div  class="textcontrol numeric"  > 
+    <SalesLogix:NumericControl runat="server" ID="txtDiscount"
+TabIndex="4" Visible="false" FormatType="Percent" Strict="False" 
+AutoPostBack="true"  />
+  </div>
+
+      </td>
+      </tr>
+<tr>
+            <td  >
+<div class=" lbl alignleft">
+    <asp:Label ID="curCalculatedPrice_lbl" AssociatedControlID="curCalculatedPrice" runat="server" Text="<%$ resources: curCalculatedPrice.Caption %>" Visible="false" ></asp:Label>
+</div>
+ <div  class="textcontrol currency"  >
+    <SalesLogix:Currency
+    runat="server"
+    ID="curCalculatedPrice" 
+    ExchangeRateType="BaseRate"
+     Required="false"
+ DisplayCurrencyCode="false" DecimalDigits="-1"
+TabIndex="5" Visible="false" AutoPostBack="true"  />
+</div>
+
+      </td>
+      </tr>
+<tr>
+            <td  >
+<div class=" lbl alignleft">
+    <asp:Label ID="curMCCalcPrice_lbl" AssociatedControlID="curMCCalcPrice" runat="server" Text="<%$ resources: curMCCalcPrice.Caption %>" Visible="false" ></asp:Label>
+</div>
+ <div  class="textcontrol currency"  >
+    <SalesLogix:Currency
+    runat="server"
+    ID="curMCCalcPrice" 
+    ExchangeRateType="EntityRate"
+     Required="false"
+ DecimalDigits="-1"
+TabIndex="6" Visible="false" AutoPostBack="true"  />
+</div>
+
+      </td>
+      </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft" >
+   <asp:Label ID="txtQuantity_lbl" AssociatedControlID="txtQuantity" runat="server" Text="<%$ resources: txtQuantity.Caption %>" Visible="false" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="txtQuantity"  dojoType="Sage.UI.Controls.TextBox" TabIndex="7" Visible="false" AutoPostBack="true"  />
+  </div>
+
+      </td>
+      </tr>
+<tr>
+            <td  >
+<div class=" lbl alignleft">
+    <asp:Label ID="curExtendedPrice_lbl" AssociatedControlID="curExtendedPrice" runat="server" Text="<%$ resources: curExtendedPrice.Caption %>" Visible="false" ></asp:Label>
+</div>
+ <div  class="textcontrol currency"  >
+    <SalesLogix:Currency
+    runat="server"
+    ID="curExtendedPrice" 
+    ExchangeRateType="BaseRate"
+    ReadOnly="true"  Required="false"
+ DisplayCurrencyCode="false" DecimalDigits="-1"
+TabIndex="8" Visible="false"  />
+</div>
+
       </td>
       </tr>
 </table>
@@ -189,7 +189,7 @@ protected override void OnAddEntityBindings() {
                     // txtName.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtNameTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Product.Name", txtName, "Text");
         BindingSource.Bindings.Add(txtNameTextBinding);
-                    // lstbxPriceLevel.SelectedValue Binding
+                             // lstbxPriceLevel.SelectedValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding lstbxPriceLevelSelectedValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Program", lstbxPriceLevel, "SelectedValue");
         lstbxPriceLevelSelectedValueBinding.ChangeNotificationEventName = "TextChanged";
         lstbxPriceLevelSelectedValueBinding.IgnoreFLSDisabling = true;
@@ -220,10 +220,66 @@ protected override void OnAddEntityBindings() {
                     // curExtendedPrice.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding curExtendedPriceTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("ExtendedPrice", curExtendedPrice, "Text");
         BindingSource.Bindings.Add(curExtendedPriceTextBinding);
-             
+    
    
 }
                                                                                     
+protected void btnOK_ClickAction(object sender, EventArgs e) {
+  Sage.Entity.Interfaces.IOpportunityProduct _entity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunityProduct;
+  if (_entity != null)
+  {
+    object _parent = GetParentEntity();
+    if (DialogService.ChildInsertInfo != null)
+    {
+        if (_parent != null)
+        {
+            if (DialogService.ChildInsertInfo.ParentReferenceProperty != null)
+            {
+                DialogService.ChildInsertInfo.ParentReferenceProperty.SetValue(_entity, _parent, null);
+            }
+        }
+    }
+    bool shouldSave = true;
+    Sage.Platform.WebPortal.EntityPage page = Page as Sage.Platform.WebPortal.EntityPage;
+    if (page != null)
+    {
+        if(IsInDialog() && page.ModeId.ToUpper() == "INSERT")
+        {
+            shouldSave = false;
+        }
+    }
+
+    if(shouldSave)
+    {
+       _entity.Save();
+    }
+
+    if (_parent != null)
+    {
+        if (DialogService.ChildInsertInfo != null)
+        {
+           if (DialogService.ChildInsertInfo.ParentsCollectionProperty != null)
+           {
+              System.Reflection.MethodInfo _add = DialogService.ChildInsertInfo.ParentsCollectionProperty.PropertyType.GetMethod("Add");
+              _add.Invoke(DialogService.ChildInsertInfo.ParentsCollectionProperty.GetValue(_parent, null), new object[] { _entity });
+           }
+        }
+     }
+  }
+
+          btnOK_ClickActionBRC(sender, e);
+    
+  
+}
+protected void btnOK_ClickActionBRC(object sender, EventArgs e) {
+Sage.Platform.WebPortal.Services.IPanelRefreshService refresher = PageWorkItem.Services.Get<Sage.Platform.WebPortal.Services.IPanelRefreshService>();
+if (refresher != null) {
+  refresher.RefreshAll();
+}
+else {  
+  Response.Redirect(Request.Url.ToString());
+}
+}
 protected void lstbxPriceLevel_ChangeAction(object sender, EventArgs e) {
       object[] objarray = new object[] { this.BindingSource.Current };
      Sage.Platform.EntityFactory.Execute<Sage.Entity.Interfaces.IOpportunityProduct>("OpportunityProduct.CalcPriceFromProgramPrice", objarray);
@@ -298,75 +354,19 @@ else {
   Response.Redirect(Request.Url.ToString());
 }
 }
-protected void btnOK_ClickAction(object sender, EventArgs e) {
-  Sage.Entity.Interfaces.IOpportunityProduct _entity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunityProduct;
-  if (_entity != null)
-  {
-    object _parent = GetParentEntity();
-    if (DialogService.ChildInsertInfo != null)
-    {
-        if (_parent != null)
-        {
-            if (DialogService.ChildInsertInfo.ParentReferenceProperty != null)
-            {
-                DialogService.ChildInsertInfo.ParentReferenceProperty.SetValue(_entity, _parent, null);
-            }
-        }
-    }
-    bool shouldSave = true;
-    Sage.Platform.WebPortal.EntityPage page = Page as Sage.Platform.WebPortal.EntityPage;
-    if (page != null)
-    {
-        if(IsInDialog() && page.ModeId.ToUpper() == "INSERT")
-        {
-            shouldSave = false;
-        }
-    }
-
-    if(shouldSave)
-    {
-       _entity.Save();
-    }
-
-    if (_parent != null)
-    {
-        if (DialogService.ChildInsertInfo != null)
-        {
-           if (DialogService.ChildInsertInfo.ParentsCollectionProperty != null)
-           {
-              System.Reflection.MethodInfo _add = DialogService.ChildInsertInfo.ParentsCollectionProperty.PropertyType.GetMethod("Add");
-              _add.Invoke(DialogService.ChildInsertInfo.ParentsCollectionProperty.GetValue(_parent, null), new object[] { _entity });
-           }
-        }
-     }
-  }
-
-          btnOK_ClickActionBRC(sender, e);
-    
-  
-}
-protected void btnOK_ClickActionBRC(object sender, EventArgs e) {
-Sage.Platform.WebPortal.Services.IPanelRefreshService refresher = PageWorkItem.Services.Get<Sage.Platform.WebPortal.Services.IPanelRefreshService>();
-if (refresher != null) {
-  refresher.RefreshAll();
-}
-else {  
-  Response.Redirect(Request.Url.ToString());
-}
-}
 
 protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
- lstbxPriceLevel.TextChanged += new EventHandler(lstbxPriceLevel_ChangeAction);
+ btnOK.Click += new EventHandler(btnOK_ClickAction);
+btnOK.Click += new EventHandler(DialogService.CloseEventHappened);
+btnOK.Click += new EventHandler(Refresh);
+btnCancel.Click += new EventHandler(DialogService.CloseEventHappened);
+lstbxPriceLevel.TextChanged += new EventHandler(lstbxPriceLevel_ChangeAction);
 txtDiscount.TextChanged += new EventHandler(txtDiscount_ChangeAction);
 curCalculatedPrice.TextChanged += new EventHandler(curCalculatedPrice_ChangeAction);
 curMCCalcPrice.TextChanged += new EventHandler(curMCCalcPrice_ChangeAction);
 txtQuantity.TextChanged += new EventHandler(txtQuantity_ChangeAction);
-btnOK.Click += new EventHandler(btnOK_ClickAction);
-btnOK.Click += new EventHandler(DialogService.CloseEventHappened);
-btnOK.Click += new EventHandler(Refresh);
-btnCancel.Click += new EventHandler(DialogService.CloseEventHappened);
 
 
 }
@@ -476,6 +476,21 @@ public class EditOpportunityProductAdapter : Sage.Platform.WebPortal.Adapters.En
     {
         get { return FindControl(ref _txtName, "txtName"); }
     }
+    private Sage.Platform.Controls.IControlsListControl _QFControlsList;
+    public  Sage.Platform.Controls.IControlsListControl QFControlsList
+    {
+        get { return FindControl(ref _QFControlsList, "QFControlsList"); }
+    }
+    private Sage.Platform.Controls.IButtonControl _btnOK;
+    public  Sage.Platform.Controls.IButtonControl btnOK
+    {
+        get { return FindControl(ref _btnOK, "btnOK"); }
+    }
+    private Sage.Platform.Controls.IButtonControl _btnCancel;
+    public  Sage.Platform.Controls.IButtonControl btnCancel
+    {
+        get { return FindControl(ref _btnCancel, "btnCancel"); }
+    }
     private Sage.Platform.Controls.IListBoxControl _lstbxPriceLevel;
     public  Sage.Platform.Controls.IListBoxControl lstbxPriceLevel
     {
@@ -510,21 +525,6 @@ public class EditOpportunityProductAdapter : Sage.Platform.WebPortal.Adapters.En
     public  Sage.Platform.Controls.ICurrencyControl curExtendedPrice
     {
         get { return FindControl(ref _curExtendedPrice, "curExtendedPrice"); }
-    }
-    private Sage.Platform.Controls.IControlsListControl _QFControlsList;
-    public  Sage.Platform.Controls.IControlsListControl QFControlsList
-    {
-        get { return FindControl(ref _QFControlsList, "QFControlsList"); }
-    }
-    private Sage.Platform.Controls.IButtonControl _btnOK;
-    public  Sage.Platform.Controls.IButtonControl btnOK
-    {
-        get { return FindControl(ref _btnOK, "btnOK"); }
-    }
-    private Sage.Platform.Controls.IButtonControl _btnCancel;
-    public  Sage.Platform.Controls.IButtonControl btnCancel
-    {
-        get { return FindControl(ref _btnCancel, "btnCancel"); }
     }
 
     public  void curMCCalcPrice_OnChange(System.EventArgs e)

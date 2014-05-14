@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="d23eb37f-1939-4584-9bd3-d16e7e6763fe" lastModifiedUtc="2014-05-14T07:41:03.5695449Z" name="SetLeadCompetitorDefaults" methodType="Rule" actionType="None" returnMode="None">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmEntityMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="b705066d-89ff-48c4-9302-d2b3d293fd9b" paramName="competitor" sequence="0" paramType="ICompetitor">
+      <description>The competitor used to default the opportunity competitor data.</description>
+    </OrmEntityMethodParam>
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets>
+    <methodTarget xsi:type="OrmMethodTargetSnippet" id="1d101d11-da6e-42e4-ac27-ae24081e51f2" lastModifiedUtc="2014-05-14T07:41:00.0623443Z" targetType="Sage.BusinessRules.CodeSnippets.LeadCompetitorBusinessRules, Sage.SnippetLibrary.CSharp" targetMethod="SetLeadCompetitorDefaultsStep" active="true" codeSnippetId="9bb10d2b-2905-43f8-863f-64b669c62ddc">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmMethodTargetSnippet" />
+      </ExtendedPropertiesCollection>
+    </methodTarget>
+  </methodTargets>
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

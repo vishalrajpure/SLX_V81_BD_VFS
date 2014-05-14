@@ -11,4 +11,6 @@
   <Item Id="6502af80-0a75-4040-8d59-80f43aeed61f">LiveGroupViewer.smartpart.xml</Item>
   <Item Id="ff703a28-98b7-4a6d-9fcd-a7908b05f3b1">LeadSearchAndConvert.smartpart.xml</Item>
   <Item Id="36fadfca-71eb-4cf7-82d0-24edcedcedd9">MergeRecords.smartpart.xml</Item>
+  <Item Id="667501d4-3fe9-47c6-b5bc-baf64c7076e9">LeadCompetitors.smartpart.xml</Item>
+  <Item Id="30481cb1-5a46-43fb-a2f6-9c81df6b9fae">EditLeadCompetitor.smartpart.xml</Item>
 </ModelItems>
