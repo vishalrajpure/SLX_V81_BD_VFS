@@ -117,7 +117,7 @@ Required="true" AutoPostBack="true"  />
    <asp:Label ID="pklStatus_lbl" AssociatedControlID="pklStatus" runat="server" Text="<%$ resources: pklStatus.Caption %>" ></asp:Label>
  </div>   
    <div  class="textcontrol picklist"  > 
-    <SalesLogix:PickListControl runat="server" ID="pklStatus" MustExistInList="false" MaxLength="64"  />
+    <SalesLogix:PickListControl runat="server" ID="pklStatus" PickListName="Lead Status" MustExistInList="false" MaxLength="64"  />
   </div>
 
       </td>
@@ -204,7 +204,7 @@ LabelPlacement="right" AutoPostBack="true"  />
    <asp:Label ID="lkpLeadEmployee_lbl" AssociatedControlID="lkpLeadEmployee" runat="server" Text="<%$ resources: lkpLeadEmployee.Caption %>" ></asp:Label>
  </div>   
    <div  class="textcontrol"  > 
-    <SalesLogix:SlxUserControl runat="server" ID="lkpLeadEmployee"  />
+    <SalesLogix:SlxUserControl runat="server" ID="lkpLeadEmployee" AutoPostBack="true" Required="true"  />
   </div>
 
       </td>
@@ -491,6 +491,31 @@ Sage.Platform.Application.Services.IUserOptionsService userOption = Sage.Platfor
 userOption.SetCommonOption("AutoSearch", "General", chkAutoSearch.Checked.ToString(), true);
 
 }
+protected void lkpLeadEmployee_ChangeAction(object sender, EventArgs e) {
+    Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+	string qry = "select case when userID is null then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
+		"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BU') end " +
+		"From usersecurity US,VWEMPMASTER emp where emp.CEMPLCODE = US.USERCODE and US.USERID ='" + lead.LeadEmployee.Id +  "'";
+	
+	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	System.Data.DataTable dt = new System.Data.DataTable();
+	dataAdapterObj.Fill(dt);
+	
+	
+	if(dt.Rows.Count > 0)
+	{
+		Sage.Entity.Interfaces.ILeadSource ls  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)dt.Rows[0][0].ToString());	
+		lead.LeadSource = ls;
+	}
+	else
+	{
+		Sage.Entity.Interfaces.ILeadSource ld = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)"LDEMOA000003");	
+		lead.LeadSource = ld;
+	}
+
+}
 protected void cmdSave_ClickAction(object sender, EventArgs e) {
 
 
@@ -592,6 +617,7 @@ protected override void OnWireEventHandlers()
  phnWorkPhone.TextChanged += new EventHandler(phnWorkPhone_ChangeAction);
 cmdMatchingRecords.Click += new EventHandler(cmdMatchingRecords_ClickAction);
 chkAutoSearch.CheckedChanged += new EventHandler(chkAutoSearch_ChangeAction);
+lkpLeadEmployee.LookupResultValueChanged += new EventHandler(lkpLeadEmployee_ChangeAction);
 cmdSave.Click += new ImageClickEventHandler(cmdSave_ClickAction);
 cmdSaveNew.Click += new ImageClickEventHandler(cmdSaveNew_ClickAction);
 
@@ -607,7 +633,32 @@ if ((val == "True") || (val == "T"))
 else
     chkAutoSearch.Checked = false;
 
+Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+Sage.Platform.Security.IUserService userService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
 
+string currentUserId = userService.UserId;
+Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)currentUserId);
+lead.LeadEmployee = user;
+
+ string qry = "select case when userID is null then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
+		"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BU') end " +
+		"From usersecurity US,VWEMPMASTER emp where emp.CEMPLCODE = US.USERCODE and US.USERID ='" + lead.LeadEmployee.Id +  "'";
+	
+	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	System.Data.DataTable dt = new System.Data.DataTable();
+	dataAdapterObj.Fill(dt);
+	if(dt.Rows.Count > 0)
+	{
+		Sage.Entity.Interfaces.ILeadSource ls  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)dt.Rows[0][0].ToString());	
+		lead.LeadSource = ls;
+	}
+	else
+	{
+		Sage.Entity.Interfaces.ILeadSource ld = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)"LDEMOA000003");	
+		lead.LeadSource = ld;
+	}
 
 }
 private bool _runActivating;

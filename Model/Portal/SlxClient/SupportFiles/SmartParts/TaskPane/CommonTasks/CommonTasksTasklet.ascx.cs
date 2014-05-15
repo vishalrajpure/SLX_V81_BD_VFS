@@ -1,4 +1,5 @@
-﻿using System;
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -191,13 +192,93 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
     {
         tskExportToExcel.Command += tskExportToExcel_Command;
         ScriptManager.GetCurrent(Page).RegisterPostBackControl(FindControl("tskExportToExcel"));
+		tskTransferAccount.Command += tskTransferAccount_Command;
+        ScriptManager.GetCurrent(Page).RegisterPostBackControl(FindControl("tskTransferAccount"));
+    }
+
+    private void tskTransferAccount_Command(object sender, CommandEventArgs e)
+    {
+        ChangeAccountUser();
     }
 
     void tskExportToExcel_Command(object sender, CommandEventArgs e)
     {
         ExportToFile();
     }
+  private void ChangeAccountUser()
+    {
+        GroupContextService groupContextService = ApplicationContext.Current.Services.Get<IGroupContextService>() as GroupContextService;
+        CachedGroup currentGroup = groupContextService.GetGroupContext().CurrentGroupInfo.CurrentGroup;
+        GroupInfo gInfo = currentGroup.GroupInformation;
 
+        HttpCookie cUsers = Request.Cookies["User"];
+       // HttpCookie cRoles = Request.Cookies["Role"];
+        try
+        {
+            string passedArgument = hfSelections.Value;
+
+            DataTable GroupTableAll = gInfo.GetGroupDataTable();
+            using (DataTable GroupTableSelections = GroupTableAll.Copy())
+            {
+                IDictionary<string, Layout> layout = new Dictionary<string, Layout>();
+                if (passedArgument != "cancel")
+                {
+                    if (passedArgument == "selectAll")
+                    {
+                    }
+                    else
+                    {
+                        //Get the selection service and remove un selected records.
+                        //the passArgument has is the selection key.
+                        ISelectionService srv = SelectionServiceRequest.GetSelectionService();
+                        ISelectionContext selectionContext = srv.GetSelectionContext(passedArgument);
+                        RemoveUnSelectedRows(selectionContext, GroupTableSelections);
+                    }
+                    //remove hidden columns
+
+                    if (cUsers != null && cUsers.Value.Trim() != string.Empty)
+                    {
+                        ToAccount(GroupTableSelections, cUsers.Value);
+                    }
+                }
+            }
+            DialogService.ShowMessage("Owner Changes Successfully...");
+        }
+        catch (Exception ex)
+        {
+            DialogService.ShowMessage(ex.Message);
+        }
+    }
+    private void ToAccount(DataTable GroupTableSelections, string cUser)
+    {
+        IAccount _account;
+        IUser _user;
+        //object pincodemapId;
+        //object[] objarray;
+        foreach (System.Data.DataRow row in GroupTableSelections.Rows)
+        {
+            _account = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAccount>(row["AccountId"].ToString());
+            if (_account != null)
+            {
+                _user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>(cUser);
+                string selsql = "Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + cUser + "' and name ='INSERTSECCODEID'";
+                Sage.Platform.Data.IDataService service = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+                System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service.GetConnectionString());
+                conObj.Open();
+                System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(selsql, conObj);
+                System.Data.DataTable dt = new System.Data.DataTable();
+                dataAdapterObj.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                     Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>(dt.Rows[0]["DEFAULTSECCODEID"].ToString());
+                    _account.Owner = objowner;
+                    _account.Save();
+                }
+                dataAdapterObj.Dispose();
+                conObj.Close();
+            }
+        }
+    }
     protected override void OnPreRender(EventArgs e)
     {
         base.OnPreRender(e);
@@ -1216,7 +1297,8 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
              {"tskSaveAsNewGroup","TaskText_SaveAsNew","javascript:commonTaskActions.saveSelectionsAsNewGroup();","false"},
              {"tskRemoveFromGroup","TaskText_Remove","javascript:commonTaskActions.removeSelectionsFromGroup();","false"},
              {"tskPromote", "TaskText_Promote", "javascript:Sage.Utility.Dashboard.promoteGroupToDashboard();", "false"},
-             {"tskExportToExcel", "TaskText_Export", "javascript:commonTaskActions.exportToFile();", "false" }
+             {"tskExportToExcel", "TaskText_Export", "javascript:commonTaskActions.exportToFile();", "false" },
+			{"tskTransferAccount", "TaskText_Transfer", "javascript:commonTaskActions.TransferAccount();", "false" }
             };
         tasksByEntityList.Add("IAccount", accountListTasks);
 
@@ -1728,6 +1810,7 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
         //To-Do break out according to Entity;
         IDictionary<string, string> maps = new Dictionary<string, string>();
         maps.Add("tskExportToExcel", "Entities/Group/ExportToFile");
+		maps.Add("tskTransferAccount", "Entities/Group/ExportToFile");
         maps.Add("tskAddSalesOrder", "Entities/SalesOrder/Add");
         maps.Add("tskAddResponse", "Entities/Campaign/Edit");
         //maps.Add("tskAddToGroup", "Entities/Group/AddToGroup");

@@ -7,7 +7,7 @@
       <ResourceKey>4aee41ba-75ec-4d69-a47b-69a2be5a17d6</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName>quickformload0</MethodName>
+          <MethodName />
           <CSharpCodeSnippet>Sage.SalesLogix.Security.SLXUserService service = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;() as Sage.SalesLogix.Security.SLXUserService;
 Sage.Platform.Application.Services.IUserOptionsService userOption = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Application.Services.IUserOptionsService&gt;();
 string val = userOption.GetCommonOption("AutoSearch", "General");
@@ -16,7 +16,32 @@ if ((val == "True") || (val == "T"))
 else
     chkAutoSearch.Checked = false;
 
-</CSharpCodeSnippet>
+Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+Sage.Platform.Security.IUserService userService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+
+string currentUserId = userService.UserId;
+Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser&gt;((object)currentUserId);
+lead.LeadEmployee = user;
+
+ string qry = "select case when userID is null then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
+		"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BU') end " +
+		"From usersecurity US,VWEMPMASTER emp where emp.CEMPLCODE = US.USERCODE and US.USERID ='" + lead.LeadEmployee.Id +  "'";
+	
+	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	System.Data.DataTable dt = new System.Data.DataTable();
+	dataAdapterObj.Fill(dt);
+	if(dt.Rows.Count &gt; 0)
+	{
+		Sage.Entity.Interfaces.ILeadSource ls  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.ILeadSource&gt;((object)dt.Rows[0][0].ToString());	
+		lead.LeadSource = ls;
+	}
+	else
+	{
+		Sage.Entity.Interfaces.ILeadSource ld = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.ILeadSource&gt;((object)"LDEMOA000003");	
+		lead.LeadSource = ld;
+	}</CSharpCodeSnippet>
         </CSharpSnippetActionItem>
       </Action>
       <IsDialogCloseAction>False</IsDialogCloseAction>
@@ -543,10 +568,32 @@ else
         <StyleScheme />
         <OnChangeAction>
           <ResourceKey>lkpLeadEmployee</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-            <NoActionActionItem>
-              <MethodName />
-            </NoActionActionItem>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+            <CSharpSnippetActionItem>
+              <MethodName>lkpLeadEmployee_ChangeAction</MethodName>
+              <CSharpCodeSnippet>    Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+	string qry = "select case when userID is null then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
+		"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BU') end " +
+		"From usersecurity US,VWEMPMASTER emp where emp.CEMPLCODE = US.USERCODE and US.USERID ='" + lead.LeadEmployee.Id +  "'";
+	
+	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	System.Data.DataTable dt = new System.Data.DataTable();
+	dataAdapterObj.Fill(dt);
+	
+	
+	if(dt.Rows.Count &gt; 0)
+	{
+		Sage.Entity.Interfaces.ILeadSource ls  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.ILeadSource&gt;((object)dt.Rows[0][0].ToString());	
+		lead.LeadSource = ls;
+	}
+	else
+	{
+		Sage.Entity.Interfaces.ILeadSource ld = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.ILeadSource&gt;((object)"LDEMOA000003");	
+		lead.LeadSource = ld;
+	}</CSharpCodeSnippet>
+            </CSharpSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
           <RunOnEveryRePaint>False</RunOnEveryRePaint>
@@ -555,7 +602,7 @@ else
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnChangeAction>
-        <Required>false</Required>
+        <Required>true</Required>
         <ShowNonLoginUsers>false</ShowNonLoginUsers>
         <LookupBindingMode>Object</LookupBindingMode>
         <LookupResultValue xsi:type="xsd:string" />
@@ -888,7 +935,7 @@ else
         </OnChangeAction>
         <Required>false</Required>
         <AutoPostBack>false</AutoPostBack>
-        <PickListName />
+        <PickListName>Lead Status</PickListName>
         <StorageMode>Text</StorageMode>
         <NameFormatString />
         <AllowMultiples>false</AllowMultiples>
@@ -1375,7 +1422,7 @@ Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfa
           <ResourceKey>cmdSaveNew</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName />
+              <MethodName>cmdSaveNew_ClickAction</MethodName>
               <CSharpCodeSnippet>/*	object[] objarray = new object[] {  this.BindingSource.Current };
 	Sage.Platform.EntityFactory.Execute&lt;Sage.SalesLogix.Entities.Lead&gt;("Lead.SaveLead", objarray);
 	Response.Redirect("InsertLead.aspx?modeid=Insert");

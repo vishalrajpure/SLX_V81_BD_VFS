@@ -138,7 +138,7 @@ Required="true"  />
    <asp:Label ID="pklStatus_lbl" AssociatedControlID="pklStatus" runat="server" Text="<%$ resources: pklStatus.Caption %>" ></asp:Label>
  </div>   
    <div  class="textcontrol picklist"  > 
-    <SalesLogix:PickListControl runat="server" ID="pklStatus" MustExistInList="false" MaxLength="64"  />
+    <SalesLogix:PickListControl runat="server" ID="pklStatus" PickListName="Lead Status" MustExistInList="false" MaxLength="64"  />
   </div>
 
       </td>
@@ -295,22 +295,22 @@ Required="true"  />
 <div class="slxlabel  alignleft  checkbox ">
 
   <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotSolicit"  Text="<%$ resources: chkDoNotSolicit.Caption %>"  CssClass=""
-LabelPlacement="right" AutoPostBack="true"  />
+Visible="false" LabelPlacement="right" AutoPostBack="true"  />
 </div>
       </td>
                 <td  >
 <div class="slxlabel  alignleft  checkbox ">
 
   <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotMail"  Text="<%$ resources: chkDoNotMail.Caption %>"  CssClass=""
-LabelPlacement="right"  />
+Visible="false" LabelPlacement="right"  />
 </div>
       </td>
                 <td rowspan="2"  >
  <div class=" lbl alignleft" >
-   <asp:Label ID="txtInterests_lbl" AssociatedControlID="txtInterests" runat="server" Text="<%$ resources: txtInterests.Caption %>" ></asp:Label>
+   <asp:Label ID="txtInterests_lbl" AssociatedControlID="txtInterests" runat="server" Text="<%$ resources: txtInterests.Caption %>" Visible="false" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtInterests"  Rows="3" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea" MultiLineMaxLength="128"  />
+<asp:TextBox runat="server" ID="txtInterests"  Rows="3" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea" MultiLineMaxLength="128" Visible="false"  />
   </div>
 
       </td>
@@ -320,14 +320,14 @@ LabelPlacement="right"  />
 <div class="slxlabel  alignleft  checkbox ">
 
   <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotEmail"  Text="<%$ resources: chkDoNotEmail.Caption %>"  CssClass=""
-LabelPlacement="right" AutoPostBack="true"  />
+Visible="false" LabelPlacement="right" AutoPostBack="true"  />
 </div>
       </td>
                 <td  >
 <div class="slxlabel  alignleft  checkbox ">
 
   <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotFax"  Text="<%$ resources: chkDoNotFax.Caption %>"  CssClass=""
-LabelPlacement="right"  />
+Visible="false" LabelPlacement="right"  />
 </div>
       </td>
             </tr>
@@ -336,15 +336,15 @@ LabelPlacement="right"  />
 <div class="slxlabel  alignleft  checkbox ">
 
   <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotCall"  Text="<%$ resources: chkDoNotCall.Caption %>"  CssClass=""
-LabelPlacement="right"  />
+Visible="false" LabelPlacement="right"  />
 </div>
       </td>
                 <td  >
  <div class=" lbl alignleft">
-   <asp:Label ID="pklIndustry_lbl" AssociatedControlID="pklIndustry" runat="server" Text="<%$ resources: pklIndustry.Caption %>" ></asp:Label>
+   <asp:Label ID="pklIndustry_lbl" AssociatedControlID="pklIndustry" runat="server" Text="<%$ resources: pklIndustry.Caption %>" Visible="false" ></asp:Label>
  </div>   
    <div  class="textcontrol picklist"  > 
-    <SalesLogix:PickListControl runat="server" ID="pklIndustry" PickListName="Industry" MustExistInList="false" NoneEditable="true" AlphaSort="true"  />
+    <SalesLogix:PickListControl runat="server" ID="pklIndustry" PickListName="Industry" MustExistInList="false" NoneEditable="true" AlphaSort="true" Visible="false"  />
   </div>
 
       </td>
@@ -353,10 +353,10 @@ LabelPlacement="right"  />
 <tr>
             <td  >
  <div class=" lbl alignleft" >
-   <asp:Label ID="txtSICCode_lbl" AssociatedControlID="txtSICCode" runat="server" Text="<%$ resources: txtSICCode.Caption %>" ></asp:Label>
+   <asp:Label ID="txtSICCode_lbl" AssociatedControlID="txtSICCode" runat="server" Text="<%$ resources: txtSICCode.Caption %>" Visible="false" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtSICCode"  dojoType="Sage.UI.Controls.TextBox"  />
+<asp:TextBox runat="server" ID="txtSICCode"  dojoType="Sage.UI.Controls.TextBox" Visible="false"  />
   </div>
 
       </td>

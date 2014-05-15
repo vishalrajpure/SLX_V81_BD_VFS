@@ -651,6 +651,7 @@ if (lead != null)
       <QFCheckBox>
         <Column>0</Column>
         <Row>16</Row>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>chkDoNotSolicit</ControlId>
@@ -689,6 +690,7 @@ if (lead != null)
       <QFCheckBox>
         <Column>0</Column>
         <Row>17</Row>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>chkDoNotEmail</ControlId>
@@ -734,6 +736,7 @@ if (lead != null)
       <QFCheckBox>
         <Column>0</Column>
         <Row>18</Row>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>chkDoNotCall</ControlId>
@@ -778,6 +781,7 @@ if (lead != null)
       <QFTextBox>
         <Column>0</Column>
         <Row>19</Row>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>txtSICCode</ControlId>
@@ -996,7 +1000,7 @@ if (lead != null)
         </OnChangeAction>
         <Required>false</Required>
         <AutoPostBack>false</AutoPostBack>
-        <PickListName />
+        <PickListName>Lead Status</PickListName>
         <StorageMode>Text</StorageMode>
         <NameFormatString />
         <AllowMultiples>false</AllowMultiples>
@@ -1246,6 +1250,7 @@ if (lead != null)
       <QFCheckBox>
         <Column>1</Column>
         <Row>16</Row>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>chkDoNotMail</ControlId>
@@ -1290,6 +1295,7 @@ if (lead != null)
       <QFCheckBox>
         <Column>1</Column>
         <Row>17</Row>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>chkDoNotFax</ControlId>
@@ -1334,6 +1340,7 @@ if (lead != null)
       <QFSLXPickList>
         <Column>1</Column>
         <Row>18</Row>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>pklIndustry</ControlId>
@@ -1511,6 +1518,7 @@ string qry = "Select Q.SALESMANAGERID  from QUALIFIERANDSMPINCODE Q " +
         <RowSpan>2</RowSpan>
         <Column>2</Column>
         <Row>16</Row>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>txtInterests</ControlId>

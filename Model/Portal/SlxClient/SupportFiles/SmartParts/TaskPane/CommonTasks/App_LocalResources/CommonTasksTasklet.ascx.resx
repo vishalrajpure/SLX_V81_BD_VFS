@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -209,6 +209,9 @@
   </data>
   <data name="TaskText_Export" xml:space="preserve">
     <value>Export to File</value>
+  </data>
+   <data name="TaskText_Transfer" xml:space="preserve">
+    <value>Transfer Account</value>
   </data>
   <data name="TaskText_MailMerge" xml:space="preserve">
     <value>Mail Merge</value>

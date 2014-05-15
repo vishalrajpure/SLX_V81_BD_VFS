@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="CommonTasksTasklet.ascx.cs" Inherits="SmartParts_TaskPane_CommonTasks_CommonTasksTasklet" EnableViewState="true" ViewStateMode="Enabled" %>
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="CommonTasksTasklet.ascx.cs" Inherits="SmartParts_TaskPane_CommonTasks_CommonTasksTasklet" EnableViewState="true" ViewStateMode="Enabled" %>
 <%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls" TagPrefix="SalesLogix" %>
 <%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls.Lookup" TagPrefix="SalesLogix" %>
 <%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls.ScriptResourceProvider" TagPrefix="SalesLogix" %>
@@ -30,7 +30,7 @@
         </asp:Repeater>
     </ul>
     <asp:Button ID="tskExportToExcel" runat="server" style="display:none;" />
-
+	<asp:Button ID="tskTransferAccount" runat="server" style="display:none;" />
     <script type="text/javascript">
         var commonTaskActions;
         require([

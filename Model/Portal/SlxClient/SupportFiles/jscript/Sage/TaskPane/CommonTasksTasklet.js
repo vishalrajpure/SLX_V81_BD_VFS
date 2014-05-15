@@ -1,4 +1,4 @@
-﻿/*globals Sage, dojo, dojox, dijit, Simplate, window, Sys, define, __doPostBack, GroupAdHocListMenu, getCookie, commonTaskActions, $, cookie */
+/*globals Sage, dojo, dojox, dijit, Simplate, window, Sys, define, __doPostBack, GroupAdHocListMenu, getCookie, commonTaskActions, $, cookie */
 define([
         'dijit/Menu',
         'dijit/Dialog',
@@ -174,6 +174,58 @@ function (
                 };
                 jobs.triggerJobAndDisplayProgressDialog(options);
             };
+        },
+		TransferAccount: function () {
+            this.getCurrentEntity();
+            this.prepareSelectedRecords(this.promptForFileFormat1(this));
+        },
+        
+        // Prompt the user to select which delimiter the export should use.
+        // Their cultural version of csv or Excel preferred Tab.
+        // Also allow the user to save this preference, and not be prompted again.
+        promptForFileFormat1: function () {
+            var self = this,
+                promptForFileFormatDialogId = "promptForFileFormat-Dialog",
+                promptForFileFormatDialog = dijit.byId(promptForFileFormatDialogId);
+
+            if (!promptForFileFormatDialog) {
+                promptForFileFormatDialog = new DijitDialog({
+                    id: promptForFileFormatDialogId,
+                    title: "Transfer Account"
+                });
+            }
+
+            promptForFileFormatDialog.attr("content", this.getPromptForFileFormatTemplate1().apply({ dialogId: promptForFileFormatDialogId }));
+            promptForFileFormatDialog.show();
+        },
+
+        getPromptForFileFormatTemplate1: function () {
+            return new Simplate([
+                '<div>',
+                    '<iframe id ="ie" src="smartparts/AccountOwnerChange.aspx" runat="server" width:300,height:150></iframe>',
+                    '<br />',
+                    '<div style="padding-right:5px; padding-bottom:5px; text-align:right;">',
+                        '<button data-dojo-type="dijit.form.Button" type="submit" class="ok-button" onClick="commonTaskActions.onTransferAccountClick();">{%= commonTaskActions.exportToFile_OK %}</button>',
+                        '<button data-dojo-type="dijit.form.Button" type="button" class="cancel-button" onClick="dijit.byId(\'promptForFileFormat-Dialog\').hide();">{%= commonTaskActions.exportToFile_Cancel %}</button>',
+                    '</div>',
+                '</div>'
+            ]);
+        },
+        onTransferAccountClick: function () {
+
+            //Call the click event for the hidden sumbit button.
+            alert("1");
+            var User = window.frames['ie'].document.getElementById('drpusers').value;
+            if (User == '0') {
+                alert('Please select User');
+                window.frames['ie'].document.getElementById('drpusers').focus();
+            }
+            else {
+                document.cookie = "User=" + User;
+                dojo.byId([this.clientId, '_tskTransferAccount'].join('')).click();
+                //dialog.hide(); 
+            }
+
         },
         exportToFile: function () {
             this.getCurrentEntity();
