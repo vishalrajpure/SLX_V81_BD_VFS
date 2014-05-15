@@ -1420,7 +1420,7 @@ if (lead != null)
           <ResourceKey>cmdQualifyLead</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName />
+              <MethodName>cmdQualifyLead_ClickAction</MethodName>
               <CSharpCodeSnippet>Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
 
 //////////////Specify the Query for find BM///////////
@@ -1662,7 +1662,21 @@ Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfa
     }
 	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)"SYST00000001");
     //lead.Owner = objowner;
-	
+	lead.Address.Save();
+	if(lead.Products.Count &gt; 0)
+	{
+	foreach(Sage.Entity.Interfaces.ILeadProduct prd in lead.Products )
+	{
+		prd.Save();
+	}
+	}
+	if(lead.Competitors.Count &gt; 0)
+	{
+	foreach(Sage.Entity.Interfaces.ILeadCompetitor cmp in lead.Competitors)
+	{
+		cmp.Save();
+	}
+	}
 	lead.Save();
 	System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx", "&amp;modeid=Detail"));
 

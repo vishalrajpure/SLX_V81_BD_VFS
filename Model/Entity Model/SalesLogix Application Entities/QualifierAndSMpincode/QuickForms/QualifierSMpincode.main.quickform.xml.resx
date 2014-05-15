@@ -117,25 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="luePincode.Caption" xml:space="preserve">
-    <value>Pincode:</value>
+  <data name="luePincode.LookupProperties.Carea.PropertyHeader" xml:space="preserve">
+    <value>Carea</value>
   </data>
-  <data name="luequalifire.LookupProperties.Department.PropertyHeader" xml:space="preserve">
+  <data name="luequalifier.LookupProperties.Department.PropertyHeader" xml:space="preserve">
     <value>Department</value>
   </data>
-  <data name="luequalifire.LookupProperties.Division.PropertyHeader" xml:space="preserve">
+  <data name="luequalifier.LookupProperties.Division.PropertyHeader" xml:space="preserve">
     <value>Division</value>
   </data>
-  <data name="luequalifire.LookupProperties.Email.PropertyHeader" xml:space="preserve">
+  <data name="luequalifier.LookupProperties.Email.PropertyHeader" xml:space="preserve">
     <value>Email</value>
   </data>
-  <data name="luequalifire.LookupProperties.FirstName.PropertyHeader" xml:space="preserve">
+  <data name="luequalifier.LookupProperties.FirstName.PropertyHeader" xml:space="preserve">
     <value>FirstName</value>
   </data>
-  <data name="luequalifire.LookupProperties.LastName.PropertyHeader" xml:space="preserve">
+  <data name="luequalifier.LookupProperties.LastName.PropertyHeader" xml:space="preserve">
     <value>LastName</value>
   </data>
-  <data name="luequalifire.Caption" xml:space="preserve">
+  <data name="luequalifier.Caption" xml:space="preserve">
     <value>Qualifier:</value>
   </data>
   <data name="lueSaleManager.LookupProperties.Department.PropertyHeader" xml:space="preserve">
@@ -158,5 +158,20 @@
   </data>
   <data name="QFButton.ToolTip" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="luePincode.LookupProperties.Cpincode.PropertyHeader" xml:space="preserve">
+    <value>Cpincode</value>
+  </data>
+  <data name="luePincode.LookupProperties.Cpindesc.PropertyHeader" xml:space="preserve">
+    <value>Cpindesc</value>
+  </data>
+  <data name="luePincode.Caption" xml:space="preserve">
+    <value>Pincode:</value>
+  </data>
+  <data name="btndelete.ToolTip" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btndelete.ActionConfirmationMessage" xml:space="preserve">
+    <value>You are about to permanently delete this Records.</value>
   </data>
 </root>

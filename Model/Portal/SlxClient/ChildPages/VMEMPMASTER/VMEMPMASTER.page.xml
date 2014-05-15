@@ -3,8 +3,10 @@
   <PageAlias>VMEMPMASTER</PageAlias>
   <TemplateUrl>Masters\base.master</TemplateUrl>
   <InheritTemplate>false</InheritTemplate>
-  <InheritsFrom>Sage.Platform.WebPortal.WebPortalPage, Sage.Platform.WebPortal</InheritsFrom>
-  <Properties />
+  <InheritsFrom>Sage.Platform.WebPortal.EntityPage, Sage.Platform.WebPortal</InheritsFrom>
+  <Properties>
+    <Property Name="EntityTypeName" TypeConverter="">Sage.Entity.Interfaces.IVwempmaster,Sage.Entity.Interfaces</Property>
+  </Properties>
   <TemplateProperties />
   <IsDefaultPage>false</IsDefaultPage>
   <ExcludedGlobalModules />

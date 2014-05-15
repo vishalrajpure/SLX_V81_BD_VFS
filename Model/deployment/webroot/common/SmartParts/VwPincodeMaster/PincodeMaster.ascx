@@ -103,6 +103,7 @@ LabelPlacement="left"  />
 
 
  <SalesLogix:SmartPartToolsContainer runat="server" ID="PincodeMaster_RTools" ToolbarLocation="right">
+   <SalesLogix:GroupNavigator runat="server" ID="grpnavpincode" ></SalesLogix:GroupNavigator>
   <SalesLogix:PageLink ID="btnEditForm" CssClass="adminEditFormButton" runat="server" LinkType="RelativePath" ToolTip="<%$ resources: Portal, EditForm_ToolTip %>" NavigateUrl="~/FormManager.aspx?entityid=PincodeMaster&modeid=Detail" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=form_manager_16x16"></SalesLogix:PageLink>
  
  
@@ -158,7 +159,7 @@ protected override void OnAddEntityBindings() {
         BindingSource.Bindings.Add(QFCheckBox1CheckedBinding);
     
    
-}
+    }
                                                                
 
 protected override void OnWireEventHandlers()
@@ -279,6 +280,11 @@ public class PincodeMasterAdapter : Sage.Platform.WebPortal.Adapters.EntityFormA
     public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox1
     {
         get { return FindControl(ref _QFCheckBox1, "QFCheckBox1"); }
+    }
+    private Sage.Platform.Controls.IGroupNavigatorControl _grpnavpincode;
+    public  Sage.Platform.Controls.IGroupNavigatorControl grpnavpincode
+    {
+        get { return FindControl(ref _grpnavpincode, "grpnavpincode"); }
     }
 
 }

@@ -14329,7 +14329,7 @@
     <value>Empmstid</value>
   </data>
   <data name="Vwempmaster.DisplayName" xml:space="preserve">
-    <value>Vwempmaster</value>
+    <value>Employee Master</value>
   </data>
   <data name="Vwareamaster.Csafire.DisplayName" xml:space="preserve">
     <value>Csafire</value>
@@ -14581,7 +14581,7 @@
     <value>Dbirthdt</value>
   </data>
   <data name="Vwpincodemaster.DisplayName" xml:space="preserve">
-    <value>Vwpincodemaster</value>
+    <value>PincodeMaster</value>
   </data>
   <data name="Vwpincodemaster.Pincdmstid.DisplayName" xml:space="preserve">
     <value>Pincdmstid</value>
@@ -14593,7 +14593,7 @@
     <value>Createdate</value>
   </data>
   <data name="Vwareamaster.DisplayName" xml:space="preserve">
-    <value>Vwareamaster</value>
+    <value>Area Master</value>
   </data>
   <data name="Vwareamaster.Carea.DisplayName" xml:space="preserve">
     <value>Carea</value>
@@ -14641,7 +14641,7 @@
     <value>DescriptionOfBusiness</value>
   </data>
   <data name="QualifierAndSMpincode.DisplayName" xml:space="preserve">
-    <value>Qualifier/BranchManager Pincode Mape</value>
+    <value>Qualifier/BranchManager Pincode Mapping</value>
   </data>
   <data name="QualifierAndSMpincode.QualifierAndSMpincodeId.DisplayName" xml:space="preserve">
     <value>Id</value>
@@ -14822,5 +14822,17 @@
   </data>
   <data name="Lead.OperatingcompId.DisplayName" xml:space="preserve">
     <value>Operating Company Id</value>
+  </data>
+  <data name="Vwpincodemaster.DisplayNamePlural" xml:space="preserve">
+    <value>PincodeMasters</value>
+  </data>
+  <data name="Vwempmaster.DisplayNamePlural" xml:space="preserve">
+    <value>Employee Masters</value>
+  </data>
+  <data name="Vwareamaster.DisplayNamePlural" xml:space="preserve">
+    <value>Area Masters</value>
+  </data>
+  <data name="QualifierAndSMpincode.DisplayNamePlural" xml:space="preserve">
+    <value>Qualifier/BranchManager Pincode Mappings</value>
   </data>
 </root>

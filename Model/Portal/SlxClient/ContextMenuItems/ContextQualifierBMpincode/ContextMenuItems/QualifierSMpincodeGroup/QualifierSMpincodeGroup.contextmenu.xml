@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <MenuDropDownItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="954f7b45-62e0-4e0a-b46f-2c447c9cc38e">
   <ItemId>QualifierSMpincodeGroup</ItemId>
-  <NavUrl>javascript:Sage.Utility.Groups.showMainLookupFor('QualifierBMpincode','QualifierSMpincode.aspx');</NavUrl>
+  <NavUrl>javascript:Sage.Utility.Groups.showMainLookupFor('QualifierAndSMpincode','QualifierAndSMpincode.aspx');</NavUrl>
   <LargeImageUrl />
   <SmallImageUrl />
   <ContextMenuId />

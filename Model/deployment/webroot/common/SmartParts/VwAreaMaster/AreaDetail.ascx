@@ -699,6 +699,7 @@ LabelPlacement="left"  />
 
 
  <SalesLogix:SmartPartToolsContainer runat="server" ID="AreaDetail_RTools" ToolbarLocation="right">
+   <SalesLogix:GroupNavigator runat="server" ID="groupnavArea" ></SalesLogix:GroupNavigator>
   <SalesLogix:PageLink ID="btnEditForm" CssClass="adminEditFormButton" runat="server" LinkType="RelativePath" ToolTip="<%$ resources: Portal, EditForm_ToolTip %>" NavigateUrl="~/FormManager.aspx?entityid=AreaDetail&modeid=Detail" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=form_manager_16x16"></SalesLogix:PageLink>
  
  
@@ -949,7 +950,7 @@ protected override void OnAddEntityBindings() {
         BindingSource.Bindings.Add(QFTextBox54TextBinding);
     
    
-}
+    }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 
 protected override void OnWireEventHandlers()
@@ -1395,6 +1396,11 @@ public class AreaDetailAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox52
     {
         get { return FindControl(ref _QFTextBox52, "QFTextBox52"); }
+    }
+    private Sage.Platform.Controls.IGroupNavigatorControl _groupnavArea;
+    public  Sage.Platform.Controls.IGroupNavigatorControl groupnavArea
+    {
+        get { return FindControl(ref _groupnavArea, "groupnavArea"); }
     }
 
 }

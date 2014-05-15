@@ -190,6 +190,7 @@ LabelPlacement="left"  />
 
 
  <SalesLogix:SmartPartToolsContainer runat="server" ID="EmployeeDetail_RTools" ToolbarLocation="right">
+   <SalesLogix:GroupNavigator runat="server" ID="grpnavEmployee" ></SalesLogix:GroupNavigator>
   <SalesLogix:PageLink ID="btnEditForm" CssClass="adminEditFormButton" runat="server" LinkType="RelativePath" ToolTip="<%$ resources: Portal, EditForm_ToolTip %>" NavigateUrl="~/FormManager.aspx?entityid=EmployeeDetail&modeid=Detail" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=form_manager_16x16"></SalesLogix:PageLink>
  
  
@@ -272,7 +273,7 @@ protected override void OnAddEntityBindings() {
         BindingSource.Bindings.Add(QFTextBox13TextBinding);
     
    
-}
+    }
                                                                                                                               
 
 protected override void OnWireEventHandlers()
@@ -438,6 +439,11 @@ public class EmployeeDetailAdapter : Sage.Platform.WebPortal.Adapters.EntityForm
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox13
     {
         get { return FindControl(ref _QFTextBox13, "QFTextBox13"); }
+    }
+    private Sage.Platform.Controls.IGroupNavigatorControl _grpnavEmployee;
+    public  Sage.Platform.Controls.IGroupNavigatorControl grpnavEmployee
+    {
+        get { return FindControl(ref _grpnavEmployee, "grpnavEmployee"); }
     }
 
 }

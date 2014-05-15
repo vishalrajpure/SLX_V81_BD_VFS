@@ -7,7 +7,7 @@
       <ResourceKey>4aee41ba-75ec-4d69-a47b-69a2be5a17d6</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName />
+          <MethodName>quickformload0</MethodName>
           <CSharpCodeSnippet>Sage.SalesLogix.Security.SLXUserService service = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;() as Sage.SalesLogix.Security.SLXUserService;
 Sage.Platform.Application.Services.IUserOptionsService userOption = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Application.Services.IUserOptionsService&gt;();
 string val = userOption.GetCommonOption("AutoSearch", "General");
@@ -1342,7 +1342,7 @@ userOption.SetCommonOption("AutoSearch", "General", chkAutoSearch.Checked.ToStri
           <ResourceKey>cmdSave</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName>cmdSave_ClickAction</MethodName>
+              <MethodName />
               <CSharpCodeSnippet>
 
 Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
@@ -1387,7 +1387,21 @@ Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfa
     }
 	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)"SYST00000001");
     //lead.Owner = objowner;
-	
+	lead.Address.Save();
+	if(lead.Products.Count &gt; 0)
+	{
+	foreach(Sage.Entity.Interfaces.ILeadProduct prd in lead.Products )
+	{
+		prd.Save();
+	}
+	}
+	if(lead.Competitors.Count &gt; 0)
+	{
+	foreach(Sage.Entity.Interfaces.ILeadCompetitor cmp in lead.Competitors)
+	{
+		cmp.Save();
+	}
+	}
 	lead.Save();
 	System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx", "&amp;modeid=Detail"));
 
@@ -1422,7 +1436,7 @@ Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfa
           <ResourceKey>cmdSaveNew</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName>cmdSaveNew_ClickAction</MethodName>
+              <MethodName />
               <CSharpCodeSnippet>/*	object[] objarray = new object[] {  this.BindingSource.Current };
 	Sage.Platform.EntityFactory.Execute&lt;Sage.SalesLogix.Entities.Lead&gt;("Lead.SaveLead", objarray);
 	Response.Redirect("InsertLead.aspx?modeid=Insert");
@@ -1455,6 +1469,21 @@ string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
     }
 	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)"SYST00000001");
     //lead.Owner = objowner;
+	lead.Address.Save();
+	if(lead.Products.Count &gt; 0)
+	{
+	foreach(Sage.Entity.Interfaces.ILeadProduct prd in lead.Products )
+	{
+		prd.Save();
+	}
+	}
+	if(lead.Competitors.Count &gt; 0)
+	{
+	foreach(Sage.Entity.Interfaces.ILeadCompetitor cmp in lead.Competitors)
+	{
+		cmp.Save();
+	}
+	}
 	lead.Save();
 	System.Web.HttpContext.Current.Response.Redirect(string.Format("InsertLead.aspx?modeid=Insert"));
 

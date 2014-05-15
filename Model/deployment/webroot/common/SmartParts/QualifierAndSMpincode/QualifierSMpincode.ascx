@@ -20,8 +20,11 @@
    <asp:Label ID="luePincode_lbl" AssociatedControlID="luePincode" runat="server" Text="<%$ resources: luePincode.Caption %>" ></asp:Label>
  </div>   
   <div   class="textcontrol lookup"   >
-<SalesLogix:LookupControl runat="server" ID="luePincode" LookupEntityName="Vwpincodemaster" LookupEntityTypeName="Sage.Entity.Interfaces.IVwpincodemaster, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"  >
+<SalesLogix:LookupControl runat="server" ID="luePincode" LookupEntityName="Vwpincodemaster" LookupEntityTypeName="Sage.Entity.Interfaces.IVwpincodemaster, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String"  >
 <LookupProperties>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luePincode.LookupProperties.Carea.PropertyHeader %>" PropertyName="Carea" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luePincode.LookupProperties.Cpincode.PropertyHeader %>" PropertyName="Cpincode" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luePincode.LookupProperties.Cpindesc.PropertyHeader %>" PropertyName="Cpindesc" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
 </LookupProperties>
 <LookupPreFilters>
 </LookupPreFilters>
@@ -34,16 +37,16 @@
 <tr>
             <td  >
  <div class=" lbl alignleft">
-   <asp:Label ID="luequalifire_lbl" AssociatedControlID="luequalifire" runat="server" Text="<%$ resources: luequalifire.Caption %>" ></asp:Label>
+   <asp:Label ID="luequalifier_lbl" AssociatedControlID="luequalifier" runat="server" Text="<%$ resources: luequalifier.Caption %>" ></asp:Label>
  </div>   
   <div   class="textcontrol lookup"   >
-<SalesLogix:LookupControl runat="server" ID="luequalifire" LookupEntityName="UserInfo" LookupEntityTypeName="Sage.Entity.Interfaces.IUserInfo, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String"  >
+<SalesLogix:LookupControl runat="server" ID="luequalifier" LookupEntityName="UserInfo" LookupEntityTypeName="Sage.Entity.Interfaces.IUserInfo, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String"  >
 <LookupProperties>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luequalifire.LookupProperties.FirstName.PropertyHeader %>" PropertyName="FirstName" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luequalifire.LookupProperties.LastName.PropertyHeader %>" PropertyName="LastName" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luequalifire.LookupProperties.Department.PropertyHeader %>" PropertyName="Department" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luequalifire.LookupProperties.Division.PropertyHeader %>" PropertyName="Division" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luequalifire.LookupProperties.Email.PropertyHeader %>" PropertyName="Email" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luequalifier.LookupProperties.FirstName.PropertyHeader %>" PropertyName="FirstName" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luequalifier.LookupProperties.LastName.PropertyHeader %>" PropertyName="LastName" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luequalifier.LookupProperties.Department.PropertyHeader %>" PropertyName="Department" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luequalifier.LookupProperties.Division.PropertyHeader %>" PropertyName="Division" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luequalifier.LookupProperties.Email.PropertyHeader %>" PropertyName="Email" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
 </LookupProperties>
 <LookupPreFilters>
 </LookupPreFilters>
@@ -80,8 +83,13 @@
 
 
  <SalesLogix:SmartPartToolsContainer runat="server" ID="QualifierSMpincode_RTools" ToolbarLocation="right">
+   <SalesLogix:GroupNavigator runat="server" ID="grupnavqualifierBM" ></SalesLogix:GroupNavigator>
     <asp:ImageButton runat="server" ID="QFButton"
  ToolTip="<%$ resources: QFButton.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_16x16"  />
+ 
+    <asp:ImageButton runat="server" ID="btndelete"
+ ToolTip="<%$ resources: btndelete.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Delete_16x16" 
+ />
  
   <SalesLogix:PageLink ID="btnEditForm" CssClass="adminEditFormButton" runat="server" LinkType="RelativePath" ToolTip="<%$ resources: Portal, EditForm_ToolTip %>" NavigateUrl="~/FormManager.aspx?entityid=QualifierSMpincode&modeid=Detail" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=form_manager_16x16"></SalesLogix:PageLink>
  
@@ -112,52 +120,67 @@ protected override void OnAddEntityBindings() {
                  // luePincode.LookupResultValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding luePincodeLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("PincodeId", luePincode, "LookupResultValue");
         BindingSource.Bindings.Add(luePincodeLookupResultValueBinding);
-                    // luequalifire.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding luequalifireLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("QualifierId", luequalifire, "LookupResultValue");
-        BindingSource.Bindings.Add(luequalifireLookupResultValueBinding);
+                    // luequalifier.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding luequalifierLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("QualifierId", luequalifier, "LookupResultValue");
+        BindingSource.Bindings.Add(luequalifierLookupResultValueBinding);
                     // lueSaleManager.LookupResultValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding lueSaleManagerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("SalesManagerId", lueSaleManager, "LookupResultValue");
         BindingSource.Bindings.Add(lueSaleManagerLookupResultValueBinding);
     
    
-    }
+            }
                      
 protected void QFButton_ClickAction(object sender, EventArgs e) {
-Sage.Entity.Interfaces.IQualifierAndSMpincode Objqualifier = this.BindingSource.Current as Sage.Entity.Interfaces.IQualifierAndSMpincode;
-if(Convert.ToString(luePincode.LookupResultValue) == "")
+Sage.Entity.Interfaces.IQualifierAndSMpincode Objqualifier = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.IQualifierAndSMpincode>();
+if (Objqualifier != null)
 {
-	DialogService.ShowMessage("Please Select Pincode");
-	return;
-}
-if(Convert.ToString(luequalifire.LookupResultValue) == "")
-{
-	DialogService.ShowMessage("Please Select Qualifier");
-	return;
-}
-if(Convert.ToString(lueSaleManager.LookupResultValue) == "")
-{
-	DialogService.ShowMessage("Please Select Branch Manager");
-	return;
-}
-else
-{
-   Objqualifier.Save();	
-   Response.Redirect(string.Format("QualifierSMpincode.aspx?entityId={0}", (Objqualifier.ToString())));   
+    if (Convert.ToString(luePincode.LookupResultValue) == "")
+    {
+        DialogService.ShowMessage("Please Select Pincode");
+        return;
+    }
+    if (Convert.ToString(luequalifier.LookupResultValue) == "")
+    {
+        DialogService.ShowMessage("Please Select Qualifier");
+        return;
+    }
+    if (Convert.ToString(lueSaleManager.LookupResultValue) == "")
+    {
+        DialogService.ShowMessage("Please Select Branch Manager");
+        return;
+    }
+    else
+    {
+        Objqualifier.PincodeId = luePincode.LookupResultValue.ToString();            
+        Objqualifier.QualifierId = luequalifier.LookupResultValue.ToString();
+        Objqualifier.SalesManagerId = lueSaleManager.LookupResultValue.ToString();
+        Objqualifier.Save();
+        Response.Redirect(string.Format("QualifierAndSMpincode.aspx?entityId={0}", (Objqualifier.Id.ToString())));            
+    }
 }
 
+}
+protected void btndelete_ClickAction(object sender, EventArgs e) {
+  Sage.Platform.Orm.Interfaces.IPersistentEntity persistentEntity = this.BindingSource.Current as Sage.Platform.Orm.Interfaces.IPersistentEntity;
+  if (persistentEntity != null) {
+    persistentEntity.Delete();
+  }
+
+  
 }
 
 protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
  QFButton.Click += new ImageClickEventHandler(QFButton_ClickAction);
+btndelete.Click += new ImageClickEventHandler(btndelete_ClickAction);
 
 
 }
 
 protected void quickformload0(object sender, EventArgs e) {
 luePincode_lbl.ForeColor = System.Drawing.Color.Red;
-luequalifire_lbl.ForeColor = System.Drawing.Color.Red;
+luequalifier_lbl.ForeColor = System.Drawing.Color.Red;
 lueSaleManager_lbl.ForeColor = System.Drawing.Color.Red;
 
 }
@@ -177,6 +200,8 @@ Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.Entit
         if (epage != null)
             _runActivating = (epage.IsNewEntity || _runActivating);
 if (_runActivating) DoActivating();
+btndelete.OnClientClick = string.Format("return confirm('{0}');", Sage.Platform.WebPortal.PortalUtil.JavaScriptEncode(GetLocalResourceObject("btndelete.ActionConfirmationMessage").ToString()));
+
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
 {
 btnEditForm.Visible = false;
@@ -240,20 +265,30 @@ public class QualifierSMpincodeAdapter : Sage.Platform.WebPortal.Adapters.Entity
     {
         get { return FindControl(ref _luePincode, "luePincode"); }
     }
-    private Sage.Platform.Controls.ILookupControl _luequalifire;
-    public  Sage.Platform.Controls.ILookupControl luequalifire
+    private Sage.Platform.Controls.ILookupControl _luequalifier;
+    public  Sage.Platform.Controls.ILookupControl luequalifier
     {
-        get { return FindControl(ref _luequalifire, "luequalifire"); }
+        get { return FindControl(ref _luequalifier, "luequalifier"); }
     }
     private Sage.Platform.Controls.ILookupControl _lueSaleManager;
     public  Sage.Platform.Controls.ILookupControl lueSaleManager
     {
         get { return FindControl(ref _lueSaleManager, "lueSaleManager"); }
     }
+    private Sage.Platform.Controls.IGroupNavigatorControl _grupnavqualifierBM;
+    public  Sage.Platform.Controls.IGroupNavigatorControl grupnavqualifierBM
+    {
+        get { return FindControl(ref _grupnavqualifierBM, "grupnavqualifierBM"); }
+    }
     private Sage.Platform.Controls.IButtonControl _QFButton;
     public  Sage.Platform.Controls.IButtonControl QFButton
     {
         get { return FindControl(ref _QFButton, "QFButton"); }
+    }
+    private Sage.Platform.Controls.IButtonControl _btndelete;
+    public  Sage.Platform.Controls.IButtonControl btndelete
+    {
+        get { return FindControl(ref _btndelete, "btndelete"); }
     }
 
 }

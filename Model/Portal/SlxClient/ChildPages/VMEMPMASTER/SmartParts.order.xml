@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <ModelItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Item Id="a14d2256-7033-43cf-b6f7-4de5a299957f">EmployeeDetail.smartpart.xml</Item>
   <Item Id="46b6de68-3cd0-4713-b07d-58c252b29c9f">LiveGroupViewer.smartpart.xml</Item>
+  <Item Id="a14d2256-7033-43cf-b6f7-4de5a299957f">EmployeeDetail.smartpart.xml</Item>
 </ModelItems>

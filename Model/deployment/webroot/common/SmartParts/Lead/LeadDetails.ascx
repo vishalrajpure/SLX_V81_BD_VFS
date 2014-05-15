@@ -694,7 +694,21 @@ Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfa
     }
 	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001");
     //lead.Owner = objowner;
-	
+	lead.Address.Save();
+	if(lead.Products.Count > 0)
+	{
+	foreach(Sage.Entity.Interfaces.ILeadProduct prd in lead.Products )
+	{
+		prd.Save();
+	}
+	}
+	if(lead.Competitors.Count > 0)
+	{
+	foreach(Sage.Entity.Interfaces.ILeadCompetitor cmp in lead.Competitors)
+	{
+		cmp.Save();
+	}
+	}
 	lead.Save();
 	System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx", "&modeid=Detail"));
 

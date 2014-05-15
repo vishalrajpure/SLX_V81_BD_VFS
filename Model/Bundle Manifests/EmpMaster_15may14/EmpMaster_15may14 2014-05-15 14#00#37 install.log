@@ -1,0 +1,34 @@
+15-05-2014 14:00:37
+INFO  2014-05-15 19:30:36,546 - Installing bundle...
+INFO  2014-05-15 19:30:36,552 - Performing pre-install.
+INFO  2014-05-15 19:30:36,555 - Installing context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-15 19:30:36,593 - Successfully installed Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-15 19:30:36,597 - Installing model item: Employee (\Portal\SlxClient\ChildPages\VMEMPMASTER\VMEMPMASTER.page.xml)
+INFO  2014-05-15 19:30:36,749 - Successfully installed Employee (\Portal\SlxClient\ChildPages\VMEMPMASTER\VMEMPMASTER.page.xml)
+INFO  2014-05-15 19:30:36,770 - Installing model item: LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\VMEMPMASTER\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-05-15 19:30:36,795 - Successfully installed LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\VMEMPMASTER\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-05-15 19:30:36,817 - Installing model item: EmployeeDetail (\Portal\SlxClient\ChildPages\VMEMPMASTER\SmartParts\EmployeeDetail.smartpart.xml)
+INFO  2014-05-15 19:30:36,826 - Successfully installed EmployeeDetail (\Portal\SlxClient\ChildPages\VMEMPMASTER\SmartParts\EmployeeDetail.smartpart.xml)
+INFO  2014-05-15 19:30:36,831 - Installing model item: Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\VMEMPMASTER\Modules\Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule.module.xml)
+INFO  2014-05-15 19:30:36,853 - Successfully installed Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\VMEMPMASTER\Modules\Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule.module.xml)
+INFO  2014-05-15 19:30:36,858 - Saving context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-15 19:30:36,863 - Successfully saved Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-15 19:30:36,881 - Saving model item: Employee (\Portal\SlxClient\ChildPages\VMEMPMASTER\VMEMPMASTER.page.xml)
+INFO  2014-05-15 19:30:36,887 - Successfully saved Employee (\Portal\SlxClient\ChildPages\VMEMPMASTER\VMEMPMASTER.page.xml)
+INFO  2014-05-15 19:30:36,893 - Saving model item: LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\VMEMPMASTER\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-05-15 19:30:36,911 - Successfully saved LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\VMEMPMASTER\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-05-15 19:30:36,918 - Saving model item: EmployeeDetail (\Portal\SlxClient\ChildPages\VMEMPMASTER\SmartParts\EmployeeDetail.smartpart.xml)
+INFO  2014-05-15 19:30:36,926 - Successfully saved EmployeeDetail (\Portal\SlxClient\ChildPages\VMEMPMASTER\SmartParts\EmployeeDetail.smartpart.xml)
+INFO  2014-05-15 19:30:37,006 - Saving model item: Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\VMEMPMASTER\Modules\Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule.module.xml)
+INFO  2014-05-15 19:30:37,017 - Successfully saved Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\VMEMPMASTER\Modules\Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule.module.xml)
+INFO  2014-05-15 19:30:37,028 - Configuring installed items.
+INFO  2014-05-15 19:30:37,033 - Configuring Saleslogix Client...
+INFO  2014-05-15 19:30:37,065 - Configuring Employee...
+INFO  2014-05-15 19:30:37,312 - Configuring LiveGroupViewer (Custom)...
+INFO  2014-05-15 19:30:37,318 - Configuring EmployeeDetail...
+INFO  2014-05-15 19:30:37,324 - Configuring Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule...
+INFO  2014-05-15 19:30:37,336 - Performing pre-commit to target project.
+INFO  2014-05-15 19:30:37,346 - Committing items to target project...
+INFO  2014-05-15 19:30:37,365 - Committing transactions...
+INFO  2014-05-15 19:30:37,802 - Copying bundle manifest to project.
+INFO  2014-05-15 19:30:38,969 - Install complete.
