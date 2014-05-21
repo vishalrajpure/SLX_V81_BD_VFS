@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Lead.Caption" xml:space="preserve">
-    <value>Lead</value>
+  <data name="Product.Caption" xml:space="preserve">
+    <value>Product</value>
   </data>
   <data name="grdLeadProducts.0c4c72d8-d069-4951-a5ff-447d1c5598af.ColumnHeading" xml:space="preserve">
     <value>Price Level</value>
@@ -203,24 +203,6 @@
   </data>
   <data name="grdLeadProducts.6ef4d952-2b1a-4d9f-a36e-35a942dd32bb.ColumnHeading" xml:space="preserve">
     <value />
-  </data>
-  <data name="error_AccountingSystem_Undefined" xml:space="preserve">
-    <value>Products cannot be added to the Opportunity because the Accounting System is undefined.  Please define an Accounting System before continuing.</value>
-  </data>
-  <data name="error_ClientContext_Undefined" xml:space="preserve">
-    <value>The ClientContextService is unavailable.</value>
-  </data>
-  <data name="error_ExecutingRequest" xml:space="preserve">
-    <value>There was an error opening ${0}. StatusText: ${1}; StatusCode: ${2}.</value>
-  </data>
-  <data name="error_ExecutingRequest_Ext" xml:space="preserve">
-    <value>There was an error opening ${0}. Severity: ${1}; SDataCode: ${2}; Message: ${3}; ApplicationCode: ${4}; StatusText: ${5}; StatusCode: ${6}.</value>
-  </data>
-  <data name="error_OperatingCompany_Undefined" xml:space="preserve">
-    <value>The Operating Company could not be determined.</value>
-  </data>
-  <data name="error_ZeroBasePrice" xml:space="preserve">
-    <value>You cannot add a discount to a product, which does not contain a base price.</value>
   </data>
   <data name="lueProduct.ButtonToolTip" xml:space="preserve">
     <value>Include Product</value>

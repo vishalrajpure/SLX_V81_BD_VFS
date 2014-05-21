@@ -1,4 +1,4 @@
-<%@ Control Language="C#" ClassName="LeadProducts_New" Inherits="Sage.Platform.WebPortal.SmartParts.EntityBoundSmartPartInfoProvider" %>
+<%@ Control Language="C#" ClassName="LeadProduct" Inherits="Sage.Platform.WebPortal.SmartParts.EntityBoundSmartPartInfoProvider" %>
 <%@ Register Assembly="Sage.SalesLogix.Client.GroupBuilder" Namespace="Sage.SalesLogix.Client.GroupBuilder" TagPrefix="SalesLogix" %>
 <%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls.PickList" TagPrefix="SalesLogix" %>
 <%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls" TagPrefix="SalesLogix" %>
@@ -24,7 +24,7 @@ type="text/css">
 
 	  			
 
-<SalesLogix:ScriptResourceProvider ID="LeadProducts_NewlueProduct_Strings" runat="server">
+<SalesLogix:ScriptResourceProvider ID="LeadProductlueProduct_Strings" runat="server">
     <Keys>
         <SalesLogix:ResourceKeyName Key="lueProduct.ButtonTooltip" />
         <SalesLogix:ResourceKeyName Key="lueProduct.LookupDialogTitle" />
@@ -38,7 +38,7 @@ type="text/css">
 
 	  	  	   
 
-<SalesLogix:ScriptResourceProvider ID="LeadProducts_NewgrdLeadProducts_Strings" runat="server">
+<SalesLogix:ScriptResourceProvider ID="LeadProductgrdLeadProducts_Strings" runat="server">
     <Keys>
           <SalesLogix:ResourceKeyName Key="grdLeadProducts.6ef4d952-2b1a-4d9f-a36e-35a942dd32bb.ColumnHeading" />
         <SalesLogix:ResourceKeyName Key="grdLeadProducts.6ef4d952-2b1a-4d9f-a36e-35a942dd32bb.Text" />
@@ -82,10 +82,10 @@ type="text/css">
 
 
 <div style="display:none;">
-  <asp:TextBox runat="server" ID="LeadProducts_NewgrdLeadProducts_DataCarrier" class="LeadProducts_NewgrdLeadProducts_DataCarrier" ></asp:TextBox>
+  <asp:TextBox runat="server" ID="LeadProductgrdLeadProducts_DataCarrier" class="LeadProductgrdLeadProducts_DataCarrier" ></asp:TextBox>
 </div>
-  <div id="LeadProducts_NewgrdLeadProducts_Container" style="width:100%;height:100%;" class="">
-    <div id="LeadProducts_NewgrdLeadProducts_Grid" style="width:100%;height:100%;"
+  <div id="LeadProductgrdLeadProducts_Container" style="width:100%;height:100%;" class="">
+    <div id="LeadProductgrdLeadProducts_Grid" style="width:100%;height:100%;"
      data-dojo-type="dijit.layout.BorderContainer"
 ></div>
 </div>
@@ -94,13 +94,13 @@ type="text/css">
  
 
 
- <SalesLogix:SmartPartToolsContainer runat="server" ID="LeadProducts_New_RTools" ToolbarLocation="right">
-  <SalesLogix:PageLink ID="btnEditForm" CssClass="adminEditFormButton" runat="server" LinkType="RelativePath" ToolTip="<%$ resources: Portal, EditForm_ToolTip %>" NavigateUrl="~/FormManager.aspx?entityid=LeadProducts_New&modeid=Detail" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=form_manager_16x16"></SalesLogix:PageLink>
+ <SalesLogix:SmartPartToolsContainer runat="server" ID="LeadProduct_RTools" ToolbarLocation="right">
+  <SalesLogix:PageLink ID="btnEditForm" CssClass="adminEditFormButton" runat="server" LinkType="RelativePath" ToolTip="<%$ resources: Portal, EditForm_ToolTip %>" NavigateUrl="~/FormManager.aspx?entityid=LeadProduct&modeid=Detail" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=form_manager_16x16"></SalesLogix:PageLink>
  
  
  
  
- <SalesLogix:PageLink ID="lnkLeadProducts_NewHelp" runat="server" LinkType="HelpFileName" ToolTip="<%$ resources: Portal, Help_ToolTip %>" Target="MCWebHelp" NavigateUrl="LeadProducts_New" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16"></SalesLogix:PageLink>
+ <SalesLogix:PageLink ID="lnkLeadProductHelp" runat="server" LinkType="HelpFileName" ToolTip="<%$ resources: Portal, Help_ToolTip %>" Target="MCWebHelp" NavigateUrl="LeadProduct" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16"></SalesLogix:PageLink>
  </SalesLogix:SmartPartToolsContainer>
 
 
@@ -154,54 +154,17 @@ void dsLeadProducts_OnCurrentEntitySet(object sender, EventArgs e)
 
 
 
- private Sage.Platform.WebPortal.Binding.WebEntityListBindingSource _dsLeadProducts;
-public Sage.Platform.WebPortal.Binding.WebEntityListBindingSource dsLeadProducts
-{ 
-  get 
-  {
-    if (_dsLeadProducts == null)
-    {
-             _dsLeadProducts = new Sage.Platform.WebPortal.Binding.WebEntityListBindingSource(typeof(Sage.Entity.Interfaces.ILeadProduct), 
-	    EntityType              ,"Products", System.Reflection.MemberTypes.Property);
-                   _dsLeadProducts.UseSmartQuery = true;
-      	   	}
- 	return _dsLeadProducts;
-  }
-}
-
-void dsLeadProducts_OnCurrentEntitySet(object sender, EventArgs e) 
-{
-      if (Visible)
-    { 
-		if(BindingSource.Current != null)
-		{
-		
-      
-        dsLeadProducts.SourceObject = BindingSource.Current;
-   		}
-    }
-   if (Visible)
-   {   
-      RegisterBindingsWithClient(dsLeadProducts);
-   }
-}
-
- 
-
-
-
  
 
 protected override void OnAddEntityBindings() {
     
      BindingSource.OnCurrentEntitySet += new EventHandler(dsLeadProducts_OnCurrentEntitySet);
-      BindingSource.OnCurrentEntitySet += new EventHandler(dsLeadProducts_OnCurrentEntitySet);
     
 }
        
 protected void grdLeadProducts_InsertAssociationAction(object sender, EventArgs e) {
 
-	    string text = Request.Form.Get(LeadProducts_NewgrdLeadProducts_DataCarrier.UniqueID);
+	    string text = Request.Form.Get(LeadProductgrdLeadProducts_DataCarrier.UniqueID);
     if (text.Length > 0)
     {
     var feed = new Sage.Integration.Entity.Feeds.LeadProductFeed();
@@ -281,7 +244,7 @@ protected override void OnFormBound()
           	          	new Sage.Common.Syndication.JsonSerializer().SaveToStream((Sage.Common.Syndication.IFeed)feed, stream, null, include); 
           	text = Encoding.UTF8.GetString(stream.ToArray()); 
           } 
-          LeadProducts_NewgrdLeadProducts_DataCarrier.Text = text; 
+          LeadProductgrdLeadProducts_DataCarrier.Text = text; 
           entity.Products.Clear(); 
       } 
  } 
@@ -293,26 +256,22 @@ if (dsLeadProducts.SourceObject == null) { dsLeadProducts.SourceObject = Binding
 if (dsLeadProducts.SourceObject == null) { RegisterBindingsWithClient(dsLeadProducts); }
 dsLeadProducts.Bind();
 
-if (dsLeadProducts.SourceObject == null) { dsLeadProducts.SourceObject = BindingSource.Current; }
-if (dsLeadProducts.SourceObject == null) { RegisterBindingsWithClient(dsLeadProducts); }
-dsLeadProducts.Bind();
-
 
                                 var script = new StringBuilder();
-                                script.AppendLine("require(['" + Page.ResolveUrl("~/SmartParts/Lead/LeadProducts_New.js") + "'], function () {");
+                                script.AppendLine("require(['" + Page.ResolveUrl("~/SmartParts/Lead/LeadProduct.js") + "'], function () {");
                                 if (Page.IsPostBack)
                                 {
-                                    script.Append(" Sage.UI.Forms.LeadProducts_New.init({workspace: '" + getMyWorkspace() + "'} );");
+                                    script.Append(" Sage.UI.Forms.LeadProduct.init({workspace: '" + getMyWorkspace() + "'} );");
                                 }
                                 else 
                                 {
                                     script.AppendLine("require(['dojo/ready'], function(ready) {");
-                                    script.Append("ready(function () {Sage.UI.Forms.LeadProducts_New.init({workspace: '" + getMyWorkspace() + "'} ); });");
+                                    script.Append("ready(function () {Sage.UI.Forms.LeadProduct.init({workspace: '" + getMyWorkspace() + "'} ); });");
                                     script.AppendLine("});");//end ready require
                                 }
 
                                 script.AppendLine("});");// end require
-                                ScriptManager.RegisterStartupScript(this, GetType(), "initialize_LeadProducts_New", script.ToString(), true);
+                                ScriptManager.RegisterStartupScript(this, GetType(), "initialize_LeadProduct", script.ToString(), true);
 
 
 }
@@ -359,19 +318,14 @@ private Sage.Platform.Controls.IEntityForm _formAdapter;
 
 public Sage.Platform.Controls.IEntityForm FormAdapter
 {
-    get { return _formAdapter ?? (_formAdapter = new LeadProducts_NewAdapter(this)); }
+    get { return _formAdapter ?? (_formAdapter = new LeadProductAdapter(this)); }
 }
 
-public class LeadProducts_NewAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdapter, Sage.Form.Interfaces.ILeadProducts_New
+public class LeadProductAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdapter, Sage.Form.Interfaces.ILeadProduct
 {
-    public LeadProducts_NewAdapter(Sage.Platform.WebPortal.SmartParts.EntityBoundSmartPartInfoProvider smartPart)
+    public LeadProductAdapter(Sage.Platform.WebPortal.SmartParts.EntityBoundSmartPartInfoProvider smartPart)
         : base(smartPart) {}
 
-    private Sage.Platform.Controls.IDataSourceControl _dsLeadProducts;
-    public  Sage.Platform.Controls.IDataSourceControl dsLeadProducts
-    {
-        get { return FindControl(ref _dsLeadProducts, "dsLeadProducts"); }
-    }
     private Sage.Platform.Controls.IDataSourceControl _dsLeadProducts;
     public  Sage.Platform.Controls.IDataSourceControl dsLeadProducts
     {

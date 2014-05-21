@@ -1,5 +1,5 @@
 Sage.namespace("Sage.UI.Forms");
-Sage.UI.Forms.LeadProducts = {
+Sage.UI.Forms.LeadProduct = {
 
   
 
@@ -22,8 +22,8 @@ makeGrid : function(runtimeConfig) {
 			 function(EditableGrid, DateTime, SlxLink, SlxEdit, PickList, Phone, Email, CheckBox,
 			   Numeric, Currency, Lookup, aspect, SLXPreviewGrid, SlxUser) {
     
-    if (typeof LeadProductsgrdLeadProducts_Strings === 'undefined') {
-        LeadProductsgrdLeadProducts_Strings = {};
+    if (typeof LeadProductgrdLeadProducts_Strings === 'undefined') {
+        LeadProductgrdLeadProducts_Strings = {};
     }
 
     var options = {		
@@ -53,7 +53,7 @@ makeGrid : function(runtimeConfig) {
         return true;
     }
 }(),
-		name:  LeadProductsgrdLeadProducts_Strings['grdLeadProducts_6ef4d952_2b1a_4d9f_a36e_35a942dd32bb_ColumnHeading']  || '',
+		name:  LeadProductgrdLeadProducts_Strings['grdLeadProducts_6ef4d952_2b1a_4d9f_a36e_35a942dd32bb_ColumnHeading']  || '',
 	sortable: false,
 		width: 4,
 		styles: 'width:auto;',
@@ -61,21 +61,22 @@ makeGrid : function(runtimeConfig) {
 	headerClasses: ' alignleft '
 ,
 	   	type: SlxEdit,
-		cellValue: LeadProductsgrdLeadProducts_Strings['grdLeadProducts_6ef4d952_2b1a_4d9f_a36e_35a942dd32bb_Text']  || 'Edit',
+		cellValue: LeadProductgrdLeadProducts_Strings['grdLeadProducts_6ef4d952_2b1a_4d9f_a36e_35a942dd32bb_Text']  || 'Edit',
 		entityType: 'Sage.Entity.Interfaces.ILeadProduct, Sage.Entity.Interfaces',
 		smartPart: 'EditLeadProduct',
-		dialogTitle: LeadProductsgrdLeadProducts_Strings['38611e40_47c3_4f73_88e1_62bfa47171a4_DialogTitleOverride'] || '',
+		dialogTitle: LeadProductgrdLeadProducts_Strings['38611e40_47c3_4f73_88e1_62bfa47171a4_DialogTitleOverride'] || '',
 		isCentered: true ,
 		dialogTop: 0,
 		dialogLeft: 0,
 		dialogHeight: 360,
 		dialogWidth: 600,
-    	formObjectName: 'Sage.UI.Forms.LeadProducts'
+    	formObjectName: 'Sage.UI.Forms.LeadProduct'
+    				,appliedSecurity: 'Entities/Lead/Edit'
     	    }
   	,
 {
 		field: 'Product.Name',
-				name:  LeadProductsgrdLeadProducts_Strings['grdLeadProducts_5e29a114_4a97_45a3_9db6_2d0b10fd74dd_ColumnHeading']  || 'Product',
+				name:  LeadProductgrdLeadProducts_Strings['grdLeadProducts_5e29a114_4a97_45a3_9db6_2d0b10fd74dd_ColumnHeading']  || 'Product',
 	sortable: true,
 		width: 15,
 		styles: 'width:auto;',
@@ -88,7 +89,7 @@ makeGrid : function(runtimeConfig) {
   	,
 {
 		field: 'Product.Family',
-				name:  LeadProductsgrdLeadProducts_Strings['grdLeadProducts_89fb1ecc_72a4_4f09_921b_29a9175daf56_ColumnHeading']  || 'Family',
+				name:  LeadProductgrdLeadProducts_Strings['grdLeadProducts_89fb1ecc_72a4_4f09_921b_29a9175daf56_ColumnHeading']  || 'Family',
 	sortable: true,
 		width: 6,
 		styles: 'width:auto;',
@@ -102,19 +103,19 @@ makeGrid : function(runtimeConfig) {
 		         storeOptions: {
             resourceKind: 'leadProducts',
             newItemParentReferenceProperty: 'Lead',
-            include: ['Lead'],
+            include: ['Product'],
             select: ['Id'],
 	    //The .net vehicle to store grid data on postback
-            dataCarrierId: 'LeadProductsgrdLeadProducts_DataCarrier',
+            dataCarrierId: 'LeadProductgrdLeadProducts_DataCarrier',
             sort: [
                   ]
         },
         tools: [
 
 {
-    id : 'LeadProducts_Save',
+    id : 'LeadProduct_Save',
   displayInInsert : false,
-  imageClass: 'icon_Save_16x16',  'alternateText' : LeadProductsgrdLeadProducts_Strings['grdLeadProducts_Save_ToolTip'] || 'Save',
+  imageClass: 'icon_Save_16x16',  'alternateText' : LeadProductgrdLeadProducts_Strings['grdLeadProducts_Save_ToolTip'] || 'Save',
          'handler' : function() {
     this.saveChanges(function () { if (Sage.Utility.getModeId() !== 'insert') { __doPostBack('MainContent', ''); } });
  }
@@ -126,11 +127,11 @@ makeGrid : function(runtimeConfig) {
   controlConfig : 
 {
   id : 'lueProduct',
-  btnToolTip :  LeadProductslueProduct_Strings['lueProduct_ButtonTooltip']  ||  'Include Product', 
+  btnToolTip :  LeadProductlueProduct_Strings['lueProduct_ButtonTooltip']  ||  'Include Product', 
   btnIcon:  '~/ImageResource.axd?scope=global&type=Global_Images&key=add_products_16x16'  ,
-  dialogButtonText : LeadProductslueProduct_Strings['lueProduct_DialogButtonText']  ||  'Add Selected', 
+  dialogButtonText : LeadProductlueProduct_Strings['lueProduct_DialogButtonText']  ||  'Add Selected', 
   displayMode : 4, //$ {qf control . LookupDisplayMode}  When adding other dijit templates, need to convert control to use enum values
-  dialogTitle : LeadProductslueProduct_Strings['lueProduct_LookupDialogTitle']  ||  'Lookup Product',
+  dialogTitle : LeadProductlueProduct_Strings['lueProduct_LookupDialogTitle']  ||  'Lookup Product',
       structure : [
      {
        defaultCell: { width: 8, editable: false, styles: 'text-align: left;' },
@@ -148,7 +149,7 @@ makeGrid : function(runtimeConfig) {
     },
          
 		 {
-		   name: LeadProductslueProduct_Strings['lueProduct_LookupProperties_Name_PropertyHeader']  || 'Name',
+		   name: LeadProductlueProduct_Strings['lueProduct_LookupProperties_Name_PropertyHeader']  || 'Name',
 		   field: 'Name',
 		   propertyType: 'System.String',
 		   				   excludeFromFilters: false,		   
@@ -165,7 +166,7 @@ makeGrid : function(runtimeConfig) {
          }
          ,
 		 {
-		   name: LeadProductslueProduct_Strings['lueProduct_LookupProperties_Family_PropertyHeader']  || 'Family',
+		   name: LeadProductlueProduct_Strings['lueProduct_LookupProperties_Family_PropertyHeader']  || 'Family',
 		   field: 'Family',
 		   propertyType: 'System.String',
 		   				   excludeFromFilters: false,		   
@@ -182,7 +183,7 @@ makeGrid : function(runtimeConfig) {
          }
          ,
 		 {
-		   name: LeadProductslueProduct_Strings['lueProduct_LookupProperties_Status_PropertyHeader']  || 'Status',
+		   name: LeadProductlueProduct_Strings['lueProduct_LookupProperties_Status_PropertyHeader']  || 'Status',
 		   field: 'Status',
 		   propertyType: 'System.String',
 		   				   excludeFromFilters: false,		   
@@ -199,7 +200,7 @@ makeGrid : function(runtimeConfig) {
          }
          ,
 		 {
-		   name: LeadProductslueProduct_Strings['lueProduct_LookupProperties_ActualId_PropertyHeader']  || 'SKU',
+		   name: LeadProductlueProduct_Strings['lueProduct_LookupProperties_ActualId_PropertyHeader']  || 'SKU',
 		   field: 'ActualId',
 		   propertyType: 'System.String',
 		   				   excludeFromFilters: false,		   
@@ -220,7 +221,8 @@ makeGrid : function(runtimeConfig) {
 	select : ['PackageKitChildViews/Name','PackageKitChildViews/Family','PackageKitChildViews/Status','PackageKitChildViews/ActualId','PackageKitChildViews/ProductId','PackageKitChildViews/ProdPackageKitType','PackageKitChildViews/AppId','PackageKitChildViews/Quantity','PackageKitChildViews/ActiveFlag','Name','Family','Status','ActualId','ProductId','ProdPackageKitType','AppId','Quantity','ActiveFlag']
   },
   gridOptions: {
-	        contextualShow: function () {
+	        contextualShow: 
+function () {
     var oResult = { result: true, reason: '' };
     var service = Sage.Services.getService('IntegrationContractService');
     if (service != null && typeof service !== 'undefined') {
@@ -281,8 +283,7 @@ makeGrid : function(runtimeConfig) {
         }
     }
     return sCondition;
-}
-,
+},
 	    selectionMode : 'Multi',
     rowsPerPage : 15
   }
@@ -647,16 +648,16 @@ function (items) {
 }
   ,
 {
-    id : 'LeadProducts_Cancel',
+    id : 'LeadProduct_Cancel',
   displayInInsert : false,
-  imageClass: 'icon_Reset_16x16',  'alternateText' : LeadProductsgrdLeadProducts_Strings['grdLeadProducts_Cancel_ToolTip'] || 'Revert Changes',
+  imageClass: 'icon_Reset_16x16',  'alternateText' : LeadProductgrdLeadProducts_Strings['grdLeadProducts_Cancel_ToolTip'] || 'Revert Changes',
           'handler' : function() { this.cancelChanges(); }
 }
   ,
 {
-    id : 'LeadProducts_Delete',
+    id : 'LeadProduct_Delete',
   displayInInsert : true,
-  imageClass: 'icon_Delete_16x16',  'alternateText' : LeadProductsgrdLeadProducts_Strings['grdLeadProducts_Delete_ToolTip'] || 'Remove',
+  imageClass: 'icon_Delete_16x16',  'alternateText' : LeadProductgrdLeadProducts_Strings['grdLeadProducts_Delete_ToolTip'] || 'Remove',
           'handler' : function() { this.deleteSelected(function () { if (Sage.Utility.getModeId() !== 'insert') { __doPostBack('MainContent', ''); } }); }
 }
            ],
@@ -682,12 +683,12 @@ function (items) {
             },
             data: { },
             error: function(request, status, error) {
-                var sError = dojo.string.substitute(LeadProductsResources['error_ExecutingRequest'], [sUrl, request.statusText, request.status]);
+                var sError = dojo.string.substitute(OpportunityProductsResources['error_ExecutingRequest'], [sUrl, request.statusText, request.status]);
                 if (dojo.isString(request.responseText)) {
                     if ((request.responseText.indexOf("[", 0) == 0) && (request.responseText.lastIndexOf("]") == request.responseText.length - 1)) {
                         var oSDataError = dojo.fromJson(request.responseText);
                         if (dojo.isArray(oSDataError)) {
-                            sError = dojo.string.substitute(LeadProductsResources['error_ExecutingRequestExt'],
+                            sError = dojo.string.substitute(OpportunityProductsResources['error_ExecutingRequestExt'],
                                 [sUrl, oSDataError[0].severity, oSDataError[0].sdataCode, oSDataError[0].message, oSDataError[0].applicationCode, request.statusText, request.status]);
                         }
                     }
@@ -720,9 +721,9 @@ function (items) {
 }*/,
         contextualCondition: function() { return 'Lead.Id eq "' + Sage.Utility.getCurrentEntityId() + '"'; },
         
-						tabId : 'LeadProducts',
-		gridNodeId: 'LeadProductsgrdLeadProducts_Grid',
-				id : 'LeadProductsgrdLeadProducts',
+						tabId : 'LeadProduct',
+		gridNodeId: 'LeadProductgrdLeadProducts_Grid',
+				id : 'LeadProductgrdLeadProducts',
         rowsPerPage: 21,
         singleClickEdit: true
     };
@@ -744,7 +745,7 @@ function (items) {
   ,
 
     init : function(runtimeConfig) {
-        setTimeout(function() { Sage.UI.Forms.LeadProducts.makeGrid(runtimeConfig); }, 1);
+        setTimeout(function() { Sage.UI.Forms.LeadProduct.makeGrid(runtimeConfig); }, 1);
 
     }
 };

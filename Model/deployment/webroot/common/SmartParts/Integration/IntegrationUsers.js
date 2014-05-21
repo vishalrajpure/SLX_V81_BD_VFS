@@ -112,7 +112,7 @@ makeGrid : function(runtimeConfig) {
 	editable: true
 				}
   	          ],
-	 	         storeOptions: {
+		         storeOptions: {
             resourceKind: 'userIntegrationMaps',
             newItemParentReferenceProperty: 'Integration',
             include: [],

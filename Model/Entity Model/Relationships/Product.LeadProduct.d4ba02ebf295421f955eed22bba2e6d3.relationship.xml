@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<relationship xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="ab77d0a7-98f7-4c43-be29-28363583aead" lastModifiedUtc="2014-05-14T06:57:25.0387735Z" parentEntityId="27f9e8e9-34d8-4eaf-8fd7-c70d133e6f90" childEntityId="ae6e1c00-3666-4d4f-9580-c80f08a135fc">
+<relationship xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="d4ba02eb-f295-421f-955e-ed22bba2e6d3" lastModifiedUtc="2014-05-21T12:24:09.3212481Z" parentEntityId="03da3a53-eab7-4bb2-bd1b-9c0c988b66d2" childEntityId="0cb362b1-a3ee-4806-86c3-a8f2873c3766">
   <extendedMetaData />
   <ExtendedPropertiesCollection>
     <extendee type="Sage.Platform.Orm.Entities.OrmRelationship" />
   </ExtendedPropertiesCollection>
-  <parentProperty id="e8e09fbe-3712-4f61-9cd9-a6d2b5117810" lastModifiedUtc="2014-05-14T06:57:22.2126118Z" name="Products" audited="false">
+  <parentProperty id="ca68cfb6-96f3-4113-939d-9fb720d9937b" lastModifiedUtc="2014-05-21T12:23:54.6224074Z" name="Leads" audited="false">
     <ExtendedPropertiesCollection>
       <extendee type="Sage.Platform.Orm.Entities.OrmRelationProperty">
         <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">
@@ -16,7 +16,7 @@
       <RelationshipDataType />
     </SystemDataType>
   </parentProperty>
-  <childProperty id="67543d08-077d-4746-8c8d-21164af189f0" lastModifiedUtc="2014-05-14T06:57:17.6023481Z" name="Lead" audited="false">
+  <childProperty id="34466f0b-a6a2-4e0f-93d3-1989ece93a8c" lastModifiedUtc="2014-05-21T12:24:05.7780455Z" name="Product" audited="false" isNullable="false">
     <ExtendedPropertiesCollection>
       <extendee type="Sage.Platform.Orm.Entities.OrmRelationProperty">
         <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">
@@ -29,6 +29,6 @@
     </SystemDataType>
   </childProperty>
   <column>
-    <OrmRelationshipColumn id="d0cc309d-1bf4-42ea-b9e4-dcbc15f52ab2" parentPropertyId="2d710a24-63a7-432c-83e8-686987cd0895" childPropertyId="0ff65ffe-0818-441c-8e67-629c501a9a93" ordinal="0" />
+    <OrmRelationshipColumn id="11fa010e-4361-4077-b584-99bfb6ae6756" parentPropertyId="1bc2d817-6cc8-42b8-b7d1-aac17aa4146f" childPropertyId="92d44e8e-ca42-401a-a4b7-c69d7e558667" ordinal="0" />
   </column>
 </relationship>

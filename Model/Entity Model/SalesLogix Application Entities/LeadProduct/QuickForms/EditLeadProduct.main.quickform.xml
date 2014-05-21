@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<QuickForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="3eeff3bb-8874-4374-ae77-85aeb46d81d9" DefinitionType="Sage.Platform.QuickForms.QuickFormMainDetailViewDefinition, Sage.Platform.QuickForms">
+<QuickForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="e645f926-2e7f-4b33-a998-4af43e6dd818" DefinitionType="Sage.Platform.QuickForms.QuickFormMainDetailViewDefinition, Sage.Platform.QuickForms">
   <ActiveControl />
   <ImagePath />
   <LoadActions />
@@ -15,7 +15,6 @@
       <QFTextBox>
         <Column>0</Column>
         <Row>0</Row>
-        <IsReadOnly>true</IsReadOnly>
         <HotKey>0</HotKey>
         <TabIndex>1</TabIndex>
         <ControlId>txtName</ControlId>
@@ -49,18 +48,55 @@
         <Required>false</Required>
       </QFTextBox>
     </Control>
-    <Control typeName="Sage.Platform.QuickForms.QFControls.QFControlsList, Sage.Platform.QuickForms.QFControls">
-      <QFControlsList>
-        <TabIndex>0</TabIndex>
-        <StyleScheme>qfActionContainer</StyleScheme>
-        <ControlLabelPlacement>left</ControlLabelPlacement>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
+      <QFTextBox>
         <Column>0</Column>
         <Row>1</Row>
         <HotKey>0</HotKey>
-        <ControlId>QFControlsList</ControlId>
-        <DataBindings />
+        <TabIndex>2</TabIndex>
+        <ControlId>txtfamily</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>Product.Family</DataItemName>
+            <ControlItemName>Text</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
         <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>txtfamily</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+      </QFTextBox>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.QFControls.QFControlsList, Sage.Platform.QuickForms.QFControls">
+      <QFControlsList>
+        <Column>0</Column>
+        <Row>2</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>QFControlsList</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme>qfActionContainer</StyleScheme>
         <Caption />
         <Controls>
           <ControlsCollection>
@@ -83,7 +119,7 @@
                   <ResourceKey>btnOK</ResourceKey>
                   <Action typeName="Sage.Platform.QuickForms.ActionItems.BusinessRuleActionItem, Sage.Platform.QuickForms">
                     <BusinessRuleActionItem>
-                      <BusinessRule>Save</BusinessRule>
+                      <BusinessRule />
                       <Object>LeadProduct</Object>
                       <Parameters />
                       <PassResultsToNextAction>False</PassResultsToNextAction>
@@ -94,9 +130,9 @@
                       </OnComplete>
                     </BusinessRuleActionItem>
                   </Action>
-                  <IsDialogCloseAction>False</IsDialogCloseAction>
+                  <IsDialogCloseAction>True</IsDialogCloseAction>
                   <RunOnEveryRePaint>False</RunOnEveryRePaint>
-                  <DialogActionResult>NoResult</DialogActionResult>
+                  <DialogActionResult>DialogOK</DialogActionResult>
                   <PerformsUpdate>True</PerformsUpdate>
                   <AppliedSecurity />
                   <RefreshData>False</RefreshData>
@@ -146,7 +182,7 @@
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>1e32377c7ea443abd72d74f6d920318</ControlId>
+        <ControlId>71835a47b44408da312087385c35897</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
@@ -160,7 +196,7 @@
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>b6fac199c474ff588bca01f67e8a391</ControlId>
+        <ControlId>ce4715332e54d359d5c8e2478f6f374</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />

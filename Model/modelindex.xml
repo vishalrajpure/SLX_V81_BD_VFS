@@ -1663,7 +1663,16 @@
  <ref id="81827431-f2d2-4985-94a9-ce48a45ef8af" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeDelete.method.xml" />
  <ref id="9016bfd8-141d-4e86-95e4-ce598b88676c" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterDelete.method.xml" />
  <ref id="c22ffaed-4477-42b1-815d-a133a1cf011e" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnCreate.method.xml" />
- <ref id="ae6e1c00-3666-4d4f-9580-c80f08a135fc" url="\Entity Model\Saleslogix Application Entities\LeadProduct\LeadProduct.LEAD_PRODUCT.entity.xml" />
+ <ref id="cd4c74b9-2df9-42b1-be79-8cc94a00be6a" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterUpdate.method.xml" />
  <ref id="229bd34a-6cd1-4e8e-9256-d7caae1c4d7c" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadCompetitors.lueLeadCompetitor_OnChange.method.xml" />
  <ref id="10fa0f84-aabd-4173-8b64-7187e2768309" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\Sage.SnippetLibrary.CSharp.@.10fa0f84-aabd-4173-8b64-7187e2768309.codesnippet.cs" />
+ <ref id="f1c46674-8602-4098-a089-7af9f728d85c" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnCreate.method.xml" />
+ <ref id="a649265a-06b8-4350-a7e8-6b9fbbcce7aa" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeUpdate.method.xml" />
+ <ref id="cebbed42-b67c-4e38-b2ed-2b7aca30bbec" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterDelete.method.xml" />
+ <ref id="bc550f5e-436a-4df7-a6da-8a0aa52497c6" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeDelete.method.xml" />
+ <ref id="0d3d7db1-bcc1-4898-aa2c-81dd5b4a453c" url="\Portal\SlxClient\ChildPages\InsertLead\InsertLead.page.xml" />
+ <ref id="d3d40b38-0162-4e0d-a5f0-99cfcf3ca972" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeInsert.method.xml" />
+ <ref id="8d703ad2-26da-44cb-bc25-f3098e9fc2b4" url="\Portal\SlxClient\ChildPages\Lead\Lead.page.xml" />
+ <ref id="3955d461-671d-4762-b866-12a1af3ebecd" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterInsert.method.xml" />
+ <ref id="0cb362b1-a3ee-4806-86c3-a8f2873c3766" url="\Entity Model\Saleslogix Application Entities\LeadProduct\LeadProduct.LEAD_PRODUCT.entity.xml" />
 </modelItemIndex>

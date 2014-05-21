@@ -99,8 +99,8 @@ makeGrid : function(runtimeConfig) {
 	editable: false
 				}
   	          ],
-	 	         storeOptions: {
-            resourceKind: 'LeadProducts',
+		         storeOptions: {
+            resourceKind: 'leadProducts',
             newItemParentReferenceProperty: 'Lead',
             include: ['Lead'],
             select: ['Id'],
@@ -660,7 +660,7 @@ function (items) {
           'handler' : function() { this.deleteSelected(function () { if (Sage.Utility.getModeId() !== 'insert') { __doPostBack('MainContent', ''); } }); }
 }
            ],
-        onDataChange : function (entity, attribute, oldValue, newValue) {
+        onDataChange : /*function (entity, attribute, oldValue, newValue) {
 	if (oldValue === newValue) {
         return;
     }
@@ -717,7 +717,7 @@ function (items) {
     if ((attribute === 'Discount') || (attribute === 'CalculatedPrice') || (attribute === 'Quantity')) {
         entity.ExtendedPrice = entity.CalculatedPrice * entity.Quantity;
     }
-},
+}*/,
         contextualCondition: function() { return 'Lead.Id eq "' + Sage.Utility.getCurrentEntityId() + '"'; },
         
 						tabId : 'LeadProducts_New',

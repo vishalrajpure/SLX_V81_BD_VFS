@@ -19,7 +19,18 @@
    <asp:Label ID="txtName_lbl" AssociatedControlID="txtName" runat="server" Text="<%$ resources: txtName.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtName" ReadOnly="true"  dojoType="Sage.UI.Controls.TextBox" TabIndex="1"  />
+<asp:TextBox runat="server" ID="txtName"  dojoType="Sage.UI.Controls.TextBox" TabIndex="1"  />
+  </div>
+
+      </td>
+      </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft" >
+   <asp:Label ID="txtfamily_lbl" AssociatedControlID="txtfamily" runat="server" Text="<%$ resources: txtfamily.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="txtfamily"  dojoType="Sage.UI.Controls.TextBox" TabIndex="2"  />
   </div>
 
       </td>
@@ -36,9 +47,6 @@
  
 </asp:Panel>
       </td>
-      </tr>
-<tr>
-            <td></td>
       </tr>
 </table>
  
@@ -74,52 +82,16 @@ protected override void OnAddEntityBindings() {
                  // txtName.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtNameTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Product.Name", txtName, "Text");
         BindingSource.Bindings.Add(txtNameTextBinding);
+                    // txtfamily.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtfamilyTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Product.Family", txtfamily, "Text");
+        BindingSource.Bindings.Add(txtfamilyTextBinding);
              
    
 }
-                            
+                                   
 protected void btnOK_ClickAction(object sender, EventArgs e) {
-  Sage.Entity.Interfaces.ILeadProduct _entity = BindingSource.Current as Sage.Entity.Interfaces.ILeadProduct;
-  if (_entity != null)
-  {
-    object _parent = GetParentEntity();
-    if (DialogService.ChildInsertInfo != null)
-    {
-        if (_parent != null)
-        {
-            if (DialogService.ChildInsertInfo.ParentReferenceProperty != null)
-            {
-                DialogService.ChildInsertInfo.ParentReferenceProperty.SetValue(_entity, _parent, null);
-            }
-        }
-    }
-    bool shouldSave = true;
-    Sage.Platform.WebPortal.EntityPage page = Page as Sage.Platform.WebPortal.EntityPage;
-    if (page != null)
-    {
-        if(IsInDialog() && page.ModeId.ToUpper() == "INSERT")
-        {
-            shouldSave = false;
-        }
-    }
-
-    if(shouldSave)
-    {
-       _entity.Save();
-    }
-
-    if (_parent != null)
-    {
-        if (DialogService.ChildInsertInfo != null)
-        {
-           if (DialogService.ChildInsertInfo.ParentsCollectionProperty != null)
-           {
-              System.Reflection.MethodInfo _add = DialogService.ChildInsertInfo.ParentsCollectionProperty.PropertyType.GetMethod("Add");
-              _add.Invoke(DialogService.ChildInsertInfo.ParentsCollectionProperty.GetValue(_parent, null), new object[] { _entity });
-           }
-        }
-     }
-  }
+      object[] objarray = new object[] { this.BindingSource.Current };
+     Sage.Platform.EntityFactory.Execute<Sage.Entity.Interfaces.ILeadProduct>("LeadProduct.", objarray);
 
           btnOK_ClickActionBRC(sender, e);
     
@@ -139,6 +111,8 @@ protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
  btnOK.Click += new EventHandler(btnOK_ClickAction);
+btnOK.Click += new EventHandler(DialogService.CloseEventHappened);
+btnOK.Click += new EventHandler(Refresh);
 btnCancel.Click += new EventHandler(DialogService.CloseEventHappened);
 
 
@@ -220,6 +194,11 @@ public class EditLeadProductAdapter : Sage.Platform.WebPortal.Adapters.EntityFor
     public  Sage.Platform.Controls.ITextBoxControl txtName
     {
         get { return FindControl(ref _txtName, "txtName"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _txtfamily;
+    public  Sage.Platform.Controls.ITextBoxControl txtfamily
+    {
+        get { return FindControl(ref _txtfamily, "txtfamily"); }
     }
     private Sage.Platform.Controls.IControlsListControl _QFControlsList;
     public  Sage.Platform.Controls.IControlsListControl QFControlsList

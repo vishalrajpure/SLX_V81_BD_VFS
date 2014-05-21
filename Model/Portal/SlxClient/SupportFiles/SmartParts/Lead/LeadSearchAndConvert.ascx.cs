@@ -917,8 +917,12 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
             leadHistory.AccountId = account.Id.ToString();
             leadHistory.Save();
         }
-        lead.Delete();
-        EntityContext.RemoveEntityHistory(typeof(ILead), lead.Id);
+        //lead.Delete();
+		Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000002"); 
+		lead.Owner = objowner; 
+		lead.Status = "Converted";
+		lead.Save();
+        //EntityContext.RemoveEntityHistory(typeof(ILead), lead.Id);
 
         Response.Redirect(
             opportunity != null

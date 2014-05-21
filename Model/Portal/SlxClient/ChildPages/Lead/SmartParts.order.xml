@@ -13,6 +13,6 @@
   <Item Id="36fadfca-71eb-4cf7-82d0-24edcedcedd9">MergeRecords.smartpart.xml</Item>
   <Item Id="667501d4-3fe9-47c6-b5bc-baf64c7076e9">LeadCompetitors.smartpart.xml</Item>
   <Item Id="30481cb1-5a46-43fb-a2f6-9c81df6b9fae">EditLeadCompetitor.smartpart.xml</Item>
-  <Item Id="88a90da8-0346-4bea-b1b8-3ea01440cff3">EditLeadProduct.smartpart.xml</Item>
-  <Item Id="49121304-8a13-4579-80f3-2a5515f75ec2">LeadProducts_New.smartpart.xml</Item>
+  <Item Id="62811b95-1c3e-410b-a9d6-b738d1d9dac4">LeadProduct.smartpart.xml</Item>
+  <Item Id="d90a715a-5610-4cc1-975c-17624a06c87f">EditLeadProduct.smartpart.xml</Item>
 </ModelItems>

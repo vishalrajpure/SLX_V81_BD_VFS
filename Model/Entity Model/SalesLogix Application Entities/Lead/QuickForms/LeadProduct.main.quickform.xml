@@ -1,24 +1,9 @@
 <?xml version="1.0"?>
-<QuickForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="67372f1c-e306-4932-9af3-3fa30f9f8646" DefinitionType="Sage.Platform.QuickForms.QuickFormMainDetailViewDefinition, Sage.Platform.QuickForms">
+<QuickForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="d8acabdb-22ed-4393-81d3-467d533d9621" DefinitionType="Sage.Platform.QuickForms.QuickFormMainDetailViewDefinition, Sage.Platform.QuickForms">
   <ActiveControl />
   <ImagePath />
-  <LoadActions>
-    <FormActionDefinition>
-      <ResourceKey>fcad457d-a3c8-4a79-9b89-b77edf6e37c7</ResourceKey>
-      <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-        <NoActionActionItem>
-          <MethodName />
-        </NoActionActionItem>
-      </Action>
-      <IsDialogCloseAction>False</IsDialogCloseAction>
-      <RunOnEveryRePaint>False</RunOnEveryRePaint>
-      <DialogActionResult>NoResult</DialogActionResult>
-      <PerformsUpdate>False</PerformsUpdate>
-      <AppliedSecurity />
-      <RefreshData>False</RefreshData>
-    </FormActionDefinition>
-  </LoadActions>
-  <Name>LeadProducts</Name>
+  <LoadActions />
+  <Name>LeadProduct</Name>
   <ClientScriptIncludes />
   <ClientResourceKeys />
   <ExtendedProperties />
@@ -44,7 +29,7 @@
         <RelateToPropertyName>Products</RelateToPropertyName>
         <PreviewField />
         <ResourceKind>
-          <Name>LeadProducts</Name>
+          <Name>leadProducts</Name>
           <GetPredicate />
         </ResourceKind>
         <PathSegments />
@@ -115,15 +100,13 @@
           <string>Id</string>
         </Select>
         <Include>
-          <string>Lead</string>
+          <string>Product</string>
         </Include>
         <FeedCategory>InternalAppEntities</FeedCategory>
         <OnGetMappingId />
         <ParentRelationshipPropertyName>Lead</ParentRelationshipPropertyName>
         <ChildRelationshipPropertyName>Product</ChildRelationshipPropertyName>
-        <OnDataChange>
-
-function (entity, attribute, oldValue, newValue) {
+        <OnDataChange>/*function (entity, attribute, oldValue, newValue) {
 	if (oldValue === newValue) {
         return;
     }
@@ -145,12 +128,12 @@ function (entity, attribute, oldValue, newValue) {
             },
             data: { },
             error: function(request, status, error) {
-                var sError = dojo.string.substitute(LeadProductsResources['error_ExecutingRequest'], [sUrl, request.statusText, request.status]);
+                var sError = dojo.string.substitute(OpportunityProductsResources['error_ExecutingRequest'], [sUrl, request.statusText, request.status]);
                 if (dojo.isString(request.responseText)) {
                     if ((request.responseText.indexOf("[", 0) == 0) &amp;&amp; (request.responseText.lastIndexOf("]") == request.responseText.length - 1)) {
                         var oSDataError = dojo.fromJson(request.responseText);
                         if (dojo.isArray(oSDataError)) {
-                            sError = dojo.string.substitute(LeadProductsResources['error_ExecutingRequestExt'],
+                            sError = dojo.string.substitute(OpportunityProductsResources['error_ExecutingRequestExt'],
                                 [sUrl, oSDataError[0].severity, oSDataError[0].sdataCode, oSDataError[0].message, oSDataError[0].applicationCode, request.statusText, request.status]);
                         }
                     }
@@ -180,7 +163,7 @@ function (entity, attribute, oldValue, newValue) {
     if ((attribute === 'Discount') || (attribute === 'CalculatedPrice') || (attribute === 'Quantity')) {
         entity.ExtendedPrice = entity.CalculatedPrice * entity.Quantity;
     }
-}</OnDataChange>
+}*/</OnDataChange>
         <OnAdd />
         <Tools>
           <SDataGridSaveTool>
@@ -715,7 +698,8 @@ function () {
         }
     }
     return oResult;
-}</ConditionalShow>
+}
+</ConditionalShow>
             </LookupButton>
           </SDataGridAddRelationTool>
           <SDataGridCancelTool>
@@ -769,7 +753,7 @@ function () {
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>ea19ab2ae56742159734d49520729315</ControlId>
+        <ControlId>b1e8a15697b42a2a7295ac4295ebf92</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
@@ -783,7 +767,7 @@ function () {
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>eec3f3b0794eba9650556ac2181f8c</ControlId>
+        <ControlId>3c12fe7f79f467c8271a9c167478d2f</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />

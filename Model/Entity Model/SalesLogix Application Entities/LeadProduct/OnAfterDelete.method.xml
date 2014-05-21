@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="9016bfd8-141d-4e86-95e4-ce598b88676c" lastModifiedUtc="2014-05-14T06:52:39.6144481Z" name="OnAfterDelete" methodType="CrudEvent" actionType="None" returnMode="None">
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="cebbed42-b67c-4e38-b2ed-2b7aca30bbec" lastModifiedUtc="2014-05-21T12:20:13.6877707Z" name="OnAfterDelete" methodType="CrudEvent" actionType="None" returnMode="None">
   <extendedMetaData />
   <ExtendedPropertiesCollection>
     <extendee type="Sage.Platform.Orm.Entities.OrmEntityMethod" />
@@ -7,7 +7,7 @@
   <parameter />
   <preExecuteTargets />
   <methodTargets>
-    <methodTarget id="ee564d60-b312-4d4f-aa1a-acdac78d28f6" lastModifiedUtc="2014-05-14T06:52:39.4804405Z" targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterDelete" active="true">
+    <methodTarget id="38062c9e-a23b-498d-b059-bbe96f58a334" lastModifiedUtc="2014-05-21T12:20:12.8947253Z" targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterDelete" active="true">
       <ExtendedPropertiesCollection>
         <extendee type="Sage.Platform.Orm.Entities.OrmMethodTarget" />
       </ExtendedPropertiesCollection>

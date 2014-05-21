@@ -5,6 +5,6 @@
   <Item Id="03f1a17b-5ff5-470b-afa0-fa4a5d1974ff">LeadSearchForDuplicates.smartpart.xml</Item>
   <Item Id="5847cd9b-338a-4cf4-ae2b-2e95e7a6dde1">LeadCompetitors.smartpart.xml</Item>
   <Item Id="c4ab9e3a-f75c-46f6-b7ad-dfb2c3798b18">EditLeadCompetitor.smartpart.xml</Item>
-  <Item Id="b685845c-6501-4579-83af-6936bc5b5100">EditLeadProduct.smartpart.xml</Item>
-  <Item Id="c111cd9f-3681-434f-a0cd-e5b22ee52dbc">LeadProducts_New.smartpart.xml</Item>
+  <Item Id="7622428c-8e3f-4f35-b2f2-fc76d1004071">LeadProduct.smartpart.xml</Item>
+  <Item Id="c5ad4a4e-83e1-4676-960b-74e891a208c3">EditLeadProduct.smartpart.xml</Item>
 </ModelItems>

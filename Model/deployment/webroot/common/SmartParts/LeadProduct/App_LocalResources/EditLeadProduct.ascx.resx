@@ -126,4 +126,7 @@
   <data name="btnCancel.Caption" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="txtfamily.Caption" xml:space="preserve">
+    <value>Family:</value>
+  </data>
 </root>

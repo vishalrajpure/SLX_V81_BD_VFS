@@ -14754,29 +14754,29 @@
   <data name="LeadCompetitor.CurrentMajorCompetitor.DisplayName" xml:space="preserve">
     <value>CurrentMajorCompetitor</value>
   </data>
-  <data name="LeadProduct.DisplayName" xml:space="preserve">
-    <value>Lead Product</value>
-  </data>
   <data name="LeadProduct.Lead_productId.DisplayName" xml:space="preserve">
     <value>Lead Productid</value>
   </data>
-  <data name="LeadProduct.Leadid.DisplayName" xml:space="preserve">
-    <value>Leadid</value>
+  <data name="LeadProduct.DisplayNamePlural" xml:space="preserve">
+    <value>Lead Products</value>
   </data>
-  <data name="LeadProduct.CreateUser.DisplayName" xml:space="preserve">
-    <value>Createuser</value>
-  </data>
-  <data name="LeadProduct.CreateDate.DisplayName" xml:space="preserve">
-    <value>Createdate</value>
-  </data>
-  <data name="LeadProduct.ModifyUser.DisplayName" xml:space="preserve">
-    <value>Modifyuser</value>
+  <data name="LeadProduct.ProductID.DisplayName" xml:space="preserve">
+    <value>ProductID</value>
   </data>
   <data name="LeadProduct.ModifyDate.DisplayName" xml:space="preserve">
     <value>Modifydate</value>
   </data>
-  <data name="LeadProduct.ProductID.DisplayName" xml:space="preserve">
-    <value>ProductID</value>
+  <data name="LeadProduct.ModifyUser.DisplayName" xml:space="preserve">
+    <value>Modifyuser</value>
+  </data>
+  <data name="LeadProduct.CreateDate.DisplayName" xml:space="preserve">
+    <value>Createdate</value>
+  </data>
+  <data name="LeadProduct.CreateUser.DisplayName" xml:space="preserve">
+    <value>Createuser</value>
+  </data>
+  <data name="LeadProduct.Leadid.DisplayName" xml:space="preserve">
+    <value>Leadid</value>
   </data>
   <data name="Competitor.LeadCompetitors.DisplayName" xml:space="preserve">
     <value />
@@ -14790,17 +14790,17 @@
   <data name="LeadCompetitor.Lead.DisplayName" xml:space="preserve">
     <value>Lead</value>
   </data>
-  <data name="Lead.Products.DisplayName" xml:space="preserve">
-    <value>Products</value>
-  </data>
-  <data name="LeadProduct.Lead.DisplayName" xml:space="preserve">
-    <value>Lead</value>
+  <data name="LeadProduct.Product.DisplayName" xml:space="preserve">
+    <value>Product</value>
   </data>
   <data name="Product.Leads.DisplayName" xml:space="preserve">
     <value>Leads</value>
   </data>
-  <data name="LeadProduct.Product.DisplayName" xml:space="preserve">
-    <value>Product</value>
+  <data name="LeadProduct.Lead.DisplayName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Lead.Products.DisplayName" xml:space="preserve">
+    <value />
   </data>
   <data name="Opportunity.BusinessPotential.DisplayName" xml:space="preserve">
     <value>BusinessPotential</value>
@@ -14817,8 +14817,8 @@
   <data name="LeadCompetitor.DisplayNamePlural" xml:space="preserve">
     <value>Lead Competitors</value>
   </data>
-  <data name="LeadProduct.DisplayNamePlural" xml:space="preserve">
-    <value>Lead Products</value>
+  <data name="LeadProduct.DisplayName" xml:space="preserve">
+    <value>Lead Product</value>
   </data>
   <data name="Lead.OperatingcompId.DisplayName" xml:space="preserve">
     <value>Operating Company Id</value>
