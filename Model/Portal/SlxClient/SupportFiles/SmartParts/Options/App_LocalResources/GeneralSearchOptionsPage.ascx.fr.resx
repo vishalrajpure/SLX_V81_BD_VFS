@@ -133,7 +133,7 @@
     <value>Invite pour les données non enregistrées :</value>
   </data>
   <data name="MailMergeServiceError" xml:space="preserve">
-    <value>Le service de publipostage n'a pas pu être chargé. Cela peut se produire si l'intégration de bureau Sage SalesLogix n'est pas installée ou est installée de manière incorrecte.</value>
+    <value>Le service de publipostage n'a pas pu être chargé. Cela peut se produire si l'intégration de bureau Saleslogix n'est pas installée ou est installée de manière incorrecte.</value>
   </data>
   <data name="PromptForUnsavedData" xml:space="preserve">
     <value>Avertissement avant de quitter une page avec des données non enregistrées</value>
@@ -174,8 +174,8 @@
   <data name="lblDefaultOppSearchResource1.Text" xml:space="preserve">
     <value>Recherche d'opportunités par défaut :</value>
   </data>
-  <data name="lblGenOptionsResource1.Text" xml:space="preserve">
-    <value>Options générales</value>
+  <data name="lblEnhancements.Text" xml:space="preserve">
+    <value>SalesLogix améliorations :</value>
   </data>
   <data name="lblFaxBaseTemplateResource1.Text" xml:space="preserve">
     <value>Modèle de fax de base :</value>
@@ -204,8 +204,14 @@
   <data name="_saveResource1.Text" xml:space="preserve">
     <value>Enregistrer</value>
   </data>
+  <data name="lblEnhancementsNotSupported.Text" xml:space="preserve">
+    <value>Améliorations non pris en charge</value>
+  </data>
   <data name="lblEnhancementsInstalled.Text" xml:space="preserve">
     <value>Améliorations installées</value>
+  </data>
+  <data name="lblGenOptionsResource1.Text" xml:space="preserve">
+    <value>Options générales</value>
   </data>
   <data name="lblEmailBaseTemplateResource1.Text" xml:space="preserve">
     <value>Modèle d'e-mail de base :</value>

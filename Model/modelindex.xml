@@ -1679,4 +1679,8 @@
  <ref id="ace0dd84-7c90-401a-9662-228074a8b49a" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadProducts_Details.lueLeadProduct_OnChange.method.xml" />
  <ref id="cc649a64-820f-41a1-8073-11b4bb5549bf" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\Sage.SnippetLibrary.CSharp.@.cc649a64-820f-41a1-8073-11b4bb5549bf.codesnippet.cs" />
  <ref id="d096a3d3-98d2-49cd-b142-f8f163942182" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadCompetitors_Insert.lueLeadCompetitor_OnChange.method.xml" />
+ <ref id="29a7a7d1-ff65-4dfe-b53a-406692005b35" url="\Entity Model\Saleslogix Application Entities\ERPSalesOrder\ERPSalesOrder.SalesOrder.ERPSALESORDER.entity.xml" />
+ <ref id="5f31e72d-04b2-4c40-be0a-68abcaa777e7" url="\Entity Model\Saleslogix Application Entities\TicketProblem\TicketProblem.Ticket.TICKETPROBLEM.entity.xml" />
+ <ref id="c00678be-e713-41a2-908b-5875b9d2eccd" url="\Entity Model\Saleslogix Application Entities\TicketSolution\TicketSolution.Ticket.TICKETSOLUTION.entity.xml" />
+ <ref id="19470d2f-73c2-423b-86fe-33435d356d85" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadProducts_Insert.lueLeadProduct_OnChange.method.xml" />
 </modelItemIndex>

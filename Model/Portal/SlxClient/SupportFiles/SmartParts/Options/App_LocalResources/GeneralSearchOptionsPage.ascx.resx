@@ -262,7 +262,7 @@
     <value>Click to download product enhancements.</value>
   </data>
   <data name="EnhanceSalesLogix" xml:space="preserve">
-    <value>Enhance SalesLogix...</value>
+    <value>Enhance Saleslogix...</value>
   </data>
   <data name="FindOutMore" xml:space="preserve">
     <value>Find out more...</value>
@@ -293,5 +293,8 @@
   </data>
   <data name="lblEnhancementsNotSupported.Text" xml:space="preserve">
     <value>Enhancements Not Supported</value>
+  </data>
+  <data name="lblEnhancements.Text" xml:space="preserve">
+    <value>Saleslogix Enhancements:</value>
   </data>
 </root>

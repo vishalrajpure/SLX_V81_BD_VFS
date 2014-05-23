@@ -166,7 +166,7 @@
                             <SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueCurrencyCode.Description.PropertyHeader %>" PropertyName="Description"
                                 PropertyType="System.String" PropertyFormat="None" UseAsResult="True" ExcludeFromFilters="False">
                             </SalesLogix:LookupProperty>
-                            <SalesLogix:LookupProperty PropertyHeader="Currency Code" PropertyName="Id" PropertyFormat="None" PropertyType="System.String"
+                            <SalesLogix:LookupProperty IsSortable="False" PropertyHeader="Currency Code" PropertyName="Id" PropertyFormat="None" PropertyType="System.String"
                                 UseAsResult="True">
                             </SalesLogix:LookupProperty>
                             <SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueCurrencyCode.Rate.PropertyHeader %>" PropertyName="Rate"

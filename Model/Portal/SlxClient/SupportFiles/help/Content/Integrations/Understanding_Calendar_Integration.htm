@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Translation Status.Support files" MadCap:tocPath="Using Integrations|Using Integrations|Integrating with Outlook|Calendar Synchronization" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" lang="en-us" xml:lang="en-us" MadCap:PathToHelpSystem="../../" MadCap:HelpSystemFileName="WebClient.xml" MadCap:SearchType="Stem">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Translation Status.Support files" MadCap:tocPath="Using Integrations|Integrating with Outlook|Using Outlook Synchronization|Calendar Synchronization" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" lang="en-us" xml:lang="en-us" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient,Output.GSLAN,Output.GSWeb,Output.OutlookSync WP" MadCap:PathToHelpSystem="../../" MadCap:HelpSystemFileName="WebClient.xml" MadCap:SearchType="Stem">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Understanding Calendar Integration</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Understanding Calendar Synchronization with Outlook</title>
         <link href="../Resources/TableStyles/TableStyle.css" rel="stylesheet" />
         <link href="../Resources/TableStyles/Borders.css" rel="stylesheet" />
         <link href="../Resources/Stylesheets/SALESLOGIX.CSS" rel="stylesheet" />
@@ -10,12 +10,12 @@
         </script>
     </head>
     <body>
-        <h1>Understanding Calendar Integration</h1>
-        <p>Calendar integration allows you to synchronize your calendar between <span class="MyVariablesProduct Name">Saleslogix</span> and a supported <a href="Using_External_Integrations.htm">integration</a>.  Your administrator must configure and grant permission before you can synchronize calendars with an integration.</p>
-        <p>During a synchronization cycle,  <span class="MyVariablesProduct Name">Saleslogix</span> compares fields in both systems, and makes changes to ensure
-both systems contain the same information. Only data in mapped fields between the applications is transferred. The data is compared and changes
+        <h1>Understanding Calendar Synchronization with <span class="MyVariablesIntegrated (an)/Outlook (Caps)">Outlook</span></h1>
+        <p>Calendar integration allows you to synchronize your calendar between <span class="MyVariablesProduct Name">Saleslogix</span> and <span class="MyVariablesIntegrated (an)/Outlook (lower)">Outlook</span>.  Your administrator must configure and grant permission before you can synchronize calendars with <span class="MyVariablesIntegrated (an)/Outlook (lower)">Outlook</span>.</p>
+        <p>During a synchronization cycle,  <span class="MyVariablesProduct Name">Saleslogix</span> compares fields in both applications, and makes changes to ensure
+both applications contain the same information. Only data in mapped fields between the applications is transferred. The data is compared and changes
 are made to ensure the information <a href="Matching_Records.htm">matches</a>. For example, if a record has been added
-to one system and not to the other, that record is added to the incomplete system.</p>
+to one application and not to the other, that record is added to the incomplete application.</p>
         <table wrapperparagraphselector="P" style="width: 80%;margin-top: 14pt;border-spacing: 0px;border-spacing: 0px;" cellspacing="0" width="80%" MadCap:conditions="Output.WebClient,Output.OutlookSync,Output.Integrations LAN">
             <col style="width: 45px;" />
             <col />
@@ -33,68 +33,70 @@ to one system and not to the other, that record is added to the incomplete syste
         </table>
         <p class="subheading">Calendar Sync Behavior</p>
         <ul>
-            <li value="1">If the same record is updated in both systems during the same sync cycle, the latest change wins.</li>
-            <li value="2">Deleting an activity in either system  deletes the activity in both application.</li>
-            <li value="3">Activity leaders  members and resources:<ul><li value="1">Member and resource information is not synchronized.</li><li value="2">If the user is a member or a leader of an  activity, when the activity is synchronized the user will be listed as the leader.</li></ul></li>
+            <li value="1">If the same record is updated in both applications during the same sync cycle, the latest change wins.</li>
+            <li value="2">Deleting an activity in either application  deletes the activity in both applications.</li>
+            <li value="3">Activity leaders,  members and resources:<ul><li value="1">Member and resource information is not synchronized.</li><li value="2">If the user is a member or a leader of an  activity, when the activity is synchronized the user will be listed as the leader.</li></ul></li>
             <li value="4">Unconfirmed and confirmed activities will sync. </li>
             <li value="5">Declined activities:<ul><li value="1">Activities that are declined before a synchronization cycle are not synchronized.</li><li value="2">Activities that are declined after a synchronization cycle are removed from the user's calendar in both applications.</li></ul></li>
-            <li value="6">Activity types in <span class="MyVariablesCompanyNameFull">Saleslogix</span> may synchronize to  different activity types in an integrated application. See the Understanding Calendar Data Exchange table for details.</li>
+            <li value="6">Activity types in <span class="MyVariablesCompanyNameFull">Saleslogix</span> may synchronize to  different activity types in <span class="MyVariablesIntegrated (an)/Outlook (lower)">Outlook</span>. See the Understanding Calendar Data Exchange table for details.</li>
+            <li value="7">Activity attachments are not synchronized between <span class="MyVariablesCompanyNameFull">Saleslogix</span> and <span class="MyVariablesIntegrated (an)/Outlook (lower)">Outlook</span>.</li>
         </ul>
         <p>
-            <MadCap:conditionalText MadCap:conditions="Output.WebClient,Output.OutlookSync,Output.Integrations LAN">For  specific calendar integration scenarios, see <a href="Synchronizing_Calendars.htm">Calendar Synchronization scenarios</a>.</MadCap:conditionalText>
+            <MadCap:conditionalText MadCap:conditions="Output.WebClient,Output.OutlookSync,Output.Integrations LAN">For  specific  scenarios, see <a href="Synchronizing_Calendars.htm">Calendar Synchronization scenarios</a>.</MadCap:conditionalText>
         </p>
         <p class="subheading">Understanding Calendar Data Exchange</p>
-        <p MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">The following table lists how <span class="MyVariablesProduct Name">Saleslogix</span> calendar data is synchronized with external integrations:</p>
-        <table style="width: 95%;mc-table-style: url('../Resources/TableStyles/TableStyle.css');margin-left: 0;margin-right: auto;" class="TableStyle-TableStyle" cellspacing="0" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">
-            <col class="Column-Column1">
+        <p MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient,Output.OutlookSync WP">The following table lists how <span class="MyVariablesProduct Name">Saleslogix</span> calendar data is synchronized with <span class="MyVariablesIntegrated (an)/Outlook (lower)">Outlook</span>:</p>
+        <table style="width: 95%;mc-table-style: url('../Resources/TableStyles/TableStyle.css');margin-left: 0;margin-right: auto;" class="TableStyle-TableStyle" cellspacing="0" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient,Output.OutlookSync WP">
+            <col class="Column-Column1" style="width: 435px;">
             </col>
-            <col class="Column-Column1">
+            <col class="Column-Column1" style="width: 109px;">
             </col>
-            <col class="Column-Column1">
+            <col class="Column-Column1" style="width: 243px;">
             </col>
             <thead>
                 <tr class="Head-Header1">
                     <th class="HeadE-Column1-Header1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient"><span class="MyVariablesProduct Name">Saleslogix</span>
                     </th>
-                    <th class="HeadE-Column1-Header1">Syncs As</th>
+                    <th class="HeadE-Column1-Header1">Sync As</th>
                     <th class="HeadD-Column1-Header1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">Outlook</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="Body-Body1">
                     <td class="BodyE-Column1-Body1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">Meetings</td>
-                    <td class="BodyE-Column1-Body1">syncs as </td>
+                    <td class="BodyE-Column1-Body1">sync as </td>
                     <td class="BodyD-Column1-Body1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">Appointments
 
                     </td>
                 </tr>
                 <tr class="Body-Body1">
                     <td class="BodyE-Column1-Body1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">Phone Calls</td>
-                    <td class="BodyE-Column1-Body1">syncs as </td>
+                    <td class="BodyE-Column1-Body1">sync as </td>
                     <td class="BodyD-Column1-Body1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">Appointments</td>
                 </tr>
                 <tr class="Body-Body1">
-                    <td class="BodyE-Column1-Body1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">Personal Activites</td>
-                    <td class="BodyE-Column1-Body1">syncs as </td>
+                    <td class="BodyE-Column1-Body1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">Personal Activities</td>
+                    <td class="BodyE-Column1-Body1">sync as </td>
                     <td class="BodyD-Column1-Body1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">Appointments, flagged as Private</td>
                 </tr>
                 <tr class="Body-Body1">
                     <td class="BodyE-Column1-Body1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">To-Dos</td>
-                    <td class="BodyE-Column1-Body1">syncs as </td>
+                    <td class="BodyE-Column1-Body1">sync as </td>
                     <td class="BodyD-Column1-Body1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">Tasks</td>
                 </tr>
                 <tr class="Body-Body1">
                     <td class="BodyE-Column1-Body1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">Events</td>
-                    <td class="BodyE-Column1-Body1">syncs as </td>
+                    <td class="BodyE-Column1-Body1">sync as </td>
                     <td class="BodyD-Column1-Body1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">do not synchronize</td>
                 </tr>
                 <tr class="Body-Body1">
                     <td class="BodyB-Column1-Body1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">Timeless Phone Call, Meeting or Personal Activity</td>
-                    <td class="BodyB-Column1-Body1">syncs as </td>
-                    <td class="BodyA-Column1-Body1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">All day event</td>
+                    <td class="BodyB-Column1-Body1">sync as </td>
+                    <td class="BodyA-Column1-Body1" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">All day event*</td>
                 </tr>
             </tbody>
         </table>
+        <p>*Event does not refer to <span class="MyVariablesCompanyNameFull">Saleslogix</span> Events, which are not synchronized with <span class="MyVariablesIntegrated (an)/Outlook (lower)">Outlook</span>.</p>
         <p class="RelatedTopics">How Do I?</p>
         <ul>
             <li MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient" value="1"><a href="../Outlook/Configuring_Outlook_Sync.htm">Set calendar options</a>

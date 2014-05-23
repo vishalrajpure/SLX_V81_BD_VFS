@@ -133,7 +133,7 @@
     <value>Avvisa in caso di dati non salvati:</value>
   </data>
   <data name="MailMergeServiceError" xml:space="preserve">
-    <value>Non è possibile caricare il servizio di stampa unione. Questo può accadere se non è stata installata l'Integrazione Desktop SalesLogix o non è stata installata correttamente.</value>
+    <value>Non è possibile caricare il servizio di stampa unione. Questo può accadere se non è stata installata l'Integrazione Desktop Saleslogix o non è stata installata correttamente.</value>
   </data>
   <data name="PromptForUnsavedData" xml:space="preserve">
     <value>Chiedi prima di lasciare la pagina con dati non salvati.</value>
@@ -174,8 +174,8 @@
   <data name="lblDefaultOppSearchResource1.Text" xml:space="preserve">
     <value>Cerca Opportunità Predefinita:</value>
   </data>
-  <data name="lblGenOptionsResource1.Text" xml:space="preserve">
-    <value>Opzioni Generali</value>
+  <data name="lblEnhancements.Text" xml:space="preserve">
+    <value>SalesLogix Miglioramenti:</value>
   </data>
   <data name="lblFaxBaseTemplateResource1.Text" xml:space="preserve">
     <value>Modello Fax Base:</value>
@@ -204,8 +204,14 @@
   <data name="_saveResource1.Text" xml:space="preserve">
     <value>Salva</value>
   </data>
+  <data name="lblEnhancementsNotSupported.Text" xml:space="preserve">
+    <value>Miglioramenti non supportati</value>
+  </data>
   <data name="lblEnhancementsInstalled.Text" xml:space="preserve">
     <value>Integrazioni Installate</value>
+  </data>
+  <data name="lblGenOptionsResource1.Text" xml:space="preserve">
+    <value>Opzioni Generali</value>
   </data>
   <data name="lblEmailBaseTemplateResource1.Text" xml:space="preserve">
     <value>Modello base E-mail:</value>

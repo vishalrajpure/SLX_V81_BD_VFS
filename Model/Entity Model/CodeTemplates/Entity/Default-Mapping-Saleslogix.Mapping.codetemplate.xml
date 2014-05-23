@@ -154,7 +154,7 @@ private static string Addlength(OrmEntityProperty property) {
 #>
 <#+
 private static string DisableOptimistic(OrmFieldProperty property) {
-    if (property.IsReadOnly || property.ColumnName == "MODIFYDATE" || property.ColumnName == "MODIFYUSER" || property.ColumnName == "GLOBALSYNCID" || property.ColumnName == "APPID" || property.ColumnName == "TICK" || property.DataType is LongTextDataType || property.DataType is LongUnicodeTextDataType || property.DataType is BinaryDataType) {
+    if (property.IsReadOnly || property.ColumnName == "MODIFYDATE" || property.ColumnName == "MODIFYUSER" || property.ColumnName == "GLOBALSYNCID" || property.ColumnName == "CHANGEKEY" || property.ColumnName == "APPID" || property.ColumnName == "TICK" || property.DataType is LongTextDataType || property.DataType is LongUnicodeTextDataType || property.DataType is BinaryDataType) {
         return "optimistic-lock=\"false\"";
     }
     else {

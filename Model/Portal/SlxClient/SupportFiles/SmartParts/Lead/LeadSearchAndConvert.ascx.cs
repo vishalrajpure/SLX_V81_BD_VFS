@@ -19,6 +19,8 @@ using Sage.Platform.Orm;
 using Sage.SalesLogix.BusinessRules;
 using Sage.SalesLogix;
 using Sage.SalesLogix.Services;
+using Sage.SalesLogix.Plugins;
+using Sage.SalesLogix.SalesProcess;cn
 
 public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
 {
@@ -562,6 +564,11 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
         if (Visible)
         {
             RegisterClientScript();
+			if (chkCreateOpportunity.Checked == false)
+            {
+                lblSalesprocess.Visible = false;
+                ddLSalesProcess.Visible = false;
+            }
         }
     }
 
@@ -889,6 +896,8 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
     /// <param name="options">The options.</param>
     private void ConvertLeadToNewAccountAndContact(ILead lead, bool createOpportunity, string options)
     {
+		if (ddLSalesProcess.SelectedIndex > 0 || chkCreateOpportunity.Checked == false)
+        {
         var keyGen = new SalesLogixEntityKeyGenerator();
         string key = keyGen.GenerateIds(typeof(IContact), 1).FirstOrDefault();
         IContact contact = EntityFactory.Create<IContact>();
@@ -928,6 +937,11 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
             opportunity != null
                 ? string.Format("Opportunity.aspx?entityid={0}", opportunity.Id)
                 : string.Format("Contact.aspx?entityId={0}", contact.Id), false);
+		}
+		else
+		{
+			lblmsg.Text = "Please Select SalesProcess,Then Continue Convert Opportunity";
+		}
     }
 
     private IOpportunity CreateOpportunity(bool createOpportunity, IContact contact, ILead lead)
@@ -940,7 +954,8 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
             opportunity.Description = String.Format(GetLocalResourceObject("Opportunity_Description").ToString(), lead.LeadNameLastFirst);
             opportunity.Owner = contact.Account.Owner;
             opportunity.AccountManager = contact.Account.AccountManager;
-
+			string pluginID = "";
+            pluginID = ddLSalesProcess.SelectedValue.ToString();
             //assign opp contact based on opportunity default options
             string oppContactOption =
                 BusinessRuleHelper.GetUserOption(BusinessRuleEnums.UserOptionType.String, "grpContact",
@@ -954,6 +969,8 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
                 opportunity.Contacts.Add(opportunityContact);
             }
             opportunity.Save();
+			Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.ISalesProcesses>();
+            salesProcess.InitSalesProcess(pluginID, opportunity.Id.ToString());
         }
         return opportunity;
     }
@@ -1274,6 +1291,36 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
         catch (Exception ex)
         {
             log.Error("The call to LeadSearchAndConvert.SetResolveData() failed", ex);
+        }
+    }
+	protected void chkCreateOpportunity_CheckedChanged(object sender, EventArgs e)
+    {
+        if (chkCreateOpportunity.Checked == true)
+        {
+            lblSalesprocess.ForeColor = System.Drawing.Color.Red;
+            lblSalesprocess.Visible = true;
+            ddLSalesProcess.Visible = true;
+            ddLSalesProcess.Items.Clear();
+            IList<Plugin> pluginList = null;
+            pluginList = Helpers.GetSalesProcessPluginList();
+            ListItem item = new ListItem();
+
+            item.Text = "--None--";
+            item.Value = "0";
+            ddLSalesProcess.Items.Add(item);
+            foreach (Plugin plugin in pluginList)
+            {
+              	item = new ListItem();
+                item.Text = plugin.Name;
+                item.Value = plugin.PluginId;
+                ddLSalesProcess.Items.Add(item);
+                
+            }           
+        }
+        else
+        {
+            ddLSalesProcess.Visible = false;
+            lblSalesprocess.Visible = false;
         }
     }
 }

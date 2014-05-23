@@ -86,7 +86,7 @@ Sage.UI.Forms.AccountAssociations = {
                     tools: [
                         {
                             id: 'Delete',
-                            icon: '~/ImageResource.axd?scope=global&type=Global_Images&key=Delete_16x16',
+                            imageClass: 'icon_Delete_16x16',
                             'alternateText': AccountAssociationsResource.AccountAssociationsGrid_Delete_Text,
                             mergeControlId: 'btnAddAssociation', mergePosition: 'After',
                             appliedSecurity: 'Entities/Account/Edit',

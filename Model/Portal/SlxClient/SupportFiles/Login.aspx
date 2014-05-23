@@ -126,7 +126,7 @@
     </div>
     <asp:Login ID="slxLogin" runat="server" CssClass="slxlogin" DestinationPageUrl="Default.aspx"
         OnPreRender="PreRender" Font-Names="Arial,Verdana,Sans-sarif" Font-Size="17px"
-        ForeColor="#000000">
+        ForeColor="#000000" FailureText="<%$ resources: slxLoginResource1.FailureText %>">
 		<LayoutTemplate>
 		    <div id="splashimg">
 			    <div id="splashCenterBox">

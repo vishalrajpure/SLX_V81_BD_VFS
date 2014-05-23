@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Translation Status.Support files" MadCap:tocPath="Using Integrations" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" lang="en-us" xml:lang="en-us" MadCap:PathToHelpSystem="../../" MadCap:HelpSystemFileName="WebClient.xml" MadCap:SearchType="Stem">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Translation Status.Support files" MadCap:tocPath="Using Integrations" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" lang="en-us" xml:lang="en-us" MadCap:conditions="Output.WebClient,Output.Integrations LAN,Output.GSLAN,Output.GSWeb,Output.OutlookSync WP" MadCap:PathToHelpSystem="../../" MadCap:HelpSystemFileName="WebClient.xml" MadCap:SearchType="Stem">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Using Integrations</title>
         <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
@@ -10,20 +10,20 @@
         </script>
     </head>
     <body>
-        <h1 MadCap:conditions="Output.Integrations LAN,Output.WebClient"><a name="kanchor56"></a>Using Integrations</h1>
-        <p><a name="kanchor57"></a>Integrations allow communication between <span class="MyVariablesProduct Name">Saleslogix</span> and external systems and services.&#160;Each integration may communicate different information, or have different communication behavior. <span class="MCExpanding_0"><a href="javascript:void(0);" class="MCExpandingHead_0" onclick="FMCExpand( this ); return false;">Tell me more <img style="border: none;margin-left: 5px;" src="../SkinSupport/ExpandClosed.gif" MadCap:altsrc="../SkinSupport/ExpandOpen.gif" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../SkinSupport/ExpandOpen.gif' ); }" class="MCExpandingIcon" /></a><span class="MCExpandingBody_0" style="display: none;">For example, the <a href="../Integration Contract/Introducing_Integration.htm">Accounting Integration</a> with X3 synchronizes specified accounting information between <span class="MyVariablesProduct Name">Saleslogix</span> and X3. Other integrations might have single-direction communication. For example, an integration with a social media service might configure Saleslogix to get information from the service to display it.</span></span></p>
-        <p>After an administrator implements an integration, Saleslogix communicates with the integrated system or service automatically. In some cases, integrations also require <a href="Authorize_Services.htm">service authorization</a> by users before communication starts.</p>
-        <p> Integrations:</p>
-        <ul>
+        <h1 MadCap:conditions="Output.Integrations LAN,Output.WebClient,Output.OutlookSync WP" class="Print"><a name="kanchor56"></a>Using Integrations</h1>
+        <p><a name="kanchor57"></a>Integrations allow communication between <span class="MyVariablesProduct Name">Saleslogix</span> and external applications and services.&#160;Each integration may communicate different information, or have different communication behavior. <span class="MCExpanding_0"><a href="javascript:void(0);" class="MCExpandingHead_0" onclick="FMCExpand( this ); return false;">Tell me more <img style="border: none;margin-left: 5px;" src="../SkinSupport/ExpandClosed.gif" MadCap:altsrc="../SkinSupport/ExpandOpen.gif" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../SkinSupport/ExpandOpen.gif' ); }" alt="Collapsed" MadCap:alt2="Expanded" class="MCExpandingIcon" /></a><span class="MCExpandingBody_0" style="display: none;">For example, the <a href="../Integration Contract/Introducing_Integration.htm">Accounting Integration</a> with X3 synchronizes specified accounting information between <span class="MyVariablesProduct Name">Saleslogix</span> and X3. Other integrations might have single-direction communication. For example, an integration with a social media service might configure Saleslogix to get information from the service to display it.</span></span></p>
+        <p>After the administrator implements <span class="MyVariablesIntegrated (the)/Outlook">Outlook</span>, Saleslogix communicates with <span class="MyVariablesIntegrated (the)/Outlook">Outlook</span> automatically.</p>
+        <p MadCap:conditions="Output.GSLAN,Output.GSWeb,Output.Integrations LAN,Output.WebClient"> Integrations:</p>
+        <ul MadCap:conditions="Output.Integrations LAN,Output.WebClient,Output.GSLAN,Output.GSWeb">
             <li value="1"><a href="../Integration Contract/Introducing_Integration.htm">Accounting Integrations</a>
             </li>
             <li value="2">
                 <p><a href="../Outlook/Outlook_Sync_Overview.htm">Outlook Sync</a>
                 </p>
                 <ul>
-                    <li value="1"><a href="Understanding_Calendar_Integration.htm">Calendar Integration</a>
+                    <li value="1"><a href="Understanding_Calendar_Integration.htm">Calendar Synchronization</a>
                     </li>
-                    <li value="2"><a href="Understanding_Contact_Integration.htm">Contact Integration</a>
+                    <li value="2"><a href="Understanding_Contact_Integration.htm">Contact Synchronization</a>
                     </li>
                 </ul>
             </li>

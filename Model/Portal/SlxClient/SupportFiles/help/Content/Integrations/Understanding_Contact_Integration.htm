@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Translation Status.Support files" MadCap:tocPath="Using Integrations|Using Integrations|Integrating with Outlook|Contact Synchronization" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" lang="en-us" xml:lang="en-us" MadCap:PathToHelpSystem="../../" MadCap:HelpSystemFileName="WebClient.xml" MadCap:SearchType="Stem">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Translation Status.Support files" MadCap:tocPath="Using Integrations|Integrating with Outlook|Using Outlook Synchronization|Contact Synchronization" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" lang="en-us" xml:lang="en-us" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient,Output.GSWeb,Output.GSLAN,Output.OutlookSync WP" MadCap:PathToHelpSystem="../../" MadCap:HelpSystemFileName="WebClient.xml" MadCap:SearchType="Stem">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Understanding Contact Integration</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Understanding Contact Synchronization with Outlook</title>
         <link href="../Resources/TableStyles/TableStyle.css" rel="stylesheet" />
         <link href="../Resources/TableStyles/Borders.css" rel="stylesheet" />
         <link href="../Resources/Stylesheets/SALESLOGIX.CSS" rel="stylesheet" />
@@ -10,18 +10,18 @@
         </script>
     </head>
     <body>
-        <h1>Understanding Contact Integration</h1>
-        <p>Synchronizing contacts between <span class="MyVariablesProduct Name">Saleslogix</span> and a supported <a href="Using_External_Integrations.htm">integration</a>  enables you to change a contact record in either application and have the change reflected in both applications. Your administrator must configure and grant permission before you can synchronize contacts with an integration.</p>
-        <p>During a synchronization cycle,  <span class="MyVariablesProduct Name">Saleslogix</span> compares fields in both systems, and makes changes to ensure
-both systems contain the same information. Only data in mapped fields between the applications is transferred. The data is compared and changes
+        <h1>Understanding Contact Synchronization with <span class="MyVariablesIntegrated (an)/Outlook (Caps)">Outlook</span></h1>
+        <p>Synchronizing contacts between <span class="MyVariablesProduct Name">Saleslogix</span> and a <span class="MyVariablesIntegrated (an)/Outlook (lower)">Outlook</span> enables you to change a contact record in either application and have the change reflected in both applications. Your administrator must configure and grant permission before you can synchronize contacts with <span class="MyVariablesIntegrated (an)/Outlook (lower)">Outlook</span>. </p>
+        <p>During a synchronization cycle,  <span class="MyVariablesProduct Name">Saleslogix</span> compares fields in both applications, and makes changes to ensure
+both applications contain the same information. Only data in mapped fields between the applications is transferred. The data is compared and changes
 are made to ensure the information <a href="Matching_Records.htm">matches</a>. For example, if a record has been added
-to one system and not to the other, that record is added to the incomplete system.</p>
+to one application and not to the other, that record is added to the incomplete application.</p>
         <p class="subheading">Contact Sync Behavior</p>
         <ul>
-            <li value="1">Contacts are linked based on the e-mail address. For specific matching behavior see the topic "<a href="Matching_Records.htm">Matching Records Between Saleslogix and Integrations</a>".</li>
-            <li value="2">If the same record is updated in both systems during the same sync cycle, the latest change wins.</li>
-            <li value="3">Deleting a contact in <span class="MyVariablesProduct Name">Saleslogix</span> will move the contact from the <a href="../Outlook/Outlook_Sync_Sync_Tab.htm">contact sync folder</a> to a deleted items folder. </li>
-            <li value="4">Deleting a contact in an integrated application will remove the contact from the <a href="Configuring the Contact Sync Group.htm">contact sync group</a>, but will not delete the contact from <span class="MyVariablesProduct Name">Saleslogix</span>.
+            <li value="1">Contacts are linked based on the e-mail address. For specific matching behavior see the topic "<a href="Matching_Records.htm">Matching Records Between Saleslogix and <span class="MyVariablesIntegrated (an)/Outlook (Caps)">Outlook</span></a>".</li>
+            <li value="2">If the same record is updated in both applications during the same sync cycle, the latest change wins.</li>
+            <li value="3">Deleting a contact in <span class="MyVariablesProduct Name">Saleslogix</span> will move the contact from the <a href="../Outlook/Outlook_Sync_Sync_Tab.htm">contact sync folder</a> to a deleted items folder.</li>
+            <li value="4">Deleting a contact in <span class="MyVariablesIntegrated (an)/Outlook (lower)">Outlook</span> will remove the contact from the <a href="Configuring the Contact Sync Group.htm">contact sync group</a>, but will not delete the contact from <span class="MyVariablesProduct Name">Saleslogix</span>.
 </li>
         </ul>
         <p>
@@ -44,7 +44,7 @@ to one system and not to the other, that record is added to the incomplete syste
                 </td>
             </tr>
         </table>
-        <p><![CDATA[    ]]></p>
+        <p>  <![CDATA[ ]]></p>
         <table wrapperparagraphselector="P" style="width: 80%;margin-top: 14pt;border-spacing: 0px;border-spacing: 0px;" cellspacing="0" width="80%" MadCap:conditions="Output.WebClient,Output.OutlookSync,Output.Integrations LAN">
             <col style="width: 45px;">
             </col>
@@ -68,14 +68,16 @@ speed and causes memory problems. <span class="MyVariablesProduct Name">Saleslog
         <ul>
             <li MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient" value="1"><a href="Creating_Contact_Sync_Group.htm">Create the contact sync group</a>
             </li>
-            <li MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient" value="2"><a href="../Outlook/Adding Outlook Contacts to Saleslogix.htm">Add contacts to the contact sync group</a>
+            <li MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient" value="2"><a href="Configuring the Contact Sync Group.htm">Configure the contact sync group</a>
             </li>
-            <li MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient" value="3"><a href="Configuring the Contact Sync Group.htm">Configure the contact sync group</a>
+            <li MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient" value="3"><a href="Selecting_Contacts_to_Synchronize.htm">Add contacts to the contact sync group</a>
             </li>
-            <li MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient" value="4"><a href="../Outlook/Configuring_Outlook_Sync.htm">Set contact options</a>
+            <li MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient" value="4"><a href="../Outlook/Adding Outlook Contacts to Saleslogix.htm">Adding Outlook Contacts to Saleslogix</a>
+            </li>
+            <li MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient" value="5"><a href="../Outlook/Configuring_Outlook_Sync.htm">Set contact options</a>
             </li>
         </ul>
-        <p MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">The following table lists how <span class="MyVariablesProduct Name">Saleslogix</span> contact data is synchronized with external integrations:</p>
+        <p MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">The following table lists how <span class="MyVariablesProduct Name">Saleslogix</span> contact data is synchronized with <span class="MyVariablesIntegrated (the)/Outlook">Outlook</span>:</p>
         <table style="width: 95%;mc-table-style: url('../Resources/TableStyles/TableStyle.css');margin-left: 0;margin-right: auto;" class="TableStyle-TableStyle" cellspacing="0" MadCap:conditions="Output.Integrations LAN,Output.OutlookSync,Output.WebClient">
             <col class="Column-Column1" />
             <col class="Column-Column1" />

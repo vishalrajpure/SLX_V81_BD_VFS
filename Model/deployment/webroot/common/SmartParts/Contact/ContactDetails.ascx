@@ -22,7 +22,7 @@
    <asp:Label ID="nmeContactName_lbl" AssociatedControlID="nmeContactName" runat="server" Text="<%$ resources: nmeContactName.Caption %>" ></asp:Label>
  </div>
    <div  class="textcontrol"  >
-    <SalesLogix:FullName runat="server" ID="nmeContactName" ButtonToolTip="<%$ resources: nmeContactName.ButtonToolTip %>"  />
+    <SalesLogix:FullName runat="server" ID="nmeContactName" Required="true" ButtonToolTip="<%$ resources: nmeContactName.ButtonToolTip %>"  />
   </div>
 
       </td>
@@ -287,7 +287,7 @@ LabelPlacement="right"  />
    <SalesLogix:GroupNavigator runat="server" ID="cmdDetailsNavigator" ></SalesLogix:GroupNavigator>
     <asp:ImageButton runat="server" ID="cmdSaveContactDetails"
  AlternateText="<%$ resources: cmdSaveContactDetails.Caption %>"  ToolTip="<%$ resources: cmdSaveContactDetails.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_16x16"  />
- 
+   
     <asp:ImageButton runat="server" ID="cmdReset"
  AlternateText="<%$ resources: cmdReset.Caption %>"  ToolTip="<%$ resources: cmdReset.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Reset_16x16"  />
  
@@ -508,7 +508,11 @@ protected override void OnAddEntityBindings() {
         BindingSource.Bindings.Add(pklContactStatusPickListValueBinding);
     
    
-                     
+             
+      
+      
+      
+                 
       
       
       
@@ -548,104 +552,69 @@ else {
       }
 }
 protected void cmdSaveContactDetails_ClickActionS(object sender, EventArgs e) {
-Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Entity.Interfaces.IContact;
-if(string.IsNullOrEmpty(contact.Prefix))
-{
-  	DialogService.ShowMessage("Please Enter the Prefix");
-	return;
+if (DialogService != null) {
+  // DialogActionItem
+  DialogService.SetSpecs(400, 400, "UpdateContactOptions", string.Empty );
+    DialogService.EntityType = typeof(Sage.Entity.Interfaces.IContact); 
+    DialogService.ShowDialog();
 }
-if(string.IsNullOrEmpty(contact.FirstName))
-{
-  	DialogService.ShowMessage("Please Enter the FirstName");
-	return;
-}
-if(contact.FirstName.Length>32)
-{
-	DialogService.ShowMessage("FirstName Length has more than 32 Characters");
-	return;
-}
-if(string.IsNullOrEmpty(contact.LastName))
-{
-  	DialogService.ShowMessage("Please Enter the LastName");
-	return;
-}
-if(contact.LastName.Length>32)
-{
-	DialogService.ShowMessage("LastName Length has more than 32 Characters");
-	return;
-}
-if(string.IsNullOrEmpty(contact.Mobile) && string.IsNullOrEmpty(contact.WorkPhone))
-{
-	DialogService.ShowMessage("Please Enter Either the WorkPhone or Mobile Number");
-	return;
-}
-if(string.IsNullOrEmpty(contact.Address.Address1))
-{
-	DialogService.ShowMessage("Please Enter the Address1");
-	return;	
-}
-if(string.IsNullOrEmpty(contact.Address.PostalCode))
-{
-	DialogService.ShowMessage("Please Enter the PostalCode");
-	return;	
-}
-else
-{
- 	DialogService.SetSpecs(400, 400, "UpdateContactOptions", string.Empty);
-	DialogService.EntityType = typeof(Sage.Entity.Interfaces.IContact);
-	DialogService.ShowDialog(); 	
-}
-	
 
 }
 protected void cmdSaveContactDetails_ClickActionF(object sender, EventArgs e) {
-Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Entity.Interfaces.IContact;
-if(string.IsNullOrEmpty(contact.Prefix))
-{
-  	DialogService.ShowMessage("Please Enter the Prefix");
-	return;
-}
-if(string.IsNullOrEmpty(contact.FirstName))
-{
-  	DialogService.ShowMessage("Please Enter the FirstName");
-	return;
-}
-if(contact.FirstName.Length>32)
-{
-	DialogService.ShowMessage("FirstName Length has more than 32 Characters");
-	return;
-}
-if(string.IsNullOrEmpty(contact.LastName))
-{
-  	DialogService.ShowMessage("Please Enter the LastName");
-	return;
-}
-if(contact.LastName.Length>32)
-{
-	DialogService.ShowMessage("LastName Length has more than 32 Characters");
-	return;
-}
-if(string.IsNullOrEmpty(contact.Mobile) && string.IsNullOrEmpty(contact.WorkPhone))
-{
-	DialogService.ShowMessage("Please Enter Either the WorkPhone or Mobile Number");
-	return;
-}
-if(string.IsNullOrEmpty(contact.Address.Address1))
-{
-	DialogService.ShowMessage("Please Enter the Address1");
-	return;	
-}
-if(string.IsNullOrEmpty(contact.Address.PostalCode))
-{
-	DialogService.ShowMessage("Please Enter the PostalCode");
-	return;	
-}
-else
-{
-   contact.Save();
-}
-	
+  Sage.Entity.Interfaces.IContact _entity = BindingSource.Current as Sage.Entity.Interfaces.IContact;
+  if (_entity != null)
+  {
+    object _parent = GetParentEntity();
+    if (DialogService.ChildInsertInfo != null)
+    {
+        if (_parent != null)
+        {
+            if (DialogService.ChildInsertInfo.ParentReferenceProperty != null)
+            {
+                DialogService.ChildInsertInfo.ParentReferenceProperty.SetValue(_entity, _parent, null);
+            }
+        }
+    }
+    bool shouldSave = true;
+    Sage.Platform.WebPortal.EntityPage page = Page as Sage.Platform.WebPortal.EntityPage;
+    if (page != null)
+    {
+        if(IsInDialog() && page.ModeId.ToUpper() == "INSERT")
+        {
+            shouldSave = false;
+        }
+    }
 
+    if(shouldSave)
+    {
+       _entity.Save();
+    }
+
+    if (_parent != null)
+    {
+        if (DialogService.ChildInsertInfo != null)
+        {
+           if (DialogService.ChildInsertInfo.ParentsCollectionProperty != null)
+           {
+              System.Reflection.MethodInfo _add = DialogService.ChildInsertInfo.ParentsCollectionProperty.PropertyType.GetMethod("Add");
+              _add.Invoke(DialogService.ChildInsertInfo.ParentsCollectionProperty.GetValue(_parent, null), new object[] { _entity });
+           }
+        }
+     }
+  }
+
+          cmdSaveContactDetails_ClickActionFBRC(sender, e);
+    
+  
+}
+protected void cmdSaveContactDetails_ClickActionFBRC(object sender, EventArgs e) {
+Sage.Platform.WebPortal.Services.IPanelRefreshService refresher = PageWorkItem.Services.Get<Sage.Platform.WebPortal.Services.IPanelRefreshService>();
+if (refresher != null) {
+  refresher.RefreshAll();
+}
+else {  
+  Response.Redirect(Request.Url.ToString());
+}
 }
 protected void cmdReset_ClickAction(object sender, EventArgs e) {
   
@@ -688,7 +657,13 @@ protected override void OnWireEventHandlers()
  base.OnWireEventHandlers();
  chkDoNotSolicit.CheckedChanged += new EventHandler(chkDoNotSolicit_ChangeAction);
 chkDoNotEmail.CheckedChanged += new EventHandler(chkDoNotEmail_ChangeAction);
+if (RoleSecurityService != null)
+{
+if (RoleSecurityService.HasAccess("ENTITIES/CONTACT/EDIT"))
+{
 cmdSaveContactDetails.Click += new ImageClickEventHandler(cmdSaveContactDetails_ClickAction);
+}
+}
 cmdReset.Click += new ImageClickEventHandler(cmdReset_ClickAction);
 if (RoleSecurityService != null)
 {
@@ -715,34 +690,19 @@ cmdCopyContact.Click += new ImageClickEventHandler(cmdCopyContact_ClickAction);
 
 }
 
-protected void quickformload0(object sender, EventArgs e) {
-nmeContactName_lbl.ForeColor = System.Drawing.Color.Red;
-lueAccountName_lbl.ForeColor = System.Drawing.Color.Red;
-phnWorkPhone.ForeColor = System.Drawing.Color.Red;
-adrContactAddress_lbl.ForeColor = System.Drawing.Color.Red;
-
-}
-private bool _runActivating;
-protected override void OnActivating()
-{
-_runActivating = true;
-}
-private void DoActivating()
-{
-quickformload0(this, EventArgs.Empty);
-
-}
 protected override void OnFormBound()
 {
-Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.EntityPage;
-        if (epage != null)
-            _runActivating = (epage.IsNewEntity || _runActivating);
-if (_runActivating) DoActivating();
+ClientBindingMgr.RegisterSaveButton(cmdSaveContactDetails);
+
 cmdDelete.OnClientClick = string.Format("return confirm('{0}');", Sage.Platform.WebPortal.PortalUtil.JavaScriptEncode(GetLocalResourceObject("cmdDelete.ActionConfirmationMessage").ToString()));
 
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
 {
 btnEditForm.Visible = false;
+}
+if (!RoleSecurityService.HasAccess("ENTITIES/CONTACT/EDIT"))
+{
+cmdSaveContactDetails.Visible = false;
 }
 if (!RoleSecurityService.HasAccess("ENTITIES/CONTACT/DELETE"))
 {

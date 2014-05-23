@@ -173,7 +173,7 @@
                             <SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueCurrencyCode.Description.PropertyHeader %>" PropertyName="Description"
                                 PropertyType="System.String" PropertyFormat="None" UseAsResult="True" ExcludeFromFilters="False">
                             </SalesLogix:LookupProperty>
-                            <SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueCurrencyCode.Currency.PropertyHeader %>" PropertyName="Id"
+                            <SalesLogix:LookupProperty IsSortable="False" PropertyHeader="<%$ resources: lueCurrencyCode.Currency.PropertyHeader %>" PropertyName="Id"
                                 PropertyType="System.String" PropertyFormat="None" UseAsResult="True" ExcludeFromFilters="False">
                             </SalesLogix:LookupProperty>
                             <SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueCurrencyCode.Rate.PropertyHeader %>" PropertyName="Rate"

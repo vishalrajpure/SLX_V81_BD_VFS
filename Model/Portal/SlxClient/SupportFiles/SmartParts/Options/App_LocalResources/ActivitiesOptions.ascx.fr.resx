@@ -154,7 +154,7 @@
     <value>Vue par défaut :</value>
   </data>
   <data name="lblDefaultTimeless.Text" xml:space="preserve">
-    <value>&lt;Heure indéfinie&gt;</value>
+    <value>Heure indéfinie</value>
   </data>
   <data name="lblDisplayActivityReminders.Text" xml:space="preserve">
     <value>Afficher les rappels d'activité :</value>

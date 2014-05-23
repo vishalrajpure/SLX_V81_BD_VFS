@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Translation Status.Support files" MadCap:tocPath="Using Integrations|Using Integrations|Integrating with Outlook|Contact Synchronization" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" lang="en-us" xml:lang="en-us" MadCap:PathToHelpSystem="../../" MadCap:HelpSystemFileName="WebClient.xml" MadCap:SearchType="Stem">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Translation Status.Support files" MadCap:tocPath="Using Integrations|Integrating with Outlook|Using Outlook Synchronization|Contact Synchronization" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" lang="en-us" xml:lang="en-us" MadCap:conditions="Output.Integrations LAN,Output.WebClient" MadCap:PathToHelpSystem="../../" MadCap:HelpSystemFileName="WebClient.xml" MadCap:SearchType="Stem">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Contact Synchronization Scenarios</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Contact Synchronization Scenarios for Outlook</title>
         <link href="../Resources/TableStyles/TableStyle.css" rel="stylesheet" />
         <link href="../Resources/TableStyles/Borders.css" rel="stylesheet" />
         <link href="../Resources/Stylesheets/SALESLOGIX.CSS" rel="stylesheet" />
@@ -10,8 +10,8 @@
         </script>
     </head>
     <body>
-        <h1><a name="kanchor263"></a>Contact Synchronization Scenarios</h1>
-        <p>The following are some common scenarios to help explain how contact synchronization works.</p>
+        <h1><a name="kanchor262"></a>Contact Synchronization Scenarios for <span class="MyVariablesIntegrated (an)/Outlook (Caps)">Outlook</span></h1>
+        <p>The following are some common scenarios to help explain how  contact synchronization  with <span class="MyVariablesIntegrated (an)/Outlook (lower)">Outlook</span> works.</p>
         <table wrapperparagraphselector="P" style="width: 80%;margin-top: 14pt;border-spacing: 0px;border-spacing: 0px;" cellspacing="0" width="80%">
             <col style="width: 45px;" />
             <col />
@@ -43,7 +43,7 @@
             </thead>
             <tbody>
                 <tr class="Body-Body1">
-                    <td class="BodyE-Column1-Body1">Add a contact from the <span class="MyVariablesProduct Name">Saleslogix</span> database to an integrated application</td>
+                    <td class="BodyE-Column1-Body1">Add a contact from the <span class="MyVariablesProduct Name">Saleslogix</span> database to <span class="MyVariablesIntegrated (an)/Outlook (lower)">Outlook</span></td>
                     <td class="BodyE-Column1-Body1"><a href="Selecting_Contacts_to_Synchronize.htm">
                         Add the contact to the contact sync group in <span class="MyVariablesProduct Name">Saleslogix</span></a>.
 
@@ -53,8 +53,7 @@
 cycle.</td>
                 </tr>
                 <tr class="Body-Body1">
-                    <td class="BodyE-Column1-Body1">Add an individual contact record from an integrated application to the <span class="MyVariablesProduct Name">Saleslogix</span>
-sync group.</td>
+                    <td class="BodyE-Column1-Body1">Add an individual contact record from <span class="MyVariablesIntegrated (an)/Outlook (lower)">Outlook</span> to the <span class="MyVariablesProduct Name">Saleslogix</span>.</td>
                     <td class="BodyE-Column1-Body1">
                         <p><a href="../Outlook/Adding Outlook Contacts to Saleslogix.htm">Add the contact to the contact sync folder</a> and run a synchronization.
 </p>
@@ -63,21 +62,22 @@ sync group.</td>
                         <p>The record is added to the <span class="MyVariablesProduct Name">Saleslogix</span> contact sync group and the data synchronizes
 whenever a synchronization cycle runs.</p>
                         <p>Scenario 1: If no company name is associated with the contact, an account is created
-using the contact name, for example, "Lastname, Firstname".
-
-
+using the contact name, for example, "Firstname&lt;space&gt; Lastname".
 </p>
-                        <p>Scenario2: If a company name is an EXACT match of an account in <span class="MyVariablesProduct Name">Saleslogix</span>,  the new contact is linked to the matching account.</p>
+                        <p>Note: If the company name  is edited after the initial synchronization cycle 
+the change will not be synchronized to <span class="MyVariablesCompanyNameFull">Saleslogix</span>.
+</p>
+                        <p>Scenario 2: If a company name is an EXACT match of an account in <span class="MyVariablesProduct Name">Saleslogix</span>,  the new contact is linked to the matching account.</p>
                     </td>
                 </tr>
                 <tr class="Body-Body1">
-                    <td class="BodyE-Column1-Body1">Synchronize a contact record that currently exists in both the <span class="MyVariablesProduct Name">Saleslogix</span>
- and integrated application.</td>
+                    <td class="BodyE-Column1-Body1">Synchronize a contact record that currently exists in both <span class="MyVariablesProduct Name">Saleslogix</span>
+ and <span class="MyVariablesIntegrated (the)/Outlook">Outlook</span>.</td>
                     <td class="BodyE-Column1-Body1">
                         <p> 
 
 
-Add the contact to the <a href="Selecting_Contacts_to_Synchronize.htm">contact sync group</a> in <span class="MyVariablesProduct Name">Saleslogix</span>, or the <a href="../Outlook/Outlook_Sync_Sync_Tab.htm">contact sync folder</a> in the integrated application. During synchronization, the data is compared and changes
+Add the contact to the <a href="Selecting_Contacts_to_Synchronize.htm">contact sync group</a> in <span class="MyVariablesProduct Name">Saleslogix</span>, or the <a href="../Outlook/Outlook_Sync_Sync_Tab.htm">contact sync folder</a> in <span class="MyVariablesIntegrated (the)/Outlook">Outlook</span>. During synchronization, the data is compared and changes
 are made to ensure the information <a href="Matching_Records.htm">matches</a>.</p>
                         <p>.
 </p>
@@ -88,21 +88,28 @@ cycle runs.</td>
                 <tr class="Body-Body1">
                     <td class="BodyE-Column1-Body1">Stop synchronizing a contact.</td>
                     <td class="BodyE-Column1-Body1">
-                        <p>In the integrated application, move the contact to a contact folder other than the <a href="../Outlook/Outlook_Sync_Sync_Tab.htm">contact sync folder</a> and run a synchronization cycle.</p>
+                        <ol>
+                            <li value="1">Move the contact to a contact folder other than the <a href="../Outlook/Outlook_Sync_Sync_Tab.htm">contact sync folder</a> and run a synchronization cycle.</li>
+                            <li value="2">In <span class="MyVariablesCompanyNameFull">Saleslogix</span>, remove the contact from the <a href="Configuring the Contact Sync Group.htm">contact sync group</a>,.</li>
+                        </ol>
                     </td>
-                    <td class="BodyD-Column1-Body1">The contact is removed from the <a href="Configuring the Contact Sync Group.htm">contact sync group</a>, so that it is no longer synchronized to the integrated application, but is not deleted from <span class="MyVariablesProduct Name">Saleslogix</span>.</td>
+                    <td class="BodyD-Column1-Body1">The contact is removed from the <a href="Configuring the Contact Sync Group.htm">contact sync group</a>, so that it is no longer synchronized to <span class="MyVariablesIntegrated (the)/Outlook">Outlook</span>, but is not deleted from <span class="MyVariablesProduct Name">Saleslogix</span>.</td>
                 </tr>
                 <tr class="Body-Body1">
-                    <td class="BodyE-Column1-Body1">Delete a contact from <span class="MyVariablesProduct Name">Saleslogix</span> from both applications.</td>
+                    <td class="BodyE-Column1-Body1">Delete a contact from both applications.</td>
                     <td class="BodyE-Column1-Body1">Delete the contact in <span class="MyVariablesProduct Name">Saleslogix</span>, and
 run a synchronization cycle. </td>
-                    <td class="BodyD-Column1-Body1">The contact is deleted in <span class="MyVariablesProduct Name">Saleslogix</span> and moved to the Deleted Items folder where it can be permanently deleted.</td>
+                    <td class="BodyD-Column1-Body1">The contact is deleted in <span class="MyVariablesProduct Name">Saleslogix</span> and moved to the Outlook Deleted Items folder where it can be permanently deleted.</td>
                 </tr>
                 <tr class="Body-Body1">
-                    <td class="BodyB-Column1-Body1">Delete a contact from <span class="MyVariablesProduct Name">Saleslogix</span>, but keep the contact in integrated application.</td>
-                    <td class="BodyB-Column1-Body1">Delete the contact in <span class="MyVariablesProduct Name">Saleslogix</span>, and
-run a synchronization cycle. Open the Deleted Items folder, find the contact, and move the contact to a contact folder other than the <a href="../Outlook/Outlook_Sync_Sync_Tab.htm">contact sync folder</a>.</td>
-                    <td class="BodyA-Column1-Body1">The contact is deleted in <span class="MyVariablesProduct Name">Saleslogix</span>, but still available in the integrated application.</td>
+                    <td class="BodyB-Column1-Body1">Delete a contact from <span class="MyVariablesProduct Name">Saleslogix</span>, but keep the contact in <span class="MyVariablesIntegrated (the)/Outlook">Outlook</span>.</td>
+                    <td class="BodyB-Column1-Body1">
+                        <ol>
+                            <li value="1">Move the contact to a contact folder other than the <a href="../Outlook/Outlook_Sync_Sync_Tab.htm">contact sync folder</a> and run a synchronization cycle.</li>
+                            <li value="2">Delete the contact from <span class="MyVariablesCompanyNameFull">Saleslogix</span>.</li>
+                        </ol>
+                    </td>
+                    <td class="BodyA-Column1-Body1">The contact is deleted in <span class="MyVariablesProduct Name">Saleslogix</span>, but still available in<span class="MyVariablesIntegrated (the)/Outlook">Outlook</span>.</td>
                 </tr>
             </tbody>
         </table>

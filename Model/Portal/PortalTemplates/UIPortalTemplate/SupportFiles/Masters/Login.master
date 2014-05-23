@@ -33,7 +33,7 @@ public void Page_Load(object sender, EventArgs e)
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head2" runat="server">
-	<title>Sage SalesLogix</title>
+	<title>Saleslogix</title>
     
 	<link type="text/css" href="../css/SlxBase.css" rel="stylesheet" />
 	<style type="text/css">

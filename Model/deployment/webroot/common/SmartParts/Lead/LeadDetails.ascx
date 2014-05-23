@@ -576,9 +576,10 @@ protected override void OnAddEntityBindings() {
                                                                                                                                                                                                                                 
 protected void cmdQualifyLead_ClickAction(object sender, EventArgs e) {
 Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
-
+if(lead.Products.Count > 0)
+{
 //////////////Specify the Query for find BM///////////
-string qry = "Select Q.SALESMANAGERID  from QUALIFIERANDSMPINCODE Q " +
+	string qry = "Select Q.SALESMANAGERID  from QUALIFIERANDSMPINCODE Q " +
 				"where Q.PINCODE = '"+ lead.Address.PostalCode.ToString() +"'";
 	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
 	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
@@ -616,7 +617,11 @@ string qry = "Select Q.SALESMANAGERID  from QUALIFIERANDSMPINCODE Q " +
     //lead.Owner = objowner;
 	lead.Save();
 	System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx?modeid=Detail"));
-
+}
+else
+{
+	throw new Sage.Platform.Application.ValidationException("Please Add Product..."); 
+}
 
 }
 protected void cmdConvertLead_ClickAction(object sender, EventArgs e) {
@@ -670,51 +675,59 @@ switch(lead.Status)
 	case "Qualified": 
 		if(lead.BranchManager == null) 
 		{ 
-			string qry = "Select Q.SALESMANAGERID from QUALIFIERANDSMPINCODE Q " + 
-				"where Q.PINCODE = '"+ lead.Address.PostalCode.ToString() + "'"; 
-			Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>(); 
-			System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString()); 
-			System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj); 
-			System.Data.DataTable dt = new System.Data.DataTable(); 
-			dataAdapterObj.Fill(dt);
-			if(dt.Rows.Count >0)
+			if(lead.Products.Count > 0)
 			{
-				Sage.Entity.Interfaces.IUser BM = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)dt.Rows[0][0].ToString()); 
-				lead.BranchManager = BM; 
+				string qry = "Select Q.SALESMANAGERID from QUALIFIERANDSMPINCODE Q " + 
+					"where Q.PINCODE = '"+ lead.Address.PostalCode.ToString() + "'"; 
+				Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>(); 
+				System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString()); 
+				System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj); 
+				System.Data.DataTable dt = new System.Data.DataTable(); 
+				dataAdapterObj.Fill(dt);
+				if(dt.Rows.Count >0)
+				{
+					Sage.Entity.Interfaces.IUser BM = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)dt.Rows[0][0].ToString()); 
+					lead.BranchManager = BM; 
+				}
+				else
+				{
+					throw new Sage.Platform.Application.ValidationException("Please map the branch manager with pincode-" + lead.Address.PostalCode); 
+				}
+				lead.QualifiedON = DateTime.Now; 
+				lead.Status = "Qualified"; 
+				//Sage.Entity.Interfaces.IUser BM = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)"ADMIN"); 
+				//lead.BranchManager = BM; 
+				System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj); 
+				System.Data.DataTable dt2 = new System.Data.DataTable(); 
+				dataAdapterObj2.Fill(dt2); 
+				if (dt2.Rows.Count > 0) 
+				{ 
+					Sage.Entity.Interfaces.IOwner objowner1 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt2.Rows[0][0].ToString()); 
+					lead.Owner = objowner1; 
+				} 
+				else
+				{
+				}
+				
 			}
 			else
 			{
-				throw new Sage.Platform.Application.ValidationException("Please map the branch manager with pincode-" + lead.Address.PostalCode); 
-			}
-			lead.QualifiedON = DateTime.Now; 
-			lead.Status = "Qualified"; 
-			//Sage.Entity.Interfaces.IUser BM = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)"ADMIN"); 
-			//lead.BranchManager = BM; 
-			System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj); 
-			System.Data.DataTable dt2 = new System.Data.DataTable(); 
-			dataAdapterObj2.Fill(dt2); 
-			if (dt2.Rows.Count > 0) 
-			{ 
-				Sage.Entity.Interfaces.IOwner objowner1 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt2.Rows[0][0].ToString()); 
-				lead.Owner = objowner1; 
-			} 
-			else
-			{
+				throw new Sage.Platform.Application.ValidationException("Please Add Product..."); 
 			}
 			//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001"); 
 			//lead.Owner = objowner; 
-			} 
-			break; 
-		case "Converted": 
-			if(lead.BranchManager == null) 
-			{ 
-				throw new Sage.Platform.Application.ValidationException("You are not authorize to convert lead..."); 
-			} 
-			else 
-			{ 
-				throw new Sage.Platform.Application.ValidationException("Pease Convert lead via Convert Qualified Lead Button..."); 
-			} 
-			break; 
+		} 
+		break; 
+	case "Converted": 
+		if(lead.BranchManager == null) 
+		{ 
+			throw new Sage.Platform.Application.ValidationException("You are not authorize to convert lead..."); 
+		} 
+		else 
+		{ 
+			throw new Sage.Platform.Application.ValidationException("Pease Convert lead via Convert Qualified Lead Button..."); 
+		} 
+		break; 
 }
 
 lead.Save(); 

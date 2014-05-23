@@ -151,7 +151,7 @@
                     <SalesLogix:LookupControl AutoPostBack="false" runat="server" ID="luMyCurrency" LookupEntityName="ExchangeRate" LookupEntityTypeName="Sage.Entity.Interfaces.IExchangeRate, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
                     <LookupProperties>
                         <SalesLogix:LookupProperty PropertyHeader="Description" PropertyName="Description" PropertyType="System.String" PropertyFormat="None"  UseAsResult="True"></SalesLogix:LookupProperty>
-                        <SalesLogix:LookupProperty PropertyHeader="Currency Code" PropertyName="Id" PropertyFormat="None" PropertyType="System.String" UseAsResult="True"></SalesLogix:LookupProperty>
+                        <SalesLogix:LookupProperty IsSortable="False" PropertyHeader="Currency Code" PropertyName="Id" PropertyFormat="None" PropertyType="System.String" UseAsResult="True"></SalesLogix:LookupProperty>
                         <SalesLogix:LookupProperty PropertyHeader="Rate" PropertyName="Rate" PropertyFormat="None" PropertyType="System.Double" UseAsResult="True" ExcludeFromFilters="True" meta:resourceKey="LPRate_rsc"></SalesLogix:LookupProperty>
                     </LookupProperties>
                     <LookupPreFilters>

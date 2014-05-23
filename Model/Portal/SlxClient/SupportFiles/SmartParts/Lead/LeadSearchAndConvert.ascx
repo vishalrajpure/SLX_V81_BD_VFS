@@ -16,61 +16,49 @@
 
 <asp:Panel runat="server" ID="pnlSearchForDuplicates" Visible="true">
     <table id="SourceSnapShot" border="0" cellpadding="0" cellspacing="0" class="Bevel ExtendWidth">
-        <col width="33%" /><col width="33%" />
-        <tr>            
-            <td colspan="3">
-                <span class="lbl">
+        <colgroup>
+            <col width="33%" />
+            <col width="33%" />
+            <tr>
+                <td colspan="3"><span class="lbl">
                     <asp:Label ID="lblLead" runat="server" Text=""></asp:Label>
-                </span>
-            </td>
-            <td></td>
-        </tr>
-       <tr>
-            <td>
-                <div class="textcontrol phone">
-                    <SalesLogix:Phone runat="server" ID="phnWorkPhone" ReadOnly="true" MaxLength="32" DisplayAsLabel="true"></SalesLogix:Phone>
-                </div>
-            </td>
-            <td>
-                <span class="lbl">
-                    <asp:Label ID="lblCompany" runat="server" Text="<%$ resources: lblCompany.Caption %>" AssociatedControlID="lblValueCompany"></asp:Label>
-                </span>
-                <span>
+                    </span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="textcontrol phone">
+                        <SalesLogix:Phone ID="phnWorkPhone" runat="server" DisplayAsLabel="true" MaxLength="32" ReadOnly="true">
+                        </SalesLogix:Phone>
+                    </div>
+                </td>
+                <td><span class="lbl">
+                    <asp:Label ID="lblCompany" runat="server" AssociatedControlID="lblValueCompany" Text="<%$ resources: lblCompany.Caption %>"></asp:Label>
+                    </span><span>
                     <asp:Label ID="lblValueCompany" runat="server" Text=""></asp:Label>
-                </span>
-            </td>
-            <td>
-                <span class="lbl">
-                    <asp:Label ID="lblEmail" runat="server" Text="<%$ resources: lblEmail.Caption %>" AssociatedControlID="lblValueEmail"></asp:Label>
-                </span>
-                <span>
+                    </span></td>
+                <td><span class="lbl">
+                    <asp:Label ID="lblEmail" runat="server" AssociatedControlID="lblValueEmail" Text="<%$ resources: lblEmail.Caption %>"></asp:Label>
+                    </span><span>
                     <asp:Label ID="lblValueEmail" runat="server" Text=""></asp:Label>
-                </span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>
+                    </span></td>
+            </tr>
+            <tr>
+                <td><span>
                     <asp:Label ID="lblAddress" runat="server" Text=""></asp:Label>
-                </span>
-            </td>
-            <td>
-                <span class="lbl">
-                    <asp:Label ID="lblTitle" runat="server" Text="<%$ resources: lblTitle.Caption %>" AssociatedControlID="lblValueTitle"></asp:Label>
-                </span>
-                <span>
+                    </span></td>
+                <td><span class="lbl">
+                    <asp:Label ID="lblTitle" runat="server" AssociatedControlID="lblValueTitle" Text="<%$ resources: lblTitle.Caption %>"></asp:Label>
+                    </span><span>
                     <asp:Label ID="lblValueTitle" runat="server" Text=""></asp:Label>
-                </span>
-            </td>
-            <td>
-                <span class="lbl">
-                    <asp:Label ID="lblWeb" runat="server" Text="<%$ resources: lblWeb.Caption %>" AssociatedControlID="lblValueWeb"></asp:Label>
-                </span>
-                <span>
+                    </span></td>
+                <td><span class="lbl">
+                    <asp:Label ID="lblWeb" runat="server" AssociatedControlID="lblValueWeb" Text="<%$ resources: lblWeb.Caption %>"></asp:Label>
+                    </span><span>
                     <asp:Label ID="lblValueWeb" runat="server" Text=""></asp:Label>
-                </span>
-            </td>
-        </tr>
+                    </span></td>
+            </tr>
+        </colgroup>
     </table>
 
     <div class="tws tws-main-section">
@@ -278,29 +266,38 @@
     </table>
     
     <table border="0" cellpadding="1" cellspacing="0" width="100%">
-        <col width="50%" /><col width="50%" />
-        <tr>
-            <td>
-                <div class="lbl alignleft">
-                    <asp:Label ID="lblAccountConflicts" runat="server" Text="<%$ resources: lblAccountConflicts.Caption %>" AssociatedControlID="ddlAccountConflicts"></asp:Label>
-                </div>
-                <div class="textcontrol select" width="70%">
-                    <asp:DropDownList ID="ddlAccountConflicts" data-dojo-type="Sage.UI.Controls.Select" CssClass="select-control" shouldPublishMarkDirty="false" runat="server">
-                        <asp:ListItem Text="<%$ resources: ddlAccountConflicts_Item_AccountWins %>" Value="ACCOUNTWINS"></asp:ListItem>
-                        <asp:ListItem Text="<%$ resources: ddlAccountConflicts_Item_LeadWins %>" Value="LEADWINS"></asp:ListItem>
+        <colgroup>
+            <col width="50%" />
+            <col width="50%" />
+            <tr>
+                <td>
+                    <div class="lbl alignleft">
+                        <asp:Label ID="lblAccountConflicts" runat="server" AssociatedControlID="ddlAccountConflicts" Text="<%$ resources: lblAccountConflicts.Caption %>"></asp:Label>
+                    </div>
+                    <div class="textcontrol select" width="70%">
+                        <asp:DropDownList ID="ddlAccountConflicts" runat="server" CssClass="select-control" data-dojo-type="Sage.UI.Controls.Select" shouldPublishMarkDirty="false">
+                            <asp:ListItem Text="<%$ resources: ddlAccountConflicts_Item_AccountWins %>" Value="ACCOUNTWINS"></asp:ListItem>
+                            <asp:ListItem Text="<%$ resources: ddlAccountConflicts_Item_LeadWins %>" Value="LEADWINS"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </td>
+                <td><span>
+                    <asp:CheckBox ID="chkCreateOpportunity" runat="server" OnCheckedChanged="chkCreateOpportunity_CheckedChanged" AutoPostBack ="true" />
+                    </span><span class="lblright">
+                    <asp:Label ID="lblCreateOpportunity" runat="server" AssociatedControlID="chkCreateOpportunity" Text="<%$ resources: lblCreateOpportunity.Caption %>"> </asp:Label>
+                    </span></td>
+                <td><span>
+                    <asp:Label ID="lblSalesprocess" runat="server" Font-Bold="True" Text="Sales Process *"></asp:Label>
+                    <asp:DropDownList ID="ddLSalesProcess" runat="server" AutoPostBack="false">
                     </asp:DropDownList>
-                </div>
-            </td>
-            <td>
-                <span>
-                    <asp:CheckBox ID="chkCreateOpportunity" runat="server" />
-                </span>
-                <span class="lblright">
-                    <asp:Label ID="lblCreateOpportunity" runat="server" AssociatedControlID="chkCreateOpportunity" 
-                        Text="<%$ resources: lblCreateOpportunity.Caption %>"> </asp:Label>
-                </span>
-            </td>
-        </tr>
+                    </span></td>
+            </tr>
+            <tr>
+                <td><span class="lblright">
+                    <asp:Label ID="lblmsg" runat="server" Font-Bold="True" ForeColor="#FF3300"></asp:Label>
+                    </span><span class="lblright">&nbsp; </span></td>
+            </tr>
+        </colgroup>
     </table>
     <div style="padding-right:20px; text-align:right" >
        <asp:Panel runat="server" ID="pnlCancel" CssClass="controlslist qfActionContainer">

@@ -121,6 +121,6 @@
     <value>ASP.NET-Portalvorlage</value>
   </data>
   <data name="TemplateDescription" xml:space="preserve">
-    <value>Erstellt eine ASP.NET-Portalanwendung. Verwenden Sie diesen Vorlagentyp beim Erstellen eines neuen Portals, für welches das ASP.NET-Framework Sage SalesLogix nicht notwendig ist.</value>
+    <value>Erstellt eine ASP.NET-Portalanwendung. Verwenden Sie diesen Vorlagentyp beim Erstellen eines neuen Portals, für welches das ASP.NET-Framework Saleslogix nicht notwendig ist.</value>
   </data>
 </root>

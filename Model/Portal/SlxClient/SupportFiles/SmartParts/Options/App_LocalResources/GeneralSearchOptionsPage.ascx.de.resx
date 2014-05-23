@@ -133,7 +133,7 @@
     <value>Bei nicht gespeicherten Daten nachfragen:</value>
   </data>
   <data name="MailMergeServiceError" xml:space="preserve">
-    <value>Der Seriendruckdienst konnte nicht geladen werden. Dies kann passieren, wenn Sage SalesLogix-Desktopintegration nicht bzw. falsch installiert wurde.</value>
+    <value>Der Seriendruckdienst konnte nicht geladen werden. Dies kann passieren, wenn Saleslogix-Desktopintegration nicht bzw. falsch installiert wurde.</value>
   </data>
   <data name="PromptForUnsavedData" xml:space="preserve">
     <value>Bei nicht gespeicherten Daten nachfragen</value>
@@ -174,8 +174,8 @@
   <data name="lblDefaultOppSearchResource1.Text" xml:space="preserve">
     <value>Standardmäßige Verkaufschancensuche:</value>
   </data>
-  <data name="lblGenOptionsResource1.Text" xml:space="preserve">
-    <value>Allgemeine Optionen</value>
+  <data name="lblEnhancements.Text" xml:space="preserve">
+    <value>SalesLogix-Erweiterungen:</value>
   </data>
   <data name="lblFaxBaseTemplateResource1.Text" xml:space="preserve">
     <value>Faxbasisvorlage:</value>
@@ -204,8 +204,14 @@
   <data name="_saveResource1.Text" xml:space="preserve">
     <value>Speichern</value>
   </data>
+  <data name="lblEnhancementsNotSupported.Text" xml:space="preserve">
+    <value>Erweiterungen nicht unterstützt</value>
+  </data>
   <data name="lblEnhancementsInstalled.Text" xml:space="preserve">
     <value>Installierte Erweiterungen</value>
+  </data>
+  <data name="lblGenOptionsResource1.Text" xml:space="preserve">
+    <value>Allgemeine Optionen</value>
   </data>
   <data name="lblEmailBaseTemplateResource1.Text" xml:space="preserve">
     <value>E-Mail-Basisvorlage:</value>

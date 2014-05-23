@@ -81,15 +81,7 @@ makeGrid : function(runtimeConfig) {
 {
     			field: 'Id',
 				    //Set to the value of the visibleCondition property
-	    hidden: function () {
-	var clientContextService = Sage.Services.getService('ClientContextService');
-	if (clientContextService != null) {
-	    if (clientContextService.containsKey('IntegrationAuthType')) {
-	        return clientContextService.getValue('IntegrationAuthType') === 'Basic';
-	    }
-	}
-	return false;
-}(),
+	    hidden: function () { return true; }(),
 		name:  IntegrationLinksgrdLinks_Strings['grdLinks_ec7179d9_f6ea_4c31_9e21_df2ae6d282de_ColumnHeading']  || ' ',
 	sortable: false,
 		width: 6,

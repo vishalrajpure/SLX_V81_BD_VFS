@@ -12,7 +12,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
-	<title>Sage SalesLogix</title>
+	<title>Saleslogix</title>
     <link rel="stylesheet" type="text/css" href="~/css/SlxBase.css" />
     <link rel="stylesheet" type="text/css" href="~/css/quickform.css" />
 	<link rel="stylesheet" type="text/css" href="~/css/YUI/fonts.css" />

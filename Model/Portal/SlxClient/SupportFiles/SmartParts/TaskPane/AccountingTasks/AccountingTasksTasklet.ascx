@@ -6,8 +6,7 @@
         <div runat="server" id="divEntityAccountList" class="task-pane-item-common-tasklist" style="display:none">
             <div runat="server" id="rowlnkLinkAccount_List">
                 <div class="task-pane-item-common-tasklist">
-                    <asp:Image ID="imgListLink" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=promote_account_16x16"
-                        runat="server" AlternateText="<%$ resources: imgLinkAccount.Caption %>" />
+                    <div class="Global_Images icon16x16 icon_promote_account_16x16"></div>
                     <asp:LinkButton runat="server" ID="lnkListLinkAccount" CausesValidation="False" Text="<%$ resources: lblLinkAccount.Caption %>" 
                         onclick="lnkLinkAccount_Click" OnClientClick="javascript:return accountingTasksActions.linkAccount();">
                     </asp:LinkButton>
@@ -21,8 +20,7 @@
     <ContentTemplate>
         <div runat="server" id="divEntityAccountDetails" class="task-pane-item-common-tasklist" style="display:none">
             <div runat="server" id="rowlnkLinkAccount" class="task-pane-item-common-tasklist">
-                <asp:Image ID="imgLinkAccount" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=promote_account_16x16"
-                    runat="server" AlternateText="<%$ resources: imgLinkAccount.Caption %>" />
+                <div ID="imgLinkAccount" runat="server" class="Global_Images icon16x16 icon_promote_account_16x16"></div>
                 <asp:LinkButton runat="server" ID="lblLinkAccount" CausesValidation="False" Text="<%$ resources: lblLinkAccount.Caption %>" 
                     onclick="lnkLinkAccount_Click" OnClientClick="javascript:return accountingTasksActions.linkAccount();">
                 </asp:LinkButton>
@@ -46,16 +44,15 @@
     <ContentTemplate>
         <div runat="server" id="divEntitySalesOrder" class="task-pane-item-common-tasklist" style="display:none">
             <div runat="server" id="rowCheckPrices" class="task-pane-item-common-tasklist">
-                <asp:Image ID="imgCheckPrices" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=update_price_list_16x16"
-                    runat="server" AlternateText="<%$ resources: lnkCheckPrices.Caption %>" />
+                <div class="Global_Images icon16x16 icon_update_price_list_16x16"></div>
                 <asp:LinkButton runat="server" ID="lnkCheckPrices" CausesValidation="False" Text="<%$ resources: lnkCheckPrices.Caption %>" 
                     onclick="lnkCheckPrices_Click" OnClientClick="javascript:return accountingTasksActions.checkPrices();">
                 </asp:LinkButton>
                 <br />
             </div>
             <div runat="server" id="rowSOSubmit" class="task-pane-item-common-tasklist">
-                <asp:Image ID="imgSOSubmit" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=submit_to_accounting_sys_16x16"
-                    runat="server" AlternateText="<%$ resources: imgSOSubmit.Caption %>" />
+                <div class="Global_Images icon16x16 icon_submit_to_accounting_sys_16x16"></div>
+                <asp:Image ID="imgSOSubmit" runat="server" AlternateText="<%$ resources: imgSOSubmit.Caption %>" />
                 <asp:LinkButton runat="server" ID="lnkSOSubmit" CausesValidation="False" Text="<%$ resources: lnkSOSubmit.Caption %>" 
                     onclick="lnkSubmitSalesOrder_Click" OnClientClick="javascript:return accountingTasksActions.submitSalesOrder();">
                 </asp:LinkButton>

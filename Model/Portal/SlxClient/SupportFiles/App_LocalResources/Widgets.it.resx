@@ -166,7 +166,7 @@
     <value>Sì</value>
   </data>
   <data name="Displays_links_you_create__For_example__to_a_detail_view_in_Sage_SalesLogix_or_to_an_external_Web_site_" xml:space="preserve">
-    <value>Visualizza i collegamenti che hai creato. Ad esempio, a una vista di dettaglio SalesLogix o ad un sito esterno.</value>
+    <value>Visualizza i collegamenti che hai creato. Ad esempio, a una vista di dettaglio Saleslogix o ad un sito esterno.</value>
   </data>
   <data name="lblVisibleRecords" xml:space="preserve">
     <value>Record visibili</value>
@@ -181,7 +181,7 @@
     <value>Carattere non valido</value>
   </data>
   <data name="welcomeH2" xml:space="preserve">
-    <value>Benvenuto in SalesLogix</value>
+    <value>Benvenuto in Saleslogix</value>
   </data>
   <data name="editorTitleTodaysActivities" xml:space="preserve">
     <value>Impostazioni Attività di Oggi</value>
@@ -223,7 +223,7 @@
     <value>Elimina</value>
   </data>
   <data name="Displays_an_introduction_to_Sage_SalesLogix_with_a_link_to_the_help_topic_Introducing_Sage_SalesLogix_for_Web_" xml:space="preserve">
-    <value>Visualizza un'introduzione a Sage SalesLogix con un collegamento all'argomento della guida Introduzione alla parte Web Sage SalesLogix</value>
+    <value>Visualizza un'introduzione a Saleslogix con un collegamento all'argomento della guida Introduzione alla parte Web Saleslogix</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>Caricamento, attendere...</value>
@@ -295,7 +295,7 @@
     <value>Visualizza i dati sotto forma di barre verticali raggruppate per categoria. Utile per mostrare le modifiche ai dati in un determinato periodo di tempo o per illustrare confronti tra dati.</value>
   </data>
   <data name="Access_to_Sage_SalesLogix_University" xml:space="preserve">
-    <value>Accesso all'Università Sage SalesLogix</value>
+    <value>Accesso all'Università Saleslogix</value>
   </data>
   <data name="View_Activities" xml:space="preserve">
     <value>Visualizza attività</value>
@@ -460,7 +460,7 @@
     <value>Visualizza i collegamenti alle attività di oggi.</value>
   </data>
   <data name="welcomeP1" xml:space="preserve">
-    <value>Sage SalesLogix gestisce tutti gli aspetti del ciclo di vendita sul Web.  In aggiunta per tracciare contatti, aziende, nominativi, opportunità, ticket e  attività, gli utenti hanno accesso agli strumenti per il reporting, l'automatizzazione dei processi, e la creazione di email, fax e lettere con la stampa unione.</value>
+    <value>Saleslogix gestisce tutti gli aspetti del ciclo di vendita sul Web.  In aggiunta per tracciare contatti, aziende, nominativi, opportunità, ticket e  attività, gli utenti hanno accesso agli strumenti per il reporting, l'automatizzazione dei processi, e la creazione di email, fax e lettere con la stampa unione.</value>
   </data>
   <data name="Share_Your_Product_Ideas" xml:space="preserve">
     <value>Condividi le Tue Idee sul Prodotto</value>

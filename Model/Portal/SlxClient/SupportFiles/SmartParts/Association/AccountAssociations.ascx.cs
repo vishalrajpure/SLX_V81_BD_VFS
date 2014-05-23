@@ -21,7 +21,7 @@ public partial class SmartParts_Association_AccountAssociations : EntityBoundSma
 
     protected override void OnWireEventHandlers()
     {
-        btnAddAssociation.Click += new ImageClickEventHandler(btnAddAssociation_ClickAction);
+        btnAddAssociation.Click += btnAddAssociation_ClickAction;
         base.OnWireEventHandlers();
     }
 

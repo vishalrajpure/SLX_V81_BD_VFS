@@ -229,8 +229,13 @@
         var systemInfo = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.SalesLogix.Services.ISystemOptionsService>(true);
         return systemInfo.SendSlxSaveMSGFiles ? "true" : "false";
     }
+    [ThreadStatic] private static int? _maxRequestLength;
     protected string GetFileUploadOptions()
     {
+        if (_maxRequestLength != null)
+        {
+            return string.Format("{{maxFileSize:{0}}}", _maxRequestLength);
+        }
         int maxLength = 1000000;
         Configuration config = System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration("~");
         var configSection = config.GetSection("system.web/httpRuntime") as System.Web.Configuration.HttpRuntimeSection;
@@ -238,6 +243,7 @@
         {
             maxLength = configSection.MaxRequestLength * 1024;
         }
+        _maxRequestLength = maxLength;
 
         string options = "{" + string.Format("maxFileSize:{0}", maxLength) + "}";
         return options;

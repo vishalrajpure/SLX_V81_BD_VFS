@@ -133,7 +133,7 @@
     <value>Запрос для несохраненных данных:</value>
   </data>
   <data name="MailMergeServiceError" xml:space="preserve">
-    <value>Не может быть загружен сервис рассылки почты. Это может произойти если не установлен Sage SalesLogix Desktop Integration или установлен неверно.</value>
+    <value>Не может быть загружен сервис рассылки почты. Это может произойти если не установлен Saleslogix Desktop Integration или установлен неверно.</value>
   </data>
   <data name="PromptForUnsavedData" xml:space="preserve">
     <value>Запрос на сохраненные данные</value>
@@ -174,8 +174,8 @@
   <data name="lblDefaultOppSearchResource1.Text" xml:space="preserve">
     <value>Поиск сделки по умолч.:</value>
   </data>
-  <data name="lblGenOptionsResource1.Text" xml:space="preserve">
-    <value>Основные параметры</value>
+  <data name="lblEnhancements.Text" xml:space="preserve">
+    <value>Добавления Saleslogix:</value>
   </data>
   <data name="lblFaxBaseTemplateResource1.Text" xml:space="preserve">
     <value>Шаблон факса:</value>
@@ -204,8 +204,14 @@
   <data name="_saveResource1.Text" xml:space="preserve">
     <value>Сохранить</value>
   </data>
+  <data name="lblEnhancementsNotSupported.Text" xml:space="preserve">
+    <value>Добавления не поддерживаются</value>
+  </data>
   <data name="lblEnhancementsInstalled.Text" xml:space="preserve">
     <value>Улучшения установлены</value>
+  </data>
+  <data name="lblGenOptionsResource1.Text" xml:space="preserve">
+    <value>Основные параметры</value>
   </data>
   <data name="lblEmailBaseTemplateResource1.Text" xml:space="preserve">
     <value>Основной шаблон для e-mail:</value>
