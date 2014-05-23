@@ -90,21 +90,49 @@ protected override void OnAddEntityBindings() {
 }
                                    
 protected void btnOK_ClickAction(object sender, EventArgs e) {
-      object[] objarray = new object[] { this.BindingSource.Current };
-     Sage.Platform.EntityFactory.Execute<Sage.Entity.Interfaces.ILeadProduct>("LeadProduct.", objarray);
+  Sage.Entity.Interfaces.ILeadProduct _entity = BindingSource.Current as Sage.Entity.Interfaces.ILeadProduct;
+  if (_entity != null)
+  {
+    object _parent = GetParentEntity();
+    if (DialogService.ChildInsertInfo != null)
+    {
+        if (_parent != null)
+        {
+            if (DialogService.ChildInsertInfo.ParentReferenceProperty != null)
+            {
+                DialogService.ChildInsertInfo.ParentReferenceProperty.SetValue(_entity, _parent, null);
+            }
+        }
+    }
+    bool shouldSave = true;
+    Sage.Platform.WebPortal.EntityPage page = Page as Sage.Platform.WebPortal.EntityPage;
+    if (page != null)
+    {
+        if(IsInDialog() && page.ModeId.ToUpper() == "INSERT")
+        {
+            shouldSave = false;
+        }
+    }
 
-          btnOK_ClickActionBRC(sender, e);
-    
+    if(shouldSave)
+    {
+       _entity.Save();
+    }
+
+    if (_parent != null)
+    {
+        if (DialogService.ChildInsertInfo != null)
+        {
+           if (DialogService.ChildInsertInfo.ParentsCollectionProperty != null)
+           {
+              System.Reflection.MethodInfo _add = DialogService.ChildInsertInfo.ParentsCollectionProperty.PropertyType.GetMethod("Add");
+              _add.Invoke(DialogService.ChildInsertInfo.ParentsCollectionProperty.GetValue(_parent, null), new object[] { _entity });
+           }
+        }
+     }
+  }
+
   
-}
-protected void btnOK_ClickActionBRC(object sender, EventArgs e) {
-Sage.Platform.WebPortal.Services.IPanelRefreshService refresher = PageWorkItem.Services.Get<Sage.Platform.WebPortal.Services.IPanelRefreshService>();
-if (refresher != null) {
-  refresher.RefreshAll();
-}
-else {  
-  Response.Redirect(Request.Url.ToString());
-}
 }
 
 protected override void OnWireEventHandlers()

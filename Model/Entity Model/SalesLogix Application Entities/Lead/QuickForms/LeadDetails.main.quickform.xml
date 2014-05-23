@@ -7,8 +7,9 @@
       <ResourceKey>3968105a-b7b8-49a2-8849-2b5903a11ef4</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName>quickformload0</MethodName>
-          <CSharpCodeSnippet>Sage.Entity.Interfaces.ILead lead = this.BindingSource.Current as Sage.Entity.Interfaces.ILead;
+          <MethodName />
+          <CSharpCodeSnippet>ClientBindingMgr.UsePageExitWarning = false;
+Sage.Entity.Interfaces.ILead lead = this.BindingSource.Current as Sage.Entity.Interfaces.ILead;
 if (lead != null)
 {
 	//needed because binding expression do not work on null values.
@@ -1637,7 +1638,7 @@ else
           <ResourceKey>cmdUpdateLead</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName />
+              <MethodName>cmdUpdateLead_ClickAction</MethodName>
               <CSharpCodeSnippet>Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead; 
 switch(lead.Status) 
 { 
