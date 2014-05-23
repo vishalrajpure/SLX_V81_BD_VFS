@@ -484,7 +484,7 @@
                   </Action>
                   <IsDialogCloseAction>False</IsDialogCloseAction>
                   <RunOnEveryRePaint>False</RunOnEveryRePaint>
-                  <DialogActionResult>DialogOK</DialogActionResult>
+                  <DialogActionResult>NoResult</DialogActionResult>
                   <PerformsUpdate>True</PerformsUpdate>
                   <AppliedSecurity />
                   <RefreshData>False</RefreshData>

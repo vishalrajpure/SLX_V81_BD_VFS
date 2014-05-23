@@ -777,6 +777,7 @@ cmdDeleteLead.Click += new ImageClickEventHandler(cmdDeleteLead_ClickAction);
 }
 
 protected void quickformload0(object sender, EventArgs e) {
+ClientBindingMgr.UsePageExitWarning = false;
 Sage.Entity.Interfaces.ILead lead = this.BindingSource.Current as Sage.Entity.Interfaces.ILead;
 if (lead != null)
 {

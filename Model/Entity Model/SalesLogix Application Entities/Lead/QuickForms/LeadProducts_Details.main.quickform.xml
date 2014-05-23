@@ -130,7 +130,7 @@
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>4095433e3344e3b6c3e8c4d41604b4</ControlId>
+        <ControlId>095433e3344e3b6c3e8c4d41604b4</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
@@ -168,7 +168,7 @@
           <ResourceKey>lueLeadProduct</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CodeSnippetActionItem, Sage.Platform.QuickForms">
             <CodeSnippetActionItem methodId="ace0dd84-7c90-401a-9662-228074a8b49a">
-              <MethodName>lueLeadProduct_ChangeAction</MethodName>
+              <MethodName />
             </CodeSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>

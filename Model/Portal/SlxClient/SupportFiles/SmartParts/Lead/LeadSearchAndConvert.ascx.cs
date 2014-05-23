@@ -608,7 +608,7 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
     protected override void OnWireEventHandlers()
     {
         cmdCancel.Click += DialogService.CloseEventHappened;
-        cmdConvert.Click += DialogService.CloseEventHappened;
+        //cmdConvert.Click += DialogService.CloseEventHappened;
         cmdInsert.Click += DialogService.CloseEventHappened;
     }
 
@@ -932,7 +932,13 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
 		lead.Status = "Converted";
 		lead.Save();
         //EntityContext.RemoveEntityHistory(typeof(ILead), lead.Id);
-
+		string url;
+		if(opportunity != null)
+        	url =string.Format("Opportunity.aspx?entityid={0}", opportunity.Id);
+		else
+			url = string.Format("Contact.aspx?entityId={0}", contact.Id);
+		cmdConvert.Click += DialogService.CloseEventHappened;
+		//Page.ClientScript.RegisterClientScriptBlock(GetType(), "sas", "<script>window.close();if (window.opener && !window.opener.closed) { window.opener.location='" + url + "'; }</script>", false);
         Response.Redirect(
             opportunity != null
                 ? string.Format("Opportunity.aspx?entityid={0}", opportunity.Id)
@@ -940,8 +946,8 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
 		}
 		else
 		{
-			//lblmsg.Text = "Please Select SalesProcess,Then Continue Convert Opportunity";
-			throw new Sage.Platform.Application.ValidationException("The call to LeadSearchAndConvert.cmdConvert_Click() failed");
+			lblmsg.Text = "Please Select SalesProcess,Then Continue Convert Opportunity";
+			//throw new Sage.Platform.Application.ValidationException("The call to LeadSearchAndConvert.cmdConvert_Click() failed");
 		}
     }
 
