@@ -20,7 +20,7 @@ using Sage.SalesLogix.BusinessRules;
 using Sage.SalesLogix;
 using Sage.SalesLogix.Services;
 using Sage.SalesLogix.Plugins;
-using Sage.SalesLogix.SalesProcess;cn
+using Sage.SalesLogix.SalesProcess;
 
 public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
 {
@@ -940,7 +940,8 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
 		}
 		else
 		{
-			lblmsg.Text = "Please Select SalesProcess,Then Continue Convert Opportunity";
+			//lblmsg.Text = "Please Select SalesProcess,Then Continue Convert Opportunity";
+			throw new Sage.Platform.Application.ValidationException("The call to LeadSearchAndConvert.cmdConvert_Click() failed");
 		}
     }
 

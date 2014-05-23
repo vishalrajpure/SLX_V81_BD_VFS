@@ -1425,7 +1425,7 @@ if (lead != null)
           <ResourceKey>cmdQualifyLead</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName />
+              <MethodName>cmdQualifyLead_ClickAction</MethodName>
               <CSharpCodeSnippet>Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
 if(lead.Products.Count &gt; 0)
 {
