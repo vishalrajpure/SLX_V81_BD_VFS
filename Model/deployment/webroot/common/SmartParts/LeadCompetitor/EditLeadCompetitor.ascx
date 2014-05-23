@@ -184,22 +184,22 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtWebAddressTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Competitor.WebAddress", txtWebAddress, "Text");
         BindingSource.Bindings.Add(txtWebAddressTextBinding);
                     // txtRating.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding txtRatingTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Rating", txtRating, "Text");
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtRatingTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Competitor.Rating", txtRating, "Text");
         BindingSource.Bindings.Add(txtRatingTextBinding);
                     // chkIncumbent.Checked Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding chkIncumbentCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Incumbent", chkIncumbent, "Checked");
         BindingSource.Bindings.Add(chkIncumbentCheckedBinding);
                     // txtStrengths.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding txtStrengthsTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Strengths", txtStrengths, "Text");
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtStrengthsTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Competitor.Strengths", txtStrengths, "Text");
         BindingSource.Bindings.Add(txtStrengthsTextBinding);
                     // txtWeaknesses.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding txtWeaknessesTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Weaknesses", txtWeaknesses, "Text");
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtWeaknessesTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Competitor.Weaknesses", txtWeaknesses, "Text");
         BindingSource.Bindings.Add(txtWeaknessesTextBinding);
                     // txtStrategy.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding txtStrategyTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Strategy", txtStrategy, "Text");
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtStrategyTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Competitor.Strategy", txtStrategy, "Text");
         BindingSource.Bindings.Add(txtStrategyTextBinding);
                     // txtNotes.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding txtNotesTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Notes", txtNotes, "Text");
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtNotesTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Competitor.Notes", txtNotes, "Text");
         BindingSource.Bindings.Add(txtNotesTextBinding);
                     // chkCurrentMajorCompetitor.Checked Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding chkCurrentMajorCompetitorCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("CurrentMajorCompetitor", chkCurrentMajorCompetitor, "Checked");
@@ -264,6 +264,8 @@ protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
  btnOk.Click += new EventHandler(btnOk_ClickAction);
+btnOk.Click += new EventHandler(DialogService.CloseEventHappened);
+btnOk.Click += new EventHandler(Refresh);
 btnCancel.Click += new EventHandler(DialogService.CloseEventHappened);
 
 

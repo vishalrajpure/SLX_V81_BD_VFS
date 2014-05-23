@@ -1632,7 +1632,7 @@ string qry = "Select Q.SALESMANAGERID  from QUALIFIERANDSMPINCODE Q " +
           <ResourceKey>cmdUpdateLead</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName>cmdUpdateLead_ClickAction</MethodName>
+              <MethodName />
               <CSharpCodeSnippet>Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead; 
 switch(lead.Status) 
 { 

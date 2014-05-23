@@ -15,16 +15,16 @@
 AutoGenerateColumns="false" CellPadding="4" CssClass="datagrid" PagerStyle-CssClass="gridPager"
 AlternatingRowStyle-CssClass="rowdk" RowStyle-CssClass="rowlt" SelectedRowStyle-CssClass="rowSelected" ShowEmptyTable="true" EnableViewState="false"
 EmptyTableRowText="<%$ resources: grdLeadCompetitors.EmptyTableRowText %>"  ExpandableRows="True" ResizableColumns="True"  OnRowCommand="grdLeadCompetitors_RowCommand"
- DataKeyNames="InstanceId,Leadid,CompetitorID"
+ DataKeyNames="InstanceId,Id"
  OnRowEditing="grdLeadCompetitors_RowEditing"  OnRowDeleting="grdLeadCompetitors_RowDeleting" OnRowDataBound="grdLeadCompetitors_RowDataBound" >
 <Columns>
-   <asp:BoundField DataField="Competitor"
+   <asp:BoundField DataField="Competitor.CompetitorName"
       HeaderText="<%$ resources: grdLeadCompetitors.ce2e617d-01f8-44f5-a629-61da6c5e3e52.ColumnHeading %>"          >
       </asp:BoundField>
-    <asp:BoundField DataField="RATING"
+    <asp:BoundField DataField="Competitor.Rating"
       HeaderText="<%$ resources: grdLeadCompetitors.e1333ceb-b646-45f1-8c2f-5c3b85534c55.ColumnHeading %>"          >
       </asp:BoundField>
-    <asp:BoundField DataField="WEAKNESSES"
+    <asp:BoundField DataField="Competitor.Weaknesses"
       HeaderText="<%$ resources: grdLeadCompetitors.2d52b5a8-f18f-4089-8f3c-fcb3c528bb79.ColumnHeading %>"          >
       </asp:BoundField>
     <asp:CheckBoxField DataField="CurrentMajorCompetitor" ReadOnly="True"
@@ -38,10 +38,10 @@ EmptyTableRowText="<%$ resources: grdLeadCompetitors.EmptyTableRowText %>"  Expa
       HeaderText="<%$ resources: grdLeadCompetitors.30596f25-c917-4f05-87bf-fac0279937e9.ColumnHeading %>"          >
       </asp:BoundField>
   <asp:ButtonField CommandName="Edit"
-  Text="<%$ resources: grdLeadCompetitors.b0ca6db6-9322-4531-a74c-fef268d3d254.Text %>"        HeaderText="<%$ resources: grdLeadCompetitors.b0ca6db6-9322-4531-a74c-fef268d3d254.ColumnHeading %>"        >
+  Text="<%$ resources: grdLeadCompetitors.b0ca6db6-9322-4531-a74c-fef268d3d254.Text %>"  DataTextField="Id"      HeaderText="<%$ resources: grdLeadCompetitors.b0ca6db6-9322-4531-a74c-fef268d3d254.ColumnHeading %>"        >
           </asp:ButtonField>
      <asp:ButtonField CommandName="Delete"
-  Text="<%$ resources: grdLeadCompetitors.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.Text %>"         HeaderText="<%$ resources: grdLeadCompetitors.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.ColumnHeading %>"        >
+  Text="<%$ resources: grdLeadCompetitors.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.Text %>"   DataTextField="Id"       HeaderText="<%$ resources: grdLeadCompetitors.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.ColumnHeading %>"        >
           </asp:ButtonField>
    </Columns>
 </SalesLogix:SlxGridView>
@@ -279,7 +279,7 @@ void dsLeadCompetitors_OnCurrentEntitySet(object sender, EventArgs e)
 
 protected override void OnAddEntityBindings() {
        dsLeadCompetitors.Bindings.Add(new Sage.Platform.WebPortal.Binding.WebEntityListBinding("Competitors", grdLeadCompetitors ));
-   dsLeadCompetitors.BindFieldNames = new String[] { "Leadid","CompetitorID","Competitor","RATING","WEAKNESSES","CurrentMajorCompetitor","COMPETITORRATE","COMPETITORSHAREOFWELLET" };
+   dsLeadCompetitors.BindFieldNames = new String[] { "Id","Competitor.CompetitorName","Competitor","Competitor.Rating","RATING","Competitor.Weaknesses","WEAKNESSES","CurrentMajorCompetitor","COMPETITORRATE","COMPETITORSHAREOFWELLET" };
      
      BindingSource.OnCurrentEntitySet += new EventHandler(dsLeadCompetitors_OnCurrentEntitySet);
     

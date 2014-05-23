@@ -82,8 +82,8 @@ namespace Sage.BusinessRules.CodeSnippets
                             smartpart.DialogService.EntityType = typeof(Sage.Entity.Interfaces.ILeadCompetitor);
                             string id = string.Empty;
 
-                            smartpart.DialogService.CompositeKeyNames = "Leadid,CompetitorID";
-                            id = string.Format("{0},{1}", relationshipEntity.Leadid, relationshipEntity.CompetitorID);
+                            //smartpart.DialogService.CompositeKeyNames = "Leadid,CompetitorID";
+                            id = (string)relationshipEntity.Id;//string.Format("{0},{1}", relationshipEntity.Leadid, relationshipEntity.CompetitorID);
                             if (Sage.Platform.WebPortal.PortalUtil.ObjectIsNewEntity(relationshipEntity))
                             {
                                 id = relationshipEntity.InstanceId.ToString();

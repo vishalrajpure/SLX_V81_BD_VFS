@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<SmartPartMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="5de22d31-469e-4645-adb4-e594982ace2d">
+  <SmartPartId>LeadCompetitors_Insert</SmartPartId>
+  <ReferencedModelId>b2741b79-02a2-4f4c-81cd-c204f82cf41c</ReferencedModelId>
+  <SmartPart>\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadCompetitors_Insert.main.quickform.xml</SmartPart>
+  <TargetWorkspace>MainContent</TargetWorkspace>
+  <ShowInMode>Insert</ShowInMode>
+  <Properties />
+  <AllowRoles />
+</SmartPartMapping>

@@ -24,13 +24,12 @@
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <DataSource>dsLeadCompetitors</DataSource>
-        <DataKeyNames>Leadid,CompetitorID</DataKeyNames>
         <EnablePaging>false</EnablePaging>
         <EnableSorting>false</EnableSorting>
         <Columns>
           <QFDataGridCol>
             <StyleScheme />
-            <DataField>Competitor</DataField>
+            <DataField>Competitor.CompetitorName</DataField>
             <ColumnId>ce2e617d-01f8-44f5-a629-61da6c5e3e52</ColumnId>
             <HorizontalAlignment>left</HorizontalAlignment>
             <HeaderAlignment>left</HeaderAlignment>
@@ -41,7 +40,7 @@
           </QFDataGridCol>
           <QFDataGridCol>
             <StyleScheme />
-            <DataField>RATING</DataField>
+            <DataField>Competitor.Rating</DataField>
             <ColumnId>e1333ceb-b646-45f1-8c2f-5c3b85534c55</ColumnId>
             <HorizontalAlignment>left</HorizontalAlignment>
             <HeaderAlignment>left</HeaderAlignment>
@@ -52,7 +51,7 @@
           </QFDataGridCol>
           <QFDataGridCol>
             <StyleScheme />
-            <DataField>WEAKNESSES</DataField>
+            <DataField>Competitor.Weaknesses</DataField>
             <ColumnId>2d52b5a8-f18f-4089-8f3c-fcb3c528bb79</ColumnId>
             <HorizontalAlignment>left</HorizontalAlignment>
             <HeaderAlignment>left</HeaderAlignment>
@@ -99,7 +98,7 @@
           </QFDataGridCol>
           <QFEditCol>
             <StyleScheme />
-            <DataField />
+            <DataField>Id</DataField>
             <ColumnId>b0ca6db6-9322-4531-a74c-fef268d3d254</ColumnId>
             <HorizontalAlignment>left</HorizontalAlignment>
             <HeaderAlignment>left</HeaderAlignment>
@@ -120,15 +119,15 @@
           </QFEditCol>
           <QFDeleteCol>
             <StyleScheme />
-            <DataField />
+            <DataField>Id</DataField>
             <ColumnId>7c56d8ed-2fa7-4950-af38-cebc70ec4f85</ColumnId>
             <HorizontalAlignment>left</HorizontalAlignment>
             <HeaderAlignment>left</HeaderAlignment>
             <SortDirection>None</SortDirection>
             <IsSortable>false</IsSortable>
             <MultiCurrencyDependent>false</MultiCurrencyDependent>
-            <BusinessRule />
-            <BusinessRuleObjectName />
+            <BusinessRule>Delete</BusinessRule>
+            <BusinessRuleObjectName>LeadCompetitor</BusinessRuleObjectName>
             <BusinessRuleParameters />
             <AppliedSecurity />
           </QFDeleteCol>

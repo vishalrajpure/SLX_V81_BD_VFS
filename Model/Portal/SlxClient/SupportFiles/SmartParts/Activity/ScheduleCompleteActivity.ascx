@@ -147,7 +147,7 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <!--<tr>
         <td>
             <span class="lbl"><asp:Label ID="LabelTicket" Text="<%$ resources: LabelTicket.Text %>"  AssociatedControlID="Ticket" runat="server"></asp:Label></span>
         </td>
@@ -176,7 +176,7 @@
                 </SalesLogix:LookupControl>
              </span>
         </td>
-    </tr>
+    </tr>-->
 </table>
 </div>
 <div id="leadsdiv" runat="server">

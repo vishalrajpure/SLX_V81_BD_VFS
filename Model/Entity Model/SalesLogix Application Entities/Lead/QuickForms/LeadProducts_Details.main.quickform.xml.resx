@@ -117,10 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Title" xml:space="preserve">
-    <value>LeadProduct</value>
+  <data name="Lead.Caption" xml:space="preserve">
+    <value>Lead</value>
   </data>
-  <data name="Description" xml:space="preserve">
-    <value>LeadProduct</value>
+  <data name="grdLeadProducts.ce2e617d-01f8-44f5-a629-61da6c5e3e52.ColumnHeading" xml:space="preserve">
+    <value>Competitor</value>
+  </data>
+  <data name="grdLeadProducts.61697fea-cf79-4663-ba7f-072e5d2c65ea.ColumnHeading" xml:space="preserve">
+    <value>CompetitorRate</value>
+  </data>
+  <data name="grdLeadProducts.30596f25-c917-4f05-87bf-fac0279937e9.ColumnHeading" xml:space="preserve">
+    <value>CompetitorShareOfWellet</value>
+  </data>
+  <data name="grdLeadProducts.e1333ceb-b646-45f1-8c2f-5c3b85534c55.ColumnHeading" xml:space="preserve">
+    <value>RATING</value>
+  </data>
+  <data name="grdLeadProducts.2d52b5a8-f18f-4089-8f3c-fcb3c528bb79.ColumnHeading" xml:space="preserve">
+    <value>WEAKNESSES</value>
+  </data>
+  <data name="grdLeadProducts.28c832f5-efc6-44d5-85fc-9f72e80e4e4a.ColumnHeading" xml:space="preserve">
+    <value>CompetitorRate</value>
+  </data>
+  <data name="grdLeadProducts.53944890-9fd3-4a0f-9dc6-2e7dce90680c.ColumnHeading" xml:space="preserve">
+    <value>CurrentMajorCompetitor</value>
+  </data>
+  <data name="grdLeadProducts.b0ca6db6-9322-4531-a74c-fef268d3d254.ColumnHeading" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="grdLeadProducts.b0ca6db6-9322-4531-a74c-fef268d3d254.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="grdLeadProducts.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.ColumnHeading" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="grdLeadProducts.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="grdLeadProducts.EmptyTableRowText" xml:space="preserve">
+    <value>No records match the selection criteria.</value>
+  </data>
+  <data name="grdLeadProducts.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.ConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to remove this item?</value>
+  </data>
+  <data name="grdLeadProducts.53d6a546-aa61-4dcc-9400-c837c3b2eeaf.ColumnHeading" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="grdLeadProducts.1c592c25-62ba-44df-9691-550c5ceb2c27.ColumnHeading" xml:space="preserve">
+    <value>Family</value>
+  </data>
+  <data name="lueLeadProduct.LookupProperties.Name.PropertyHeader" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="lueLeadProduct.LookupProperties.Family.PropertyHeader" xml:space="preserve">
+    <value>Family</value>
+  </data>
+  <data name="DuplicateCompetitorMsg" xml:space="preserve">
+    <value>{0} is already associated to this Lead.</value>
+  </data>
+  <data name="DuplicateCompetitorMsgTitle" xml:space="preserve">
+    <value>Duplicate Product</value>
   </data>
 </root>

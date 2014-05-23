@@ -59,7 +59,7 @@
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Rating</DataItemName>
+            <DataItemName>Competitor.Rating</DataItemName>
             <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
@@ -100,7 +100,7 @@
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Strengths</DataItemName>
+            <DataItemName>Competitor.Strengths</DataItemName>
             <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
@@ -138,7 +138,7 @@
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Strategy</DataItemName>
+            <DataItemName>Competitor.Strategy</DataItemName>
             <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
@@ -329,7 +329,7 @@
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Weaknesses</DataItemName>
+            <DataItemName>Competitor.Weaknesses</DataItemName>
             <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
@@ -367,7 +367,7 @@
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Notes</DataItemName>
+            <DataItemName>Competitor.Notes</DataItemName>
             <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
@@ -484,7 +484,7 @@
                   </Action>
                   <IsDialogCloseAction>False</IsDialogCloseAction>
                   <RunOnEveryRePaint>False</RunOnEveryRePaint>
-                  <DialogActionResult>NoResult</DialogActionResult>
+                  <DialogActionResult>DialogOK</DialogActionResult>
                   <PerformsUpdate>True</PerformsUpdate>
                   <AppliedSecurity />
                   <RefreshData>False</RefreshData>
@@ -534,7 +534,7 @@
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>4f5f93611c453a96bfbdedbfc2cf40</ControlId>
+        <ControlId>f5f93611c453a96bfbdedbfc2cf40</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />

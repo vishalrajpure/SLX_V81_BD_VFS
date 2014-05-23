@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="19470d2f-73c2-423b-86fe-33435d356d85" lastModifiedUtc="2014-05-23T04:53:08.5162903Z" name="lueLeadProduct_OnChange" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="LeadProducts_Insert">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="33f8be06-477e-4b37-bb0f-a250ebaceb7a" paramName="form" sequence="0" paramType="ILeadProducts_Insert" />
+    <OrmEntityMethodParam id="29f25cb8-c63c-419c-a5e0-8de620b36167" paramName="args" sequence="0" paramType="EventArgs" />
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets>
+    <methodTarget xsi:type="OrmMethodTargetSnippet" id="655a1390-38f3-4673-bf79-249b8a8d07f2" lastModifiedUtc="2014-05-23T04:53:04.1550409Z" targetType="Sage.BusinessRules.CodeSnippets.LeadProducts_InsertEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="lueLeadProduct_OnChangeStep" active="true" codeSnippetId="7803ae10-cb17-4009-bae8-57e5a6200a40">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmMethodTargetSnippet" />
+      </ExtendedPropertiesCollection>
+    </methodTarget>
+  </methodTargets>
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>
