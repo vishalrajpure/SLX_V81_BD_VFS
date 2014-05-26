@@ -205,7 +205,8 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
     {
         ExportToFile();
     }
-  private void ChangeAccountUser()
+	
+ 	private void ChangeAccountUser()
     {
         GroupContextService groupContextService = ApplicationContext.Current.Services.Get<IGroupContextService>() as GroupContextService;
         CachedGroup currentGroup = groupContextService.GetGroupContext().CurrentGroupInfo.CurrentGroup;
@@ -261,7 +262,14 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
             if (_account != null)
             {
                 _user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>(cUser);
-                string selsql = "Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + cUser + "' and name ='INSERTSECCODEID'";
+               if(_user != null)
+				{
+				   _account.Owner =Sage.SalesLogix.BusinessRules.BusinessRuleHelper.OwnerOnInsert(_user);
+				   _account.Save();
+				}
+				
+				
+				/*string selsql = "Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + cUser + "' and name ='INSERTSECCODEID'";
                 Sage.Platform.Data.IDataService service = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
                 System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service.GetConnectionString());
                 conObj.Open();
@@ -275,7 +283,7 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
                     _account.Save();
                 }
                 dataAdapterObj.Dispose();
-                conObj.Close();
+                conObj.Close();*/
             }
         }
     }

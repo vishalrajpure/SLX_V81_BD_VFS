@@ -207,4 +207,7 @@
   <data name="txtmktsegment.Caption" xml:space="preserve">
     <value>MKT Segment:</value>
   </data>
+  <data name="btnAddress.Caption" xml:space="preserve">
+    <value>Address:</value>
+  </data>
 </root>

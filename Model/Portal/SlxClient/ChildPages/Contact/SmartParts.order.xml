@@ -29,4 +29,5 @@
   <Item Id="eaa1d7fd-5706-4fa8-9b5d-a2f822ddd739">SyncResultsHistory.smartpart.xml</Item>
   <Item Id="1db78bfa-a6b4-4b52-bf58-59dda118f812">MergeContactAddress.smartpart.xml</Item>
   <Item Id="5d37c64b-bf34-4fa8-91fc-a7248d9cbf66">MergeAddress.smartpart.xml</Item>
+  <Item Id="174b8e8d-730f-48fc-bf48-088a7f868236">AddAccountAddress.smartpart.xml</Item>
 </ModelItems>

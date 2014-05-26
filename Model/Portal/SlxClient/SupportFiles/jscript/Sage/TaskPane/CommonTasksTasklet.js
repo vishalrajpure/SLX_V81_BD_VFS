@@ -214,8 +214,10 @@ function (
         onTransferAccountClick: function () {
 
             //Call the click event for the hidden sumbit button.
-            alert("1");
-            var User = window.frames['ie'].document.getElementById('drpusers').value;
+        var childiFrame = document.getElementById("ie");       
+        var innerDoc = childiFrame.contentDocument || childiFrame.contentWindow.document;
+        var Usr = innerDoc.getElementById('drpusers');
+        var User = Usr.options[Usr.selectedIndex].value;
             if (User == '0') {
                 alert('Please select User');
                 window.frames['ie'].document.getElementById('drpusers').focus();

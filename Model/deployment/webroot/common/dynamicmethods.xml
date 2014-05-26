@@ -2960,6 +2960,10 @@
       <primaryTarget targetType="Sage.SalesLogix.Contact.Rules, Sage.SalesLogix.BusinessRules" targetMethod="UpdateWorkPhoneChanges" />
       <postExecuteTargets />
     </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="ContactDetails.OnLoad1" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <postExecuteTargets />
+    </dynamicMethod>
     <dynamicMethod xsi:type="BusinessRuleMethod" methodName="QuickInsertAccountContact.btnOK_OnClick" methodReturnMode="None" returnType="System.Void">
       <preExecuteTargets />
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.QuickInsertAccountContactEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="btnOK_OnClickStep" />
@@ -6622,7 +6626,7 @@
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.OpportunityClosedWonEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="lueCompetitorReplaced_OnChange" />
       <postExecuteTargets />
     </dynamicMethod>
-    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="935e39ec-2e2b-46c6-bc07-f0947c0c2e6f.LoadAction1" methodReturnMode="None" returnType="System.Void">
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="47d1326c-f32c-43fb-9ab1-eccb45aafeed.LoadAction1" methodReturnMode="None" returnType="System.Void">
       <preExecuteTargets />
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.OpportunityCompetitorsEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="LoadAction1Step1" />
       <postExecuteTargets />
@@ -6632,7 +6636,7 @@
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.OpportunityCompetitorsEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="lueAssociateCompetitor_OnChangeStep" />
       <postExecuteTargets />
     </dynamicMethod>
-    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="acbd3195-329a-4a27-b72a-52201d4f0631.SetDefaultOppContactInfo" methodReturnMode="None" returnType="System.Void">
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="cb8f3c02-81fb-47b3-97b4-f84f3d4dbc20.SetDefaultOppContactInfo" methodReturnMode="None" returnType="System.Void">
       <preExecuteTargets />
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.OpportunityContactsEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="SetDefaultOppContactInfo" />
       <postExecuteTargets />

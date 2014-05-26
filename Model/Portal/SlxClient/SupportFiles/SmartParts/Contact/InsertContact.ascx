@@ -65,7 +65,7 @@
             alert("Mkt Segment Length has more than 10 Characters");
             return false;
         }
-      
+
         else if (document.getElementById('MainContent_InsertContact_phnContactWorkPhone_PhoneTextBox').value == '') {
             alert("Please Enter the WorkPhone");
             return false;
@@ -74,8 +74,8 @@
             alert("Please Enter Either the HomePhone or Mobile of Contact");
             return false;
         }
-        else if (document.getElementById('MainContent_InsertContact_adrContactAddress_Addr1').value == '') {
-            alert("Please Enter the Address1 of Contact");
+        else if (document.getElementById('MainContent_InsertContact_txtAccountAddress').value == '') {
+            alert("Please Enter the Required Address Details");
             return false;
         }
         else if (document.getElementById('MainContent_InsertContact_adrContactAddress_Zip').value == '') {
@@ -106,9 +106,9 @@
         <asp:ImageButton runat="server" ID="cmdSave" AlternateText="<%$ resources: cmdSave.Caption %>" ToolTip="<%$ resources: cmdSave.ToolTip %>"
             ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_16x16" OnClientClick="return ChkRequiredField()" />
         <asp:ImageButton runat="server" ID="cmdSaveNew" AlternateText="<%$ resources: cmdSaveNew.Caption %>" ToolTip="<%$ resources: cmdSaveNew.ToolTip %>"
-            ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_New16x16"  OnClientClick="return ChkRequiredField()" />
+            ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_New16x16" OnClientClick="return ChkRequiredField()" />
         <asp:ImageButton runat="server" ID="cmdSaveClear" AlternateText="<%$ resources: cmdSaveClear.Caption %>" ToolTip="<%$ resources: cmdSaveClear.ToolTip %>"
-            ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_Clear16x16"  OnClientClick="return ChkRequiredField()" />
+            ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_Clear16x16" OnClientClick="return ChkRequiredField()" />
         <SalesLogix:PageLink ID="lnkInsertContactHelp" runat="server" LinkType="HelpFileName" ToolTip="<%$ resources: lnkHelp.Caption %>"
             Target="<%$ resources: lnkHelp.ToolTip %>" NavigateUrl="contactadd1.aspx" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16">
         </SalesLogix:PageLink>
@@ -191,8 +191,8 @@
             <div class="textcontrol">
                 <asp:TextBox ID="txtlegalname" runat="server"></asp:TextBox>
             </div>
-        </td>    
-   </tr>
+        </td>
+    </tr>
     <tr>
         <td>
             <div class="lbl">
@@ -202,8 +202,8 @@
                 <asp:TextBox ID="txtmktsegment" runat="server"></asp:TextBox>
             </div>
         </td>
-     
-   <%-- </tr>
+
+        <%-- </tr>
     <tr>--%>
         <td>
             <div class="lbl">
@@ -246,69 +246,7 @@
             </div>
         </td>
     </tr>
-    <tr>
-        <td colspan="3" style="padding: 5px 0px;">
-            <div class="mainContentHeader">
-                <span id="hzsContactInformation" style="padding-left: 30px">
-                    <asp:Localize ID="Localize1" runat="server" Text="<%$ resources: hzsContactInformation.Caption %>">Contact Information</asp:Localize>
-                </span>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div class="lbl">
-                <asp:Label ID="pklContactTitle_lz" AssociatedControlID="pklContactTitle" runat="server" Text="<%$ resources: pklContactTitle.Caption %>"></asp:Label>
-            </div>
-            <div class="textcontrol">
-                <SalesLogix:PickListControl runat="server" ID="pklContactTitle" PickListId="kSYST0000385" PickListName="Title" MustExistInList="false" AlphaSort="true" />
-            </div>
-        </td>
-        <td>
-            <div class="lbl">
-                <asp:Label ID="phnContactHomePhone_lz" AssociatedControlID="phnContactHomePhone" runat="server" Text="<%$ resources:phnContactHomePhone.Caption %>" ForeColor="Red"></asp:Label></div>
-            <div class="textcontrol">
-                <SalesLogix:Phone runat="server" ID="phnContactHomePhone" />
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td rowspan="3">
-            <div class="lbl">
-                <asp:Label ID="adrContactAddress_lz" AssociatedControlID="adrContactAddress" runat="server" Text="<%$ resources:adrContactAddress.Caption %>" ForeColor="Red"></asp:Label>
-            </div>
-            <div class="textcontrol">
-                <SalesLogix:AddressControl runat="server" ID="adrContactAddress" AddressDescriptionPickListId="kSYST0000013" AutoPostBack="true" AddressDescriptionPickListName="Address Description (Contact)"
-                    AddressToolTip="<%$ resources: adrContactAddress.AddressToolTip %>" ButtonToolTip="<%$ resources: adrContactAddress.ButtonToolTip %>">
-                    <AddressDescStyle Height="80" />
-                </SalesLogix:AddressControl>
-            </div>
-        </td>
-        <td>
-            <div class="lbl">
-                <asp:Label ID="phnContactMobile_lz" AssociatedControlID="phnContactMobile" runat="server" Text="<%$ resources: phnContactMobile.Caption %>"></asp:Label>
-            </div>
-            <div class="textcontrol">
-                <SalesLogix:Phone runat="server" ID="phnContactMobile" />
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div class="lbl">
-                <asp:Label ID="phnContactFax_lz" AssociatedControlID="phnContactFax" runat="server" Text="<%$ resources: phnContactFax.Caption %>"></asp:Label>
-            </div>
-            <div class="textcontrol">
-                <SalesLogix:Phone runat="server" ID="phnContactFax" />
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <asp:LinkButton ID="lnkaddress" Text="Address" runat="server" OnClick="lnkaddress_Click">
-			</asp:LinkButton>
-        </td>
-    </tr>
+
     <!-- <tr>
         <td>
             <div>
@@ -327,16 +265,8 @@
         </td>
     </tr>
     <tr>
-        <td rowspan="5">
-            <div class="lbl">
-                <asp:Label ID="adrAccountAddress_lz" AssociatedControlID="adrAccountAddress" runat="server" Text="<%$ resources:adrAccountAddress.Caption %>" ForeColor="Red"></asp:Label>
-            </div>
-            <div class="textcontrol">
-                <SalesLogix:AddressControl runat="server" ID="adrAccountAddress" AddressDescriptionPickListId="kSYST0000014" AddressDescriptionPickListName="Address Description (Account)"
-                    AddressToolTip="<%$ resources: adrContactAddress.AddressToolTip %>" ButtonToolTip="<%$ resources: adrContactAddress.ButtonToolTip %>">
-                    <AddressDescStyle Height="80" />
-                </SalesLogix:AddressControl>
-            </div>
+        <td>
+            <asp:LinkButton ID="lnkaddress" Text="Address:" runat="server" OnClick="lnkaddress_Click" Font-Underline="True"></asp:LinkButton>
         </td>
         <td>
             <div class="lbl">
@@ -355,8 +285,14 @@
                     NoneEditable="true" AlphaSort="true" />
             </div>
         </td>
+
     </tr>
     <tr>
+        <td rowspan="2">
+            <div class="textcontrol">
+                <asp:TextBox runat="server" ID="txtAccountAddress" TextMode="MultiLine" Columns="40" Rows="5" ReadOnly="True" />
+            </div>
+        </td>
         <td>
             <div class="lbl">
                 <asp:Label ID="phnAccountFax_lz" AssociatedControlID="phnAccountFax" runat="server" Text="<%$ resources: phnAccountFax.Caption %>"></asp:Label>
@@ -365,12 +301,12 @@
                 <SalesLogix:Phone runat="server" ID="phnAccountFax" />
             </div>
         </td>
-        <td rowspan="4">
+        <td rowspan="2">
             <div class="lbl">
                 <asp:Label ID="txtAccountBusinessDescription_lz" AssociatedControlID="txtAccountBusinessDescription" runat="server" Text="<%$ resources: txtAccountBusinessDescription.Caption %>"></asp:Label>
             </div>
             <div class="textcontrol">
-                <asp:TextBox runat="server" ID="txtAccountBusinessDescription" TextMode="MultiLine" Columns="40" Rows="4" />
+                <asp:TextBox runat="server" ID="txtAccountBusinessDescription" TextMode="MultiLine" Columns="40" Rows="3" />
             </div>
         </td>
     </tr>
@@ -381,11 +317,23 @@
             </div>
             <div class="textcontrol">
                 <SalesLogix:PickListControl runat="server" ID="pklAccountType" PickListId="kSYST0000382" PickListName="Account Type" ReadOnly="true"
-                    NoneEditable="true"  />
+                    NoneEditable="true" />
             </div>
         </td>
+
+
     </tr>
     <tr>
+        <td></td>
+        <td>
+            <div class="lbl">
+                <asp:Label ID="pklAccountStatus_lz" AssociatedControlID="pklAccountStatus" runat="server" Text="<%$ resources: pklAccountStatus.Caption %>"></asp:Label>
+            </div>
+            <div class="textcontrol">
+                <SalesLogix:PickListControl runat="server" ID="pklAccountStatus" PickListId="kSYST0000381" PickListName="Account Status" MustExistInList="false"
+                    AlphaSort="true" />
+            </div>
+        </td>
         <td>
             <div class="lbl">
                 <asp:Label ID="pklAccountSubType_lz" AssociatedControlID="pklAccountSubType" runat="server" Text="<%$ resources: pklAccountSubType.Caption %>"></asp:Label>
@@ -396,16 +344,77 @@
         </td>
     </tr>
     <tr>
-        <td>
-            <div class="lbl">
-                <asp:Label ID="pklAccountStatus_lz" AssociatedControlID="pklAccountStatus" runat="server" Text="<%$ resources: pklAccountStatus.Caption %>"></asp:Label>
-            </div>
-            <div class="textcontrol">
-                <SalesLogix:PickListControl runat="server" ID="pklAccountStatus" PickListId="kSYST0000381" PickListName="Account Status" MustExistInList="false"
-                    AlphaSort="true" />
+        <td colspan="3" style="padding: 5px 0px;">
+            <div class="mainContentHeader">
+                <span id="hzsContactInformation" style="padding-left: 30px">
+                    <asp:Localize ID="Localize1" runat="server" Text="<%$ resources: hzsContactInformation.Caption %>">Contact Information</asp:Localize>
+                </span>
             </div>
         </td>
     </tr>
+    <tr>
+
+
+        <td>
+            <div class="lbl">
+                <asp:Label ID="phnContactHomePhone_lz" AssociatedControlID="phnContactHomePhone" runat="server" Text="<%$ resources:phnContactHomePhone.Caption %>" ForeColor="Red"></asp:Label>
+            </div>
+            <div class="textcontrol">
+                <SalesLogix:Phone runat="server" ID="phnContactHomePhone" />
+            </div>
+        </td>
+        <td>
+            <div class="lbl">
+                <asp:Label ID="pklContactTitle_lz" AssociatedControlID="pklContactTitle" runat="server" Text="<%$ resources: pklContactTitle.Caption %>"></asp:Label>
+            </div>
+            <div class="textcontrol">
+                <SalesLogix:PickListControl runat="server" ID="pklContactTitle" PickListId="kSYST0000385" PickListName="Title" MustExistInList="false" AlphaSort="true" />
+            </div>
+        </td>
+        <td rowspan="1">
+            <div class="lbl">
+                <asp:Label ID="adrContactAddress_lz" AssociatedControlID="adrContactAddress" runat="server" Text="<%$ resources:adrContactAddress.Caption %>" ForeColor="Red" Visible="False"></asp:Label>
+            </div>
+            <div class="textcontrol">
+                <SalesLogix:AddressControl Visible="False" runat="server" ID="adrContactAddress" AddressDescriptionPickListId="kSYST0000013" AutoPostBack="true" AddressDescriptionPickListName="Address Description (Contact)"
+                    AddressToolTip="<%$ resources: adrContactAddress.AddressToolTip %>" ButtonToolTip="<%$ resources: adrContactAddress.ButtonToolTip %>">
+                    <AddressDescStyle Height="80" />
+                </SalesLogix:AddressControl>
+            </div>
+        </td>
+    </tr>
+    <tr>
+
+        <td>
+            <div class="lbl">
+                <asp:Label ID="phnContactMobile_lz" AssociatedControlID="phnContactMobile" runat="server" Text="<%$ resources: phnContactMobile.Caption %>"></asp:Label>
+            </div>
+            <div class="textcontrol">
+                <SalesLogix:Phone runat="server" ID="phnContactMobile" />
+            </div>
+        </td>
+        <td>
+            <div class="lbl">
+                <asp:Label ID="phnContactFax_lz" AssociatedControlID="phnContactFax" runat="server" Text="<%$ resources: phnContactFax.Caption %>"></asp:Label>
+            </div>
+            <div class="textcontrol">
+                <SalesLogix:Phone runat="server" ID="phnContactFax" />
+            </div>
+        </td>   
+        <td rowspan="1">
+            <div class="lbl">
+                <asp:Label ID="adrAccountAddress_lz" AssociatedControlID="adrAccountAddress" runat="server" Text="<%$ resources:adrAccountAddress.Caption %>" ForeColor="Red" Visible="False"></asp:Label>
+            </div>
+            <div class="textcontrol">
+                <SalesLogix:AddressControl runat="server" Visible="False" ID="adrAccountAddress" AddressDescriptionPickListId="kSYST0000014" AddressDescriptionPickListName="Address Description (Account)"
+                    AddressToolTip="<%$ resources: adrContactAddress.AddressToolTip %>" ButtonToolTip="<%$ resources: adrContactAddress.ButtonToolTip %>">
+                    <AddressDescStyle Height="80" />
+                </SalesLogix:AddressControl>
+            </div>
+        </td>
+
+    </tr>
+
     <tr>
         <td colspan="3" style="padding: 5px 0px;">
             <div>
@@ -458,7 +467,7 @@
     {
         get { return typeof(IContact); }
     }
-   
+
     [ServiceDependency]
     public IRoleSecurityService RoleSecurityService { get; set; }
 
@@ -480,9 +489,9 @@
         }
     }
 
-   
-    
-    
+
+
+
     private IUserOptionsService _userOpts;
     private IUserOptionsService UserOptionsService
     {
@@ -572,7 +581,7 @@
             case "Account.LEGALNAME":
                 return true;
             case "Account.MKTSEGMENT":
-                return true;                             
+                return true;
             default:
                 return false;
         }
@@ -636,8 +645,8 @@
 
         BindingSource.Bindings.Add(new WebEntityBinding("Account.LEGALNAME", txtlegalname, "Text"));
         BindingSource.Bindings.Add(new WebEntityBinding("Account.MKTSEGMENT", txtmktsegment, "Text"));
-        
-        
+
+
         DiasbleFLS();
     }
 
@@ -921,8 +930,9 @@
                 contact.Address.State = account.Address.State;
                 contact.Address.TimeZone = account.Address.TimeZone;
                 contact.Address.Type = account.Address.Type;
-				
-				contact.Account.Type = "Suspect";
+
+                contact.Account.Type = "Suspect";
+
 
                 if (String.IsNullOrEmpty(contact.PreferredContact))
                 {
@@ -933,6 +943,21 @@
                     account.Address.Description = GetLocalResourceObject("Account_Address_Description_Default").ToString();
                 }
                 contact.Address.Description = account.Address.Description;
+
+
+            }
+            if (Session["Addressid"] != null)
+            {
+                Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Session["Addressid"].ToString());
+                if (objadd != null)
+                {
+                    string _add = objadd.Address1 + "," + objadd.Address2 + "," + objadd.Address3 + "\r\n";
+                    _add += objadd.City + "," + objadd.State + "," + objadd.Country + "\r\n";
+                    _add += objadd.PostalCode + "\r\n";
+                    _add += objadd.Latitude + "\r\n";
+                    _add += objadd.Logitude;
+                    txtAccountAddress.Text = _add;
+                }
             }
         }
     }
@@ -1012,16 +1037,16 @@
         return tinfo;
     }
 
-   /* public void pklAccountType_PickListValueChanged(object sender, EventArgs e)
-    {
-        IContact contact = (BindingSource.Current as IContact);
-        if (contact != null)
-        {
-            IAccount account = GetCurrentAccount(contact);
-            if (account != null)
-                account.SubType = string.Empty;
-        }
-    }*/
+    /* public void pklAccountType_PickListValueChanged(object sender, EventArgs e)
+     {
+         IContact contact = (BindingSource.Current as IContact);
+         if (contact != null)
+         {
+             IAccount account = GetCurrentAccount(contact);
+             if (account != null)
+                 account.SubType = string.Empty;
+         }
+     }*/
 
     private bool TurnOnAutoSearch()
     {
@@ -1034,18 +1059,20 @@
     }
 
     private void saveOptions()
-    {
-        // ViewState["Cdata"] = null;
+    {       
         IContact contact = BindingSource.Current as IContact;
-
-        //if (string.IsNullOrEmpty(contact.Prefix))
-        //{
-        //    DialogService.ShowMessage("Please Enter PreFix of Contact");
-        //    ViewState["Cdata"] = "1";
-        //    return;
-        //   // throw new Exception("Please Enter the PreFix of Contact");
-
-
+        IAddress objadd=null;
+        if (Session["Addressid"] != null)
+        {
+            objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Session["Addressid"].ToString());
+            contact.Address = objadd;
+            contact.Account.Address = objadd;
+        }
+        contact.Account.Save();
+        objadd.EntityId = contact.Account.Id.ToString();
+        objadd.Save();
+        Session.Remove("Addressid");
+       
         string option = "N";
         if (chkAutoSearch.Checked)
         {
@@ -1055,12 +1082,14 @@
     }
 
     protected void lnkaddress_Click(object sender, EventArgs e)
-    {       
+    {
         if (DialogService != null)
         {
-            DialogService.SetSpecs(200, 200, 440, 300, "AddEditAddress", "", true);
+            DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
             DialogService.EntityType = typeof(IAddress);
             DialogService.ShowDialog();
         }
     }
+
+  
 </script>

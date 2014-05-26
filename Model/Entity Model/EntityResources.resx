@@ -14835,4 +14835,10 @@
   <data name="QualifierAndSMpincode.DisplayNamePlural" xml:space="preserve">
     <value>Qualifier/BranchManager Pincode Mappings</value>
   </data>
+  <data name="Address.Latitude.DisplayName" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="Address.Logitude.DisplayName" xml:space="preserve">
+    <value>Logitude</value>
+  </data>
 </root>

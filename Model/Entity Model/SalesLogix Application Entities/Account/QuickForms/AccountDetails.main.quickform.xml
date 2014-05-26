@@ -7,69 +7,37 @@
       <ResourceKey>3e1b8a89-5ccb-49d4-ae6d-16f6d48a04a1</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName>quickformload0</MethodName>
+          <MethodName />
           <CSharpCodeSnippet>//Begin Load Action
 
-    Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
-	pklSubType.PickListName = account.GetSubTypePickListName();
+Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
+pklSubType.PickListName = account.GetSubTypePickListName();
 
-	AccountName_lbl.ForeColor = System.Drawing.Color.Red;
-	MainPhone_lbl.ForeColor = System.Drawing.Color.Red;
-	Address_lbl.ForeColor = System.Drawing.Color.Red;
-	txtLegalName_lbl.ForeColor = System.Drawing.Color.Red;
+AccountName_lbl.ForeColor = System.Drawing.Color.Red;
+MainPhone_lbl.ForeColor = System.Drawing.Color.Red;
+Address_lbl.ForeColor = System.Drawing.Color.Red;
+txtLegalName_lbl.ForeColor = System.Drawing.Color.Red;
+
+if (account != null)
+{
+    Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IAddress&gt;(account.Address.Id.ToString());
+    if (objadd != null)
+    {
+        string _add = objadd.Address1 + "," + objadd.Address2 + "," + objadd.Address3 + "\r\n";
+        _add += objadd.City + "," + objadd.State + "," + objadd.Country + "\r\n";
+        _add += objadd.PostalCode + "\r\n";
+        _add += objadd.Latitude + "\r\n";
+        _add += objadd.Logitude;
+        txtAccountAddress.Text = _add;
+    }
+}
+	
+	
 //End Load Action}</CSharpCodeSnippet>
         </CSharpSnippetActionItem>
       </Action>
       <IsDialogCloseAction>False</IsDialogCloseAction>
       <RunOnEveryRePaint>True</RunOnEveryRePaint>
-      <DialogActionResult>NoResult</DialogActionResult>
-      <PerformsUpdate>False</PerformsUpdate>
-      <AppliedSecurity />
-      <RefreshData>False</RefreshData>
-    </FormActionDefinition>
-    <FormActionDefinition>
-      <ResourceKey>db26b1e4-3497-4f08-b3d4-16c7b8509261</ResourceKey>
-      <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
-        <CSharpSnippetActionItem>
-          <MethodName>quickformload1</MethodName>
-          <CSharpCodeSnippet> /*Sage.Platform.WebPortal.EntityPage page = (Sage.Platform.WebPortal.EntityPage)Page;
-
-	string script_FormatNumber = "";
-    script_FormatNumber += " function only_required(AccountName,LegalName,Phone) ";
-    script_FormatNumber += " {";
-    script_FormatNumber += "    var df = true;";
-    script_FormatNumber += "     if(original_input == '') {";
-    script_FormatNumber += "      df =  false; ";
-    script_FormatNumber += "     alert('Please Enter AccountName');}";
-    script_FormatNumber += " return df;}";
-    ScriptManager.RegisterStartupScript(page, page.GetType(), "Validate", script_FormatNumber, true);
-    btnSaveAccount.Attributes.Add("onclick", "return only_required(document.getElementById('" + AccountName.ClientID + "').value,document.getElementById('" + txtLegalName.ClientID + "').value,document.getElementById('" + MainPhone.ClientID + "').value);");
-
-string script_FormatNumber1 = "";
-script_FormatNumber1 += " function only_numeric1(original_input1) ";
-script_FormatNumber1 += " {";
-script_FormatNumber1 += "     var regex =  /^[+-]?[0-9]*(\\.[0-9]{0,5})?$/;";
-script_FormatNumber1 += "     if(!regex.test(original_input1)) {";
-script_FormatNumber1 += "     document.getElementById('" + txtmonthlyvolume.ClientID + "').value = '0.0'; ";
-script_FormatNumber1 += "     alert('Enter only Numeric');}";
-script_FormatNumber1 += " return true;}";
-ScriptManager.RegisterStartupScript(page, page.GetType(), "Validate1", script_FormatNumber1, true);
-txtmonthlyvolume.Attributes.Add("onblur", "return only_numeric1(this.value);");
-
-string script_FormatNumber2 = "";
-script_FormatNumber2 += " function only_numeric2(original_input2) ";
-script_FormatNumber2 += " {";
-script_FormatNumber2 += "     var regex = /^[+-]?[0-9]*(\\.[0-9]{0,5})?$/;";
-script_FormatNumber2 += "     if(!regex.test(original_input2)) {";
-script_FormatNumber2 += "     document.getElementById('" + txtbudgetgift.ClientID + "').value = '0'; ";
-script_FormatNumber2 += "     alert('Enter only Numeric');}";
-script_FormatNumber2 += " return true;}";
-ScriptManager.RegisterStartupScript(page, page.GetType(), "Validate2", script_FormatNumber2, true);
-txtbudgetgift.Attributes.Add("onblur", "return only_numeric2(this.value);");*/</CSharpCodeSnippet>
-        </CSharpSnippetActionItem>
-      </Action>
-      <IsDialogCloseAction>False</IsDialogCloseAction>
-      <RunOnEveryRePaint>False</RunOnEveryRePaint>
       <DialogActionResult>NoResult</DialogActionResult>
       <PerformsUpdate>False</PerformsUpdate>
       <AppliedSecurity />
@@ -197,11 +165,84 @@ txtbudgetgift.Attributes.Add("onblur", "return only_numeric2(this.value);");*/</
         <Required>true</Required>
       </QFSLXPhone>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXAddress, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXAddress>
-        <RowSpan>4</RowSpan>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFButton, Sage.Platform.QuickForms">
+      <QFButton>
         <Column>0</Column>
         <Row>3</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>btnAddress</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>none</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <ButtonType>Link</ButtonType>
+        <Image />
+        <OnClientClick />
+        <OnClickAction>
+          <ResourceKey>btnAddress</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+            <CSharpSnippetActionItem>
+              <MethodName />
+              <CSharpCodeSnippet>if (DialogService != null)
+{
+	Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;    
+	if(account != null)
+	{
+		Session["Addressid"] = account.Address.Id.ToString();
+	    DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
+	    DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAddress);
+	    DialogService.ShowDialog();
+	}
+}</CSharpCodeSnippet>
+            </CSharpSnippetActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnClickAction>
+      </QFButton>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
+      <QFTextBox>
+        <RowSpan>4</RowSpan>
+        <Column>0</Column>
+        <Row>4</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>txtAccountAddress</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <Lines>5</Lines>
+        <OnChangeAction>
+          <ResourceKey>txtAccountAddress</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+      </QFTextBox>
+    </Control>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXAddress, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXAddress>
+        <Column>0</Column>
+        <Row>8</Row>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>Address</ControlId>
@@ -909,7 +950,7 @@ txtbudgetgift.Attributes.Add("onblur", "return only_numeric2(this.value);");*/</
               <ValidationMethod>HasPropagationChanges</ValidationMethod>
               <OnFail typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
                 <CSharpSnippetActionItem>
-                  <MethodName>btnSaveAccount_ClickActionF</MethodName>
+                  <MethodName />
                   <CSharpCodeSnippet>Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
 if(string.IsNullOrEmpty(account.AccountName))
 {
@@ -939,12 +980,13 @@ if(string.IsNullOrEmpty(account.Address.PostalCode))
 else
 {
 	account.Save();
+	Session.Remove("Addressid");
 }</CSharpCodeSnippet>
                 </CSharpSnippetActionItem>
               </OnFail>
               <OnSuccess typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
                 <CSharpSnippetActionItem>
-                  <MethodName>btnSaveAccount_ClickActionS</MethodName>
+                  <MethodName />
                   <CSharpCodeSnippet>Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
 if(string.IsNullOrEmpty(account.AccountName))
 {
@@ -973,6 +1015,7 @@ if(string.IsNullOrEmpty(account.Address.PostalCode))
 }
 else
 {
+	Session.Remove("Addressid");
 	DialogService.SetSpecs(400, 400, "UpdateAccountOptions", string.Empty);
 	DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAccount);
 	DialogService.ShowDialog(); 
@@ -1102,6 +1145,14 @@ else
     </ColumnStyle>
   </Columns>
   <Rows>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
     <RowStyle>
       <SizeType>Absolute</SizeType>
       <Height>35</Height>

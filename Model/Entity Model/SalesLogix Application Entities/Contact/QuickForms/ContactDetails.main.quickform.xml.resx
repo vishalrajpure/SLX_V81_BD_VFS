@@ -297,4 +297,7 @@
   <data name="lueAccountName.Caption" xml:space="preserve">
     <value>Account:</value>
   </data>
+  <data name="btnAddress.Caption" xml:space="preserve">
+    <value>Address:</value>
+  </data>
 </root>

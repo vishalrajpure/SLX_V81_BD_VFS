@@ -106,15 +106,10 @@ MaxLength="32"  />
       </td>
       </tr>
 <tr>
-            <td rowspan="4"  >
- <div class=" lbl alignleft">
-   <asp:Label ID="Address_lbl" AssociatedControlID="Address" runat="server" Text="<%$ resources: Address.Caption %>" ></asp:Label>
- </div>
-   <div  class="textcontrol address"  >
-    <SalesLogix:AddressControl runat="server" ID="Address" AddressDescriptionPickListName="Address Description (Account)" AddressDescriptionPickListId="kSYST0000014" ButtonToolTip="<%$ resources: Address.ButtonToolTip %>" AddressToolTip="<%$ resources: Address.AddressToolTip %>" >
-<AddressDescStyle Height="80"></AddressDescStyle> </SalesLogix:AddressControl>
-</div>
-
+            <td  >
+ <asp:LinkButton runat="server" ID="btnAddress"
+ Text="<%$ resources: btnAddress.Caption %>"  />
+ 
       </td>
                 <td  >
  <div class=" lbl alignleft">
@@ -136,7 +131,13 @@ MaxLength="32"  />
       </td>
       </tr>
 <tr>
-                  <td  >
+            <td rowspan="4"  >
+ <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="txtAccountAddress"  Rows="4" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
+  </div>
+
+      </td>
+                <td  >
  <div class=" lbl alignleft">
    <asp:Label ID="Industry_lbl" AssociatedControlID="Industry" runat="server" Text="<%$ resources: Industry.Caption %>" ></asp:Label>
  </div>   
@@ -178,6 +179,24 @@ MaxLength="32"  />
 
       </td>
             </tr>
+<tr>
+                  <td></td>
+                <td></td>
+      </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="Address_lbl" AssociatedControlID="Address" runat="server" Text="<%$ resources: Address.Caption %>" Visible="false" ></asp:Label>
+ </div>
+   <div  class="textcontrol address"  >
+    <SalesLogix:AddressControl runat="server" ID="Address" AddressDescriptionPickListName="Address Description (Account)" AddressDescriptionPickListId="kSYST0000014" ButtonToolTip="<%$ resources: Address.ButtonToolTip %>" AddressToolTip="<%$ resources: Address.AddressToolTip %>" Visible="false" >
+<AddressDescStyle Height="80"></AddressDescStyle> </SalesLogix:AddressControl>
+</div>
+
+      </td>
+                <td></td>
+                <td></td>
+      </tr>
 </table>
  
 
@@ -253,6 +272,24 @@ protected override void OnAddEntityBindings() {
                     // Fax.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding FaxTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Fax", Fax, "Text");
         BindingSource.Bindings.Add(FaxTextBinding);
+                       // WebAddress.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding WebAddressTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("WebAddress", WebAddress, "Text");
+        BindingSource.Bindings.Add(WebAddressTextBinding);
+                    // Status.PickListValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding StatusPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Status", Status, "PickListValue");
+        BindingSource.Bindings.Add(StatusPickListValueBinding);
+                       // Industry.PickListValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding IndustryPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Industry", Industry, "PickListValue");
+        BindingSource.Bindings.Add(IndustryPickListValueBinding);
+                    // Owner.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding OwnerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Owner", Owner, "LookupResultValue", "", null);
+        BindingSource.Bindings.Add(OwnerLookupResultValueBinding);
+                    // BusinessDescription.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding BusinessDescriptionTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BusinessDescription", BusinessDescription, "Text");
+        BindingSource.Bindings.Add(BusinessDescriptionTextBinding);
+                    // AccManager.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding AccManagerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AccountManager", AccManager, "LookupResultValue", "", null);
+        BindingSource.Bindings.Add(AccManagerLookupResultValueBinding);
                     // Address.AddressCity Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressCityBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.City", Address, "AddressCity");
         AddressAddressCityBinding.IgnoreFLSDisabling = true;
@@ -312,24 +349,6 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding AddressPrimaryAddressBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.PrimaryAddress", Address, "PrimaryAddress");
         AddressPrimaryAddressBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(AddressPrimaryAddressBinding);
-                    // WebAddress.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding WebAddressTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("WebAddress", WebAddress, "Text");
-        BindingSource.Bindings.Add(WebAddressTextBinding);
-                    // Status.PickListValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding StatusPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Status", Status, "PickListValue");
-        BindingSource.Bindings.Add(StatusPickListValueBinding);
-                    // Industry.PickListValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding IndustryPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Industry", Industry, "PickListValue");
-        BindingSource.Bindings.Add(IndustryPickListValueBinding);
-                    // Owner.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding OwnerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Owner", Owner, "LookupResultValue", "", null);
-        BindingSource.Bindings.Add(OwnerLookupResultValueBinding);
-                    // BusinessDescription.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding BusinessDescriptionTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BusinessDescription", BusinessDescription, "Text");
-        BindingSource.Bindings.Add(BusinessDescriptionTextBinding);
-                    // AccManager.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AccManagerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AccountManager", AccManager, "LookupResultValue", "", null);
-        BindingSource.Bindings.Add(AccManagerLookupResultValueBinding);
     
    
                      
@@ -337,7 +356,21 @@ protected override void OnAddEntityBindings() {
       
       
         }
-                                                                                                                
+                                                                                                                              
+protected void btnAddress_ClickAction(object sender, EventArgs e) {
+if (DialogService != null)
+{
+	Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;    
+	if(account != null)
+	{
+		Session["Addressid"] = account.Address.Id.ToString();
+	    DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
+	    DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAddress);
+	    DialogService.ShowDialog();
+	}
+}
+
+}
 protected void btnSaveAccount_ClickAction(object sender, EventArgs e) {
 Sage.Entity.Interfaces.IAccount entity = (Sage.Entity.Interfaces.IAccount) this.BindingSource.Current;
 if (entity.HasPropagationChanges()) {
@@ -378,6 +411,7 @@ if(string.IsNullOrEmpty(account.Address.PostalCode))
 }
 else
 {
+	Session.Remove("Addressid");
 	DialogService.SetSpecs(400, 400, "UpdateAccountOptions", string.Empty);
 	DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAccount);
 	DialogService.ShowDialog(); 
@@ -414,6 +448,7 @@ if(string.IsNullOrEmpty(account.Address.PostalCode))
 else
 {
 	account.Save();
+	Session.Remove("Addressid");
 }
 
 }
@@ -438,7 +473,8 @@ protected void btnDelete_ClickActionBRC(object sender, EventArgs e) {
 protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
- btnSaveAccount.Click += new ImageClickEventHandler(btnSaveAccount_ClickAction);
+ btnAddress.Click += new EventHandler(btnAddress_ClickAction);
+btnSaveAccount.Click += new ImageClickEventHandler(btnSaveAccount_ClickAction);
 cmdReset.Click += new ImageClickEventHandler(cmdReset_ClickAction);
 if (RoleSecurityService != null)
 {
@@ -454,69 +490,34 @@ btnDelete.Click += new ImageClickEventHandler(btnDelete_ClickAction);
 protected void quickformload0(object sender, EventArgs e) {
 //Begin Load Action
 
-    Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
-	pklSubType.PickListName = account.GetSubTypePickListName();
+Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
+pklSubType.PickListName = account.GetSubTypePickListName();
 
-	AccountName_lbl.ForeColor = System.Drawing.Color.Red;
-	MainPhone_lbl.ForeColor = System.Drawing.Color.Red;
-	Address_lbl.ForeColor = System.Drawing.Color.Red;
-	txtLegalName_lbl.ForeColor = System.Drawing.Color.Red;
+AccountName_lbl.ForeColor = System.Drawing.Color.Red;
+MainPhone_lbl.ForeColor = System.Drawing.Color.Red;
+Address_lbl.ForeColor = System.Drawing.Color.Red;
+txtLegalName_lbl.ForeColor = System.Drawing.Color.Red;
+
+if (account != null)
+{
+    Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(account.Address.Id.ToString());
+    if (objadd != null)
+    {
+        string _add = objadd.Address1 + "," + objadd.Address2 + "," + objadd.Address3 + "\r\n";
+        _add += objadd.City + "," + objadd.State + "," + objadd.Country + "\r\n";
+        _add += objadd.PostalCode + "\r\n";
+        _add += objadd.Latitude + "\r\n";
+        _add += objadd.Logitude;
+        txtAccountAddress.Text = _add;
+    }
+}
+	
+	
 //End Load Action}
-
-}
-protected void quickformload1(object sender, EventArgs e) {
- /*Sage.Platform.WebPortal.EntityPage page = (Sage.Platform.WebPortal.EntityPage)Page;
-
-	string script_FormatNumber = "";
-    script_FormatNumber += " function only_required(AccountName,LegalName,Phone) ";
-    script_FormatNumber += " {";
-    script_FormatNumber += "    var df = true;";
-    script_FormatNumber += "     if(original_input == '') {";
-    script_FormatNumber += "      df =  false; ";
-    script_FormatNumber += "     alert('Please Enter AccountName');}";
-    script_FormatNumber += " return df;}";
-    ScriptManager.RegisterStartupScript(page, page.GetType(), "Validate", script_FormatNumber, true);
-    btnSaveAccount.Attributes.Add("onclick", "return only_required(document.getElementById('" + AccountName.ClientID + "').value,document.getElementById('" + txtLegalName.ClientID + "').value,document.getElementById('" + MainPhone.ClientID + "').value);");
-
-string script_FormatNumber1 = "";
-script_FormatNumber1 += " function only_numeric1(original_input1) ";
-script_FormatNumber1 += " {";
-script_FormatNumber1 += "     var regex =  /^[+-]?[0-9]*(\\.[0-9]{0,5})?$/;";
-script_FormatNumber1 += "     if(!regex.test(original_input1)) {";
-script_FormatNumber1 += "     document.getElementById('" + txtmonthlyvolume.ClientID + "').value = '0.0'; ";
-script_FormatNumber1 += "     alert('Enter only Numeric');}";
-script_FormatNumber1 += " return true;}";
-ScriptManager.RegisterStartupScript(page, page.GetType(), "Validate1", script_FormatNumber1, true);
-txtmonthlyvolume.Attributes.Add("onblur", "return only_numeric1(this.value);");
-
-string script_FormatNumber2 = "";
-script_FormatNumber2 += " function only_numeric2(original_input2) ";
-script_FormatNumber2 += " {";
-script_FormatNumber2 += "     var regex = /^[+-]?[0-9]*(\\.[0-9]{0,5})?$/;";
-script_FormatNumber2 += "     if(!regex.test(original_input2)) {";
-script_FormatNumber2 += "     document.getElementById('" + txtbudgetgift.ClientID + "').value = '0'; ";
-script_FormatNumber2 += "     alert('Enter only Numeric');}";
-script_FormatNumber2 += " return true;}";
-ScriptManager.RegisterStartupScript(page, page.GetType(), "Validate2", script_FormatNumber2, true);
-txtbudgetgift.Attributes.Add("onblur", "return only_numeric2(this.value);");*/
-
-}
-private bool _runActivating;
-protected override void OnActivating()
-{
-_runActivating = true;
-}
-private void DoActivating()
-{
-quickformload1(this, EventArgs.Empty);
 
 }
 protected override void OnFormBound()
 {
-Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.EntityPage;
-        if (epage != null)
-            _runActivating = (epage.IsNewEntity || _runActivating);
-if (_runActivating) DoActivating();
 btnDelete.OnClientClick = string.Format("return confirm('{0}');", Sage.Platform.WebPortal.PortalUtil.JavaScriptEncode(GetLocalResourceObject("btnDelete.ActionConfirmationMessage").ToString()));
 
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
@@ -597,6 +598,16 @@ public class AccountDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityForm
     public  Sage.Platform.Controls.IPhoneControl MainPhone
     {
         get { return FindControl(ref _MainPhone, "MainPhone"); }
+    }
+    private Sage.Platform.Controls.IButtonControl _btnAddress;
+    public  Sage.Platform.Controls.IButtonControl btnAddress
+    {
+        get { return FindControl(ref _btnAddress, "btnAddress"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _txtAccountAddress;
+    public  Sage.Platform.Controls.ITextBoxControl txtAccountAddress
+    {
+        get { return FindControl(ref _txtAccountAddress, "txtAccountAddress"); }
     }
     private Sage.Platform.Controls.IAddressControl _Address;
     public  Sage.Platform.Controls.IAddressControl Address
