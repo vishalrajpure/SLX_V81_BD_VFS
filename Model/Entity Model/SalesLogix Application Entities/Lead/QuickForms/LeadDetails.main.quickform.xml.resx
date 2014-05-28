@@ -285,4 +285,7 @@
   <data name="cmdQualifyLead.Caption" xml:space="preserve">
     <value>Qualify Lead</value>
   </data>
+  <data name="btnAddress.Caption" xml:space="preserve">
+    <value>Address:</value>
+  </data>
 </root>

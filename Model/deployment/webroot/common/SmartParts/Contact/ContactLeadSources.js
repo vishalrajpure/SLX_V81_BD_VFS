@@ -119,7 +119,7 @@ makeGrid : function(runtimeConfig) {
 		type: DateTime
 }
   	          ],
-	 	         storeOptions: {
+		         storeOptions: {
             resourceKind: 'contactLeadSources',
             newItemParentReferenceProperty: 'Contact',
             include: ['Contact','LeadSource'],

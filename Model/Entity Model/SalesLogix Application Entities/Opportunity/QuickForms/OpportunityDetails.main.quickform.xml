@@ -7,8 +7,94 @@
       <ResourceKey>d1bdcec7-0a0f-429d-a85f-7b67d6024a73</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName>quickformload0</MethodName>
-          <CSharpCodeSnippet>lueReseller.SeedValue = GetLocalResourceObject("Reseller_rsc").ToString();</CSharpCodeSnippet>
+          <MethodName />
+          <CSharpCodeSnippet>lueReseller.SeedValue = GetLocalResourceObject("Reseller_rsc").ToString();
+
+
+txtDescription_lbl.ForeColor = System.Drawing.Color.Red;
+txtBusinessPotential_lbl.ForeColor = System.Drawing.Color.Red;
+
+Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+    
+//pklStatus.PickListValue= objOpp.Status;
+if (objOpp.Status == "Closed - Won")
+{
+   // pklStatus.PickListName = "Opportunity Status Closed";
+    //pklStatus.ReadOnly = true;
+    
+    txtDescription.Enabled = false;
+    lueAccount.Enabled = false;
+    usrUser.Enabled = false;
+    lueReseller.Enabled = false;
+    dtpEstimatedClose.Enabled = false;
+    pklCloseProbability.Enabled = false;
+    pklStatus.Enabled = false;
+    txtBusinessPotential.Enabled = false;
+    chkAddToForecast.Enabled = false;
+    txtComments.Enabled = false;
+    clIntegrationContract.Enabled = false;
+    cmdSave.Enabled = false;
+    
+}
+else
+{
+    //pklStatus.PickListName = "Opportunity Status Detail";
+    //pklStatus.ReadOnly = false;
+    //pklStatus.PickListValue= objOpp.Status;
+    txtDescription.Enabled = true;
+    lueAccount.Enabled = true;
+    usrUser.Enabled = true;
+    lueReseller.Enabled = true;
+    dtpEstimatedClose.Enabled = true;
+    pklCloseProbability.Enabled = true;
+    pklStatus.Enabled = true;
+    txtBusinessPotential.Enabled = true;
+    chkAddToForecast.Enabled = true;
+    txtComments.Enabled = true;
+    clIntegrationContract.Enabled = true;
+    cmdSave.Enabled = true;
+
+}
+
+if (!IsPostBack)
+{
+    string _UserId = "", AccManager = "";
+    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+    _UserId = _IUserService.UserId; //get login Userid
+    AccManager = Convert.ToString(objOpp.AccountManager.Id);
+    if (AccManager.Trim() == _UserId.Trim())
+    {
+        txtDescription.Enabled = true;
+        lueAccount.Enabled = true;
+        usrUser.Enabled = true;
+        lueReseller.Enabled = true;
+        dtpEstimatedClose.Enabled = true;
+        pklCloseProbability.Enabled = true;
+        pklStatus.Enabled = true;
+        txtBusinessPotential.Enabled = true;
+        chkAddToForecast.Enabled = true;
+        txtComments.Enabled = true;
+        clIntegrationContract.Enabled = true;
+        cmdSave.Enabled = true;
+    }
+    else
+    {
+        txtDescription.Enabled = false;
+        lueAccount.Enabled = false;
+        usrUser.Enabled = false;
+        lueReseller.Enabled = false;
+        dtpEstimatedClose.Enabled = false;
+        pklCloseProbability.Enabled = false;
+        pklStatus.Enabled = false;
+        txtBusinessPotential.Enabled = false;
+        chkAddToForecast.Enabled = false;
+        txtComments.Enabled = false;
+        clIntegrationContract.Enabled = false;
+        cmdSave.Enabled = false;
+    }
+}
+
+</CSharpCodeSnippet>
         </CSharpSnippetActionItem>
       </Action>
       <IsDialogCloseAction>False</IsDialogCloseAction>
@@ -76,7 +162,7 @@
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnChangeAction>
-        <Required>false</Required>
+        <Required>true</Required>
       </QFTextBox>
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
@@ -555,29 +641,30 @@
           <ResourceKey>pklStatus</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName />
+              <MethodName>pklStatus_ChangeAction</MethodName>
               <CSharpCodeSnippet>
-                Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-                string dialog = "";
-                if (opportunity.StatusChangeWon())
-                {
-                  dialog = "OpportunityClosedWon";
-                }
-                else if (opportunity.StatusChangeLost())
-                {
-                  dialog = "OpportunityClosedLost";
-                }
-                if (!String.IsNullOrEmpty(dialog))
-                {
-                  if (DialogService != null)
-                  {
-                    DialogService.SetSpecs(380, 600, dialog, string.Empty);
-                    DialogService.EntityType = typeof (Sage.Entity.Interfaces.IOpportunity);
-                    DialogService.EntityID = opportunity.Id.ToString();
-                    DialogService.ShowDialog();
-                  }
-                }
-              </CSharpCodeSnippet>
+Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+string dialog = "";
+if (opportunity.StatusChangeWon())
+{
+  dialog = "OpportunityClosedWon";
+}
+else if (opportunity.StatusChangeLost())
+{
+  dialog = "OpportunityClosedLost";
+}
+if (!String.IsNullOrEmpty(dialog))
+{
+  if (DialogService != null)
+  {
+    DialogService.SetSpecs(380, 600, dialog, string.Empty);
+    DialogService.EntityType = typeof (Sage.Entity.Interfaces.IOpportunity);
+    DialogService.EntityID = opportunity.Id.ToString();
+    DialogService.ShowDialog();
+  }
+}
+
+</CSharpCodeSnippet>
             </CSharpSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
@@ -600,10 +687,52 @@
         <ValueStoredAsText>true</ValueStoredAsText>
       </QFSLXPickList>
     </Control>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXNumeric, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXNumeric>
+        <Column>0</Column>
+        <Row>7</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>txtBusinessPotential</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>BusinessPotential</DataItemName>
+            <ControlItemName>Text</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>txtBusinessPotential</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>true</Required>
+        <DecimalDigits>
+          <DecimalDigits>2</DecimalDigits>
+          <Strict>true</Strict>
+        </DecimalDigits>
+        <FormatType>Number</FormatType>
+      </QFSLXNumeric>
+    </Control>
     <Control typeName="Sage.Platform.QuickForms.QFControls.QFCheckBox, Sage.Platform.QuickForms.QFControls">
       <QFCheckBox>
         <Column>0</Column>
-        <Row>7</Row>
+        <Row>8</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>chkAddToForecast</ControlId>
@@ -641,7 +770,7 @@
       <QFControlsList>
         <RowSpan>2</RowSpan>
         <Column>0</Column>
-        <Row>8</Row>
+        <Row>9</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>clIntegrationContract</ControlId>
@@ -847,7 +976,7 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
       <QFTextBox>
         <ColumnSpan>2</ColumnSpan>
         <Column>0</Column>
-        <Row>10</Row>
+        <Row>11</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>txtComments</ControlId>
@@ -879,12 +1008,12 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnChangeAction>
-        <Required>false</Required>
+        <Required>true</Required>
       </QFTextBox>
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFBrowserControl, Sage.SalesLogix.QuickForms.QFControls">
       <QFBrowserControl>
-        <RowSpan>10</RowSpan>
+        <RowSpan>11</RowSpan>
         <Column>1</Column>
         <Row>0</Row>
         <HotKey>0</HotKey>
@@ -959,24 +1088,36 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
         <OnClientClick />
         <OnClickAction>
           <ResourceKey>cmdSave</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.BusinessRuleActionItem, Sage.Platform.QuickForms">
-            <BusinessRuleActionItem>
-              <BusinessRule>Save</BusinessRule>
-              <Object>Opportunity</Object>
-              <Parameters />
-              <PassResultsToNextAction>False</PassResultsToNextAction>
-              <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-                <NoActionActionItem>
-                  <MethodName />
-                </NoActionActionItem>
-              </OnComplete>
-            </BusinessRuleActionItem>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+            <CSharpSnippetActionItem>
+              <MethodName />
+              <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+
+if (opp.Status == "Closed - Won")
+{
+    //pklStatus.PickListValue = opportunity.Status;
+    DialogService.ShowMessage("You are not authorised to change the status to Closed - Won.");
+    return;
+}
+else
+{
+	if (opp.Status == "Lost" || opp.Status == "Dropped" || opp.Status == "Future Opportunity")
+	   {
+         if (string.IsNullOrEmpty(opp.Notes))
+         {
+             DialogService.ShowMessage("Please  mention comments for changing the status.");
+			 return;
+         }
+	   }
+    opp.Save();
+ }   </CSharpCodeSnippet>
+            </CSharpSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
           <RunOnEveryRePaint>False</RunOnEveryRePaint>
           <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>True</PerformsUpdate>
-          <AppliedSecurity>ENTITIES/OPPORTUNITY/EDIT</AppliedSecurity>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnClickAction>
       </QFButton>
@@ -1102,6 +1243,10 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
     </ColumnStyle>
   </Columns>
   <Rows>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
     <RowStyle>
       <SizeType>Absolute</SizeType>
       <Height>35</Height>

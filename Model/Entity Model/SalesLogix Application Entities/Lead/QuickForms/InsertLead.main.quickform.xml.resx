@@ -267,4 +267,7 @@
   <data name="pklStatus.Caption" xml:space="preserve">
     <value>Status:</value>
   </data>
+  <data name="btnAddress.Caption" xml:space="preserve">
+    <value>Address:</value>
+  </data>
 </root>

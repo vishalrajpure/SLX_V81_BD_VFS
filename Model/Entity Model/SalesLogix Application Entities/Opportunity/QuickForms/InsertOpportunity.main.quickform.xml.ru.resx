@@ -165,9 +165,6 @@
   <data name="dtpEstimatedClose.Caption" xml:space="preserve">
     <value>План. закрыт.:</value>
   </data>
-  <data name="pklStatus.Caption" xml:space="preserve">
-    <value>Статус:</value>
-  </data>
   <data name="cmdSaveNew.ToolTip" xml:space="preserve">
     <value>Сохранить и Новый</value>
   </data>

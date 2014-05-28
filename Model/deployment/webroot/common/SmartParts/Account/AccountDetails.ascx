@@ -363,7 +363,8 @@ if (DialogService != null)
 	Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;    
 	if(account != null)
 	{
-		Session["Addressid"] = account.Address.Id.ToString();
+		 string _idname = account.Address.Id.ToString() + ",Account,"+account.Id.ToString();
+        Session["Addressid"] = _idname;
 	    DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
 	    DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAddress);
 	    DialogService.ShowDialog();

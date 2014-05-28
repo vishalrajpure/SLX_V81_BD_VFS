@@ -139,7 +139,7 @@ makeGrid : function(runtimeConfig) {
 	type: Sage.UI.Columns.SlxUser
 }
   	          ],
-	 	 	         storeOptions: {
+			         storeOptions: {
             resourceKind: 'ownerJoins',
             include: [],
             select: ['Child.Id','Parent.Id'],

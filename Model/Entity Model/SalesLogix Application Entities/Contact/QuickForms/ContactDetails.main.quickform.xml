@@ -316,13 +316,14 @@ if (contact != null)
           <ResourceKey>btnAddress</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName>btnAddress_ClickAction</MethodName>
+              <MethodName />
               <CSharpCodeSnippet>if (DialogService != null)
 {
 	Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Entity.Interfaces.IContact;   
 	if(contact != null)
 	{
-		Session["Addressid"] = contact.Address.Id.ToString();
+		 string _idname = contact.Address.Id.ToString() + ",Contact," + contact.Id.ToString() ;
+        Session["Addressid"] = _idname;
 	    DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
 	    DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAddress);
 	    DialogService.ShowDialog();

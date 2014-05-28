@@ -286,7 +286,7 @@ makeGrid : function(runtimeConfig) {
 	    displayMode: 'AsControl',
     multiCurrency: isMultiCurrencyEnabled()	 //TODO: Move this method to Sage.IntegrationContractService.isMultiCurrencyEnabled()
 }
-  															 			 			,
+  																					,
 {
 		field: 'Quantity',
 				name:  SalesOrderProductsgrdItems_Strings['grdItems_0fd9479b_1d6f_497f_a870_26efbf44550d_ColumnHeading']  || 'Quantity',
@@ -463,7 +463,7 @@ makeGrid : function(runtimeConfig) {
 	editable: false
 				}
   	          ],
-	 	 		 	 	 	 	 	         storeOptions: {
+									         storeOptions: {
             resourceKind: 'salesOrderItems',
             newItemParentReferenceProperty: 'SalesOrder',
             include: ['SalesOrder','Product','UnitOfMeasure'],

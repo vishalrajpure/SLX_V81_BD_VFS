@@ -77,7 +77,7 @@
                 <PropertySetting>
                   <TargetControlID>pklStatus</TargetControlID>
                   <PropertyName>Enabled</PropertyName>
-                  <Value>true</Value>
+                  <Value>false</Value>
                 </PropertySetting>
                 <PropertySetting>
                   <TargetControlID>pklType</TargetControlID>
@@ -150,7 +150,31 @@ else
 {
 	throw new ValidationException ("Account Partner PickList not Found");
 }
+txtBusinessPotential_lbl.ForeColor = System.Drawing.Color.Red;
+txtDescription_lbl.ForeColor = System.Drawing.Color.Red;
+Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+objOpp.Status = "Active";
+pklStatus.Enabled = false;
 
+/*string script_FormatNumber="";
+        script_FormatNumber += " function only_required(BusinessPotential,Description) ";
+        script_FormatNumber += " {";
+        script_FormatNumber += "    var df = true;";
+        script_FormatNumber += "     if(BusinessPotential == '') {";
+        script_FormatNumber += "      df =  false; }";
+        script_FormatNumber += "     if(Description == '') {";
+        script_FormatNumber += "      df =  false; }";
+       
+
+        script_FormatNumber += "     if(!df) {";      
+        script_FormatNumber += "     alert('Please Fill Required fields');";
+        script_FormatNumber += " return df;} else";
+        script_FormatNumber += " { document.getElementById('MainContent_InsertOpportunity_txtBusinessPotential_NumericTextbox_NumberTextBox').value = BusinessPotential;";
+        script_FormatNumber += "  document.getElementById('MainContent_InsertOpportunity_txtDescription').value = Description;}}";
+        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate", script_FormatNumber, true);
+        cmdSave.Attributes.Add("onclick", "return only_required(document.getElementById('" + txtBusinessPotential.ClientID + "').value,document.getElementById('" + txtDescription_lbl.ClientID + "').value);");
+		cmdSaveNew.Attributes.Add("onclick", "return only_required(document.getElementById('" + txtBusinessPotential.ClientID + "').value,document.getElementById('" + txtDescription_lbl.ClientID + "').value);");
+*/
 </CSharpCodeSnippet>
         </CSharpSnippetActionItem>
       </Action>
@@ -205,7 +229,7 @@ else
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnChangeAction>
-        <Required>false</Required>
+        <Required>true</Required>
       </QFTextBox>
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
@@ -233,99 +257,25 @@ else
           <Action typeName="Sage.Platform.QuickForms.ActionItems.ValidationActionItem, Sage.Platform.QuickForms">
             <ValidationActionItem>
               <ValidationMethod>CheckOppAccount</ValidationMethod>
-              <OnFail typeName="Sage.Platform.QuickForms.ActionItems.UIActionItem, Sage.Platform.QuickForms">
-                <UIActionItem>
+              <OnFail typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+                <CSharpSnippetActionItem>
                   <MethodName>lueAccount_ChangeActionF</MethodName>
-                  <PropertySettings>
-                    <PropertySetting>
-                      <TargetControlID>txtDescription</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>false</Value>
-                    </PropertySetting>
-                    <PropertySetting>
-                      <TargetControlID>usrUser</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>false</Value>
-                    </PropertySetting>
-                    <PropertySetting>
-                      <TargetControlID>dtpEstimatedClose</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>false</Value>
-                    </PropertySetting>
-                    <PropertySetting>
-                      <TargetControlID>pklCloseProbability</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>false</Value>
-                    </PropertySetting>
-                    <PropertySetting>
-                      <TargetControlID>pklStatus</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>false</Value>
-                    </PropertySetting>
-                    <PropertySetting>
-                      <TargetControlID>pklType</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>false</Value>
-                    </PropertySetting>
-                    <PropertySetting>
-                      <TargetControlID>lueLeadSource</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>false</Value>
-                    </PropertySetting>
-                    <PropertySetting>
-                      <TargetControlID>lueReseller</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>false</Value>
-                    </PropertySetting>
-                  </PropertySettings>
-                </UIActionItem>
+                  <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity entity = (Sage.Entity.Interfaces.IOpportunity) this.BindingSource.Current;
+if (entity.Account != null)
+{
+	entity.Owner = entity.Account.Owner;
+}</CSharpCodeSnippet>
+                </CSharpSnippetActionItem>
               </OnFail>
-              <OnSuccess typeName="Sage.Platform.QuickForms.ActionItems.UIActionItem, Sage.Platform.QuickForms">
-                <UIActionItem>
+              <OnSuccess typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+                <CSharpSnippetActionItem>
                   <MethodName>lueAccount_ChangeActionS</MethodName>
-                  <PropertySettings>
-                    <PropertySetting>
-                      <TargetControlID>txtDescription</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>true</Value>
-                    </PropertySetting>
-                    <PropertySetting>
-                      <TargetControlID>usrUser</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>true</Value>
-                    </PropertySetting>
-                    <PropertySetting>
-                      <TargetControlID>dtpEstimatedClose</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>true</Value>
-                    </PropertySetting>
-                    <PropertySetting>
-                      <TargetControlID>pklCloseProbability</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>true</Value>
-                    </PropertySetting>
-                    <PropertySetting>
-                      <TargetControlID>pklStatus</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>true</Value>
-                    </PropertySetting>
-                    <PropertySetting>
-                      <TargetControlID>pklType</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>true</Value>
-                    </PropertySetting>
-                    <PropertySetting>
-                      <TargetControlID>lueLeadSource</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>true</Value>
-                    </PropertySetting>
-                    <PropertySetting>
-                      <TargetControlID>lueReseller</TargetControlID>
-                      <PropertyName>Enabled</PropertyName>
-                      <Value>true</Value>
-                    </PropertySetting>
-                  </PropertySettings>
-                </UIActionItem>
+                  <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity entity1 = (Sage.Entity.Interfaces.IOpportunity) this.BindingSource.Current;
+if (entity1.Account != null)
+{
+	entity1.Owner = entity1.Account.Owner;
+}</CSharpCodeSnippet>
+                </CSharpSnippetActionItem>
               </OnSuccess>
             </ValidationActionItem>
           </Action>
@@ -902,10 +852,11 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
         </Controls>
       </QFControlsList>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXPickList>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
+      <QFTextBox>
         <Column>1</Column>
         <Row>0</Row>
+        <Enabled>false</Enabled>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>pklStatus</ControlId>
@@ -913,7 +864,7 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
             <DataItemName>Status</DataItemName>
-            <ControlItemName>PickListValue</ControlItemName>
+            <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
@@ -937,17 +888,7 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
           <RefreshData>False</RefreshData>
         </OnChangeAction>
         <Required>false</Required>
-        <AutoPostBack>false</AutoPostBack>
-        <PickListName>Opportunity Status</PickListName>
-        <StorageMode>Text</StorageMode>
-        <NameFormatString />
-        <AllowMultiples>false</AllowMultiples>
-        <AlphaSort>false</AlphaSort>
-        <MustExistInList>true</MustExistInList>
-        <NoneEditable>true</NoneEditable>
-        <PickListId>kSYST0000391</PickListId>
-        <ValueStoredAsText>true</ValueStoredAsText>
-      </QFSLXPickList>
+      </QFTextBox>
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXPickList>
@@ -1153,6 +1094,48 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
         <ValueStoredAsText>true</ValueStoredAsText>
       </QFSLXPickList>
     </Control>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXNumeric, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXNumeric>
+        <Column>1</Column>
+        <Row>4</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>txtBusinessPotential</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>BusinessPotential</DataItemName>
+            <ControlItemName>Text</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>txtBusinessPotential</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>true</Required>
+        <DecimalDigits>
+          <DecimalDigits>2</DecimalDigits>
+          <Strict>true</Strict>
+        </DecimalDigits>
+        <FormatType>Number</FormatType>
+      </QFSLXNumeric>
+    </Control>
   </Controls>
   <ToolControls>
     <Control typeName="Sage.Platform.QuickForms.Controls.QFElementSpacer, Sage.Platform.QuickForms">
@@ -1200,28 +1183,45 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
         <OnClientClick />
         <OnClickAction>
           <ResourceKey>cmdSave</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.BusinessRuleActionItem, Sage.Platform.QuickForms">
-            <BusinessRuleActionItem>
-              <BusinessRule>Save</BusinessRule>
-              <Object>Opportunity</Object>
-              <Parameters />
-              <PassResultsToNextAction>False</PassResultsToNextAction>
-              <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.RedirectActionItem, Sage.Platform.QuickForms">
-                <RedirectActionItem>
-                  <MethodName>cmdSave_ClickActionBRC</MethodName>
-                  <RawURL />
-                  <MainViewEntityName>Opportunity</MainViewEntityName>
-                  <UseCurrentIdInLink>true</UseCurrentIdInLink>
-                  <EntityViewMode>Detail</EntityViewMode>
-                </RedirectActionItem>
-              </OnComplete>
-            </BusinessRuleActionItem>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+            <CSharpSnippetActionItem>
+              <MethodName />
+              <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity objOpp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+//Sage.Entity.Interfaces.IOpportunity objOpp = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.IOpportunity&gt;();
+    Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace SalesProcessTabs = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
+    if (SalesProcessTabs != null)
+    {
+        Control tabControl = SalesProcessTabs.GetSmartPartByID("Opp_SalesProcess");
+        DropDownList drpsales = tabControl.FindControl("ddLSalesProcess") as DropDownList;
+
+        //pluginID = drpsales.SelectedValue.ToString();
+        if (drpsales.SelectedIndex &gt; 0)
+        {
+            string pluginID = drpsales.SelectedValue.ToString();
+            //objOpp.Stage = "1-Suspect";
+            //objOpp.Flagmode = Convert.ToInt32(Session["Flag"].ToString());
+            objOpp.Owner = objOpp.Account.Owner;
+           // objOpp.Status = drpsales.SelectedItem.Text;
+			
+            objOpp.Save();
+            Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.ISalesProcesses&gt;();
+            salesProcess.InitSalesProcess(pluginID, objOpp.Id.ToString());
+            Response.Redirect(string.Format("Opportunity.aspx?entityId={0}",objOpp.Id.ToString() ));
+        }
+        else
+        {
+            DialogService.ShowMessage("Please Select SalesProcess");
+            return;
+            //throw new Exception("Please Select SalesProcess");
+        }
+    }</CSharpCodeSnippet>
+            </CSharpSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
           <RunOnEveryRePaint>False</RunOnEveryRePaint>
           <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>True</PerformsUpdate>
-          <AppliedSecurity>ENTITIES/OPPORTUNITY/ADD</AppliedSecurity>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnClickAction>
       </QFButton>
@@ -1243,28 +1243,44 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
         <OnClientClick />
         <OnClickAction>
           <ResourceKey>cmdSaveNew</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.BusinessRuleActionItem, Sage.Platform.QuickForms">
-            <BusinessRuleActionItem>
-              <BusinessRule>Save</BusinessRule>
-              <Object>Opportunity</Object>
-              <Parameters />
-              <PassResultsToNextAction>False</PassResultsToNextAction>
-              <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.RedirectActionItem, Sage.Platform.QuickForms">
-                <RedirectActionItem>
-                  <MethodName>cmdSaveNew_ClickActionBRC</MethodName>
-                  <RawURL>InsertOpportunity.aspx?modeid=Insert</RawURL>
-                  <MainViewEntityName />
-                  <UseCurrentIdInLink>true</UseCurrentIdInLink>
-                  <EntityViewMode>Insert</EntityViewMode>
-                </RedirectActionItem>
-              </OnComplete>
-            </BusinessRuleActionItem>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+            <CSharpSnippetActionItem>
+              <MethodName />
+              <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity objOpp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+//Sage.Entity.Interfaces.IOpportunity objOpp = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.IOpportunity&gt;();
+    Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace SalesProcessTabs = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
+    if (SalesProcessTabs != null)
+    {
+        Control tabControl = SalesProcessTabs.GetSmartPartByID("Opp_SalesProcess");
+        DropDownList drpsales = tabControl.FindControl("ddLSalesProcess") as DropDownList;
+
+        //pluginID = drpsales.SelectedValue.ToString();
+        if (drpsales.SelectedIndex &gt; 0)
+        {
+            string pluginID = drpsales.SelectedValue.ToString();
+            //objOpp.Stage = "1-Suspect";
+            //objOpp.Flagmode = Convert.ToInt32(Session["Flag"].ToString());
+            objOpp.Owner = objOpp.Account.Owner;
+            //objOpp.Status = drpsales.SelectedItem.Text;
+            objOpp.Save();
+            Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.ISalesProcesses&gt;();
+            salesProcess.InitSalesProcess(pluginID, objOpp.Id.ToString());
+           	Response.Redirect(string.Format("InsertOpportunity.aspx?modeid=insert"));
+        }
+        else
+        {
+            DialogService.ShowMessage("Please Select SalesProcess");
+            return;
+            //throw new Exception("Please Select SalesProcess");
+        }
+    }</CSharpCodeSnippet>
+            </CSharpSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
           <RunOnEveryRePaint>False</RunOnEveryRePaint>
           <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>True</PerformsUpdate>
-          <AppliedSecurity>ENTITIES/OPPORTUNITY/ADD</AppliedSecurity>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnClickAction>
       </QFButton>
@@ -1273,11 +1289,11 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
   <Columns>
     <ColumnStyle>
       <SizeType>Percent</SizeType>
-      <Width>50</Width>
+      <Width>33</Width>
     </ColumnStyle>
     <ColumnStyle>
       <SizeType>Percent</SizeType>
-      <Width>50</Width>
+      <Width>33</Width>
     </ColumnStyle>
   </Columns>
   <Rows>

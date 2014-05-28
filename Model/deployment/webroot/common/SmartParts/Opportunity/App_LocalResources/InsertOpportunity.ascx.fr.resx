@@ -165,9 +165,6 @@
   <data name="dtpEstimatedClose.Caption" xml:space="preserve">
     <value>Clôture approx. :</value>
   </data>
-  <data name="pklStatus.Caption" xml:space="preserve">
-    <value>Etat :</value>
-  </data>
   <data name="cmdSaveNew.ToolTip" xml:space="preserve">
     <value>Enregistrer et nouveau</value>
   </data>

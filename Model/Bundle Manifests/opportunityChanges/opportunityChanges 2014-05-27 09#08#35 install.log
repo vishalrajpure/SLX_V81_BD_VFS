@@ -1,0 +1,184 @@
+5/27/2014 9:08:35 AM
+INFO  2014-05-27 14:38:14,766 - Installing bundle...
+INFO  2014-05-27 14:38:15,023 - Performing pre-install.
+INFO  2014-05-27 14:38:15,055 - Installing action: InsertPickList [Opportunity Status] (\Actions\InsertPickList\kSYST0000393.xml)
+INFO  2014-05-27 14:38:17,039 - Successfully installed InsertPickList [Opportunity Status] (\Actions\InsertPickList\kSYST0000393.xml)
+INFO  2014-05-27 14:38:17,048 - Saving action: InsertPickList [Opportunity Status] (\Actions\InsertPickList\kSYST0000393.xml)
+INFO  2014-05-27 14:38:17,052 - Successfully saved InsertPickList [Opportunity Status] (\Actions\InsertPickList\kSYST0000393.xml)
+INFO  2014-05-27 14:38:17,058 - Installing context item: Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-05-27 14:38:17,065 - Successfully installed Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-05-27 14:38:17,071 - Installing context item: Opportunity (\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml)
+INFO  2014-05-27 14:38:17,126 - Successfully installed Opportunity (\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml)
+INFO  2014-05-27 14:38:17,132 - Installing model item: InsertOpportunity (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\InsertOpportunity.main.quickform.xml)
+INFO  2014-05-27 14:38:18,404 - Successfully installed InsertOpportunity (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\InsertOpportunity.main.quickform.xml)
+INFO  2014-05-27 14:38:18,412 - Installing model item: OpportunityDetails (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityDetails.main.quickform.xml)
+INFO  2014-05-27 14:38:18,527 - Successfully installed OpportunityDetails (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityDetails.main.quickform.xml)
+INFO  2014-05-27 14:38:18,582 - Installing context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-27 14:38:18,759 - Successfully installed Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-27 14:38:18,768 - Installing model item: Opportunity Detail (\Portal\SlxClient\ChildPages\Opportunity\Opportunity.page.xml)
+INFO  2014-05-27 14:38:19,278 - Successfully installed Opportunity Detail (\Portal\SlxClient\ChildPages\Opportunity\Opportunity.page.xml)
+INFO  2014-05-27 14:38:19,283 - Installing model item: OpportunityDetails (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityDetails.smartpart.xml)
+INFO  2014-05-27 14:38:19,410 - Successfully installed OpportunityDetails (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityDetails.smartpart.xml)
+INFO  2014-05-27 14:38:19,420 - Installing model item: AttachmentList (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\AttachmentList.smartpart.xml)
+INFO  2014-05-27 14:38:19,514 - Successfully installed AttachmentList (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\AttachmentList.smartpart.xml)
+INFO  2014-05-27 14:38:19,524 - Installing model item: OpportunityProducts (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityProducts.smartpart.xml)
+INFO  2014-05-27 14:38:19,578 - Successfully installed OpportunityProducts (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityProducts.smartpart.xml)
+INFO  2014-05-27 14:38:19,585 - Installing model item: OpportunityClosedWon (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityClosedWon.smartpart.xml)
+INFO  2014-05-27 14:38:19,727 - Successfully installed OpportunityClosedWon (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityClosedWon.smartpart.xml)
+INFO  2014-05-27 14:38:19,734 - Installing model item: OpportunityClosedLost (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityClosedLost.smartpart.xml)
+INFO  2014-05-27 14:38:19,761 - Successfully installed OpportunityClosedLost (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityClosedLost.smartpart.xml)
+INFO  2014-05-27 14:38:19,767 - Installing model item: EditOpportunityProduct (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityProduct.smartpart.xml)
+INFO  2014-05-27 14:38:19,787 - Successfully installed EditOpportunityProduct (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityProduct.smartpart.xml)
+INFO  2014-05-27 14:38:19,793 - Installing model item: OpportunityContacts (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityContacts.smartpart.xml)
+INFO  2014-05-27 14:38:19,812 - Successfully installed OpportunityContacts (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityContacts.smartpart.xml)
+INFO  2014-05-27 14:38:19,831 - Installing model item: EditOpportunityContact (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityContact.smartpart.xml)
+INFO  2014-05-27 14:38:19,850 - Successfully installed EditOpportunityContact (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityContact.smartpart.xml)
+INFO  2014-05-27 14:38:19,856 - Installing model item: NotesHistoryList (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\NotesHistoryList.smartpart.xml)
+INFO  2014-05-27 14:38:19,875 - Successfully installed NotesHistoryList (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\NotesHistoryList.smartpart.xml)
+INFO  2014-05-27 14:38:19,881 - Installing model item: OpportunitySalesProcess (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunitySalesProcess.smartpart.xml)
+INFO  2014-05-27 14:38:19,901 - Successfully installed OpportunitySalesProcess (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunitySalesProcess.smartpart.xml)
+INFO  2014-05-27 14:38:19,907 - Installing model item: ManageStages (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\ManageStages.smartpart.xml)
+INFO  2014-05-27 14:38:19,927 - Successfully installed ManageStages (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\ManageStages.smartpart.xml)
+INFO  2014-05-27 14:38:19,933 - Installing model item: OpportunitySummary (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunitySummary.smartpart.xml)
+INFO  2014-05-27 14:38:19,958 - Successfully installed OpportunitySummary (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunitySummary.smartpart.xml)
+INFO  2014-05-27 14:38:19,964 - Installing model item: ActivityList (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\ActivityList.smartpart.xml)
+INFO  2014-05-27 14:38:19,984 - Successfully installed ActivityList (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\ActivityList.smartpart.xml)
+INFO  2014-05-27 14:38:19,990 - Installing model item: OpportunityCompetitors (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityCompetitors.smartpart.xml)
+INFO  2014-05-27 14:38:20,010 - Successfully installed OpportunityCompetitors (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityCompetitors.smartpart.xml)
+INFO  2014-05-27 14:38:20,016 - Installing model item: EditOpportunityCompetitor (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityCompetitor.smartpart.xml)
+INFO  2014-05-27 14:38:20,036 - Successfully installed EditOpportunityCompetitor (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityCompetitor.smartpart.xml)
+INFO  2014-05-27 14:38:20,042 - Installing model item: UpdateOpportunityCurrency (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\UpdateOpportunityCurrency.smartpart.xml)
+INFO  2014-05-27 14:38:20,067 - Successfully installed UpdateOpportunityCurrency (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\UpdateOpportunityCurrency.smartpart.xml)
+INFO  2014-05-27 14:38:20,073 - Installing model item: LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-05-27 14:38:20,092 - Successfully installed LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-05-27 14:38:20,122 - Installing model item: EditSalesPotential (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditSalesPotential.smartpart.xml)
+INFO  2014-05-27 14:38:20,174 - Successfully installed EditSalesPotential (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditSalesPotential.smartpart.xml)
+INFO  2014-05-27 14:38:20,181 - Installing model item: Opp_SalesProcess (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\Opp_SalesProcess.smartpart.xml)
+INFO  2014-05-27 14:38:20,193 - Successfully installed Opp_SalesProcess (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\Opp_SalesProcess.smartpart.xml)
+INFO  2014-05-27 14:38:20,199 - Installing model item: Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Opportunity\Modules\77b0c80bf1954ed98287e4ad2d203c73.module.xml)
+INFO  2014-05-27 14:38:20,229 - Successfully installed Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Opportunity\Modules\77b0c80bf1954ed98287e4ad2d203c73.module.xml)
+INFO  2014-05-27 14:38:20,235 - Installing model item: Insert Opportunity (\Portal\SlxClient\ChildPages\InsertOpportunity\InsertOpportunity.page.xml)
+INFO  2014-05-27 14:38:20,329 - Successfully installed Insert Opportunity (\Portal\SlxClient\ChildPages\InsertOpportunity\InsertOpportunity.page.xml)
+INFO  2014-05-27 14:38:20,339 - Installing model item: InsertOpportunity (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\InsertOpportunity.smartpart.xml)
+INFO  2014-05-27 14:38:20,379 - Successfully installed InsertOpportunity (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\InsertOpportunity.smartpart.xml)
+INFO  2014-05-27 14:38:20,385 - Installing model item: EditOpportunityProduct (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\EditOpportunityProduct.smartpart.xml)
+INFO  2014-05-27 14:38:20,444 - Successfully installed EditOpportunityProduct (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\EditOpportunityProduct.smartpart.xml)
+INFO  2014-05-27 14:38:20,455 - Installing model item: OpportunityCompetitors (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\OpportunityCompetitors.smartpart.xml)
+INFO  2014-05-27 14:38:20,475 - Successfully installed OpportunityCompetitors (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\OpportunityCompetitors.smartpart.xml)
+INFO  2014-05-27 14:38:20,481 - Installing model item: OpportunityProducts (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\OpportunityProducts.smartpart.xml)
+INFO  2014-05-27 14:38:20,539 - Successfully installed OpportunityProducts (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\OpportunityProducts.smartpart.xml)
+INFO  2014-05-27 14:38:20,546 - Installing model item: EditOpportunityCompetitor (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\EditOpportunityCompetitor.smartpart.xml)
+INFO  2014-05-27 14:38:20,578 - Successfully installed EditOpportunityCompetitor (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\EditOpportunityCompetitor.smartpart.xml)
+INFO  2014-05-27 14:38:20,584 - Installing model item: OpportunityContacts (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\OpportunityContacts.smartpart.xml)
+INFO  2014-05-27 14:38:20,614 - Successfully installed OpportunityContacts (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\OpportunityContacts.smartpart.xml)
+INFO  2014-05-27 14:38:20,621 - Installing model item: EditOpportunityContact (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\EditOpportunityContact.smartpart.xml)
+INFO  2014-05-27 14:38:20,640 - Successfully installed EditOpportunityContact (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\EditOpportunityContact.smartpart.xml)
+INFO  2014-05-27 14:38:20,647 - Installing model item: Opp_SalesProcess (Custom) (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\Opp_SalesProcess.smartpart.xml)
+INFO  2014-05-27 14:38:20,659 - Successfully installed Opp_SalesProcess (Custom) (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\Opp_SalesProcess.smartpart.xml)
+INFO  2014-05-27 14:38:20,666 - Saving context item: Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-05-27 14:38:20,673 - Successfully saved Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-05-27 14:38:20,680 - Saving context item: Opportunity (\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml)
+INFO  2014-05-27 14:38:29,325 - Successfully saved Opportunity (\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml)
+INFO  2014-05-27 14:38:29,332 - Saving model item: InsertOpportunity (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\InsertOpportunity.main.quickform.xml)
+INFO  2014-05-27 14:38:29,339 - Successfully saved InsertOpportunity (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\InsertOpportunity.main.quickform.xml)
+INFO  2014-05-27 14:38:29,345 - Saving model item: OpportunityDetails (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityDetails.main.quickform.xml)
+INFO  2014-05-27 14:38:29,352 - Successfully saved OpportunityDetails (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityDetails.main.quickform.xml)
+INFO  2014-05-27 14:38:29,358 - Saving context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-27 14:38:29,379 - Successfully saved Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-27 14:38:29,385 - Saving model item: Opportunity Detail (\Portal\SlxClient\ChildPages\Opportunity\Opportunity.page.xml)
+INFO  2014-05-27 14:38:29,392 - Successfully saved Opportunity Detail (\Portal\SlxClient\ChildPages\Opportunity\Opportunity.page.xml)
+INFO  2014-05-27 14:38:29,399 - Saving model item: OpportunityDetails (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityDetails.smartpart.xml)
+INFO  2014-05-27 14:38:29,405 - Successfully saved OpportunityDetails (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityDetails.smartpart.xml)
+INFO  2014-05-27 14:38:29,411 - Saving model item: AttachmentList (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\AttachmentList.smartpart.xml)
+INFO  2014-05-27 14:38:29,425 - Successfully saved AttachmentList (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\AttachmentList.smartpart.xml)
+INFO  2014-05-27 14:38:29,432 - Saving model item: OpportunityProducts (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityProducts.smartpart.xml)
+INFO  2014-05-27 14:38:29,438 - Successfully saved OpportunityProducts (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityProducts.smartpart.xml)
+INFO  2014-05-27 14:38:29,445 - Saving model item: OpportunityClosedWon (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityClosedWon.smartpart.xml)
+INFO  2014-05-27 14:38:29,451 - Successfully saved OpportunityClosedWon (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityClosedWon.smartpart.xml)
+INFO  2014-05-27 14:38:29,458 - Saving model item: OpportunityClosedLost (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityClosedLost.smartpart.xml)
+INFO  2014-05-27 14:38:29,472 - Successfully saved OpportunityClosedLost (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityClosedLost.smartpart.xml)
+INFO  2014-05-27 14:38:29,479 - Saving model item: EditOpportunityProduct (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityProduct.smartpart.xml)
+INFO  2014-05-27 14:38:29,485 - Successfully saved EditOpportunityProduct (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityProduct.smartpart.xml)
+INFO  2014-05-27 14:38:29,493 - Saving model item: OpportunityContacts (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityContacts.smartpart.xml)
+INFO  2014-05-27 14:38:29,499 - Successfully saved OpportunityContacts (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityContacts.smartpart.xml)
+INFO  2014-05-27 14:38:29,520 - Saving model item: EditOpportunityContact (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityContact.smartpart.xml)
+INFO  2014-05-27 14:38:29,527 - Successfully saved EditOpportunityContact (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityContact.smartpart.xml)
+INFO  2014-05-27 14:38:29,533 - Saving model item: NotesHistoryList (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\NotesHistoryList.smartpart.xml)
+INFO  2014-05-27 14:38:29,540 - Successfully saved NotesHistoryList (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\NotesHistoryList.smartpart.xml)
+INFO  2014-05-27 14:38:29,546 - Saving model item: OpportunitySalesProcess (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunitySalesProcess.smartpart.xml)
+INFO  2014-05-27 14:38:29,567 - Successfully saved OpportunitySalesProcess (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunitySalesProcess.smartpart.xml)
+INFO  2014-05-27 14:38:29,573 - Saving model item: ManageStages (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\ManageStages.smartpart.xml)
+INFO  2014-05-27 14:38:29,579 - Successfully saved ManageStages (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\ManageStages.smartpart.xml)
+INFO  2014-05-27 14:38:29,587 - Saving model item: OpportunitySummary (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunitySummary.smartpart.xml)
+INFO  2014-05-27 14:38:29,593 - Successfully saved OpportunitySummary (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunitySummary.smartpart.xml)
+INFO  2014-05-27 14:38:29,613 - Saving model item: ActivityList (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\ActivityList.smartpart.xml)
+INFO  2014-05-27 14:38:29,619 - Successfully saved ActivityList (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\ActivityList.smartpart.xml)
+INFO  2014-05-27 14:38:29,626 - Saving model item: OpportunityCompetitors (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityCompetitors.smartpart.xml)
+INFO  2014-05-27 14:38:29,633 - Successfully saved OpportunityCompetitors (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityCompetitors.smartpart.xml)
+INFO  2014-05-27 14:38:29,644 - Saving model item: EditOpportunityCompetitor (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityCompetitor.smartpart.xml)
+INFO  2014-05-27 14:38:29,651 - Successfully saved EditOpportunityCompetitor (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityCompetitor.smartpart.xml)
+INFO  2014-05-27 14:38:29,658 - Saving model item: UpdateOpportunityCurrency (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\UpdateOpportunityCurrency.smartpart.xml)
+INFO  2014-05-27 14:38:29,664 - Successfully saved UpdateOpportunityCurrency (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\UpdateOpportunityCurrency.smartpart.xml)
+INFO  2014-05-27 14:38:29,676 - Saving model item: LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-05-27 14:38:29,683 - Successfully saved LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-05-27 14:38:29,689 - Saving model item: EditSalesPotential (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditSalesPotential.smartpart.xml)
+INFO  2014-05-27 14:38:29,696 - Successfully saved EditSalesPotential (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditSalesPotential.smartpart.xml)
+INFO  2014-05-27 14:38:29,706 - Saving model item: Opp_SalesProcess (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\Opp_SalesProcess.smartpart.xml)
+INFO  2014-05-27 14:38:29,713 - Successfully saved Opp_SalesProcess (Custom) (\Portal\SlxClient\ChildPages\Opportunity\SmartParts\Opp_SalesProcess.smartpart.xml)
+INFO  2014-05-27 14:38:29,720 - Saving model item: Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Opportunity\Modules\77b0c80bf1954ed98287e4ad2d203c73.module.xml)
+INFO  2014-05-27 14:38:29,728 - Successfully saved Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Opportunity\Modules\77b0c80bf1954ed98287e4ad2d203c73.module.xml)
+INFO  2014-05-27 14:38:29,738 - Saving model item: Insert Opportunity (\Portal\SlxClient\ChildPages\InsertOpportunity\InsertOpportunity.page.xml)
+INFO  2014-05-27 14:38:29,744 - Successfully saved Insert Opportunity (\Portal\SlxClient\ChildPages\InsertOpportunity\InsertOpportunity.page.xml)
+INFO  2014-05-27 14:38:29,751 - Saving model item: InsertOpportunity (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\InsertOpportunity.smartpart.xml)
+INFO  2014-05-27 14:38:29,757 - Successfully saved InsertOpportunity (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\InsertOpportunity.smartpart.xml)
+INFO  2014-05-27 14:38:29,769 - Saving model item: EditOpportunityProduct (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\EditOpportunityProduct.smartpart.xml)
+INFO  2014-05-27 14:38:29,775 - Successfully saved EditOpportunityProduct (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\EditOpportunityProduct.smartpart.xml)
+INFO  2014-05-27 14:38:29,782 - Saving model item: OpportunityCompetitors (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\OpportunityCompetitors.smartpart.xml)
+INFO  2014-05-27 14:38:29,800 - Successfully saved OpportunityCompetitors (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\OpportunityCompetitors.smartpart.xml)
+INFO  2014-05-27 14:38:29,807 - Saving model item: OpportunityProducts (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\OpportunityProducts.smartpart.xml)
+INFO  2014-05-27 14:38:29,813 - Successfully saved OpportunityProducts (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\OpportunityProducts.smartpart.xml)
+INFO  2014-05-27 14:38:29,821 - Saving model item: EditOpportunityCompetitor (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\EditOpportunityCompetitor.smartpart.xml)
+INFO  2014-05-27 14:38:29,831 - Successfully saved EditOpportunityCompetitor (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\EditOpportunityCompetitor.smartpart.xml)
+INFO  2014-05-27 14:38:29,838 - Saving model item: OpportunityContacts (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\OpportunityContacts.smartpart.xml)
+INFO  2014-05-27 14:38:29,845 - Successfully saved OpportunityContacts (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\OpportunityContacts.smartpart.xml)
+INFO  2014-05-27 14:38:29,863 - Saving model item: EditOpportunityContact (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\EditOpportunityContact.smartpart.xml)
+INFO  2014-05-27 14:38:29,870 - Successfully saved EditOpportunityContact (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\EditOpportunityContact.smartpart.xml)
+INFO  2014-05-27 14:38:29,876 - Saving model item: Opp_SalesProcess (Custom) (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\Opp_SalesProcess.smartpart.xml)
+INFO  2014-05-27 14:38:29,883 - Successfully saved Opp_SalesProcess (Custom) (\Portal\SlxClient\ChildPages\InsertOpportunity\SmartParts\Opp_SalesProcess.smartpart.xml)
+INFO  2014-05-27 14:38:29,896 - Configuring installed items.
+INFO  2014-05-27 14:38:29,904 - Configuring Saleslogix Client...
+INFO  2014-05-27 14:38:29,921 - Configuring Opportunity Detail...
+INFO  2014-05-27 14:38:32,732 - Configuring OpportunityDetails...
+INFO  2014-05-27 14:38:32,744 - Configuring AttachmentList (Custom)...
+INFO  2014-05-27 14:38:32,755 - Configuring OpportunityProducts...
+INFO  2014-05-27 14:38:32,783 - Configuring OpportunityClosedWon...
+INFO  2014-05-27 14:38:32,795 - Configuring OpportunityClosedLost...
+INFO  2014-05-27 14:38:32,806 - Configuring EditOpportunityProduct...
+INFO  2014-05-27 14:38:32,827 - Configuring OpportunityContacts...
+INFO  2014-05-27 14:38:32,834 - Configuring EditOpportunityContact...
+INFO  2014-05-27 14:38:32,841 - Configuring NotesHistoryList (Custom)...
+INFO  2014-05-27 14:38:32,848 - Configuring OpportunitySalesProcess (Custom)...
+INFO  2014-05-27 14:38:32,858 - Configuring ManageStages (Custom)...
+INFO  2014-05-27 14:38:32,865 - Configuring OpportunitySummary (Custom)...
+INFO  2014-05-27 14:38:32,871 - Configuring ActivityList (Custom)...
+INFO  2014-05-27 14:38:32,889 - Configuring OpportunityCompetitors...
+INFO  2014-05-27 14:38:32,895 - Configuring EditOpportunityCompetitor...
+INFO  2014-05-27 14:38:32,902 - Configuring UpdateOpportunityCurrency (Custom)...
+INFO  2014-05-27 14:38:32,920 - Configuring LiveGroupViewer (Custom)...
+INFO  2014-05-27 14:38:32,927 - Configuring EditSalesPotential...
+INFO  2014-05-27 14:38:32,933 - Configuring Opp_SalesProcess (Custom)...
+INFO  2014-05-27 14:38:32,952 - Configuring Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule...
+INFO  2014-05-27 14:38:32,965 - Configuring Insert Opportunity...
+INFO  2014-05-27 14:38:32,972 - Configuring InsertOpportunity...
+INFO  2014-05-27 14:38:32,982 - Configuring EditOpportunityProduct...
+INFO  2014-05-27 14:38:32,989 - Configuring OpportunityCompetitors...
+INFO  2014-05-27 14:38:32,996 - Configuring OpportunityProducts...
+INFO  2014-05-27 14:38:33,013 - Configuring EditOpportunityCompetitor...
+INFO  2014-05-27 14:38:33,020 - Configuring OpportunityContacts...
+INFO  2014-05-27 14:38:33,027 - Configuring EditOpportunityContact...
+INFO  2014-05-27 14:38:33,034 - Configuring Opp_SalesProcess (Custom)...
+INFO  2014-05-27 14:38:33,041 - Performing pre-commit to target project.
+INFO  2014-05-27 14:38:33,193 - Committing items to target project...
+INFO  2014-05-27 14:38:33,867 - Committing transactions...
+INFO  2014-05-27 14:38:35,418 - Copying bundle manifest to project.
+INFO  2014-05-27 14:38:35,539 - Install complete.

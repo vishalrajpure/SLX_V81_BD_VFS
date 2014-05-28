@@ -164,7 +164,7 @@ makeGrid : function(runtimeConfig) {
 	type: CheckBox,
 	defaultValue: "x"   }
   	          ],
-	 	         storeOptions: {
+		         storeOptions: {
             resourceKind: 'contractItems',
             newItemParentReferenceProperty: 'Contract',
             include: [],

@@ -303,4 +303,10 @@
   <data name="lueReseller.LUPF.SubType" xml:space="preserve">
     <value>Reseller</value>
   </data>
+  <data name="txtBusinessPotential.Caption" xml:space="preserve">
+    <value>Business Potential:</value>
+  </data>
+  <data name="pklStatus.Text" xml:space="preserve">
+    <value>Active</value>
+  </data>
 </root>

@@ -15,4 +15,5 @@
   <IsDefaultPage>false</IsDefaultPage>
   <ExcludedGlobalModules />
   <AppliedSecurity>Entities/Opportunity/Add</AppliedSecurity>
+  <IncludeScript />
 </PortalPage>

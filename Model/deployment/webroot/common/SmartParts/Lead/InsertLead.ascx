@@ -124,9 +124,18 @@ Required="true" AutoPostBack="true"  />
       </tr>
 <tr>
             <td  >
- <asp:Button runat="server" ID="cmdMatchingRecords"
- Text="<%$ resources: cmdMatchingRecords.Caption %>" CssClass="slxbutton"  />
+ <asp:LinkButton runat="server" ID="btnAddress"
+ Text="<%$ resources: btnAddress.Caption %>"  />
  
+      </td>
+                <td></td>
+      </tr>
+<tr>
+            <td rowspan="4"  >
+ <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="txtAccountAddress"  Rows="4" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
+  </div>
+
       </td>
                 <td  >
 <div class="slxlabel  alignleft  checkbox ">
@@ -137,17 +146,7 @@ LabelPlacement="right" AutoPostBack="true"  />
       </td>
       </tr>
 <tr>
-            <td rowspan="4"  >
- <div class=" lbl alignleft">
-   <asp:Label ID="adrAddress_lbl" AssociatedControlID="adrAddress" runat="server" Text="<%$ resources: adrAddress.Caption %>" ></asp:Label>
- </div>
-   <div  class="textcontrol address"  >
-    <SalesLogix:AddressControl runat="server" ID="adrAddress" AddressDescriptionPickListName="Address Description (Lead)" AddressDescriptionPickListId="kSYST0000403" ButtonToolTip="<%$ resources: adrAddress.ButtonToolTip %>" AddressToolTip="<%$ resources: adrAddress.AddressToolTip %>" >
-<AddressDescStyle Height="80"></AddressDescStyle> </SalesLogix:AddressControl>
-</div>
-
-      </td>
-                <td rowspan="2"  >
+                  <td rowspan="2"  >
  <div class=" lbl alignleft" >
    <asp:Label ID="txtBusinessDescription_lbl" AssociatedControlID="txtBusinessDescription" runat="server" Text="<%$ resources: txtBusinessDescription.Caption %>" Visible="false" ></asp:Label>
  </div>
@@ -160,7 +159,24 @@ LabelPlacement="right" AutoPostBack="true"  />
 <tr>
               </tr>
 <tr>
-                  <td rowspan="2"  >
+                  <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="adrAddress_lbl" AssociatedControlID="adrAddress" runat="server" Text="<%$ resources: adrAddress.Caption %>" Visible="false" ></asp:Label>
+ </div>
+   <div  class="textcontrol address"  >
+    <SalesLogix:AddressControl runat="server" ID="adrAddress" AddressDescriptionPickListName="Address Description (Lead)" AddressDescriptionPickListId="kSYST0000403" ButtonToolTip="<%$ resources: adrAddress.ButtonToolTip %>" AddressToolTip="<%$ resources: adrAddress.AddressToolTip %>" Visible="false" >
+<AddressDescStyle Height="80"></AddressDescStyle> </SalesLogix:AddressControl>
+</div>
+
+      </td>
+      </tr>
+<tr>
+            <td  >
+ <asp:Button runat="server" ID="cmdMatchingRecords"
+ Text="<%$ resources: cmdMatchingRecords.Caption %>" CssClass="slxbutton"  />
+ 
+      </td>
+                <td rowspan="2"  >
  <div class=" lbl alignleft" >
    <asp:Label ID="txtInterests_lbl" AssociatedControlID="txtInterests" runat="server" Text="<%$ resources: txtInterests.Caption %>" Visible="false" ></asp:Label>
  </div>
@@ -171,9 +187,10 @@ LabelPlacement="right" AutoPostBack="true"  />
       </td>
       </tr>
 <tr>
-              </tr>
+            <td></td>
+            </tr>
 <tr>
-            <td rowspan="3"  colspan="2" >
+            <td rowspan="4"  colspan="2" >
  <div class="twocollbl alignleft" >
    <asp:Label ID="txtComments_lbl" AssociatedControlID="txtComments" runat="server" Text="<%$ resources: txtComments.Caption %>" ></asp:Label>
  </div>
@@ -183,6 +200,8 @@ LabelPlacement="right" AutoPostBack="true"  />
 
       </td>
             </tr>
+<tr>
+              </tr>
 <tr>
               </tr>
 <tr>
@@ -373,7 +392,10 @@ protected override void OnAddEntityBindings() {
                     // pklStatus.PickListValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding pklStatusPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Status", pklStatus, "PickListValue");
         BindingSource.Bindings.Add(pklStatusPickListValueBinding);
-                          // adrAddress.AddressCity Binding
+                             // txtBusinessDescription.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtBusinessDescriptionTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BusinessDescription", txtBusinessDescription, "Text");
+        BindingSource.Bindings.Add(txtBusinessDescriptionTextBinding);
+                    // adrAddress.AddressCity Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding adrAddressAddressCityBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.City", adrAddress, "AddressCity");
         adrAddressAddressCityBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(adrAddressAddressCityBinding);
@@ -424,10 +446,7 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding adrAddressAddressStateBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.State", adrAddress, "AddressState");
         adrAddressAddressStateBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(adrAddressAddressStateBinding);
-                    // txtBusinessDescription.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding txtBusinessDescriptionTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BusinessDescription", txtBusinessDescription, "Text");
-        BindingSource.Bindings.Add(txtBusinessDescriptionTextBinding);
-                    // txtInterests.Text Binding
+                       // txtInterests.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtInterestsTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Interests", txtInterests, "Text");
         BindingSource.Bindings.Add(txtInterestsTextBinding);
                     // txtComments.Text Binding
@@ -463,7 +482,7 @@ protected override void OnAddEntityBindings() {
     
    
         }
-                                                                                                                                                                               
+                                                                                                                                                                                             
 protected void phnWorkPhone_ChangeAction(object sender, EventArgs e) {
 if (chkAutoSearch.Checked)
 {
@@ -476,12 +495,16 @@ if (chkAutoSearch.Checked)
 }
 
 }
-protected void cmdMatchingRecords_ClickAction(object sender, EventArgs e) {
-if (DialogService != null) {
-  // DialogActionItem
-  DialogService.SetSpecs(775, 830, "LeadSearchForDuplicates", GetLocalResourceObject("88210646-7333-4492-b080-6227e297ba66.DialogTitleOverride").ToString() );
-    DialogService.EntityType = typeof(Sage.Entity.Interfaces.ILead); 
-    DialogService.ShowDialog();
+protected void btnAddress_ClickAction(object sender, EventArgs e) {
+if (DialogService != null)
+{
+	Sage.Entity.Interfaces.ILead lead = this.BindingSource.Current as Sage.Entity.Interfaces.ILead;    
+	if(lead != null)
+	{		
+	    DialogService.SetSpecs(200, 200, 440, 300, "AddLeadAddress", "", true);
+	    DialogService.EntityType = typeof(Sage.Entity.Interfaces.ILeadAddress);
+	    DialogService.ShowDialog();
+	}
 }
 
 }
@@ -489,6 +512,15 @@ protected void chkAutoSearch_ChangeAction(object sender, EventArgs e) {
 Sage.SalesLogix.Security.SLXUserService service = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>() as Sage.SalesLogix.Security.SLXUserService;
 Sage.Platform.Application.Services.IUserOptionsService userOption = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Application.Services.IUserOptionsService>();
 userOption.SetCommonOption("AutoSearch", "General", chkAutoSearch.Checked.ToString(), true);
+
+}
+protected void cmdMatchingRecords_ClickAction(object sender, EventArgs e) {
+if (DialogService != null) {
+  // DialogActionItem
+  DialogService.SetSpecs(775, 830, "LeadSearchForDuplicates", GetLocalResourceObject("88210646-7333-4492-b080-6227e297ba66.DialogTitleOverride").ToString() );
+    DialogService.EntityType = typeof(Sage.Entity.Interfaces.ILead); 
+    DialogService.ShowDialog();
+}
 
 }
 protected void lkpLeadEmployee_ChangeAction(object sender, EventArgs e) {
@@ -575,6 +607,7 @@ Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfa
 		}	
 	}
 	lead.Save();
+	Session.Remove("LeadAddressid");
 	System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx", "&modeid=Detail"));
 
 
@@ -640,6 +673,7 @@ string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
 		}		
 	}
 	lead.Save();
+	Session.Remove("LeadAddressid");
 	System.Web.HttpContext.Current.Response.Redirect(string.Format("InsertLead.aspx?modeid=Insert"));
 
 	
@@ -653,8 +687,9 @@ protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
  phnWorkPhone.TextChanged += new EventHandler(phnWorkPhone_ChangeAction);
-cmdMatchingRecords.Click += new EventHandler(cmdMatchingRecords_ClickAction);
+btnAddress.Click += new EventHandler(btnAddress_ClickAction);
 chkAutoSearch.CheckedChanged += new EventHandler(chkAutoSearch_ChangeAction);
+cmdMatchingRecords.Click += new EventHandler(cmdMatchingRecords_ClickAction);
 lkpLeadEmployee.LookupResultValueChanged += new EventHandler(lkpLeadEmployee_ChangeAction);
 cmdSave.Click += new ImageClickEventHandler(cmdSave_ClickAction);
 cmdSaveNew.Click += new ImageClickEventHandler(cmdSaveNew_ClickAction);
@@ -697,6 +732,21 @@ lead.LeadEmployee = user;
 		Sage.Entity.Interfaces.ILeadSource ld = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)"LDEMOA000003");	
 		lead.LeadSource = ld;
 	}
+	
+if (Session["LeadAddressid"] != null)
+{
+    Sage.Entity.Interfaces.ILeadAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadAddress>(Session["Addressid"].ToString());
+    if (objadd != null)
+    {
+        string _add = objadd.Address1 + "," + objadd.Address2 + "," + objadd.Address3 + "\r\n";
+        _add += objadd.City + "," + objadd.State + "," + objadd.Country + "\r\n";
+        _add += objadd.PostalCode + "\r\n";
+        _add += objadd.Latitude + "\r\n";
+        _add += objadd.Logitude;
+        txtAccountAddress.Text = _add;
+    }
+}
+	
 
 }
 private bool _runActivating;
@@ -799,15 +849,20 @@ public class InsertLeadAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     {
         get { return FindControl(ref _txtBusinessPotential, "txtBusinessPotential"); }
     }
+    private Sage.Platform.Controls.IButtonControl _btnAddress;
+    public  Sage.Platform.Controls.IButtonControl btnAddress
+    {
+        get { return FindControl(ref _btnAddress, "btnAddress"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _txtAccountAddress;
+    public  Sage.Platform.Controls.ITextBoxControl txtAccountAddress
+    {
+        get { return FindControl(ref _txtAccountAddress, "txtAccountAddress"); }
+    }
     private Sage.Platform.Controls.IButtonControl _cmdMatchingRecords;
     public  Sage.Platform.Controls.IButtonControl cmdMatchingRecords
     {
         get { return FindControl(ref _cmdMatchingRecords, "cmdMatchingRecords"); }
-    }
-    private Sage.Platform.Controls.IAddressControl _adrAddress;
-    public  Sage.Platform.Controls.IAddressControl adrAddress
-    {
-        get { return FindControl(ref _adrAddress, "adrAddress"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _txtComments;
     public  Sage.Platform.Controls.ITextBoxControl txtComments
@@ -873,6 +928,11 @@ public class InsertLeadAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     public  Sage.Platform.Controls.ITextBoxControl txtBusinessDescription
     {
         get { return FindControl(ref _txtBusinessDescription, "txtBusinessDescription"); }
+    }
+    private Sage.Platform.Controls.IAddressControl _adrAddress;
+    public  Sage.Platform.Controls.IAddressControl adrAddress
+    {
+        get { return FindControl(ref _adrAddress, "adrAddress"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _txtInterests;
     public  Sage.Platform.Controls.ITextBoxControl txtInterests

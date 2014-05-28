@@ -303,4 +303,7 @@
   <data name="cmdCopyOpportunity.ToolTip" xml:space="preserve">
     <value>Copy</value>
   </data>
+  <data name="txtBusinessPotential.Caption" xml:space="preserve">
+    <value>Business Potential</value>
+  </data>
 </root>

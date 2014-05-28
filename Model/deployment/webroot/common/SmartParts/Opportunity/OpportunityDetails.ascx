@@ -20,11 +20,11 @@
    <asp:Label ID="txtDescription_lbl" AssociatedControlID="txtDescription" runat="server" Text="<%$ resources: txtDescription.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtDescription"  dojoType="Sage.UI.Controls.TextBox" MaxLength="64"  />
+<asp:TextBox runat="server" ID="txtDescription" Required="true"  dojoType="Sage.UI.Controls.TextBox" MaxLength="64"  />
   </div>
 
       </td>
-                <td rowspan="10"  >
+                <td rowspan="11"  >
 <%@ Register tagPrefix="SalesLogix" tagName="wbrOpportunitySnapShot" src="~/SmartParts/Opportunity/OpportunitySnapShot.ascx" %>
 <SalesLogix:wbrOpportunitySnapShot id="wbrOpportunitySnapShot" runat="server" OnInit="setwbrOpportunitySnapShotContext" ></SalesLogix:wbrOpportunitySnapShot>
 <script runat="server" type="text/C#">
@@ -144,6 +144,19 @@
             </tr>
 <tr>
             <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="txtBusinessPotential_lbl" AssociatedControlID="txtBusinessPotential" runat="server" Text="<%$ resources: txtBusinessPotential.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol numeric"  > 
+    <SalesLogix:NumericControl runat="server" ID="txtBusinessPotential"
+Required="true" DecimalDigits="2" Strict="True" 
+ />
+  </div>
+
+      </td>
+            </tr>
+<tr>
+            <td  >
 <div class="slxlabel  alignleft checkboxRight">
 
   <SalesLogix:SLXCheckBox runat="server" ID="chkAddToForecast"  Text="<%$ resources: chkAddToForecast.Caption %>"  CssClass=""
@@ -204,7 +217,7 @@ LabelPlacement="left"  />
    <asp:Label ID="txtComments_lbl" AssociatedControlID="txtComments" runat="server" Text="<%$ resources: txtComments.Caption %>" ></asp:Label>
  </div>
   <div  class="twocoltextcontrol"   >
-<asp:TextBox runat="server" ID="txtComments"  Rows="3" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
+<asp:TextBox runat="server" ID="txtComments" Required="true"  Rows="3" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
   </div>
 
       </td>
@@ -217,7 +230,7 @@ LabelPlacement="left"  />
    <SalesLogix:GroupNavigator runat="server" ID="grnDetails" ></SalesLogix:GroupNavigator>
     <asp:ImageButton runat="server" ID="cmdSave"
  AlternateText="<%$ resources: cmdSave.Caption %>"  ToolTip="<%$ resources: cmdSave.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_16x16"  />
-   
+ 
     <asp:ImageButton runat="server" ID="cmdCopyOpportunity"
  AlternateText="<%$ resources: cmdCopyOpportunity.Caption %>"  ToolTip="<%$ resources: cmdCopyOpportunity.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Copy_16x16"  />
  
@@ -275,6 +288,9 @@ protected override void OnAddEntityBindings() {
                     // pklStatus.PickListValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding pklStatusPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Status", pklStatus, "PickListValue");
         BindingSource.Bindings.Add(pklStatusPickListValueBinding);
+                    // txtBusinessPotential.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtBusinessPotentialTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BusinessPotential", txtBusinessPotential, "Text");
+        BindingSource.Bindings.Add(txtBusinessPotentialTextBinding);
                     // chkAddToForecast.Checked Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding chkAddToForecastCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AddToForecast", chkAddToForecast, "Checked");
         BindingSource.Bindings.Add(chkAddToForecastCheckedBinding);
@@ -293,11 +309,7 @@ protected override void OnAddEntityBindings() {
         BindingSource.Bindings.Add(txtCommentsTextBinding);
     
    
-             
-      
-      
-      
-             
+                 
       
       
       
@@ -306,30 +318,31 @@ protected override void OnAddEntityBindings() {
       
       
     }
-                                                                                           
+                                                                                                  
 protected void pklStatus_ChangeAction(object sender, EventArgs e) {
 
-                Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-                string dialog = "";
-                if (opportunity.StatusChangeWon())
-                {
-                  dialog = "OpportunityClosedWon";
-                }
-                else if (opportunity.StatusChangeLost())
-                {
-                  dialog = "OpportunityClosedLost";
-                }
-                if (!String.IsNullOrEmpty(dialog))
-                {
-                  if (DialogService != null)
-                  {
-                    DialogService.SetSpecs(380, 600, dialog, string.Empty);
-                    DialogService.EntityType = typeof (Sage.Entity.Interfaces.IOpportunity);
-                    DialogService.EntityID = opportunity.Id.ToString();
-                    DialogService.ShowDialog();
-                  }
-                }
-              
+Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+string dialog = "";
+if (opportunity.StatusChangeWon())
+{
+  dialog = "OpportunityClosedWon";
+}
+else if (opportunity.StatusChangeLost())
+{
+  dialog = "OpportunityClosedLost";
+}
+if (!String.IsNullOrEmpty(dialog))
+{
+  if (DialogService != null)
+  {
+    DialogService.SetSpecs(380, 600, dialog, string.Empty);
+    DialogService.EntityType = typeof (Sage.Entity.Interfaces.IOpportunity);
+    DialogService.EntityID = opportunity.Id.ToString();
+    DialogService.ShowDialog();
+  }
+}
+
+
 
 }
 protected void lueERPApplication_ChangeAction(object sender, EventArgs e) {
@@ -350,49 +363,27 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);
 
 }
 protected void cmdSave_ClickAction(object sender, EventArgs e) {
-  Sage.Entity.Interfaces.IOpportunity _entity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-  if (_entity != null)
-  {
-    object _parent = GetParentEntity();
-    if (DialogService.ChildInsertInfo != null)
-    {
-        if (_parent != null)
-        {
-            if (DialogService.ChildInsertInfo.ParentReferenceProperty != null)
-            {
-                DialogService.ChildInsertInfo.ParentReferenceProperty.SetValue(_entity, _parent, null);
-            }
-        }
-    }
-    bool shouldSave = true;
-    Sage.Platform.WebPortal.EntityPage page = Page as Sage.Platform.WebPortal.EntityPage;
-    if (page != null)
-    {
-        if(IsInDialog() && page.ModeId.ToUpper() == "INSERT")
-        {
-            shouldSave = false;
-        }
-    }
+Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 
-    if(shouldSave)
-    {
-       _entity.Save();
-    }
+if (opp.Status == "Closed - Won")
+{
+    //pklStatus.PickListValue = opportunity.Status;
+    DialogService.ShowMessage("You are not authorised to change the status to Closed - Won.");
+    return;
+}
+else
+{
+	if (opp.Status == "Lost" || opp.Status == "Dropped" || opp.Status == "Future Opportunity")
+	   {
+         if (string.IsNullOrEmpty(opp.Notes))
+         {
+             DialogService.ShowMessage("Please  mention comments for changing the status.");
+			 return;
+         }
+	   }
+    opp.Save();
+ }   
 
-    if (_parent != null)
-    {
-        if (DialogService.ChildInsertInfo != null)
-        {
-           if (DialogService.ChildInsertInfo.ParentsCollectionProperty != null)
-           {
-              System.Reflection.MethodInfo _add = DialogService.ChildInsertInfo.ParentsCollectionProperty.PropertyType.GetMethod("Add");
-              _add.Invoke(DialogService.ChildInsertInfo.ParentsCollectionProperty.GetValue(_parent, null), new object[] { _entity });
-           }
-        }
-     }
-  }
-
-  
 }
 protected void cmdCopyOpportunity_ClickAction(object sender, EventArgs e) {
       Response.Redirect(string.Format("InsertOpportunity.aspx?modeid=Insert&copyopportunity=true&entityId={0}", (BindingSource.Current as Sage.Platform.ComponentModel.IComponentReference).Id));
@@ -421,13 +412,7 @@ protected override void OnWireEventHandlers()
  base.OnWireEventHandlers();
  pklStatus.PickListValueChanged += new EventHandler(pklStatus_ChangeAction);
 lueERPApplication.LookupResultValueChanged += new EventHandler(lueERPApplication_ChangeAction);
-if (RoleSecurityService != null)
-{
-if (RoleSecurityService.HasAccess("ENTITIES/OPPORTUNITY/EDIT"))
-{
 cmdSave.Click += new ImageClickEventHandler(cmdSave_ClickAction);
-}
-}
 if (RoleSecurityService != null)
 {
 if (RoleSecurityService.HasAccess("ENTITIES/OPPORTUNITY/ADD"))
@@ -449,6 +434,92 @@ cmdDelete.Click += new ImageClickEventHandler(cmdDelete_ClickAction);
 
 protected void quickformload0(object sender, EventArgs e) {
 lueReseller.SeedValue = GetLocalResourceObject("Reseller_rsc").ToString();
+
+
+txtDescription_lbl.ForeColor = System.Drawing.Color.Red;
+txtBusinessPotential_lbl.ForeColor = System.Drawing.Color.Red;
+
+Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+    
+//pklStatus.PickListValue= objOpp.Status;
+if (objOpp.Status == "Closed - Won")
+{
+   // pklStatus.PickListName = "Opportunity Status Closed";
+    //pklStatus.ReadOnly = true;
+    
+    txtDescription.Enabled = false;
+    lueAccount.Enabled = false;
+    usrUser.Enabled = false;
+    lueReseller.Enabled = false;
+    dtpEstimatedClose.Enabled = false;
+    pklCloseProbability.Enabled = false;
+    pklStatus.Enabled = false;
+    txtBusinessPotential.Enabled = false;
+    chkAddToForecast.Enabled = false;
+    txtComments.Enabled = false;
+    clIntegrationContract.Enabled = false;
+    cmdSave.Enabled = false;
+    
+}
+else
+{
+    //pklStatus.PickListName = "Opportunity Status Detail";
+    //pklStatus.ReadOnly = false;
+    //pklStatus.PickListValue= objOpp.Status;
+    txtDescription.Enabled = true;
+    lueAccount.Enabled = true;
+    usrUser.Enabled = true;
+    lueReseller.Enabled = true;
+    dtpEstimatedClose.Enabled = true;
+    pklCloseProbability.Enabled = true;
+    pklStatus.Enabled = true;
+    txtBusinessPotential.Enabled = true;
+    chkAddToForecast.Enabled = true;
+    txtComments.Enabled = true;
+    clIntegrationContract.Enabled = true;
+    cmdSave.Enabled = true;
+
+}
+
+if (!IsPostBack)
+{
+    string _UserId = "", AccManager = "";
+    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+    _UserId = _IUserService.UserId; //get login Userid
+    AccManager = Convert.ToString(objOpp.AccountManager.Id);
+    if (AccManager.Trim() == _UserId.Trim())
+    {
+        txtDescription.Enabled = true;
+        lueAccount.Enabled = true;
+        usrUser.Enabled = true;
+        lueReseller.Enabled = true;
+        dtpEstimatedClose.Enabled = true;
+        pklCloseProbability.Enabled = true;
+        pklStatus.Enabled = true;
+        txtBusinessPotential.Enabled = true;
+        chkAddToForecast.Enabled = true;
+        txtComments.Enabled = true;
+        clIntegrationContract.Enabled = true;
+        cmdSave.Enabled = true;
+    }
+    else
+    {
+        txtDescription.Enabled = false;
+        lueAccount.Enabled = false;
+        usrUser.Enabled = false;
+        lueReseller.Enabled = false;
+        dtpEstimatedClose.Enabled = false;
+        pklCloseProbability.Enabled = false;
+        pklStatus.Enabled = false;
+        txtBusinessPotential.Enabled = false;
+        chkAddToForecast.Enabled = false;
+        txtComments.Enabled = false;
+        clIntegrationContract.Enabled = false;
+        cmdSave.Enabled = false;
+    }
+}
+
+
 
 }
 protected void quickformload1(object sender, EventArgs e) {
@@ -474,17 +545,11 @@ Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.Entit
             _runActivating = (epage.IsNewEntity || _runActivating);
 if (_runActivating) DoActivating();
 ScriptManager.RegisterStartupScript(Page, GetType(), "cleanupcontainer", "jQuery(\".controlslist > div:empty\").remove();", true);
-ClientBindingMgr.RegisterSaveButton(cmdSave);
-
 cmdDelete.OnClientClick = string.Format("return confirm('{0}');", Sage.Platform.WebPortal.PortalUtil.JavaScriptEncode(GetLocalResourceObject("cmdDelete.ActionConfirmationMessage").ToString()));
 
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
 {
 btnEditForm.Visible = false;
-}
-if (!RoleSecurityService.HasAccess("ENTITIES/OPPORTUNITY/EDIT"))
-{
-cmdSave.Visible = false;
 }
 if (!RoleSecurityService.HasAccess("ENTITIES/OPPORTUNITY/ADD"))
 {
@@ -584,6 +649,11 @@ public class OpportunityDetailsAdapter : Sage.Platform.WebPortal.Adapters.Entity
     public  Sage.Platform.Controls.IPickListControl pklStatus
     {
         get { return FindControl(ref _pklStatus, "pklStatus"); }
+    }
+    private Sage.Platform.Controls.INumericControl _txtBusinessPotential;
+    public  Sage.Platform.Controls.INumericControl txtBusinessPotential
+    {
+        get { return FindControl(ref _txtBusinessPotential, "txtBusinessPotential"); }
     }
     private Sage.Platform.Controls.ICheckBoxControl _chkAddToForecast;
     public  Sage.Platform.Controls.ICheckBoxControl chkAddToForecast

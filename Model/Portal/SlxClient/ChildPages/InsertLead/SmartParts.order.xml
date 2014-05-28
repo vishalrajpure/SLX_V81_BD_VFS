@@ -7,4 +7,5 @@
   <Item Id="c4ab9e3a-f75c-46f6-b7ad-dfb2c3798b18">EditLeadCompetitor.smartpart.xml</Item>
   <Item Id="db2feebe-0b39-46c8-bebd-fbec8be19726">LeadProducts_Insert.smartpart.xml</Item>
   <Item Id="c5ad4a4e-83e1-4676-960b-74e891a208c3">EditLeadProduct.smartpart.xml</Item>
+  <Item Id="ae7c3557-7028-4a47-9f9c-06a1e873fd5d">AddLeadAddress.smartpart.xml</Item>
 </ModelItems>
