@@ -1,4 +1,4 @@
-﻿
+
 [
 '<div>',
     '<div dojoType="dijit.Dialog" id="historyDialog" title="" dojoAttachPoint="_dialog" dojoAttachEvent="onHide:_onDlgHide">',
@@ -34,7 +34,7 @@
                         '<div dojoType="dijit.layout.ContentPane" label="{%= $.nameText %}" dojoAttachPoint="container_ContactLup" class="remove-padding lookup-container"></div>',
                         '<div dojoType="dijit.layout.ContentPane" label="{%= $.opportunityText %}" dojoAttachPoint="container_OppLup" class="remove-padding lookup-container"></div>',
                         '<div dojoType="dijit.layout.ContentPane" label="{%= $.accountText %}" dojoAttachPoint="container_AccountLup"  class="remove-padding lookup-container"></div>',
-                        '<div dojoType="dijit.layout.ContentPane" label="{%= $.ticketText %}" dojoAttachPoint="container_TicketLup"  class="remove-padding lookup-container"></div>',
+                        '<div dojoType="dijit.layout.ContentPane" dojoAttachPoint="container_TicketLup"  style="display: none;" ></div>',
                     '</div>',
                     '<div dojoType="dojox.layout.TableContainer" orientation="horiz" cols="2" labelWidth="{%= $.labelWidth %}" dojoAttachPoint="leadContainer"  baseClass="bottom-border-section" class="display-none">',
                         '<div dojoType="dijit.layout.ContentPane" label="{%= $.nameText %}" dojoAttachPoint="container_LeadLup"  class="remove-padding lookup-container"></div>',

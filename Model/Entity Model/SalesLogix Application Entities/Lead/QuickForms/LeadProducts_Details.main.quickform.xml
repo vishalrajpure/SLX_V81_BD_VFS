@@ -130,7 +130,7 @@
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>095433e3344e3b6c3e8c4d41604b4</ControlId>
+        <ControlId>95433e3344e3b6c3e8c4d41604b4</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
@@ -237,7 +237,7 @@
     </RowStyle>
   </Rows>
   <Description />
-  <UseEntityNameAsTitle>true</UseEntityNameAsTitle>
+  <UseEntityNameAsTitle>false</UseEntityNameAsTitle>
   <EntityTypeName>ILead</EntityTypeName>
   <DefaultNamespace>Sage.Entity.Interfaces</DefaultNamespace>
   <AssemblyName>Sage.Entity.Interfaces</AssemblyName>

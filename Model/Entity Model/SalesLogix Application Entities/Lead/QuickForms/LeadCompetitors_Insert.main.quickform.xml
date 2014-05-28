@@ -296,7 +296,7 @@
     </RowStyle>
   </Rows>
   <Description />
-  <UseEntityNameAsTitle>true</UseEntityNameAsTitle>
+  <UseEntityNameAsTitle>false</UseEntityNameAsTitle>
   <EntityTypeName>ILead</EntityTypeName>
   <DefaultNamespace>Sage.Entity.Interfaces</DefaultNamespace>
   <AssemblyName>Sage.Entity.Interfaces</AssemblyName>

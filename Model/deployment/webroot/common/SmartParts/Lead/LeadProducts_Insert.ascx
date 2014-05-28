@@ -291,14 +291,6 @@ dsLeadProducts.Bind();
 public override Sage.Platform.Application.UI.ISmartPartInfo GetSmartPartInfo(Type smartPartInfoType)
 {
     ToolsSmartPartInfo tinfo = new ToolsSmartPartInfo();
-        if (BindingSource != null)
-    {
-        if (BindingSource.Current != null)
-        {
-            tinfo.Description = BindingSource.Current.ToString();
-            tinfo.Title = BindingSource.Current.ToString();
-        }
-    }
     
     foreach (Control c in Controls)
     {

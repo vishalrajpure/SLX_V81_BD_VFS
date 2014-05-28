@@ -1,4 +1,4 @@
-﻿/*globals Sage, dojo, dojox, dijit, Simplate, window, Sys, define */
+/*globals Sage, dojo, dojox, dijit, Simplate, window, Sys, define */
 define([
     'dijit/_Widget',
     'Sage/_Templated',
@@ -2001,6 +2001,10 @@ function (_Widget, _Templated, declare, SingleEntrySDataStore, BindingsManager, 
            this._updateAttendeesAndComplete(this.dtp_completedDate.get('value'));            
         },
         _updateAttendeesAndComplete: function (completedDate) {
+            if (this.ta_Notes.get('value') === '') {
+                alert("Please Enter Notes");
+                return;
+            }
             if (this.mode === 'Complete') {
                 var self = this;
                 var deferred = this.attendeesTab._activitySaved();
@@ -2016,6 +2020,7 @@ function (_Widget, _Templated, declare, SingleEntrySDataStore, BindingsManager, 
             if (this._isProcessing) {
                 return;
             }
+            
             this._isProcessing = true;
             /*
             to get the template:
@@ -2065,6 +2070,34 @@ function (_Widget, _Templated, declare, SingleEntrySDataStore, BindingsManager, 
             }), 1);
         },
         _saveAndClose: function () {
+            if (this.pk_Regarding.get('value') === '')
+            {
+                alert("Please Select Regarding...");
+                return;
+            }
+            if (this.dtp_startDate.get('value') === '') {
+                alert("Please Select Regarding...");
+                return;
+            }
+            if (this.sel_Duration.get('value') === '') {
+                alert("Please Select Regarding...");
+                return;
+            }
+            if (this.rdo_Contact.get('value') == 'contact') {
+                var act = this._activityData;
+                if (act.AccountId === '' || act.AccountId === null) {
+                    alert("Please Select Account...");
+                    return;
+                }
+            }
+            if (this.rdo_Lead.get('value') == 'lead') {
+                var act = this._activityData;
+                if (act.LeadId === '' || act.LeadId === null) {
+                    alert("Please Select Lead...");
+                    return;
+                }
+            }
+
             var alarmTime = this.sel_AlarmDur.get('timeValue');
             //Alarm Time should never have a timeless date so fix it duration picker adds it.
             if (alarmTime.getSeconds() === 5) {
