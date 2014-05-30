@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="f6d87855-19c1-4b30-8548-97f1b1b29e2c" lastModifiedUtc="2014-05-14T07:03:07.7663764Z" manageSchema="true" tableName="OPPORTUNITY_COMPETITOR" name="OpportunityCompetitor" isExtension="false" audited="true" onBeforeInsertMethodId="6f954c2f-f335-439d-8c23-1430db7e5dbb" onAfterInsertMethodId="08969338-c2c5-4e33-a4f6-b80e697e9edb" onBeforeUpdateMethodId="2ee2fd50-3426-447e-8b65-4c394d335f34" onAfterUpdateMethodId="73ce5f6c-66c9-4440-a10c-0d3ebc4c2435" onBeforeDeleteMethodId="40bdf299-d7c5-45ed-8011-9beb2166712d" onAfterDeleteMethodId="b21a42df-463b-4411-8a06-31b4c6aaf81f" onCreateId="b3fea2d6-19c2-40c2-ae40-e513445929a4">
+<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="f6d87855-19c1-4b30-8548-97f1b1b29e2c" lastModifiedUtc="2014-05-29T09:42:23.4794253Z" manageSchema="true" tableName="OPPORTUNITY_COMPETITOR" name="OpportunityCompetitor" isExtension="false" audited="true" onBeforeInsertMethodId="6f954c2f-f335-439d-8c23-1430db7e5dbb" onAfterInsertMethodId="08969338-c2c5-4e33-a4f6-b80e697e9edb" onBeforeUpdateMethodId="2ee2fd50-3426-447e-8b65-4c394d335f34" onAfterUpdateMethodId="73ce5f6c-66c9-4440-a10c-0d3ebc4c2435" onBeforeDeleteMethodId="40bdf299-d7c5-45ed-8011-9beb2166712d" onAfterDeleteMethodId="b21a42df-463b-4411-8a06-31b4c6aaf81f" onCreateId="b3fea2d6-19c2-40c2-ae40-e513445929a4">
   <extendedMetaData />
   <ExtendedPropertiesCollection>
     <extendee type="Sage.Platform.Orm.Entities.OrmEntity">
@@ -240,7 +240,7 @@
         </DecimalDataType>
       </SystemDataType>
     </property>
-    <property xsi:type="OrmFieldProperty" id="fad55649-df35-455c-8052-082d2208cc0a" lastModifiedUtc="2014-05-14T07:03:07.7663764Z" name="CurrentMajorCompetitor" audited="false" columnName="CURRENTMAJORCOMPETITOR" maxLength="1" precision="0" scale="0" ordinal="18" isReadOnly="false">
+    <property xsi:type="OrmFieldProperty" id="fad55649-df35-455c-8052-082d2208cc0a" lastModifiedUtc="2014-05-29T09:42:23.4784252Z" name="CurrentMajorCompetitor" audited="false" columnName="CURRENTMAJORCOMPETITOR" maxLength="1" precision="0" scale="0" ordinal="18" isReadOnly="false">
       <ExtendedPropertiesCollection>
         <extendee type="Sage.Platform.Orm.Entities.OrmFieldProperty">
           <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">
@@ -248,10 +248,8 @@
           </extender>
         </extendee>
       </ExtendedPropertiesCollection>
-      <SystemDataType guid="ccc0f01d-7ba5-408e-8526-a3f942354b3a">
-        <TextDataType>
-          <Length>1</Length>
-        </TextDataType>
+      <SystemDataType guid="92432b4d-8206-4a96-ba7b-e4cbd374f148">
+        <TrueFalseDataType />
       </SystemDataType>
     </property>
   </properties>

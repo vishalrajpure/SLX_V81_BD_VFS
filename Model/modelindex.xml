@@ -1,90 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <modelItemIndex>
- <ref id="5e8b7df7-0ec3-46b3-b8f4-f7bde7d5a6a3" url="\Entity Model\CodeTemplates\Entity\Default-Interface-Saleslogix.Interface.codetemplate.xml" />
- <ref id="bf113863-d964-49a8-8945-aae2fc2f55df" url="\Entity Model\Process Orchestration Support\ProcessInstanceStatus\ProcessInstanceStatus.PROCESSINSTANCESTATUS.entity.xml" />
- <ref id="b75c6d1d-1b4b-40d5-b8e9-571fe72c0654" url="\Entity Model\Process Orchestration Support\ActivityTrackingEvent\ActivityTrackingEvent.ACTIVITYTRACKINGEVENT.entity.xml" />
- <ref id="bcccbedd-01ce-4d8e-8d4a-36b737ddc63c" url="\Entity Model\Process Orchestration Support\ActivityTrackingEventExtract\ActivityTrackingEventExtract.ACTVTYTRAKNGEVTEXT.entity.xml" />
- <ref id="770c44ee-8688-46d6-b910-aaefdc9f3bb2" url="\Entity Model\Process Orchestration Support\ActivityTrackingEvtAntn\ActivityTrackingEvtAntn.ACTVTYTRAKINGEVTANTN.entity.xml" />
- <ref id="53e4d1fa-4504-4c5a-8134-88bcb3803e6b" url="\Entity Model\Process Orchestration Support\ProcessTrackingEvent\ProcessTrackingEvent.PROCESSTRACKINGEVENT.entity.xml" />
- <ref id="9d7adc23-181f-4fa9-a5ef-d891f2187a6c" url="\Entity Model\Process Orchestration Support\ProcessTypeInformation\ProcessTypeInformation.PROCESSTYPEINFO.entity.xml" />
- <ref id="e62b726e-2a37-4e31-b939-7f2f45abc6ee" url="\Entity Model\Process Orchestration Support\UserTrackingEvent\UserTrackingEvent.USERTRACKINGEVENT.entity.xml" />
- <ref id="9575e258-7546-413e-bf98-5fde52126ec4" url="\Entity Model\Process Orchestration Support\ProcessTrackingEventAnnotation\ProcessTrackingEventAnnotation.PROCESSTRAKNGEVTANTN.entity.xml" />
- <ref id="2ad06efa-febf-4a6d-a63d-096c6d86dd28" url="\Entity Model\Process Orchestration Support\ProcessTypeCategory\ProcessTypeCategory.PROCESSTYPECATEGORY.entity.xml" />
- <ref id="59c6cb61-1bc8-4386-916e-aa0aab0c76ab" url="\Entity Model\Process Orchestration Support\UserTrackingEventAnnotation\UserTrackingEventAnnotation.USERTRAKNGEVTANTN.entity.xml" />
- <ref id="44724ec0-9059-4c69-af41-dfc77865028b" url="\Entity Model\Process Orchestration Support\UserTrackingEvtExt\UserTrackingEvtExt.USERTRACKINGEVTEXT.entity.xml" />
- <ref id="43e822fd-e62f-4227-917d-929fc3afa97e" url="\Entity Model\SalesLogix Contract Sync Entities\CalendarSyncView\Calendarsyncview.CALENDARSYNCVIEW.entity.xml" />
- <ref id="53edfc8b-8699-4608-89e0-3a3d5a4980ac" url="\Entity Model\SalesLogix Activity Support\Activity\Activity.ACTIVITY.entity.xml" />
- <ref id="d0716606-fe05-446d-9478-124a4182f48d" url="\Entity Model\SalesLogix Application Entities\Process\Process.PROCESS.entity.xml" />
- <ref id="b5eb4143-3e25-4fd5-b768-0fe36d21f0e5" url="\Entity Model\SalesLogix Contract Sync Entities\TaskSyncView\Tasksyncview.TASKSYNCVIEW.entity.xml" />
- <ref id="99f3afe1-3dac-489e-837e-f9ff4ca4f3c4" url="\Entity Model\SalesLogix Activity Support\ActivityAttendee\ActivityAttendee.ACTIVITYATTENDEE.entity.xml" />
- <ref id="688ab77f-3c5d-4399-bbce-e4edd1f40dc5" url="\Entity Model\SalesLogix Activity Support\ResourceSchedule\ResourceSchedule.RESOURCESCHEDULE.entity.xml" />
- <ref id="6ab738f6-21b0-4fe2-8df5-6f192281423c" url="\Entity Model\SalesLogix Security Support\User\User.USERSECURITY.entity.xml" />
- <ref id="d38b445a-224d-403c-9406-9625e2e15a66" url="\Entity Model\Saleslogix Security Support\User\GetManager.method.xml" />
- <ref id="2d47bb72-aa52-4ce4-bcab-83d29900c2d3" url="\Entity Model\SalesLogix Activity Support\UserActivity\UserActivity.USER_ACTIVITY.entity.xml" />
- <ref id="5565af3c-8a3f-42ee-9c2b-dd882f1e48e2" url="\Entity Model\SalesLogix Activity Support\UserNotification\UserNotification.USERNOTIFICATION.entity.xml" />
- <ref id="b81ddca6-fa9b-4d3a-bd62-afbb6e9ced58" url="\Entity Model\SalesLogix Activity Support\Event\Event.EVENT.entity.xml" />
- <ref id="692f32e8-354e-4747-bd90-a18672dcf972" url="\Entity Model\SalesLogix Contract Sync Entities\CalendarHistorySyncView\CalendarHistorySyncView.CALENDARHISTORYSYNCVIEW.entity.xml" />
- <ref id="9bcc821a-6853-4cf2-8f2f-09ddd2645197" url="\Entity Model\SalesLogix Activity Support\History\History.HISTORY.entity.xml" />
- <ref id="9879ba21-abeb-4428-946a-2ee671cd851c" url="\Entity Model\SalesLogix Activity Support\ReportHistory\ReportHistory.REPORTHISTORY.entity.xml" />
- <ref id="54152929-ecd1-4ed4-a5a7-b5be2e388b15" url="\Entity Model\SalesLogix Activity Support\HistoryAttendee\HistoryAttendee.HISTORYATTENDEE.entity.xml" />
- <ref id="dfca3267-2f5b-4970-813b-5aeb9ea75649" url="\Entity Model\SalesLogix Security Support\Owner\Owner.SECCODE.entity.xml" />
- <ref id="c3159cd5-daa2-4c23-b235-facc572f59f1" url="\Entity Model\SalesLogix Activity Support\ResourceList\ResourceList.RESOURCELIST.entity.xml" />
- <ref id="a7752f54-e7a9-4f72-a91a-9766f94904eb" url="\Entity Model\SalesLogix Activity Support\UserCalendar\UserCalendar.USERCALENDAR.entity.xml" />
- <ref id="1ee4922c-f49b-451e-beda-cf144b831065" url="\Entity Model\Saleslogix Application Entities\Address\GetFullAddress.method.xml" />
- <ref id="bb196f3e-5e58-4deb-ab19-153696e25bfa" url="\Entity Model\Saleslogix Application Entities\Attachment\GetRemoteStatus.method.xml" />
- <ref id="cfad14bf-45df-4343-b18a-167a73b804b4" url="\Entity Model\Saleslogix Application Entities\LeadAddress\GetFullAddress.method.xml" />
- <ref id="23dbe5d1-d3f4-40ea-8753-28799c664bb2" url="\Entity Model\Saleslogix Application Entities\Product\GetDefaultPrice.method.xml" />
- <ref id="bbd2f9e9-9341-4c32-a3b9-321d2a9bc83c" url="\Entity Model\Saleslogix Application Entities\ReturnAddress\GetFullAddress.method.xml" />
- <ref id="86dcf956-ded3-4bd5-baf8-fbbaafa98ad2" url="\Entity Model\Saleslogix Application Entities\SalesOrderAddress\GetFullAddress.method.xml" />
- <ref id="0cdd04c9-f3e4-4b58-8930-8b8c9ca03d31" url="\Entity Model\Saleslogix Application Entities\SalesOrderItem\GetProductInfo.method.xml" />
- <ref id="a1b538a9-4ea7-4f04-9392-ef55502aea52" url="\Entity Model\SalesLogix Contract Sync Entities\AccountSyncView\AccountSyncView.ACCOUNTSYNCVIEW.entity.xml" />
  <ref id="ebfd715e-2b2f-4e5e-8c6d-cfc0d9b4ae52" url="\Entity Model\SalesLogix Application Entities\Account\Account.ACCOUNT.entity.xml" />
- <ref id="26341903-3c01-41fa-b990-47f36b42c8dd" url="\Entity Model\SalesLogix Application Entities\Association\Association.ASSOCIATION.entity.xml" />
- <ref id="5338ff92-de58-46e1-b222-6501d77e6d02" url="\Entity Model\SalesLogix Application Entities\Competitor\Competitor.COMPETITOR.entity.xml" />
- <ref id="3172551b-f476-45ea-98de-2bb04ddba687" url="\Entity Model\SalesLogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml" />
  <ref id="5e0ce9ff-bf29-4788-9915-5f8545f4dcc0" url="\Entity Model\SalesLogix Application Entities\AccountOperatingCompany\AccountOperatingCompany.ACCOUNTOPERATINGCOMP.entity.xml" />
  <ref id="1de6f2b1-b361-454f-badf-116c47920046" url="\Entity Model\SalesLogix Application Entities\AccountProduct\AccountProduct.ACCOUNTPRODUCT.entity.xml" />
  <ref id="9e78204b-7eab-4274-9137-34e5cd2c3433" url="\Entity Model\SalesLogix Application Entities\Address\Address.ADDRESS.entity.xml" />
+ <ref id="1ee4922c-f49b-451e-beda-cf144b831065" url="\Entity Model\Saleslogix Application Entities\Address\GetFullAddress.method.xml" />
  <ref id="1d244d2a-99c6-4235-ac38-caaa73eef74e" url="\Entity Model\SalesLogix Contract Sync Entities\AppIdMapping\AppIdMapping.APPIDMAPPING.entity.xml" />
  <ref id="750a7f26-3604-467b-94fe-249370231df4" url="\Entity Model\SalesLogix Application Entities\Contact\Contact.CONTACT.entity.xml" />
  <ref id="3521b9b3-7701-4714-b257-197697f94f85" url="\Entity Model\SalesLogix Application Entities\Contract\Contract.CONTRACT.entity.xml" />
  <ref id="4ef7b8ac-e632-4824-8052-4305fc2bdd53" url="\Entity Model\SalesLogix Application Entities\ERPEmailAddress\ERPEmailAddress.ERPEMAILADDRESS.entity.xml" />
  <ref id="02bab7a9-f55c-4a48-b0c5-9d412c2e89d8" url="\Entity Model\SalesLogix Application Entities\ERPPhoneNumber\ERPPhoneNumber.ERPPHONENUMBER.entity.xml" />
  <ref id="89454109-c579-42a0-b4df-d74d04f41acc" url="\Entity Model\SalesLogix Application Entities\LeadSource\LeadSource.LEADSOURCE.entity.xml" />
+ <ref id="3172551b-f476-45ea-98de-2bb04ddba687" url="\Entity Model\SalesLogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml" />
+ <ref id="dfca3267-2f5b-4970-813b-5aeb9ea75649" url="\Entity Model\SalesLogix Security Support\Owner\Owner.SECCODE.entity.xml" />
  <ref id="a450e01b-fe42-4ab0-bb06-292caa98f528" url="\Entity Model\SalesLogix Application Entities\Return\Return.RMA.entity.xml" />
  <ref id="9b47425f-3b70-4f38-a4cf-574c64d46086" url="\Entity Model\SalesLogix Application Entities\SalesOrder\SalesOrder.SALESORDER.entity.xml" />
  <ref id="e7a70408-03cb-4667-890b-39de33fb739b" url="\Entity Model\SalesLogix Application Entities\Ticket\Ticket.TICKET.entity.xml" />
- <ref id="d0827b30-4d85-4547-b531-84ce0da302f6" url="\Entity Model\SalesLogix Application Entities\ContractItem\ContractItem.CONTRACTITEM.entity.xml" />
- <ref id="32045fed-af25-4533-9819-43a9f3a7786e" url="\Entity Model\SalesLogix Application Entities\ReturnReceivedProduct\ReturnReceivedProduct.RMARECEIVEDPRODUCT.entity.xml" />
- <ref id="8d7c19c8-d278-48d1-9771-b71528157efc" url="\Entity Model\SalesLogix Application Entities\ReturnShippedProduct\ReturnShippedProduct.RMASHIPPEDPRODUCT.entity.xml" />
- <ref id="56bc8e84-d46b-4bcc-b743-f62fea8c09fd" url="\Entity Model\SalesLogix Application Entities\TicketAccountProduct\TicketAccountProduct.TICKETACCOUNTPRODUCT.entity.xml" />
- <ref id="1f836363-c3ec-4ef6-85b6-126bf71aba79" url="\Entity Model\SalesLogix Application Entities\TicketActivityItem\TicketActivityItem.TICKETACTIVITYITEM.entity.xml" />
- <ref id="03da3a53-eab7-4bb2-bd1b-9c0c988b66d2" url="\Entity Model\SalesLogix Application Entities\Product\Product.PRODUCT.entity.xml" />
+ <ref id="6ab738f6-21b0-4fe2-8df5-6f192281423c" url="\Entity Model\SalesLogix Security Support\User\User.USERSECURITY.entity.xml" />
+ <ref id="d38b445a-224d-403c-9406-9625e2e15a66" url="\Entity Model\Saleslogix Security Support\User\GetManager.method.xml" />
+ <ref id="a1b538a9-4ea7-4f04-9392-ef55502aea52" url="\Entity Model\SalesLogix Contract Sync Entities\AccountSyncView\AccountSyncView.ACCOUNTSYNCVIEW.entity.xml" />
+ <ref id="26341903-3c01-41fa-b990-47f36b42c8dd" url="\Entity Model\SalesLogix Application Entities\Association\Association.ASSOCIATION.entity.xml" />
+ <ref id="5338ff92-de58-46e1-b222-6501d77e6d02" url="\Entity Model\SalesLogix Application Entities\Competitor\Competitor.COMPETITOR.entity.xml" />
  <ref id="947d2edc-cb23-4e3c-8ac5-74d88a2e0b16" url="\Entity Model\SalesLogix Application Entities\AccountSummary\AccountSummary.Account.ACCOUNTSUMMARY.entity.xml" />
- <ref id="62b605e3-3927-491a-9ed7-9be049d50a13" url="\Entity Model\SalesLogix Security Support\UserInfo\UserInfo.User.USERINFO.entity.xml" />
+ <ref id="bb196f3e-5e58-4deb-ab19-153696e25bfa" url="\Entity Model\Saleslogix Application Entities\Attachment\GetRemoteStatus.method.xml" />
+ <ref id="cfad14bf-45df-4343-b18a-167a73b804b4" url="\Entity Model\Saleslogix Application Entities\LeadAddress\GetFullAddress.method.xml" />
+ <ref id="23dbe5d1-d3f4-40ea-8753-28799c664bb2" url="\Entity Model\Saleslogix Application Entities\Product\GetDefaultPrice.method.xml" />
+ <ref id="bbd2f9e9-9341-4c32-a3b9-321d2a9bc83c" url="\Entity Model\Saleslogix Application Entities\ReturnAddress\GetFullAddress.method.xml" />
+ <ref id="86dcf956-ded3-4bd5-baf8-fbbaafa98ad2" url="\Entity Model\Saleslogix Application Entities\SalesOrderAddress\GetFullAddress.method.xml" />
+ <ref id="0cdd04c9-f3e4-4b58-8930-8b8c9ca03d31" url="\Entity Model\Saleslogix Application Entities\SalesOrderItem\GetProductInfo.method.xml" />
+ <ref id="68679c23-5e3a-4e22-95bd-ce052b1b4c91" url="\Entity Model\Saleslogix Contract Sync Entities\SyncResult\GetResultInfo.method.xml" />
+ <ref id="03da3a53-eab7-4bb2-bd1b-9c0c988b66d2" url="\Entity Model\SalesLogix Application Entities\Product\Product.PRODUCT.entity.xml" />
+ <ref id="53edfc8b-8699-4608-89e0-3a3d5a4980ac" url="\Entity Model\SalesLogix Activity Support\Activity\Activity.ACTIVITY.entity.xml" />
+ <ref id="99f3afe1-3dac-489e-837e-f9ff4ca4f3c4" url="\Entity Model\SalesLogix Activity Support\ActivityAttendee\ActivityAttendee.ACTIVITYATTENDEE.entity.xml" />
+ <ref id="688ab77f-3c5d-4399-bbce-e4edd1f40dc5" url="\Entity Model\SalesLogix Activity Support\ResourceSchedule\ResourceSchedule.RESOURCESCHEDULE.entity.xml" />
+ <ref id="2d47bb72-aa52-4ce4-bcab-83d29900c2d3" url="\Entity Model\SalesLogix Activity Support\UserActivity\UserActivity.USER_ACTIVITY.entity.xml" />
+ <ref id="5565af3c-8a3f-42ee-9c2b-dd882f1e48e2" url="\Entity Model\SalesLogix Activity Support\UserNotification\UserNotification.USERNOTIFICATION.entity.xml" />
+ <ref id="b75c6d1d-1b4b-40d5-b8e9-571fe72c0654" url="\Entity Model\Process Orchestration Support\ActivityTrackingEvent\ActivityTrackingEvent.ACTIVITYTRACKINGEVENT.entity.xml" />
+ <ref id="bcccbedd-01ce-4d8e-8d4a-36b737ddc63c" url="\Entity Model\Process Orchestration Support\ActivityTrackingEventExtract\ActivityTrackingEventExtract.ACTVTYTRAKNGEVTEXT.entity.xml" />
+ <ref id="770c44ee-8688-46d6-b910-aaefdc9f3bb2" url="\Entity Model\Process Orchestration Support\ActivityTrackingEvtAntn\ActivityTrackingEvtAntn.ACTVTYTRAKINGEVTANTN.entity.xml" />
  <ref id="e640237e-5595-47eb-880c-646a173b9a5f" url="\Entity Model\SalesLogix Application Entities\SalesOrderAddress\SalesOrderAddress.SALESORDERADDRESS.entity.xml" />
+ <ref id="adf00b51-fc3f-4c3b-8342-2709f8d61981" url="\Entity Model\SalesLogix Application Entities\OAuthProvider\OAuthProvider.OAUTHPROVIDER.entity.xml" />
+ <ref id="3849fe99-3ee0-49f5-84ab-b6f716219687" url="\Entity Model\SalesLogix Contract Sync Entities\SyncDigest\SyncDigest.SYNCDIGEST.entity.xml" />
+ <ref id="09eff415-442d-4c04-b291-9791b3398757" url="\Entity Model\SalesLogix Contract Sync Entities\SyncResult\SyncResult.SYNCRESULT.entity.xml" />
+ <ref id="a040c483-7518-4580-a64e-b2c8b2a89de3" url="\Entity Model\SalesLogix Security Support\UserIntegrationMap\UserIntegrationMap.USERINTEGRATIONMAP.entity.xml" />
+ <ref id="4a923e9f-fa48-44cc-bd8e-d7dbb78bee13" url="\Entity Model\SalesLogix Contract Sync Entities\UserIntegrationsView\Userintegrationsview.USERINTEGRATIONSVIEW.entity.xml" />
  <ref id="b941fad3-95ae-4713-a1ed-b9a4ea389638" url="\Entity Model\SalesLogix Application Entities\Attachment\Attachment.ATTACHMENT.entity.xml" />
  <ref id="a87a60d2-8e5b-478a-a6dc-2b00262c0dc3" url="\Entity Model\SalesLogix Application Entities\RemoteAttachment\RemoteAttachment.REMOTEATTACHMENTS.entity.xml" />
- <ref id="c1271ae3-23c2-463f-af6d-06730bb593cc" url="\Entity Model\SalesLogix Application Entities\CampaignTargetsView\CampaignTargetsView.CAMPAIGNTARGETSVIEW.entity.xml" />
+ <ref id="692f32e8-354e-4747-bd90-a18672dcf972" url="\Entity Model\SalesLogix Contract Sync Entities\CalendarHistorySyncView\CalendarHistorySyncView.CALENDARHISTORYSYNCVIEW.entity.xml" />
+ <ref id="9bcc821a-6853-4cf2-8f2f-09ddd2645197" url="\Entity Model\SalesLogix Activity Support\History\History.HISTORY.entity.xml" />
+ <ref id="43e822fd-e62f-4227-917d-929fc3afa97e" url="\Entity Model\SalesLogix Contract Sync Entities\CalendarSyncView\Calendarsyncview.CALENDARSYNCVIEW.entity.xml" />
  <ref id="5d0faaba-cdd4-42a5-8562-fb8bffae0913" url="\Entity Model\SalesLogix Application Entities\Campaign\Campaign.CAMPAIGN.entity.xml" />
- <ref id="52552175-fd52-442f-a204-8257a8c52383" url="\Entity Model\SalesLogix Application Entities\MarketingServiceCampaign\MarketingServiceCampaign.MKTGSVC_CAMPAIGN.entity.xml" />
  <ref id="fd4a180f-fd05-41d7-85bf-b41ab66726e2" url="\Entity Model\SalesLogix Application Entities\CampaignProduct\CampaignProduct.CAMPAIGNPRODUCT.entity.xml" />
  <ref id="f7c5988f-bebd-4587-a735-c13fc919958d" url="\Entity Model\SalesLogix Application Entities\CampaignStage\CampaignStage.CAMPAIGNSTAGE.entity.xml" />
  <ref id="e7b217c7-5f8e-4b7b-a9b2-334fdf7c268a" url="\Entity Model\SalesLogix Application Entities\CampaignTarget\CampaignTarget.CAMPAIGNTARGET.entity.xml" />
  <ref id="aa715db7-90bb-4a68-928b-77c04f54c43b" url="\Entity Model\SalesLogix Application Entities\CampaignTask\CampaignTask.CAMPAIGNTASK.entity.xml" />
  <ref id="3ca20dc7-7da8-4be2-a3dc-e55142488994" url="\Entity Model\SalesLogix Application Entities\OpportunityCampaign\OpportunityCampaign.OPPORTUNITY_CAMPAIGN.entity.xml" />
  <ref id="de3bf24b-ada4-42f8-a17f-ca3f4bbddc7a" url="\Entity Model\SalesLogix Application Entities\TargetResponse\TargetResponse.TARGETRESPONSE.entity.xml" />
- <ref id="27f9e8e9-34d8-4eaf-8fd7-c70d133e6f90" url="\Entity Model\SalesLogix Application Entities\Lead\Lead.LEAD.entity.xml" />
+ <ref id="c1271ae3-23c2-463f-af6d-06730bb593cc" url="\Entity Model\SalesLogix Application Entities\CampaignTargetsView\CampaignTargetsView.CAMPAIGNTARGETSVIEW.entity.xml" />
  <ref id="3695fea1-51ed-4694-b06b-0a9d12e0eb18" url="\Entity Model\SalesLogix Application Entities\CommodityGroup\CommodityGroup.COMMODITYGROUP.entity.xml" />
- <ref id="482a6173-5ea2-4bae-8779-b3009c0d2cff" url="\Entity Model\SalesLogix Application Entities\OpportunityContact\OpportunityContact.OPPORTUNITY_CONTACT.entity.xml" />
+ <ref id="331316b6-25d3-408d-800b-0748bd51d632" url="\Entity Model\SalesLogix Application Entities\LeadCompetitor\LeadCompetitor.LEAD_COMPETITOR.entity.xml" />
  <ref id="f6d87855-19c1-4b30-8548-97f1b1b29e2c" url="\Entity Model\SalesLogix Application Entities\OpportunityCompetitor\OpportunityCompetitor.OPPORTUNITY_COMPETITOR.entity.xml" />
- <ref id="57c68abc-081a-4dd8-878d-bf1f51129739" url="\Entity Model\SalesLogix Contract Sync Entities\ContactSyncView\ContactSyncView.CONTACTSYNCVIEW.entity.xml" />
  <ref id="91a3d478-d0f5-4f47-9d34-3f2b5631518f" url="\Entity Model\SalesLogix Application Entities\ContactLeadSource\ContactLeadSource.CONTACT_LEADSOURCE.entity.xml" />
  <ref id="b7470603-7ee7-46e0-bba8-26c6d1f8522e" url="\Entity Model\SalesLogix Application Entities\ContactUser\ContactUser.CONTACTUSER.entity.xml" />
  <ref id="dc325abd-e993-433c-9f19-b94bc8b0bde3" url="\Entity Model\SalesLogix Application Entities\LitRequest\LitRequest.LITREQUEST.entity.xml" />
+ <ref id="482a6173-5ea2-4bae-8779-b3009c0d2cff" url="\Entity Model\SalesLogix Application Entities\OpportunityContact\OpportunityContact.OPPORTUNITY_CONTACT.entity.xml" />
+ <ref id="d0716606-fe05-446d-9478-124a4182f48d" url="\Entity Model\SalesLogix Application Entities\Process\Process.PROCESS.entity.xml" />
+ <ref id="57c68abc-081a-4dd8-878d-bf1f51129739" url="\Entity Model\SalesLogix Contract Sync Entities\ContactSyncView\ContactSyncView.CONTACTSYNCVIEW.entity.xml" />
  <ref id="a8593567-8463-4c3a-b434-e5e0bfee8d91" url="\Entity Model\SalesLogix Application Entities\ContractIncident\ContractIncident.CONTRACTINCIDENT.entity.xml" />
- <ref id="26c9bbe4-349e-4170-a059-e5159bac1087" url="\Entity Model\SalesLogix Application Entities\TicketActivity\TicketActivity.TICKETACTIVITY.entity.xml" />
- <ref id="0e2d50fe-a73c-4bff-89ce-200b9db8f974" url="\Entity Model\SalesLogix Application Entities\CustomSetting\CustomSetting.CUSTOMSETTINGS.entity.xml" />
+ <ref id="d0827b30-4d85-4547-b531-84ce0da302f6" url="\Entity Model\SalesLogix Application Entities\ContractItem\ContractItem.CONTRACTITEM.entity.xml" />
  <ref id="2654aa1f-f214-49c8-ad13-a794c33e5467" url="\Entity Model\SalesLogix Application Entities\DeDupJob\DeDupJob.DEDUPJOB.entity.xml" />
  <ref id="ed91ade9-d3d3-42a9-b2ca-bf7e6961e3c6" url="\Entity Model\SalesLogix Application Entities\DeDupResult\DeDupResult.DEDUPRESULT.entity.xml" />
  <ref id="aa22326e-6c3b-4a21-9518-0fb886e370d1" url="\Entity Model\SalesLogix Application Entities\Defect\Defect.DEFECT.entity.xml" />
@@ -94,28 +77,33 @@
  <ref id="15982e80-4d94-4b2e-9cb3-e98a1ce75e84" url="\Entity Model\SalesLogix Application Entities\DefectReturn\DefectReturn.DEFECTRMA.entity.xml" />
  <ref id="113f1bc1-2bc2-4b3f-9aa0-264eb54abb47" url="\Entity Model\SalesLogix Application Entities\DefectTicket\DefectTicket.DEFECTTICKET.entity.xml" />
  <ref id="8b286509-b6d2-4119-a899-d74b4f4532ab" url="\Entity Model\SalesLogix Application Entities\DefectActivityRate\DefectActivityRate.DEFECTACTIVITYRATE.entity.xml" />
+ <ref id="4fe76d57-fb94-43a9-b157-e3847515e677" url="\Entity Model\SalesLogix Security Support\Department\Department.DEPARTMENTVIEW.entity.xml" />
  <ref id="b1a3a9c7-1b4b-4409-bc72-6c1b31d20d8f" url="\Entity Model\SalesLogix Application Entities\ERPTradingAccount\ERPTradingAccount.Account.ERPTRADINGACCOUNT.entity.xml" />
+ <ref id="b81ddca6-fa9b-4d3a-bd62-afbb6e9ced58" url="\Entity Model\SalesLogix Activity Support\Event\Event.EVENT.entity.xml" />
+ <ref id="54152929-ecd1-4ed4-a5a7-b5be2e388b15" url="\Entity Model\SalesLogix Activity Support\HistoryAttendee\HistoryAttendee.HISTORYATTENDEE.entity.xml" />
  <ref id="5e1ac32c-a53b-4f3c-8306-695b7a17a10c" url="\Entity Model\SalesLogix Application Entities\ImportHistory\ImportHistory.IMPORTHISTORY.entity.xml" />
  <ref id="a50f4760-06c4-4bc6-9a33-52cce10afab9" url="\Entity Model\SalesLogix Application Entities\ImportHistoryItem\ImportHistoryItem.IMPORTHISTORYITEM.entity.xml" />
  <ref id="bdd54480-c82d-4af6-b415-aa3b451cda36" url="\Entity Model\SalesLogix Application Entities\ImportTemplate\ImportTemplate.IMPORTTEMPLATE.entity.xml" />
- <ref id="adf00b51-fc3f-4c3b-8342-2709f8d61981" url="\Entity Model\SalesLogix Application Entities\OAuthProvider\OAuthProvider.OAUTHPROVIDER.entity.xml" />
+ <ref id="93b0bab9-1939-4803-959a-a7ac7354dd42" url="\Entity Model\Saleslogix Speedsearch Support\IndexDefinition\IndexDefinition.INDEXDEFINITION.entity.xml" />
+ <ref id="7622e871-34ad-486e-9036-d60e5986ee65" url="\Entity Model\Saleslogix Speedsearch Support\IndexSchedule\IndexSchedule.INDEXSCHEDULE.entity.xml" />
  <ref id="8820d186-4bad-4423-9349-b5b1ceb3972b" url="\Entity Model\SalesLogix Application Entities\Integration\Integration.INTEGRATION.entity.xml" />
  <ref id="c3da6eab-355a-4c97-9f1c-7b5fbfd973d3" url="\Entity Model\SalesLogix Application Entities\IntegrationResource\IntegrationResource.INTEGRATIONRESOURCE.entity.xml" />
  <ref id="f20cb75d-032b-46b4-a54c-970697216936" url="\Entity Model\SalesLogix Contract Sync Entities\SyncJob\SyncJob.SYNCJOB.entity.xml" />
- <ref id="a040c483-7518-4580-a64e-b2c8b2a89de3" url="\Entity Model\SalesLogix Security Support\UserIntegrationMap\UserIntegrationMap.USERINTEGRATIONMAP.entity.xml" />
- <ref id="4a923e9f-fa48-44cc-bd8e-d7dbb78bee13" url="\Entity Model\SalesLogix Contract Sync Entities\UserIntegrationsView\Userintegrationsview.USERINTEGRATIONSVIEW.entity.xml" />
- <ref id="de080066-74a1-4fb0-bf26-79111871df20" url="\Entity Model\SalesLogix Application Entities\LeadQualification\LeadQualification.LEAD_QUALIFICATION.entity.xml" />
- <ref id="5624a89c-99b6-4d4e-9cc0-4ce51516f388" url="\Entity Model\SalesLogix Contract Sync Entities\LeadSyncView\LeadSyncView.LEADSYNCVIEW.entity.xml" />
+ <ref id="27f9e8e9-34d8-4eaf-8fd7-c70d133e6f90" url="\Entity Model\SalesLogix Application Entities\Lead\Lead.LEAD.entity.xml" />
  <ref id="d04fae2a-8f91-4499-9723-bbb02baf3aec" url="\Entity Model\SalesLogix Application Entities\LeadAddress\LeadAddress.LEAD_ADDRESS.entity.xml" />
+ <ref id="0cb362b1-a3ee-4806-86c3-a8f2873c3766" url="\Entity Model\SalesLogix Application Entities\LeadProduct\LeadProduct.LEAD_PRODUCT.entity.xml" />
  <ref id="df595eb4-8ba8-4a2d-98c0-295b32424fe5" url="\Entity Model\SalesLogix Application Entities\QualificationCategory\QualificationCategory.QUALIFICATION_CATEGORY.entity.xml" />
- <ref id="27ff0d90-5d22-4bfd-938c-ed52c41e2de1" url="\Entity Model\SalesLogix Application Entities\LeadHistory\LeadHistory.HIST_LEAD.entity.xml" />
  <ref id="0d73102a-a071-4e70-9902-0faa61933b23" url="\Entity Model\SalesLogix Application Entities\LeadAddressHistory\LeadAddressHistory.HIST_LEAD_ADDRESS.entity.xml" />
+ <ref id="27ff0d90-5d22-4bfd-938c-ed52c41e2de1" url="\Entity Model\SalesLogix Application Entities\LeadHistory\LeadHistory.HIST_LEAD.entity.xml" />
  <ref id="c3da3d4f-ba86-4d78-ae8c-47736ee3ad40" url="\Entity Model\SalesLogix Application Entities\LeadImportMap\LeadImportMap.LEAD_IMPORTMAP.entity.xml" />
+ <ref id="de080066-74a1-4fb0-bf26-79111871df20" url="\Entity Model\SalesLogix Application Entities\LeadQualification\LeadQualification.LEAD_QUALIFICATION.entity.xml" />
  <ref id="4bcd0fa5-784c-4973-a442-6d0a7f43988a" url="\Entity Model\SalesLogix Application Entities\Qualification\Qualification.QUALIFICATION.entity.xml" />
+ <ref id="5624a89c-99b6-4d4e-9cc0-4ce51516f388" url="\Entity Model\SalesLogix Contract Sync Entities\LeadSyncView\LeadSyncView.LEADSYNCVIEW.entity.xml" />
  <ref id="2e10fb78-456e-4488-af6a-4a4a3072cc6f" url="\Entity Model\SalesLogix Application Entities\LIBRARYDIRS\LibraryDirs.LIBRARYDIRS.entity.xml" />
  <ref id="97f4cf7c-7074-4f7d-94ae-f1fdc06b5b38" url="\Entity Model\SalesLogix Application Entities\LIBRARYDOCS\LibraryDocs.LIBRARYDOCS.entity.xml" />
  <ref id="2a1b2551-8ecf-4950-b748-ec1f427ce833" url="\Entity Model\SalesLogix Application Entities\LiteratureItem\LiteratureItem.LITERATURE.entity.xml" />
  <ref id="8556c77c-14da-4b12-958b-99ce4670a273" url="\Entity Model\SalesLogix Application Entities\LitRequestItem\LitRequestItem.LITREQUESTITEM.entity.xml" />
+ <ref id="52552175-fd52-442f-a204-8257a8c52383" url="\Entity Model\SalesLogix Application Entities\MarketingServiceCampaign\MarketingServiceCampaign.MKTGSVC_CAMPAIGN.entity.xml" />
  <ref id="0f7b1686-d913-4e61-9a9f-f19482c57d11" url="\Entity Model\SalesLogix Application Entities\MarketingServiceRecipient\MarketingServiceRecipient.MKTGSVC_RECIPIENT.entity.xml" />
  <ref id="d2a2c8f6-0d26-406f-9542-05d7d23b2b09" url="\Entity Model\SalesLogix Application Entities\MarketingServiceClick\MarketingServiceClick.MKTGSVC_CLICK.entity.xml" />
  <ref id="87e14311-0255-451d-ac9d-b3a40c278dad" url="\Entity Model\SalesLogix Application Entities\MarketingServiceOpen\MarketingServiceOpen.MKTGSVC_OPEN.entity.xml" />
@@ -125,52 +113,74 @@
  <ref id="2514d945-9177-4ae9-a028-5f17fdd81b86" url="\Entity Model\SalesLogix Security Support\UserOAuthToken\UserOAuthToken.USER_OAUTHTOKEN.entity.xml" />
  <ref id="2d4939b6-3500-4e99-8e21-f3a545f26841" url="\Entity Model\SalesLogix Application Entities\OpportunityProduct\OpportunityProduct.OPPORTUNITY_PRODUCT.entity.xml" />
  <ref id="7740d003-6202-4158-a96e-eb93dfa0493b" url="\Entity Model\SalesLogix Application Entities\SlxPriceList\SlxPriceList.SLXPRICELIST.entity.xml" />
- <ref id="897f4970-c7f6-4667-9dd3-dfb814b03f3a" url="\Entity Model\SalesLogix Application Entities\SalesOrderItem\SalesOrderItem.SALESORDERITEMS.entity.xml" />
+ <ref id="0e2d50fe-a73c-4bff-89ce-200b9db8f974" url="\Entity Model\SalesLogix Application Entities\CustomSetting\CustomSetting.CUSTOMSETTINGS.entity.xml" />
+ <ref id="0ade5197-07ac-498b-8b31-1fe657763b21" url="\Entity Model\SalesLogix Security Support\OwnerJoin\OwnerJoin.SECCODEJOINS.entity.xml" />
+ <ref id="173d43d2-7c2c-4912-995e-28dfc15116f5" url="\Entity Model\SalesLogix Security Support\OwnerRights\OwnerRights.SECRIGHTS.entity.xml" />
+ <ref id="cfab47d2-422c-4440-b7ea-acfb24da0366" url="\Entity Model\SalesLogix Security Support\OwnerView\OwnerView.OwnerView.entity.xml" />
+ <ref id="f8645454-faf3-464c-96ac-d9b1aabadf27" url="\Entity Model\SalesLogix Application Entities\ReportFilter\ReportFilter.REPORTFILTER.entity.xml" />
+ <ref id="9cb793c9-e9ad-4be8-ab9a-f71250a8762b" url="\Entity Model\SalesLogix Security Support\OwnerSecurityProfile\OwnerSecurityProfile.SECPROFILE.entity.xml" />
  <ref id="6f9148e9-0136-4049-921b-559bcf353d63" url="\Entity Model\SalesLogix Application Entities\Package\Package.PACKAGES.entity.xml" />
  <ref id="4f851356-bcdf-4c85-9a11-8b0741b87f28" url="\Entity Model\SalesLogix Application Entities\PACKAGEPRODUCT\PackageProduct.PACKAGEPRODUCT.entity.xml" />
- <ref id="b2841113-73b1-43b7-a08b-d41b4306b8c0" url="\Entity Model\SalesLogix Application Entities\ProdPackageKitView\ProdPackageKitView.PRODPACKAGEKITVIEW.entity.xml" />
- <ref id="3d6d7b2a-cc8a-49e5-b5a7-3a0019983736" url="\Entity Model\SalesLogix Application Entities\PackageKitChildView\PackageKitChildView.PACKAGEKITCHILDVIEW.entity.xml" />
  <ref id="2164532d-3714-403c-90ca-7ab07027b8fd" url="\Entity Model\SalesLogix Application Entities\PickListView\PickListView.PICKLISTVIEW.entity.xml" />
  <ref id="29a128f1-1c00-4da7-8ed4-3e2345627c6d" url="\Entity Model\SalesLogix Application Entities\PickListItemView\PickListItemView.PICKLISTITEMVIEW.entity.xml" />
- <ref id="5266b978-0645-46cb-953c-f4e5280fbf65" url="\Entity Model\SalesLogix Application Entities\ResponseProduct\ResponseProduct.RESPONSEPRODUCT.entity.xml" />
+ <ref id="bf113863-d964-49a8-8945-aae2fc2f55df" url="\Entity Model\Process Orchestration Support\ProcessInstanceStatus\ProcessInstanceStatus.PROCESSINSTANCESTATUS.entity.xml" />
+ <ref id="53e4d1fa-4504-4c5a-8134-88bcb3803e6b" url="\Entity Model\Process Orchestration Support\ProcessTrackingEvent\ProcessTrackingEvent.PROCESSTRACKINGEVENT.entity.xml" />
+ <ref id="9d7adc23-181f-4fa9-a5ef-d891f2187a6c" url="\Entity Model\Process Orchestration Support\ProcessTypeInformation\ProcessTypeInformation.PROCESSTYPEINFO.entity.xml" />
+ <ref id="e62b726e-2a37-4e31-b939-7f2f45abc6ee" url="\Entity Model\Process Orchestration Support\UserTrackingEvent\UserTrackingEvent.USERTRACKINGEVENT.entity.xml" />
+ <ref id="9575e258-7546-413e-bf98-5fde52126ec4" url="\Entity Model\Process Orchestration Support\ProcessTrackingEventAnnotation\ProcessTrackingEventAnnotation.PROCESSTRAKNGEVTANTN.entity.xml" />
+ <ref id="2ad06efa-febf-4a6d-a63d-096c6d86dd28" url="\Entity Model\Process Orchestration Support\ProcessTypeCategory\ProcessTypeCategory.PROCESSTYPECATEGORY.entity.xml" />
+ <ref id="b2841113-73b1-43b7-a08b-d41b4306b8c0" url="\Entity Model\SalesLogix Application Entities\ProdPackageKitView\ProdPackageKitView.PRODPACKAGEKITVIEW.entity.xml" />
+ <ref id="3d6d7b2a-cc8a-49e5-b5a7-3a0019983736" url="\Entity Model\SalesLogix Application Entities\PackageKitChildView\PackageKitChildView.PACKAGEKITCHILDVIEW.entity.xml" />
  <ref id="9e3a238d-de5e-4dc1-a594-57ecf0992464" url="\Entity Model\SalesLogix Application Entities\ProductProgram\ProductProgram.PRODUCTPROGRAM.entity.xml" />
+ <ref id="897f4970-c7f6-4667-9dd3-dfb814b03f3a" url="\Entity Model\SalesLogix Application Entities\SalesOrderItem\SalesOrderItem.SALESORDERITEMS.entity.xml" />
  <ref id="9cf9ff38-f546-417f-b990-79d1c13c011f" url="\Entity Model\SalesLogix Application Entities\SlxPrice\SlxPrice.SLXPRICE.entity.xml" />
  <ref id="5e51ed72-6e45-4a81-b19d-9cceb421882d" url="\Entity Model\SalesLogix Application Entities\UnitOfMeasure\UnitOfMeasure.UNITOFMEASURE.entity.xml" />
- <ref id="f8645454-faf3-464c-96ac-d9b1aabadf27" url="\Entity Model\SalesLogix Application Entities\ReportFilter\ReportFilter.REPORTFILTER.entity.xml" />
+ <ref id="9879ba21-abeb-4428-946a-2ee671cd851c" url="\Entity Model\SalesLogix Activity Support\ReportHistory\ReportHistory.REPORTHISTORY.entity.xml" />
+ <ref id="c3159cd5-daa2-4c23-b235-facc572f59f1" url="\Entity Model\SalesLogix Activity Support\ResourceList\ResourceList.RESOURCELIST.entity.xml" />
+ <ref id="5266b978-0645-46cb-953c-f4e5280fbf65" url="\Entity Model\SalesLogix Application Entities\ResponseProduct\ResponseProduct.RESPONSEPRODUCT.entity.xml" />
  <ref id="68ffa945-ea88-4b6f-baab-d54de3d5811a" url="\Entity Model\SalesLogix Application Entities\ReturnAddress\ReturnAddress.RMAADDRESS.entity.xml" />
- <ref id="761957aa-0745-4897-b924-219a1e36b313" url="\Entity Model\SalesLogix Contract Sync Entities\SalesOrderSyncView\SalesOrderSyncView.SALESORDERSYNCVIEW.entity.xml" />
- <ref id="5b719ba4-e4a9-43ed-bb63-b550b2395bdb" url="\Entity Model\SalesLogix Contract Sync Entities\SalesQuotationSyncView\SalesQuotationSyncView.SALESQUOTATIONSYNCVIEW.entity.xml" />
+ <ref id="32045fed-af25-4533-9819-43a9f3a7786e" url="\Entity Model\SalesLogix Application Entities\ReturnReceivedProduct\ReturnReceivedProduct.RMARECEIVEDPRODUCT.entity.xml" />
+ <ref id="8d7c19c8-d278-48d1-9771-b71528157efc" url="\Entity Model\SalesLogix Application Entities\ReturnShippedProduct\ReturnShippedProduct.RMASHIPPEDPRODUCT.entity.xml" />
+ <ref id="4e566442-7012-4c35-818c-8407c6e44292" url="\Entity Model\SalesLogix Security Support\Role\Role.ROLE.entity.xml" />
+ <ref id="55de656c-5c7c-444b-ad38-9eb78d6fbb65" url="\Entity Model\SalesLogix Security Support\SecuredActionRole\SecuredActionRole.SECUREDACTIONROLE.entity.xml" />
+ <ref id="33cbdc6d-d410-4921-a44b-6aece735d9bb" url="\Entity Model\SalesLogix Security Support\UserRole\UserRole.USERROLE.entity.xml" />
  <ref id="ac541bcf-9889-4c0e-a23c-dac649648f52" url="\Entity Model\SalesLogix Application Entities\SlxLocation\SlxLocation.SLXLOCATION.entity.xml" />
+ <ref id="761957aa-0745-4897-b924-219a1e36b313" url="\Entity Model\SalesLogix Contract Sync Entities\SalesOrderSyncView\SalesOrderSyncView.SALESORDERSYNCVIEW.entity.xml" />
  <ref id="869e93a3-1bb8-4c68-bdf8-b439e6e64a36" url="\Entity Model\SalesLogix Application Entities\SalesProcesses\SalesProcesses.SALESPROCESSES.entity.xml" />
  <ref id="747376db-b6b7-4d74-9f52-a22b6212585e" url="\Entity Model\SalesLogix Application Entities\SalesProcessAudit\SalesProcessAudit.SALESPROCESSAUDIT.entity.xml" />
+ <ref id="5b719ba4-e4a9-43ed-bb63-b550b2395bdb" url="\Entity Model\SalesLogix Contract Sync Entities\SalesQuotationSyncView\SalesQuotationSyncView.SALESQUOTATIONSYNCVIEW.entity.xml" />
+ <ref id="966ff145-060a-4106-8e87-1bd5057ee443" url="\Entity Model\SalesLogix Security Support\SecuredAction\SecuredAction.SECUREDACTION.entity.xml" />
+ <ref id="5f254e84-b245-4a12-901f-0dd6ffeb9bb1" url="\Entity Model\SalesLogix Contract Sync Entities\SlxLogItem\SlxLogItem.SLXLOGITEM.entity.xml" />
+ <ref id="161d0848-1e04-4d84-b942-65cd2d59bac2" url="\Entity Model\SalesLogix Contract Sync Entities\SyncStatus\SyncStatus.SYNCSTATUS.entity.xml" />
+ <ref id="b5eb4143-3e25-4fd5-b768-0fe36d21f0e5" url="\Entity Model\SalesLogix Contract Sync Entities\TaskSyncView\Tasksyncview.TASKSYNCVIEW.entity.xml" />
+ <ref id="52274bf8-ab84-4e5a-a5d2-5b26e20544a7" url="\Entity Model\SalesLogix Security Support\Team\Team.TEAMVIEW.entity.xml" />
+ <ref id="56bc8e84-d46b-4bcc-b743-f62fea8c09fd" url="\Entity Model\SalesLogix Application Entities\TicketAccountProduct\TicketAccountProduct.TICKETACCOUNTPRODUCT.entity.xml" />
+ <ref id="26c9bbe4-349e-4170-a059-e5159bac1087" url="\Entity Model\SalesLogix Application Entities\TicketActivity\TicketActivity.TICKETACTIVITY.entity.xml" />
  <ref id="2e7b3afd-ef42-44c8-ab74-8b551123921a" url="\Entity Model\SalesLogix Application Entities\TicketHistory\TicketHistory.TICKETHISTORY.entity.xml" />
  <ref id="62976b25-f30d-41a8-9875-b85e46b7c484" url="\Entity Model\SalesLogix Application Entities\Urgency\Urgency.URGENCY.entity.xml" />
+ <ref id="1f836363-c3ec-4ef6-85b6-126bf71aba79" url="\Entity Model\SalesLogix Application Entities\TicketActivityItem\TicketActivityItem.TICKETACTIVITYITEM.entity.xml" />
  <ref id="6497ba9d-a736-4102-aefc-410a5b60abce" url="\Entity Model\SalesLogix Application Entities\TicketActivityRate\TicketActivityRate.TICKETACTIVITYRATE.entity.xml" />
  <ref id="d8112847-3cd6-41ab-ba0a-8a8056a31137" url="\Entity Model\SalesLogix Application Entities\TicketAreaOwner\TicketAreaOwner.TICKETAREAOWNER.entity.xml" />
  <ref id="17a47b77-45ae-4eae-866f-fb518a2f045d" url="\Entity Model\SalesLogix Application Entities\TicketProblemType\TicketProblemType.TICKETPROBLEMTYPE.entity.xml" />
  <ref id="0e68aab1-4727-4365-b1bb-fdb117bf841d" url="\Entity Model\SalesLogix Application Entities\TicketProblemSolutionType\TicketProblemSolutionType.TICKETPROBLEMSOLUTIONTYPE.entity.xml" />
  <ref id="cdac4ef1-ee99-41e8-95ed-1dd5e6b3258e" url="\Entity Model\SalesLogix Application Entities\TicketSolutionType\TicketSolutionType.TICKETSOLUTIONTYPE.entity.xml" />
+ <ref id="a7752f54-e7a9-4f72-a91a-9766f94904eb" url="\Entity Model\SalesLogix Activity Support\UserCalendar\UserCalendar.USERCALENDAR.entity.xml" />
+ <ref id="62b605e3-3927-491a-9ed7-9be049d50a13" url="\Entity Model\SalesLogix Security Support\UserInfo\UserInfo.User.USERINFO.entity.xml" />
  <ref id="40385366-5849-41c2-8c7d-ac37e5b59433" url="\Entity Model\SalesLogix Application Entities\UserSubscription\UserSubscription.USERSUBSCRIPTION.entity.xml" />
- <ref id="68679c23-5e3a-4e22-95bd-ce052b1b4c91" url="\Entity Model\Saleslogix Contract Sync Entities\SyncResult\GetResultInfo.method.xml" />
- <ref id="3849fe99-3ee0-49f5-84ab-b6f716219687" url="\Entity Model\SalesLogix Contract Sync Entities\SyncDigest\SyncDigest.SYNCDIGEST.entity.xml" />
- <ref id="09eff415-442d-4c04-b291-9791b3398757" url="\Entity Model\SalesLogix Contract Sync Entities\SyncResult\SyncResult.SYNCRESULT.entity.xml" />
- <ref id="5f254e84-b245-4a12-901f-0dd6ffeb9bb1" url="\Entity Model\SalesLogix Contract Sync Entities\SlxLogItem\SlxLogItem.SLXLOGITEM.entity.xml" />
- <ref id="161d0848-1e04-4d84-b942-65cd2d59bac2" url="\Entity Model\SalesLogix Contract Sync Entities\SyncStatus\SyncStatus.SYNCSTATUS.entity.xml" />
- <ref id="4fe76d57-fb94-43a9-b157-e3847515e677" url="\Entity Model\SalesLogix Security Support\Department\Department.DEPARTMENTVIEW.entity.xml" />
- <ref id="52274bf8-ab84-4e5a-a5d2-5b26e20544a7" url="\Entity Model\SalesLogix Security Support\Team\Team.TEAMVIEW.entity.xml" />
- <ref id="0ade5197-07ac-498b-8b31-1fe657763b21" url="\Entity Model\SalesLogix Security Support\OwnerJoin\OwnerJoin.SECCODEJOINS.entity.xml" />
- <ref id="173d43d2-7c2c-4912-995e-28dfc15116f5" url="\Entity Model\SalesLogix Security Support\OwnerRights\OwnerRights.SECRIGHTS.entity.xml" />
- <ref id="cfab47d2-422c-4440-b7ea-acfb24da0366" url="\Entity Model\SalesLogix Security Support\OwnerView\OwnerView.OwnerView.entity.xml" />
- <ref id="9cb793c9-e9ad-4be8-ab9a-f71250a8762b" url="\Entity Model\SalesLogix Security Support\OwnerSecurityProfile\OwnerSecurityProfile.SECPROFILE.entity.xml" />
- <ref id="4e566442-7012-4c35-818c-8407c6e44292" url="\Entity Model\SalesLogix Security Support\Role\Role.ROLE.entity.xml" />
- <ref id="55de656c-5c7c-444b-ad38-9eb78d6fbb65" url="\Entity Model\SalesLogix Security Support\SecuredActionRole\SecuredActionRole.SECUREDACTIONROLE.entity.xml" />
- <ref id="33cbdc6d-d410-4921-a44b-6aece735d9bb" url="\Entity Model\SalesLogix Security Support\UserRole\UserRole.USERROLE.entity.xml" />
- <ref id="966ff145-060a-4106-8e87-1bd5057ee443" url="\Entity Model\SalesLogix Security Support\SecuredAction\SecuredAction.SECUREDACTION.entity.xml" />
- <ref id="93b0bab9-1939-4803-959a-a7ac7354dd42" url="\Entity Model\Saleslogix Speedsearch Support\IndexDefinition\IndexDefinition.INDEXDEFINITION.entity.xml" />
- <ref id="7622e871-34ad-486e-9036-d60e5986ee65" url="\Entity Model\Saleslogix Speedsearch Support\IndexSchedule\IndexSchedule.INDEXSCHEDULE.entity.xml" />
+ <ref id="59c6cb61-1bc8-4386-916e-aa0aab0c76ab" url="\Entity Model\Process Orchestration Support\UserTrackingEventAnnotation\UserTrackingEventAnnotation.USERTRAKNGEVTANTN.entity.xml" />
+ <ref id="44724ec0-9059-4c69-af41-dfc77865028b" url="\Entity Model\Process Orchestration Support\UserTrackingEvtExt\UserTrackingEvtExt.USERTRACKINGEVTEXT.entity.xml" />
+ <ref id="5e8b7df7-0ec3-46b3-b8f4-f7bde7d5a6a3" url="\Entity Model\CodeTemplates\Entity\Default-Interface-Saleslogix.Interface.codetemplate.xml" />
+ <ref id="4040a9aa-f9bf-4204-83d8-d5eb4da3e475" url="\Entity Model\CodeTemplates\Entity\Default-Class-Saleslogix.Class.codetemplate.xml" />
+ <ref id="b9ab7051-97ec-4b2d-9932-77ac29099ac7" url="\Entity Model\CodeTemplates\Entity\Default-Mapping-Saleslogix.Mapping.codetemplate.xml" />
+ <ref id="7067c649-cd9a-4498-9e87-c5851ae8a8b3" url="\Entity Model\CodeTemplates\Entity\Default-ResXClass-Saleslogix.ResXClass.codetemplate.xml" />
+ <ref id="99be1b14-a8f6-4b61-8d33-b5f7592b011b" url="\Entity Model\CodeTemplates\Entity\Default-ResX-Saleslogix.ResX.codetemplate.xml" />
  <ref id="034f6eb9-bf8c-4810-9bd5-ed8f173f7ee9" url="\Entity Model\CodeTemplates\Entity\Default-FormInterface-Saleslogix.FormInterface.codetemplate.xml" />
  <ref id="fec2d427-f1cd-4018-96b7-c0529fb3add9" url="\Entity Model\Saleslogix Application Entities\Competitor\QuickForms\CompetitorDetails.OnLoad.method.xml" />
  <ref id="fa4891bf-deaa-44ac-8374-ba4c41938e82" url="\Entity Model\Saleslogix Application Entities\Contact\QuickForms\QuickInsertAccountContact.btnOK_OnClick.method.xml" />
+ <ref id="229bd34a-6cd1-4e8e-9256-d7caae1c4d7c" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadCompetitors.lueLeadCompetitor_OnChange.method.xml" />
+ <ref id="d096a3d3-98d2-49cd-b142-f8f163942182" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadCompetitors_Insert.lueLeadCompetitor_OnChange.method.xml" />
+ <ref id="ace0dd84-7c90-401a-9662-228074a8b49a" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadProducts_Details.lueLeadProduct_OnChange.method.xml" />
+ <ref id="19470d2f-73c2-423b-86fe-33435d356d85" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadProducts_Insert.lueLeadProduct_OnChange.method.xml" />
  <ref id="f338b2fd-1aff-4f95-8556-c58156017f56" url="\Entity Model\Saleslogix Application Entities\LeadSource\QuickForms\LeadSourceDetails.OnLoad1.method.xml" />
  <ref id="5665d686-fdcd-4199-8dc9-db88b1d84250" url="\Entity Model\Saleslogix Application Entities\LiteratureItem\QuickForms\InsertLiteratureItem.OnLoad1.method.xml" />
  <ref id="d2f80012-6a4c-4b1c-9d8a-a05b1eebf76f" url="\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\EditSalesPotential.chkbxOverrideSalesPotential_OnChange.method.xml" />
@@ -235,8 +245,6 @@
  <ref id="b54690dc-ff4e-4384-8c2e-64a1eae7eccf" url="\Entity Model\Saleslogix Security Support\User\QuickForms\UserServiceAndSupport.OnLoad.method.xml" />
  <ref id="2ab7f73d-fcae-4aa9-96dc-a0a4881aaeb8" url="\Entity Model\Saleslogix Security Support\User\QuickForms\UserTeamMembers.lueAddUser_OnChange.method.xml" />
  <ref id="ca21b5a0-fc3f-411b-9b2b-e10a2cdb9ec0" url="\Entity Model\Saleslogix Security Support\User\QuickForms\UserTeamMembership.lueAddMember_OnChange.method.xml" />
- <ref id="b9ab7051-97ec-4b2d-9932-77ac29099ac7" url="\Entity Model\CodeTemplates\Entity\Default-Mapping-Saleslogix.Mapping.codetemplate.xml" />
- <ref id="4040a9aa-f9bf-4204-83d8-d5eb4da3e475" url="\Entity Model\CodeTemplates\Entity\Default-Class-Saleslogix.Class.codetemplate.xml" />
  <ref id="ba1998d8-7c23-49ff-9b9b-475f69bec88a" url="\Entity Model\Process Orchestration Support\ActivityTrackingEvent\OnAfterInsert.method.xml" />
  <ref id="6631d453-1689-4eff-81be-d22212fe40f5" url="\Entity Model\Process Orchestration Support\ActivityTrackingEvent\OnAfterUpdate.method.xml" />
  <ref id="0fa54850-ce2f-45f0-85b6-9a010f7f0656" url="\Entity Model\Process Orchestration Support\ActivityTrackingEvent\OnAfterDelete.method.xml" />
@@ -803,6 +811,13 @@
  <ref id="b48cc1f9-3511-4b93-bfa4-75834c288c0e" url="\Entity Model\Saleslogix Application Entities\LeadAddressHistory\OnCreate.method.xml" />
  <ref id="10f466e3-07b0-4bf6-b58a-aff884857add" url="\Entity Model\Saleslogix Application Entities\LeadAddressHistory\OnBeforeDelete.method.xml" />
  <ref id="f82a7266-f314-4eec-9e13-1e7222a3fb3e" url="\Entity Model\Saleslogix Application Entities\LeadAddressHistory\OnBeforeInsert.method.xml" />
+ <ref id="6ebe9c96-4496-4b0e-8ed6-0aa49aeffba6" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnAfterInsert.method.xml" />
+ <ref id="09b29cdc-d4c9-4ab0-b103-fdeb90bac6d9" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnAfterUpdate.method.xml" />
+ <ref id="aedac3a8-c350-4846-a064-e3fe99d9596a" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnAfterDelete.method.xml" />
+ <ref id="47fad312-ff2f-4584-9a1d-a5fc2579813e" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnBeforeUpdate.method.xml" />
+ <ref id="1adb85f6-1fa6-451c-9238-6fe0c7374aa7" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnCreate.method.xml" />
+ <ref id="b165890b-0205-4862-a0cf-d8f271c0ea16" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnBeforeDelete.method.xml" />
+ <ref id="f2e0b896-772b-4dc5-9ca5-bf23b5b85776" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnBeforeInsert.method.xml" />
  <ref id="b11c0828-9d77-4844-beed-a96f9a38ac0a" url="\Entity Model\Saleslogix Application Entities\LeadHistory\OnAfterInsert.method.xml" />
  <ref id="048e5365-f895-4378-a58a-0bd6b4f8b9d5" url="\Entity Model\Saleslogix Application Entities\LeadHistory\OnAfterUpdate.method.xml" />
  <ref id="41b098bc-96f0-4625-9faa-e53cabd02c4c" url="\Entity Model\Saleslogix Application Entities\LeadHistory\OnAfterDelete.method.xml" />
@@ -838,6 +853,13 @@
  <ref id="0edc827f-888f-45c3-b095-31e409b5fc77" url="\Entity Model\Saleslogix Application Entities\LeadImportMap\OnCreate.method.xml" />
  <ref id="41a22094-41f4-4de5-8457-ed0a6961c62b" url="\Entity Model\Saleslogix Application Entities\LeadImportMap\OnBeforeDelete.method.xml" />
  <ref id="1c6ca2ab-3e08-468c-9bb0-a5cd89e6d905" url="\Entity Model\Saleslogix Application Entities\LeadImportMap\OnBeforeInsert.method.xml" />
+ <ref id="3955d461-671d-4762-b866-12a1af3ebecd" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterInsert.method.xml" />
+ <ref id="cd4c74b9-2df9-42b1-be79-8cc94a00be6a" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterUpdate.method.xml" />
+ <ref id="cebbed42-b67c-4e38-b2ed-2b7aca30bbec" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterDelete.method.xml" />
+ <ref id="a649265a-06b8-4350-a7e8-6b9fbbcce7aa" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeUpdate.method.xml" />
+ <ref id="f1c46674-8602-4098-a089-7af9f728d85c" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnCreate.method.xml" />
+ <ref id="bc550f5e-436a-4df7-a6da-8a0aa52497c6" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeDelete.method.xml" />
+ <ref id="d3d40b38-0162-4e0d-a5f0-99cfcf3ca972" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeInsert.method.xml" />
  <ref id="f6663ec2-dc24-443a-ac96-0086ac901959" url="\Entity Model\Saleslogix Application Entities\LeadQualification\OnAfterInsert.method.xml" />
  <ref id="df5e2b93-0233-4cc5-bc6b-1ffaebcd075c" url="\Entity Model\Saleslogix Application Entities\LeadQualification\OnAfterUpdate.method.xml" />
  <ref id="92906e52-ab6a-417f-85a5-b0ade900adbd" url="\Entity Model\Saleslogix Application Entities\LeadQualification\OnAfterDelete.method.xml" />
@@ -1063,6 +1085,13 @@
  <ref id="f8cce682-bc22-4e25-90e2-17dccc11a769" url="\Entity Model\Saleslogix Application Entities\QualificationCategory\OnCreate.method.xml" />
  <ref id="522dd175-a953-4ea5-9c2e-bc2d83187bf3" url="\Entity Model\Saleslogix Application Entities\QualificationCategory\OnBeforeDelete.method.xml" />
  <ref id="8f9ebba0-4835-4c83-a13c-9666ca003745" url="\Entity Model\Saleslogix Application Entities\QualificationCategory\OnBeforeInsert.method.xml" />
+ <ref id="4bf23734-6e7f-44be-a079-6d579c5a5082" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnAfterInsert.method.xml" />
+ <ref id="f09bc021-38b7-4c43-8d25-6ba90377abc4" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnAfterUpdate.method.xml" />
+ <ref id="dd1d8585-b08f-48df-8b30-6177f30c74ad" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnAfterDelete.method.xml" />
+ <ref id="3b369ead-ccaf-4674-bbcb-195501a081fd" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnBeforeUpdate.method.xml" />
+ <ref id="da569393-2947-4675-992e-1729ae8ee91f" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnCreate.method.xml" />
+ <ref id="9b9102da-a1bd-4a47-a4b6-cae9af9337f4" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnBeforeDelete.method.xml" />
+ <ref id="33138a49-3802-420d-b40a-637cb49a46ec" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnBeforeInsert.method.xml" />
  <ref id="e1d554ca-3b11-487b-8075-63af5d137f8b" url="\Entity Model\Saleslogix Application Entities\RemoteAttachment\OnAfterInsert.method.xml" />
  <ref id="9c3207f5-61ee-4e71-91f8-6381c0f8e3c4" url="\Entity Model\Saleslogix Application Entities\RemoteAttachment\OnAfterUpdate.method.xml" />
  <ref id="396afd6a-89ba-4614-9d23-3129157070b1" url="\Entity Model\Saleslogix Application Entities\RemoteAttachment\OnAfterDelete.method.xml" />
@@ -1298,6 +1327,27 @@
  <ref id="a9209544-92a7-47af-a019-05f5ea1a0ef0" url="\Entity Model\Saleslogix Application Entities\UserSubscription\OnCreate.method.xml" />
  <ref id="0d1ac7cc-1531-41b2-abd6-c2ae8423bf0a" url="\Entity Model\Saleslogix Application Entities\UserSubscription\OnBeforeDelete.method.xml" />
  <ref id="a839319c-a63d-4e03-9594-a75cb3f13cf4" url="\Entity Model\Saleslogix Application Entities\UserSubscription\OnBeforeInsert.method.xml" />
+ <ref id="a013d0c7-5b6c-4ee2-a237-090950b8d40d" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnAfterInsert.method.xml" />
+ <ref id="ca926004-5c2b-48f8-90fc-9017a6bda197" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnAfterUpdate.method.xml" />
+ <ref id="7027e85d-3599-4cfb-92c5-2292fb777c0e" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnAfterDelete.method.xml" />
+ <ref id="1cb9ef9a-cb77-44cb-a2da-bf60b621b668" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnBeforeUpdate.method.xml" />
+ <ref id="d6dae40c-55e0-4da9-a646-842a4c21a65d" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnCreate.method.xml" />
+ <ref id="b4a228a4-476c-4e93-b8ac-31c6e14a56b3" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnBeforeDelete.method.xml" />
+ <ref id="04e348cb-4a12-4c35-9c42-505f3fc04800" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnBeforeInsert.method.xml" />
+ <ref id="e34dd2ca-50a5-4f65-8682-2b5dbe46d2c7" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnAfterInsert.method.xml" />
+ <ref id="8cceaa60-e7bf-4abe-9871-a9587ae01310" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnAfterUpdate.method.xml" />
+ <ref id="1f962a3e-28d5-43f7-9fad-eb8d080ebd84" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnAfterDelete.method.xml" />
+ <ref id="faeb833c-f5b6-4d69-b676-44240bee3074" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnBeforeUpdate.method.xml" />
+ <ref id="1dc8e99e-a7f3-464a-a7f9-432386fcb3f7" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnCreate.method.xml" />
+ <ref id="483fbf4a-e923-412b-b6b3-43805e2f7d9e" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnBeforeDelete.method.xml" />
+ <ref id="7df23ae1-2fbf-4ca4-8dc3-698d7d5dc867" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnBeforeInsert.method.xml" />
+ <ref id="faa7b0af-76f0-4a4a-bf89-6758514aa910" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnAfterInsert.method.xml" />
+ <ref id="4f262711-d70c-4339-b90c-55e559e3686b" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnAfterUpdate.method.xml" />
+ <ref id="aa76eba1-0a65-451a-96d4-0f93f395b9f5" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnAfterDelete.method.xml" />
+ <ref id="3e9ca303-d425-4654-99b6-dc847927be1b" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnBeforeUpdate.method.xml" />
+ <ref id="56fc9f40-c30c-48ca-aed8-d641752e67fc" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnCreate.method.xml" />
+ <ref id="76cac880-b700-4bbd-a1c6-02dc347838ad" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnBeforeDelete.method.xml" />
+ <ref id="e0359868-8c7f-4d49-94bc-f2e381ccf4ab" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnBeforeInsert.method.xml" />
  <ref id="4d5b7771-7b88-48c8-9078-b36162f98bd5" url="\Entity Model\Saleslogix Contract Sync Entities\AccountSyncView\OnAfterInsert.method.xml" />
  <ref id="65735199-ea51-4d10-82cf-ec448fc45110" url="\Entity Model\Saleslogix Contract Sync Entities\AccountSyncView\OnAfterUpdate.method.xml" />
  <ref id="91c32304-3d83-4b45-be3c-5c5675473ae1" url="\Entity Model\Saleslogix Contract Sync Entities\AccountSyncView\OnAfterDelete.method.xml" />
@@ -1557,130 +1607,8 @@
  <ref id="764f71b1-0adb-4b25-a387-b8bd0ffdfd06" url="\Entity Model\Saleslogix Speedsearch Support\IndexStatistics\OnCreate.method.xml" />
  <ref id="bd7fb838-3722-4f1e-8925-1f7e924afe68" url="\Entity Model\Saleslogix Speedsearch Support\IndexStatistics\OnBeforeDelete.method.xml" />
  <ref id="de6e57e1-15ac-4e0e-bdd5-29c5998d9b13" url="\Entity Model\Saleslogix Speedsearch Support\IndexStatistics\OnBeforeInsert.method.xml" />
- <ref id="68cdd3e3-4bf5-4f9c-9b0d-266aa6e3ede8" url="\Mashup Model\SummaryViewQueries.mashup.xml" />
- <ref id="b0a1d7be-9a1f-43f5-8b28-d16acaf7a72b" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\OnBeforeInsert.method.xml" />
- <ref id="5a9e3ed4-2404-4299-bbba-300d0cd63829" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\OnAfterInsert.method.xml" />
- <ref id="d7ec3baa-b8fd-44c6-ad89-be9a62e33888" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\OnBeforeUpdate.method.xml" />
- <ref id="0d3770f6-86ae-4e34-a65a-bbd2b9f8520e" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\OnAfterUpdate.method.xml" />
- <ref id="ec852beb-de99-4900-bf2f-e771ff1e9b76" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\OnBeforeDelete.method.xml" />
- <ref id="5599fdf0-1201-4ea3-89b4-5f092f7a7788" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\OnAfterDelete.method.xml" />
- <ref id="27dcdbe7-7bf8-4f22-955b-496ba741820c" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\OnCreate.method.xml" />
- <ref id="1cb9ef9a-cb77-44cb-a2da-bf60b621b668" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnBeforeUpdate.method.xml" />
- <ref id="af3b72fd-9b56-4487-8d58-c1b9a390d185" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\OnBeforeInsert.method.xml" />
- <ref id="5f30a8e1-dfd0-487b-88e6-2cfd2d47685b" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\OnAfterInsert.method.xml" />
- <ref id="756a216a-5ae6-425f-b2d4-4c6e83bab9c4" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\OnBeforeUpdate.method.xml" />
- <ref id="51e7f5c1-26f5-445d-8eaa-d8418b5fbe77" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\OnAfterUpdate.method.xml" />
- <ref id="695aa7d3-99d7-473b-895a-4b8781cf9967" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\OnBeforeDelete.method.xml" />
- <ref id="8d3160b6-b7f1-460e-802b-378008822a7c" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\OnAfterDelete.method.xml" />
- <ref id="39e17837-9b5a-42d3-8d12-0cc620d1f7f1" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\OnCreate.method.xml" />
- <ref id="a013d0c7-5b6c-4ee2-a237-090950b8d40d" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnAfterInsert.method.xml" />
- <ref id="1e231fdc-7b21-457d-bd72-77e1304b565c" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\OnBeforeInsert.method.xml" />
- <ref id="725da599-36f8-44f5-aba8-f655abe605e8" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\OnAfterInsert.method.xml" />
- <ref id="4d1ea083-99e1-4bed-9762-abc295679874" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\OnBeforeUpdate.method.xml" />
- <ref id="d6c64d1f-f1be-498d-be73-5f214eaaba66" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\OnAfterUpdate.method.xml" />
- <ref id="9ad4e786-fbbf-40ba-aa1b-bca74aa16e8e" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\OnBeforeDelete.method.xml" />
- <ref id="bb96c303-0875-43f4-be2d-d13edda706b8" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\OnAfterDelete.method.xml" />
- <ref id="8c7e1857-b875-4c9d-aa1f-eb5291f7425a" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\OnCreate.method.xml" />
- <ref id="04e348cb-4a12-4c35-9c42-505f3fc04800" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnBeforeInsert.method.xml" />
- <ref id="b8df0879-3d31-4300-9e10-407cc4f7df17" url="\Entity Model\Saleslogix Application Entities\VwAreaMaster\QuickForms\AreaDetail.main.quickform.xml" />
- <ref id="1dac91c1-93fc-4f96-825e-c94e6975cfe2" url="\Entity Model\Saleslogix Application Entities\VwPincodeMaster\QuickForms\PincodeMaster.main.quickform.xml" />
- <ref id="851f674e-a48e-442c-a532-bb545ad4d9b2" url="\Entity Model\Saleslogix Application Entities\VwEmpMaster\QuickForms\EmployeeDetail.main.quickform.xml" />
- <ref id="861ac5fe-b571-4015-a55d-bf63e400e1e7" url="\Portal\SlxClient\SlxClient.cabapp.ptl.xml" />
- <ref id="2f3a1987-beee-4390-9ea2-ad453f51befb" url="\Portal\SlxClient\NavGroups\navBarMaster\navBarMaster.navgroup.xml" />
- <ref id="c577d460-5531-4dc5-9318-5aceb311f0b4" url="\Portal\SlxClient\NavGroups\navBarMaster\NavItems\MasterItemAreamaster.navitem.xml" />
- <ref id="7a612377-a9e2-431e-91b1-99fbb32ff1c4" url="\Portal\SlxClient\NavGroups\navBarMaster\NavItems\MasterItemempmaster.navitem.xml" />
- <ref id="129fc60c-fb24-48f8-b552-4390fa226e8a" url="\Portal\SlxClient\NavGroups\navBarMaster\NavItems\MasterItemPincode.navitem.xml" />
- <ref id="fb4e7f97-5c95-40ea-b4ff-64972d9cef21" url="\Portal\SlxClient\NavGroups\navBarMaster\NavItems\MasterItemproduct.navitem.xml" />
- <ref id="2a25eee0-001d-4d2b-b484-32ce72b42181" url="\Portal\SlxClient\NavGroups\navBarMaster\NavItems\MasterItemCompetitor.navitem.xml" />
- <ref id="3bc589db-d429-4b96-97be-ce2cb4a65a58" url="\Portal\SlxClient\ContextMenuItems\contextAreamaster\contextAreamaster.contextmenu.xml" />
- <ref id="035d3fa6-30c7-407a-9de7-11604539c6b9" url="\Portal\SlxClient\ContextMenuItems\menuItemAreamaster\ContextMenuItems\contextAreaMasterItemCreateGroup\contextAreaMasterItemCreateGroup.contextmenu.xml" />
- <ref id="b5452e88-b72f-4de5-adcf-284879c451d3" url="\Portal\SlxClient\ContextMenuItems\contextEmployeeMaster\contextEmployeeMaster.contextmenu.xml" />
- <ref id="5949414a-f796-482c-bb08-36d4e1e4f97e" url="\Portal\SlxClient\ContextMenuItems\contextEmployeeMaster\ContextMenuItems\EmployeeMasterItemCreateNewGroup\EmployeeMasterItemCreateNewGroup.contextmenu.xml" />
- <ref id="7fd91745-effc-4a05-816d-3195f420a438" url="\Portal\SlxClient\ContextMenuItems\contextPincodeMaster\contextPincodeMaster.contextmenu.xml" />
- <ref id="fd0ec274-d604-4adf-ac7e-e1c8e4747b51" url="\Portal\SlxClient\ContextMenuItems\contextPincodeMaster\ContextMenuItems\PincodeMasterItemCreateNewGroup\PincodeMasterItemCreateNewGroup.contextmenu.xml" />
- <ref id="2db7fbd9-c42f-458d-a8f7-028c57617ec8" url="\Portal\SlxClient\ChildPages\AreaDetail\AreaDetail.page.xml" />
- <ref id="67a82998-5daa-485e-81a0-441cc4111404" url="\Portal\SlxClient\ChildPages\AreaDetail\SmartParts\AreaDetail.smartpart.xml" />
- <ref id="5852d153-d86e-44be-ad49-a9812a957678" url="\Portal\SlxClient\ChildPages\AreaDetail\SmartParts\LiveGroupViewer.smartpart.xml" />
- <ref id="79b2f232-b419-43bc-b673-d4134da6ffef" url="\Portal\SlxClient\ChildPages\EmployeeDetail\EmployeeDetail.page.xml" />
- <ref id="a14d2256-7033-43cf-b6f7-4de5a299957f" url="\Portal\SlxClient\ChildPages\EmployeeDetail\SmartParts\EmployeeDetail.smartpart.xml" />
- <ref id="46b6de68-3cd0-4713-b07d-58c252b29c9f" url="\Portal\SlxClient\ChildPages\EmployeeDetail\SmartParts\LiveGroupViewer.smartpart.xml" />
- <ref id="1837950e-383d-4f1a-8eb0-caa6846e2f0d" url="\Portal\SlxClient\ChildPages\PincodeMaster\PincodeMaster.page.xml" />
- <ref id="7f0dd2b6-9d1d-4fbd-ab1b-9d9f391efe1a" url="\Portal\SlxClient\ChildPages\PincodeMaster\SmartParts\PincodeMaster.smartpart.xml" />
- <ref id="8687a825-791c-4fdb-bcf4-efabd2dd16aa" url="\Portal\SlxClient\ChildPages\PincodeMaster\SmartParts\LiveGroupViewer.smartpart.xml" />
- <ref id="3164d57a-9140-4ed6-ae93-d35a71c6ea62" url="\Portal\SlxClient\ContextMenuItems\contextAreamaster\ContextMenuItems\AreaMasterItemLookup\AreaMasterItemLookup.contextmenu.xml" />
- <ref id="fb34c8b0-d76d-44b7-8d8a-3de6fe1b47be" url="\Portal\SlxClient\ContextMenuItems\contextEmployeeMaster\ContextMenuItems\EmployeeMasterItemLookupEmp\EmployeeMasterItemLookupEmp.contextmenu.xml" />
- <ref id="c84937de-9691-44a1-ad01-0d7320ca7ecf" url="\Portal\SlxClient\ContextMenuItems\contextPincodeMaster\ContextMenuItems\PincodeMasterItemLookuppincode\PincodeMasterItemLookuppincode.contextmenu.xml" />
- <ref id="ca926004-5c2b-48f8-90fc-9017a6bda197" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnAfterUpdate.method.xml" />
- <ref id="b4a228a4-476c-4e93-b8ac-31c6e14a56b3" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnBeforeDelete.method.xml" />
- <ref id="7027e85d-3599-4cfb-92c5-2292fb777c0e" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnAfterDelete.method.xml" />
- <ref id="d6dae40c-55e0-4da9-a646-842a4c21a65d" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\OnCreate.method.xml" />
  <ref id="ecc23318-592b-4987-a573-e79b50d8a7c3" url="\Entity Model\Saleslogix Application Entities\Vwareamaster\Vwareamaster.VWAREAMASTER.entity.xml" />
- <ref id="7df23ae1-2fbf-4ca4-8dc3-698d7d5dc867" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnBeforeInsert.method.xml" />
- <ref id="e34dd2ca-50a5-4f65-8682-2b5dbe46d2c7" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnAfterInsert.method.xml" />
- <ref id="faeb833c-f5b6-4d69-b676-44240bee3074" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnBeforeUpdate.method.xml" />
- <ref id="8cceaa60-e7bf-4abe-9871-a9587ae01310" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnAfterUpdate.method.xml" />
- <ref id="483fbf4a-e923-412b-b6b3-43805e2f7d9e" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnBeforeDelete.method.xml" />
- <ref id="1f962a3e-28d5-43f7-9fad-eb8d080ebd84" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnAfterDelete.method.xml" />
- <ref id="1dc8e99e-a7f3-464a-a7f9-432386fcb3f7" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\OnCreate.method.xml" />
- <ref id="bc5510e8-5588-4b9b-a157-7c390ccd3079" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\Vwempmaster.VWEMPMASTER.entity.xml" />
- <ref id="e0359868-8c7f-4d49-94bc-f2e381ccf4ab" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnBeforeInsert.method.xml" />
- <ref id="faa7b0af-76f0-4a4a-bf89-6758514aa910" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnAfterInsert.method.xml" />
- <ref id="3e9ca303-d425-4654-99b6-dc847927be1b" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnBeforeUpdate.method.xml" />
- <ref id="4f262711-d70c-4339-b90c-55e559e3686b" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnAfterUpdate.method.xml" />
- <ref id="76cac880-b700-4bbd-a1c6-02dc347838ad" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnBeforeDelete.method.xml" />
- <ref id="aa76eba1-0a65-451a-96d4-0f93f395b9f5" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnAfterDelete.method.xml" />
- <ref id="56fc9f40-c30c-48ca-aed8-d641752e67fc" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\OnCreate.method.xml" />
  <ref id="017eb719-17ed-4efb-b9e1-cd861085064b" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\Vwpincodemaster.VWPINCODEMASTER.entity.xml" />
- <ref id="576ae752-12aa-4d36-ba13-a8cca10c89c1" url="\Entity Model\Saleslogix Application Entities\Account\QuickForms\AccountDetails.main.quickform.xml" />
- <ref id="d8eb6792-f4ba-4c6a-adb2-6217519d4757" url="\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactDetails.main.quickform.xml" />
- <ref id="7067c649-cd9a-4498-9e87-c5851ae8a8b3" url="\Entity Model\CodeTemplates\Entity\Default-ResXClass-Saleslogix.ResXClass.codetemplate.xml" />
- <ref id="99be1b14-a8f6-4b61-8d33-b5f7592b011b" url="\Entity Model\CodeTemplates\Entity\Default-ResX-Saleslogix.ResX.codetemplate.xml" />
- <ref id="33138a49-3802-420d-b40a-637cb49a46ec" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnBeforeInsert.method.xml" />
- <ref id="4bf23734-6e7f-44be-a079-6d579c5a5082" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnAfterInsert.method.xml" />
- <ref id="3b369ead-ccaf-4674-bbcb-195501a081fd" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnBeforeUpdate.method.xml" />
- <ref id="f09bc021-38b7-4c43-8d25-6ba90377abc4" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnAfterUpdate.method.xml" />
- <ref id="9b9102da-a1bd-4a47-a4b6-cae9af9337f4" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnBeforeDelete.method.xml" />
- <ref id="dd1d8585-b08f-48df-8b30-6177f30c74ad" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnAfterDelete.method.xml" />
- <ref id="da569393-2947-4675-992e-1729ae8ee91f" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\OnCreate.method.xml" />
+ <ref id="bc5510e8-5588-4b9b-a157-7c390ccd3079" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\Vwempmaster.VWEMPMASTER.entity.xml" />
  <ref id="cb5bb1b9-907b-4d23-974f-6bdac8d22d76" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\QualifierAndSMpincode.QUALIFIERANDSMPINCODE.entity.xml" />
- <ref id="2b31e85d-6b22-4a99-894d-24e123304356" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\InsertLead.main.quickform.xml" />
- <ref id="901b9f5d-180a-4cb0-88ae-f1a23a059886" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadDetails.main.quickform.xml" />
- <ref id="1934c8f5-2895-4db4-96e3-98fafcadd52e" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadDetails.cmdQualifyLead_OnClick.method.xml" />
- <ref id="00418cc9-ed04-4f36-93eb-5060082cbeb7" url="\Entity Model\Relationships\Lead.User.00418cc9ed044f3693eb5060082cbeb7.relationship.xml" />
- <ref id="b867a834-01c2-4bea-a525-30fab8e348f3" url="\Entity Model\Relationships\Lead.User.b867a83401c24beaa52530fab8e348f3.relationship.xml" />
- <ref id="f2e0b896-772b-4dc5-9ca5-bf23b5b85776" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnBeforeInsert.method.xml" />
- <ref id="6ebe9c96-4496-4b0e-8ed6-0aa49aeffba6" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnAfterInsert.method.xml" />
- <ref id="47fad312-ff2f-4584-9a1d-a5fc2579813e" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnBeforeUpdate.method.xml" />
- <ref id="09b29cdc-d4c9-4ab0-b103-fdeb90bac6d9" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnAfterUpdate.method.xml" />
- <ref id="b165890b-0205-4862-a0cf-d8f271c0ea16" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnBeforeDelete.method.xml" />
- <ref id="aedac3a8-c350-4846-a064-e3fe99d9596a" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnAfterDelete.method.xml" />
- <ref id="1adb85f6-1fa6-451c-9238-6fe0c7374aa7" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\OnCreate.method.xml" />
- <ref id="331316b6-25d3-408d-800b-0748bd51d632" url="\Entity Model\Saleslogix Application Entities\LeadCompetitor\LeadCompetitor.LEAD_COMPETITOR.entity.xml" />
- <ref id="2e2b42fb-3853-47e9-9942-06640259b544" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeInsert.method.xml" />
- <ref id="c6549dcd-36e0-406b-950b-1140aa950b9e" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterInsert.method.xml" />
- <ref id="f5d77e07-ba94-4f3e-865a-f8009c4b06ed" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeUpdate.method.xml" />
- <ref id="1fddb1db-c4d4-4d0f-a722-34f655fa9bc6" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterUpdate.method.xml" />
- <ref id="81827431-f2d2-4985-94a9-ce48a45ef8af" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeDelete.method.xml" />
- <ref id="9016bfd8-141d-4e86-95e4-ce598b88676c" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterDelete.method.xml" />
- <ref id="c22ffaed-4477-42b1-815d-a133a1cf011e" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnCreate.method.xml" />
- <ref id="cd4c74b9-2df9-42b1-be79-8cc94a00be6a" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterUpdate.method.xml" />
- <ref id="229bd34a-6cd1-4e8e-9256-d7caae1c4d7c" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadCompetitors.lueLeadCompetitor_OnChange.method.xml" />
- <ref id="10fa0f84-aabd-4173-8b64-7187e2768309" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\Sage.SnippetLibrary.CSharp.@.10fa0f84-aabd-4173-8b64-7187e2768309.codesnippet.cs" />
- <ref id="f1c46674-8602-4098-a089-7af9f728d85c" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnCreate.method.xml" />
- <ref id="a649265a-06b8-4350-a7e8-6b9fbbcce7aa" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeUpdate.method.xml" />
- <ref id="cebbed42-b67c-4e38-b2ed-2b7aca30bbec" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterDelete.method.xml" />
- <ref id="bc550f5e-436a-4df7-a6da-8a0aa52497c6" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeDelete.method.xml" />
- <ref id="0d3d7db1-bcc1-4898-aa2c-81dd5b4a453c" url="\Portal\SlxClient\ChildPages\InsertLead\InsertLead.page.xml" />
- <ref id="d3d40b38-0162-4e0d-a5f0-99cfcf3ca972" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnBeforeInsert.method.xml" />
- <ref id="8d703ad2-26da-44cb-bc25-f3098e9fc2b4" url="\Portal\SlxClient\ChildPages\Lead\Lead.page.xml" />
- <ref id="3955d461-671d-4762-b866-12a1af3ebecd" url="\Entity Model\Saleslogix Application Entities\LeadProduct\OnAfterInsert.method.xml" />
- <ref id="0cb362b1-a3ee-4806-86c3-a8f2873c3766" url="\Entity Model\Saleslogix Application Entities\LeadProduct\LeadProduct.LEAD_PRODUCT.entity.xml" />
- <ref id="00c866e1-24d0-4f9b-b0db-7c69b21503eb" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadProducts_Details.main.quickform.xml" />
- <ref id="ace0dd84-7c90-401a-9662-228074a8b49a" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadProducts_Details.lueLeadProduct_OnChange.method.xml" />
- <ref id="cc649a64-820f-41a1-8073-11b4bb5549bf" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\Sage.SnippetLibrary.CSharp.@.cc649a64-820f-41a1-8073-11b4bb5549bf.codesnippet.cs" />
- <ref id="d096a3d3-98d2-49cd-b142-f8f163942182" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadCompetitors_Insert.lueLeadCompetitor_OnChange.method.xml" />
- <ref id="29a7a7d1-ff65-4dfe-b53a-406692005b35" url="\Entity Model\Saleslogix Application Entities\ERPSalesOrder\ERPSalesOrder.SalesOrder.ERPSALESORDER.entity.xml" />
- <ref id="5f31e72d-04b2-4c40-be0a-68abcaa777e7" url="\Entity Model\Saleslogix Application Entities\TicketProblem\TicketProblem.Ticket.TICKETPROBLEM.entity.xml" />
- <ref id="c00678be-e713-41a2-908b-5875b9d2eccd" url="\Entity Model\Saleslogix Application Entities\TicketSolution\TicketSolution.Ticket.TICKETSOLUTION.entity.xml" />
- <ref id="19470d2f-73c2-423b-86fe-33435d356d85" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\LeadProducts_Insert.lueLeadProduct_OnChange.method.xml" />
 </modelItemIndex>

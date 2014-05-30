@@ -16,7 +16,7 @@ AutoGenerateColumns="false" CellPadding="4" CssClass="datagrid" PagerStyle-CssCl
 AlternatingRowStyle-CssClass="rowdk" RowStyle-CssClass="rowlt" SelectedRowStyle-CssClass="rowSelected" ShowEmptyTable="true" EnableViewState="false"
 EmptyTableRowText="<%$ resources: grdLeadProducts.EmptyTableRowText %>"  ExpandableRows="True" ResizableColumns="True"  OnRowCommand="grdLeadProducts_RowCommand"
  DataKeyNames="InstanceId,Id"
- OnRowEditing="grdLeadProducts_RowEditing"  OnRowDeleting="grdLeadProducts_RowDeleting" OnRowDataBound="grdLeadProducts_RowDataBound" >
+ OnRowDeleting="grdLeadProducts_RowDeleting" OnRowDataBound="grdLeadProducts_RowDataBound" >
 <Columns>
    <asp:BoundField DataField="Product.Name"
       HeaderText="<%$ resources: grdLeadProducts.53d6a546-aa61-4dcc-9400-c837c3b2eeaf.ColumnHeading %>"          >
@@ -24,10 +24,7 @@ EmptyTableRowText="<%$ resources: grdLeadProducts.EmptyTableRowText %>"  Expanda
     <asp:BoundField DataField="Product.Family"
       HeaderText="<%$ resources: grdLeadProducts.1c592c25-62ba-44df-9691-550c5ceb2c27.ColumnHeading %>"          >
       </asp:BoundField>
-  <asp:ButtonField CommandName="Edit"
-  Text="<%$ resources: grdLeadProducts.b0ca6db6-9322-4531-a74c-fef268d3d254.Text %>"  DataTextField="Id"      HeaderText="<%$ resources: grdLeadProducts.b0ca6db6-9322-4531-a74c-fef268d3d254.ColumnHeading %>"        >
-          </asp:ButtonField>
-     <asp:ButtonField CommandName="Delete"
+   <asp:ButtonField CommandName="Delete"
   Text="<%$ resources: grdLeadProducts.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.Text %>"   DataTextField="Id"       HeaderText="<%$ resources: grdLeadProducts.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.ColumnHeading %>"        >
           </asp:ButtonField>
    </Columns>
@@ -35,7 +32,7 @@ EmptyTableRowText="<%$ resources: grdLeadProducts.EmptyTableRowText %>"  Expanda
 
 <script runat="server" type="text/C#">
 
-            private int _grdLeadProductsdeleteColumnIndex = -2;
+         private int _grdLeadProductsdeleteColumnIndex = -2;
 protected int grdLeadProductsDeleteColumnIndex
 {
     get
@@ -123,17 +120,6 @@ protected void grdLeadProducts_RowCommand(object sender, GridViewCommandEventArg
                 }
             }
         }
-        if (e.CommandName.Equals("Edit"))
-        {
-            if (DialogService != null)
-            {
-                // QFDataGrid
-                            DialogService.SetSpecs(400, 600, "EditLeadProduct", string.Empty );
-                            DialogService.EntityType = typeof(Sage.Entity.Interfaces.ILeadProduct );
-                DialogService.EntityID = id;
-                DialogService.ShowDialog();
-            }
-        }
         if (e.CommandName.Equals("Delete"))
         {
             Sage.Entity.Interfaces.ILead mainentity = this.BindingSource.Current as Sage.Entity.Interfaces.ILead;
@@ -178,11 +164,6 @@ protected void grdLeadProducts_RowCommand(object sender, GridViewCommandEventArg
         }
     }
 
-        protected void grdLeadProducts_RowEditing(object sender, GridViewEditEventArgs e)
-    {
-        grdLeadProducts.SelectedIndex = e.NewEditIndex;
-        e.Cancel = true;
-    }
             protected void grdLeadProducts_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
         grdLeadProducts.SelectedIndex = -1;

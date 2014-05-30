@@ -99,7 +99,7 @@
           <QFEditCol>
             <StyleScheme />
             <DataField>Id</DataField>
-            <ColumnId>b0ca6db6-9322-4531-a74c-fef268d3d254</ColumnId>
+            <ColumnId>13644226-77de-437b-99d7-4194ad1ce617</ColumnId>
             <HorizontalAlignment>left</HorizontalAlignment>
             <HeaderAlignment>left</HeaderAlignment>
             <SortDirection>None</SortDirection>
@@ -112,7 +112,7 @@
               <Top>0</Top>
               <Left>0</Left>
               <EntityType>LeadCompetitor</EntityType>
-              <ResourceKey>988b4155-001c-4c0d-a96d-6c1f2b2cfb9d</ResourceKey>
+              <ResourceKey>51629b6b-3e8b-443c-b1b1-609904aa7d87</ResourceKey>
               <CenterDialog>True</CenterDialog>
             </DialogSpecs>
             <AppliedSecurity />

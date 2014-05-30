@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<SmartPartMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="27c063f5-7d7b-485a-bdf4-54be5a1eba7a">
+<SmartPartMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="70e0121a-cf80-4cc7-992b-ba0256a46daf">
   <SmartPartId>AddLeadAddress</SmartPartId>
   <ReferencedModelId>00000000-0000-0000-0000-000000000000</ReferencedModelId>
   <SmartPart>SmartParts\Address\AddLeadAddress.ascx</SmartPart>
-  <TargetWorkspace>DialogWorkspace</TargetWorkspace>
-  <ShowInMode />
+  <TargetWorkspace>MainContent</TargetWorkspace>
+  <ShowInMode>Detail</ShowInMode>
   <Properties />
   <AllowRoles />
 </SmartPartMapping>

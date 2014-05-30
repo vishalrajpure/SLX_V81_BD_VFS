@@ -438,7 +438,7 @@ lueReseller.SeedValue = GetLocalResourceObject("Reseller_rsc").ToString();
 
 txtDescription_lbl.ForeColor = System.Drawing.Color.Red;
 txtBusinessPotential_lbl.ForeColor = System.Drawing.Color.Red;
-
+lueAccount_lbl.ForeColor = System.Drawing.Color.Red;
 Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
     
 //pklStatus.PickListValue= objOpp.Status;

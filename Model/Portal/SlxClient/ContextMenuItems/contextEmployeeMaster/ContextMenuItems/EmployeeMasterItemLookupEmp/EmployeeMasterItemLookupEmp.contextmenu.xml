@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <MenuDropDownItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="fb34c8b0-d76d-44b7-8d8a-3de6fe1b47be">
   <ItemId>EmployeeMasterItemLookupEmp</ItemId>
-  <NavUrl>javascript:Sage.Utility.Groups.showMainLookupFor('VMEMPMASTER','VMEMPMASTER.aspx');</NavUrl>
+  <NavUrl>javascript:Sage.Utility.Groups.showMainLookupFor('VWEMPMASTER','VWEMPMASTER.aspx');</NavUrl>
   <LargeImageUrl />
   <SmallImageUrl />
   <ContextMenuId />

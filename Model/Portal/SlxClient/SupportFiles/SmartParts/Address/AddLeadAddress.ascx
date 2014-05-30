@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="AddLeadAddress.ascx.cs" Inherits="SmartParts_Address_AddLeadAddress" %>
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="AddLeadAddress.ascx.cs" Inherits="SmartParts_Address_AddLeadAddress" %>
 <%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls.PickList" TagPrefix="SalesLogix" %>
 <%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls" TagPrefix="SalesLogix" %>
 <%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls.DependencyLookup" TagPrefix="SalesLogix" %>
@@ -25,6 +25,11 @@
 
 
 <table id="tblTest" border="0" cellpadding="1" cellspacing="1" style="width: 100%; height: 100%; padding-right: 10px">
+     <tr>
+        <td colspan="3">
+              <asp:Label ID="lblerr" runat="server" ForeColor="Red"></asp:Label>
+        </td>
+    </tr>
     <tr>
         <td>
             <asp:Label ID="lblDescription" AssociatedControlID="pklDecription" runat="server" Text="Description:" meta:resourcekey="lblDecription"></asp:Label>
@@ -105,7 +110,7 @@
             <asp:Label ID="lblPostalCode" AssociatedControlID="txtPostalCode" runat="server" Text="PostalCode:" meta:resourcekey="lblPostalCode" ForeColor="Red"></asp:Label>
         </td>
         <td style="width: 150px;">
-            <asp:TextBox runat="server" ID="txtPostalCode" Style="width: 100%" MaxLength="24" />
+            <asp:TextBox runat="server" ID="txtPostalCode" Style="width: 100%" MaxLength="24" AutoPostBack="True" OnTextChanged="txtPostalCode_TextChanged" />
         </td>
     </tr>
 
@@ -128,7 +133,7 @@
     </tr>
     <tr>
         <td>
-            <asp:Label ID="Label2" AssociatedControlID="txtLatitude" runat="server" Text="Latitude:"></asp:Label>
+            <asp:Label ID="Label2" AssociatedControlID="txtLatitude" runat="server" Text="Latitude:"  ForeColor="Red"></asp:Label>
         </td>
         <td style="width: 150px;">
             <asp:TextBox runat="server" ID="txtLatitude" Style="width: 100%" MaxLength="64" />
@@ -136,7 +141,7 @@
     </tr>
     <tr>
         <td>
-            <asp:Label ID="Label3" AssociatedControlID="txtLogitute" runat="server" Text="Logitute:"></asp:Label>
+            <asp:Label ID="Label3" AssociatedControlID="txtLogitute" runat="server" Text="Logitute:"  ForeColor="Red"></asp:Label>
         </td>
         <td style="width: 150px;">
             <asp:TextBox runat="server" ID="txtLogitute" Style="width: 100%" MaxLength="64" />

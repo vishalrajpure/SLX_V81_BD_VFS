@@ -1,0 +1,34 @@
+29-05-2014 06:36:29
+INFO  2014-05-29 12:05:14,090 - Installing bundle...
+INFO  2014-05-29 12:05:14,108 - Performing pre-install.
+INFO  2014-05-29 12:05:14,115 - Installing context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-29 12:05:14,562 - Successfully installed Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-29 12:05:14,565 - Installing context item: Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-05-29 12:05:14,572 - Successfully installed Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-05-29 12:05:14,576 - Installing context item: Account (\Entity Model\Saleslogix Application Entities\Account\Account.ACCOUNT.entity.xml)
+INFO  2014-05-29 12:05:14,649 - Successfully installed Account (\Entity Model\Saleslogix Application Entities\Account\Account.ACCOUNT.entity.xml)
+INFO  2014-05-29 12:05:14,653 - Installing model item: AccountDetails (\Entity Model\Saleslogix Application Entities\Account\QuickForms\AccountDetails.main.quickform.xml)
+INFO  2014-05-29 12:05:14,844 - Successfully installed AccountDetails (\Entity Model\Saleslogix Application Entities\Account\QuickForms\AccountDetails.main.quickform.xml)
+INFO  2014-05-29 12:05:14,848 - Installing context item: Contact (\Entity Model\Saleslogix Application Entities\Contact\Contact.CONTACT.entity.xml)
+INFO  2014-05-29 12:05:14,928 - Successfully installed Contact (\Entity Model\Saleslogix Application Entities\Contact\Contact.CONTACT.entity.xml)
+INFO  2014-05-29 12:05:14,932 - Installing model item: ContactDetails (\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactDetails.main.quickform.xml)
+INFO  2014-05-29 12:05:14,959 - Successfully installed ContactDetails (\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactDetails.main.quickform.xml)
+INFO  2014-05-29 12:05:14,964 - Saving context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-29 12:05:14,969 - Successfully saved Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-29 12:05:14,974 - Saving context item: Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-05-29 12:05:14,979 - Successfully saved Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-05-29 12:05:14,984 - Saving context item: Account (\Entity Model\Saleslogix Application Entities\Account\Account.ACCOUNT.entity.xml)
+INFO  2014-05-29 12:06:27,742 - Successfully saved Account (\Entity Model\Saleslogix Application Entities\Account\Account.ACCOUNT.entity.xml)
+INFO  2014-05-29 12:06:27,748 - Saving model item: AccountDetails (\Entity Model\Saleslogix Application Entities\Account\QuickForms\AccountDetails.main.quickform.xml)
+INFO  2014-05-29 12:06:27,753 - Successfully saved AccountDetails (\Entity Model\Saleslogix Application Entities\Account\QuickForms\AccountDetails.main.quickform.xml)
+INFO  2014-05-29 12:06:27,758 - Saving context item: Contact (\Entity Model\Saleslogix Application Entities\Contact\Contact.CONTACT.entity.xml)
+INFO  2014-05-29 12:06:27,940 - Successfully saved Contact (\Entity Model\Saleslogix Application Entities\Contact\Contact.CONTACT.entity.xml)
+INFO  2014-05-29 12:06:27,945 - Saving model item: ContactDetails (\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactDetails.main.quickform.xml)
+INFO  2014-05-29 12:06:27,950 - Successfully saved ContactDetails (\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactDetails.main.quickform.xml)
+INFO  2014-05-29 12:06:27,956 - Configuring installed items.
+INFO  2014-05-29 12:06:27,962 - Configuring Saleslogix Client...
+INFO  2014-05-29 12:06:27,971 - Performing pre-commit to target project.
+INFO  2014-05-29 12:06:28,230 - Committing items to target project...
+INFO  2014-05-29 12:06:28,316 - Committing transactions...
+INFO  2014-05-29 12:06:29,883 - Copying bundle manifest to project.
+INFO  2014-05-29 12:06:31,139 - Install complete.

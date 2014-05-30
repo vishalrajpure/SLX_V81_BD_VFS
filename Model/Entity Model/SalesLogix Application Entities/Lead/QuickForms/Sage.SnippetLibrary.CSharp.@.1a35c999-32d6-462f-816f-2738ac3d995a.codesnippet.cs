@@ -88,8 +88,8 @@ namespace Sage.BusinessRules.CodeSnippets
                             {
                                 id = relationshipEntity.InstanceId.ToString();
                                 Sage.Platform.ChangeManagement.ChangeManagementEntityFactory.RegisterInstance(relationshipEntity, relationshipEntity.InstanceId);
-
-                                if (relationshipEntity != null && relatedEntity != null)
+                                
+                        		if (relationshipEntity != null && relatedEntity != null)
                                     relationshipEntity.SetLeadCompetitorDefaults(relatedEntity);
 
                             }

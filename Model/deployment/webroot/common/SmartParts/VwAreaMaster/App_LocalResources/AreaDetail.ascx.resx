@@ -118,220 +118,220 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="QFTextBox.Caption" xml:space="preserve">
-    <value>Areamstid</value>
+    <value>AreaId</value>
   </data>
   <data name="QFCheckBox.Caption" xml:space="preserve">
-    <value>Bapeserv</value>
+    <value>ape serv</value>
   </data>
   <data name="QFCheckBox1.Caption" xml:space="preserve">
-    <value>Bcmploc</value>
+    <value>cmp loc</value>
   </data>
   <data name="QFCheckBox2.Caption" xml:space="preserve">
-    <value>Bdpwtrest</value>
+    <value>dpwtrest</value>
   </data>
   <data name="QFCheckBox3.Caption" xml:space="preserve">
-    <value>Bdsccode</value>
+    <value>dsc code</value>
   </data>
   <data name="QFCheckBox4.Caption" xml:space="preserve">
-    <value>Bembargo</value>
+    <value>embargo</value>
   </data>
   <data name="QFCheckBox5.Caption" xml:space="preserve">
-    <value>Bfcserv</value>
+    <value>fcserv</value>
   </data>
   <data name="QFCheckBox6.Caption" xml:space="preserve">
-    <value>Boctroi</value>
+    <value>octroi</value>
   </data>
   <data name="QFCheckBox7.Caption" xml:space="preserve">
-    <value>Bsfcserv</value>
+    <value>sfc serv</value>
   </data>
   <data name="QFCheckBox8.Caption" xml:space="preserve">
-    <value>Bwebupdt</value>
+    <value>webupdt</value>
   </data>
   <data name="QFTextBox1.Caption" xml:space="preserve">
-    <value>Caltarea</value>
+    <value>alt Area</value>
   </data>
   <data name="QFTextBox2.Caption" xml:space="preserve">
-    <value>Caltscrcd</value>
+    <value>alt scr cd</value>
   </data>
   <data name="QFTextBox3.Caption" xml:space="preserve">
-    <value>Calttcode</value>
+    <value>altt code</value>
   </data>
   <data name="QFCheckBox9.Caption" xml:space="preserve">
-    <value>Capeserv</value>
+    <value>ape serv</value>
   </data>
   <data name="QFTextBox4.Caption" xml:space="preserve">
-    <value>Capexzn</value>
+    <value>Apex Zone</value>
   </data>
   <data name="QFTextBox5.Caption" xml:space="preserve">
-    <value>Carea</value>
+    <value>Area</value>
   </data>
   <data name="QFTextBox6.Caption" xml:space="preserve">
-    <value>Careaadr1</value>
+    <value>Address1</value>
   </data>
   <data name="QFTextBox7.Caption" xml:space="preserve">
-    <value>Careaadr2</value>
+    <value>Address2</value>
   </data>
   <data name="QFTextBox8.Caption" xml:space="preserve">
-    <value>Careaadr3</value>
+    <value>Address3</value>
   </data>
   <data name="QFTextBox9.Caption" xml:space="preserve">
-    <value>Careacity</value>
+    <value>Area City</value>
   </data>
   <data name="QFTextBox10.Caption" xml:space="preserve">
-    <value>Careadesc</value>
+    <value>Area desc.</value>
   </data>
   <data name="QFTextBox11.Caption" xml:space="preserve">
-    <value>Careapin</value>
+    <value>Area Pin</value>
   </data>
   <data name="QFTextBox12.Caption" xml:space="preserve">
-    <value>Cawbentlc</value>
+    <value>awbentlc</value>
   </data>
   <data name="QFTextBox13.Caption" xml:space="preserve">
-    <value>Cazone</value>
+    <value>Azone</value>
   </data>
   <data name="QFTextBox14.Caption" xml:space="preserve">
-    <value>Cbillarea</value>
+    <value>Bill area</value>
   </data>
   <data name="QFTextBox15.Caption" xml:space="preserve">
-    <value>Cbranch</value>
+    <value>Branch</value>
   </data>
   <data name="QFTextBox16.Caption" xml:space="preserve">
-    <value>Ccluster</value>
+    <value>Cluster</value>
   </data>
   <data name="QFTextBox17.Caption" xml:space="preserve">
-    <value>Ccntrycode</value>
+    <value>Country Code</value>
   </data>
   <data name="QFTextBox18.Caption" xml:space="preserve">
-    <value>Ccontact1</value>
+    <value>Contact1</value>
   </data>
   <data name="QFTextBox19.Caption" xml:space="preserve">
-    <value>Ccontact2</value>
+    <value>Contact2</value>
   </data>
   <data name="QFCheckBox10.Caption" xml:space="preserve">
-    <value>Ccrdserv</value>
+    <value>crd serv</value>
   </data>
   <data name="QFTextBox20.Caption" xml:space="preserve">
     <value>Ccslink</value>
   </data>
   <data name="QFTextBox21.Caption" xml:space="preserve">
-    <value>Cdivision</value>
+    <value>Division</value>
   </data>
   <data name="QFCheckBox11.Caption" xml:space="preserve">
-    <value>Cdpserv</value>
+    <value>dp serv</value>
   </data>
   <data name="QFCheckBox12.Caption" xml:space="preserve">
-    <value>Cdpznb</value>
+    <value>dp znb</value>
   </data>
   <data name="QFTextBox22.Caption" xml:space="preserve">
-    <value>Cedp</value>
+    <value>edp</value>
   </data>
   <data name="QFTextBox23.Caption" xml:space="preserve">
-    <value>Cemailid1</value>
+    <value>Emailid1</value>
   </data>
   <data name="QFTextBox24.Caption" xml:space="preserve">
-    <value>Cemailid2</value>
+    <value>Emailid2</value>
   </data>
   <data name="QFTextBox25.Caption" xml:space="preserve">
-    <value>Cfax</value>
+    <value>Fax</value>
   </data>
   <data name="QFTextBox26.Caption" xml:space="preserve">
-    <value>Cgroup</value>
+    <value>Group</value>
   </data>
   <data name="QFTextBox27.Caption" xml:space="preserve">
-    <value>Chuba</value>
+    <value>hub a</value>
   </data>
   <data name="QFTextBox28.Caption" xml:space="preserve">
-    <value>Chubb</value>
+    <value>hub b</value>
   </data>
   <data name="QFCheckBox13.Caption" xml:space="preserve">
-    <value>Cipserv</value>
+    <value>ip serv</value>
   </data>
   <data name="QFTextBox29.Caption" xml:space="preserve">
     <value>Cittlink</value>
   </data>
   <data name="QFCheckBox14.Caption" xml:space="preserve">
-    <value>Cloctype</value>
+    <value>loc type</value>
   </data>
   <data name="QFTextBox30.Caption" xml:space="preserve">
-    <value>Coldname</value>
+    <value>Old Name</value>
   </data>
   <data name="QFTextBox31.Caption" xml:space="preserve">
-    <value>Cpbagdst</value>
+    <value>pbagdst</value>
   </data>
   <data name="QFCheckBox15.Caption" xml:space="preserve">
-    <value>Cpoddelay</value>
+    <value>pod delay</value>
   </data>
   <data name="QFTextBox32.Caption" xml:space="preserve">
-    <value>Cpodentlc</value>
+    <value>pod entlc</value>
   </data>
   <data name="QFTextBox33.Caption" xml:space="preserve">
-    <value>Cpodscarea</value>
+    <value>pod sc area</value>
   </data>
   <data name="QFTextBox34.Caption" xml:space="preserve">
-    <value>Cpuloc</value>
+    <value>pu loc</value>
   </data>
   <data name="QFCheckBox16.Caption" xml:space="preserve">
-    <value>Csafire</value>
+    <value>safire</value>
   </data>
   <data name="QFTextBox35.Caption" xml:space="preserve">
-    <value>Cscrcd</value>
+    <value>scr code</value>
   </data>
   <data name="QFTextBox36.Caption" xml:space="preserve">
-    <value>Cscrcddesc</value>
+    <value>scrcd desc</value>
   </data>
   <data name="QFCheckBox17.Caption" xml:space="preserve">
-    <value>Csfcserv</value>
+    <value>sfcserv</value>
   </data>
   <data name="QFTextBox37.Caption" xml:space="preserve">
-    <value>Csfczn</value>
+    <value>sfc zone</value>
   </data>
   <data name="QFCheckBox18.Caption" xml:space="preserve">
-    <value>Csmrtzn</value>
+    <value>smrt zone</value>
   </data>
   <data name="QFTextBox38.Caption" xml:space="preserve">
-    <value>Cstate</value>
+    <value>State</value>
   </data>
   <data name="QFTextBox39.Caption" xml:space="preserve">
-    <value>Cstatecd</value>
+    <value>state code</value>
   </data>
   <data name="QFTextBox40.Caption" xml:space="preserve">
-    <value>Cstdcode</value>
+    <value>std code</value>
   </data>
   <data name="QFTextBox41.Caption" xml:space="preserve">
-    <value>Csubreg</value>
+    <value>sub reg</value>
   </data>
   <data name="QFTextBox42.Caption" xml:space="preserve">
     <value>Ctcode</value>
   </data>
   <data name="QFTextBox43.Caption" xml:space="preserve">
-    <value>Ctel</value>
+    <value>telephone</value>
   </data>
   <data name="QFTextBox44.Caption" xml:space="preserve">
-    <value>Ctlx</value>
+    <value>tlx</value>
   </data>
   <data name="QFTextBox45.Caption" xml:space="preserve">
-    <value>Cttcarea</value>
+    <value>ttc area</value>
   </data>
   <data name="QFTextBox46.Caption" xml:space="preserve">
-    <value>Cttcareaib</value>
+    <value>ttc area ib</value>
   </data>
   <data name="QFTextBox47.Caption" xml:space="preserve">
-    <value>Cttcbrc</value>
+    <value>ttc brc</value>
   </data>
   <data name="QFTextBox48.Caption" xml:space="preserve">
-    <value>Cvia</value>
+    <value>via</value>
   </data>
   <data name="QFTextBox49.Caption" xml:space="preserve">
-    <value>Ndsrcheck</value>
+    <value>dsr check</value>
   </data>
   <data name="QFTextBox50.Caption" xml:space="preserve">
     <value>Nittbuff</value>
   </data>
   <data name="QFTextBox51.Caption" xml:space="preserve">
-    <value>Npodbufr</value>
+    <value>pod bufr</value>
   </data>
   <data name="QFTextBox52.Caption" xml:space="preserve">
-    <value>Npodscan</value>
+    <value>pod scan</value>
   </data>
   <data name="QFTextBox53.Caption" xml:space="preserve">
     <value>Npucutoff</value>

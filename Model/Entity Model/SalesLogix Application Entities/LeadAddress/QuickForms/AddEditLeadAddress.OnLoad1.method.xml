@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="4cce05f0-2549-4825-bc0d-9a9ab9fc7e9b" lastModifiedUtc="2014-05-30T06:21:51.4530423Z" name="OnLoad1" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="AddEditLeadAddress">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="e24685b6-7261-45e4-904b-a43f15018050" paramName="form" sequence="0" paramType="IAddEditLeadAddress" />
+    <OrmEntityMethodParam id="caae2863-3849-4506-9666-efe2d59d38e4" paramName="args" sequence="0" paramType="EventArgs" />
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets />
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

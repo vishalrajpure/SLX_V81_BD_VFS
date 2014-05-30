@@ -216,7 +216,7 @@
           <ResourceKey>lueLeadCompetitor</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CodeSnippetActionItem, Sage.Platform.QuickForms">
             <CodeSnippetActionItem methodId="d096a3d3-98d2-49cd-b142-f8f163942182">
-              <MethodName>lueLeadCompetitor_ChangeAction</MethodName>
+              <MethodName />
             </CodeSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>

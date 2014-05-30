@@ -41,19 +41,9 @@ type="text/css">
 
 <SalesLogix:ScriptResourceProvider ID="OpportunityProductsgrdOppProducts_Strings" runat="server">
     <Keys>
-          <SalesLogix:ResourceKeyName Key="grdOppProducts.6ef4d952-2b1a-4d9f-a36e-35a942dd32bb.ColumnHeading" />
-        <SalesLogix:ResourceKeyName Key="grdOppProducts.6ef4d952-2b1a-4d9f-a36e-35a942dd32bb.Text" />
-<SalesLogix:ResourceKeyName Key="38611e40-47c3-4f73-88e1-62bfa47171a4.DialogTitleOverride" />   <SalesLogix:ResourceKeyName Key="grdOppProducts.33816379-5ee4-4a9d-850c-ce5518934f95.ColumnHeading" />
+          <SalesLogix:ResourceKeyName Key="grdOppProducts.33816379-5ee4-4a9d-850c-ce5518934f95.ColumnHeading" />
        <SalesLogix:ResourceKeyName Key="grdOppProducts.5e29a114-4a97-45a3-9db6-2d0b10fd74dd.ColumnHeading" />
        <SalesLogix:ResourceKeyName Key="grdOppProducts.89fb1ecc-72a4-4f09-921b-29a9175daf56.ColumnHeading" />
-       <SalesLogix:ResourceKeyName Key="grdOppProducts.a85f781e-8ec4-4eb2-959b-8d969ef1d648.ColumnHeading" />
-       <SalesLogix:ResourceKeyName Key="grdOppProducts.6a57e635-5b9d-48b1-a5ec-baf4745cc0c4.ColumnHeading" />
-       <SalesLogix:ResourceKeyName Key="grdOppProducts.a4c903b4-ff1a-4479-a402-caae0353699e.ColumnHeading" />
-       <SalesLogix:ResourceKeyName Key="grdOppProducts.6a6d5c85-c8d6-4660-9f10-3855008c45ca.ColumnHeading" />
-       <SalesLogix:ResourceKeyName Key="grdOppProducts.0723086e-115c-4d05-aa21-e047d57c316a.ColumnHeading" />
-       <SalesLogix:ResourceKeyName Key="grdOppProducts.bdcfebf2-8c54-459a-97ec-00e4d92f86dc.ColumnHeading" />
-       <SalesLogix:ResourceKeyName Key="grdOppProducts.8b5cf516-7850-47e3-b512-402fe221806c.ColumnHeading" />
-       <SalesLogix:ResourceKeyName Key="grdOppProducts.ceb64e60-2b36-42fe-8a84-491ad1bf158d.ColumnHeading" />
            <SalesLogix:ResourceKeyName Key="grdOppProducts.Save.ToolTip" />
     <SalesLogix:ResourceKeyName Key="grdOppProducts.Relate.ToolTip" />
     <SalesLogix:ResourceKeyName Key="grdOppProducts.Cancel.ToolTip" />
@@ -61,27 +51,7 @@ type="text/css">
      </Keys>
 </SalesLogix:ScriptResourceProvider>
 
-										
-		
-		
-		
-		
-
-																					
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-																							 
+			 
 
 
 
@@ -278,25 +248,6 @@ if (opportunity != null)
 }
 protected override void OnFormBound()
 {
- var systemInfo = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.SalesLogix.Services.ISystemOptionsService>(true);  
- if (systemInfo.MultiCurrency) 
- { 
-    FormHelper.AddBaseUserCurrencyRatesToClientContext(PageWorkItem); 
- } 
- var entityRateEntity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity; 
-	if (systemInfo.MultiCurrency && this.PageWorkItem.State["ModeId"].ToString() == "Insert") 
-	//Set Entity Rate and Code on the service since there is no entity to query from. 
-	{ 
-		var ccs = PageWorkItem.Services.Get<Sage.Platform.WebPortal.Services.ClientContextService>(); 
-	if (ccs.CurrentContext.ContainsKey("EntityRateCode")) 
-		{ ccs.CurrentContext["EntityRateCode"].Equals(entityRateEntity.ExchangeRateCode); } 
-	else 
-		{ ccs.CurrentContext.Add("EntityRateCode", entityRateEntity.ExchangeRateCode); } 
-	if (ccs.CurrentContext.ContainsKey("EntityRate")) 
-		{ ccs.CurrentContext["EntityRate"].Equals(entityRateEntity.ExchangeRate); } 
-	else 
-		{ ccs.CurrentContext.Add("EntityRate", entityRateEntity.ExchangeRate.ToString()); } 
-	} 
  var entity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity; 
  if (this.PageWorkItem.State["ModeId"].ToString() == "Insert") 
  { 

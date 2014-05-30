@@ -129,6 +129,18 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
 
         _parentEntity = GetParentEntity() as IPersistentEntity;
         _parentEntityReference = _parentEntity as IComponentReference;
+
+        if (_parentEntityReference is IAccount)
+        {
+            ViewState["parentEntityID"] = _parentEntityReference.Id;
+            ViewState["parentEntity"] = "Account";
+        }
+        if (_parentEntityReference is IContact)
+        {
+            ViewState["parentEntityID"] = _parentEntityReference.Id;
+            ViewState["parentEntity"] = "Contact";
+        }
+
         ClientBindingMgr.RegisterDialogCancelButton(btnCancel);
 
 
@@ -137,15 +149,10 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
         script_FormatNumber += " function only_required(Address1,pincode,Latitude,Logitute) ";
         script_FormatNumber += " {";
         script_FormatNumber += "    var df = true;";
-        script_FormatNumber += "     if(Address1 == '') { df =  false; }";
-        //script_FormatNumber += "      df =  false; }";
-        script_FormatNumber += "     if(pincode == '') {df =  false; }";
-        // script_FormatNumber += "      df =  false; }";
-        script_FormatNumber += "     if(Latitude == '') {df =  false; }";
-        // script_FormatNumber += "      df =  false; }";
+        script_FormatNumber += "     if(Address1 == '') { df =  false; }";     
+        script_FormatNumber += "     if(pincode == '') {df =  false; }";     
+        script_FormatNumber += "     if(Latitude == '') {df =  false; }";     
         script_FormatNumber += "     if(Logitute == '') {df =  false; }";
-        // script_FormatNumber += "      df =  false; }";
-
         script_FormatNumber += "     if(!df) {";
         script_FormatNumber += "     alert('Please Fill Required fields');";
         script_FormatNumber += " return df;} else {";
@@ -158,9 +165,8 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
         {
             string _idname = Session["Addressid"].ToString();
             string[] parts = _idname.Split(',');
-            _id = parts[0].ToString();
-           // _name = parts[1].ToString();            
-          
+            _id = parts[0].ToString();                    
+
             IAddress curAdd = this.BindingSource.Current as IAddress;
             Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_id);
             if (objadd != null)
@@ -178,13 +184,51 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
                 curAdd.Salutation = objadd.Salutation;
                 curAdd.State = objadd.State;
                 curAdd.Description = objadd.Description;
-            }            
+            }
         }
-        else
+        string _Entityid = "";
+        if (ViewState["parentEntityID"] != null)
         {
-           // curAdd.Latitude = txtLatitude.Text != "" ? txtLatitude.Text : 0;
-           // curAdd.Logitude = txtLogitute.Text != "" ? txtLogitute.Text : 0;
+            if (ViewState["parentEntity"] != null)
+            {
+                if (ViewState["parentEntity"].ToString() == "Contact")
+                {
+                    Sage.Entity.Interfaces.IContact objcontact = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IContact>(ViewState["parentEntityID"].ToString());
+                    if (objcontact != null)
+                    {
+                        _Entityid = objcontact.Address.Id.ToString();
+                    }                 
+                }
+                else
+                {
+                    Sage.Entity.Interfaces.IAccount objaccount = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAccount>(ViewState["parentEntityID"].ToString());
+                    if (objaccount != null)
+                    {
+                        _Entityid = objaccount.Address.Id.ToString();
+                    }
+                }
+                IAddress curAdd2 = this.BindingSource.Current as IAddress;
+                Sage.Entity.Interfaces.IAddress objadd2 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_Entityid);
+                if (objadd2 != null)
+                {
+                    curAdd2.Address1 = objadd2.Address1;
+                    curAdd2.Address2 = objadd2.Address2;
+                    curAdd2.Address3 = objadd2.Address3;
+                    curAdd2.AddressType = objadd2.AddressType;
+                    curAdd2.City = objadd2.City;
+                    curAdd2.Country = objadd2.Country;
+                    curAdd2.IsPrimary = objadd2.IsPrimary;
+                    curAdd2.Latitude = objadd2.Latitude != null ? objadd2.Latitude : 0;
+                    curAdd2.Logitude = objadd2.Logitude != null ? objadd2.Logitude : 0;
+                    curAdd2.PostalCode = objadd2.PostalCode;
+                    curAdd2.Salutation = objadd2.Salutation;
+                    curAdd2.State = objadd2.State;
+                    curAdd2.Description = objadd2.Description;
+                }
+            }
+
         }
+
     }
 
     public override ISmartPartInfo GetSmartPartInfo(Type smartPartInfoType)
@@ -195,7 +239,6 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
             if (BindingSource.Current != null)
             {
                 IAddress address = (IAddress)BindingSource.Current;
-
                 txtEntityId.Value = "";// _parentEntityReference.Id.ToString();
 
                 if (address.Id != null)
@@ -212,12 +255,17 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
 
                 if (_parentEntityReference is IAccount)
                 {
+                    ViewState["parentEntityID"] = _parentEntityReference.Id;
+                    ViewState["parentEntity"] = "Account";
+
                     tinfo.Title = Mode.Value == "ADD"
                                       ? GetLocalResourceObject("DialogTitleAccountAdd").ToString()
                                       : GetLocalResourceObject("DialogTitleAccountEdit").ToString();
                 }
                 if (_parentEntityReference is IContact)
                 {
+                    ViewState["parentEntityID"] = _parentEntityReference.Id;
+                    ViewState["parentEntity"] = "Contact";
                     tinfo.Title = Mode.Value == "ADD"
                                       ? GetLocalResourceObject("DialogTitleContactAdd").ToString()
                                       : GetLocalResourceObject("DialogTitleContactEdit").ToString();
@@ -248,65 +296,54 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
     protected void btnSave_ClickAction(object sender, EventArgs e)
     {
-		 try
+        try
         {
-        if (Session["Addressid"] != null)
-        {
-            string _idname = Session["Addressid"].ToString();
-            string[] parts = _idname.Split(',');
-			
-            _id = parts[0].ToString();
-			if(parts.Length>2)
-			{
-              _name = parts[1].ToString();
-			}
-
-            IAddress curAdd = this.BindingSource.Current as IAddress;
-            Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_id.ToString());
-            if (objadd != null)
+            string _parentId = "";
+            string _Entityid = "";
+            if (ViewState["parentEntityID"] != null)
             {
-                objadd.Address1 = curAdd.Address1;
-                objadd.Address2 = curAdd.Address2;
-                objadd.Address3 = curAdd.Address3;
-                objadd.AddressType = curAdd.AddressType;
-                objadd.City = curAdd.City;
-                objadd.Country = curAdd.Country;
-                objadd.IsPrimary = curAdd.IsPrimary;
-                objadd.Latitude = curAdd.Latitude;
-                objadd.Logitude = curAdd.Logitude;
-                objadd.PostalCode = curAdd.PostalCode;
-                objadd.Salutation = curAdd.Salutation;
-                objadd.State = curAdd.State;
-                // objadd.Description = curAdd.Description;
-                objadd.Save();
-				if(_name != "")
-				{
-                   Response.Redirect(string.Format(_name + ".aspx?entityId={0}", objadd.EntityId));
-				}
+                if (ViewState["parentEntity"].ToString() == "Contact")
+                {
+                    Sage.Entity.Interfaces.IContact objcontact = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IContact>(ViewState["parentEntityID"].ToString());
+                    _Entityid = objcontact.Address.Id.ToString();
+                }
+                else
+                {
+                    Sage.Entity.Interfaces.IAccount objaccount = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAccount>(ViewState["parentEntityID"].ToString());
+                    _Entityid = objaccount.Address.Id.ToString();
+                }
+                if (_parentId != null)
+                {                  
+                    IAddress curAdd = this.BindingSource.Current as IAddress;
+                    Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_Entityid);
+                    if (objadd != null)
+                    {
+                        objadd.Address1 = curAdd.Address1;
+                        objadd.Address2 = curAdd.Address2;
+                        objadd.Address3 = curAdd.Address3;
+                        objadd.AddressType = curAdd.AddressType;
+                        objadd.City = curAdd.City;
+                        objadd.Country = curAdd.Country;
+                        objadd.IsPrimary = curAdd.IsPrimary;
+                        objadd.Latitude = curAdd.Latitude;
+                        objadd.Logitude = curAdd.Logitude;
+                        objadd.PostalCode = curAdd.PostalCode;
+                        objadd.Salutation = curAdd.Salutation;
+                        objadd.State = curAdd.State;
+                        objadd.Save();
+                        Response.Redirect(string.Format(ViewState["parentEntity"].ToString() + ".aspx?entityId={0}", objadd.EntityId));
+                    }
+                }
             }
-
+            else
+            {
+                IAddress curAdd1 = this.BindingSource.Current as IAddress;
+                curAdd1.EntityId = "123123123123";
+                curAdd1.Save();
+                Session["Addressid"] = curAdd1.Id.ToString();
+                // Response.Redirect(string.Format("InsertContactAccount.aspx?modeid=Insert"));
+            }
         }
-        else
-        {
-            IAddress curAdd = this.BindingSource.Current as IAddress;
-            curAdd.EntityId = "123123123123";
-            curAdd.Save();
-            Session["LeadAddressid"] = curAdd.Id.ToString();
-           // Response.Redirect(string.Format("InsertContactAccount.aspx?modeid=Insert"));
-        }
-
-
-        /*(   Sage.Entity.Interfaces.IAccount objaccount = this.GetParentEntity() as Sage.Entity.Interfaces.IAccount;
-         IPersistentEntity persistentEntity = BindingSource.Current as IPersistentEntity;
-
-         _parentEntity = GetParentEntity() as IPersistentEntity;
-         _parentEntityReference = _parentEntity as IComponentReference;
-         if (objaccount != null)
-         {
-
-         }*/
-
-		 }
         catch (Exception ex)
         {
         }
@@ -342,9 +379,10 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
         refresher.RefreshAll();
     }
     protected void btngetGL_Click(object sender, EventArgs e)
-    {       
-		try{
-            IAddress curAdd = this.BindingSource.Current as IAddress;
+    {
+        try
+        {
+
             if (txtAddress1.Text != "")
             {
                 string addr = string.Empty;
@@ -387,31 +425,68 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
                         }
                         if (dtCoordinates.Rows.Count > 0)
                         {
+                            IAddress curAdd = this.BindingSource.Current as IAddress;
                             curAdd.Latitude = Convert.ToDecimal(dtCoordinates.Rows[0]["Latitude"].ToString());
                             curAdd.Logitude = Convert.ToDecimal(dtCoordinates.Rows[0]["Longitude"].ToString());
                             txtLatitude.Text = dtCoordinates.Rows[0]["Latitude"].ToString();
                             txtLogitute.Text = dtCoordinates.Rows[0]["Longitude"].ToString();
-                            if (Session["Addressid"] != null)
+
+
+                            string _EnitityId = "";                           
+                            if (ViewState["parentEntityID"] != null)
                             {
-                                string _idname = Session["Addressid"].ToString();
-                                string[] parts = _idname.Split(',');
-                                _id = parts[0].ToString();
-                                _name = parts[1].ToString();
-                                _entityid = parts[2].ToString();
-                                curAdd.EntityId = _entityid;
-                                curAdd.Save();
+                                if (ViewState["parentEntity"].ToString() == "Contact")
+                                {
+                                    Sage.Entity.Interfaces.IContact objcontact = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IContact>(ViewState["parentEntityID"].ToString());
+                                    _EnitityId = objcontact.Address.Id.ToString();
+                                }
+                                else
+                                {
+                                    Sage.Entity.Interfaces.IAccount objaccount = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAccount>(ViewState["parentEntityID"].ToString());
+                                    _EnitityId = objaccount.Address.Id.ToString();
+                                }
+                                if (_EnitityId != null)
+                                {
+                                    Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_EnitityId);
+                                    if (objadd != null)
+                                    {
+                                        objadd.Latitude = curAdd.Latitude;
+                                        objadd.Logitude = curAdd.Logitude;
+                                        objadd.Save();
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
-        
-		 }
+
+
+        }
         catch (Exception ex)
         {
         }
     }
-	
-	
 
+    protected void txtPostalCode_TextChanged(object sender, EventArgs e)
+    {
+        IAddress curAdd = this.BindingSource.Current as IAddress;
+        if (txtPostalCode.Text != "")
+        {
+            string qry = "select CPINCODE from VWPINCODEMASTER where CPINCODE ='" + txtPostalCode.Text + "'";
+            Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+            System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+            System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+            System.Data.DataTable dt = new System.Data.DataTable();
+            dataAdapterObj.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+            }
+            else
+            {
+                lblerr.Visible = true;
+                lblerr.Text = "Pincode does not Exists in Pincode Masters";
+            }
+        }
+    }
 }

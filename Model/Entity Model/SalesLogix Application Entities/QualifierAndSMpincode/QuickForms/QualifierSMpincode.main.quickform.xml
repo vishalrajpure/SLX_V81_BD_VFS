@@ -63,7 +63,7 @@ lueSaleManager_lbl.ForeColor = System.Drawing.Color.Red;</CSharpCodeSnippet>
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnChangeAction>
-        <Required>false</Required>
+        <Required>true</Required>
         <LookupImage />
         <LookupDialogWidth xsi:nil="true" />
         <LookupDialogHeight xsi:nil="true" />
@@ -152,7 +152,7 @@ lueSaleManager_lbl.ForeColor = System.Drawing.Color.Red;</CSharpCodeSnippet>
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnChangeAction>
-        <Required>false</Required>
+        <Required>true</Required>
         <LookupImage />
         <LookupDialogWidth xsi:nil="true" />
         <LookupDialogHeight xsi:nil="true" />
@@ -263,7 +263,7 @@ lueSaleManager_lbl.ForeColor = System.Drawing.Color.Red;</CSharpCodeSnippet>
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnChangeAction>
-        <Required>false</Required>
+        <Required>true</Required>
         <LookupImage />
         <LookupDialogWidth xsi:nil="true" />
         <LookupDialogHeight xsi:nil="true" />
@@ -403,7 +403,7 @@ lueSaleManager_lbl.ForeColor = System.Drawing.Color.Red;</CSharpCodeSnippet>
           <ResourceKey>QFButton</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName>QFButton_ClickAction</MethodName>
+              <MethodName />
               <CSharpCodeSnippet>Sage.Entity.Interfaces.IQualifierAndSMpincode Objqualifier = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.IQualifierAndSMpincode&gt;();
 if (Objqualifier != null)
 {
@@ -424,9 +424,25 @@ if (Objqualifier != null)
     }
     else
     {
-        Objqualifier.PincodeId = luePincode.LookupResultValue.ToString();            
+        Objqualifier.PincodeId = luePincode.LookupResultValue.ToString(); 		
+		Sage.Entity.Interfaces.IVwpincodemaster objpin = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IVwpincodemaster&gt;(Objqualifier.PincodeId);
+		if(objpin!=null)
+		{
+			Objqualifier.PinCode = objpin.Cpincode;
+			Objqualifier.PincodeId = objpin.Pincdmstid;
+		}		
         Objqualifier.QualifierId = luequalifier.LookupResultValue.ToString();
+		Sage.Entity.Interfaces.IUserInfo objuser = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUserInfo&gt;(Objqualifier.QualifierId);
+		if(objuser!=null)
+		{
+			Objqualifier.QualifierName = objuser.UserName;
+		}
         Objqualifier.SalesManagerId = lueSaleManager.LookupResultValue.ToString();
+		Sage.Entity.Interfaces.IUserInfo objuser1 = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUserInfo&gt;(Objqualifier.SalesManagerId);
+		if(objuser1!=null)
+		{
+			Objqualifier.SalesManagerName = objuser1.UserName;
+		}
         Objqualifier.Save();
         Response.Redirect(string.Format("QualifierAndSMpincode.aspx?entityId={0}", (Objqualifier.Id.ToString())));            
     }

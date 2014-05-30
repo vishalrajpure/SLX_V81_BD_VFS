@@ -561,8 +561,8 @@ if (DialogService != null)
 	Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Entity.Interfaces.IContact;   
 	if(contact != null)
 	{
-		 string _idname = contact.Address.Id.ToString() + ",Contact," + contact.Id.ToString() ;
-        Session["Addressid"] = _idname;
+		//string _idname = contact.Address.Id.ToString() + ",Contact," + contact.Id.ToString() ;
+       // Session["Addressid"] = _idname;
 	    DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
 	    DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAddress);
 	    DialogService.ShowDialog();
@@ -625,7 +625,7 @@ if(string.IsNullOrEmpty(contact.Address.PostalCode))
 }
 else
 {
-	Session.Remove("Addressid");
+	//Session.Remove("Addressid");
  	DialogService.SetSpecs(400, 400, "UpdateContactOptions", string.Empty);
 	DialogService.EntityType = typeof(Sage.Entity.Interfaces.IContact);
 	DialogService.ShowDialog(); 	
@@ -678,7 +678,7 @@ if(string.IsNullOrEmpty(contact.Address.PostalCode))
 else
 {
    	contact.Save();
-	Session.Remove("Addressid");
+	//Session.Remove("Addressid");
 }
 	
 

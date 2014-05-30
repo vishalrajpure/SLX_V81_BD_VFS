@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <MenuDropDownItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="5949414a-f796-482c-bb08-36d4e1e4f97e">
   <ItemId>EmployeeMasterItemCreateNewGroup</ItemId>
-  <NavUrl>javascript:Sage.Groups.GroupManager.CreateGroup('VMEMPMASTER');</NavUrl>
+  <NavUrl>javascript:Sage.Groups.GroupManager.CreateGroup('VWEMPMASTER');</NavUrl>
   <LargeImageUrl />
   <SmallImageUrl />
   <ContextMenuId />

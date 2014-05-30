@@ -26,73 +26,91 @@
 
       </td>
                 <td  >
-<div class="slxlabel  alignleft checkboxRight">
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox5_lbl" AssociatedControlID="QFTextBox5" runat="server" Text="<%$ resources: QFTextBox5.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox5"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
+  </div>
 
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox"  Text="<%$ resources: QFCheckBox.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
                 <td  >
-<div class="slxlabel  alignleft checkboxRight">
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox10_lbl" AssociatedControlID="QFTextBox10" runat="server" Text="<%$ resources: QFTextBox10.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox10"  dojoType="Sage.UI.Controls.TextBox" MaxLength="25"  />
+  </div>
 
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox1"  Text="<%$ resources: QFCheckBox1.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
       </tr>
 <tr>
             <td  >
-<div class="slxlabel  alignleft checkboxRight">
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox6_lbl" AssociatedControlID="QFTextBox6" runat="server" Text="<%$ resources: QFTextBox6.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox6"  dojoType="Sage.UI.Controls.TextBox" MaxLength="30"  />
+  </div>
 
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox2"  Text="<%$ resources: QFCheckBox2.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
                 <td  >
-<div class="slxlabel  alignleft checkboxRight">
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox7_lbl" AssociatedControlID="QFTextBox7" runat="server" Text="<%$ resources: QFTextBox7.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox7"  dojoType="Sage.UI.Controls.TextBox" MaxLength="30"  />
+  </div>
 
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox3"  Text="<%$ resources: QFCheckBox3.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
                 <td  >
-<div class="slxlabel  alignleft checkboxRight">
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox8_lbl" AssociatedControlID="QFTextBox8" runat="server" Text="<%$ resources: QFTextBox8.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox8"  dojoType="Sage.UI.Controls.TextBox" MaxLength="25"  />
+  </div>
 
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox4"  Text="<%$ resources: QFCheckBox4.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
       </tr>
 <tr>
             <td  >
-<div class="slxlabel  alignleft checkboxRight">
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox11_lbl" AssociatedControlID="QFTextBox11" runat="server" Text="<%$ resources: QFTextBox11.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox11"  dojoType="Sage.UI.Controls.TextBox" MaxLength="6"  />
+  </div>
 
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox5"  Text="<%$ resources: QFCheckBox5.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
                 <td  >
-<div class="slxlabel  alignleft checkboxRight">
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox9_lbl" AssociatedControlID="QFTextBox9" runat="server" Text="<%$ resources: QFTextBox9.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox9"  dojoType="Sage.UI.Controls.TextBox" MaxLength="20"  />
+  </div>
 
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox6"  Text="<%$ resources: QFCheckBox6.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
                 <td  >
-<div class="slxlabel  alignleft checkboxRight">
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox38_lbl" AssociatedControlID="QFTextBox38" runat="server" Text="<%$ resources: QFTextBox38.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox38"  dojoType="Sage.UI.Controls.TextBox" MaxLength="30"  />
+  </div>
 
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox7"  Text="<%$ resources: QFCheckBox7.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
       </tr>
 <tr>
             <td  >
-<div class="slxlabel  alignleft checkboxRight">
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox3_lbl" AssociatedControlID="QFTextBox3" runat="server" Text="<%$ resources: QFTextBox3.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox3"  dojoType="Sage.UI.Controls.TextBox" MaxLength="2"  />
+  </div>
 
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox8"  Text="<%$ resources: QFCheckBox8.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
                 <td  >
  <div class=" lbl alignleft" >
@@ -116,19 +134,12 @@ LabelPlacement="left"  />
 <tr>
             <td  >
  <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox3_lbl" AssociatedControlID="QFTextBox3" runat="server" Text="<%$ resources: QFTextBox3.Caption %>" ></asp:Label>
+   <asp:Label ID="QFTextBox12_lbl" AssociatedControlID="QFTextBox12" runat="server" Text="<%$ resources: QFTextBox12.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox3"  dojoType="Sage.UI.Controls.TextBox" MaxLength="2"  />
+<asp:TextBox runat="server" ID="QFTextBox12"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
   </div>
 
-      </td>
-                <td  >
-<div class="slxlabel  alignleft checkboxRight">
-
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox9"  Text="<%$ resources: QFCheckBox9.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
                 <td  >
  <div class=" lbl alignleft" >
@@ -139,93 +150,7 @@ LabelPlacement="left"  />
   </div>
 
       </td>
-      </tr>
-<tr>
-            <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox5_lbl" AssociatedControlID="QFTextBox5" runat="server" Text="<%$ resources: QFTextBox5.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox5"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
-  </div>
-
-      </td>
-                <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox6_lbl" AssociatedControlID="QFTextBox6" runat="server" Text="<%$ resources: QFTextBox6.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox6"  dojoType="Sage.UI.Controls.TextBox" MaxLength="30"  />
-  </div>
-
-      </td>
-                <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox7_lbl" AssociatedControlID="QFTextBox7" runat="server" Text="<%$ resources: QFTextBox7.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox7"  dojoType="Sage.UI.Controls.TextBox" MaxLength="30"  />
-  </div>
-
-      </td>
-      </tr>
-<tr>
-            <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox8_lbl" AssociatedControlID="QFTextBox8" runat="server" Text="<%$ resources: QFTextBox8.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox8"  dojoType="Sage.UI.Controls.TextBox" MaxLength="25"  />
-  </div>
-
-      </td>
-                <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox9_lbl" AssociatedControlID="QFTextBox9" runat="server" Text="<%$ resources: QFTextBox9.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox9"  dojoType="Sage.UI.Controls.TextBox" MaxLength="20"  />
-  </div>
-
-      </td>
-                <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox10_lbl" AssociatedControlID="QFTextBox10" runat="server" Text="<%$ resources: QFTextBox10.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox10"  dojoType="Sage.UI.Controls.TextBox" MaxLength="25"  />
-  </div>
-
-      </td>
-      </tr>
-<tr>
-            <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox11_lbl" AssociatedControlID="QFTextBox11" runat="server" Text="<%$ resources: QFTextBox11.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox11"  dojoType="Sage.UI.Controls.TextBox" MaxLength="6"  />
-  </div>
-
-      </td>
-                <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox12_lbl" AssociatedControlID="QFTextBox12" runat="server" Text="<%$ resources: QFTextBox12.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox12"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
-  </div>
-
-      </td>
-                <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox13_lbl" AssociatedControlID="QFTextBox13" runat="server" Text="<%$ resources: QFTextBox13.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox13"  dojoType="Sage.UI.Controls.TextBox" MaxLength="2"  />
-  </div>
-
-      </td>
+                <td></td>
       </tr>
 <tr>
             <td  >
@@ -248,10 +173,10 @@ LabelPlacement="left"  />
       </td>
                 <td  >
  <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox16_lbl" AssociatedControlID="QFTextBox16" runat="server" Text="<%$ resources: QFTextBox16.Caption %>" ></asp:Label>
+   <asp:Label ID="QFTextBox13_lbl" AssociatedControlID="QFTextBox13" runat="server" Text="<%$ resources: QFTextBox13.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox16"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
+<asp:TextBox runat="server" ID="QFTextBox13"  dojoType="Sage.UI.Controls.TextBox" MaxLength="2"  />
   </div>
 
       </td>
@@ -287,11 +212,13 @@ LabelPlacement="left"  />
       </tr>
 <tr>
             <td  >
-<div class="slxlabel  alignleft checkboxRight">
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox16_lbl" AssociatedControlID="QFTextBox16" runat="server" Text="<%$ resources: QFTextBox16.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox16"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
+  </div>
 
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox10"  Text="<%$ resources: QFCheckBox10.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
                 <td  >
  <div class=" lbl alignleft" >
@@ -308,31 +235,6 @@ LabelPlacement="left"  />
  </div>
   <div  class="textcontrol"   >
 <asp:TextBox runat="server" ID="QFTextBox21"  dojoType="Sage.UI.Controls.TextBox" MaxLength="6"  />
-  </div>
-
-      </td>
-      </tr>
-<tr>
-            <td  >
-<div class="slxlabel  alignleft checkboxRight">
-
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox11"  Text="<%$ resources: QFCheckBox11.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
-      </td>
-                <td  >
-<div class="slxlabel  alignleft checkboxRight">
-
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox12"  Text="<%$ resources: QFCheckBox12.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
-      </td>
-                <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox22_lbl" AssociatedControlID="QFTextBox22" runat="server" Text="<%$ resources: QFTextBox22.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox22"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
   </div>
 
       </td>
@@ -358,6 +260,17 @@ LabelPlacement="left"  />
       </td>
                 <td  >
  <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox22_lbl" AssociatedControlID="QFTextBox22" runat="server" Text="<%$ resources: QFTextBox22.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox22"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
+  </div>
+
+      </td>
+      </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft" >
    <asp:Label ID="QFTextBox25_lbl" AssociatedControlID="QFTextBox25" runat="server" Text="<%$ resources: QFTextBox25.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
@@ -365,9 +278,7 @@ LabelPlacement="left"  />
   </div>
 
       </td>
-      </tr>
-<tr>
-            <td  >
+                <td  >
  <div class=" lbl alignleft" >
    <asp:Label ID="QFTextBox26_lbl" AssociatedControlID="QFTextBox26" runat="server" Text="<%$ resources: QFTextBox26.Caption %>" ></asp:Label>
  </div>
@@ -385,7 +296,9 @@ LabelPlacement="left"  />
   </div>
 
       </td>
-                <td  >
+      </tr>
+<tr>
+            <td  >
  <div class=" lbl alignleft" >
    <asp:Label ID="QFTextBox28_lbl" AssociatedControlID="QFTextBox28" runat="server" Text="<%$ resources: QFTextBox28.Caption %>" ></asp:Label>
  </div>
@@ -393,15 +306,6 @@ LabelPlacement="left"  />
 <asp:TextBox runat="server" ID="QFTextBox28"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
   </div>
 
-      </td>
-      </tr>
-<tr>
-            <td  >
-<div class="slxlabel  alignleft checkboxRight">
-
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox13"  Text="<%$ resources: QFCheckBox13.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
                 <td  >
  <div class=" lbl alignleft" >
@@ -413,11 +317,13 @@ LabelPlacement="left"  />
 
       </td>
                 <td  >
-<div class="slxlabel  alignleft checkboxRight">
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox31_lbl" AssociatedControlID="QFTextBox31" runat="server" Text="<%$ resources: QFTextBox31.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox31"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
+  </div>
 
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox14"  Text="<%$ resources: QFCheckBox14.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
       </tr>
 <tr>
@@ -431,24 +337,6 @@ LabelPlacement="left"  />
 
       </td>
                 <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox31_lbl" AssociatedControlID="QFTextBox31" runat="server" Text="<%$ resources: QFTextBox31.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox31"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
-  </div>
-
-      </td>
-                <td  >
-<div class="slxlabel  alignleft checkboxRight">
-
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox15"  Text="<%$ resources: QFCheckBox15.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
-      </td>
-      </tr>
-<tr>
-            <td  >
  <div class=" lbl alignleft" >
    <asp:Label ID="QFTextBox32_lbl" AssociatedControlID="QFTextBox32" runat="server" Text="<%$ resources: QFTextBox32.Caption %>" ></asp:Label>
  </div>
@@ -466,7 +354,9 @@ LabelPlacement="left"  />
   </div>
 
       </td>
-                <td  >
+      </tr>
+<tr>
+            <td  >
  <div class=" lbl alignleft" >
    <asp:Label ID="QFTextBox34_lbl" AssociatedControlID="QFTextBox34" runat="server" Text="<%$ resources: QFTextBox34.Caption %>" ></asp:Label>
  </div>
@@ -475,14 +365,34 @@ LabelPlacement="left"  />
   </div>
 
       </td>
+                <td  >
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox41_lbl" AssociatedControlID="QFTextBox41" runat="server" Text="<%$ resources: QFTextBox41.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox41"  dojoType="Sage.UI.Controls.TextBox" MaxLength="7"  />
+  </div>
+
+      </td>
+                <td  >
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox39_lbl" AssociatedControlID="QFTextBox39" runat="server" Text="<%$ resources: QFTextBox39.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox39"  dojoType="Sage.UI.Controls.TextBox" MaxLength="2"  />
+  </div>
+
+      </td>
       </tr>
 <tr>
             <td  >
-<div class="slxlabel  alignleft checkboxRight">
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox44_lbl" AssociatedControlID="QFTextBox44" runat="server" Text="<%$ resources: QFTextBox44.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox44"  dojoType="Sage.UI.Controls.TextBox" MaxLength="20"  />
+  </div>
 
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox16"  Text="<%$ resources: QFCheckBox16.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
                 <td  >
  <div class=" lbl alignleft" >
@@ -505,49 +415,27 @@ LabelPlacement="left"  />
       </tr>
 <tr>
             <td  >
-<div class="slxlabel  alignleft checkboxRight">
-
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox17"  Text="<%$ resources: QFCheckBox17.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
-      </td>
-                <td  >
  <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox37_lbl" AssociatedControlID="QFTextBox37" runat="server" Text="<%$ resources: QFTextBox37.Caption %>" ></asp:Label>
+   <asp:Label ID="QFTextBox53_lbl" AssociatedControlID="QFTextBox53" runat="server" Text="<%$ resources: QFTextBox53.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox37"  dojoType="Sage.UI.Controls.TextBox" MaxLength="2"  />
+<asp:TextBox runat="server" ID="QFTextBox53"  dojoType="Sage.UI.Controls.TextBox"  />
   </div>
 
       </td>
                 <td  >
-<div class="slxlabel  alignleft checkboxRight">
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox47_lbl" AssociatedControlID="QFTextBox47" runat="server" Text="<%$ resources: QFTextBox47.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox47"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
+  </div>
 
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox18"  Text="<%$ resources: QFCheckBox18.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
       </td>
+                <td></td>
       </tr>
 <tr>
             <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox38_lbl" AssociatedControlID="QFTextBox38" runat="server" Text="<%$ resources: QFTextBox38.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox38"  dojoType="Sage.UI.Controls.TextBox" MaxLength="30"  />
-  </div>
-
-      </td>
-                <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox39_lbl" AssociatedControlID="QFTextBox39" runat="server" Text="<%$ resources: QFTextBox39.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox39"  dojoType="Sage.UI.Controls.TextBox" MaxLength="2"  />
-  </div>
-
-      </td>
-                <td  >
  <div class=" lbl alignleft" >
    <asp:Label ID="QFTextBox40_lbl" AssociatedControlID="QFTextBox40" runat="server" Text="<%$ resources: QFTextBox40.Caption %>" ></asp:Label>
  </div>
@@ -556,23 +444,12 @@ LabelPlacement="left"  />
   </div>
 
       </td>
-      </tr>
-<tr>
-            <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox41_lbl" AssociatedControlID="QFTextBox41" runat="server" Text="<%$ resources: QFTextBox41.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox41"  dojoType="Sage.UI.Controls.TextBox" MaxLength="7"  />
-  </div>
-
-      </td>
                 <td  >
  <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox42_lbl" AssociatedControlID="QFTextBox42" runat="server" Text="<%$ resources: QFTextBox42.Caption %>" ></asp:Label>
+   <asp:Label ID="QFTextBox50_lbl" AssociatedControlID="QFTextBox50" runat="server" Text="<%$ resources: QFTextBox50.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox42"  dojoType="Sage.UI.Controls.TextBox" MaxLength="2"  />
+<asp:TextBox runat="server" ID="QFTextBox50"  dojoType="Sage.UI.Controls.TextBox"  />
   </div>
 
       </td>
@@ -589,19 +466,10 @@ LabelPlacement="left"  />
 <tr>
             <td  >
  <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox44_lbl" AssociatedControlID="QFTextBox44" runat="server" Text="<%$ resources: QFTextBox44.Caption %>" ></asp:Label>
+   <asp:Label ID="QFTextBox37_lbl" AssociatedControlID="QFTextBox37" runat="server" Text="<%$ resources: QFTextBox37.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox44"  dojoType="Sage.UI.Controls.TextBox" MaxLength="20"  />
-  </div>
-
-      </td>
-                <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox45_lbl" AssociatedControlID="QFTextBox45" runat="server" Text="<%$ resources: QFTextBox45.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox45"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
+<asp:TextBox runat="server" ID="QFTextBox37"  dojoType="Sage.UI.Controls.TextBox" MaxLength="2"  />
   </div>
 
       </td>
@@ -611,26 +479,6 @@ LabelPlacement="left"  />
  </div>
   <div  class="textcontrol"   >
 <asp:TextBox runat="server" ID="QFTextBox46"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
-  </div>
-
-      </td>
-      </tr>
-<tr>
-            <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox47_lbl" AssociatedControlID="QFTextBox47" runat="server" Text="<%$ resources: QFTextBox47.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox47"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
-  </div>
-
-      </td>
-                <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox48_lbl" AssociatedControlID="QFTextBox48" runat="server" Text="<%$ resources: QFTextBox48.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox48"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
   </div>
 
       </td>
@@ -647,19 +495,19 @@ LabelPlacement="left"  />
 <tr>
             <td  >
  <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox50_lbl" AssociatedControlID="QFTextBox50" runat="server" Text="<%$ resources: QFTextBox50.Caption %>" ></asp:Label>
+   <asp:Label ID="QFTextBox42_lbl" AssociatedControlID="QFTextBox42" runat="server" Text="<%$ resources: QFTextBox42.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox50"  dojoType="Sage.UI.Controls.TextBox"  />
+<asp:TextBox runat="server" ID="QFTextBox42"  dojoType="Sage.UI.Controls.TextBox" MaxLength="2"  />
   </div>
 
       </td>
                 <td  >
  <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox51_lbl" AssociatedControlID="QFTextBox51" runat="server" Text="<%$ resources: QFTextBox51.Caption %>" ></asp:Label>
+   <asp:Label ID="QFTextBox45_lbl" AssociatedControlID="QFTextBox45" runat="server" Text="<%$ resources: QFTextBox45.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox51"  dojoType="Sage.UI.Controls.TextBox"  />
+<asp:TextBox runat="server" ID="QFTextBox45"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
   </div>
 
       </td>
@@ -676,10 +524,19 @@ LabelPlacement="left"  />
 <tr>
             <td  >
  <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox53_lbl" AssociatedControlID="QFTextBox53" runat="server" Text="<%$ resources: QFTextBox53.Caption %>" ></asp:Label>
+   <asp:Label ID="QFTextBox48_lbl" AssociatedControlID="QFTextBox48" runat="server" Text="<%$ resources: QFTextBox48.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox53"  dojoType="Sage.UI.Controls.TextBox"  />
+<asp:TextBox runat="server" ID="QFTextBox48"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
+  </div>
+
+      </td>
+                <td  >
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox51_lbl" AssociatedControlID="QFTextBox51" runat="server" Text="<%$ resources: QFTextBox51.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox51"  dojoType="Sage.UI.Controls.TextBox"  />
   </div>
 
       </td>
@@ -692,6 +549,159 @@ LabelPlacement="left"  />
   </div>
 
       </td>
+      </tr>
+<tr>
+            <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox6"  Text="<%$ resources: QFCheckBox6.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox3"  Text="<%$ resources: QFCheckBox3.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox12"  Text="<%$ resources: QFCheckBox12.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+      </tr>
+<tr>
+            <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox5"  Text="<%$ resources: QFCheckBox5.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox4"  Text="<%$ resources: QFCheckBox4.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox"  Text="<%$ resources: QFCheckBox.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+      </tr>
+<tr>
+            <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox8"  Text="<%$ resources: QFCheckBox8.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox1"  Text="<%$ resources: QFCheckBox1.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox10"  Text="<%$ resources: QFCheckBox10.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+      </tr>
+<tr>
+            <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox13"  Text="<%$ resources: QFCheckBox13.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox7"  Text="<%$ resources: QFCheckBox7.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox2"  Text="<%$ resources: QFCheckBox2.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+      </tr>
+<tr>
+            <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox11"  Text="<%$ resources: QFCheckBox11.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox14"  Text="<%$ resources: QFCheckBox14.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox17"  Text="<%$ resources: QFCheckBox17.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+      </tr>
+<tr>
+            <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox9"  Text="<%$ resources: QFCheckBox9.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox15"  Text="<%$ resources: QFCheckBox15.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox16"  Text="<%$ resources: QFCheckBox16.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+      </tr>
+<tr>
+            <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox18"  Text="<%$ resources: QFCheckBox18.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td></td>
+                <td></td>
+      </tr>
+<tr>
+            <td></td>
+                <td></td>
                 <td></td>
       </tr>
 </table>
@@ -729,51 +739,12 @@ protected override void OnAddEntityBindings() {
                  // QFTextBox.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBoxTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Areamstid", QFTextBox, "Text");
         BindingSource.Bindings.Add(QFTextBoxTextBinding);
-                    // QFCheckBox.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBoxCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bapeserv", QFCheckBox, "Checked");
-        BindingSource.Bindings.Add(QFCheckBoxCheckedBinding);
-                    // QFCheckBox1.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox1CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bcmploc", QFCheckBox1, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox1CheckedBinding);
-                    // QFCheckBox2.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox2CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bdpwtrest", QFCheckBox2, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox2CheckedBinding);
-                    // QFCheckBox3.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox3CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bdsccode", QFCheckBox3, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox3CheckedBinding);
-                    // QFCheckBox4.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox4CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bembargo", QFCheckBox4, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox4CheckedBinding);
-                    // QFCheckBox5.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox5CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bfcserv", QFCheckBox5, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox5CheckedBinding);
-                    // QFCheckBox6.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox6CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Boctroi", QFCheckBox6, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox6CheckedBinding);
-                    // QFCheckBox7.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox7CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bsfcserv", QFCheckBox7, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox7CheckedBinding);
-                    // QFCheckBox8.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox8CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bwebupdt", QFCheckBox8, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox8CheckedBinding);
-                    // QFTextBox1.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox1TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Caltarea", QFTextBox1, "Text");
-        BindingSource.Bindings.Add(QFTextBox1TextBinding);
-                    // QFTextBox2.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox2TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Caltscrcd", QFTextBox2, "Text");
-        BindingSource.Bindings.Add(QFTextBox2TextBinding);
-                    // QFTextBox3.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox3TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Calttcode", QFTextBox3, "Text");
-        BindingSource.Bindings.Add(QFTextBox3TextBinding);
-                    // QFCheckBox9.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox9CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Capeserv", QFCheckBox9, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox9CheckedBinding);
-                    // QFTextBox4.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox4TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Capexzn", QFTextBox4, "Text");
-        BindingSource.Bindings.Add(QFTextBox4TextBinding);
                     // QFTextBox5.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox5TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Carea", QFTextBox5, "Text");
         BindingSource.Bindings.Add(QFTextBox5TextBinding);
+                    // QFTextBox10.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox10TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Careadesc", QFTextBox10, "Text");
+        BindingSource.Bindings.Add(QFTextBox10TextBinding);
                     // QFTextBox6.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox6TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Careaadr1", QFTextBox6, "Text");
         BindingSource.Bindings.Add(QFTextBox6TextBinding);
@@ -783,30 +754,39 @@ protected override void OnAddEntityBindings() {
                     // QFTextBox8.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox8TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Careaadr3", QFTextBox8, "Text");
         BindingSource.Bindings.Add(QFTextBox8TextBinding);
-                    // QFTextBox9.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox9TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Careacity", QFTextBox9, "Text");
-        BindingSource.Bindings.Add(QFTextBox9TextBinding);
-                    // QFTextBox10.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox10TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Careadesc", QFTextBox10, "Text");
-        BindingSource.Bindings.Add(QFTextBox10TextBinding);
                     // QFTextBox11.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox11TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Careapin", QFTextBox11, "Text");
         BindingSource.Bindings.Add(QFTextBox11TextBinding);
+                    // QFTextBox9.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox9TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Careacity", QFTextBox9, "Text");
+        BindingSource.Bindings.Add(QFTextBox9TextBinding);
+                    // QFTextBox38.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox38TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cstate", QFTextBox38, "Text");
+        BindingSource.Bindings.Add(QFTextBox38TextBinding);
+                    // QFTextBox3.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox3TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Calttcode", QFTextBox3, "Text");
+        BindingSource.Bindings.Add(QFTextBox3TextBinding);
+                    // QFTextBox1.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox1TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Caltarea", QFTextBox1, "Text");
+        BindingSource.Bindings.Add(QFTextBox1TextBinding);
+                    // QFTextBox2.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox2TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Caltscrcd", QFTextBox2, "Text");
+        BindingSource.Bindings.Add(QFTextBox2TextBinding);
                     // QFTextBox12.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox12TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cawbentlc", QFTextBox12, "Text");
         BindingSource.Bindings.Add(QFTextBox12TextBinding);
-                    // QFTextBox13.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox13TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cazone", QFTextBox13, "Text");
-        BindingSource.Bindings.Add(QFTextBox13TextBinding);
+                    // QFTextBox4.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox4TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Capexzn", QFTextBox4, "Text");
+        BindingSource.Bindings.Add(QFTextBox4TextBinding);
                     // QFTextBox14.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox14TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cbillarea", QFTextBox14, "Text");
         BindingSource.Bindings.Add(QFTextBox14TextBinding);
                     // QFTextBox15.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox15TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cbranch", QFTextBox15, "Text");
         BindingSource.Bindings.Add(QFTextBox15TextBinding);
-                    // QFTextBox16.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox16TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ccluster", QFTextBox16, "Text");
-        BindingSource.Bindings.Add(QFTextBox16TextBinding);
+                    // QFTextBox13.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox13TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cazone", QFTextBox13, "Text");
+        BindingSource.Bindings.Add(QFTextBox13TextBinding);
                     // QFTextBox17.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox17TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ccntrycode", QFTextBox17, "Text");
         BindingSource.Bindings.Add(QFTextBox17TextBinding);
@@ -816,30 +796,24 @@ protected override void OnAddEntityBindings() {
                     // QFTextBox19.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox19TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ccontact2", QFTextBox19, "Text");
         BindingSource.Bindings.Add(QFTextBox19TextBinding);
-                    // QFCheckBox10.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox10CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ccrdserv", QFCheckBox10, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox10CheckedBinding);
+                    // QFTextBox16.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox16TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ccluster", QFTextBox16, "Text");
+        BindingSource.Bindings.Add(QFTextBox16TextBinding);
                     // QFTextBox20.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox20TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ccslink", QFTextBox20, "Text");
         BindingSource.Bindings.Add(QFTextBox20TextBinding);
                     // QFTextBox21.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox21TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cdivision", QFTextBox21, "Text");
         BindingSource.Bindings.Add(QFTextBox21TextBinding);
-                    // QFCheckBox11.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox11CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cdpserv", QFCheckBox11, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox11CheckedBinding);
-                    // QFCheckBox12.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox12CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cdpznb", QFCheckBox12, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox12CheckedBinding);
-                    // QFTextBox22.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox22TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cedp", QFTextBox22, "Text");
-        BindingSource.Bindings.Add(QFTextBox22TextBinding);
                     // QFTextBox23.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox23TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cemailid1", QFTextBox23, "Text");
         BindingSource.Bindings.Add(QFTextBox23TextBinding);
                     // QFTextBox24.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox24TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cemailid2", QFTextBox24, "Text");
         BindingSource.Bindings.Add(QFTextBox24TextBinding);
+                    // QFTextBox22.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox22TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cedp", QFTextBox22, "Text");
+        BindingSource.Bindings.Add(QFTextBox22TextBinding);
                     // QFTextBox25.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox25TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cfax", QFTextBox25, "Text");
         BindingSource.Bindings.Add(QFTextBox25TextBinding);
@@ -852,24 +826,15 @@ protected override void OnAddEntityBindings() {
                     // QFTextBox28.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox28TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Chubb", QFTextBox28, "Text");
         BindingSource.Bindings.Add(QFTextBox28TextBinding);
-                    // QFCheckBox13.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox13CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cipserv", QFCheckBox13, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox13CheckedBinding);
                     // QFTextBox29.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox29TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cittlink", QFTextBox29, "Text");
         BindingSource.Bindings.Add(QFTextBox29TextBinding);
-                    // QFCheckBox14.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox14CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cloctype", QFCheckBox14, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox14CheckedBinding);
-                    // QFTextBox30.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox30TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Coldname", QFTextBox30, "Text");
-        BindingSource.Bindings.Add(QFTextBox30TextBinding);
                     // QFTextBox31.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox31TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cpbagdst", QFTextBox31, "Text");
         BindingSource.Bindings.Add(QFTextBox31TextBinding);
-                    // QFCheckBox15.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox15CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cpoddelay", QFCheckBox15, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox15CheckedBinding);
+                    // QFTextBox30.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox30TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Coldname", QFTextBox30, "Text");
+        BindingSource.Bindings.Add(QFTextBox30TextBinding);
                     // QFTextBox32.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox32TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cpodentlc", QFTextBox32, "Text");
         BindingSource.Bindings.Add(QFTextBox32TextBinding);
@@ -879,75 +844,120 @@ protected override void OnAddEntityBindings() {
                     // QFTextBox34.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox34TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cpuloc", QFTextBox34, "Text");
         BindingSource.Bindings.Add(QFTextBox34TextBinding);
-                    // QFCheckBox16.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox16CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Csafire", QFCheckBox16, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox16CheckedBinding);
+                    // QFTextBox41.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox41TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Csubreg", QFTextBox41, "Text");
+        BindingSource.Bindings.Add(QFTextBox41TextBinding);
+                    // QFTextBox39.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox39TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cstatecd", QFTextBox39, "Text");
+        BindingSource.Bindings.Add(QFTextBox39TextBinding);
+                    // QFTextBox44.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox44TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ctlx", QFTextBox44, "Text");
+        BindingSource.Bindings.Add(QFTextBox44TextBinding);
                     // QFTextBox35.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox35TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cscrcd", QFTextBox35, "Text");
         BindingSource.Bindings.Add(QFTextBox35TextBinding);
                     // QFTextBox36.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox36TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cscrcddesc", QFTextBox36, "Text");
         BindingSource.Bindings.Add(QFTextBox36TextBinding);
-                    // QFCheckBox17.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox17CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Csfcserv", QFCheckBox17, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox17CheckedBinding);
-                    // QFTextBox37.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox37TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Csfczn", QFTextBox37, "Text");
-        BindingSource.Bindings.Add(QFTextBox37TextBinding);
-                    // QFCheckBox18.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox18CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Csmrtzn", QFCheckBox18, "Checked");
-        BindingSource.Bindings.Add(QFCheckBox18CheckedBinding);
-                    // QFTextBox38.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox38TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cstate", QFTextBox38, "Text");
-        BindingSource.Bindings.Add(QFTextBox38TextBinding);
-                    // QFTextBox39.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox39TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cstatecd", QFTextBox39, "Text");
-        BindingSource.Bindings.Add(QFTextBox39TextBinding);
-                    // QFTextBox40.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox40TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cstdcode", QFTextBox40, "Text");
-        BindingSource.Bindings.Add(QFTextBox40TextBinding);
-                    // QFTextBox41.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox41TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Csubreg", QFTextBox41, "Text");
-        BindingSource.Bindings.Add(QFTextBox41TextBinding);
-                    // QFTextBox42.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox42TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ctcode", QFTextBox42, "Text");
-        BindingSource.Bindings.Add(QFTextBox42TextBinding);
-                    // QFTextBox43.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox43TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ctel", QFTextBox43, "Text");
-        BindingSource.Bindings.Add(QFTextBox43TextBinding);
-                    // QFTextBox44.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox44TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ctlx", QFTextBox44, "Text");
-        BindingSource.Bindings.Add(QFTextBox44TextBinding);
-                    // QFTextBox45.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox45TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cttcarea", QFTextBox45, "Text");
-        BindingSource.Bindings.Add(QFTextBox45TextBinding);
-                    // QFTextBox46.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox46TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cttcareaib", QFTextBox46, "Text");
-        BindingSource.Bindings.Add(QFTextBox46TextBinding);
-                    // QFTextBox47.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox47TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cttcbrc", QFTextBox47, "Text");
-        BindingSource.Bindings.Add(QFTextBox47TextBinding);
-                    // QFTextBox48.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox48TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cvia", QFTextBox48, "Text");
-        BindingSource.Bindings.Add(QFTextBox48TextBinding);
-                    // QFTextBox49.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox49TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ndsrcheck", QFTextBox49, "Text");
-        BindingSource.Bindings.Add(QFTextBox49TextBinding);
-                    // QFTextBox50.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox50TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Nittbuff", QFTextBox50, "Text");
-        BindingSource.Bindings.Add(QFTextBox50TextBinding);
-                    // QFTextBox51.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox51TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Npodbufr", QFTextBox51, "Text");
-        BindingSource.Bindings.Add(QFTextBox51TextBinding);
-                    // QFTextBox52.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox52TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Npodscan", QFTextBox52, "Text");
-        BindingSource.Bindings.Add(QFTextBox52TextBinding);
                     // QFTextBox53.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox53TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Npucutoff", QFTextBox53, "Text");
         BindingSource.Bindings.Add(QFTextBox53TextBinding);
+                    // QFTextBox47.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox47TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cttcbrc", QFTextBox47, "Text");
+        BindingSource.Bindings.Add(QFTextBox47TextBinding);
+                    // QFTextBox40.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox40TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cstdcode", QFTextBox40, "Text");
+        BindingSource.Bindings.Add(QFTextBox40TextBinding);
+                    // QFTextBox50.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox50TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Nittbuff", QFTextBox50, "Text");
+        BindingSource.Bindings.Add(QFTextBox50TextBinding);
+                    // QFTextBox43.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox43TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ctel", QFTextBox43, "Text");
+        BindingSource.Bindings.Add(QFTextBox43TextBinding);
+                    // QFTextBox37.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox37TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Csfczn", QFTextBox37, "Text");
+        BindingSource.Bindings.Add(QFTextBox37TextBinding);
+                    // QFTextBox46.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox46TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cttcareaib", QFTextBox46, "Text");
+        BindingSource.Bindings.Add(QFTextBox46TextBinding);
+                    // QFTextBox49.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox49TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ndsrcheck", QFTextBox49, "Text");
+        BindingSource.Bindings.Add(QFTextBox49TextBinding);
+                    // QFTextBox42.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox42TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ctcode", QFTextBox42, "Text");
+        BindingSource.Bindings.Add(QFTextBox42TextBinding);
+                    // QFTextBox45.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox45TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cttcarea", QFTextBox45, "Text");
+        BindingSource.Bindings.Add(QFTextBox45TextBinding);
+                    // QFTextBox52.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox52TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Npodscan", QFTextBox52, "Text");
+        BindingSource.Bindings.Add(QFTextBox52TextBinding);
+                    // QFTextBox48.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox48TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cvia", QFTextBox48, "Text");
+        BindingSource.Bindings.Add(QFTextBox48TextBinding);
+                    // QFTextBox51.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox51TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Npodbufr", QFTextBox51, "Text");
+        BindingSource.Bindings.Add(QFTextBox51TextBinding);
                     // QFTextBox54.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox54TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("PersistentState", QFTextBox54, "Text");
         BindingSource.Bindings.Add(QFTextBox54TextBinding);
+                    // QFCheckBox6.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox6CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Boctroi", QFCheckBox6, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox6CheckedBinding);
+                    // QFCheckBox3.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox3CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bdsccode", QFCheckBox3, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox3CheckedBinding);
+                    // QFCheckBox12.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox12CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cdpznb", QFCheckBox12, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox12CheckedBinding);
+                    // QFCheckBox5.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox5CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bfcserv", QFCheckBox5, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox5CheckedBinding);
+                    // QFCheckBox4.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox4CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bembargo", QFCheckBox4, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox4CheckedBinding);
+                    // QFCheckBox.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBoxCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bapeserv", QFCheckBox, "Checked");
+        BindingSource.Bindings.Add(QFCheckBoxCheckedBinding);
+                    // QFCheckBox8.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox8CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bwebupdt", QFCheckBox8, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox8CheckedBinding);
+                    // QFCheckBox1.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox1CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bcmploc", QFCheckBox1, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox1CheckedBinding);
+                    // QFCheckBox10.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox10CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ccrdserv", QFCheckBox10, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox10CheckedBinding);
+                    // QFCheckBox13.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox13CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cipserv", QFCheckBox13, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox13CheckedBinding);
+                    // QFCheckBox7.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox7CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bsfcserv", QFCheckBox7, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox7CheckedBinding);
+                    // QFCheckBox2.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox2CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Bdpwtrest", QFCheckBox2, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox2CheckedBinding);
+                    // QFCheckBox11.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox11CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cdpserv", QFCheckBox11, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox11CheckedBinding);
+                    // QFCheckBox14.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox14CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cloctype", QFCheckBox14, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox14CheckedBinding);
+                    // QFCheckBox17.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox17CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Csfcserv", QFCheckBox17, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox17CheckedBinding);
+                    // QFCheckBox9.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox9CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Capeserv", QFCheckBox9, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox9CheckedBinding);
+                    // QFCheckBox15.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox15CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cpoddelay", QFCheckBox15, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox15CheckedBinding);
+                    // QFCheckBox16.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox16CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Csafire", QFCheckBox16, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox16CheckedBinding);
+                    // QFCheckBox18.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox18CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Csmrtzn", QFCheckBox18, "Checked");
+        BindingSource.Bindings.Add(QFCheckBox18CheckedBinding);
     
    
     }
@@ -1032,40 +1042,25 @@ public class AreaDetailAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     {
         get { return FindControl(ref _QFTextBox, "QFTextBox"); }
     }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox2;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox2
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox6;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox6
     {
-        get { return FindControl(ref _QFCheckBox2, "QFCheckBox2"); }
+        get { return FindControl(ref _QFTextBox6, "QFTextBox6"); }
     }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox5;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox5
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox11;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox11
     {
-        get { return FindControl(ref _QFCheckBox5, "QFCheckBox5"); }
-    }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox8;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox8
-    {
-        get { return FindControl(ref _QFCheckBox8, "QFCheckBox8"); }
+        get { return FindControl(ref _QFTextBox11, "QFTextBox11"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox3;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox3
     {
         get { return FindControl(ref _QFTextBox3, "QFTextBox3"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox5;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox5
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox12;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox12
     {
-        get { return FindControl(ref _QFTextBox5, "QFTextBox5"); }
-    }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox8;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox8
-    {
-        get { return FindControl(ref _QFTextBox8, "QFTextBox8"); }
-    }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox11;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox11
-    {
-        get { return FindControl(ref _QFTextBox11, "QFTextBox11"); }
+        get { return FindControl(ref _QFTextBox12, "QFTextBox12"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox14;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox14
@@ -1077,120 +1072,125 @@ public class AreaDetailAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     {
         get { return FindControl(ref _QFTextBox17, "QFTextBox17"); }
     }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox10;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox10
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox16;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox16
     {
-        get { return FindControl(ref _QFCheckBox10, "QFCheckBox10"); }
-    }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox11;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox11
-    {
-        get { return FindControl(ref _QFCheckBox11, "QFCheckBox11"); }
+        get { return FindControl(ref _QFTextBox16, "QFTextBox16"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox23;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox23
     {
         get { return FindControl(ref _QFTextBox23, "QFTextBox23"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox26;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox26
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox25;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox25
     {
-        get { return FindControl(ref _QFTextBox26, "QFTextBox26"); }
+        get { return FindControl(ref _QFTextBox25, "QFTextBox25"); }
     }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox13;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox13
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox28;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox28
     {
-        get { return FindControl(ref _QFCheckBox13, "QFCheckBox13"); }
+        get { return FindControl(ref _QFTextBox28, "QFTextBox28"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox30;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox30
     {
         get { return FindControl(ref _QFTextBox30, "QFTextBox30"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox32;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox32
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox34;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox34
     {
-        get { return FindControl(ref _QFTextBox32, "QFTextBox32"); }
-    }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox16;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox16
-    {
-        get { return FindControl(ref _QFCheckBox16, "QFCheckBox16"); }
-    }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox17;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox17
-    {
-        get { return FindControl(ref _QFCheckBox17, "QFCheckBox17"); }
-    }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox38;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox38
-    {
-        get { return FindControl(ref _QFTextBox38, "QFTextBox38"); }
-    }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox41;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox41
-    {
-        get { return FindControl(ref _QFTextBox41, "QFTextBox41"); }
+        get { return FindControl(ref _QFTextBox34, "QFTextBox34"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox44;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox44
     {
         get { return FindControl(ref _QFTextBox44, "QFTextBox44"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox47;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox47
-    {
-        get { return FindControl(ref _QFTextBox47, "QFTextBox47"); }
-    }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox50;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox50
-    {
-        get { return FindControl(ref _QFTextBox50, "QFTextBox50"); }
-    }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox53;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox53
     {
         get { return FindControl(ref _QFTextBox53, "QFTextBox53"); }
     }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox40;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox40
     {
-        get { return FindControl(ref _QFCheckBox, "QFCheckBox"); }
+        get { return FindControl(ref _QFTextBox40, "QFTextBox40"); }
     }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox3;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox3
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox37;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox37
     {
-        get { return FindControl(ref _QFCheckBox3, "QFCheckBox3"); }
+        get { return FindControl(ref _QFTextBox37, "QFTextBox37"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox42;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox42
+    {
+        get { return FindControl(ref _QFTextBox42, "QFTextBox42"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox48;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox48
+    {
+        get { return FindControl(ref _QFTextBox48, "QFTextBox48"); }
     }
     private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox6;
     public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox6
     {
         get { return FindControl(ref _QFCheckBox6, "QFCheckBox6"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox1;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox1
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox5;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox5
     {
-        get { return FindControl(ref _QFTextBox1, "QFTextBox1"); }
+        get { return FindControl(ref _QFCheckBox5, "QFCheckBox5"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox8;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox8
+    {
+        get { return FindControl(ref _QFCheckBox8, "QFCheckBox8"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox13;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox13
+    {
+        get { return FindControl(ref _QFCheckBox13, "QFCheckBox13"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox11;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox11
+    {
+        get { return FindControl(ref _QFCheckBox11, "QFCheckBox11"); }
     }
     private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox9;
     public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox9
     {
         get { return FindControl(ref _QFCheckBox9, "QFCheckBox9"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox6;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox6
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox18;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox18
     {
-        get { return FindControl(ref _QFTextBox6, "QFTextBox6"); }
+        get { return FindControl(ref _QFCheckBox18, "QFCheckBox18"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox5;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox5
+    {
+        get { return FindControl(ref _QFTextBox5, "QFTextBox5"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox7;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox7
+    {
+        get { return FindControl(ref _QFTextBox7, "QFTextBox7"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox9;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox9
     {
         get { return FindControl(ref _QFTextBox9, "QFTextBox9"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox12;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox12
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox1;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox1
     {
-        get { return FindControl(ref _QFTextBox12, "QFTextBox12"); }
+        get { return FindControl(ref _QFTextBox1, "QFTextBox1"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox4;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox4
+    {
+        get { return FindControl(ref _QFTextBox4, "QFTextBox4"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox15;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox15
@@ -1207,120 +1207,115 @@ public class AreaDetailAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     {
         get { return FindControl(ref _QFTextBox20, "QFTextBox20"); }
     }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox12;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox12
-    {
-        get { return FindControl(ref _QFCheckBox12, "QFCheckBox12"); }
-    }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox24;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox24
     {
         get { return FindControl(ref _QFTextBox24, "QFTextBox24"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox27;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox27
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox26;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox26
     {
-        get { return FindControl(ref _QFTextBox27, "QFTextBox27"); }
+        get { return FindControl(ref _QFTextBox26, "QFTextBox26"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox29;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox29
     {
         get { return FindControl(ref _QFTextBox29, "QFTextBox29"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox31;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox31
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox32;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox32
     {
-        get { return FindControl(ref _QFTextBox31, "QFTextBox31"); }
+        get { return FindControl(ref _QFTextBox32, "QFTextBox32"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox33;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox33
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox41;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox41
     {
-        get { return FindControl(ref _QFTextBox33, "QFTextBox33"); }
+        get { return FindControl(ref _QFTextBox41, "QFTextBox41"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox35;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox35
     {
         get { return FindControl(ref _QFTextBox35, "QFTextBox35"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox37;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox37
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox47;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox47
     {
-        get { return FindControl(ref _QFTextBox37, "QFTextBox37"); }
+        get { return FindControl(ref _QFTextBox47, "QFTextBox47"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox39;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox39
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox50;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox50
     {
-        get { return FindControl(ref _QFTextBox39, "QFTextBox39"); }
+        get { return FindControl(ref _QFTextBox50, "QFTextBox50"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox42;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox42
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox46;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox46
     {
-        get { return FindControl(ref _QFTextBox42, "QFTextBox42"); }
+        get { return FindControl(ref _QFTextBox46, "QFTextBox46"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox45;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox45
     {
         get { return FindControl(ref _QFTextBox45, "QFTextBox45"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox48;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox48
-    {
-        get { return FindControl(ref _QFTextBox48, "QFTextBox48"); }
-    }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox51;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox51
     {
         get { return FindControl(ref _QFTextBox51, "QFTextBox51"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox54;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox54
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox3;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox3
     {
-        get { return FindControl(ref _QFTextBox54, "QFTextBox54"); }
-    }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox1;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox1
-    {
-        get { return FindControl(ref _QFCheckBox1, "QFCheckBox1"); }
+        get { return FindControl(ref _QFCheckBox3, "QFCheckBox3"); }
     }
     private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox4;
     public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox4
     {
         get { return FindControl(ref _QFCheckBox4, "QFCheckBox4"); }
     }
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox1;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox1
+    {
+        get { return FindControl(ref _QFCheckBox1, "QFCheckBox1"); }
+    }
     private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox7;
     public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox7
     {
         get { return FindControl(ref _QFCheckBox7, "QFCheckBox7"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox2;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox2
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox14;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox14
     {
-        get { return FindControl(ref _QFTextBox2, "QFTextBox2"); }
+        get { return FindControl(ref _QFCheckBox14, "QFCheckBox14"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox4;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox4
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox15;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox15
     {
-        get { return FindControl(ref _QFTextBox4, "QFTextBox4"); }
-    }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox7;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox7
-    {
-        get { return FindControl(ref _QFTextBox7, "QFTextBox7"); }
+        get { return FindControl(ref _QFCheckBox15, "QFCheckBox15"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox10;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox10
     {
         get { return FindControl(ref _QFTextBox10, "QFTextBox10"); }
     }
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox8;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox8
+    {
+        get { return FindControl(ref _QFTextBox8, "QFTextBox8"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox38;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox38
+    {
+        get { return FindControl(ref _QFTextBox38, "QFTextBox38"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox2;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox2
+    {
+        get { return FindControl(ref _QFTextBox2, "QFTextBox2"); }
+    }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox13;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox13
     {
         get { return FindControl(ref _QFTextBox13, "QFTextBox13"); }
-    }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox16;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox16
-    {
-        get { return FindControl(ref _QFTextBox16, "QFTextBox16"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox19;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox19
@@ -1337,55 +1332,35 @@ public class AreaDetailAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     {
         get { return FindControl(ref _QFTextBox22, "QFTextBox22"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox25;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox25
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox27;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox27
     {
-        get { return FindControl(ref _QFTextBox25, "QFTextBox25"); }
+        get { return FindControl(ref _QFTextBox27, "QFTextBox27"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox28;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox28
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox31;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox31
     {
-        get { return FindControl(ref _QFTextBox28, "QFTextBox28"); }
+        get { return FindControl(ref _QFTextBox31, "QFTextBox31"); }
     }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox14;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox14
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox33;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox33
     {
-        get { return FindControl(ref _QFCheckBox14, "QFCheckBox14"); }
+        get { return FindControl(ref _QFTextBox33, "QFTextBox33"); }
     }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox15;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox15
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox39;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox39
     {
-        get { return FindControl(ref _QFCheckBox15, "QFCheckBox15"); }
-    }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox34;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox34
-    {
-        get { return FindControl(ref _QFTextBox34, "QFTextBox34"); }
+        get { return FindControl(ref _QFTextBox39, "QFTextBox39"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox36;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox36
     {
         get { return FindControl(ref _QFTextBox36, "QFTextBox36"); }
     }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox18;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox18
-    {
-        get { return FindControl(ref _QFCheckBox18, "QFCheckBox18"); }
-    }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox40;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox40
-    {
-        get { return FindControl(ref _QFTextBox40, "QFTextBox40"); }
-    }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox43;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox43
     {
         get { return FindControl(ref _QFTextBox43, "QFTextBox43"); }
-    }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox46;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox46
-    {
-        get { return FindControl(ref _QFTextBox46, "QFTextBox46"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox49;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox49
@@ -1396,6 +1371,41 @@ public class AreaDetailAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox52
     {
         get { return FindControl(ref _QFTextBox52, "QFTextBox52"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox54;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox54
+    {
+        get { return FindControl(ref _QFTextBox54, "QFTextBox54"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox12;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox12
+    {
+        get { return FindControl(ref _QFCheckBox12, "QFCheckBox12"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox
+    {
+        get { return FindControl(ref _QFCheckBox, "QFCheckBox"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox10;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox10
+    {
+        get { return FindControl(ref _QFCheckBox10, "QFCheckBox10"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox2;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox2
+    {
+        get { return FindControl(ref _QFCheckBox2, "QFCheckBox2"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox17;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox17
+    {
+        get { return FindControl(ref _QFCheckBox17, "QFCheckBox17"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox16;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox16
+    {
+        get { return FindControl(ref _QFCheckBox16, "QFCheckBox16"); }
     }
     private Sage.Platform.Controls.IGroupNavigatorControl _groupnavArea;
     public  Sage.Platform.Controls.IGroupNavigatorControl groupnavArea

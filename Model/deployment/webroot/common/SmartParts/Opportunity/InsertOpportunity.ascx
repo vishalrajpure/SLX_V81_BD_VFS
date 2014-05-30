@@ -342,6 +342,17 @@ else {
 protected void cmdSave_ClickAction(object sender, EventArgs e) {
 Sage.Entity.Interfaces.IOpportunity objOpp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 //Sage.Entity.Interfaces.IOpportunity objOpp = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.IOpportunity>();
+	if(objOpp.Description == "")
+	{
+		DialogService.ShowMessage("Please Select Decription");
+        return;
+	}
+	if(objOpp.Account == null)
+	{
+		DialogService.ShowMessage("Please Select Account");
+        return;
+	}
+	
     Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace SalesProcessTabs = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
     if (SalesProcessTabs != null)
     {
@@ -356,6 +367,11 @@ Sage.Entity.Interfaces.IOpportunity objOpp = BindingSource.Current as Sage.Entit
             //objOpp.Flagmode = Convert.ToInt32(Session["Flag"].ToString());
             objOpp.Owner = objOpp.Account.Owner;
            // objOpp.Status = drpsales.SelectedItem.Text;
+			if(objOpp.Account.Status == "Suspect")
+			{
+				objOpp.Account.Status = "Prospect";
+				objOpp.Account.Save();
+			}
 			
             objOpp.Save();
             Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.ISalesProcesses>();
@@ -374,6 +390,16 @@ Sage.Entity.Interfaces.IOpportunity objOpp = BindingSource.Current as Sage.Entit
 protected void cmdSaveNew_ClickAction(object sender, EventArgs e) {
 Sage.Entity.Interfaces.IOpportunity objOpp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 //Sage.Entity.Interfaces.IOpportunity objOpp = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.IOpportunity>();
+if(objOpp.Description == "")
+	{
+		DialogService.ShowMessage("Please Select Decription");
+        return;
+	}
+	if(objOpp.Account == null)
+	{
+		DialogService.ShowMessage("Please Select Account");
+        return;
+	}
     Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace SalesProcessTabs = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
     if (SalesProcessTabs != null)
     {
@@ -474,6 +500,7 @@ else
 }
 txtBusinessPotential_lbl.ForeColor = System.Drawing.Color.Red;
 txtDescription_lbl.ForeColor = System.Drawing.Color.Red;
+lueAccount_lbl.ForeColor = System.Drawing.Color.Red;
 Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 objOpp.Status = "Active";
 pklStatus.Enabled = false;

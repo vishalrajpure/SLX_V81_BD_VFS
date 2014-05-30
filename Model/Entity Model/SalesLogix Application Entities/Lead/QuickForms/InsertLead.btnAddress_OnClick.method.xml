@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="8bfe436c-b980-4072-9ff9-5d4c9022286d" lastModifiedUtc="2014-05-30T07:34:00.3286399Z" name="btnAddress_OnClick" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="InsertLead">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="200a5250-08b2-4bfe-8ba6-0ad2d32925dd" paramName="form" sequence="0" paramType="IInsertLead" />
+    <OrmEntityMethodParam id="eaef666e-5dc4-481e-9447-e3118ee4949a" paramName="args" sequence="0" paramType="EventArgs" />
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets />
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

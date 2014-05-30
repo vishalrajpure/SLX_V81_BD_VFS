@@ -15,5 +15,5 @@
   <Item Id="30481cb1-5a46-43fb-a2f6-9c81df6b9fae">EditLeadCompetitor.smartpart.xml</Item>
   <Item Id="c22afb5c-02ae-4f07-a984-174df2d611af">LeadProducts_Details.smartpart.xml</Item>
   <Item Id="d90a715a-5610-4cc1-975c-17624a06c87f">EditLeadProduct.smartpart.xml</Item>
-  <Item Id="27c063f5-7d7b-485a-bdf4-54be5a1eba7a">AddLeadAddress.smartpart.xml</Item>
+  <Item Id="56327dc5-a60c-4b7f-8f63-dda0b43823f5">AddEditLeadAddress.smartpart.xml</Item>
 </ModelItems>

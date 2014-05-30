@@ -1,0 +1,54 @@
+30-05-2014 10:20:17
+INFO  2014-05-30 15:50:10,889 - Installing bundle...
+INFO  2014-05-30 15:50:10,946 - Performing pre-install.
+INFO  2014-05-30 15:50:10,956 - Installing context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-30 15:50:11,159 - Successfully installed Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-30 15:50:11,164 - Installing model item: Insert Event (\Portal\SlxClient\ChildPages\Event\Event.page.xml)
+INFO  2014-05-30 15:50:11,429 - Successfully installed Insert Event (\Portal\SlxClient\ChildPages\Event\Event.page.xml)
+INFO  2014-05-30 15:50:11,432 - Installing model item: LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Event\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-05-30 15:50:11,468 - Successfully installed LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Event\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-05-30 15:50:11,473 - Installing model item: InsertEvent (Custom) (\Portal\SlxClient\ChildPages\Event\SmartParts\InsertEvent.smartpart.xml)
+INFO  2014-05-30 15:50:11,488 - Successfully installed InsertEvent (Custom) (\Portal\SlxClient\ChildPages\Event\SmartParts\InsertEvent.smartpart.xml)
+INFO  2014-05-30 15:50:11,492 - Installing model item: Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Event\Modules\Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule.module.xml)
+INFO  2014-05-30 15:50:11,500 - Successfully installed Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Event\Modules\Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule.module.xml)
+INFO  2014-05-30 15:50:11,504 - Installing context item: Activity (\Portal\SlxClient\ContextMenuItems\contextActivity\contextActivity.contextmenu.xml)
+INFO  2014-05-30 15:50:11,508 - Successfully installed Activity (\Portal\SlxClient\ContextMenuItems\contextActivity\contextActivity.contextmenu.xml)
+INFO  2014-05-30 15:50:11,513 - Installing model item: Schedule Event... (\Portal\SlxClient\ContextMenuItems\contextActivity\ContextMenuItems\menuItemScheduleEvent\menuItemScheduleEvent.contextmenu.xml)
+INFO  2014-05-30 15:50:11,554 - Successfully installed Schedule Event... (\Portal\SlxClient\ContextMenuItems\contextActivity\ContextMenuItems\menuItemScheduleEvent\menuItemScheduleEvent.contextmenu.xml)
+INFO  2014-05-30 15:50:11,558 - Installing context item: Schedule (\Portal\SlxClient\MenuItems\mnuSchedule\mnuSchedule.menu.xml)
+INFO  2014-05-30 15:50:11,563 - Successfully installed Schedule (\Portal\SlxClient\MenuItems\mnuSchedule\mnuSchedule.menu.xml)
+INFO  2014-05-30 15:50:11,568 - Installing model item: Event... (\Portal\SlxClient\MenuItems\mnuSchedule\MenuItems\sched_event\sched_event.menu.xml)
+INFO  2014-05-30 15:50:11,932 - Successfully installed Event... (\Portal\SlxClient\MenuItems\mnuSchedule\MenuItems\sched_event\sched_event.menu.xml)
+INFO  2014-05-30 15:50:11,938 - Saving context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-30 15:50:11,942 - Successfully saved Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-05-30 15:50:11,947 - Saving model item: Insert Event (\Portal\SlxClient\ChildPages\Event\Event.page.xml)
+INFO  2014-05-30 15:50:11,952 - Successfully saved Insert Event (\Portal\SlxClient\ChildPages\Event\Event.page.xml)
+INFO  2014-05-30 15:50:11,956 - Saving model item: LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Event\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-05-30 15:50:11,960 - Successfully saved LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Event\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-05-30 15:50:11,964 - Saving model item: InsertEvent (Custom) (\Portal\SlxClient\ChildPages\Event\SmartParts\InsertEvent.smartpart.xml)
+INFO  2014-05-30 15:50:11,969 - Successfully saved InsertEvent (Custom) (\Portal\SlxClient\ChildPages\Event\SmartParts\InsertEvent.smartpart.xml)
+INFO  2014-05-30 15:50:11,973 - Saving model item: Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Event\Modules\Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule.module.xml)
+INFO  2014-05-30 15:50:11,977 - Successfully saved Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Event\Modules\Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule.module.xml)
+INFO  2014-05-30 15:50:11,982 - Saving context item: Activity (\Portal\SlxClient\ContextMenuItems\contextActivity\contextActivity.contextmenu.xml)
+INFO  2014-05-30 15:50:11,986 - Successfully saved Activity (\Portal\SlxClient\ContextMenuItems\contextActivity\contextActivity.contextmenu.xml)
+INFO  2014-05-30 15:50:11,991 - Saving model item: Schedule Event... (\Portal\SlxClient\ContextMenuItems\contextActivity\ContextMenuItems\menuItemScheduleEvent\menuItemScheduleEvent.contextmenu.xml)
+INFO  2014-05-30 15:50:11,995 - Successfully saved Schedule Event... (\Portal\SlxClient\ContextMenuItems\contextActivity\ContextMenuItems\menuItemScheduleEvent\menuItemScheduleEvent.contextmenu.xml)
+INFO  2014-05-30 15:50:11,999 - Saving context item: Schedule (\Portal\SlxClient\MenuItems\mnuSchedule\mnuSchedule.menu.xml)
+INFO  2014-05-30 15:50:12,003 - Successfully saved Schedule (\Portal\SlxClient\MenuItems\mnuSchedule\mnuSchedule.menu.xml)
+INFO  2014-05-30 15:50:12,008 - Saving model item: Event... (\Portal\SlxClient\MenuItems\mnuSchedule\MenuItems\sched_event\sched_event.menu.xml)
+INFO  2014-05-30 15:50:12,012 - Successfully saved Event... (\Portal\SlxClient\MenuItems\mnuSchedule\MenuItems\sched_event\sched_event.menu.xml)
+INFO  2014-05-30 15:50:12,020 - Configuring installed items.
+INFO  2014-05-30 15:50:12,025 - Configuring Saleslogix Client...
+INFO  2014-05-30 15:50:12,032 - Configuring Insert Event...
+INFO  2014-05-30 15:50:16,062 - Configuring LiveGroupViewer (Custom)...
+INFO  2014-05-30 15:50:16,071 - Configuring InsertEvent (Custom)...
+INFO  2014-05-30 15:50:16,079 - Configuring Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule...
+INFO  2014-05-30 15:50:16,091 - Configuring Activity...
+INFO  2014-05-30 15:50:16,294 - Configuring Schedule Event......
+INFO  2014-05-30 15:50:16,388 - Configuring Schedule...
+INFO  2014-05-30 15:50:16,409 - Configuring Event......
+INFO  2014-05-30 15:50:16,452 - Performing pre-commit to target project.
+INFO  2014-05-30 15:50:16,559 - Committing items to target project...
+INFO  2014-05-30 15:50:16,696 - Committing transactions...
+INFO  2014-05-30 15:50:17,117 - Copying bundle manifest to project.
+INFO  2014-05-30 15:50:18,774 - Install complete.

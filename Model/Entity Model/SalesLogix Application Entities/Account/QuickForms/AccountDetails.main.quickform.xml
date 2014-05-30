@@ -7,7 +7,7 @@
       <ResourceKey>3e1b8a89-5ccb-49d4-ae6d-16f6d48a04a1</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName />
+          <MethodName>quickformload0</MethodName>
           <CSharpCodeSnippet>//Begin Load Action
 
 Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
@@ -190,8 +190,8 @@ if (account != null)
 	Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;    
 	if(account != null)
 	{
-		 string _idname = account.Address.Id.ToString() + ",Account,"+account.Id.ToString();
-        Session["Addressid"] = _idname;
+		// string _idname = account.Address.Id.ToString() + ",Account,"+account.Id.ToString();
+       // Session["Addressid"] = _idname;
 	    DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
 	    DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAddress);
 	    DialogService.ShowDialog();
@@ -951,7 +951,7 @@ if (account != null)
               <ValidationMethod>HasPropagationChanges</ValidationMethod>
               <OnFail typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
                 <CSharpSnippetActionItem>
-                  <MethodName>btnSaveAccount_ClickActionF</MethodName>
+                  <MethodName />
                   <CSharpCodeSnippet>Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
 if(string.IsNullOrEmpty(account.AccountName))
 {
@@ -981,13 +981,13 @@ if(string.IsNullOrEmpty(account.Address.PostalCode))
 else
 {
 	account.Save();
-	Session.Remove("Addressid");
+	//Session.Remove("Addressid");
 }</CSharpCodeSnippet>
                 </CSharpSnippetActionItem>
               </OnFail>
               <OnSuccess typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
                 <CSharpSnippetActionItem>
-                  <MethodName>btnSaveAccount_ClickActionS</MethodName>
+                  <MethodName />
                   <CSharpCodeSnippet>Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
 if(string.IsNullOrEmpty(account.AccountName))
 {
@@ -1016,7 +1016,7 @@ if(string.IsNullOrEmpty(account.Address.PostalCode))
 }
 else
 {
-	Session.Remove("Addressid");
+	//Session.Remove("Addressid");
 	DialogService.SetSpecs(400, 400, "UpdateAccountOptions", string.Empty);
 	DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAccount);
 	DialogService.ShowDialog(); 

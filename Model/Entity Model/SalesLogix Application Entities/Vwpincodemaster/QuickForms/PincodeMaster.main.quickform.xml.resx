@@ -118,30 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="QFTextBox.Caption" xml:space="preserve">
-    <value>Carea</value>
+    <value>Area</value>
   </data>
   <data name="QFTextBox1.Caption" xml:space="preserve">
-    <value>Ccrcrdscr</value>
+    <value>crcrdscr</value>
   </data>
   <data name="QFCheckBox.Caption" xml:space="preserve">
-    <value>Cflag</value>
+    <value>Flag</value>
   </data>
   <data name="QFTextBox2.Caption" xml:space="preserve">
-    <value>Cpincode</value>
+    <value>Pincode</value>
   </data>
   <data name="QFTextBox3.Caption" xml:space="preserve">
-    <value>Cpindesc</value>
-  </data>
-  <data name="QFDateTimePicker.Caption" xml:space="preserve">
-    <value>Createdate</value>
-  </data>
-  <data name="QFTextBox4.Caption" xml:space="preserve">
-    <value>Createuser</value>
+    <value>Description</value>
   </data>
   <data name="QFTextBox5.Caption" xml:space="preserve">
-    <value>Cscrcd</value>
+    <value>Scr code</value>
   </data>
   <data name="QFCheckBox1.Caption" xml:space="preserve">
-    <value>Cservflag</value>
+    <value>Servflag</value>
   </data>
 </root>

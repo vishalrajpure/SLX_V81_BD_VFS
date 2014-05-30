@@ -20,7 +20,7 @@
    <asp:Label ID="luePincode_lbl" AssociatedControlID="luePincode" runat="server" Text="<%$ resources: luePincode.Caption %>" ></asp:Label>
  </div>   
   <div   class="textcontrol lookup"   >
-<SalesLogix:LookupControl runat="server" ID="luePincode" LookupEntityName="Vwpincodemaster" LookupEntityTypeName="Sage.Entity.Interfaces.IVwpincodemaster, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String"  >
+<SalesLogix:LookupControl runat="server" ID="luePincode" LookupEntityName="Vwpincodemaster" LookupEntityTypeName="Sage.Entity.Interfaces.IVwpincodemaster, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String" Required="true"  >
 <LookupProperties>
 <SalesLogix:LookupProperty PropertyHeader="<%$ resources: luePincode.LookupProperties.Carea.PropertyHeader %>" PropertyName="Carea" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
 <SalesLogix:LookupProperty PropertyHeader="<%$ resources: luePincode.LookupProperties.Cpincode.PropertyHeader %>" PropertyName="Cpincode" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
@@ -40,7 +40,7 @@
    <asp:Label ID="luequalifier_lbl" AssociatedControlID="luequalifier" runat="server" Text="<%$ resources: luequalifier.Caption %>" ></asp:Label>
  </div>   
   <div   class="textcontrol lookup"   >
-<SalesLogix:LookupControl runat="server" ID="luequalifier" LookupEntityName="UserInfo" LookupEntityTypeName="Sage.Entity.Interfaces.IUserInfo, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String"  >
+<SalesLogix:LookupControl runat="server" ID="luequalifier" LookupEntityName="UserInfo" LookupEntityTypeName="Sage.Entity.Interfaces.IUserInfo, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String" Required="true"  >
 <LookupProperties>
 <SalesLogix:LookupProperty PropertyHeader="<%$ resources: luequalifier.LookupProperties.FirstName.PropertyHeader %>" PropertyName="FirstName" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
 <SalesLogix:LookupProperty PropertyHeader="<%$ resources: luequalifier.LookupProperties.LastName.PropertyHeader %>" PropertyName="LastName" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
@@ -62,7 +62,7 @@
    <asp:Label ID="lueSaleManager_lbl" AssociatedControlID="lueSaleManager" runat="server" Text="<%$ resources: lueSaleManager.Caption %>" ></asp:Label>
  </div>   
   <div   class="textcontrol lookup"   >
-<SalesLogix:LookupControl runat="server" ID="lueSaleManager" LookupEntityName="UserInfo" LookupEntityTypeName="Sage.Entity.Interfaces.IUserInfo, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String"  >
+<SalesLogix:LookupControl runat="server" ID="lueSaleManager" LookupEntityName="UserInfo" LookupEntityTypeName="Sage.Entity.Interfaces.IUserInfo, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String" Required="true"  >
 <LookupProperties>
 <SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueSaleManager.LookupProperties.FirstName.PropertyHeader %>" PropertyName="FirstName" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
 <SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueSaleManager.LookupProperties.LastName.PropertyHeader %>" PropertyName="LastName" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
@@ -151,9 +151,25 @@ if (Objqualifier != null)
     }
     else
     {
-        Objqualifier.PincodeId = luePincode.LookupResultValue.ToString();            
+        Objqualifier.PincodeId = luePincode.LookupResultValue.ToString(); 		
+		Sage.Entity.Interfaces.IVwpincodemaster objpin = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IVwpincodemaster>(Objqualifier.PincodeId);
+		if(objpin!=null)
+		{
+			Objqualifier.PinCode = objpin.Cpincode;
+			Objqualifier.PincodeId = objpin.Pincdmstid;
+		}		
         Objqualifier.QualifierId = luequalifier.LookupResultValue.ToString();
+		Sage.Entity.Interfaces.IUserInfo objuser = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUserInfo>(Objqualifier.QualifierId);
+		if(objuser!=null)
+		{
+			Objqualifier.QualifierName = objuser.UserName;
+		}
         Objqualifier.SalesManagerId = lueSaleManager.LookupResultValue.ToString();
+		Sage.Entity.Interfaces.IUserInfo objuser1 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUserInfo>(Objqualifier.SalesManagerId);
+		if(objuser1!=null)
+		{
+			Objqualifier.SalesManagerName = objuser1.UserName;
+		}
         Objqualifier.Save();
         Response.Redirect(string.Format("QualifierAndSMpincode.aspx?entityId={0}", (Objqualifier.Id.ToString())));            
     }

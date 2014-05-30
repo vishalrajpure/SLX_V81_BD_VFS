@@ -14847,4 +14847,34 @@
   <data name="LeadAddress.Logitude.DisplayName" xml:space="preserve">
     <value>Logitude</value>
   </data>
+  <data name="Event.Duration.DisplayName" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="Vwareamaster.Filter.AreaCode.DisplayName" xml:space="preserve">
+    <value>AreaCode</value>
+  </data>
+  <data name="Vwareamaster.Filter.Branch.DisplayName" xml:space="preserve">
+    <value>Branch</value>
+  </data>
+  <data name="Vwareamaster.Filter.City.DisplayName" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Vwpincodemaster.Filter.Area.DisplayName" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="Vwpincodemaster.Filter.Pincode.DisplayName" xml:space="preserve">
+    <value>Pincode</value>
+  </data>
+  <data name="Vwempmaster.Filter.Designation.DisplayName" xml:space="preserve">
+    <value>Designation</value>
+  </data>
+  <data name="Vwempmaster.Filter.EmpCode.DisplayName" xml:space="preserve">
+    <value>EmpCode</value>
+  </data>
+  <data name="Vwempmaster.Filter.EmpRole.DisplayName" xml:space="preserve">
+    <value>EmpRole</value>
+  </data>
+  <data name="QualifierAndSMpincode.Filter.Pincode.DisplayName" xml:space="preserve">
+    <value>Pincode</value>
+  </data>
 </root>

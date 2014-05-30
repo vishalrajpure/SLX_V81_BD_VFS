@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="QFTextBox.Caption" xml:space="preserve">
-    <value>Carea</value>
+    <value>Area</value>
   </data>
   <data name="QFTextBox1.Caption" xml:space="preserve">
-    <value>Cemailid</value>
+    <value>Email id</value>
   </data>
   <data name="QFTextBox2.Caption" xml:space="preserve">
-    <value>Cemplcode</value>
+    <value>Emp Code</value>
   </data>
   <data name="QFTextBox3.Caption" xml:space="preserve">
-    <value>Cempldesg</value>
+    <value>Designation</value>
   </data>
   <data name="QFTextBox4.Caption" xml:space="preserve">
-    <value>Cemplname</value>
+    <value>Emp Name</value>
   </data>
   <data name="QFTextBox5.Caption" xml:space="preserve">
     <value>Cempmgrcd</value>
@@ -139,36 +139,33 @@
     <value>Cempmgrcd1</value>
   </data>
   <data name="QFTextBox7.Caption" xml:space="preserve">
-    <value>Cfunction</value>
+    <value>Function</value>
   </data>
   <data name="QFTextBox8.Caption" xml:space="preserve">
-    <value>Cgrade</value>
+    <value>Grade</value>
   </data>
   <data name="QFTextBox9.Caption" xml:space="preserve">
-    <value>Cjobrole</value>
+    <value>Job Role</value>
   </data>
   <data name="QFTextBox10.Caption" xml:space="preserve">
-    <value>Cpdacode</value>
+    <value>Pdacode</value>
   </data>
   <data name="QFCheckBox.Caption" xml:space="preserve">
-    <value>Cpresent</value>
+    <value>Present</value>
   </data>
   <data name="QFTextBox11.Caption" xml:space="preserve">
-    <value>Cscrcd</value>
+    <value>e</value>
   </data>
   <data name="QFCheckBox1.Caption" xml:space="preserve">
-    <value>Cstaftype</value>
+    <value>Staf Type</value>
   </data>
   <data name="QFTextBox12.Caption" xml:space="preserve">
-    <value>Ctcode</value>
+    <value>CtCode</value>
   </data>
   <data name="QFDateTimePicker.Caption" xml:space="preserve">
-    <value>Dbirthdt</value>
+    <value>DOB</value>
   </data>
   <data name="QFDateTimePicker1.Caption" xml:space="preserve">
-    <value>Dtjoindt</value>
-  </data>
-  <data name="QFTextBox13.Caption" xml:space="preserve">
-    <value>Empmstid</value>
+    <value>DOJ</value>
   </data>
 </root>

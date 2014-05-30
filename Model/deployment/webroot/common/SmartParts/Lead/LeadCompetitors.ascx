@@ -38,7 +38,7 @@ EmptyTableRowText="<%$ resources: grdLeadCompetitors.EmptyTableRowText %>"  Expa
       HeaderText="<%$ resources: grdLeadCompetitors.30596f25-c917-4f05-87bf-fac0279937e9.ColumnHeading %>"          >
       </asp:BoundField>
   <asp:ButtonField CommandName="Edit"
-  Text="<%$ resources: grdLeadCompetitors.b0ca6db6-9322-4531-a74c-fef268d3d254.Text %>"  DataTextField="Id"      HeaderText="<%$ resources: grdLeadCompetitors.b0ca6db6-9322-4531-a74c-fef268d3d254.ColumnHeading %>"        >
+  Text="<%$ resources: grdLeadCompetitors.13644226-77de-437b-99d7-4194ad1ce617.Text %>"  DataTextField="Id"      HeaderText="<%$ resources: grdLeadCompetitors.13644226-77de-437b-99d7-4194ad1ce617.ColumnHeading %>"        >
           </asp:ButtonField>
      <asp:ButtonField CommandName="Delete"
   Text="<%$ resources: grdLeadCompetitors.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.Text %>"   DataTextField="Id"       HeaderText="<%$ resources: grdLeadCompetitors.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.ColumnHeading %>"        >

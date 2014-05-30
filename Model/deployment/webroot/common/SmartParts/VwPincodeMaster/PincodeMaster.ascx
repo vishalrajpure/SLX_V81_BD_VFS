@@ -25,22 +25,8 @@
   </div>
 
       </td>
-                <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox1_lbl" AssociatedControlID="QFTextBox1" runat="server" Text="<%$ resources: QFTextBox1.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox1"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
-  </div>
-
-      </td>
-                <td  >
-<div class="slxlabel  alignleft checkboxRight">
-
-  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox"  Text="<%$ resources: QFCheckBox.Caption %>"  CssClass=""
-LabelPlacement="left"  />
-</div>
-      </td>
+                <td></td>
+                <td></td>
       </tr>
 <tr>
             <td  >
@@ -61,27 +47,10 @@ LabelPlacement="left"  />
   </div>
 
       </td>
-                <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="QFDateTimePicker_lbl" AssociatedControlID="QFDateTimePicker" runat="server" Text="<%$ resources: QFDateTimePicker.Caption %>" ></asp:Label>
- </div>
-   <div  class="textcontrol datepicker"  >
-    <SalesLogix:DateTimePicker runat="server" ID="QFDateTimePicker" DisplayTime="false" />
-  </div>
-
-      </td>
+                <td></td>
       </tr>
 <tr>
             <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="QFTextBox4_lbl" AssociatedControlID="QFTextBox4" runat="server" Text="<%$ resources: QFTextBox4.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="QFTextBox4"  dojoType="Sage.UI.Controls.TextBox"  />
-  </div>
-
-      </td>
-                <td  >
  <div class=" lbl alignleft" >
    <asp:Label ID="QFTextBox5_lbl" AssociatedControlID="QFTextBox5" runat="server" Text="<%$ resources: QFTextBox5.Caption %>" ></asp:Label>
  </div>
@@ -97,6 +66,26 @@ LabelPlacement="left"  />
 LabelPlacement="left"  />
 </div>
       </td>
+                <td></td>
+      </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft" >
+   <asp:Label ID="QFTextBox1_lbl" AssociatedControlID="QFTextBox1" runat="server" Text="<%$ resources: QFTextBox1.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="QFTextBox1"  dojoType="Sage.UI.Controls.TextBox" MaxLength="3"  />
+  </div>
+
+      </td>
+                <td  >
+<div class="slxlabel  alignleft checkboxRight">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="QFCheckBox"  Text="<%$ resources: QFCheckBox.Caption %>"  CssClass=""
+LabelPlacement="left"  />
+</div>
+      </td>
+                <td></td>
       </tr>
 </table>
  
@@ -133,34 +122,28 @@ protected override void OnAddEntityBindings() {
                  // QFTextBox.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBoxTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Carea", QFTextBox, "Text");
         BindingSource.Bindings.Add(QFTextBoxTextBinding);
-                    // QFTextBox1.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox1TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ccrcrdscr", QFTextBox1, "Text");
-        BindingSource.Bindings.Add(QFTextBox1TextBinding);
-                    // QFCheckBox.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBoxCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cflag", QFCheckBox, "Checked");
-        BindingSource.Bindings.Add(QFCheckBoxCheckedBinding);
                     // QFTextBox2.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox2TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cpincode", QFTextBox2, "Text");
         BindingSource.Bindings.Add(QFTextBox2TextBinding);
                     // QFTextBox3.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox3TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cpindesc", QFTextBox3, "Text");
         BindingSource.Bindings.Add(QFTextBox3TextBinding);
-                    // QFDateTimePicker.DateTimeValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFDateTimePickerDateTimeValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("CreateDate", QFDateTimePicker, "DateTimeValue");
-        BindingSource.Bindings.Add(QFDateTimePickerDateTimeValueBinding);
-                    // QFTextBox4.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox4TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("CreateUser", QFTextBox4, "Text");
-        BindingSource.Bindings.Add(QFTextBox4TextBinding);
                     // QFTextBox5.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox5TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cscrcd", QFTextBox5, "Text");
         BindingSource.Bindings.Add(QFTextBox5TextBinding);
                     // QFCheckBox1.Checked Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBox1CheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cservflag", QFCheckBox1, "Checked");
         BindingSource.Bindings.Add(QFCheckBox1CheckedBinding);
+                    // QFTextBox1.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFTextBox1TextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Ccrcrdscr", QFTextBox1, "Text");
+        BindingSource.Bindings.Add(QFTextBox1TextBinding);
+                    // QFCheckBox.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding QFCheckBoxCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Cflag", QFCheckBox, "Checked");
+        BindingSource.Bindings.Add(QFCheckBoxCheckedBinding);
     
    
     }
-                                                               
+                                                 
 
 protected override void OnWireEventHandlers()
 {
@@ -246,10 +229,10 @@ public class PincodeMasterAdapter : Sage.Platform.WebPortal.Adapters.EntityFormA
     {
         get { return FindControl(ref _QFTextBox2, "QFTextBox2"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox4;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox4
+    private Sage.Platform.Controls.ITextBoxControl _QFTextBox5;
+    public  Sage.Platform.Controls.ITextBoxControl QFTextBox5
     {
-        get { return FindControl(ref _QFTextBox4, "QFTextBox4"); }
+        get { return FindControl(ref _QFTextBox5, "QFTextBox5"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _QFTextBox1;
     public  Sage.Platform.Controls.ITextBoxControl QFTextBox1
@@ -261,25 +244,15 @@ public class PincodeMasterAdapter : Sage.Platform.WebPortal.Adapters.EntityFormA
     {
         get { return FindControl(ref _QFTextBox3, "QFTextBox3"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _QFTextBox5;
-    public  Sage.Platform.Controls.ITextBoxControl QFTextBox5
+    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox1;
+    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox1
     {
-        get { return FindControl(ref _QFTextBox5, "QFTextBox5"); }
+        get { return FindControl(ref _QFCheckBox1, "QFCheckBox1"); }
     }
     private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox;
     public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox
     {
         get { return FindControl(ref _QFCheckBox, "QFCheckBox"); }
-    }
-    private Sage.Platform.Controls.IDateTimePickerControl _QFDateTimePicker;
-    public  Sage.Platform.Controls.IDateTimePickerControl QFDateTimePicker
-    {
-        get { return FindControl(ref _QFDateTimePicker, "QFDateTimePicker"); }
-    }
-    private Sage.Platform.Controls.ICheckBoxControl _QFCheckBox1;
-    public  Sage.Platform.Controls.ICheckBoxControl QFCheckBox1
-    {
-        get { return FindControl(ref _QFCheckBox1, "QFCheckBox1"); }
     }
     private Sage.Platform.Controls.IGroupNavigatorControl _grpnavpincode;
     public  Sage.Platform.Controls.IGroupNavigatorControl grpnavpincode

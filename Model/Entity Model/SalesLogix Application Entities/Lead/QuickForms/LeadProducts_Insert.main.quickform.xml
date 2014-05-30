@@ -50,27 +50,6 @@
             <SortField>Product.Family</SortField>
             <MultiCurrencyDependent>false</MultiCurrencyDependent>
           </QFDataGridCol>
-          <QFEditCol>
-            <StyleScheme />
-            <DataField />
-            <ColumnId>0e52ba55-b09d-499a-b87e-4c3b8b431616</ColumnId>
-            <HorizontalAlignment>left</HorizontalAlignment>
-            <HeaderAlignment>left</HeaderAlignment>
-            <SortDirection>None</SortDirection>
-            <IsSortable>false</IsSortable>
-            <MultiCurrencyDependent>false</MultiCurrencyDependent>
-            <DialogSpecs>
-              <SmartPart>EditLeadProduct</SmartPart>
-              <Height>400</Height>
-              <Width>600</Width>
-              <Top>0</Top>
-              <Left>0</Left>
-              <EntityType>LeadProduct</EntityType>
-              <ResourceKey>b2a8cf2b-2940-4a62-bf48-cb503cc9fb14</ResourceKey>
-              <CenterDialog>True</CenterDialog>
-            </DialogSpecs>
-            <AppliedSecurity />
-          </QFEditCol>
           <QFDeleteCol>
             <StyleScheme />
             <DataField />

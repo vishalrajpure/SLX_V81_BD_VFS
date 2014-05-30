@@ -1,4 +1,4 @@
-﻿/*globals Sage, dojo, dojox, dijit, Simplate, window, Sys, define */
+/*globals Sage, dojo, dojox, dijit, Simplate, window, Sys, define */
 
 define([
     'dijit/_Widget',
@@ -84,6 +84,11 @@ function (
                                   '<option value="Trade Show" >{%=$.eventTypeTradeShowText%}</option>',
                                   '<option value="Unavailable" >{%=$.eventTypeUnavailableText%}</option>',
                                   '<option value="Vacation" >{%=$.eventTypeVacationText%}</option>',
+                               '</select>',
+							   '<select  dojoAttachPoint="tb_Duration" data-dojo-type="dijit.form.ComboBox" required="false" name="tb_Duration"  label="{%= $.lblDurationText %}" id="{%= $.id%}_tb_Duration" >',
+                                  '<option value="Half Day" >{%=$.eventDurationHalfDayText %}</option>',
+                                  '<option value="Full Day" >{%=$.eventDurationFullDayText %}</option>',
+                                  '<option value="Less Than Half Day" >{%=$.eventDurationLTHalfDayText%}</option>',                                  
                                '</select>',
                                '<input data-dojo-type="dijit.form.TextBox" id="{%= $.id %}_tb_Location" label="{%= $.lblLocationText %}" dojoAttachPoint="tb_Location" maxLength="255" />',
                                '<textarea data-dojo-type="dijit.form.SimpleTextarea" label="{%= $.lblDescriptionText %}" id="{%= $.id%}_tb_Description" name="tb_Description" dojoAttachPoint="tb_Description" rows="4" cols="1"  maxLength="128"  ></textarea>',
@@ -179,7 +184,7 @@ function (
             if (!this._eventStore) {
                 this._eventStore = new SingleEntrySDataStore({
                     include: [],
-                    select: ['StartDate', 'EndDate', 'Description', 'Type', 'Location', 'UserId'],
+                    select: ['StartDate', 'EndDate', 'Description', 'Type', 'Duration', 'Location', 'UserId'],
                     resourceKind: 'events',
                     service: this._eventService
                 });
@@ -247,6 +252,9 @@ function (
                         }, {
                             boundWidget: this.tb_DayType,
                             entityProperty: 'Type'
+                        },{
+                            boundWidget: this.tb_Duration,
+                            entityProperty: 'Duration'
                         }, {
                             boundWidget: this.tb_Description,
                             entityProperty: 'Description'
@@ -363,6 +371,26 @@ function (
         },
         // ... region click/action handlers
         _okClick: function () {
+			if (this.tb_StartDate.get('value') === '')
+            {
+                alert("Please Select StartDate...");
+                return;
+            }
+			if (this.tb_EndDate.get('value') === '')
+            {
+                alert("Please Select EndDate...");
+                return;
+            }
+			if (this.tb_DayType.get('value') === '')
+            {
+                alert("Please Select DayType...");
+                return;
+            }
+			if (this.tb_Duration.get('value') === '')
+            {
+                alert("Please Select Duration...");
+                return;
+            }
             var activeElement = focusUtil.curNode;
             if(activeElement){
                 activeElement.blur();

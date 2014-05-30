@@ -264,6 +264,8 @@ protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
  btnOk.Click += new EventHandler(btnOk_ClickAction);
+btnOk.Click += new EventHandler(DialogService.CloseEventHappened);
+btnOk.Click += new EventHandler(Refresh);
 btnCancel.Click += new EventHandler(DialogService.CloseEventHappened);
 
 

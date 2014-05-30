@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="f3bfa90d-e9bb-4382-b163-e509e0841fb5" lastModifiedUtc="2014-05-30T06:13:19.5337622Z" name="QFButton3_OnClick" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="AddEditLeadAddress">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="30d854f1-4643-416c-b009-2c7ff3976783" paramName="form" sequence="0" paramType="IAddEditLeadAddress" />
+    <OrmEntityMethodParam id="2aa58ae8-043a-4ee6-8dc6-f063a0d68087" paramName="args" sequence="0" paramType="EventArgs" />
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets />
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

@@ -46,35 +46,6 @@ makeGrid : function(runtimeConfig) {
     },
 
 {
-    			field: 'Id',
-				    //Set to the value of the visibleCondition property
-	    hidden: function () {
-    if (Sage.Utility.getModeId() === 'insert') {
-        return true;
-    }
-}(),
-		name:  OpportunityProductsgrdOppProducts_Strings['grdOppProducts_6ef4d952_2b1a_4d9f_a36e_35a942dd32bb_ColumnHeading']  || ' ',
-	sortable: false,
-		width: 4,
-		styles: 'width:auto;',
-    cellClasses: '  aligncenter ',
-	headerClasses: ' alignleft '
-,
-	   	type: SlxEdit,
-		cellValue: OpportunityProductsgrdOppProducts_Strings['grdOppProducts_6ef4d952_2b1a_4d9f_a36e_35a942dd32bb_Text']  || 'Edit',
-		entityType: 'Sage.Entity.Interfaces.IOpportunityProduct, Sage.Entity.Interfaces',
-		smartPart: 'EditOpportunityProduct',
-		dialogTitle: OpportunityProductsgrdOppProducts_Strings['38611e40_47c3_4f73_88e1_62bfa47171a4_DialogTitleOverride'] || '',
-		isCentered: true ,
-		dialogTop: 0,
-		dialogLeft: 0,
-		dialogHeight: 360,
-		dialogWidth: 600,
-    	formObjectName: 'Sage.UI.Forms.OpportunityProducts'
-    				,appliedSecurity: 'Entities/Opportunity/Edit'
-    	    }
-  	,
-{
 		field: 'Sort',
 				name:  OpportunityProductsgrdOppProducts_Strings['grdOppProducts_33816379_5ee4_4a9d_850c_ce5518934f95_ColumnHeading']  || 'Line #',
 	sortable: true,
@@ -112,193 +83,18 @@ makeGrid : function(runtimeConfig) {
 	defaultValue: '', 
 	editable: false
 				}
-  	,
-{
-		field: 'Program',
-				    //Set to the value of the visibleCondition property
-	    hidden: function () {
-    return isIntegrationContractEnabled();
-}(),
-		name:  OpportunityProductsgrdOppProducts_Strings['grdOppProducts_a85f781e_8ec4_4eb2_959b_8d969ef1d648_ColumnHeading']  || 'Price Level',
-	sortable: true,
-		width: 8,
-		styles: 'width:auto;',
-    cellClasses: '  alignleft ',
-	headerClasses: ' alignleft '
-,  
-	editable: true,
-	type: Lookup,
-	lookupOptions: {
-		field: 'Program',
-		seedOnRowEntity: false,
-		seedOnRelatedEntity: 'Product',
-		returnObject:  false ,
-		displayMode: 'DropDownList'
-	},
-	lookupStructure: [{
-            cells: [{
-		     name: 'Program',
-		     field: 'Program'
-		 }]
-    }],
-	lookupStoreOptions: {		
-        resourceKind:  'productPrograms'      },
-	lookupGridOptions: {
-			  }
-		}
-  	,
-{
-		field: 'Price',
-				name:  OpportunityProductsgrdOppProducts_Strings['grdOppProducts_6a57e635_5b9d_48b1_a5ec_baf4745cc0c4_ColumnHeading']  || 'Price',
-	sortable: true,
-		width: 6,
-		styles: 'width:auto;',
-    cellClasses: '  alignright ',
-	headerClasses: ' alignleft '
-,
-	editable: false,
-		type: Currency,
-	constraints: {  places: Sys.CultureInfo.CurrentCulture.numberFormat.CurrencyDecimalDigits  },  
-
-			exchangeRateType:  'BaseRate' ,
-	displayCurrencyCode: true,
-		    displayMode: 'AsControl',
-    multiCurrency: isMultiCurrencyEnabled()	 //TODO: Move this method to Sage.IntegrationContractService.isMultiCurrencyEnabled()
-}
-  										,
-{
-		field: 'Discount',
-				name:  OpportunityProductsgrdOppProducts_Strings['grdOppProducts_a4c903b4_ff1a_4479_a402_caae0353699e_ColumnHeading']  || 'Discount',
-	sortable: true,
-		width: 6,
-		styles: 'width:auto;',
-    cellClasses: '  alignright ',
-	headerClasses: ' alignleft '
-,
-	editable: true,
-	type: Numeric,
-	    constraints: { places:   '0,2'  ,  round: -1 },  
-	formatType: 'Percent'
-}
-  	,
-{
-		field: 'CalculatedPrice',
-				name:  OpportunityProductsgrdOppProducts_Strings['grdOppProducts_6a6d5c85_c8d6_4660_9f10_3855008c45ca_ColumnHeading']  || 'Adj. Price',
-	sortable: true,
-		width: 8,
-		styles: 'width:auto;',
-    cellClasses: '  alignright ',
-	headerClasses: ' alignleft '
-,
-	editable: true,
-		type: Currency,
-	constraints: {  places: Sys.CultureInfo.CurrentCulture.numberFormat.CurrencyDecimalDigits  },  
-
-			exchangeRateType:  'BaseRate' ,
-	displayCurrencyCode: true,
-		    displayMode: 'AsControl',
-    multiCurrency: isMultiCurrencyEnabled()	 //TODO: Move this method to Sage.IntegrationContractService.isMultiCurrencyEnabled()
-}
-  										,
-{
-		field: 'CalculatedPrice',
-				    //Set to the value of the visibleCondition property
-	    hidden: function () {
-    return !isMultiCurrencyEnabled();
-}(),
-		name:  OpportunityProductsgrdOppProducts_Strings['grdOppProducts_0723086e_115c_4d05_aa21_e047d57c316a_ColumnHeading']  || 'Adj. Price',
-	sortable: true,
-		width: 10,
-		styles: 'width:auto;',
-    cellClasses: '  alignright ',
-	headerClasses: ' alignleft '
-,
-	editable: false,
-		type: Currency,
-	constraints: {  places: Sys.CultureInfo.CurrentCulture.numberFormat.CurrencyDecimalDigits  },  
-
-			exchangeRateType:  'EntityRate' ,
-	displayCurrencyCode: true,
-	    exchangeRateField: 'Opportunity.ExchangeRate', 
-		    exchangeRateCodeField: 'Opportunity.ExchangeRateCode', 
-	    displayMode: 'AsControl',
-    multiCurrency: isMultiCurrencyEnabled()	 //TODO: Move this method to Sage.IntegrationContractService.isMultiCurrencyEnabled()
-}
-  																					,
-{
-		field: 'Quantity',
-				name:  OpportunityProductsgrdOppProducts_Strings['grdOppProducts_bdcfebf2_8c54_459a_97ec_00e4d92f86dc_ColumnHeading']  || 'Quantity',
-	sortable: true,
-		width: 8,
-		styles: 'width:auto;',
-    cellClasses: '  alignright ',
-	headerClasses: ' alignleft '
-,
-	editable: true,
-	type: Numeric,
-	    constraints: { places:   '0,0'  ,  round: -1 },  
-	formatType: 'Number'
-}
-  	,
-{
-		field: 'ExtendedPrice',
-				    //Set to the value of the visibleCondition property
-	    hidden: function () {
-    return isMultiCurrencyEnabled();
-}(),
-		name:  OpportunityProductsgrdOppProducts_Strings['grdOppProducts_8b5cf516_7850_47e3_b512_402fe221806c_ColumnHeading']  || 'Extended Price',
-	sortable: true,
-		width: 10,
-		styles: 'width:auto;',
-    cellClasses: '  alignright ',
-	headerClasses: ' alignleft '
-,
-	editable: false,
-		type: Currency,
-	constraints: {  places: Sys.CultureInfo.CurrentCulture.numberFormat.CurrencyDecimalDigits  },  
-
-			exchangeRateType:  'BaseRate' ,
-	displayCurrencyCode: true,
-		    displayMode: 'AsControl',
-    multiCurrency: isMultiCurrencyEnabled()	 //TODO: Move this method to Sage.IntegrationContractService.isMultiCurrencyEnabled()
-}
-  										,
-{
-		field: 'ExtendedPrice',
-				    //Set to the value of the visibleCondition property
-	    hidden: function () {
-    return !isMultiCurrencyEnabled();
-}(),
-		name:  OpportunityProductsgrdOppProducts_Strings['grdOppProducts_ceb64e60_2b36_42fe_8a84_491ad1bf158d_ColumnHeading']  || 'Extended Price',
-	sortable: true,
-		width: 10,
-		styles: 'width:auto;',
-    cellClasses: '  alignright ',
-	headerClasses: ' alignleft '
-,
-	editable: false,
-		type: Currency,
-	constraints: {  places: Sys.CultureInfo.CurrentCulture.numberFormat.CurrencyDecimalDigits  },  
-
-			exchangeRateType:  'EntityRate' ,
-	displayCurrencyCode: true,
-	    exchangeRateField: 'Opportunity.ExchangeRate', 
-		    exchangeRateCodeField: 'Opportunity.ExchangeRateCode', 
-	    displayMode: 'AsControl',
-    multiCurrency: isMultiCurrencyEnabled()	 //TODO: Move this method to Sage.IntegrationContractService.isMultiCurrencyEnabled()
-}
-  																					          ],
-		         storeOptions: {
+  	          ],
+	 	         storeOptions: {
             resourceKind: 'opportunityProducts',
             newItemParentReferenceProperty: 'Opportunity',
             include: ['Opportunity'],
-            select: ['Opportunity.ExchangeRate','Opportunity.ExchangeRateCode','Id'],
+            select: ['Id'],
 	    //The .net vehicle to store grid data on postback
             dataCarrierId: 'OpportunityProductsgrdOppProducts_DataCarrier',
             sort: [
-     { attribute: "Sort"
+    { attribute: "Sort"
      }
-                            ]
+                    ]
         },
         tools: [
 

@@ -322,8 +322,8 @@ if (contact != null)
 	Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Entity.Interfaces.IContact;   
 	if(contact != null)
 	{
-		 string _idname = contact.Address.Id.ToString() + ",Contact," + contact.Id.ToString() ;
-        Session["Addressid"] = _idname;
+		//string _idname = contact.Address.Id.ToString() + ",Contact," + contact.Id.ToString() ;
+       // Session["Addressid"] = _idname;
 	    DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
 	    DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAddress);
 	    DialogService.ShowDialog();
@@ -1396,7 +1396,7 @@ if (contact != null)
               <ValidationMethod>HasPropagationChanges</ValidationMethod>
               <OnFail typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
                 <CSharpSnippetActionItem>
-                  <MethodName>cmdSaveContactDetails_ClickActionF</MethodName>
+                  <MethodName />
                   <CSharpCodeSnippet>Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Entity.Interfaces.IContact;
 if(string.IsNullOrEmpty(contact.Prefix))
 {
@@ -1441,14 +1441,14 @@ if(string.IsNullOrEmpty(contact.Address.PostalCode))
 else
 {
    	contact.Save();
-	Session.Remove("Addressid");
+	//Session.Remove("Addressid");
 }
 	</CSharpCodeSnippet>
                 </CSharpSnippetActionItem>
               </OnFail>
               <OnSuccess typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
                 <CSharpSnippetActionItem>
-                  <MethodName>cmdSaveContactDetails_ClickActionS</MethodName>
+                  <MethodName />
                   <CSharpCodeSnippet>Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Entity.Interfaces.IContact;
 if(string.IsNullOrEmpty(contact.Prefix))
 {
@@ -1492,7 +1492,7 @@ if(string.IsNullOrEmpty(contact.Address.PostalCode))
 }
 else
 {
-	Session.Remove("Addressid");
+	//Session.Remove("Addressid");
  	DialogService.SetSpecs(400, 400, "UpdateContactOptions", string.Empty);
 	DialogService.EntityType = typeof(Sage.Entity.Interfaces.IContact);
 	DialogService.ShowDialog(); 	

@@ -49,27 +49,6 @@
             <SortField>Product.Family</SortField>
             <MultiCurrencyDependent>false</MultiCurrencyDependent>
           </QFDataGridCol>
-          <QFEditCol>
-            <StyleScheme />
-            <DataField>Id</DataField>
-            <ColumnId>b0ca6db6-9322-4531-a74c-fef268d3d254</ColumnId>
-            <HorizontalAlignment>left</HorizontalAlignment>
-            <HeaderAlignment>left</HeaderAlignment>
-            <SortDirection>None</SortDirection>
-            <IsSortable>false</IsSortable>
-            <MultiCurrencyDependent>false</MultiCurrencyDependent>
-            <DialogSpecs>
-              <SmartPart>EditLeadProduct</SmartPart>
-              <Height>400</Height>
-              <Width>600</Width>
-              <Top>0</Top>
-              <Left>0</Left>
-              <EntityType>LeadProduct</EntityType>
-              <ResourceKey>988b4155-001c-4c0d-a96d-6c1f2b2cfb9d</ResourceKey>
-              <CenterDialog>True</CenterDialog>
-            </DialogSpecs>
-            <AppliedSecurity />
-          </QFEditCol>
           <QFDeleteCol>
             <StyleScheme />
             <DataField>Id</DataField>
@@ -130,7 +109,7 @@
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>95433e3344e3b6c3e8c4d41604b4</ControlId>
+        <ControlId>5433e3344e3b6c3e8c4d41604b4</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
