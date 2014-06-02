@@ -30,7 +30,7 @@
    <asp:Label ID="txtLegalName_lbl" AssociatedControlID="txtLegalName" runat="server" Text="<%$ resources: txtLegalName.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtLegalName" Required="true"  dojoType="Sage.UI.Controls.TextBox"  />
+<asp:TextBox runat="server" ID="txtLegalName" Required="true" ReadOnly="true"  dojoType="Sage.UI.Controls.TextBox"  />
   </div>
 
       </td>

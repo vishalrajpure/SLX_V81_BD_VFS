@@ -1443,10 +1443,7 @@ userOption.SetCommonOption("AutoSearch", "General", chkAutoSearch.Checked.ToStri
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
               <MethodName />
-              <CSharpCodeSnippet>
-
-
-Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+              <CSharpCodeSnippet>Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
 if(lead.Company == null)
 {
 	DialogService.ShowMessage("Enter the Company");
@@ -1469,6 +1466,15 @@ if(lead.FirstName == null)
 }
 if (Session["LeadAddressid"] != null)
 {
+    /*string qry1 = "select * From Lead_Address where Lead_AddressID = '" + Session["LeadAddressid"].ToString() +  "'";
+			
+	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj1 = new System.Data.OleDb.OleDbDataAdapter(qry1, conObj);
+	System.Data.DataTable dt1 = new System.Data.DataTable();
+	dataAdapterObj1.Fill(dt1);
+	if(dt1.Rows.Count &gt; 0)
+	{*/
     Sage.Entity.Interfaces.ILeadAddress objadd = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.ILeadAddress&gt;(Session["LeadAddressid"].ToString());
     if (objadd != null)
     {
@@ -1477,7 +1483,7 @@ if (Session["LeadAddressid"] != null)
 
 
 	string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
-				"where Q.PINCODE = '"+ objadd.PostalCode.ToString() +"'";
+                "where Q.PINCODE = '" + objadd.PostalCode.ToString() + "'";//dt1.Rows[0]["PostalCode"].ToString() + "'";
 
 
 	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
@@ -1493,10 +1499,11 @@ if (Session["LeadAddressid"] != null)
 	}
 	else
 	{
-		DialogService.ShowMessage("Please map the branch manager with pincode-" + lead.Address.PostalCode);
+        DialogService.ShowMessage("Please map the branch manager with pincode-" + objadd.PostalCode.ToString());
 		return;
 		 
 	}
+	
 	
 	System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
     System.Data.DataTable dt2 = new System.Data.DataTable();
@@ -1511,6 +1518,7 @@ if (Session["LeadAddressid"] != null)
 	}
 	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)"SYST00000001");
     //lead.Owner = objowner;
+	lead.Address = objadd;
 	lead.Save();
 	//lead.Address.LeadId = lead.Id.ToString();
 	//lead.Address.Save();
@@ -1528,7 +1536,7 @@ if (Session["LeadAddressid"] != null)
 			cmp.Save();
 		}	
 	}
-	lead.Address = objadd;
+	
 	lead.Save();
 	
 	Session.Remove("LeadAddressid");
@@ -1607,12 +1615,25 @@ if(lead.FirstName == null)
 
 if (Session["LeadAddressid"] != null)
 {
+    /*string qry1 = "select * From Lead_Address where Lead_AddressID = '" + Session["LeadAddressid"].ToString() +  "'";
+			
+	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj1 = new System.Data.OleDb.OleDbDataAdapter(qry1, conObj);
+	System.Data.DataTable dt1 = new System.Data.DataTable();
+	dataAdapterObj1.Fill(dt1);
+	if(dt1.Rows.Count &gt; 0)
+	{*/
     Sage.Entity.Interfaces.ILeadAddress objadd = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.ILeadAddress&gt;(Session["LeadAddressid"].ToString());
     if (objadd != null)
     {
 //////////////Specify the Query for find BM///////////
-string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
-				"where Q.PINCODE = '"+ lead.Address.PostalCode.ToString() +"'";
+
+
+
+	string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
+                "where Q.PINCODE = '" + objadd.PostalCode.ToString() + "'";//dt1.Rows[0]["PostalCode"].ToString() + "'";
+
 
 	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
 	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
@@ -1621,17 +1642,17 @@ string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
 	dataAdapterObj.Fill(dt);
 	if (dt.Rows.Count &gt; 0)
     {
-		Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser &gt;((object)dt.Rows[0][0].ToString());
-	
+		Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser&gt;((object)dt.Rows[0][0].ToString());
 		//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser &gt;((object)"ADMIN");
 		lead.Qualifier = BM;
 	}
 	else
 	{
-		DialogService.ShowMessage("Please map the branch manager with pincode-" + lead.Address.PostalCode);
+        DialogService.ShowMessage("Please map the branch manager with pincode-" + objadd.PostalCode.ToString());
 		return;
-		
+		 
 	}
+	
 	
 	System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
     System.Data.DataTable dt2 = new System.Data.DataTable();
@@ -1646,6 +1667,7 @@ string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
 	}
 	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)"SYST00000001");
     //lead.Owner = objowner;
+	lead.Address = objadd;
 	lead.Save();
 	//lead.Address.LeadId = lead.Id.ToString();
 	//lead.Address.Save();
@@ -1663,7 +1685,7 @@ string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
 			cmp.Save();
 		}		
 	}
-	lead.Address = objadd;
+	//lead.Address = objadd;
 	lead.Save();
 	Session.Remove("LeadAddressid");
 	System.Web.HttpContext.Current.Response.Redirect(string.Format("InsertLead.aspx?modeid=Insert"));
@@ -1683,50 +1705,6 @@ else
 
 	
 </CSharpCodeSnippet>
-            </CSharpSnippetActionItem>
-          </Action>
-          <IsDialogCloseAction>False</IsDialogCloseAction>
-          <RunOnEveryRePaint>False</RunOnEveryRePaint>
-          <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>False</PerformsUpdate>
-          <AppliedSecurity />
-          <RefreshData>False</RefreshData>
-        </OnClickAction>
-      </QFButton>
-    </Control>
-    <Control typeName="Sage.Platform.QuickForms.Controls.QFButton, Sage.Platform.QuickForms">
-      <QFButton>
-        <Column>0</Column>
-        <Row>0</Row>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>btnCloseDialog</ControlId>
-        <DataBindings />
-        <ControlLabelPlacement>none</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme />
-        <ButtonType>Icon</ButtonType>
-        <Image />
-        <OnClientClick />
-        <OnClickAction>
-          <ResourceKey>btnCloseDialog</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
-            <CSharpSnippetActionItem>
-              <MethodName>btnCloseDialog_ClickAction</MethodName>
-              <CSharpCodeSnippet>if (Session["LeadAddressid"] != null)
-{
-    Sage.Entity.Interfaces.ILeadAddress objadd = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.ILeadAddress&gt;(Session["LeadAddressid"].ToString());
-    if (objadd != null)
-    {
-        string _add = objadd.Address1 + "," + objadd.Address2 + "," + objadd.Address3 + "\r\n";
-        _add += objadd.City + "," + objadd.State + "," + objadd.Country + "\r\n";
-        _add += objadd.PostalCode + "\r\n";
-        _add += objadd.Latitude + "\r\n";
-        _add += objadd.Logitude;
-        txtAccountAddress.Text = _add;
-    }
-}</CSharpCodeSnippet>
             </CSharpSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>

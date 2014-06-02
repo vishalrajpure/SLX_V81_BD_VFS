@@ -324,9 +324,6 @@ LabelPlacement="right" AutoPostBack="true"  />
     <asp:ImageButton runat="server" ID="cmdSaveNew"
  AlternateText="<%$ resources: cmdSaveNew.Caption %>"  ToolTip="<%$ resources: cmdSaveNew.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_New16x16"  />
  
-    <asp:ImageButton runat="server" ID="btnCloseDialog"
- />
- 
   <SalesLogix:PageLink ID="btnEditForm" CssClass="adminEditFormButton" runat="server" LinkType="RelativePath" ToolTip="<%$ resources: Portal, EditForm_ToolTip %>" NavigateUrl="~/FormManager.aspx?entityid=InsertLead&modeid=Detail" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=form_manager_16x16"></SalesLogix:PageLink>
  
  
@@ -488,7 +485,7 @@ protected override void OnAddEntityBindings() {
         BindingSource.Bindings.Add(txtSICCodeTextBinding);
     
    
-            }
+        }
                                                                                                                                                                                              
 protected void phnWorkPhone_ChangeAction(object sender, EventArgs e) {
 if (chkAutoSearch.Checked)
@@ -560,9 +557,6 @@ protected void lkpLeadEmployee_ChangeAction(object sender, EventArgs e) {
 
 }
 protected void cmdSave_ClickAction(object sender, EventArgs e) {
-
-
-
 Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
 if(lead.Company == null)
 {
@@ -586,6 +580,15 @@ if(lead.FirstName == null)
 }
 if (Session["LeadAddressid"] != null)
 {
+    /*string qry1 = "select * From Lead_Address where Lead_AddressID = '" + Session["LeadAddressid"].ToString() +  "'";
+			
+	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj1 = new System.Data.OleDb.OleDbDataAdapter(qry1, conObj);
+	System.Data.DataTable dt1 = new System.Data.DataTable();
+	dataAdapterObj1.Fill(dt1);
+	if(dt1.Rows.Count > 0)
+	{*/
     Sage.Entity.Interfaces.ILeadAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadAddress>(Session["LeadAddressid"].ToString());
     if (objadd != null)
     {
@@ -594,7 +597,7 @@ if (Session["LeadAddressid"] != null)
 
 
 	string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
-				"where Q.PINCODE = '"+ objadd.PostalCode.ToString() +"'";
+                "where Q.PINCODE = '" + objadd.PostalCode.ToString() + "'";//dt1.Rows[0]["PostalCode"].ToString() + "'";
 
 
 	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
@@ -610,10 +613,11 @@ if (Session["LeadAddressid"] != null)
 	}
 	else
 	{
-		DialogService.ShowMessage("Please map the branch manager with pincode-" + lead.Address.PostalCode);
+        DialogService.ShowMessage("Please map the branch manager with pincode-" + objadd.PostalCode.ToString());
 		return;
 		 
 	}
+	
 	
 	System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
     System.Data.DataTable dt2 = new System.Data.DataTable();
@@ -628,6 +632,7 @@ if (Session["LeadAddressid"] != null)
 	}
 	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001");
     //lead.Owner = objowner;
+	lead.Address = objadd;
 	lead.Save();
 	//lead.Address.LeadId = lead.Id.ToString();
 	//lead.Address.Save();
@@ -645,7 +650,7 @@ if (Session["LeadAddressid"] != null)
 			cmp.Save();
 		}	
 	}
-	lead.Address = objadd;
+	
 	lead.Save();
 	
 	Session.Remove("LeadAddressid");
@@ -696,12 +701,25 @@ if(lead.FirstName == null)
 
 if (Session["LeadAddressid"] != null)
 {
+    /*string qry1 = "select * From Lead_Address where Lead_AddressID = '" + Session["LeadAddressid"].ToString() +  "'";
+			
+	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj1 = new System.Data.OleDb.OleDbDataAdapter(qry1, conObj);
+	System.Data.DataTable dt1 = new System.Data.DataTable();
+	dataAdapterObj1.Fill(dt1);
+	if(dt1.Rows.Count > 0)
+	{*/
     Sage.Entity.Interfaces.ILeadAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadAddress>(Session["LeadAddressid"].ToString());
     if (objadd != null)
     {
 //////////////Specify the Query for find BM///////////
-string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
-				"where Q.PINCODE = '"+ lead.Address.PostalCode.ToString() +"'";
+
+
+
+	string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
+                "where Q.PINCODE = '" + objadd.PostalCode.ToString() + "'";//dt1.Rows[0]["PostalCode"].ToString() + "'";
+
 
 	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
 	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
@@ -710,17 +728,17 @@ string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
 	dataAdapterObj.Fill(dt);
 	if (dt.Rows.Count > 0)
     {
-		Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >((object)dt.Rows[0][0].ToString());
-	
+		Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)dt.Rows[0][0].ToString());
 		//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >((object)"ADMIN");
 		lead.Qualifier = BM;
 	}
 	else
 	{
-		DialogService.ShowMessage("Please map the branch manager with pincode-" + lead.Address.PostalCode);
+        DialogService.ShowMessage("Please map the branch manager with pincode-" + objadd.PostalCode.ToString());
 		return;
-		
+		 
 	}
+	
 	
 	System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
     System.Data.DataTable dt2 = new System.Data.DataTable();
@@ -735,6 +753,7 @@ string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
 	}
 	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001");
     //lead.Owner = objowner;
+	lead.Address = objadd;
 	lead.Save();
 	//lead.Address.LeadId = lead.Id.ToString();
 	//lead.Address.Save();
@@ -752,7 +771,7 @@ string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
 			cmp.Save();
 		}		
 	}
-	lead.Address = objadd;
+	//lead.Address = objadd;
 	lead.Save();
 	Session.Remove("LeadAddressid");
 	System.Web.HttpContext.Current.Response.Redirect(string.Format("InsertLead.aspx?modeid=Insert"));
@@ -774,22 +793,6 @@ else
 
 
 }
-protected void btnCloseDialog_ClickAction(object sender, EventArgs e) {
-if (Session["LeadAddressid"] != null)
-{
-    Sage.Entity.Interfaces.ILeadAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadAddress>(Session["LeadAddressid"].ToString());
-    if (objadd != null)
-    {
-        string _add = objadd.Address1 + "," + objadd.Address2 + "," + objadd.Address3 + "\r\n";
-        _add += objadd.City + "," + objadd.State + "," + objadd.Country + "\r\n";
-        _add += objadd.PostalCode + "\r\n";
-        _add += objadd.Latitude + "\r\n";
-        _add += objadd.Logitude;
-        txtAccountAddress.Text = _add;
-    }
-}
-
-}
 
 protected override void OnWireEventHandlers()
 {
@@ -801,7 +804,6 @@ cmdMatchingRecords.Click += new EventHandler(cmdMatchingRecords_ClickAction);
 lkpLeadEmployee.LookupResultValueChanged += new EventHandler(lkpLeadEmployee_ChangeAction);
 cmdSave.Click += new ImageClickEventHandler(cmdSave_ClickAction);
 cmdSaveNew.Click += new ImageClickEventHandler(cmdSaveNew_ClickAction);
-btnCloseDialog.Click += new ImageClickEventHandler(btnCloseDialog_ClickAction);
 
 
 }
@@ -1084,11 +1086,6 @@ public class InsertLeadAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     public  Sage.Platform.Controls.IButtonControl cmdSaveNew
     {
         get { return FindControl(ref _cmdSaveNew, "cmdSaveNew"); }
-    }
-    private Sage.Platform.Controls.IButtonControl _btnCloseDialog;
-    public  Sage.Platform.Controls.IButtonControl btnCloseDialog
-    {
-        get { return FindControl(ref _btnCloseDialog, "btnCloseDialog"); }
     }
 
 }

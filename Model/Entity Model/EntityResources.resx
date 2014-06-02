@@ -14877,4 +14877,43 @@
   <data name="QualifierAndSMpincode.Filter.Pincode.DisplayName" xml:space="preserve">
     <value>Pincode</value>
   </data>
+  <data name="Vwlegalmaster.DisplayName" xml:space="preserve">
+    <value>Legal Company</value>
+  </data>
+  <data name="Vwlegalmaster.DisplayNamePlural" xml:space="preserve">
+    <value>Legal Company</value>
+  </data>
+  <data name="Vwlegalmaster.Legalid.DisplayName" xml:space="preserve">
+    <value>Legalid</value>
+  </data>
+  <data name="Vwlegalmaster.Legalcompanyname.DisplayName" xml:space="preserve">
+    <value>Legalcompanyname</value>
+  </data>
+  <data name="Vwlegalmaster.Address1.DisplayName" xml:space="preserve">
+    <value>Address1</value>
+  </data>
+  <data name="Vwlegalmaster.Address2.DisplayName" xml:space="preserve">
+    <value>Address2</value>
+  </data>
+  <data name="Vwlegalmaster.Address3.DisplayName" xml:space="preserve">
+    <value>Address3</value>
+  </data>
+  <data name="Vwlegalmaster.City.DisplayName" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Vwlegalmaster.State.DisplayName" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Vwlegalmaster.Pincode.DisplayName" xml:space="preserve">
+    <value>Pincode</value>
+  </data>
+  <data name="Vwlegalmaster.Filter.City.DisplayName" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Vwlegalmaster.Filter.Pincode.DisplayName" xml:space="preserve">
+    <value>Pincode</value>
+  </data>
+  <data name="Vwlegalmaster.Filter.State.DisplayName" xml:space="preserve">
+    <value>State</value>
+  </data>
 </root>

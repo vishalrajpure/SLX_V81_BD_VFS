@@ -6,4 +6,5 @@
   <Item Id="fb4e7f97-5c95-40ea-b4ff-64972d9cef21">MasterItemproduct.navitem.xml</Item>
   <Item Id="2a25eee0-001d-4d2b-b484-32ce72b42181">MasterItemCompetitor.navitem.xml</Item>
   <Item Id="b1ed4f04-0e99-419d-a6ab-10fb99d37c16">MasterItemQualifierSMpincode.navitem.xml</Item>
+  <Item Id="eace27bb-976e-4958-8909-1509f8db6918">MasterItemLegalMaster.navitem.xml</Item>
 </ModelItems>

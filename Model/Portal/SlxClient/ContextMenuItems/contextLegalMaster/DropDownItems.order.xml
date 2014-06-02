@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<ModelItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Item Id="4b684c64-4ec4-4bc9-8779-67a16a89a723">LegalMasterItemLookup.contextmenu.xml</Item>
+  <Item Id="4d237900-0459-4471-91bd-e030cc1fccf8">LegalMasterItemCreateNewGroup.contextmenu.xml</Item>
+</ModelItems>

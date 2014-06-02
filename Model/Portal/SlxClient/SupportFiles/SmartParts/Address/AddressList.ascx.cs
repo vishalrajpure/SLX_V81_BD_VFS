@@ -78,7 +78,7 @@ public partial class SmartParts_AddressList : EntityBoundSmartPartInfoProvider
         
         if (DialogService != null)
         {
-            DialogService.SetSpecs(200, 200, 440, 300, "AddEditAddress", "", true);
+            DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
             DialogService.EntityType = typeof(IAddress);
             DialogService.ShowDialog();
             LoadGrid();
@@ -147,7 +147,7 @@ public partial class SmartParts_AddressList : EntityBoundSmartPartInfoProvider
             string Id = AddressGrid.DataKeys[rowIndex].Value.ToString();
             if (DialogService != null)
             {
-                DialogService.SetSpecs(200, 200, 440, 300, "AddEditAddress", "", true);
+                DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
                 DialogService.EntityType = typeof(IAddress);
                 DialogService.EntityID = Id;
                 DialogService.ShowDialog();

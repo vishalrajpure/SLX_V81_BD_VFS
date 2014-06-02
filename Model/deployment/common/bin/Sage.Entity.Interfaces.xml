@@ -1914,6 +1914,16 @@
             <c>true</c> if the current object is being created.
             </summary>
         </member>
+        <member name="P:Sage.Entity.Interfaces.IVwlegalmaster.InstanceId">
+            <summary>
+            Gets the unique identifier for this instance
+            </summary>
+        </member>
+        <member name="P:Sage.Entity.Interfaces.IVwlegalmaster.Creating">
+            <summary>
+            <c>true</c> if the current object is being created.
+            </summary>
+        </member>
         <member name="P:Sage.Entity.Interfaces.IVwpincodemaster.InstanceId">
             <summary>
             Gets the unique identifier for this instance

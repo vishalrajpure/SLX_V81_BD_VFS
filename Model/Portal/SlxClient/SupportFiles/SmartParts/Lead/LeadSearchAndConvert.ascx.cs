@@ -896,59 +896,75 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
     /// <param name="options">The options.</param>
     private void ConvertLeadToNewAccountAndContact(ILead lead, bool createOpportunity, string options)
     {
-		if (ddLSalesProcess.SelectedIndex > 0 || chkCreateOpportunity.Checked == false)
+		if (lead.LegalName != "")
         {
-        var keyGen = new SalesLogixEntityKeyGenerator();
-        string key = keyGen.GenerateIds(typeof(IContact), 1).FirstOrDefault();
-        IContact contact = EntityFactory.Create<IContact>();
-        ((IAssignableId)contact).Id = key;
-        IAccount account = EntityFactory.Create<IAccount>();
+            string qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + lead.LegalName + "'";
+            Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+            System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+            System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+            System.Data.DataTable dt = new System.Data.DataTable();
+            dataAdapterObj.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                lblmsg.Text = lead.LegalName + ": legal Name is already exists";
+                return;
+            }
+            else if (ddLSalesProcess.SelectedIndex > 0 || chkCreateOpportunity.Checked == false)
+            {
+                var keyGen = new SalesLogixEntityKeyGenerator();
+                string key = keyGen.GenerateIds(typeof(IContact), 1).FirstOrDefault();
+                IContact contact = EntityFactory.Create<IContact>();
+                ((IAssignableId)contact).Id = key;
+                IAccount account = EntityFactory.Create<IAccount>();
+                account.Type = "LEAD";
+                lead.ConvertLeadToContact(contact, account, options);
+                lead.ConvertLeadToAccount(account);
+                lead.ConvertLeadAddressToAccountAddress(account);
+                lead.ConvertLeadAddressToContactAddress(contact);
+                contact.SaveContactAccount(account);
+                IOpportunity opportunity = CreateOpportunity(createOpportunity, contact, lead);
 
-        lead.ConvertLeadToContact(contact, account, options);
-        lead.ConvertLeadToAccount(account);
-        lead.ConvertLeadAddressToAccountAddress(account);
-        lead.ConvertLeadAddressToContactAddress(contact);
-        contact.SaveContactAccount(account);
-        IOpportunity opportunity = CreateOpportunity(createOpportunity, contact, lead);
+                AddAttachmentsToLead(lead, account, contact, opportunity);
+                lead.AddHistoryAndQualificationRecords(contact, account, opportunity, false);
+                lead.AddActivities(contact, account, opportunity);
+				account.Type = "LEAD";
+                account.Status = "Active";
+                account.Save();
+                IList<ICampaignTarget> campaignTargets = EntityFactory.GetRepository<ICampaignTarget>().FindByProperty("EntityId", lead.Id.ToString());
+                foreach (ICampaignTarget campaignTarget in campaignTargets)
+                    lead.ChangeCampaignTargetEntityID(contact, campaignTarget);
 
-        AddAttachmentsToLead(lead, account, contact, opportunity);
-        lead.AddHistoryAndQualificationRecords(contact, account, opportunity, false);
-        lead.AddActivities(contact, account, opportunity);
-
-        IList<ICampaignTarget> campaignTargets = EntityFactory.GetRepository<ICampaignTarget>().FindByProperty("EntityId", lead.Id.ToString());
-        foreach (ICampaignTarget campaignTarget in campaignTargets)
-            lead.ChangeCampaignTargetEntityID(contact, campaignTarget);
-
-        ILeadHistory leadHistory = EntityFactory.GetById<ILeadHistory>(lead.SaveLeadHistory());
-        if (leadHistory != null)
-        {
-            leadHistory.ContactId = contact.Id.ToString();
-            leadHistory.AccountId = account.Id.ToString();
-            leadHistory.Save();
+                ILeadHistory leadHistory = EntityFactory.GetById<ILeadHistory>(lead.SaveLeadHistory());
+                if (leadHistory != null)
+                {
+                    leadHistory.ContactId = contact.Id.ToString();
+                    leadHistory.AccountId = account.Id.ToString();
+                    leadHistory.Save();
+                }
+                //lead.Delete();
+                Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000002");
+                lead.Owner = objowner;
+                lead.Status = "Converted";
+                lead.Save();
+                //EntityContext.RemoveEntityHistory(typeof(ILead), lead.Id);
+                string url;
+                if (opportunity != null)
+                    url = string.Format("Opportunity.aspx?entityid={0}", opportunity.Id);
+                else
+                    url = string.Format("Contact.aspx?entityId={0}", contact.Id);
+                cmdConvert.Click += DialogService.CloseEventHappened;
+                //Page.ClientScript.RegisterClientScriptBlock(GetType(), "sas", "<script>window.close();if (window.opener && !window.opener.closed) { window.opener.location='" + url + "'; }</script>", false);
+                Response.Redirect(
+                    opportunity != null
+                        ? string.Format("Opportunity.aspx?entityid={0}", opportunity.Id)
+                        : string.Format("Contact.aspx?entityId={0}", contact.Id), false);
+            }
+            else
+            {
+                lblmsg.Text = "Please Select SalesProcess,Then Continue Convert Opportunity";
+                //throw new Sage.Platform.Application.ValidationException("The call to LeadSearchAndConvert.cmdConvert_Click() failed");
+            }
         }
-        //lead.Delete();
-		Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000002"); 
-		lead.Owner = objowner; 
-		lead.Status = "Converted";
-		lead.Save();
-        //EntityContext.RemoveEntityHistory(typeof(ILead), lead.Id);
-		string url;
-		if(opportunity != null)
-        	url =string.Format("Opportunity.aspx?entityid={0}", opportunity.Id);
-		else
-			url = string.Format("Contact.aspx?entityId={0}", contact.Id);
-		cmdConvert.Click += DialogService.CloseEventHappened;
-		//Page.ClientScript.RegisterClientScriptBlock(GetType(), "sas", "<script>window.close();if (window.opener && !window.opener.closed) { window.opener.location='" + url + "'; }</script>", false);
-        Response.Redirect(
-            opportunity != null
-                ? string.Format("Opportunity.aspx?entityid={0}", opportunity.Id)
-                : string.Format("Contact.aspx?entityId={0}", contact.Id), false);
-		}
-		else
-		{
-			lblmsg.Text = "Please Select SalesProcess,Then Continue Convert Opportunity";
-			//throw new Sage.Platform.Application.ValidationException("The call to LeadSearchAndConvert.cmdConvert_Click() failed");
-		}
     }
 
     private IOpportunity CreateOpportunity(bool createOpportunity, IContact contact, ILead lead)

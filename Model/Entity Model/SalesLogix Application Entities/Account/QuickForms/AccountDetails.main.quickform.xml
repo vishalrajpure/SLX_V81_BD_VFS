@@ -395,6 +395,7 @@ if (account != null)
       <QFTextBox>
         <Column>1</Column>
         <Row>0</Row>
+        <IsReadOnly>true</IsReadOnly>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>txtLegalName</ControlId>

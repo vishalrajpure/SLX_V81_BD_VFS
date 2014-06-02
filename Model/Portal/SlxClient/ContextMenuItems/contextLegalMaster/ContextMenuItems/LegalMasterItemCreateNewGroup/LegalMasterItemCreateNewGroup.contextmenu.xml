@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<MenuDropDownItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="4d237900-0459-4471-91bd-e030cc1fccf8">
+  <ItemId>LegalMasterItemCreateNewGroup</ItemId>
+  <NavUrl>javascript:Sage.Groups.GroupManager.CreateGroup('VWLEGALMASTER');</NavUrl>
+  <LargeImageUrl />
+  <SmallImageUrl />
+  <ContextMenuId />
+  <Target />
+  <AppliedSecurity />
+</MenuDropDownItem>

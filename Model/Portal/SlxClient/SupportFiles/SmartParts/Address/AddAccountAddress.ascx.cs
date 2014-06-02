@@ -144,7 +144,7 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
         ClientBindingMgr.RegisterDialogCancelButton(btnCancel);
 
 
-        string script_FormatNumber = "";
+        /*string script_FormatNumber = "";
         //script_FormatNumber += " function only_required(Address1,pincode,Latitude,Logitute,description,isprimary,addtype,add2,add3,city,state,country,attn) ";
         script_FormatNumber += " function only_required(Address1,pincode,Latitude,Logitute) ";
         script_FormatNumber += " {";
@@ -160,7 +160,34 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
         script_FormatNumber += " }}";
         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate", script_FormatNumber, true);
         btnSave.Attributes.Add("onclick", "return only_required(document.getElementById('" + txtAddress1.ClientID + "').value,document.getElementById('" + txtPostalCode.ClientID + "').value,document.getElementById('" + txtLatitude.ClientID + "').value,document.getElementById('" + txtLogitute.ClientID + "').value);");
+*/
+		string script_FormatNumber = "";
+        //script_FormatNumber += " function only_required(Address1,pincode,Latitude,Logitute,description,isprimary,addtype,add2,add3,city,state,country,attn) ";
+        script_FormatNumber += " function only_required(Address1,pincode,Latitude,Logitute,add2,add3,city,state,country) ";
+        script_FormatNumber += " {";
+        script_FormatNumber += "    var df = true;";
+        script_FormatNumber += "     if(Address1 == '') { df =  false; }";
+        script_FormatNumber += "     if(pincode == '') {df =  false; }";
+        script_FormatNumber += "     if(Latitude == '') {df =  false; }";
+        script_FormatNumber += "     if(Logitute == '') {df =  false; }";
 
+        script_FormatNumber += "     if(!df) {";
+        script_FormatNumber += "     alert('Please Fill Required fields');";
+        script_FormatNumber += " return df;} else {";
+        script_FormatNumber += " var add = Address1 + ', ' + add2 + ', ' + add3 + ', ' + city + ', ' + state + ', ' + country + ', ' + pincode;";
+
+        script_FormatNumber += " document.getElementById('MainContent_InsertContact_txtAccountAddress').value = add;";
+            
+        script_FormatNumber += " return df;";
+        // script_FormatNumber += " { document.getElementById('MainContent_InsertContact_txtAccountAddress').value = Address1 + pincode + Latitude + Logitute;";
+        script_FormatNumber += " }}";
+
+        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate", script_FormatNumber, true);
+       // btnSave.Attributes.Add("onclick", "return only_required(document.getElementById('" + txtAddress1.ClientID + "').value,document.getElementById('" + txtPostalCode.ClientID + "').value,document.getElementById('" + txtLatitude.ClientID + "').value,document.getElementById('" + txtLogitute.ClientID + "').value,document.getElementById('" + txtAddress2.ClientID + "').value,document.getElementById('" + txtAddress3.ClientID + "').value,document.getElementById('" + pklCity.ClientID + "').value,document.getElementById('" + pklState.ClientID + "').value,document.getElementById('" + pklCountry.ClientID + "').value);");
+        btnSave.Attributes.Add("onclick", "return only_required(document.getElementById('" + txtAddress1.ClientID + "').value,document.getElementById('" + txtPostalCode.ClientID + "').value,document.getElementById('" + txtLatitude.ClientID + "').value,document.getElementById('" + txtLogitute.ClientID + "').value,document.getElementById('" + txtAddress2.ClientID + "').value,document.getElementById('" + txtAddress3.ClientID + "').value,document.getElementById('" + pklCity.ClientID + "_Text').value,document.getElementById('" + pklState.ClientID + "_Text').value,document.getElementById('"+ pklCountry.ClientID + "_Text').value);");
+        
+
+		
         if (Session["Addressid"] != null)
         {
             string _idname = Session["Addressid"].ToString();
@@ -169,7 +196,7 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
 
             IAddress curAdd = this.BindingSource.Current as IAddress;
             Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_id);
-            if (objadd != null)
+            if (objadd != null && curAdd.Address1 == null)
             {
                 curAdd.Address1 = objadd.Address1;
                 curAdd.Address2 = objadd.Address2;
@@ -209,7 +236,7 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
                 }
                 IAddress curAdd2 = this.BindingSource.Current as IAddress;
                 Sage.Entity.Interfaces.IAddress objadd2 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_Entityid);
-                if (objadd2 != null)
+                if (objadd2 != null && curAdd2.Address1 == null)
                 {
                     curAdd2.Address1 = objadd2.Address1;
                     curAdd2.Address2 = objadd2.Address2;
@@ -318,6 +345,7 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
                     Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_Entityid);
                     if (objadd != null)
                     {
+						
                         objadd.Address1 = curAdd.Address1;
                         objadd.Address2 = curAdd.Address2;
                         objadd.Address3 = curAdd.Address3;

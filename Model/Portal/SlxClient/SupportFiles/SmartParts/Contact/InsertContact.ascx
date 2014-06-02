@@ -189,7 +189,7 @@
                 <asp:Label ID="lbllegalname" runat="server" Text="Legal Name:" ForeColor="Red"></asp:Label>
             </div>
             <div class="textcontrol">
-                <asp:TextBox ID="txtlegalname" runat="server"></asp:TextBox>
+               <asp:TextBox ID="txtlegalname" runat="server" OnTextChanged="txtlegalname_TextChanged" AutoPostBack="true"></asp:TextBox>
             </div>
         </td>
     </tr>
@@ -801,12 +801,15 @@
     {
         saveOptions();
         IContact contact = BindingSource.Current as IContact;
+        
         if (contact != null)
-        {
+        {          
+           
             object[] objarray = new object[] { contact, contact.Account };
             object contactId = EntityFactory.Execute<Contact>("Contact.SaveContactAccount", objarray);
-            if (contactId != null)
-                Response.Redirect(string.Format("Contact.aspx?entityId={0}", (contactId)));
+           
+             Response.Redirect(string.Format("Contact.aspx?entityId={0}", (contactId)));
+            
         }
 
     }
@@ -946,7 +949,7 @@
 
 
             }
-            if (Session["Addressid"] != null)
+            /*if (Session["Addressid"] != null)
             {
                 Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Session["Addressid"].ToString());
                 if (objadd != null)
@@ -958,7 +961,7 @@
                     _add += objadd.Logitude;
                     txtAccountAddress.Text = _add;
                 }
-            }
+            }*/
         }
     }
 
@@ -998,6 +1001,8 @@
         cmdSaveNew.Click += cmdSaveNew_ClickAction;
         cmdSaveClear.Click += cmdSaveClear_ClickAction;
         DialogService.onDialogClosing += DialogService_onDialogClosing;
+		txtlegalname.TextChanged += txtlegalname_TextChanged;
+
     }
 
     protected override void OnFormBound()
@@ -1064,13 +1069,35 @@
         IAddress objadd=null;
         if (Session["Addressid"] != null)
         {
-            objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Session["Addressid"].ToString());
-            contact.Address = objadd;
+            objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Session["Addressid"].ToString());           
             contact.Account.Address = objadd;
         }
         contact.Account.Save();
-        objadd.EntityId = contact.Account.Id.ToString();
-        objadd.Save();
+        contact.Save();
+        
+        objadd.EntityId = contact.Account.Id.ToString();        
+        objadd.Save();        
+       
+        contact.Address.Address1 = objadd.Address1;
+        contact.Address.Address2 = objadd.Address2;
+        contact.Address.Address3 = objadd.Address3;
+        contact.Address.AddressType = objadd.AddressType;
+        contact.Address.City = objadd.AddressType;
+        contact.Address.Country = objadd.Country;
+        contact.Address.CreateDate = objadd.CreateDate;
+        contact.Address.CreateUser = objadd.CreateUser;
+        contact.Address.Description = objadd.Description;
+        contact.Address.IsMailing = objadd.IsMailing;
+        contact.Address.IsPrimary = objadd.IsPrimary;
+        contact.Address.Latitude = objadd.Latitude;
+        contact.Address.Logitude = objadd.Logitude;
+        contact.Address.PostalCode = objadd.PostalCode;
+        contact.Address.PrimaryAddress = objadd.PrimaryAddress;
+        contact.Address.State = objadd.State;
+        contact.Address.Type = objadd.Type;
+        //contact.Address.EntityId = contact.Id.ToString();
+        contact.Address.Save();        
+        
         Session.Remove("Addressid");
        
         string option = "N";
@@ -1090,6 +1117,25 @@
             DialogService.ShowDialog();
         }
     }
-
+	protected void txtlegalname_TextChanged(object sender, EventArgs e)
+    {
+        if(txtlegalname.Text != "")
+		{
+            string qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + txtlegalname.Text.Trim() + "'";
+            Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+            System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+            System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+            System.Data.DataTable dt = new System.Data.DataTable();
+            dataAdapterObj.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                DialogService.ShowMessage("This legal Name is already exists");
+                return;
+            }
+            else
+            {               
+            }
+        }        
+    }
   
 </script>

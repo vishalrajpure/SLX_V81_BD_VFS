@@ -6,8 +6,6 @@
 <%@ Register Assembly="Sage.SalesLogix.HighLevelTypes" Namespace="Sage.SalesLogix.HighLevelTypes" TagPrefix="SalesLogix" %>
 <a href="App_LocalResources/AddAccountAddress.ascx.resx"></a>
 
-
-
 <div style="display: none">
     <asp:Panel ID="AddressForm_LTools" runat="server"></asp:Panel>
     <asp:Panel ID="AddressForm_CTools" runat="server"></asp:Panel>
@@ -155,8 +153,8 @@
             <td>
                 <asp:Button runat="server" ID="btnSave" CssClass="slxbutton" ToolTip="btnSave" Text="Ok" />
                 <asp:Button runat="server" ID="btnCancel" CssClass="slxbutton" ToolTip="btnCancel" Text="Cancel" />
-                <asp:Button runat="server" ID="btngetGL" CssClass="slxbutton" Text="Get Latitude/Logitute" OnClick="btngetGL_Click" />
-            </td>
+                <asp:Button runat="server" ID="btngetGL" CssClass="slxbutton" Text="Get Latitude/Logitute" OnClick="btngetGL_Click" />                
+            
         </tr>
     </table>
 

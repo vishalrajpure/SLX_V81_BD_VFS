@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<MenuDropDownItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="4b684c64-4ec4-4bc9-8779-67a16a89a723">
+  <ItemId>LegalMasterItemLookup</ItemId>
+  <NavUrl>javascript:Sage.Utility.Groups.showMainLookupFor('VWLEGALMASTER','VWLEGALMASTER.aspx');</NavUrl>
+  <LargeImageUrl />
+  <SmallImageUrl />
+  <ContextMenuId />
+  <Target />
+  <AppliedSecurity />
+</MenuDropDownItem>

@@ -1611,4 +1611,12 @@
  <ref id="017eb719-17ed-4efb-b9e1-cd861085064b" url="\Entity Model\Saleslogix Application Entities\Vwpincodemaster\Vwpincodemaster.VWPINCODEMASTER.entity.xml" />
  <ref id="bc5510e8-5588-4b9b-a157-7c390ccd3079" url="\Entity Model\Saleslogix Application Entities\Vwempmaster\Vwempmaster.VWEMPMASTER.entity.xml" />
  <ref id="cb5bb1b9-907b-4d23-974f-6bdac8d22d76" url="\Entity Model\Saleslogix Application Entities\QualifierAndSMpincode\QualifierAndSMpincode.QUALIFIERANDSMPINCODE.entity.xml" />
+ <ref id="afbc0bc0-78ef-4b11-a435-4a09455a5929" url="\Entity Model\Saleslogix Application Entities\Vwlegalmaster\Vwlegalmaster.VWLEGALMASTER.entity.xml" />
+ <ref id="156521c8-6106-44e8-a200-28df28dab2aa" url="\Entity Model\Saleslogix Application Entities\Vwlegalmaster\OnAfterInsert.method.xml" />
+ <ref id="403ec903-4255-418f-aea0-7f7ce61c1a6f" url="\Entity Model\Saleslogix Application Entities\Vwlegalmaster\OnAfterUpdate.method.xml" />
+ <ref id="ff8b1706-bb94-4c2a-a298-73f524e71552" url="\Entity Model\Saleslogix Application Entities\Vwlegalmaster\OnAfterDelete.method.xml" />
+ <ref id="8b5fb703-0fa5-4e28-95c1-6c4f92933116" url="\Entity Model\Saleslogix Application Entities\Vwlegalmaster\OnBeforeUpdate.method.xml" />
+ <ref id="431b5622-0238-4010-a653-e491ee83b8f5" url="\Entity Model\Saleslogix Application Entities\Vwlegalmaster\OnCreate.method.xml" />
+ <ref id="5eec7cc2-7d35-41b6-b088-a4e895056557" url="\Entity Model\Saleslogix Application Entities\Vwlegalmaster\OnBeforeDelete.method.xml" />
+ <ref id="25ba418e-0b45-4b96-919b-9db2fec55cbb" url="\Entity Model\Saleslogix Application Entities\Vwlegalmaster\OnBeforeInsert.method.xml" />
 </modelItemIndex>
