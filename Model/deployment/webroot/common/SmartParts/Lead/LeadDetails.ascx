@@ -197,13 +197,31 @@ Required="true"  />
   </div>
 
       </td>
-                      <td></td>
+                      <td  >
+<div class="slxlabel  alignleft  checkbox ">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotSolicit"  Text="<%$ resources: chkDoNotSolicit.Caption %>"  CssClass=""
+Visible="false" LabelPlacement="right" AutoPostBack="true"  />
+</div>
+      </td>
       </tr>
 <tr>
-                        <td></td>
+                        <td  >
+<div class="slxlabel  alignleft  checkbox ">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotEmail"  Text="<%$ resources: chkDoNotEmail.Caption %>"  CssClass=""
+Visible="false" LabelPlacement="right" AutoPostBack="true"  />
+</div>
+      </td>
       </tr>
 <tr>
-                        <td></td>
+                        <td  >
+<div class="slxlabel  alignleft  checkbox ">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotCall"  Text="<%$ resources: chkDoNotCall.Caption %>"  CssClass=""
+Visible="false" LabelPlacement="right"  />
+</div>
+      </td>
       </tr>
 <tr>
             <td  colspan="2" >
@@ -215,7 +233,13 @@ Required="true"  />
   </div>
 
       </td>
-                      <td></td>
+                      <td  >
+<div class="slxlabel  alignleft  checkbox ">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotMail"  Text="<%$ resources: chkDoNotMail.Caption %>"  CssClass=""
+Visible="false" LabelPlacement="right"  />
+</div>
+      </td>
       </tr>
 <tr>
             <td  >
@@ -236,7 +260,13 @@ Required="true"  />
   </div>
 
       </td>
-                <td></td>
+                <td  >
+<div class="slxlabel  alignleft  checkbox ">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotFax"  Text="<%$ resources: chkDoNotFax.Caption %>"  CssClass=""
+Visible="false" LabelPlacement="right"  />
+</div>
+      </td>
       </tr>
 <tr>
             <td  >
@@ -257,7 +287,15 @@ Required="true"  />
   </div>
 
       </td>
-                <td></td>
+                <td rowspan="2"  >
+ <div class=" lbl alignleft" >
+   <asp:Label ID="txtInterests_lbl" AssociatedControlID="txtInterests" runat="server" Text="<%$ resources: txtInterests.Caption %>" Visible="false" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="txtInterests"  Rows="3" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea" MultiLineMaxLength="128" Visible="false"  />
+  </div>
+
+      </td>
       </tr>
 <tr>
             <td  >
@@ -290,8 +328,7 @@ Required="true"  />
   </div>
 
       </td>
-                <td></td>
-      </tr>
+            </tr>
 <tr>
             <td  colspan="3" >
   <hr />
@@ -301,60 +338,6 @@ Required="true"  />
                   </tr>
 <tr>
             <td  >
-<div class="slxlabel  alignleft  checkbox ">
-
-  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotSolicit"  Text="<%$ resources: chkDoNotSolicit.Caption %>"  CssClass=""
-Visible="false" LabelPlacement="right" AutoPostBack="true"  />
-</div>
-      </td>
-                <td></td>
-                <td></td>
-      </tr>
-<tr>
-            <td  >
-<div class="slxlabel  alignleft  checkbox ">
-
-  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotEmail"  Text="<%$ resources: chkDoNotEmail.Caption %>"  CssClass=""
-Visible="false" LabelPlacement="right" AutoPostBack="true"  />
-</div>
-      </td>
-                <td  >
-<div class="slxlabel  alignleft  checkbox ">
-
-  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotMail"  Text="<%$ resources: chkDoNotMail.Caption %>"  CssClass=""
-Visible="false" LabelPlacement="right"  />
-</div>
-      </td>
-                <td></td>
-      </tr>
-<tr>
-            <td  >
-<div class="slxlabel  alignleft  checkbox ">
-
-  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotCall"  Text="<%$ resources: chkDoNotCall.Caption %>"  CssClass=""
-Visible="false" LabelPlacement="right"  />
-</div>
-      </td>
-                <td  >
-<div class="slxlabel  alignleft  checkbox ">
-
-  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotFax"  Text="<%$ resources: chkDoNotFax.Caption %>"  CssClass=""
-Visible="false" LabelPlacement="right"  />
-</div>
-      </td>
-                <td></td>
-      </tr>
-<tr>
-            <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="pklIndustry_lbl" AssociatedControlID="pklIndustry" runat="server" Text="<%$ resources: pklIndustry.Caption %>" Visible="false" ></asp:Label>
- </div>   
-   <div  class="textcontrol picklist"  > 
-    <SalesLogix:PickListControl runat="server" ID="pklIndustry" PickListName="Industry" MustExistInList="false" NoneEditable="true" AlphaSort="true" Visible="false"  />
-  </div>
-
-      </td>
-                <td  >
  <div class=" lbl alignleft" >
    <asp:Label ID="txtSICCode_lbl" AssociatedControlID="txtSICCode" runat="server" Text="<%$ resources: txtSICCode.Caption %>" Visible="false" ></asp:Label>
  </div>
@@ -363,23 +346,15 @@ Visible="false" LabelPlacement="right"  />
   </div>
 
       </td>
-                <td></td>
-      </tr>
-<tr>
-            <td rowspan="2"  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="txtInterests_lbl" AssociatedControlID="txtInterests" runat="server" Text="<%$ resources: txtInterests.Caption %>" Visible="false" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtInterests"  Rows="3" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea" MultiLineMaxLength="128" Visible="false"  />
+                <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="pklIndustry_lbl" AssociatedControlID="pklIndustry" runat="server" Text="<%$ resources: pklIndustry.Caption %>" Visible="false" ></asp:Label>
+ </div>   
+   <div  class="textcontrol picklist"  > 
+    <SalesLogix:PickListControl runat="server" ID="pklIndustry" PickListName="Industry" MustExistInList="false" NoneEditable="true" AlphaSort="true" Visible="false"  />
   </div>
 
       </td>
-                <td></td>
-                <td></td>
-      </tr>
-<tr>
-                  <td></td>
                 <td></td>
       </tr>
 </table>
@@ -524,28 +499,7 @@ protected override void OnAddEntityBindings() {
                     // txtComments.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtCommentsTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Notes", txtComments, "Text");
         BindingSource.Bindings.Add(txtCommentsTextBinding);
-                    // txtAnyInfo.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding txtAnyInfoTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AnyOtherInformation", txtAnyInfo, "Text");
-        BindingSource.Bindings.Add(txtAnyInfoTextBinding);
-                    // lkpQualifier.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpQualifierLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Qualifier", lkpQualifier, "LookupResultValue");
-        BindingSource.Bindings.Add(lkpQualifierLookupResultValueBinding);
-                    // ownOwner.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding ownOwnerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Owner", ownOwner, "LookupResultValue");
-        BindingSource.Bindings.Add(ownOwnerLookupResultValueBinding);
-                    // lkpLeadEmployee.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpLeadEmployeeLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LeadEmployee", lkpLeadEmployee, "LookupResultValue");
-        BindingSource.Bindings.Add(lkpLeadEmployeeLookupResultValueBinding);
-                    // dtpQualifiedOn.DateTimeValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding dtpQualifiedOnDateTimeValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("QualifiedON", dtpQualifiedOn, "DateTimeValue");
-        BindingSource.Bindings.Add(dtpQualifiedOnDateTimeValueBinding);
-                    // lkpBranchManager.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpBranchManagerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BranchManager", lkpBranchManager, "LookupResultValue");
-        BindingSource.Bindings.Add(lkpBranchManagerLookupResultValueBinding);
-                    // lueLeadSource.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding lueLeadSourceLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LeadSource", lueLeadSource, "LookupResultValue");
-        BindingSource.Bindings.Add(lueLeadSourceLookupResultValueBinding);
-                       // chkDoNotSolicit.Checked Binding
+                    // chkDoNotSolicit.Checked Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotSolicitCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("DoNotSolicit", chkDoNotSolicit, "Checked");
         BindingSource.Bindings.Add(chkDoNotSolicitCheckedBinding);
                     // chkDoNotEmail.Checked Binding
@@ -555,13 +509,6 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotEmailEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotEmail, "Enabled");
         chkDoNotEmailEnabledBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(chkDoNotEmailEnabledBinding);
-                    // chkDoNotMail.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotMailCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("DoNotMail", chkDoNotMail, "Checked");
-        BindingSource.Bindings.Add(chkDoNotMailCheckedBinding);
-                 // chkDoNotMail.Enabled Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotMailEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotMail, "Enabled");
-        chkDoNotMailEnabledBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(chkDoNotMailEnabledBinding);
                     // chkDoNotCall.Checked Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotCallCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("DoNotPhone", chkDoNotCall, "Checked");
         BindingSource.Bindings.Add(chkDoNotCallCheckedBinding);
@@ -569,6 +516,22 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotCallEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotCall, "Enabled");
         chkDoNotCallEnabledBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(chkDoNotCallEnabledBinding);
+                    // txtAnyInfo.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtAnyInfoTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AnyOtherInformation", txtAnyInfo, "Text");
+        BindingSource.Bindings.Add(txtAnyInfoTextBinding);
+                    // chkDoNotMail.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotMailCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("DoNotMail", chkDoNotMail, "Checked");
+        BindingSource.Bindings.Add(chkDoNotMailCheckedBinding);
+                 // chkDoNotMail.Enabled Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotMailEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotMail, "Enabled");
+        chkDoNotMailEnabledBinding.IgnoreFLSDisabling = true;
+        BindingSource.Bindings.Add(chkDoNotMailEnabledBinding);
+                    // lkpQualifier.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpQualifierLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Qualifier", lkpQualifier, "LookupResultValue");
+        BindingSource.Bindings.Add(lkpQualifierLookupResultValueBinding);
+                    // ownOwner.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding ownOwnerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Owner", ownOwner, "LookupResultValue");
+        BindingSource.Bindings.Add(ownOwnerLookupResultValueBinding);
                     // chkDoNotFax.Checked Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotFaxCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("DoNotFAX", chkDoNotFax, "Checked");
         BindingSource.Bindings.Add(chkDoNotFaxCheckedBinding);
@@ -576,15 +539,27 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotFaxEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotFax, "Enabled");
         chkDoNotFaxEnabledBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(chkDoNotFaxEnabledBinding);
-                    // pklIndustry.PickListValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding pklIndustryPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Industry", pklIndustry, "PickListValue");
-        BindingSource.Bindings.Add(pklIndustryPickListValueBinding);
-                    // txtSICCode.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding txtSICCodeTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("SICCode", txtSICCode, "Text");
-        BindingSource.Bindings.Add(txtSICCodeTextBinding);
+                    // lkpLeadEmployee.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpLeadEmployeeLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LeadEmployee", lkpLeadEmployee, "LookupResultValue");
+        BindingSource.Bindings.Add(lkpLeadEmployeeLookupResultValueBinding);
+                    // dtpQualifiedOn.DateTimeValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding dtpQualifiedOnDateTimeValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("QualifiedON", dtpQualifiedOn, "DateTimeValue");
+        BindingSource.Bindings.Add(dtpQualifiedOnDateTimeValueBinding);
                     // txtInterests.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtInterestsTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Interests", txtInterests, "Text");
         BindingSource.Bindings.Add(txtInterestsTextBinding);
+                    // lkpBranchManager.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpBranchManagerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BranchManager", lkpBranchManager, "LookupResultValue");
+        BindingSource.Bindings.Add(lkpBranchManagerLookupResultValueBinding);
+                    // lueLeadSource.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding lueLeadSourceLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LeadSource", lueLeadSource, "LookupResultValue");
+        BindingSource.Bindings.Add(lueLeadSourceLookupResultValueBinding);
+                       // txtSICCode.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtSICCodeTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("SICCode", txtSICCode, "Text");
+        BindingSource.Bindings.Add(txtSICCodeTextBinding);
+                    // pklIndustry.PickListValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding pklIndustryPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Industry", pklIndustry, "PickListValue");
+        BindingSource.Bindings.Add(pklIndustryPickListValueBinding);
     
    
                  
@@ -752,6 +727,9 @@ if(lead.Address.PostalCode == null)
 	DialogService.ShowMessage("Enter the Address");
 		return;
 }
+Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>(); 
+System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString()); 
+				
 switch(lead.Status) 
 { 
 	case "Dropped": //// Set Owner /// 
@@ -765,8 +743,6 @@ switch(lead.Status)
 			{
 				string qry = "Select Q.SALESMANAGERID from QUALIFIERANDSMPINCODE Q " + 
 					"where Q.PINCODE = '"+ lead.Address.PostalCode.ToString() + "'"; 
-				Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>(); 
-				System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString()); 
 				System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj); 
 				System.Data.DataTable dt = new System.Data.DataTable(); 
 				dataAdapterObj.Fill(dt);
@@ -807,6 +783,17 @@ switch(lead.Status)
 			//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001"); 
 			//lead.Owner = objowner; 
 		} 
+		else
+		{
+				System.Data.OleDb.OleDbDataAdapter dataAdapterObj3 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + lead.BranchManager.Id.ToString() + "' and name ='INSERTSECCODEID'", conObj); 
+				System.Data.DataTable dt3 = new System.Data.DataTable(); 
+				dataAdapterObj3.Fill(dt3); 
+				if (dt3.Rows.Count > 0) 
+				{ 
+					Sage.Entity.Interfaces.IOwner objowner2 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt3.Rows[0][0].ToString()); 
+					lead.Owner = objowner2; 
+				} 
+		}
 		break; 
 	/*case "Converted": 
 		if(lead.BranchManager == null) 
@@ -906,12 +893,19 @@ if (lead != null)
 		cmdQualifyLead.Visible = false;
 		cmdConvertLead.Visible = true;
 	}
-	if(lead.Status == "Converted")
+	if(lead.Status.ToUpper() == "CONVERTED" || lead.Status.ToUpper() == "DROPPED" )
 	{
 		cmdQualifyLead.Visible = false;
 		cmdConvertLead.Visible = false;
+		cmdUpdateLead.Visible = false;
+		cmdDeleteLead.Visible = false;
+		
 	}
-	
+	if(lead.Status.ToUpper() == "QUALIFIED" || lead.Status.ToUpper() == "DROPPED" )
+	{
+		lkpBranchManager.Enabled = true;
+		
+	}
 	//Begin Load Action
 
 
@@ -1055,30 +1049,10 @@ public class LeadDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAda
     {
         get { return FindControl(ref _lkpBranchManager, "lkpBranchManager"); }
     }
-    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotSolicit;
-    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotSolicit
+    private Sage.Platform.Controls.ITextBoxControl _txtSICCode;
+    public  Sage.Platform.Controls.ITextBoxControl txtSICCode
     {
-        get { return FindControl(ref _chkDoNotSolicit, "chkDoNotSolicit"); }
-    }
-    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotEmail;
-    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotEmail
-    {
-        get { return FindControl(ref _chkDoNotEmail, "chkDoNotEmail"); }
-    }
-    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotCall;
-    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotCall
-    {
-        get { return FindControl(ref _chkDoNotCall, "chkDoNotCall"); }
-    }
-    private Sage.Platform.Controls.IPickListControl _pklIndustry;
-    public  Sage.Platform.Controls.IPickListControl pklIndustry
-    {
-        get { return FindControl(ref _pklIndustry, "pklIndustry"); }
-    }
-    private Sage.Platform.Controls.ITextBoxControl _txtInterests;
-    public  Sage.Platform.Controls.ITextBoxControl txtInterests
-    {
-        get { return FindControl(ref _txtInterests, "txtInterests"); }
+        get { return FindControl(ref _txtSICCode, "txtSICCode"); }
     }
     private Sage.Platform.Controls.IEmailControl _emlEmail;
     public  Sage.Platform.Controls.IEmailControl emlEmail
@@ -1125,20 +1099,10 @@ public class LeadDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAda
     {
         get { return FindControl(ref _lueLeadSource, "lueLeadSource"); }
     }
-    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotMail;
-    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotMail
+    private Sage.Platform.Controls.IPickListControl _pklIndustry;
+    public  Sage.Platform.Controls.IPickListControl pklIndustry
     {
-        get { return FindControl(ref _chkDoNotMail, "chkDoNotMail"); }
-    }
-    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotFax;
-    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotFax
-    {
-        get { return FindControl(ref _chkDoNotFax, "chkDoNotFax"); }
-    }
-    private Sage.Platform.Controls.ITextBoxControl _txtSICCode;
-    public  Sage.Platform.Controls.ITextBoxControl txtSICCode
-    {
-        get { return FindControl(ref _txtSICCode, "txtSICCode"); }
+        get { return FindControl(ref _pklIndustry, "pklIndustry"); }
     }
     private Sage.Platform.Controls.IButtonControl _cmdQualifyLead;
     public  Sage.Platform.Controls.IButtonControl cmdQualifyLead
@@ -1149,6 +1113,36 @@ public class LeadDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAda
     public  Sage.Platform.Controls.IButtonControl cmdConvertLead
     {
         get { return FindControl(ref _cmdConvertLead, "cmdConvertLead"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotSolicit;
+    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotSolicit
+    {
+        get { return FindControl(ref _chkDoNotSolicit, "chkDoNotSolicit"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotEmail;
+    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotEmail
+    {
+        get { return FindControl(ref _chkDoNotEmail, "chkDoNotEmail"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotCall;
+    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotCall
+    {
+        get { return FindControl(ref _chkDoNotCall, "chkDoNotCall"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotMail;
+    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotMail
+    {
+        get { return FindControl(ref _chkDoNotMail, "chkDoNotMail"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotFax;
+    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotFax
+    {
+        get { return FindControl(ref _chkDoNotFax, "chkDoNotFax"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _txtInterests;
+    public  Sage.Platform.Controls.ITextBoxControl txtInterests
+    {
+        get { return FindControl(ref _txtInterests, "txtInterests"); }
     }
     private Sage.Platform.Controls.IGroupNavigatorControl _gpnLeadGroupNavigator;
     public  Sage.Platform.Controls.IGroupNavigatorControl gpnLeadGroupNavigator

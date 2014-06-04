@@ -335,8 +335,32 @@ protected override void OnWireEventHandlers()
 
 }
 
+protected void quickformload0(object sender, EventArgs e) {
+Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+if(lead.Status.ToUpper() == "CONVERTED" || lead.Status.ToUpper() == "DROPPED" )
+	{
+		cmdUpdateLeadDetails.Visible = false;
+		
+		
+	}
+
+}
+private bool _runActivating;
+protected override void OnActivating()
+{
+_runActivating = true;
+}
+private void DoActivating()
+{
+quickformload0(this, EventArgs.Empty);
+
+}
 protected override void OnFormBound()
 {
+Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.EntityPage;
+        if (epage != null)
+            _runActivating = (epage.IsNewEntity || _runActivating);
+if (_runActivating) DoActivating();
 ClientBindingMgr.RegisterSaveButton(cmdUpdateLeadDetails);
 
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))

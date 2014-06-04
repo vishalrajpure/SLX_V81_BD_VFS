@@ -2,7 +2,29 @@
 <QuickForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="00c866e1-24d0-4f9b-b0db-7c69b21503eb" DefinitionType="Sage.Platform.QuickForms.QuickFormMainDetailViewDefinition, Sage.Platform.QuickForms">
   <ActiveControl />
   <ImagePath />
-  <LoadActions />
+  <LoadActions>
+    <FormActionDefinition>
+      <ResourceKey>c263b5c6-34a9-495c-9489-7427c1084a99</ResourceKey>
+      <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+        <CSharpSnippetActionItem>
+          <MethodName />
+          <CSharpCodeSnippet>Sage.Entity.Interfaces.ILeadProduct leadpro = BindingSource.Current as Sage.Entity.Interfaces.ILeadProduct;
+if(leadpro.Lead.Status.ToUpper() == "CONVERTED" || leadpro.Lead.Status.ToUpper() == "DROPPED" )
+	{
+		lueLeadProduct.Visible = false;
+		
+		
+	}</CSharpCodeSnippet>
+        </CSharpSnippetActionItem>
+      </Action>
+      <IsDialogCloseAction>False</IsDialogCloseAction>
+      <RunOnEveryRePaint>False</RunOnEveryRePaint>
+      <DialogActionResult>NoResult</DialogActionResult>
+      <PerformsUpdate>False</PerformsUpdate>
+      <AppliedSecurity />
+      <RefreshData>False</RefreshData>
+    </FormActionDefinition>
+  </LoadActions>
   <Name>LeadProducts_Details</Name>
   <ClientScriptIncludes />
   <ClientResourceKeys />
@@ -109,7 +131,7 @@
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>5433e3344e3b6c3e8c4d41604b4</ControlId>
+        <ControlId>33e3344e3b6c3e8c4d41604b4</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
@@ -147,7 +169,7 @@
           <ResourceKey>lueLeadProduct</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CodeSnippetActionItem, Sage.Platform.QuickForms">
             <CodeSnippetActionItem methodId="ace0dd84-7c90-401a-9662-228074a8b49a">
-              <MethodName />
+              <MethodName>lueLeadProduct_ChangeAction</MethodName>
             </CodeSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>

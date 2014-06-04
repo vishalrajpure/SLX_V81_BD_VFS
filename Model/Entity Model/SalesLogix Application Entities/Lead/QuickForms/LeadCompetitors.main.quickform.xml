@@ -2,7 +2,29 @@
 <QuickForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="3c7c1d71-02c9-4fe6-b33c-6d65c505b25c" DefinitionType="Sage.Platform.QuickForms.QuickFormMainDetailViewDefinition, Sage.Platform.QuickForms">
   <ActiveControl />
   <ImagePath />
-  <LoadActions />
+  <LoadActions>
+    <FormActionDefinition>
+      <ResourceKey>9580cdd4-10ff-4f26-893a-a25e9baf85da</ResourceKey>
+      <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+        <CSharpSnippetActionItem>
+          <MethodName />
+          <CSharpCodeSnippet>Sage.Entity.Interfaces.ILeadCompetitor leadpro = BindingSource.Current as Sage.Entity.Interfaces.ILeadCompetitor;
+if(leadpro.Lead.Status.ToUpper() == "CONVERTED" || leadpro.Lead.Status.ToUpper() == "DROPPED" )
+	{
+		lueLeadCompetitor.Visible = false;
+		
+		
+	}</CSharpCodeSnippet>
+        </CSharpSnippetActionItem>
+      </Action>
+      <IsDialogCloseAction>False</IsDialogCloseAction>
+      <RunOnEveryRePaint>False</RunOnEveryRePaint>
+      <DialogActionResult>NoResult</DialogActionResult>
+      <PerformsUpdate>False</PerformsUpdate>
+      <AppliedSecurity />
+      <RefreshData>False</RefreshData>
+    </FormActionDefinition>
+  </LoadActions>
   <Name>LeadCompetitors</Name>
   <ClientScriptIncludes />
   <ClientResourceKeys />

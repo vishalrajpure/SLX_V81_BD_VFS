@@ -267,8 +267,32 @@ protected override void OnWireEventHandlers()
 
 }
 
+protected void quickformload0(object sender, EventArgs e) {
+Sage.Entity.Interfaces.ILeadProduct leadpro = BindingSource.Current as Sage.Entity.Interfaces.ILeadProduct;
+if(leadpro.Lead.Status.ToUpper() == "CONVERTED" || leadpro.Lead.Status.ToUpper() == "DROPPED" )
+	{
+		lueLeadProduct.Visible = false;
+		
+		
+	}
+
+}
+private bool _runActivating;
+protected override void OnActivating()
+{
+_runActivating = true;
+}
+private void DoActivating()
+{
+quickformload0(this, EventArgs.Empty);
+
+}
 protected override void OnFormBound()
 {
+Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.EntityPage;
+        if (epage != null)
+            _runActivating = (epage.IsNewEntity || _runActivating);
+if (_runActivating) DoActivating();
 ClientBindingMgr.RegisterBoundControl(lueLeadProduct);
 
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))

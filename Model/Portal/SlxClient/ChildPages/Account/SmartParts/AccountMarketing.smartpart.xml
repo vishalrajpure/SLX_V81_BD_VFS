@@ -1,8 +1,10 @@
 <?xml version="1.0"?>
 <SmartPartMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="f14e4d15-b651-498e-8bc1-703ef7318147">
   <SmartPartId>AccountMarketing</SmartPartId>
+  <ReferencedModelId>00000000-0000-0000-0000-000000000000</ReferencedModelId>
   <SmartPart>SmartParts\Account\AccountMarketing.ascx</SmartPart>
   <TargetWorkspace>TabControl</TargetWorkspace>
   <ShowInMode>Detail</ShowInMode>
   <Properties />
+  <AllowRoles>Administrator</AllowRoles>
 </SmartPartMapping>

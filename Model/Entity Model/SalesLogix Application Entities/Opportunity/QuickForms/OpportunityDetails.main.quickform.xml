@@ -7,7 +7,7 @@
       <ResourceKey>d1bdcec7-0a0f-429d-a85f-7b67d6024a73</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName />
+          <MethodName>quickformload0</MethodName>
           <CSharpCodeSnippet>lueReseller.SeedValue = GetLocalResourceObject("Reseller_rsc").ToString();
 
 
@@ -641,10 +641,19 @@ if (!IsPostBack)
           <ResourceKey>pklStatus</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName>pklStatus_ChangeAction</MethodName>
+              <MethodName />
               <CSharpCodeSnippet>
 Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 string dialog = "";
+
+if(opportunity.Status=="Dropped" || opportunity.Status=="Future Opportunity")
+{
+	DialogService.SetSpecs(380, 600, dialog, "DroppedFutureOpp");
+	DialogService.ShowDialog();
+}
+else
+{
+
 if (opportunity.StatusChangeWon())
 {
   dialog = "OpportunityClosedWon";
@@ -662,6 +671,7 @@ if (!String.IsNullOrEmpty(dialog))
     DialogService.EntityID = opportunity.Id.ToString();
     DialogService.ShowDialog();
   }
+}
 }
 
 </CSharpCodeSnippet>
@@ -1090,7 +1100,7 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
           <ResourceKey>cmdSave</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName />
+              <MethodName>cmdSave_ClickAction</MethodName>
               <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 
 if (opp.Status == "Closed - Won")

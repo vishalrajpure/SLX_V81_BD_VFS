@@ -7,7 +7,7 @@
       <ResourceKey>3968105a-b7b8-49a2-8849-2b5903a11ef4</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName>quickformload0</MethodName>
+          <MethodName />
           <CSharpCodeSnippet>ClientBindingMgr.UsePageExitWarning = false;
 Sage.Entity.Interfaces.ILead lead = this.BindingSource.Current as Sage.Entity.Interfaces.ILead;
 if (lead != null)
@@ -35,12 +35,19 @@ if (lead != null)
 		cmdQualifyLead.Visible = false;
 		cmdConvertLead.Visible = true;
 	}
-	if(lead.Status == "Converted")
+	if(lead.Status.ToUpper() == "CONVERTED" || lead.Status.ToUpper() == "DROPPED" )
 	{
 		cmdQualifyLead.Visible = false;
 		cmdConvertLead.Visible = false;
+		cmdUpdateLead.Visible = false;
+		cmdDeleteLead.Visible = false;
+		
 	}
-	
+	if(lead.Status.ToUpper() == "QUALIFIED" || lead.Status.ToUpper() == "DROPPED" )
+	{
+		lkpBranchManager.Enabled = true;
+		
+	}
 	//Begin Load Action
 
 
@@ -710,197 +717,18 @@ nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;
         <DisplayAsTitleBar>false</DisplayAsTitleBar>
       </QFHorizontalSeparator>
     </Control>
-    <Control typeName="Sage.Platform.QuickForms.QFControls.QFCheckBox, Sage.Platform.QuickForms.QFControls">
-      <QFCheckBox>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
+      <QFTextBox>
         <Column>0</Column>
         <Row>17</Row>
         <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>chkDoNotSolicit</ControlId>
+        <ControlId>txtSICCode</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>DoNotSolicit</DataItemName>
-            <ControlItemName>Checked</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-        </DataBindings>
-        <ControlLabelPlacement>right</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme />
-        <Checked>false</Checked>
-        <OnChangeAction>
-          <ResourceKey>0a3842cd-4137-4958-8cd9-bcd4eeb208b5</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.MessageActionItem, Sage.Platform.QuickForms">
-            <MessageActionItem>
-              <MethodName>chkDoNotSolicit_ChangeAction</MethodName>
-              <ResourceKey>fefa1626-002f-4eab-a3a5-8f74f337a6e9</ResourceKey>
-            </MessageActionItem>
-          </Action>
-          <IsDialogCloseAction>False</IsDialogCloseAction>
-          <RunOnEveryRePaint>False</RunOnEveryRePaint>
-          <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>False</PerformsUpdate>
-          <AppliedSecurity />
-          <RefreshData>False</RefreshData>
-        </OnChangeAction>
-      </QFCheckBox>
-    </Control>
-    <Control typeName="Sage.Platform.QuickForms.QFControls.QFCheckBox, Sage.Platform.QuickForms.QFControls">
-      <QFCheckBox>
-        <Column>0</Column>
-        <Row>18</Row>
-        <Visible>false</Visible>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>chkDoNotEmail</ControlId>
-        <DataBindings>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>DoNotEmail</DataItemName>
-            <ControlItemName>Checked</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>!DoNotSolicit</DataItemName>
-            <ControlItemName>Enabled</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-        </DataBindings>
-        <ControlLabelPlacement>right</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme />
-        <Checked>false</Checked>
-        <OnChangeAction>
-          <ResourceKey>56870ce0-a500-46bb-a315-3c4c01ee6a32</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.MessageActionItem, Sage.Platform.QuickForms">
-            <MessageActionItem>
-              <MethodName>chkDoNotEmail_ChangeAction</MethodName>
-              <ResourceKey>481bc6c9-06df-4e1f-923a-d1f77b01737b</ResourceKey>
-            </MessageActionItem>
-          </Action>
-          <IsDialogCloseAction>False</IsDialogCloseAction>
-          <RunOnEveryRePaint>False</RunOnEveryRePaint>
-          <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>False</PerformsUpdate>
-          <AppliedSecurity />
-          <RefreshData>False</RefreshData>
-        </OnChangeAction>
-      </QFCheckBox>
-    </Control>
-    <Control typeName="Sage.Platform.QuickForms.QFControls.QFCheckBox, Sage.Platform.QuickForms.QFControls">
-      <QFCheckBox>
-        <Column>0</Column>
-        <Row>19</Row>
-        <Visible>false</Visible>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>chkDoNotCall</ControlId>
-        <DataBindings>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>DoNotPhone</DataItemName>
-            <ControlItemName>Checked</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>!DoNotSolicit</DataItemName>
-            <ControlItemName>Enabled</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-        </DataBindings>
-        <ControlLabelPlacement>right</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme />
-        <Checked>false</Checked>
-        <OnChangeAction>
-          <ResourceKey>0513ad75-bb13-4997-a990-62230c275c27</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-            <NoActionActionItem>
-              <MethodName />
-            </NoActionActionItem>
-          </Action>
-          <IsDialogCloseAction>False</IsDialogCloseAction>
-          <RunOnEveryRePaint>False</RunOnEveryRePaint>
-          <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>False</PerformsUpdate>
-          <AppliedSecurity />
-          <RefreshData>False</RefreshData>
-        </OnChangeAction>
-      </QFCheckBox>
-    </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXPickList>
-        <Column>0</Column>
-        <Row>20</Row>
-        <Visible>false</Visible>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>pklIndustry</ControlId>
-        <DataBindings>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Industry</DataItemName>
-            <ControlItemName>PickListValue</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-        </DataBindings>
-        <ControlLabelPlacement>left</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme />
-        <OnChangeAction>
-          <ResourceKey>4d5d59d2-df34-4949-b6b2-fbf6bbc03d71</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-            <NoActionActionItem>
-              <MethodName />
-            </NoActionActionItem>
-          </Action>
-          <IsDialogCloseAction>False</IsDialogCloseAction>
-          <RunOnEveryRePaint>False</RunOnEveryRePaint>
-          <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>False</PerformsUpdate>
-          <AppliedSecurity />
-          <RefreshData>False</RefreshData>
-        </OnChangeAction>
-        <Required>false</Required>
-        <AutoPostBack>false</AutoPostBack>
-        <PickListName>Industry</PickListName>
-        <StorageMode>Text</StorageMode>
-        <NameFormatString />
-        <AllowMultiples>false</AllowMultiples>
-        <AlphaSort>true</AlphaSort>
-        <MustExistInList>false</MustExistInList>
-        <NoneEditable>true</NoneEditable>
-        <PickListId>kSYST0000390</PickListId>
-        <ValueStoredAsText>true</ValueStoredAsText>
-      </QFSLXPickList>
-    </Control>
-    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
-      <QFTextBox>
-        <RowSpan>2</RowSpan>
-        <Column>0</Column>
-        <Row>21</Row>
-        <Visible>false</Visible>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>txtInterests</ControlId>
-        <DataBindings>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Interests</DataItemName>
+            <DataItemName>SICCode</DataItemName>
             <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
@@ -910,10 +738,8 @@ nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;
         <ExtendedProperties />
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
-        <MaxLength>128</MaxLength>
-        <Lines>4</Lines>
         <OnChangeAction>
-          <ResourceKey>87e5d4d1-a224-49e5-a7ab-8fc32435216d</ResourceKey>
+          <ResourceKey>7a6b2ac1-016f-43eb-ba99-9bd1838b13c7</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
             <NoActionActionItem>
               <MethodName />
@@ -1360,109 +1186,19 @@ nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;
         </LookupPreFilters>
       </QFSLXLookup>
     </Control>
-    <Control typeName="Sage.Platform.QuickForms.QFControls.QFCheckBox, Sage.Platform.QuickForms.QFControls">
-      <QFCheckBox>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXPickList>
         <Column>1</Column>
-        <Row>18</Row>
+        <Row>17</Row>
         <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>chkDoNotMail</ControlId>
+        <ControlId>pklIndustry</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>DoNotMail</DataItemName>
-            <ControlItemName>Checked</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>!DoNotSolicit</DataItemName>
-            <ControlItemName>Enabled</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-        </DataBindings>
-        <ControlLabelPlacement>right</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme />
-        <Checked>false</Checked>
-        <OnChangeAction>
-          <ResourceKey>1c41c76f-d6d2-4e2e-a1be-1b5dd60d9066</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-            <NoActionActionItem>
-              <MethodName />
-            </NoActionActionItem>
-          </Action>
-          <IsDialogCloseAction>False</IsDialogCloseAction>
-          <RunOnEveryRePaint>False</RunOnEveryRePaint>
-          <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>False</PerformsUpdate>
-          <AppliedSecurity />
-          <RefreshData>False</RefreshData>
-        </OnChangeAction>
-      </QFCheckBox>
-    </Control>
-    <Control typeName="Sage.Platform.QuickForms.QFControls.QFCheckBox, Sage.Platform.QuickForms.QFControls">
-      <QFCheckBox>
-        <Column>1</Column>
-        <Row>19</Row>
-        <Visible>false</Visible>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>chkDoNotFax</ControlId>
-        <DataBindings>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>DoNotFAX</DataItemName>
-            <ControlItemName>Checked</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>!DoNotSolicit</DataItemName>
-            <ControlItemName>Enabled</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-        </DataBindings>
-        <ControlLabelPlacement>right</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme />
-        <Checked>false</Checked>
-        <OnChangeAction>
-          <ResourceKey>a39e259f-06a6-43d4-80a5-03fcdab8c220</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-            <NoActionActionItem>
-              <MethodName />
-            </NoActionActionItem>
-          </Action>
-          <IsDialogCloseAction>False</IsDialogCloseAction>
-          <RunOnEveryRePaint>False</RunOnEveryRePaint>
-          <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>False</PerformsUpdate>
-          <AppliedSecurity />
-          <RefreshData>False</RefreshData>
-        </OnChangeAction>
-      </QFCheckBox>
-    </Control>
-    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
-      <QFTextBox>
-        <Column>1</Column>
-        <Row>20</Row>
-        <Visible>false</Visible>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>txtSICCode</ControlId>
-        <DataBindings>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>SICCode</DataItemName>
-            <ControlItemName>Text</ControlItemName>
+            <DataItemName>Industry</DataItemName>
+            <ControlItemName>PickListValue</ControlItemName>
             <FormatString />
             <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
@@ -1472,7 +1208,7 @@ nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <OnChangeAction>
-          <ResourceKey>7a6b2ac1-016f-43eb-ba99-9bd1838b13c7</ResourceKey>
+          <ResourceKey>4d5d59d2-df34-4949-b6b2-fbf6bbc03d71</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
             <NoActionActionItem>
               <MethodName />
@@ -1486,7 +1222,17 @@ nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;
           <RefreshData>False</RefreshData>
         </OnChangeAction>
         <Required>false</Required>
-      </QFTextBox>
+        <AutoPostBack>false</AutoPostBack>
+        <PickListName>Industry</PickListName>
+        <StorageMode>Text</StorageMode>
+        <NameFormatString />
+        <AllowMultiples>false</AllowMultiples>
+        <AlphaSort>true</AlphaSort>
+        <MustExistInList>false</MustExistInList>
+        <NoneEditable>true</NoneEditable>
+        <PickListId>kSYST0000390</PickListId>
+        <ValueStoredAsText>true</ValueStoredAsText>
+      </QFSLXPickList>
     </Control>
     <Control typeName="Sage.Platform.QuickForms.Controls.QFButton, Sage.Platform.QuickForms">
       <QFButton>
@@ -1658,6 +1404,267 @@ if(lead.Products.Count &lt;= 0)
         <ContentLocation>~/SmartParts/Lead/LeadQualifications.ascx</ContentLocation>
       </QFBrowserControl>
     </Control>
+    <Control typeName="Sage.Platform.QuickForms.QFControls.QFCheckBox, Sage.Platform.QuickForms.QFControls">
+      <QFCheckBox>
+        <Column>2</Column>
+        <Row>9</Row>
+        <Visible>false</Visible>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>chkDoNotSolicit</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>DoNotSolicit</DataItemName>
+            <ControlItemName>Checked</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>right</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <Checked>false</Checked>
+        <OnChangeAction>
+          <ResourceKey>0a3842cd-4137-4958-8cd9-bcd4eeb208b5</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.MessageActionItem, Sage.Platform.QuickForms">
+            <MessageActionItem>
+              <MethodName>chkDoNotSolicit_ChangeAction</MethodName>
+              <ResourceKey>fefa1626-002f-4eab-a3a5-8f74f337a6e9</ResourceKey>
+            </MessageActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+      </QFCheckBox>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.QFControls.QFCheckBox, Sage.Platform.QuickForms.QFControls">
+      <QFCheckBox>
+        <Column>2</Column>
+        <Row>10</Row>
+        <Visible>false</Visible>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>chkDoNotEmail</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>DoNotEmail</DataItemName>
+            <ControlItemName>Checked</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>!DoNotSolicit</DataItemName>
+            <ControlItemName>Enabled</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>right</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <Checked>false</Checked>
+        <OnChangeAction>
+          <ResourceKey>56870ce0-a500-46bb-a315-3c4c01ee6a32</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.MessageActionItem, Sage.Platform.QuickForms">
+            <MessageActionItem>
+              <MethodName>chkDoNotEmail_ChangeAction</MethodName>
+              <ResourceKey>481bc6c9-06df-4e1f-923a-d1f77b01737b</ResourceKey>
+            </MessageActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+      </QFCheckBox>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.QFControls.QFCheckBox, Sage.Platform.QuickForms.QFControls">
+      <QFCheckBox>
+        <Column>2</Column>
+        <Row>11</Row>
+        <Visible>false</Visible>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>chkDoNotCall</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>DoNotPhone</DataItemName>
+            <ControlItemName>Checked</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>!DoNotSolicit</DataItemName>
+            <ControlItemName>Enabled</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>right</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <Checked>false</Checked>
+        <OnChangeAction>
+          <ResourceKey>0513ad75-bb13-4997-a990-62230c275c27</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+      </QFCheckBox>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.QFControls.QFCheckBox, Sage.Platform.QuickForms.QFControls">
+      <QFCheckBox>
+        <Column>2</Column>
+        <Row>12</Row>
+        <Visible>false</Visible>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>chkDoNotMail</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>DoNotMail</DataItemName>
+            <ControlItemName>Checked</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>!DoNotSolicit</DataItemName>
+            <ControlItemName>Enabled</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>right</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <Checked>false</Checked>
+        <OnChangeAction>
+          <ResourceKey>1c41c76f-d6d2-4e2e-a1be-1b5dd60d9066</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+      </QFCheckBox>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.QFControls.QFCheckBox, Sage.Platform.QuickForms.QFControls">
+      <QFCheckBox>
+        <Column>2</Column>
+        <Row>13</Row>
+        <Visible>false</Visible>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>chkDoNotFax</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>DoNotFAX</DataItemName>
+            <ControlItemName>Checked</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>!DoNotSolicit</DataItemName>
+            <ControlItemName>Enabled</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>right</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <Checked>false</Checked>
+        <OnChangeAction>
+          <ResourceKey>a39e259f-06a6-43d4-80a5-03fcdab8c220</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+      </QFCheckBox>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
+      <QFTextBox>
+        <RowSpan>2</RowSpan>
+        <Column>2</Column>
+        <Row>14</Row>
+        <Visible>false</Visible>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>txtInterests</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>Interests</DataItemName>
+            <ControlItemName>Text</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <MaxLength>128</MaxLength>
+        <Lines>4</Lines>
+        <OnChangeAction>
+          <ResourceKey>87e5d4d1-a224-49e5-a7ab-8fc32435216d</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+      </QFTextBox>
+    </Control>
   </Controls>
   <ToolControls>
     <Control typeName="Sage.Platform.QuickForms.Controls.QFElementSpacer, Sage.Platform.QuickForms">
@@ -1721,7 +1728,7 @@ if(lead.Products.Count &lt;= 0)
           <ResourceKey>cmdUpdateLead</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName />
+              <MethodName>cmdUpdateLead_ClickAction</MethodName>
               <CSharpCodeSnippet>Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead; 
 if(lead.Company == null)
 {
@@ -1748,6 +1755,9 @@ if(lead.Address.PostalCode == null)
 	DialogService.ShowMessage("Enter the Address");
 		return;
 }
+Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;(); 
+System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString()); 
+				
 switch(lead.Status) 
 { 
 	case "Dropped": //// Set Owner /// 
@@ -1761,8 +1771,6 @@ switch(lead.Status)
 			{
 				string qry = "Select Q.SALESMANAGERID from QUALIFIERANDSMPINCODE Q " + 
 					"where Q.PINCODE = '"+ lead.Address.PostalCode.ToString() + "'"; 
-				Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;(); 
-				System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString()); 
 				System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj); 
 				System.Data.DataTable dt = new System.Data.DataTable(); 
 				dataAdapterObj.Fill(dt);
@@ -1803,6 +1811,17 @@ switch(lead.Status)
 			//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)"SYST00000001"); 
 			//lead.Owner = objowner; 
 		} 
+		else
+		{
+				System.Data.OleDb.OleDbDataAdapter dataAdapterObj3 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + lead.BranchManager.Id.ToString() + "' and name ='INSERTSECCODEID'", conObj); 
+				System.Data.DataTable dt3 = new System.Data.DataTable(); 
+				dataAdapterObj3.Fill(dt3); 
+				if (dt3.Rows.Count &gt; 0) 
+				{ 
+					Sage.Entity.Interfaces.IOwner objowner2 = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)dt3.Rows[0][0].ToString()); 
+					lead.Owner = objowner2; 
+				} 
+		}
 		break; 
 	/*case "Converted": 
 		if(lead.BranchManager == null) 
@@ -1907,26 +1926,6 @@ System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx?modeid
     </ColumnStyle>
   </Columns>
   <Rows>
-    <RowStyle>
-      <SizeType>Absolute</SizeType>
-      <Height>35</Height>
-    </RowStyle>
-    <RowStyle>
-      <SizeType>Absolute</SizeType>
-      <Height>35</Height>
-    </RowStyle>
-    <RowStyle>
-      <SizeType>Absolute</SizeType>
-      <Height>35</Height>
-    </RowStyle>
-    <RowStyle>
-      <SizeType>Absolute</SizeType>
-      <Height>35</Height>
-    </RowStyle>
-    <RowStyle>
-      <SizeType>Absolute</SizeType>
-      <Height>35</Height>
-    </RowStyle>
     <RowStyle>
       <SizeType>Absolute</SizeType>
       <Height>35</Height>

@@ -927,7 +927,10 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
                 AddAttachmentsToLead(lead, account, contact, opportunity);
                 lead.AddHistoryAndQualificationRecords(contact, account, opportunity, false);
                 lead.AddActivities(contact, account, opportunity);
-				account.Type = "LEAD";
+				if(chkCreateOpportunity.Checked == true)
+					account.Type = "Prospect";
+				else
+					account.Type = "LEAD";
                 account.Status = "Active";
                 account.Save();
                 IList<ICampaignTarget> campaignTargets = EntityFactory.GetRepository<ICampaignTarget>().FindByProperty("EntityId", lead.Id.ToString());

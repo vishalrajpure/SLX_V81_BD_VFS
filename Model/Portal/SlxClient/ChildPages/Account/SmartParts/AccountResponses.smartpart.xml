@@ -8,5 +8,5 @@
   <Properties>
     <Property Name="HelpTopic" TypeConverter="">responsestab</Property>
   </Properties>
-  <AllowRoles />
+  <AllowRoles>Administrator</AllowRoles>
 </SmartPartMapping>

@@ -323,6 +323,15 @@ protected void pklStatus_ChangeAction(object sender, EventArgs e) {
 
 Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 string dialog = "";
+
+if(opportunity.Status=="Dropped" || opportunity.Status=="Future Opportunity")
+{
+	DialogService.SetSpecs(380, 600, dialog, "DroppedFutureOpp");
+	DialogService.ShowDialog();
+}
+else
+{
+
 if (opportunity.StatusChangeWon())
 {
   dialog = "OpportunityClosedWon";
@@ -340,6 +349,7 @@ if (!String.IsNullOrEmpty(dialog))
     DialogService.EntityID = opportunity.Id.ToString();
     DialogService.ShowDialog();
   }
+}
 }
 
 

@@ -578,17 +578,20 @@ if(lead.FirstName == null)
 	DialogService.ShowMessage("Enter the Name");
 		return;
 }
+string qry = "Select Account From Account where Account = '" + txtCompany.Text.Trim() + "'";
+Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+System.Data.DataTable dt = new System.Data.DataTable();
+dataAdapterObj.Fill(dt);
+if (dt.Rows.Count > 0)
+{
+    DialogService.ShowMessage("This Company Name is already exists");
+    return;
+}
 if (Session["LeadAddressid"] != null)
 {
-    /*string qry1 = "select * From Lead_Address where Lead_AddressID = '" + Session["LeadAddressid"].ToString() +  "'";
-			
-	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
-	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
-	System.Data.OleDb.OleDbDataAdapter dataAdapterObj1 = new System.Data.OleDb.OleDbDataAdapter(qry1, conObj);
-	System.Data.DataTable dt1 = new System.Data.DataTable();
-	dataAdapterObj1.Fill(dt1);
-	if(dt1.Rows.Count > 0)
-	{*/
+    
     Sage.Entity.Interfaces.ILeadAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadAddress>(Session["LeadAddressid"].ToString());
     if (objadd != null)
     {
@@ -596,14 +599,14 @@ if (Session["LeadAddressid"] != null)
 
 
 
-	string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
+	qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
                 "where Q.PINCODE = '" + objadd.PostalCode.ToString() + "'";//dt1.Rows[0]["PostalCode"].ToString() + "'";
 
 
-	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
-	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
-	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
-	System.Data.DataTable dt = new System.Data.DataTable();
+	//Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+	//System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	dt = new System.Data.DataTable();
 	dataAdapterObj.Fill(dt);
 	if (dt.Rows.Count > 0)
     {
@@ -698,18 +701,21 @@ if(lead.FirstName == null)
 	DialogService.ShowMessage("Enter the Name");
 		return;
 }
+string qry = "Select Account From Account where Account = '" + txtCompany.Text.Trim() + "'";
+Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+System.Data.DataTable dt = new System.Data.DataTable();
+dataAdapterObj.Fill(dt);
+if (dt.Rows.Count > 0)
+{
+    DialogService.ShowMessage("This Company Name is already exists");
+    return;
+}
 
 if (Session["LeadAddressid"] != null)
 {
-    /*string qry1 = "select * From Lead_Address where Lead_AddressID = '" + Session["LeadAddressid"].ToString() +  "'";
-			
-	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
-	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
-	System.Data.OleDb.OleDbDataAdapter dataAdapterObj1 = new System.Data.OleDb.OleDbDataAdapter(qry1, conObj);
-	System.Data.DataTable dt1 = new System.Data.DataTable();
-	dataAdapterObj1.Fill(dt1);
-	if(dt1.Rows.Count > 0)
-	{*/
+    
     Sage.Entity.Interfaces.ILeadAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadAddress>(Session["LeadAddressid"].ToString());
     if (objadd != null)
     {
@@ -717,14 +723,14 @@ if (Session["LeadAddressid"] != null)
 
 
 
-	string qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
+	qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
                 "where Q.PINCODE = '" + objadd.PostalCode.ToString() + "'";//dt1.Rows[0]["PostalCode"].ToString() + "'";
 
 
-	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
-	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
-	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
-	System.Data.DataTable dt = new System.Data.DataTable();
+	//Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+	//System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	dt = new System.Data.DataTable();
 	dataAdapterObj.Fill(dt);
 	if (dt.Rows.Count > 0)
     {
