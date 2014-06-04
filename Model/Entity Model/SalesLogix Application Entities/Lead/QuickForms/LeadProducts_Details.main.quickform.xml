@@ -8,8 +8,8 @@
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
           <MethodName />
-          <CSharpCodeSnippet>Sage.Entity.Interfaces.ILeadProduct leadpro = BindingSource.Current as Sage.Entity.Interfaces.ILeadProduct;
-if(leadpro.Lead.Status.ToUpper() == "CONVERTED" || leadpro.Lead.Status.ToUpper() == "DROPPED" )
+          <CSharpCodeSnippet>Sage.Entity.Interfaces.ILead leadpro = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+if(leadpro.Status.ToUpper() == "CONVERTED" || leadpro.Status.ToUpper() == "DROPPED" )
 	{
 		lueLeadProduct.Visible = false;
 		
@@ -131,7 +131,7 @@ if(leadpro.Lead.Status.ToUpper() == "CONVERTED" || leadpro.Lead.Status.ToUpper()
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>33e3344e3b6c3e8c4d41604b4</ControlId>
+        <ControlId>3e3344e3b6c3e8c4d41604b4</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />

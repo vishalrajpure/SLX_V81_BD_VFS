@@ -268,8 +268,8 @@ protected override void OnWireEventHandlers()
 }
 
 protected void quickformload0(object sender, EventArgs e) {
-Sage.Entity.Interfaces.ILeadProduct leadpro = BindingSource.Current as Sage.Entity.Interfaces.ILeadProduct;
-if(leadpro.Lead.Status.ToUpper() == "CONVERTED" || leadpro.Lead.Status.ToUpper() == "DROPPED" )
+Sage.Entity.Interfaces.ILead leadpro = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+if(leadpro.Status.ToUpper() == "CONVERTED" || leadpro.Status.ToUpper() == "DROPPED" )
 	{
 		lueLeadProduct.Visible = false;
 		

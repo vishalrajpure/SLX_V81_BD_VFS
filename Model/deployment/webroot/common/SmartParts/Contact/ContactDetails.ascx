@@ -157,9 +157,15 @@ LabelPlacement="right" AutoPostBack="true"  />
       </tr>
 <tr>
             <td  >
- <asp:LinkButton runat="server" ID="btnAddress"
+<asp:Panel runat="server" ID="CCAddress" CssClass="controlslist "
+>
+   <asp:LinkButton runat="server" ID="btnAddress"
  Text="<%$ resources: btnAddress.Caption %>"  />
  
+   <asp:ImageButton runat="server" ID="btnShowMap"
+ ToolTip="<%$ resources: btnShowMap.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16"  />
+ 
+</asp:Panel>
       </td>
                 <td  >
  <div class=" lbl alignleft">
@@ -190,10 +196,11 @@ LabelPlacement="right"  />
       </td>
       </tr>
 <tr>
-            <td rowspan="3"  >
- <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtAccountAddress"  Rows="4" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
-  </div>
+            <td  >
+  <div  class="textcontrol address"  >
+    <SalesLogix:AddressControl runat="server" ID="adrContactAddress" AddressDescriptionPickListName="Address Description (Contact)" AddressDescriptionPickListId="kSYST0000013" Enabled="false" ButtonToolTip="<%$ resources: adrContactAddress.ButtonToolTip %>" AddressToolTip="<%$ resources: adrContactAddress.AddressToolTip %>" >
+<AddressDescStyle Height="80"></AddressDescStyle> </SalesLogix:AddressControl>
+</div>
 
       </td>
                 <td  >
@@ -214,7 +221,8 @@ LabelPlacement="right"  />
       </td>
       </tr>
 <tr>
-                  <td  >
+            <td></td>
+                <td  >
  <div class=" lbl alignleft">
    <asp:Label ID="urlWebAddress_lbl" AssociatedControlID="urlWebAddress" runat="server" Text="<%$ resources: urlWebAddress.Caption %>" ></asp:Label>
  </div>   
@@ -232,7 +240,8 @@ LabelPlacement="right"  />
       </td>
       </tr>
 <tr>
-                  <td></td>
+            <td></td>
+                <td></td>
                 <td></td>
       </tr>
 <tr>
@@ -261,14 +270,10 @@ LabelPlacement="right"  />
   </div>
 
       </td>
-                <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="adrContactAddress_lbl" AssociatedControlID="adrContactAddress" runat="server" Text="<%$ resources: adrContactAddress.Caption %>" Visible="false" ></asp:Label>
- </div>
-   <div  class="textcontrol address"  >
-    <SalesLogix:AddressControl runat="server" ID="adrContactAddress" AddressDescriptionPickListName="Address Description (Contact)" AddressDescriptionPickListId="kSYST0000013" ButtonToolTip="<%$ resources: adrContactAddress.ButtonToolTip %>" AddressToolTip="<%$ resources: adrContactAddress.AddressToolTip %>" Visible="false" >
-<AddressDescStyle Height="80"></AddressDescStyle> </SalesLogix:AddressControl>
-</div>
+                <td rowspan="3"  >
+ <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="txtAccountAddress"  Rows="4" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea" Visible="false"  />
+  </div>
 
       </td>
       </tr>
@@ -291,6 +296,19 @@ LabelPlacement="right"  />
   </div>
 
       </td>
+            </tr>
+<tr>
+            <td></td>
+                <td></td>
+            </tr>
+<tr>
+            <td></td>
+                <td></td>
+                <td></td>
+      </tr>
+<tr>
+            <td></td>
+                <td></td>
                 <td></td>
       </tr>
 <tr>
@@ -422,7 +440,7 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotEmailEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotEmail, "Enabled");
         chkDoNotEmailEnabledBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(chkDoNotEmailEnabledBinding);
-                       // cboPreferredContact.SelectedValue Binding
+                             // cboPreferredContact.SelectedValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding cboPreferredContactSelectedValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("PreferredContact", cboPreferredContact, "SelectedValue");
         cboPreferredContactSelectedValueBinding.ChangeNotificationEventName = "TextChanged";
         cboPreferredContactSelectedValueBinding.IgnoreFLSDisabling = true;
@@ -434,32 +452,6 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotPhoneEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotPhone, "Enabled");
         chkDoNotPhoneEnabledBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(chkDoNotPhoneEnabledBinding);
-                       // emlEmailAddress.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding emlEmailAddressTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Email", emlEmailAddress, "Text");
-        BindingSource.Bindings.Add(emlEmailAddressTextBinding);
-                    // chkDoNotMail.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotMailCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("DoNotMail", chkDoNotMail, "Checked");
-        BindingSource.Bindings.Add(chkDoNotMailCheckedBinding);
-                 // chkDoNotMail.Enabled Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotMailEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotMail, "Enabled");
-        chkDoNotMailEnabledBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(chkDoNotMailEnabledBinding);
-                    // urlWebAddress.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding urlWebAddressTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("WebAddress", urlWebAddress, "Text");
-        BindingSource.Bindings.Add(urlWebAddressTextBinding);
-                    // chkDoNotFax.Checked Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotFaxCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("DoNotFax", chkDoNotFax, "Checked");
-        BindingSource.Bindings.Add(chkDoNotFaxCheckedBinding);
-                 // chkDoNotFax.Enabled Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotFaxEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotFax, "Enabled");
-        chkDoNotFaxEnabledBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(chkDoNotFaxEnabledBinding);
-                       // ownContactOwner.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding ownContactOwnerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Owner", ownContactOwner, "LookupResultValue", "", null);
-        BindingSource.Bindings.Add(ownContactOwnerLookupResultValueBinding);
-                    // pklContactType.PickListValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding pklContactTypePickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Type", pklContactType, "PickListValue");
-        BindingSource.Bindings.Add(pklContactTypePickListValueBinding);
                     // adrContactAddress.AddressCity Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding adrContactAddressAddressCityBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.City", adrContactAddress, "AddressCity");
         adrContactAddressAddressCityBinding.IgnoreFLSDisabling = true;
@@ -519,7 +511,33 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding adrContactAddressPrimaryAddressBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.PrimaryAddress", adrContactAddress, "PrimaryAddress");
         adrContactAddressPrimaryAddressBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(adrContactAddressPrimaryAddressBinding);
-                    // usrAcctMgr.LookupResultValue Binding
+                    // emlEmailAddress.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding emlEmailAddressTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Email", emlEmailAddress, "Text");
+        BindingSource.Bindings.Add(emlEmailAddressTextBinding);
+                    // chkDoNotMail.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotMailCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("DoNotMail", chkDoNotMail, "Checked");
+        BindingSource.Bindings.Add(chkDoNotMailCheckedBinding);
+                 // chkDoNotMail.Enabled Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotMailEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotMail, "Enabled");
+        chkDoNotMailEnabledBinding.IgnoreFLSDisabling = true;
+        BindingSource.Bindings.Add(chkDoNotMailEnabledBinding);
+                    // urlWebAddress.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding urlWebAddressTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("WebAddress", urlWebAddress, "Text");
+        BindingSource.Bindings.Add(urlWebAddressTextBinding);
+                    // chkDoNotFax.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotFaxCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("DoNotFax", chkDoNotFax, "Checked");
+        BindingSource.Bindings.Add(chkDoNotFaxCheckedBinding);
+                 // chkDoNotFax.Enabled Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotFaxEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotFax, "Enabled");
+        chkDoNotFaxEnabledBinding.IgnoreFLSDisabling = true;
+        BindingSource.Bindings.Add(chkDoNotFaxEnabledBinding);
+                       // ownContactOwner.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding ownContactOwnerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Owner", ownContactOwner, "LookupResultValue", "", null);
+        BindingSource.Bindings.Add(ownContactOwnerLookupResultValueBinding);
+                    // pklContactType.PickListValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding pklContactTypePickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Type", pklContactType, "PickListValue");
+        BindingSource.Bindings.Add(pklContactTypePickListValueBinding);
+                       // usrAcctMgr.LookupResultValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding usrAcctMgrLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AccountManager", usrAcctMgr, "LookupResultValue", "", null);
         BindingSource.Bindings.Add(usrAcctMgrLookupResultValueBinding);
                     // pklContactStatus.PickListValue Binding
@@ -540,7 +558,7 @@ protected override void OnAddEntityBindings() {
       
       
     }
-                                                                                                                                                                                                    
+                                                                                                                                                                                                                  
 protected void chkDoNotSolicit_ChangeAction(object sender, EventArgs e) {
   Sage.Platform.WebPortal.SmartParts.WebActionEventArgs args = e as Sage.Platform.WebPortal.SmartParts.WebActionEventArgs;
   if (args != null && !string.IsNullOrEmpty(args.PassThroughObject.ToString()) && DialogService != null) {
@@ -568,6 +586,12 @@ if (DialogService != null)
 	    DialogService.ShowDialog();
 	}
 }
+
+}
+protected void btnShowMap_ClickAction(object sender, EventArgs e) {
+Sage.Entity.Interfaces.IContact cnt = BindingSource.Current as Sage.Entity.Interfaces.IContact;
+string url = "http://maps.google.com/maps?q=" + cnt.Address.Latitude + "," + cnt.Address.Logitude;
+ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open('" + url + "');",true);
 
 }
 protected void cmdSaveContactDetails_ClickAction(object sender, EventArgs e) {
@@ -725,6 +749,7 @@ protected override void OnWireEventHandlers()
  chkDoNotSolicit.CheckedChanged += new EventHandler(chkDoNotSolicit_ChangeAction);
 chkDoNotEmail.CheckedChanged += new EventHandler(chkDoNotEmail_ChangeAction);
 btnAddress.Click += new EventHandler(btnAddress_ClickAction);
+btnShowMap.Click += new ImageClickEventHandler(btnShowMap_ClickAction);
 cmdSaveContactDetails.Click += new ImageClickEventHandler(cmdSaveContactDetails_ClickAction);
 cmdReset.Click += new ImageClickEventHandler(cmdReset_ClickAction);
 if (RoleSecurityService != null)
@@ -772,6 +797,79 @@ if (contact != null)
         txtAccountAddress.Text = _add;
     }
 }
+if (!IsPostBack)
+    {
+ string _UserId = "", AccManager = "";
+    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+    _UserId = _IUserService.UserId; //get login Userid
+    AccManager = Convert.ToString(contact.AccountManager.Id);
+    if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(contact.Account.AccountManager.Id) == _UserId.Trim() )
+    {
+        nmeContactName.Enabled = true;
+        lueAccountName.Enabled = true;
+        pklTitle.Enabled = true;
+        txtAssistant.Enabled = true;
+        txtSalutation.Enabled = true;
+        btnAddress.Enabled = true;
+        txtAccountAddress.Enabled = true;
+        phnWorkPhone.Enabled = true;
+        phnFax.Enabled = true;
+        phnMobilePhone.Enabled = true;
+        phnHomePhone.Enabled = true;
+        phnOtherPhone.Enabled = true;
+
+        cboPreferredContact.Enabled = true;
+        emlEmailAddress.Enabled = true;
+        urlWebAddress.Enabled = true;
+        chkIsPrimary.Enabled = true;
+        chkIsServiceAuthorized.Enabled = true;
+        chkDoNotSolicit.Enabled = true;
+        chkDoNotEmail.Enabled = true;
+        chkDoNotPhone.Enabled = true;
+        chkDoNotMail.Enabled = true;
+        chkDoNotFax.Enabled = true;
+        ownContactOwner.Enabled = true;
+        usrAcctMgr.Enabled = true;
+
+        pklContactType.Enabled = true;
+        pklContactStatus.Enabled = true;
+        adrContactAddress.Enabled = true;
+        cmdSaveContactDetails.Enabled = true;
+    }
+    else
+    {
+        nmeContactName.Enabled = false;
+        lueAccountName.Enabled = false;
+        pklTitle.Enabled = false;
+        txtAssistant.Enabled = false;
+        txtSalutation.Enabled = false;
+        btnAddress.Enabled = false;
+        txtAccountAddress.Enabled = false;
+        phnWorkPhone.Enabled = false;
+        phnFax.Enabled = false;
+        phnMobilePhone.Enabled = false;
+        phnHomePhone.Enabled = false;
+        phnOtherPhone.Enabled = false;
+
+        cboPreferredContact.Enabled = false;
+        emlEmailAddress.Enabled = false;
+        urlWebAddress.Enabled = false;
+        chkIsPrimary.Enabled = false;
+        chkIsServiceAuthorized.Enabled = false;
+        chkDoNotSolicit.Enabled = false;
+        chkDoNotEmail.Enabled = false;
+        chkDoNotPhone.Enabled = false;
+        chkDoNotMail.Enabled = false;
+        chkDoNotFax.Enabled = false;
+        ownContactOwner.Enabled = false;
+        usrAcctMgr.Enabled = false;
+
+        pklContactType.Enabled = false;
+        pklContactStatus.Enabled = false;
+        adrContactAddress.Enabled = false;
+        cmdSaveContactDetails.Enabled = false;
+    }
+	}
 
 }
 private bool _runActivating;
@@ -790,6 +888,7 @@ Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.Entit
         if (epage != null)
             _runActivating = (epage.IsNewEntity || _runActivating);
 if (_runActivating) DoActivating();
+ScriptManager.RegisterStartupScript(Page, GetType(), "cleanupcontainer", "jQuery(\".controlslist > div:empty\").remove();", true);
 cmdDelete.OnClientClick = string.Format("return confirm('{0}');", Sage.Platform.WebPortal.PortalUtil.JavaScriptEncode(GetLocalResourceObject("cmdDelete.ActionConfirmationMessage").ToString()));
 
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
@@ -888,15 +987,25 @@ public class ContactDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityForm
     {
         get { return FindControl(ref _txtSalutation, "txtSalutation"); }
     }
+    private Sage.Platform.Controls.IControlsListControl _CCAddress;
+    public  Sage.Platform.Controls.IControlsListControl CCAddress
+    {
+        get { return FindControl(ref _CCAddress, "CCAddress"); }
+    }
     private Sage.Platform.Controls.IButtonControl _btnAddress;
     public  Sage.Platform.Controls.IButtonControl btnAddress
     {
         get { return FindControl(ref _btnAddress, "btnAddress"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _txtAccountAddress;
-    public  Sage.Platform.Controls.ITextBoxControl txtAccountAddress
+    private Sage.Platform.Controls.IButtonControl _btnShowMap;
+    public  Sage.Platform.Controls.IButtonControl btnShowMap
     {
-        get { return FindControl(ref _txtAccountAddress, "txtAccountAddress"); }
+        get { return FindControl(ref _btnShowMap, "btnShowMap"); }
+    }
+    private Sage.Platform.Controls.IAddressControl _adrContactAddress;
+    public  Sage.Platform.Controls.IAddressControl adrContactAddress
+    {
+        get { return FindControl(ref _adrContactAddress, "adrContactAddress"); }
     }
     private Sage.Platform.Controls.IOwnerControl _ownContactOwner;
     public  Sage.Platform.Controls.IOwnerControl ownContactOwner
@@ -993,10 +1102,10 @@ public class ContactDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityForm
     {
         get { return FindControl(ref _chkDoNotFax, "chkDoNotFax"); }
     }
-    private Sage.Platform.Controls.IAddressControl _adrContactAddress;
-    public  Sage.Platform.Controls.IAddressControl adrContactAddress
+    private Sage.Platform.Controls.ITextBoxControl _txtAccountAddress;
+    public  Sage.Platform.Controls.ITextBoxControl txtAccountAddress
     {
-        get { return FindControl(ref _adrContactAddress, "adrContactAddress"); }
+        get { return FindControl(ref _txtAccountAddress, "txtAccountAddress"); }
     }
     private Sage.Platform.Controls.IGroupNavigatorControl _cmdDetailsNavigator;
     public  Sage.Platform.Controls.IGroupNavigatorControl cmdDetailsNavigator

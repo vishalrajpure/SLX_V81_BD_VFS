@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="b0f5961e-fa82-4ecf-806a-88bcf0eb0d61" lastModifiedUtc="2014-06-04T08:53:00.7369669Z" name="QFButton_OnClick" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="InsertLead">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="cb68fff1-5bc2-4c1f-8f5b-5906f02d821a" paramName="form" sequence="0" paramType="IInsertLead" />
+    <OrmEntityMethodParam id="1d1443d9-1487-4a69-97d9-d02585858868" paramName="args" sequence="0" paramType="EventArgs" />
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets />
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

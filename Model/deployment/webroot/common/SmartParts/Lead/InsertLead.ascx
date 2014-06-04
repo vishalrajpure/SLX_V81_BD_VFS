@@ -124,9 +124,15 @@ Required="true" AutoPostBack="true"  />
       </tr>
 <tr>
             <td  >
- <asp:LinkButton runat="server" ID="btnAddress"
- Text="<%$ resources: btnAddress.Caption %>"  />
+<asp:Panel runat="server" ID="QFControlsList" CssClass="controlslist "
+>
+   <asp:LinkButton runat="server" ID="cmdAddress"
+ Text="<%$ resources: cmdAddress.Caption %>"  />
  
+   <asp:ImageButton runat="server" ID="cmdShowMap"
+ ToolTip="<%$ resources: cmdShowMap.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16"  />
+ 
+</asp:Panel>
       </td>
                 <td></td>
       </tr>
@@ -396,7 +402,7 @@ protected override void OnAddEntityBindings() {
                     // pklStatus.PickListValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding pklStatusPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Status", pklStatus, "PickListValue");
         BindingSource.Bindings.Add(pklStatusPickListValueBinding);
-                             // txtBusinessDescription.Text Binding
+                                   // txtBusinessDescription.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtBusinessDescriptionTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BusinessDescription", txtBusinessDescription, "Text");
         BindingSource.Bindings.Add(txtBusinessDescriptionTextBinding);
                     // adrAddress.AddressCity Binding
@@ -486,7 +492,7 @@ protected override void OnAddEntityBindings() {
     
    
         }
-                                                                                                                                                                                             
+                                                                                                                                                                                                           
 protected void phnWorkPhone_ChangeAction(object sender, EventArgs e) {
 if (chkAutoSearch.Checked)
 {
@@ -499,7 +505,7 @@ if (chkAutoSearch.Checked)
 }
 
 }
-protected void btnAddress_ClickAction(object sender, EventArgs e) {
+protected void cmdAddress_ClickAction(object sender, EventArgs e) {
 if (DialogService != null)
 {
 	Sage.Entity.Interfaces.ILead lead = this.BindingSource.Current as Sage.Entity.Interfaces.ILead;    
@@ -512,6 +518,26 @@ if (DialogService != null)
 		
 	    DialogService.ShowDialog();
 	}
+}
+
+
+
+}
+protected void cmdShowMap_ClickAction(object sender, EventArgs e) {
+if (Session["LeadAddressid"] != null)
+{
+    Sage.Entity.Interfaces.ILeadAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadAddress>(Session["LeadAddressid"].ToString());
+	
+    if (objadd != null)
+    {		
+		string url = "http://maps.google.com/maps?q=" + objadd.Latitude +"," + objadd.Logitude;
+		ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open('" + url + "');",true);
+	}
+}
+else
+{
+	DialogService.ShowMessage("Please Enter Address...");
+	return;
 }
 
 
@@ -534,7 +560,7 @@ if (DialogService != null) {
 protected void lkpLeadEmployee_ChangeAction(object sender, EventArgs e) {
     Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
 	string qry = "select case when userID is null then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
-		"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BU') end " +
+		"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BDU') end " +
 		"From usersecurity US,VWEMPMASTER emp where emp.CEMPLCODE = US.USERCODE and US.USERID ='" + lead.LeadEmployee.Id +  "'";
 	
 	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
@@ -804,7 +830,8 @@ protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
  phnWorkPhone.TextChanged += new EventHandler(phnWorkPhone_ChangeAction);
-btnAddress.Click += new EventHandler(btnAddress_ClickAction);
+cmdAddress.Click += new EventHandler(cmdAddress_ClickAction);
+cmdShowMap.Click += new ImageClickEventHandler(cmdShowMap_ClickAction);
 chkAutoSearch.CheckedChanged += new EventHandler(chkAutoSearch_ChangeAction);
 cmdMatchingRecords.Click += new EventHandler(cmdMatchingRecords_ClickAction);
 lkpLeadEmployee.LookupResultValueChanged += new EventHandler(lkpLeadEmployee_ChangeAction);
@@ -832,7 +859,7 @@ Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Ent
 lead.LeadEmployee = user;
 
  string qry = "select case when userID is null then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
-		"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BU') end " +
+		"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BDU') end " +
 		"From usersecurity US,VWEMPMASTER emp where emp.CEMPLCODE = US.USERCODE and US.USERID ='" + lead.LeadEmployee.Id +  "'";
 	
 	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
@@ -889,6 +916,7 @@ Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.Entit
         if (epage != null)
             _runActivating = (epage.IsNewEntity || _runActivating);
 if (_runActivating) DoActivating();
+ScriptManager.RegisterStartupScript(Page, GetType(), "cleanupcontainer", "jQuery(\".controlslist > div:empty\").remove();", true);
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
 {
 btnEditForm.Visible = false;
@@ -973,10 +1001,20 @@ public class InsertLeadAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     {
         get { return FindControl(ref _txtBusinessPotential, "txtBusinessPotential"); }
     }
-    private Sage.Platform.Controls.IButtonControl _btnAddress;
-    public  Sage.Platform.Controls.IButtonControl btnAddress
+    private Sage.Platform.Controls.IControlsListControl _QFControlsList;
+    public  Sage.Platform.Controls.IControlsListControl QFControlsList
     {
-        get { return FindControl(ref _btnAddress, "btnAddress"); }
+        get { return FindControl(ref _QFControlsList, "QFControlsList"); }
+    }
+    private Sage.Platform.Controls.IButtonControl _cmdAddress;
+    public  Sage.Platform.Controls.IButtonControl cmdAddress
+    {
+        get { return FindControl(ref _cmdAddress, "cmdAddress"); }
+    }
+    private Sage.Platform.Controls.IButtonControl _cmdShowMap;
+    public  Sage.Platform.Controls.IButtonControl cmdShowMap
+    {
+        get { return FindControl(ref _cmdShowMap, "cmdShowMap"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _txtAccountAddress;
     public  Sage.Platform.Controls.ITextBoxControl txtAccountAddress

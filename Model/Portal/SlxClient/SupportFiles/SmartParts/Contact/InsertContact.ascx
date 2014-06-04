@@ -193,6 +193,18 @@
             </div>
         </td>
     </tr>
+	<tr>
+		<td>
+            <div class="lbl">
+                <asp:Label ID="emlContactEmail_lz" AssociatedControlID="emlContactEmail" runat="server" Text="<%$ resources: emlContactEmail.Caption %>"></asp:Label>
+            </div>
+            <div class="textcontrol">
+                <SalesLogix:Email runat="server" ID="emlContactEmail" EmailTextBoxStyle-ForeColor="#000099" EmailTextBoxStyle-Font-Underline="false"
+                    ToolTip="<%$ resources: emlEmail.ToolTip %>">
+                </SalesLogix:Email>
+            </div>
+        </td>
+	</tr>
     <tr>
         <td>
             <div class="lbl">
@@ -205,16 +217,7 @@
 
         <%-- </tr>
     <tr>--%>
-        <td>
-            <div class="lbl">
-                <asp:Label ID="emlContactEmail_lz" AssociatedControlID="emlContactEmail" runat="server" Text="<%$ resources: emlContactEmail.Caption %>"></asp:Label>
-            </div>
-            <div class="textcontrol">
-                <SalesLogix:Email runat="server" ID="emlContactEmail" EmailTextBoxStyle-ForeColor="#000099" EmailTextBoxStyle-Font-Underline="false"
-                    ToolTip="<%$ resources: emlEmail.ToolTip %>">
-                </SalesLogix:Email>
-            </div>
-        </td>
+        
     </tr>
     <tr>
         <td>
@@ -267,6 +270,7 @@
     <tr>
         <td>
             <asp:LinkButton ID="lnkaddress" Text="Address:" runat="server" OnClick="lnkaddress_Click" Font-Underline="True"></asp:LinkButton>
+			<asp:ImageButton runat="server" ID="cmdShowMap" ToolTip="Show Map" onClick="cmdShowMap_Click" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16"  />
         </td>
         <td>
             <div class="lbl">
@@ -444,7 +448,7 @@
                 <asp:Label ID="LeadSource_lbl" AssociatedControlID="lucLeadSource" runat="server" Text="<%$ resources: LeadSource.Caption %>"></asp:Label>
             </div>
             <div class="textcontrol lookup">
-                <SalesLogix:LookupControl runat="server" ID="lucLeadSource" ButtonToolTip="<%$ resources: LeadSource.ButtonToolTip %>" LookupEntityName="LeadSource" LookupEntityTypeName="Sage.Entity.Interfaces.ILeadSource, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                <SalesLogix:LookupControl runat="server" ID="lucLeadSource" Enabled = "false" ButtonToolTip="<%$ resources: LeadSource.ButtonToolTip %>" LookupEntityName="LeadSource" LookupEntityTypeName="Sage.Entity.Interfaces.ILeadSource, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
                     <LookupProperties>
                         <SalesLogix:LookupProperty PropertyHeader="<%$ resources: LeadSource.LookupProperties.Type.PropertyHeader %>" PropertyName="Type" PropertyType="" PropertyFormat="None" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
                         <SalesLogix:LookupProperty PropertyHeader="<%$ resources: LeadSource.LookupProperties.Description.PropertyHeader %>" PropertyName="Description" PropertyType="" PropertyFormat="None" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
@@ -886,11 +890,41 @@
                 if (!Page.IsPostBack)
                 {
                     chkAutoSearch.Checked = TurnOnAutoSearch();
+					
                 }
             }
 
             IAccount account = GetCurrentAccount(contact);
             if (account == null) return;
+			if(!Page.IsPostBack)
+			{
+				
+				Sage.Platform.Security.IUserService userService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+
+				string currentUserId = userService.UserId;
+				Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)currentUserId);
+				
+
+				 string qry = "select case when userID is null then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
+					"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BDU') end " +
+					"From usersecurity US,VWEMPMASTER emp where emp.CEMPLCODE = US.USERCODE and US.USERID ='" + user.Id +  "'";
+				
+				Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+				System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+				System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+				System.Data.DataTable dt = new System.Data.DataTable();
+				dataAdapterObj.Fill(dt);
+				if(dt.Rows.Count > 0)
+				{
+					Sage.Entity.Interfaces.ILeadSource ls  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)dt.Rows[0][0].ToString());	
+					account.LeadSource = ls;
+				}
+				else
+				{
+					Sage.Entity.Interfaces.ILeadSource ld = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)"LDEMOA000003");	
+					account.LeadSource = ld;
+				}
+			}
             Boolean changeEnable = (account.Id == null);
             txtContactAccountName.Enabled = changeEnable;
             adrAccountAddress.Enabled = changeEnable;
@@ -915,6 +949,7 @@
 
             if (!IsPostBack)
             {
+			
                 contact.WebAddress = account.WebAddress;
                 contact.WorkPhone = account.MainPhone;
                 contact.Fax = account.Fax;
@@ -949,7 +984,7 @@
 
 
             }
-            /*if (Session["Addressid"] != null)
+            if (Session["Addressid"] != null)
             {
                 Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Session["Addressid"].ToString());
                 if (objadd != null)
@@ -957,11 +992,11 @@
                     string _add = objadd.Address1 + "," + objadd.Address2 + "," + objadd.Address3 + "\r\n";
                     _add += objadd.City + "," + objadd.State + "," + objadd.Country + "\r\n";
                     _add += objadd.PostalCode + "\r\n";
-                    _add += objadd.Latitude + "\r\n";
-                    _add += objadd.Logitude;
+                    //_add += objadd.Latitude + "\r\n";
+                    //_add += objadd.Logitude;
                     txtAccountAddress.Text = _add;
                 }
-            }*/
+            }
         }
     }
 
@@ -1065,6 +1100,27 @@
 
     private void saveOptions()
     {       
+	
+		string qry = "Select Account From Account where Account = '" + txtContactAccountName.Text.Trim() + "'";
+		Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+		System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+		System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+		System.Data.DataTable dt = new System.Data.DataTable();
+		dataAdapterObj.Fill(dt);
+		if (dt.Rows.Count > 0)
+		{
+		    DialogService.ShowMessage("This Company Name is already exists");
+		    return;
+		}			
+		qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + txtlegalname.Text.Trim() + "'";
+        dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+        dt = new System.Data.DataTable();
+        dataAdapterObj.Fill(dt);
+        if (dt.Rows.Count > 0)
+        {
+            DialogService.ShowMessage("This legal Name is already exists");
+            return;
+        }
         IContact contact = BindingSource.Current as IContact;
         IAddress objadd=null;
         if (Session["Addressid"] != null)
@@ -1106,6 +1162,25 @@
             option = "Y";
         }
         UserOptionsService.SetCommonOption("InsertNewContactAccount.AutoSearch", "Insert", option, false);
+    }
+	protected void cmdShowMap_Click(object sender, EventArgs e)
+    {
+        if (Session["Addressid"] != null)
+		{
+		    Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Session["Addressid"].ToString());
+			
+		    if (objadd != null)
+		    {		
+				string url = "http://maps.google.com/maps?q=" + objadd.Latitude +"," + objadd.Logitude;
+				ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open('" + url + "');",true);
+			}
+		}
+		else
+		{
+			DialogService.ShowMessage("Please Enter Address...");
+			return;
+		}
+
     }
 
     protected void lnkaddress_Click(object sender, EventArgs e)

@@ -326,13 +326,11 @@ string dialog = "";
 
 if(opportunity.Status=="Dropped" || opportunity.Status=="Future Opportunity")
 {
-	DialogService.SetSpecs(380, 600, dialog, "DroppedFutureOpp");
-	DialogService.ShowDialog();
+	//DialogService.SetSpecs(380, 600, dialog, "DroppedFutureOpp");
+	//DialogService.ShowDialog();
+	dialog = "DroppedFutureOpp";
 }
-else
-{
-
-if (opportunity.StatusChangeWon())
+else if (opportunity.StatusChangeWon())
 {
   dialog = "OpportunityClosedWon";
 }
@@ -350,7 +348,7 @@ if (!String.IsNullOrEmpty(dialog))
     DialogService.ShowDialog();
   }
 }
-}
+
 
 
 
@@ -497,7 +495,7 @@ if (!IsPostBack)
     Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
     _UserId = _IUserService.UserId; //get login Userid
     AccManager = Convert.ToString(objOpp.AccountManager.Id);
-    if (AccManager.Trim() == _UserId.Trim())
+    if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id) == _UserId.Trim())
     {
         txtDescription.Enabled = true;
         lueAccount.Enabled = true;

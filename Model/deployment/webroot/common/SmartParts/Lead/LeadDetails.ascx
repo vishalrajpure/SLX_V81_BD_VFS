@@ -155,9 +155,15 @@ Required="true"  />
             </tr>
 <tr>
             <td  >
- <asp:LinkButton runat="server" ID="btnAddress"
- Text="<%$ resources: btnAddress.Caption %>"  />
+<asp:Panel runat="server" ID="QFControlsList" CssClass="controlslist "
+>
+   <asp:LinkButton runat="server" ID="cmdAddress"
+ Text="<%$ resources: cmdAddress.Caption %>"  />
  
+   <asp:ImageButton runat="server" ID="cmdShowMap"
+ ToolTip="<%$ resources: cmdShowMap.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16"  />
+ 
+</asp:Panel>
       </td>
                 <td></td>
             </tr>
@@ -442,7 +448,7 @@ protected override void OnAddEntityBindings() {
                     // pklStatus.PickListValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding pklStatusPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Status", pklStatus, "PickListValue");
         BindingSource.Bindings.Add(pklStatusPickListValueBinding);
-                       // adrAddress.AddressCity Binding
+                             // adrAddress.AddressCity Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding adrAddressAddressCityBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.City", adrAddress, "AddressCity");
         adrAddressAddressCityBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(adrAddressAddressCityBinding);
@@ -567,7 +573,7 @@ protected override void OnAddEntityBindings() {
       
       
     }
-                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                     
 protected void cmdQualifyLead_ClickAction(object sender, EventArgs e) {
 Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
 if(lead.Company == null)
@@ -670,7 +676,7 @@ protected void cmdConvertLead_ClickActionF(object sender, EventArgs e) {
   }
 
 }
-protected void btnAddress_ClickAction(object sender, EventArgs e) {
+protected void cmdAddress_ClickAction(object sender, EventArgs e) {
 if (DialogService != null)
 {
 	Sage.Entity.Interfaces.ILead lead = this.BindingSource.Current as Sage.Entity.Interfaces.ILead;    
@@ -684,6 +690,13 @@ if (DialogService != null)
 	    DialogService.ShowDialog();
 	}
 }
+
+}
+protected void cmdShowMap_ClickAction(object sender, EventArgs e) {
+Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+string url= "http://maps.google.com/maps?q="+ lead.Address.Latitude +"," +lead.Address.Logitude;
+ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open('" + url + "');",true);
+
 
 }
 protected void chkDoNotSolicit_ChangeAction(object sender, EventArgs e) {
@@ -850,7 +863,8 @@ protected override void OnWireEventHandlers()
  base.OnWireEventHandlers();
  cmdQualifyLead.Click += new EventHandler(cmdQualifyLead_ClickAction);
 cmdConvertLead.Click += new EventHandler(cmdConvertLead_ClickAction);
-btnAddress.Click += new EventHandler(btnAddress_ClickAction);
+cmdAddress.Click += new EventHandler(cmdAddress_ClickAction);
+cmdShowMap.Click += new ImageClickEventHandler(cmdShowMap_ClickAction);
 chkDoNotSolicit.CheckedChanged += new EventHandler(chkDoNotSolicit_ChangeAction);
 chkDoNotEmail.CheckedChanged += new EventHandler(chkDoNotEmail_ChangeAction);
 cmdUpdateLead.Click += new ImageClickEventHandler(cmdUpdateLead_ClickAction);
@@ -924,6 +938,7 @@ nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;
 }
 protected override void OnFormBound()
 {
+ScriptManager.RegisterStartupScript(Page, GetType(), "cleanupcontainer", "jQuery(\".controlslist > div:empty\").remove();", true);
 cmdDeleteLead.OnClientClick = string.Format("return confirm('{0}');", Sage.Platform.WebPortal.PortalUtil.JavaScriptEncode(GetLocalResourceObject("QFButton2.ActionConfirmationMessage").ToString()));
 
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
@@ -1014,10 +1029,20 @@ public class LeadDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAda
     {
         get { return FindControl(ref _txtBusinessPotential, "txtBusinessPotential"); }
     }
-    private Sage.Platform.Controls.IButtonControl _btnAddress;
-    public  Sage.Platform.Controls.IButtonControl btnAddress
+    private Sage.Platform.Controls.IControlsListControl _QFControlsList;
+    public  Sage.Platform.Controls.IControlsListControl QFControlsList
     {
-        get { return FindControl(ref _btnAddress, "btnAddress"); }
+        get { return FindControl(ref _QFControlsList, "QFControlsList"); }
+    }
+    private Sage.Platform.Controls.IButtonControl _cmdAddress;
+    public  Sage.Platform.Controls.IButtonControl cmdAddress
+    {
+        get { return FindControl(ref _cmdAddress, "cmdAddress"); }
+    }
+    private Sage.Platform.Controls.IButtonControl _cmdShowMap;
+    public  Sage.Platform.Controls.IButtonControl cmdShowMap
+    {
+        get { return FindControl(ref _cmdShowMap, "cmdShowMap"); }
     }
     private Sage.Platform.Controls.IAddressControl _adrAddress;
     public  Sage.Platform.Controls.IAddressControl adrAddress

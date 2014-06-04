@@ -285,7 +285,10 @@
   <data name="cmdQualifyLead.Caption" xml:space="preserve">
     <value>Qualify Lead</value>
   </data>
-  <data name="btnAddress.Caption" xml:space="preserve">
+  <data name="cmdAddress.Caption" xml:space="preserve">
     <value>Address:</value>
+  </data>
+  <data name="cmdShowMap.ToolTip" xml:space="preserve">
+    <value>Show Map</value>
   </data>
 </root>

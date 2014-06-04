@@ -169,7 +169,7 @@
     <value>Preferred  Contact:</value>
   </data>
   <data name="adrContactAddress.Caption" xml:space="preserve">
-    <value>Address:</value>
+    <value />
   </data>
   <data name="emlEmailAddress.Caption" xml:space="preserve">
     <value>E-mail:</value>
@@ -297,7 +297,13 @@
   <data name="lueAccountName.Caption" xml:space="preserve">
     <value>Account:</value>
   </data>
+  <data name="CCAddress.Caption" xml:space="preserve">
+    <value>Address:</value>
+  </data>
   <data name="btnAddress.Caption" xml:space="preserve">
     <value>Address:</value>
+  </data>
+  <data name="btnShowMap.ToolTip" xml:space="preserve">
+    <value>Show Map</value>
   </data>
 </root>

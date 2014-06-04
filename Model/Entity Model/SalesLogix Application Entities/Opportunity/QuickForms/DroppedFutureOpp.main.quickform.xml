@@ -86,7 +86,7 @@
                       <BusinessRule>Save</BusinessRule>
                       <Object>Opportunity</Object>
                       <Parameters />
-                      <PassResultsToNextAction>False</PassResultsToNextAction>
+                      <PassResultsToNextAction>True</PassResultsToNextAction>
                       <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
                         <NoActionActionItem>
                           <MethodName />

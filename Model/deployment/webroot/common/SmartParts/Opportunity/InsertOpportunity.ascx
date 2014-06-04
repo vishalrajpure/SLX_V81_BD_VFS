@@ -376,6 +376,7 @@ Sage.Entity.Interfaces.IOpportunity objOpp = BindingSource.Current as Sage.Entit
             objOpp.Save();
             Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.ISalesProcesses>();
             salesProcess.InitSalesProcess(pluginID, objOpp.Id.ToString());
+			objOpp.Save();
             Response.Redirect(string.Format("Opportunity.aspx?entityId={0}",objOpp.Id.ToString() ));
         }
         else
@@ -479,6 +480,7 @@ lib.Execute("InsertOpportunity.SetupIntegrationContract", methodArgs);
 
 }
 protected void quickformload2(object sender, EventArgs e) {
+ClientBindingMgr.UsePageExitWarning = false;
 Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 if (Request.QueryString["copyOpportunity"] != null && Request.QueryString["entityId"] != null &&
          Request.QueryString["copyOpportunity"].Equals("true"))

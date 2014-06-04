@@ -322,6 +322,8 @@ lueCurrency.Enabled = systemInfo.MultiCurrency;</CSharpCodeSnippet>
       <QFSLXLookup>
         <Column>0</Column>
         <Row>7</Row>
+        <IsReadOnly>true</IsReadOnly>
+        <Enabled>false</Enabled>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>LeadSource</ControlId>
@@ -362,6 +364,7 @@ lueCurrency.Enabled = systemInfo.MultiCurrency;</CSharpCodeSnippet>
         <SeedValue />
         <DropDownDisplayProperty />
         <AllowClearingResult>false</AllowClearingResult>
+        <AppendStringValues>false</AppendStringValues>
         <OverrideSeedOnSearch>false</OverrideSeedOnSearch>
         <LookupEntityName>LeadSource</LookupEntityName>
         <LookupEntityTypeName>Sage.Entity.Interfaces.ILeadSource, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
@@ -473,6 +476,7 @@ lueCurrency.Enabled = systemInfo.MultiCurrency;</CSharpCodeSnippet>
         <SeedValue />
         <DropDownDisplayProperty />
         <AllowClearingResult>false</AllowClearingResult>
+        <AppendStringValues>false</AppendStringValues>
         <OverrideSeedOnSearch>false</OverrideSeedOnSearch>
         <LookupEntityName>ExchangeRate</LookupEntityName>
         <LookupEntityTypeName>Sage.Entity.Interfaces.IExchangeRate, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>

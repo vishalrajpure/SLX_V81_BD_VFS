@@ -169,7 +169,7 @@ Strict="False"
    <asp:Label ID="LeadSource_lbl" AssociatedControlID="LeadSource" runat="server" Text="<%$ resources: LeadSource.Caption %>" ></asp:Label>
  </div>   
   <div   class="textcontrol lookup"   >
-<SalesLogix:LookupControl runat="server" ID="LeadSource" ButtonToolTip="<%$ resources: LeadSource.ButtonToolTip %>" LookupEntityName="LeadSource" LookupEntityTypeName="Sage.Entity.Interfaces.ILeadSource, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"  >
+<SalesLogix:LookupControl runat="server" ID="LeadSource" ButtonToolTip="<%$ resources: LeadSource.ButtonToolTip %>" ReadOnly="true" Enabled="false" EnableLookup="false" LookupEntityName="LeadSource" LookupEntityTypeName="Sage.Entity.Interfaces.ILeadSource, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"  >
 <LookupProperties>
 <SalesLogix:LookupProperty PropertyHeader="<%$ resources: LeadSource.LookupProperties.Type.PropertyHeader %>" PropertyName="Type" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
 <SalesLogix:LookupProperty PropertyHeader="<%$ resources: LeadSource.LookupProperties.Description.PropertyHeader %>" PropertyName="Description" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>

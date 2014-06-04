@@ -119,8 +119,9 @@
       <ResourceKey>99a96ad2-64e4-4575-9067-ea14c8385af5</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName>quickformload2</MethodName>
-          <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+          <MethodName />
+          <CSharpCodeSnippet>ClientBindingMgr.UsePageExitWarning = false;
+Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 if (Request.QueryString["copyOpportunity"] != null &amp;&amp; Request.QueryString["entityId"] != null &amp;&amp;
          Request.QueryString["copyOpportunity"].Equals("true"))
 {
@@ -1186,7 +1187,7 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
           <ResourceKey>cmdSave</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName />
+              <MethodName>cmdSave_ClickAction</MethodName>
               <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity objOpp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 //Sage.Entity.Interfaces.IOpportunity objOpp = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.IOpportunity&gt;();
 	if(objOpp.Description == "")
@@ -1223,6 +1224,7 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
             objOpp.Save();
             Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.ISalesProcesses&gt;();
             salesProcess.InitSalesProcess(pluginID, objOpp.Id.ToString());
+			objOpp.Save();
             Response.Redirect(string.Format("Opportunity.aspx?entityId={0}",objOpp.Id.ToString() ));
         }
         else

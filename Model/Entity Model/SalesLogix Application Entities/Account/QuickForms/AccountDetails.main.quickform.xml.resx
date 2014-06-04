@@ -142,7 +142,7 @@
     <value>Desc. of Business:</value>
   </data>
   <data name="Address.Caption" xml:space="preserve">
-    <value>Address:</value>
+    <value />
   </data>
   <data name="Owner.Caption" xml:space="preserve">
     <value>Owner:</value>
@@ -207,7 +207,10 @@
   <data name="txtmktsegment.Caption" xml:space="preserve">
     <value>MKT Segment:</value>
   </data>
-  <data name="btnAddress.Caption" xml:space="preserve">
+  <data name="ccAddress.Caption" xml:space="preserve">
     <value>Address:</value>
+  </data>
+  <data name="btnAddress.Caption" xml:space="preserve">
+    <value>Address</value>
   </data>
 </root>

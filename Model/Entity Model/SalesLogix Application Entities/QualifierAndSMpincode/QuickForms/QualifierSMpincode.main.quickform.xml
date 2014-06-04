@@ -7,7 +7,7 @@
       <ResourceKey>74894bd6-736d-481d-9b96-c580442d228b</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName>quickformload0</MethodName>
+          <MethodName />
           <CSharpCodeSnippet>luePincode_lbl.ForeColor = System.Drawing.Color.Red;
 luequalifier_lbl.ForeColor = System.Drawing.Color.Red;
 lueSaleManager_lbl.ForeColor = System.Drawing.Color.Red;</CSharpCodeSnippet>
