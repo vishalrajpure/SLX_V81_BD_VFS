@@ -322,8 +322,57 @@ protected override void OnWireEventHandlers()
 
 }
 
+protected void quickformload0(object sender, EventArgs e) {
+Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+if (opportunity.Status == "Closed - Won" || opportunity.Status.ToUpper() == "LOST" || opportunity.Status.ToUpper() == "DROPPED")
+{
+   //grdOppCompetitors.Enabled = false;
+    lueAssociateCompetitor.Enabled=false;
+}
+else
+{
+   // grdOppCompetitors.Enabled = true;
+lueAssociateCompetitor.Enabled = true;
+}
+
+if (!IsPostBack)
+{
+    string _UserId = "", AccManager = "";
+    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+    _UserId = _IUserService.UserId; //get login Userid
+	if(opportunity.AccountManager != null)
+	{
+    AccManager = Convert.ToString(opportunity.AccountManager.Id);
+    if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(opportunity.Account.AccountManager.Id) == _UserId.Trim())
+    {
+       // grdOppCompetitors.Enabled = true;
+		lueAssociateCompetitor.Enabled = true;
+    }
+    else
+    {
+       // grdOppCompetitors.Enabled = false;
+		lueAssociateCompetitor.Enabled = true;
+    }
+	}
+}
+
+}
+private bool _runActivating;
+protected override void OnActivating()
+{
+_runActivating = true;
+}
+private void DoActivating()
+{
+quickformload0(this, EventArgs.Empty);
+
+}
 protected override void OnFormBound()
 {
+Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.EntityPage;
+        if (epage != null)
+            _runActivating = (epage.IsNewEntity || _runActivating);
+if (_runActivating) DoActivating();
 grdOppCompetitors.Columns[6].Visible = (RoleSecurityService.HasAccess("Entities/Opportunity/Edit"));
 grdOppCompetitors.Columns[7].Visible = (RoleSecurityService.HasAccess("Entities/Opportunity/Edit"));
 ClientBindingMgr.RegisterBoundControl(lueAssociateCompetitor);

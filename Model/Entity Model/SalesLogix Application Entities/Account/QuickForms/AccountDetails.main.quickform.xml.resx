@@ -204,7 +204,7 @@
   <data name="txtLegalName.Caption" xml:space="preserve">
     <value>Legal Name:</value>
   </data>
-  <data name="txtmktsegment.Caption" xml:space="preserve">
+  <data name="lkpmktsegment.Caption" xml:space="preserve">
     <value>MKT Segment:</value>
   </data>
   <data name="ccAddress.Caption" xml:space="preserve">
@@ -212,5 +212,11 @@
   </data>
   <data name="btnAddress.Caption" xml:space="preserve">
     <value>Address</value>
+  </data>
+  <data name="lkpmktsegment.LookupProperties.Segmentname.PropertyHeader" xml:space="preserve">
+    <value>Segmentname</value>
+  </data>
+  <data name="lkpmktsegment.LookupProperties.Industryid.PropertyHeader" xml:space="preserve">
+    <value>Industryid</value>
   </data>
 </root>

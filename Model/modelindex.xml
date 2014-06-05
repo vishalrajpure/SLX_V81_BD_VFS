@@ -1619,4 +1619,15 @@
  <ref id="431b5622-0238-4010-a653-e491ee83b8f5" url="\Entity Model\Saleslogix Application Entities\Vwlegalmaster\OnCreate.method.xml" />
  <ref id="5eec7cc2-7d35-41b6-b088-a4e895056557" url="\Entity Model\Saleslogix Application Entities\Vwlegalmaster\OnBeforeDelete.method.xml" />
  <ref id="25ba418e-0b45-4b96-919b-9db2fec55cbb" url="\Entity Model\Saleslogix Application Entities\Vwlegalmaster\OnBeforeInsert.method.xml" />
+ <ref id="576ae752-12aa-4d36-ba13-a8cca10c89c1" url="\Entity Model\Saleslogix Application Entities\Account\QuickForms\AccountDetails.main.quickform.xml" />
+ <ref id="d8eb6792-f4ba-4c6a-adb2-6217519d4757" url="\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactDetails.main.quickform.xml" />
+ <ref id="117003f3-e178-41eb-82ec-bd65b9589572" url="\Entity Model\Saleslogix Application Entities\Vwsegmentmst\OnBeforeInsert.method.xml" />
+ <ref id="d580b0aa-d942-42d5-a3c9-777c8bf1400a" url="\Entity Model\Saleslogix Application Entities\Vwsegmentmst\OnAfterInsert.method.xml" />
+ <ref id="40f61d94-e4d3-405b-a2bb-c18d8437fbf2" url="\Entity Model\Saleslogix Application Entities\Vwsegmentmst\OnBeforeUpdate.method.xml" />
+ <ref id="6a3cc374-0e5b-4463-88bd-76150363bc29" url="\Entity Model\Saleslogix Application Entities\Vwsegmentmst\OnAfterUpdate.method.xml" />
+ <ref id="8966dd59-e5ac-421a-83d1-2b5443bbd6b9" url="\Entity Model\Saleslogix Application Entities\Vwsegmentmst\OnBeforeDelete.method.xml" />
+ <ref id="8fc5613c-bb02-4900-bb0f-d2a1205f590f" url="\Entity Model\Saleslogix Application Entities\Vwsegmentmst\OnAfterDelete.method.xml" />
+ <ref id="c3081cc8-4292-4003-b907-53fccd68553a" url="\Entity Model\Saleslogix Application Entities\Vwsegmentmst\OnCreate.method.xml" />
+ <ref id="f6d20a09-1edf-4fca-a082-d204d254b5a9" url="\Entity Model\Saleslogix Application Entities\Vwsegmentmst\Vwsegmentmst.VWSEGMENTMST.entity.xml" />
+ <ref id="6ff17924-7909-4326-8049-d1c79295eb39" url="\Entity Model\Saleslogix Application Entities\Vwsegmentmst\QuickForms\SegmentDetails.main.quickform.xml" />
 </modelItemIndex>

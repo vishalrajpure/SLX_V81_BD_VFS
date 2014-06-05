@@ -15,7 +15,7 @@ pklSubType.PickListName = account.GetSubTypePickListName();
 
 AccountName_lbl.ForeColor = System.Drawing.Color.Red;
 MainPhone_lbl.ForeColor = System.Drawing.Color.Red;
-Address_lbl.ForeColor = System.Drawing.Color.Red;
+//Address_lbl.ForeColor = System.Drawing.Color.Red;
 txtLegalName_lbl.ForeColor = System.Drawing.Color.Red;
 
 if (account != null)
@@ -653,20 +653,20 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         <ValueStoredAsText>true</ValueStoredAsText>
       </QFSLXPickList>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXOwner, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXOwner>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXLookup>
         <Column>1</Column>
         <Row>5</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>Owner</ControlId>
+        <ControlId>lkpmktsegment</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Owner</DataItemName>
+            <DataItemName>SegmentmstID</DataItemName>
             <ControlItemName>LookupResultValue</ControlItemName>
             <FormatString />
-            <NullValueString>null</NullValueString>
+            <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
         </DataBindings>
         <ControlLabelPlacement>left</ControlLabelPlacement>
@@ -674,7 +674,7 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <OnChangeAction>
-          <ResourceKey>Owner</ResourceKey>
+          <ResourceKey>lkpmktsegment</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
             <NoActionActionItem>
               <MethodName />
@@ -688,14 +688,54 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
           <RefreshData>False</RefreshData>
         </OnChangeAction>
         <Required>false</Required>
+        <LookupImage />
+        <LookupDialogWidth xsi:nil="true" />
+        <LookupDialogHeight xsi:nil="true" />
+        <LookupBindingMode>String</LookupBindingMode>
         <LookupResultValue xsi:type="xsd:string" />
+        <SeedProperty />
+        <SeedValue />
+        <DropDownDisplayProperty />
+        <AllowClearingResult>false</AllowClearingResult>
+        <AppendStringValues>false</AppendStringValues>
+        <OverrideSeedOnSearch>false</OverrideSeedOnSearch>
+        <LookupEntityName>Vwsegmentmst</LookupEntityName>
+        <LookupEntityTypeName>Sage.Entity.Interfaces.IVwsegmentmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
         <AutoPostBack>false</AutoPostBack>
-      </QFSLXOwner>
+        <EnableHyperLinking>false</EnableHyperLinking>
+        <InitializeLookup>false</InitializeLookup>
+        <LookupProperties>
+          <LookupProperty>
+            <PropertyName>Segmentname</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Segmentname</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>Industryid</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Industryid</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+        </LookupProperties>
+        <LookupPreFilters />
+      </QFSLXLookup>
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXUser, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXUser>
         <Column>1</Column>
         <Row>6</Row>
+        <Enabled>false</Enabled>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>AccManager</ControlId>
@@ -733,54 +773,17 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         <AutoPostBack>false</AutoPostBack>
       </QFSLXUser>
     </Control>
-    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
-      <QFTextBox>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXPickList>
         <Column>2</Column>
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>txtmktsegment</ControlId>
+        <ControlId>Status</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>MktSegment</DataItemName>
-            <ControlItemName>Text</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-        </DataBindings>
-        <ControlLabelPlacement>left</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme />
-        <OnChangeAction>
-          <ResourceKey>txtmktsegment</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-            <NoActionActionItem>
-              <MethodName />
-            </NoActionActionItem>
-          </Action>
-          <IsDialogCloseAction>False</IsDialogCloseAction>
-          <RunOnEveryRePaint>False</RunOnEveryRePaint>
-          <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>False</PerformsUpdate>
-          <AppliedSecurity />
-          <RefreshData>False</RefreshData>
-        </OnChangeAction>
-        <Required>false</Required>
-      </QFTextBox>
-    </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXPickList>
-        <Column>2</Column>
-        <Row>1</Row>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>pklSubType</ControlId>
-        <DataBindings>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>SubType</DataItemName>
+            <DataItemName>Status</DataItemName>
             <ControlItemName>PickListValue</ControlItemName>
             <FormatString />
             <NullValueString />
@@ -791,7 +794,7 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <OnChangeAction>
-          <ResourceKey>pklSubType</ResourceKey>
+          <ResourceKey>Status</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
             <NoActionActionItem>
               <MethodName />
@@ -806,14 +809,14 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         </OnChangeAction>
         <Required>false</Required>
         <AutoPostBack>false</AutoPostBack>
-        <PickListName />
+        <PickListName>Account Status</PickListName>
         <StorageMode>Text</StorageMode>
         <NameFormatString />
         <AllowMultiples>false</AllowMultiples>
-        <AlphaSort>false</AlphaSort>
+        <AlphaSort>true</AlphaSort>
         <MustExistInList>false</MustExistInList>
         <NoneEditable>false</NoneEditable>
-        <PickListId>kSYST0000382</PickListId>
+        <PickListId>kSYST0000381</PickListId>
         <ValueStoredAsText>true</ValueStoredAsText>
       </QFSLXPickList>
     </Control>
@@ -858,13 +861,14 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
       <QFSLXPickList>
         <Column>2</Column>
         <Row>3</Row>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>Status</ControlId>
+        <ControlId>pklSubType</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Status</DataItemName>
+            <DataItemName>SubType</DataItemName>
             <ControlItemName>PickListValue</ControlItemName>
             <FormatString />
             <NullValueString />
@@ -875,7 +879,7 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <OnChangeAction>
-          <ResourceKey>Status</ResourceKey>
+          <ResourceKey>pklSubType</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
             <NoActionActionItem>
               <MethodName />
@@ -890,14 +894,14 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         </OnChangeAction>
         <Required>false</Required>
         <AutoPostBack>false</AutoPostBack>
-        <PickListName>Account Status</PickListName>
+        <PickListName />
         <StorageMode>Text</StorageMode>
         <NameFormatString />
         <AllowMultiples>false</AllowMultiples>
-        <AlphaSort>true</AlphaSort>
+        <AlphaSort>false</AlphaSort>
         <MustExistInList>false</MustExistInList>
         <NoneEditable>false</NoneEditable>
-        <PickListId>kSYST0000381</PickListId>
+        <PickListId>kSYST0000382</PickListId>
         <ValueStoredAsText>true</ValueStoredAsText>
       </QFSLXPickList>
     </Control>
@@ -905,7 +909,7 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
       <QFTextBox>
         <RowSpan>2</RowSpan>
         <Column>2</Column>
-        <Row>5</Row>
+        <Row>4</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>BusinessDescription</ControlId>
@@ -939,6 +943,46 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         </OnChangeAction>
         <Required>false</Required>
       </QFTextBox>
+    </Control>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXOwner, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXOwner>
+        <Column>2</Column>
+        <Row>6</Row>
+        <Enabled>false</Enabled>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>Owner</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>Owner</DataItemName>
+            <ControlItemName>LookupResultValue</ControlItemName>
+            <FormatString />
+            <NullValueString>null</NullValueString>
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>Owner</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+        <LookupResultValue xsi:type="xsd:string" />
+        <AutoPostBack>false</AutoPostBack>
+      </QFSLXOwner>
     </Control>
   </Controls>
   <ToolControls>

@@ -194,6 +194,36 @@ protected void quickformload0(object sender, EventArgs e) {
 Sage.Entity.Interfaces.IOpportunity opportunity = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 if (opportunity != null)
 {
+	 
+//pklStatus.PickListValue= objOpp.Status;
+/*if (opportunity.Status == "Closed - Won" || opportunity.Status.ToUpper() == "LOST" || opportunity.Status.ToUpper() == "DROPPED")
+{
+   grdOppProducts.Enabled = false;
+    
+}
+else
+{
+    grdOppProducts.Enabled = true;
+
+}
+
+if (!IsPostBack)
+{
+    string _UserId = "", AccManager = "";
+    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+    _UserId = _IUserService.UserId; //get login Userid
+    AccManager = Convert.ToString(objOpp.AccountManager.Id);
+    if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id) == _UserId.Trim())
+    {
+        grdOppProducts.Enabled = true;
+    }
+    else
+    {
+        grdOppProducts.Enabled = false;
+    }
+}
+	*/
+	
     Sage.Platform.SData.IAppIdMappingService mappingService =
         Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.SData.IAppIdMappingService>(
             true);

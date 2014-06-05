@@ -306,4 +306,31 @@
   <data name="txtBusinessPotential.Caption" xml:space="preserve">
     <value>Business Potential</value>
   </data>
+  <data name="pklSatge.Caption" xml:space="preserve">
+    <value>Stage:</value>
+  </data>
+  <data name="lueLeadSource.LUPF.Status" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="lueLeadSource.LookupProperties.AbbrevDescription.PropertyHeader" xml:space="preserve">
+    <value>Source Code</value>
+  </data>
+  <data name="lueLeadSource.Caption" xml:space="preserve">
+    <value>Lead Source:</value>
+  </data>
+  <data name="lueLeadSource.LookupProperties.Status.PropertyHeader" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="lueLeadSource.LookupProperties.Description.PropertyHeader" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lueLeadSource.LookupProperties.Type.PropertyHeader" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="lueLeadSource.LookupProperties.SourceDate.PropertyHeader" xml:space="preserve">
+    <value>Source Date</value>
+  </data>
+  <data name="lueLeadSource.ButtonToolTip" xml:space="preserve">
+    <value>Find</value>
+  </data>
 </root>

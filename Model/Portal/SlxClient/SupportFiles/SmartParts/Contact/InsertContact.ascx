@@ -61,9 +61,9 @@
             alert("LegalName Length has more than 128 Characters");
             return false;
         }
-        else if (document.getElementById('MainContent_InsertContact_txtmktsegment').value.length > 10) {
-            alert("Mkt Segment Length has more than 10 Characters");
-            return false;
+        //else if (document.getElementById('MainContent_InsertContact_lkpmktsegment_text').value.length > 10) {
+          //  alert("Mkt Segment Length has more than 10 Characters");
+            //return false;
         }
 
         else if (document.getElementById('MainContent_InsertContact_phnContactWorkPhone_PhoneTextBox').value == '') {
@@ -207,12 +207,25 @@
 	</tr>
     <tr>
         <td>
-            <div class="lbl">
+            <!--<div class="lbl">
                 <asp:Label ID="lblmktsegment" runat="server" Text="MKT Segment:"></asp:Label>
             </div>
             <div class="textcontrol">
                 <asp:TextBox ID="txtmktsegment" runat="server"></asp:TextBox>
-            </div>
+            </div>-->
+            <div class=" lbl alignleft">
+   <asp:Label ID="lkpmktsegment_lbl" AssociatedControlID="lkpmktsegment" runat="server" Text="MKT Segment:" ></asp:Label>
+ </div>   
+  <div   class="textcontrol lookup"   >
+<SalesLogix:LookupControl runat="server" ID="lkpmktsegment" LookupEntityName="Vwsegmentmst" LookupEntityTypeName="Sage.Entity.Interfaces.IVwsegmentmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String"  >
+<LookupProperties>
+<SalesLogix:LookupProperty PropertyHeader="Segment" PropertyName="Segmentname" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="Industry" PropertyName="Industryid" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+</LookupProperties>
+<LookupPreFilters>
+</LookupPreFilters>
+</SalesLogix:LookupControl>
+  </div>
         </td>
 
         <%-- </tr>
@@ -648,7 +661,7 @@
         BindingSource.Bindings.Add(new WebEntityBinding("Account.LeadSource", lucLeadSource, "LookupResultValue"));
 
         BindingSource.Bindings.Add(new WebEntityBinding("Account.LEGALNAME", txtlegalname, "Text"));
-        BindingSource.Bindings.Add(new WebEntityBinding("Account.MKTSEGMENT", txtmktsegment, "Text"));
+        BindingSource.Bindings.Add(new WebEntityBinding("Account.SegmentmstID", lkpmktsegment, "LookupResultValue"));
 
 
         DiasbleFLS();
@@ -803,7 +816,10 @@
 
     protected void cmdSave_ClickAction(object sender, EventArgs e)
     {
-        saveOptions();
+        if (saveOptions() == false)
+        {
+            return;
+        }
         IContact contact = BindingSource.Current as IContact;
         
         if (contact != null)
@@ -820,7 +836,10 @@
 
     protected void cmdSaveNew_ClickAction(object sender, EventArgs e)
     {
-        saveOptions();
+        if (saveOptions() == false)
+        {
+            return;
+        }
         IContact contact = BindingSource.Current as IContact;
         if (contact != null)
         {
@@ -832,7 +851,10 @@
 
     protected void cmdSaveClear_ClickAction(object sender, EventArgs e)
     {
-        saveOptions();
+        if (saveOptions() == false)
+        {
+            return;
+        }
         IContact contact = BindingSource.Current as IContact;
         if (contact != null)
         {
@@ -1098,7 +1120,7 @@
         return false;
     }
 
-    private void saveOptions()
+    private bool saveOptions()
     {       
 	
 		string qry = "Select Account From Account where Account = '" + txtContactAccountName.Text.Trim() + "'";
@@ -1109,8 +1131,8 @@
 		dataAdapterObj.Fill(dt);
 		if (dt.Rows.Count > 0)
 		{
-		    DialogService.ShowMessage("This Company Name is already exists");
-		    return;
+		    DialogService.ShowMessage("This Account is already exists");
+		    return false;
 		}			
 		qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + txtlegalname.Text.Trim() + "'";
         dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
@@ -1118,8 +1140,8 @@
         dataAdapterObj.Fill(dt);
         if (dt.Rows.Count > 0)
         {
-            DialogService.ShowMessage("This legal Name is already exists");
-            return;
+            DialogService.ShowMessage("This legal Entity is already exists");
+            return false;
         }
         IContact contact = BindingSource.Current as IContact;
         IAddress objadd=null;
@@ -1162,6 +1184,7 @@
             option = "Y";
         }
         UserOptionsService.SetCommonOption("InsertNewContactAccount.AutoSearch", "Insert", option, false);
+		return true;
     }
 	protected void cmdShowMap_Click(object sender, EventArgs e)
     {

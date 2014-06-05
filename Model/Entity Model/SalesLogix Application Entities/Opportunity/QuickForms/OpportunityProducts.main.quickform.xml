@@ -7,10 +7,40 @@
       <ResourceKey>dc3d27ec-00a6-4846-8f55-e039b92d70e1</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName>quickformload0</MethodName>
+          <MethodName />
           <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity opportunity = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 if (opportunity != null)
 {
+	 
+//pklStatus.PickListValue= objOpp.Status;
+/*if (opportunity.Status == "Closed - Won" || opportunity.Status.ToUpper() == "LOST" || opportunity.Status.ToUpper() == "DROPPED")
+{
+   grdOppProducts.Enabled = false;
+    
+}
+else
+{
+    grdOppProducts.Enabled = true;
+
+}
+
+if (!IsPostBack)
+{
+    string _UserId = "", AccManager = "";
+    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+    _UserId = _IUserService.UserId; //get login Userid
+    AccManager = Convert.ToString(objOpp.AccountManager.Id);
+    if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id) == _UserId.Trim())
+    {
+        grdOppProducts.Enabled = true;
+    }
+    else
+    {
+        grdOppProducts.Enabled = false;
+    }
+}
+	*/
+	
     Sage.Platform.SData.IAppIdMappingService mappingService =
         Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.SData.IAppIdMappingService&gt;(
             true);

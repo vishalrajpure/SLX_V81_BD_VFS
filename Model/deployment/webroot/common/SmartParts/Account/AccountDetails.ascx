@@ -35,11 +35,11 @@
 
       </td>
                 <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="txtmktsegment_lbl" AssociatedControlID="txtmktsegment" runat="server" Text="<%$ resources: txtmktsegment.Caption %>" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtmktsegment"  dojoType="Sage.UI.Controls.TextBox"  />
+ <div class=" lbl alignleft">
+   <asp:Label ID="Status_lbl" AssociatedControlID="Status" runat="server" Text="<%$ resources: Status.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol picklist"  > 
+    <SalesLogix:PickListControl runat="server" ID="Status" PickListName="Account Status" MustExistInList="false" AlphaSort="true"  />
   </div>
 
       </td>
@@ -63,15 +63,7 @@
   </div>
 
       </td>
-                <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="pklSubType_lbl" AssociatedControlID="pklSubType" runat="server" Text="<%$ resources: pklSubType.Caption %>" ></asp:Label>
- </div>   
-   <div  class="textcontrol picklist"  > 
-    <SalesLogix:PickListControl runat="server" ID="pklSubType" MustExistInList="false"  />
-  </div>
-
-      </td>
+                <td></td>
       </tr>
 <tr>
             <td  >
@@ -128,10 +120,10 @@ ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16"  /
       </td>
                 <td  >
  <div class=" lbl alignleft">
-   <asp:Label ID="Status_lbl" AssociatedControlID="Status" runat="server" Text="<%$ resources: Status.Caption %>" ></asp:Label>
+   <asp:Label ID="pklSubType_lbl" AssociatedControlID="pklSubType" runat="server" Text="<%$ resources: pklSubType.Caption %>" Visible="false" ></asp:Label>
  </div>   
    <div  class="textcontrol picklist"  > 
-    <SalesLogix:PickListControl runat="server" ID="Status" PickListName="Account Status" MustExistInList="false" AlphaSort="true"  />
+    <SalesLogix:PickListControl runat="server" ID="pklSubType" MustExistInList="false" Visible="false"  />
   </div>
 
       </td>
@@ -153,19 +145,6 @@ ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16"  /
   </div>
 
       </td>
-                <td></td>
-      </tr>
-<tr>
-            <td></td>
-                <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="Owner_lbl" AssociatedControlID="Owner" runat="server" Text="<%$ resources: Owner.Caption %>" ></asp:Label>
- </div>   
-   <div  class="textcontrol"  > 
-<SalesLogix:OwnerControl runat="server" ID="Owner" ButtonToolTip="<%$ resources: Owner.ButtonToolTip %>" Types="$qfcontrol.Types"  />
-  </div>
-
-      </td>
                 <td rowspan="2"  >
  <div class=" lbl alignleft" >
    <asp:Label ID="BusinessDescription_lbl" AssociatedControlID="BusinessDescription" runat="server" Text="<%$ resources: BusinessDescription.Caption %>" ></asp:Label>
@@ -176,6 +155,25 @@ ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16"  /
 
       </td>
       </tr>
+<tr>
+            <td></td>
+                <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="lkpmktsegment_lbl" AssociatedControlID="lkpmktsegment" runat="server" Text="<%$ resources: lkpmktsegment.Caption %>" ></asp:Label>
+ </div>   
+  <div   class="textcontrol lookup"   >
+<SalesLogix:LookupControl runat="server" ID="lkpmktsegment" LookupEntityName="Vwsegmentmst" LookupEntityTypeName="Sage.Entity.Interfaces.IVwsegmentmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String"  >
+<LookupProperties>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpmktsegment.LookupProperties.Segmentname.PropertyHeader %>" PropertyName="Segmentname" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpmktsegment.LookupProperties.Industryid.PropertyHeader %>" PropertyName="Industryid" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+</LookupProperties>
+<LookupPreFilters>
+</LookupPreFilters>
+</SalesLogix:LookupControl>
+  </div>
+
+      </td>
+            </tr>
 <tr>
             <td rowspan="4"  >
  <div  class="textcontrol"   >
@@ -188,11 +186,20 @@ ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16"  /
    <asp:Label ID="AccManager_lbl" AssociatedControlID="AccManager" runat="server" Text="<%$ resources: AccManager.Caption %>" ></asp:Label>
  </div>   
    <div  class="textcontrol"  > 
-    <SalesLogix:SlxUserControl runat="server" ID="AccManager" ButtonToolTip="<%$ resources: AccManager.ButtonToolTip %>"  />
+    <SalesLogix:SlxUserControl runat="server" ID="AccManager" Enabled="false" ButtonToolTip="<%$ resources: AccManager.ButtonToolTip %>"  />
   </div>
 
       </td>
-            </tr>
+                <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="Owner_lbl" AssociatedControlID="Owner" runat="server" Text="<%$ resources: Owner.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol"  > 
+<SalesLogix:OwnerControl runat="server" ID="Owner" Enabled="false" ButtonToolTip="<%$ resources: Owner.ButtonToolTip %>" Types="$qfcontrol.Types"  />
+  </div>
+
+      </td>
+      </tr>
 <tr>
                   <td></td>
                 <td></td>
@@ -259,18 +266,15 @@ protected override void OnAddEntityBindings() {
                     // txtLegalName.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtLegalNameTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LegalName", txtLegalName, "Text");
         BindingSource.Bindings.Add(txtLegalNameTextBinding);
-                    // txtmktsegment.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding txtmktsegmentTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("MktSegment", txtmktsegment, "Text");
-        BindingSource.Bindings.Add(txtmktsegmentTextBinding);
+                    // Status.PickListValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding StatusPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Status", Status, "PickListValue");
+        BindingSource.Bindings.Add(StatusPickListValueBinding);
                     // Division.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding DivisionTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Division", Division, "Text");
         BindingSource.Bindings.Add(DivisionTextBinding);
                     // pklType.PickListValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding pklTypePickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Type", pklType, "PickListValue");
         BindingSource.Bindings.Add(pklTypePickListValueBinding);
-                    // pklSubType.PickListValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding pklSubTypePickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("SubType", pklSubType, "PickListValue");
-        BindingSource.Bindings.Add(pklSubTypePickListValueBinding);
                     // MainPhone.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding MainPhoneTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("MainPhone", MainPhone, "Text");
         BindingSource.Bindings.Add(MainPhoneTextBinding);
@@ -283,9 +287,9 @@ protected override void OnAddEntityBindings() {
                              // WebAddress.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding WebAddressTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("WebAddress", WebAddress, "Text");
         BindingSource.Bindings.Add(WebAddressTextBinding);
-                    // Status.PickListValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding StatusPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Status", Status, "PickListValue");
-        BindingSource.Bindings.Add(StatusPickListValueBinding);
+                    // pklSubType.PickListValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding pklSubTypePickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("SubType", pklSubType, "PickListValue");
+        BindingSource.Bindings.Add(pklSubTypePickListValueBinding);
                     // Address.AddressCity Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressCityBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.City", Address, "AddressCity");
         AddressAddressCityBinding.IgnoreFLSDisabling = true;
@@ -348,15 +352,18 @@ protected override void OnAddEntityBindings() {
                     // Industry.PickListValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding IndustryPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Industry", Industry, "PickListValue");
         BindingSource.Bindings.Add(IndustryPickListValueBinding);
-                    // Owner.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding OwnerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Owner", Owner, "LookupResultValue", "", null);
-        BindingSource.Bindings.Add(OwnerLookupResultValueBinding);
                     // BusinessDescription.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding BusinessDescriptionTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BusinessDescription", BusinessDescription, "Text");
         BindingSource.Bindings.Add(BusinessDescriptionTextBinding);
+                    // lkpmktsegment.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpmktsegmentLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("SegmentmstID", lkpmktsegment, "LookupResultValue");
+        BindingSource.Bindings.Add(lkpmktsegmentLookupResultValueBinding);
                        // AccManager.LookupResultValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding AccManagerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AccountManager", AccManager, "LookupResultValue", "", null);
         BindingSource.Bindings.Add(AccManagerLookupResultValueBinding);
+                    // Owner.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding OwnerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Owner", Owner, "LookupResultValue", "", null);
+        BindingSource.Bindings.Add(OwnerLookupResultValueBinding);
     
    
                      
@@ -511,7 +518,7 @@ pklSubType.PickListName = account.GetSubTypePickListName();
 
 AccountName_lbl.ForeColor = System.Drawing.Color.Red;
 MainPhone_lbl.ForeColor = System.Drawing.Color.Red;
-Address_lbl.ForeColor = System.Drawing.Color.Red;
+//Address_lbl.ForeColor = System.Drawing.Color.Red;
 txtLegalName_lbl.ForeColor = System.Drawing.Color.Red;
 
 if (account != null)
@@ -666,40 +673,40 @@ public class AccountDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityForm
     {
         get { return FindControl(ref _Industry, "Industry"); }
     }
-    private Sage.Platform.Controls.IOwnerControl _Owner;
-    public  Sage.Platform.Controls.IOwnerControl Owner
+    private Sage.Platform.Controls.ILookupControl _lkpmktsegment;
+    public  Sage.Platform.Controls.ILookupControl lkpmktsegment
     {
-        get { return FindControl(ref _Owner, "Owner"); }
+        get { return FindControl(ref _lkpmktsegment, "lkpmktsegment"); }
     }
     private Sage.Platform.Controls.IUserControl _AccManager;
     public  Sage.Platform.Controls.IUserControl AccManager
     {
         get { return FindControl(ref _AccManager, "AccManager"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _txtmktsegment;
-    public  Sage.Platform.Controls.ITextBoxControl txtmktsegment
+    private Sage.Platform.Controls.IPickListControl _Status;
+    public  Sage.Platform.Controls.IPickListControl Status
     {
-        get { return FindControl(ref _txtmktsegment, "txtmktsegment"); }
-    }
-    private Sage.Platform.Controls.IPickListControl _pklSubType;
-    public  Sage.Platform.Controls.IPickListControl pklSubType
-    {
-        get { return FindControl(ref _pklSubType, "pklSubType"); }
+        get { return FindControl(ref _Status, "Status"); }
     }
     private Sage.Platform.Controls.IPhoneControl _Fax;
     public  Sage.Platform.Controls.IPhoneControl Fax
     {
         get { return FindControl(ref _Fax, "Fax"); }
     }
-    private Sage.Platform.Controls.IPickListControl _Status;
-    public  Sage.Platform.Controls.IPickListControl Status
+    private Sage.Platform.Controls.IPickListControl _pklSubType;
+    public  Sage.Platform.Controls.IPickListControl pklSubType
     {
-        get { return FindControl(ref _Status, "Status"); }
+        get { return FindControl(ref _pklSubType, "pklSubType"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _BusinessDescription;
     public  Sage.Platform.Controls.ITextBoxControl BusinessDescription
     {
         get { return FindControl(ref _BusinessDescription, "BusinessDescription"); }
+    }
+    private Sage.Platform.Controls.IOwnerControl _Owner;
+    public  Sage.Platform.Controls.IOwnerControl Owner
+    {
+        get { return FindControl(ref _Owner, "Owner"); }
     }
     private Sage.Platform.Controls.IGroupNavigatorControl _AccountDetails_9;
     public  Sage.Platform.Controls.IGroupNavigatorControl AccountDetails_9

@@ -914,6 +914,27 @@ if (lead != null)
 		cmdUpdateLead.Visible = false;
 		cmdDeleteLead.Visible = false;
 		
+		txtAnyInfo.Enabled = false;
+		txtBusinessDescription.Enabled = false;
+		txtBusinessPotential.Enabled = false;
+		txtComments.Enabled = false;
+		txtCompany.Enabled = false;
+		txtInterests.Enabled = false;
+		txtLegalName.Enabled = false;
+		cmdAddress.Enabled = false;
+		phnTollFree.Enabled = false;
+		phnWorkPhone.Enabled = false;
+		pklStatus.Enabled = false;
+		pklIndustry.Enabled = false;
+		pklTitle.Enabled =false;
+		nmeLeadName.Enabled = false;
+		urlWeb.Enabled = false;
+		emlEmail.Enabled = false;
+		
+		
+		
+		
+		
 	}
 	if(lead.Status.ToUpper() == "QUALIFIED" || lead.Status.ToUpper() == "DROPPED" )
 	{

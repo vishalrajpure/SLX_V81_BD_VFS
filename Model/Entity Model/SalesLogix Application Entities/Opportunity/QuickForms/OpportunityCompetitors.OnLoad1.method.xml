@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="3a805bae-69e3-4eb3-855b-cf55d0eeea88" lastModifiedUtc="2014-06-05T11:01:03.1451966Z" name="OnLoad1" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="OpportunityCompetitors">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="e777af62-6954-4b44-898a-c325ee8df612" paramName="form" sequence="0" paramType="IOpportunityCompetitors" />
+    <OrmEntityMethodParam id="5597cc54-173b-4e8f-8d93-cf031459a81d" paramName="args" sequence="0" paramType="EventArgs" />
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets />
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

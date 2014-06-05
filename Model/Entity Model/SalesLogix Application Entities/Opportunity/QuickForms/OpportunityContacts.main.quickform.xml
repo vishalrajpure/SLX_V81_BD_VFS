@@ -2,7 +2,49 @@
 <QuickForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="7f6397ac-02ec-41d0-adc7-65a6f2be625a" DefinitionType="Sage.Platform.QuickForms.QuickFormMainDetailViewDefinition, Sage.Platform.QuickForms">
   <ActiveControl />
   <ImagePath />
-  <LoadActions />
+  <LoadActions>
+    <FormActionDefinition>
+      <ResourceKey>dae05ad7-1cb5-4433-b80f-b5aee5762d94</ResourceKey>
+      <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+        <CSharpSnippetActionItem>
+          <MethodName />
+          <CSharpCodeSnippet>/*Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+if (opportunity.Status == "Closed - Won" || opportunity.Status.ToUpper() == "LOST" || opportunity.Status.ToUpper() == "DROPPED")
+{
+   grdContacts.Enabled = false;
+    
+}
+else
+{
+    grdContacts.Enabled = true;
+
+}
+
+if (!IsPostBack)
+{
+    string _UserId = "", AccManager = "";
+    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+    _UserId = _IUserService.UserId; //get login Userid
+    AccManager = Convert.ToString(objOpp.AccountManager.Id);
+    if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id) == _UserId.Trim())
+    {
+        grdContacts.Enabled = true;
+    }
+    else
+    {
+        grdContacts.Enabled = false;
+    }
+}*/</CSharpCodeSnippet>
+        </CSharpSnippetActionItem>
+      </Action>
+      <IsDialogCloseAction>False</IsDialogCloseAction>
+      <RunOnEveryRePaint>False</RunOnEveryRePaint>
+      <DialogActionResult>NoResult</DialogActionResult>
+      <PerformsUpdate>False</PerformsUpdate>
+      <AppliedSecurity />
+      <RefreshData>False</RefreshData>
+    </FormActionDefinition>
+  </LoadActions>
   <Name>OpportunityContacts</Name>
   <ClientScriptIncludes />
   <ClientResourceKeys />
@@ -15,7 +57,6 @@
       <QFSDataGrid>
         <Column>0</Column>
         <Row>0</Row>
-        <IsReadOnly>false</IsReadOnly>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>grdContacts</ControlId>
@@ -197,7 +238,6 @@
             <LookupButton>
               <Column>0</Column>
               <Row>0</Row>
-              <IsReadOnly>false</IsReadOnly>
               <HotKey>0</HotKey>
               <TabIndex>0</TabIndex>
               <ControlId>lueAddContact</ControlId>
@@ -229,6 +269,7 @@
               <LookupResultValue xsi:type="xsd:string" />
               <AddEmptyListItem>false</AddEmptyListItem>
               <AllowClearingResult>false</AllowClearingResult>
+              <AppendStringValues>false</AppendStringValues>
               <OverrideSeedOnSearch>false</OverrideSeedOnSearch>
               <LookupEntityName>Contact</LookupEntityName>
               <LookupEntityTypeName>Sage.Entity.Interfaces.IContact, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
@@ -353,7 +394,6 @@
       <QFElementSpacer>
         <Column>0</Column>
         <Row>0</Row>
-        <IsReadOnly>false</IsReadOnly>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId />
@@ -368,7 +408,6 @@
       <QFElementSpacer>
         <Column>0</Column>
         <Row>0</Row>
-        <IsReadOnly>false</IsReadOnly>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId />

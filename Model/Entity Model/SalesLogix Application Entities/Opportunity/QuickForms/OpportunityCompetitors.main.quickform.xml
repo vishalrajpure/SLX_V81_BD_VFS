@@ -2,7 +2,54 @@
 <QuickForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="53f5b8c1-f77c-4759-ad64-16875a7b599d" DefinitionType="Sage.Platform.QuickForms.QuickFormMainDetailViewDefinition, Sage.Platform.QuickForms">
   <ActiveControl />
   <ImagePath />
-  <LoadActions />
+  <LoadActions>
+    <FormActionDefinition>
+      <ResourceKey>93781fd4-3b02-4487-8719-f2f40c40b9c2</ResourceKey>
+      <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+        <CSharpSnippetActionItem>
+          <MethodName />
+          <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+if (opportunity.Status == "Closed - Won" || opportunity.Status.ToUpper() == "LOST" || opportunity.Status.ToUpper() == "DROPPED")
+{
+   //grdOppCompetitors.Enabled = false;
+    lueAssociateCompetitor.Enabled=false;
+}
+else
+{
+   // grdOppCompetitors.Enabled = true;
+lueAssociateCompetitor.Enabled = true;
+}
+
+if (!IsPostBack)
+{
+    string _UserId = "", AccManager = "";
+    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+    _UserId = _IUserService.UserId; //get login Userid
+	if(opportunity.AccountManager != null)
+	{
+    AccManager = Convert.ToString(opportunity.AccountManager.Id);
+    if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(opportunity.Account.AccountManager.Id) == _UserId.Trim())
+    {
+       // grdOppCompetitors.Enabled = true;
+		lueAssociateCompetitor.Enabled = true;
+    }
+    else
+    {
+       // grdOppCompetitors.Enabled = false;
+		lueAssociateCompetitor.Enabled = true;
+    }
+	}
+}</CSharpCodeSnippet>
+        </CSharpSnippetActionItem>
+      </Action>
+      <IsDialogCloseAction>False</IsDialogCloseAction>
+      <RunOnEveryRePaint>False</RunOnEveryRePaint>
+      <DialogActionResult>NoResult</DialogActionResult>
+      <PerformsUpdate>False</PerformsUpdate>
+      <AppliedSecurity />
+      <RefreshData>False</RefreshData>
+    </FormActionDefinition>
+  </LoadActions>
   <Name>OpportunityCompetitors</Name>
   <ClientScriptIncludes />
   <ClientResourceKeys />
@@ -224,7 +271,7 @@
           <ResourceKey>lueAssociateCompetitor</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CodeSnippetActionItem, Sage.Platform.QuickForms">
             <CodeSnippetActionItem methodId="3a385bce-9e1a-4408-9258-876863e9c1f4">
-              <MethodName />
+              <MethodName>lueAssociateCompetitor_ChangeAction</MethodName>
             </CodeSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>

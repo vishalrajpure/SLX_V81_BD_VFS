@@ -53,4 +53,5 @@
   <Item Id="7fd91745-effc-4a05-816d-3195f420a438">contextPincodeMaster.contextmenu.xml</Item>
   <Item Id="81a476dd-5a1a-46ea-8037-eab0befe41fc">ContextQualifierBMpincode.contextmenu.xml</Item>
   <Item Id="9356c717-0aa9-4b01-a388-903a2308cd46">contextLegalMaster.contextmenu.xml</Item>
+  <Item Id="7ecb6992-df9e-4f0a-811b-a2c6812ea999">contextSegment.contextmenu.xml</Item>
 </ModelItems>

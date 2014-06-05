@@ -14916,4 +14916,34 @@
   <data name="Vwlegalmaster.Filter.State.DisplayName" xml:space="preserve">
     <value>State</value>
   </data>
+  <data name="Vwsegmentmst.DisplayName" xml:space="preserve">
+    <value>Vwsegmentmst</value>
+  </data>
+  <data name="Vwsegmentmst.Segmentmstid.DisplayName" xml:space="preserve">
+    <value>Segmentmstid</value>
+  </data>
+  <data name="Vwsegmentmst.CreateDate.DisplayName" xml:space="preserve">
+    <value>Createdate</value>
+  </data>
+  <data name="Vwsegmentmst.CreateUser.DisplayName" xml:space="preserve">
+    <value>Createuser</value>
+  </data>
+  <data name="Vwsegmentmst.ModifyUser.DisplayName" xml:space="preserve">
+    <value>Modifyuser</value>
+  </data>
+  <data name="Vwsegmentmst.ModifyDate.DisplayName" xml:space="preserve">
+    <value>Modifydate</value>
+  </data>
+  <data name="Vwsegmentmst.Segmentname.DisplayName" xml:space="preserve">
+    <value>Segmentname</value>
+  </data>
+  <data name="Vwsegmentmst.Industryid.DisplayName" xml:space="preserve">
+    <value>Industryid</value>
+  </data>
+  <data name="Account.SegmentmstID.DisplayName" xml:space="preserve">
+    <value>SegmentmstID</value>
+  </data>
+  <data name="Vwsegmentmst.DisplayNamePlural" xml:space="preserve">
+    <value>Vwsegmentmsts</value>
+  </data>
 </root>

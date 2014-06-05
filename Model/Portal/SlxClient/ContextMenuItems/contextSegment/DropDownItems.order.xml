@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<ModelItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Item Id="7825f0a5-6b92-4742-aa8c-c828f686e574">SegmentMasterItemCreateNewGroup.contextmenu.xml</Item>
+  <Item Id="2524f410-1588-42a6-9c1e-013f0cbb44cf">SegmentItemCreateNewGroup.contextmenu.xml</Item>
+</ModelItems>

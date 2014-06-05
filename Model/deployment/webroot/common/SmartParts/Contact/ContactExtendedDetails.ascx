@@ -474,8 +474,42 @@ cmdSaveContactExtendedDetails.Click += new ImageClickEventHandler(cmdSaveContact
 
 }
 
+protected void quickformload0(object sender, EventArgs e) {
+if (!IsPostBack)
+    {
+		Sage.Entity.Interfaces.IContact contact = BindingSource.Current as Sage.Entity.Interfaces.IContact;
+ string _UserId = "", AccManager = "";
+    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+    _UserId = _IUserService.UserId; //get login Userid
+    AccManager = Convert.ToString(contact.AccountManager.Id);
+    if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(contact.Account.AccountManager.Id) == _UserId.Trim() )
+    {
+		
+         cmdSaveContactExtendedDetails.Enabled = false;
+    }
+    else
+    {
+        cmdSaveContactExtendedDetails.Enabled = false;
+    }
+	}
+
+}
+private bool _runActivating;
+protected override void OnActivating()
+{
+_runActivating = true;
+}
+private void DoActivating()
+{
+quickformload0(this, EventArgs.Empty);
+
+}
 protected override void OnFormBound()
 {
+Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.EntityPage;
+        if (epage != null)
+            _runActivating = (epage.IsNewEntity || _runActivating);
+if (_runActivating) DoActivating();
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
 {
 btnEditForm.Visible = false;

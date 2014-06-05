@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<MenuDropDownItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="2524f410-1588-42a6-9c1e-013f0cbb44cf">
+  <ItemId>SegmentItemCreateNewGroup</ItemId>
+  <NavUrl>javascript:Sage.Groups.GroupManager.CreateGroup('Vwsegmentmst');</NavUrl>
+  <LargeImageUrl />
+  <SmallImageUrl />
+  <ContextMenuId />
+  <Target />
+  <AppliedSecurity />
+</MenuDropDownItem>

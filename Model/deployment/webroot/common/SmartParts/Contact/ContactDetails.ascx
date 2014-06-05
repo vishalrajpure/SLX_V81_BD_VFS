@@ -781,7 +781,7 @@ protected void quickformload0(object sender, EventArgs e) {
 nmeContactName_lbl.ForeColor = System.Drawing.Color.Red;
 lueAccountName_lbl.ForeColor = System.Drawing.Color.Red;
 phnWorkPhone.ForeColor = System.Drawing.Color.Red;
-adrContactAddress_lbl.ForeColor = System.Drawing.Color.Red;
+//adrContactAddress_lbl.ForeColor = System.Drawing.Color.Red;
 
 Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Entity.Interfaces.IContact;   
 if (contact != null)
@@ -835,6 +835,9 @@ if (!IsPostBack)
         pklContactStatus.Enabled = true;
         adrContactAddress.Enabled = true;
         cmdSaveContactDetails.Enabled = true;
+		cmdDelete.Enabled = true;
+		cmdReset.Enabled = true;
+		cmdMoveContact.Enabled = true;
     }
     else
     {
@@ -868,6 +871,9 @@ if (!IsPostBack)
         pklContactStatus.Enabled = false;
         adrContactAddress.Enabled = false;
         cmdSaveContactDetails.Enabled = false;
+		cmdDelete.Enabled = false;
+		cmdReset.Enabled = false;
+		cmdMoveContact.Enabled = false;
     }
 	}
 

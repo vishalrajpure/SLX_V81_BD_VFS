@@ -141,7 +141,7 @@
             <asp:Label ID="Label2" AssociatedControlID="txtLatitude" runat="server" Text="Latitude:" ForeColor="Red"></asp:Label>
         </td>
         <td style="width: 150px;">
-            <asp:TextBox runat="server" Enabled = false ID="txtLatitude" Style="width: 100%" MaxLength="64" />
+            <asp:TextBox runat="server" Enabled = "false" ID="txtLatitude" Style="width: 100%" MaxLength="64" />
         </td>
     </tr>
     <tr>
@@ -149,7 +149,7 @@
             <asp:Label ID="Label3" AssociatedControlID="txtLogitute" runat="server" Text="Logitute:" ForeColor="Red"></asp:Label>
         </td>
         <td style="width: 150px;">
-            <asp:TextBox runat="server" Enabled = false ID="txtLogitute" Style="width: 100%" MaxLength="64" />
+            <asp:TextBox runat="server" Enabled = "false" ID="txtLogitute" Style="width: 100%" MaxLength="64" />
         </td>
     </tr>
 

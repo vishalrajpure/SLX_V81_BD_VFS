@@ -24,7 +24,7 @@
   </div>
 
       </td>
-                <td rowspan="11"  >
+                <td rowspan="12"  >
 <%@ Register tagPrefix="SalesLogix" tagName="wbrOpportunitySnapShot" src="~/SmartParts/Opportunity/OpportunitySnapShot.ascx" %>
 <SalesLogix:wbrOpportunitySnapShot id="wbrOpportunitySnapShot" runat="server" OnInit="setwbrOpportunitySnapShotContext" ></SalesLogix:wbrOpportunitySnapShot>
 <script runat="server" type="text/C#">
@@ -73,60 +73,10 @@
 <tr>
             <td  >
  <div class=" lbl alignleft">
-   <asp:Label ID="usrUser_lbl" AssociatedControlID="usrUser" runat="server" Text="<%$ resources: usrUser.Caption %>" ></asp:Label>
- </div>   
-   <div  class="textcontrol"  > 
-    <SalesLogix:SlxUserControl runat="server" ID="usrUser" ButtonToolTip="<%$ resources: usrUser.ButtonToolTip %>"  />
-  </div>
-
-      </td>
-            </tr>
-<tr>
-            <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="lueReseller_lbl" AssociatedControlID="lueReseller" runat="server" Text="<%$ resources: lueReseller.Caption %>" ></asp:Label>
- </div>   
-  <div   class="textcontrol lookup"   >
-<SalesLogix:LookupControl runat="server" ID="lueReseller" ButtonToolTip="<%$ resources: lueReseller.ButtonToolTip %>" LookupEntityName="Account" LookupEntityTypeName="Sage.Entity.Interfaces.IAccount, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"  >
-<LookupProperties>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.AccountName.PropertyHeader %>" PropertyName="AccountName" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.Address.City.PropertyHeader %>" PropertyName="Address.City" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.Address.State.PropertyHeader %>" PropertyName="Address.State" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.MainPhone.PropertyHeader %>" PropertyName="MainPhone" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.Type.PropertyHeader %>" PropertyName="Type" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.SubType.PropertyHeader %>" PropertyName="SubType" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.Status.PropertyHeader %>" PropertyName="Status" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.AccountManager.UserInfo.UserName.PropertyHeader %>" PropertyName="AccountManager.UserInfo.UserName" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.Owner.OwnerDescription.PropertyHeader %>" PropertyName="Owner.OwnerDescription" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-</LookupProperties>
-<LookupPreFilters>
-<SalesLogix:LookupPreFilter PropertyName="SubType" PropertyType="System.String" OperatorCode="=" Visible="False"
- FilterValue="<%$ resources: lueReseller.LUPF.SubType %>"
- ></SalesLogix:LookupPreFilter>
-</LookupPreFilters>
-</SalesLogix:LookupControl>
-  </div>
-
-      </td>
-            </tr>
-<tr>
-            <td  >
- <div class=" lbl alignleft">
    <asp:Label ID="dtpEstimatedClose_lbl" AssociatedControlID="dtpEstimatedClose" runat="server" Text="<%$ resources: dtpEstimatedClose.Caption %>" ></asp:Label>
  </div>
    <div  class="textcontrol datepicker"  >
     <SalesLogix:DateTimePicker runat="server" ID="dtpEstimatedClose" ButtonToolTip="<%$ resources: dtpEstimatedClose.ButtonToolTip %>" DisplayTime="false" Timeless="true" />
-  </div>
-
-      </td>
-            </tr>
-<tr>
-            <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="pklCloseProbability_lbl" AssociatedControlID="pklCloseProbability" runat="server" Text="<%$ resources: pklCloseProbability.Caption %>" ></asp:Label>
- </div>   
-   <div  class="textcontrol picklist"  > 
-    <SalesLogix:PickListControl runat="server" ID="pklCloseProbability" PickListName="Opportunity Probability" MustExistInList="false" NoneEditable="true"  />
   </div>
 
       </td>
@@ -145,12 +95,68 @@
 <tr>
             <td  >
  <div class=" lbl alignleft">
+   <asp:Label ID="pklSatge_lbl" AssociatedControlID="pklSatge" runat="server" Text="<%$ resources: pklSatge.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol picklist"  > 
+    <SalesLogix:PickListControl runat="server" ID="pklSatge" PickListName="Opportunity Stage" MustExistInList="false" MaxLength="64"  />
+  </div>
+
+      </td>
+            </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft">
    <asp:Label ID="txtBusinessPotential_lbl" AssociatedControlID="txtBusinessPotential" runat="server" Text="<%$ resources: txtBusinessPotential.Caption %>" ></asp:Label>
  </div>   
    <div  class="textcontrol numeric"  > 
     <SalesLogix:NumericControl runat="server" ID="txtBusinessPotential"
 Required="true" DecimalDigits="2" Strict="True" 
  />
+  </div>
+
+      </td>
+            </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="usrUser_lbl" AssociatedControlID="usrUser" runat="server" Text="<%$ resources: usrUser.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol"  > 
+    <SalesLogix:SlxUserControl runat="server" ID="usrUser" Enabled="false" ButtonToolTip="<%$ resources: usrUser.ButtonToolTip %>"  />
+  </div>
+
+      </td>
+            </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="lueLeadSource_lbl" AssociatedControlID="lueLeadSource" runat="server" Text="<%$ resources: lueLeadSource.Caption %>" Visible="false" ></asp:Label>
+ </div>   
+  <div   class="textcontrol lookup"   >
+<SalesLogix:LookupControl runat="server" ID="lueLeadSource" ButtonToolTip="<%$ resources: lueLeadSource.ButtonToolTip %>" Enabled="false" LookupEntityName="LeadSource" LookupEntityTypeName="Sage.SalesLogix.Entities.LeadSource, Sage.SalesLogix.Entities" Visible="false"  >
+<LookupProperties>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueLeadSource.LookupProperties.Type.PropertyHeader %>" PropertyName="Type" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueLeadSource.LookupProperties.Description.PropertyHeader %>" PropertyName="Description" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueLeadSource.LookupProperties.AbbrevDescription.PropertyHeader %>" PropertyName="AbbrevDescription" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueLeadSource.LookupProperties.Status.PropertyHeader %>" PropertyName="Status" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+</LookupProperties>
+<LookupPreFilters>
+<SalesLogix:LookupPreFilter PropertyName="Status" PropertyType="System.String" OperatorCode="=" Visible="False"
+ FilterValue="<%$ resources: lueLeadSource.LUPF.Status %>"
+ ></SalesLogix:LookupPreFilter>
+</LookupPreFilters>
+</SalesLogix:LookupControl>
+  </div>
+
+      </td>
+            </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="pklCloseProbability_lbl" AssociatedControlID="pklCloseProbability" runat="server" Text="<%$ resources: pklCloseProbability.Caption %>" Visible="false" ></asp:Label>
+ </div>   
+   <div  class="textcontrol picklist"  > 
+    <SalesLogix:PickListControl runat="server" ID="pklCloseProbability" PickListName="Opportunity Probability" MustExistInList="false" NoneEditable="true" Visible="false"  />
   </div>
 
       </td>
@@ -222,6 +228,39 @@ LabelPlacement="left"  />
 
       </td>
             </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="lueReseller_lbl" AssociatedControlID="lueReseller" runat="server" Text="<%$ resources: lueReseller.Caption %>" Visible="false" ></asp:Label>
+ </div>   
+  <div   class="textcontrol lookup"   >
+<SalesLogix:LookupControl runat="server" ID="lueReseller" ButtonToolTip="<%$ resources: lueReseller.ButtonToolTip %>" LookupEntityName="Account" LookupEntityTypeName="Sage.Entity.Interfaces.IAccount, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Visible="false"  >
+<LookupProperties>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.AccountName.PropertyHeader %>" PropertyName="AccountName" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.Address.City.PropertyHeader %>" PropertyName="Address.City" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.Address.State.PropertyHeader %>" PropertyName="Address.State" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.MainPhone.PropertyHeader %>" PropertyName="MainPhone" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.Type.PropertyHeader %>" PropertyName="Type" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.SubType.PropertyHeader %>" PropertyName="SubType" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.Status.PropertyHeader %>" PropertyName="Status" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.AccountManager.UserInfo.UserName.PropertyHeader %>" PropertyName="AccountManager.UserInfo.UserName" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueReseller.LookupProperties.Owner.OwnerDescription.PropertyHeader %>" PropertyName="Owner.OwnerDescription" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+</LookupProperties>
+<LookupPreFilters>
+<SalesLogix:LookupPreFilter PropertyName="SubType" PropertyType="System.String" OperatorCode="=" Visible="False"
+ FilterValue="<%$ resources: lueReseller.LUPF.SubType %>"
+ ></SalesLogix:LookupPreFilter>
+</LookupPreFilters>
+</SalesLogix:LookupControl>
+  </div>
+
+      </td>
+                <td></td>
+      </tr>
+<tr>
+            <td></td>
+                <td></td>
+      </tr>
 </table>
  
 
@@ -273,24 +312,27 @@ protected override void OnAddEntityBindings() {
                        // lueAccount.LookupResultValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding lueAccountLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Account", lueAccount, "LookupResultValue");
         BindingSource.Bindings.Add(lueAccountLookupResultValueBinding);
-                    // usrUser.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding usrUserLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AccountManager", usrUser, "LookupResultValue");
-        BindingSource.Bindings.Add(usrUserLookupResultValueBinding);
-                    // lueReseller.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding lueResellerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Reseller", lueReseller, "LookupResultValue");
-        BindingSource.Bindings.Add(lueResellerLookupResultValueBinding);
                     // dtpEstimatedClose.DateTimeValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding dtpEstimatedCloseDateTimeValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("EstimatedClose", dtpEstimatedClose, "DateTimeValue", "", null);
         BindingSource.Bindings.Add(dtpEstimatedCloseDateTimeValueBinding);
-                    // pklCloseProbability.PickListValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding pklCloseProbabilityPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("CloseProbability", pklCloseProbability, "PickListValue");
-        BindingSource.Bindings.Add(pklCloseProbabilityPickListValueBinding);
                     // pklStatus.PickListValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding pklStatusPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Status", pklStatus, "PickListValue");
         BindingSource.Bindings.Add(pklStatusPickListValueBinding);
+                    // pklSatge.PickListValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding pklSatgePickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Stage", pklSatge, "PickListValue");
+        BindingSource.Bindings.Add(pklSatgePickListValueBinding);
                     // txtBusinessPotential.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtBusinessPotentialTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BusinessPotential", txtBusinessPotential, "Text");
         BindingSource.Bindings.Add(txtBusinessPotentialTextBinding);
+                    // usrUser.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding usrUserLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AccountManager", usrUser, "LookupResultValue");
+        BindingSource.Bindings.Add(usrUserLookupResultValueBinding);
+                    // lueLeadSource.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding lueLeadSourceLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LeadSource", lueLeadSource, "LookupResultValue");
+        BindingSource.Bindings.Add(lueLeadSourceLookupResultValueBinding);
+                    // pklCloseProbability.PickListValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding pklCloseProbabilityPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("CloseProbability", pklCloseProbability, "PickListValue");
+        BindingSource.Bindings.Add(pklCloseProbabilityPickListValueBinding);
                     // chkAddToForecast.Checked Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding chkAddToForecastCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AddToForecast", chkAddToForecast, "Checked");
         BindingSource.Bindings.Add(chkAddToForecastCheckedBinding);
@@ -307,6 +349,9 @@ protected override void OnAddEntityBindings() {
                     // txtComments.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtCommentsTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Notes", txtComments, "Text");
         BindingSource.Bindings.Add(txtCommentsTextBinding);
+                    // lueReseller.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding lueResellerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Reseller", lueReseller, "LookupResultValue");
+        BindingSource.Bindings.Add(lueResellerLookupResultValueBinding);
     
    
                  
@@ -318,7 +363,7 @@ protected override void OnAddEntityBindings() {
       
       
     }
-                                                                                                  
+                                                                                                                
 protected void pklStatus_ChangeAction(object sender, EventArgs e) {
 
 Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
@@ -450,7 +495,7 @@ lueAccount_lbl.ForeColor = System.Drawing.Color.Red;
 Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
     
 //pklStatus.PickListValue= objOpp.Status;
-if (objOpp.Status == "Closed - Won")
+if (objOpp.Status == "Closed - Won" || objOpp.Status.ToUpper() == "LOST" || objOpp.Status.ToUpper() == "DROPPED")
 {
    // pklStatus.PickListName = "Opportunity Status Closed";
     //pklStatus.ReadOnly = true;
@@ -467,6 +512,9 @@ if (objOpp.Status == "Closed - Won")
     txtComments.Enabled = false;
     clIntegrationContract.Enabled = false;
     cmdSave.Enabled = false;
+	pklSatge.Enabled = false;
+	cmdReset.Enabled = false;
+	cmdDelete.Enabled = false;
     
 }
 else
@@ -486,6 +534,9 @@ else
     txtComments.Enabled = true;
     clIntegrationContract.Enabled = true;
     cmdSave.Enabled = true;
+	pklSatge.Enabled = true;
+	cmdReset.Enabled = true;
+	cmdDelete.Enabled = true;
 
 }
 
@@ -509,6 +560,9 @@ if (!IsPostBack)
         txtComments.Enabled = true;
         clIntegrationContract.Enabled = true;
         cmdSave.Enabled = true;
+		pklSatge.Enabled = true;
+		cmdReset.Enabled = true;
+		cmdDelete.Enabled = true;
     }
     else
     {
@@ -524,6 +578,9 @@ if (!IsPostBack)
         txtComments.Enabled = false;
         clIntegrationContract.Enabled = false;
         cmdSave.Enabled = false;
+		pklSatge.Enabled = false;
+		cmdReset.Enabled = false;
+		cmdDelete.Enabled = false;
     }
 }
 
@@ -633,35 +690,40 @@ public class OpportunityDetailsAdapter : Sage.Platform.WebPortal.Adapters.Entity
     {
         get { return FindControl(ref _lueAccount, "lueAccount"); }
     }
-    private Sage.Platform.Controls.IUserControl _usrUser;
-    public  Sage.Platform.Controls.IUserControl usrUser
-    {
-        get { return FindControl(ref _usrUser, "usrUser"); }
-    }
-    private Sage.Platform.Controls.ILookupControl _lueReseller;
-    public  Sage.Platform.Controls.ILookupControl lueReseller
-    {
-        get { return FindControl(ref _lueReseller, "lueReseller"); }
-    }
     private Sage.Platform.Controls.IDateTimePickerControl _dtpEstimatedClose;
     public  Sage.Platform.Controls.IDateTimePickerControl dtpEstimatedClose
     {
         get { return FindControl(ref _dtpEstimatedClose, "dtpEstimatedClose"); }
-    }
-    private Sage.Platform.Controls.IPickListControl _pklCloseProbability;
-    public  Sage.Platform.Controls.IPickListControl pklCloseProbability
-    {
-        get { return FindControl(ref _pklCloseProbability, "pklCloseProbability"); }
     }
     private Sage.Platform.Controls.IPickListControl _pklStatus;
     public  Sage.Platform.Controls.IPickListControl pklStatus
     {
         get { return FindControl(ref _pklStatus, "pklStatus"); }
     }
+    private Sage.Platform.Controls.IPickListControl _pklSatge;
+    public  Sage.Platform.Controls.IPickListControl pklSatge
+    {
+        get { return FindControl(ref _pklSatge, "pklSatge"); }
+    }
     private Sage.Platform.Controls.INumericControl _txtBusinessPotential;
     public  Sage.Platform.Controls.INumericControl txtBusinessPotential
     {
         get { return FindControl(ref _txtBusinessPotential, "txtBusinessPotential"); }
+    }
+    private Sage.Platform.Controls.IUserControl _usrUser;
+    public  Sage.Platform.Controls.IUserControl usrUser
+    {
+        get { return FindControl(ref _usrUser, "usrUser"); }
+    }
+    private Sage.Platform.Controls.ILookupControl _lueLeadSource;
+    public  Sage.Platform.Controls.ILookupControl lueLeadSource
+    {
+        get { return FindControl(ref _lueLeadSource, "lueLeadSource"); }
+    }
+    private Sage.Platform.Controls.IPickListControl _pklCloseProbability;
+    public  Sage.Platform.Controls.IPickListControl pklCloseProbability
+    {
+        get { return FindControl(ref _pklCloseProbability, "pklCloseProbability"); }
     }
     private Sage.Platform.Controls.ICheckBoxControl _chkAddToForecast;
     public  Sage.Platform.Controls.ICheckBoxControl chkAddToForecast
@@ -687,6 +749,11 @@ public class OpportunityDetailsAdapter : Sage.Platform.WebPortal.Adapters.Entity
     public  Sage.Platform.Controls.ITextBoxControl txtComments
     {
         get { return FindControl(ref _txtComments, "txtComments"); }
+    }
+    private Sage.Platform.Controls.ILookupControl _lueReseller;
+    public  Sage.Platform.Controls.ILookupControl lueReseller
+    {
+        get { return FindControl(ref _lueReseller, "lueReseller"); }
     }
     private Sage.Platform.Controls.IGroupNavigatorControl _grnDetails;
     public  Sage.Platform.Controls.IGroupNavigatorControl grnDetails
