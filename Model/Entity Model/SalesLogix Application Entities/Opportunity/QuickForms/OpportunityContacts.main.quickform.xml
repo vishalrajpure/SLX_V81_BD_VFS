@@ -75,6 +75,7 @@ if (!IsPostBack)
           <GetPredicate />
         </ResourceKind>
         <PathSegments />
+        <PageSize>10</PageSize>
         <Columns>
           <QFSDataEditCol>
             <StyleScheme />

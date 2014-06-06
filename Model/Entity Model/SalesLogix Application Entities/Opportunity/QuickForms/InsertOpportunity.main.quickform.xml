@@ -1194,7 +1194,7 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
               <MethodName />
-              <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity objOpp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+              <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 //Sage.Entity.Interfaces.IOpportunity objOpp = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.IOpportunity&gt;();
 	if(objOpp.Description == "")
 	{
@@ -1209,8 +1209,8 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
 	
 	
 	//////////Product Validation//////////////////
-	
 	string text = Request.Form.Get("ctl00$MainContent$OpportunityProducts$OpportunityProductsgrdOppProducts_DataCarrier");
+    //string text = Request.Form.Get("MainContent_OpportunityProducts_OpportunityProductsgrdOppProducts_DataCarrier");
     if (text.Length &gt; 0)
     {
         var feed = new Sage.Integration.Entity.Feeds.OpportunityProductFeed();
@@ -1242,54 +1242,70 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
         	return;
 		}
     }
+    else
+    {
+        DialogService.ShowMessage("Product Required.");
+        return;
+    }
     //throw new ValidationException("Product Required.");    
 	/////////////////////////////
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-    Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace SalesProcessTabs = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
+    
+    
+
+    Sage.Platform.WebPortal.Workspaces.MainContentWorkspace SalesProcessTabs = PageWorkItem.Workspaces["MainContent"] as Sage.Platform.WebPortal.Workspaces.MainContentWorkspace;
     if (SalesProcessTabs != null)
     {
-        Control tabControl = SalesProcessTabs.GetSmartPartByID("Opp_SalesProcess");
+        int index = 1;
+        Control tabControl = SalesProcessTabs.Controls[index];
         DropDownList drpsales = tabControl.FindControl("ddLSalesProcess") as DropDownList;
 
         //pluginID = drpsales.SelectedValue.ToString();
-        if (drpsales.SelectedIndex &gt; 0)
+        if (drpsales.SelectedIndex &lt;= 0)			
         {
-            string pluginID = drpsales.SelectedValue.ToString();
-            //objOpp.Stage = "1-Suspect";
-            //objOpp.Flagmode = Convert.ToInt32(Session["Flag"].ToString());
-            objOpp.Owner = objOpp.Account.Owner;
-           // objOpp.Status = drpsales.SelectedItem.Text;
+			DialogService.ShowMessage("Please Select SalesProcess");
+            return;
+       
+		}
+		else
+		{
+			string pluginID = drpsales.SelectedValue.ToString();
+		    //objOpp.Stage = "1-Suspect";
+		    //objOpp.Flagmode = Convert.ToInt32(Session["Flag"].ToString());
+		    objOpp.Owner = objOpp.Account.Owner;
+		   // objOpp.Status = drpsales.SelectedItem.Text;
 			if(objOpp.Account.Status == "Suspect")
 			{
 				objOpp.Account.Status = "Prospect";
 				objOpp.Account.Save();
 			}
-			
-            objOpp.Save();
-            Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.ISalesProcesses&gt;();
-            salesProcess.InitSalesProcess(pluginID, objOpp.Id.ToString());
 			objOpp.Save();
-            Response.Redirect(string.Format("Opportunity.aspx?entityId={0}",objOpp.Id.ToString() ));
-        }
-        else
-        {
-            DialogService.ShowMessage("Please Select SalesProcess");
-            return;
-            //throw new Exception("Please Select SalesProcess");
-        }
-    }</CSharpCodeSnippet>
+		    Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.ISalesProcesses&gt;();
+		    salesProcess.InitSalesProcess(pluginID, objOpp.Id.ToString());
+
+		    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+		    string _UserId = _IUserService.UserId;
+		    Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser&gt;((object)_UserId);
+		    objOpp.AccountManager = user;
+		    
+		   /* Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+		    System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+		    System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + _UserId + "' and name ='INSERTSECCODEID'", conObj);
+		    System.Data.DataTable dt2 = new System.Data.DataTable();
+		    dataAdapterObj2.Fill(dt2);
+		    if (dt2.Rows.Count &gt; 0)
+		    {
+		        Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
+		        objOpp.Owner = objowner;
+		    }
+		    else
+		    {
+		    }*/
+			objOpp.Save();
+		    Response.Redirect(string.Format("Opportunity.aspx?entityId={0}",objOpp.Id.ToString() ));	
+    
+		}
+	}
+       </CSharpCodeSnippet>
             </CSharpSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
@@ -1320,7 +1336,7 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
           <ResourceKey>cmdSaveNew</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName>cmdSaveNew_ClickAction</MethodName>
+              <MethodName />
               <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity objOpp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 //Sage.Entity.Interfaces.IOpportunity objOpp = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.IOpportunity&gt;();
 if(objOpp.Description == "")
@@ -1333,32 +1349,103 @@ if(objOpp.Description == "")
 		DialogService.ShowMessage("Please Select Account");
         return;
 	}
-    Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace SalesProcessTabs = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
+	
+	//////////Product Validation//////////////////
+	
+	string text = Request.Form.Get("ctl00$MainContent$OpportunityProducts$OpportunityProductsgrdOppProducts_DataCarrier");
+    //string text = Request.Form.Get("MainContent_OpportunityProducts_OpportunityProductsgrdOppProducts_DataCarrier");
+    if (text.Length &gt; 0)
+    {
+        var feed = new Sage.Integration.Entity.Feeds.OpportunityProductFeed();
+
+        using (var stream = new System.IO.MemoryStream(Encoding.UTF8.GetBytes(text)))
+        {
+            new Sage.Common.Syndication.JsonSerializer().LoadFromStream&lt;Sage.Integration.Entity.Feeds.OpportunityProductEntry&gt;(feed, stream);
+        }
+        if (feed.Entries.Count &gt; 0)
+        {
+            /*var transformer =
+            Sage.Platform.Application.ApplicationContext.Current.Services.Get
+                &lt;Sage.Platform.SData.IAtomEntryToEntityTransformationService&gt;();
+            foreach (Sage.Integration.Entity.Feeds.OpportunityProductEntry entry in feed.Entries)
+            {
+              // logic to validate each entry, if needed
+              // do NOT call this:
+              //var item = transformer.ConvertEntry(entry) as Sage.Entity.Interfaces.IOpportunityProduct;
+              
+              // Apparently the simple fact of converting the entry to an OpportunityProduct 
+              // somehow registers it with NHibernate in a way that can't be undone.  So we need to make sure that is done only 
+              // AFTER the opportunity is persisted.                  
+            }
+            return; // OK!*/
+        }
+		else
+		{
+			DialogService.ShowMessage("Product Required.");
+        	return;
+		}
+    }
+    else
+    {
+        DialogService.ShowMessage("Product Required.");
+        return;
+    }
+    //throw new ValidationException("Product Required.");    
+	/////////////////////////////
+    
+	Sage.Platform.WebPortal.Workspaces.MainContentWorkspace SalesProcessTabs = PageWorkItem.Workspaces["MainContent"] as Sage.Platform.WebPortal.Workspaces.MainContentWorkspace;
     if (SalesProcessTabs != null)
     {
-        Control tabControl = SalesProcessTabs.GetSmartPartByID("Opp_SalesProcess");
+        int index = 1;
+        Control tabControl = SalesProcessTabs.Controls[index];
         DropDownList drpsales = tabControl.FindControl("ddLSalesProcess") as DropDownList;
 
         //pluginID = drpsales.SelectedValue.ToString();
         if (drpsales.SelectedIndex &gt; 0)
         {
-            string pluginID = drpsales.SelectedValue.ToString();
-            //objOpp.Stage = "1-Suspect";
-            //objOpp.Flagmode = Convert.ToInt32(Session["Flag"].ToString());
-            objOpp.Owner = objOpp.Account.Owner;
-            //objOpp.Status = drpsales.SelectedItem.Text;
-            objOpp.Save();
-            Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.ISalesProcesses&gt;();
-            salesProcess.InitSalesProcess(pluginID, objOpp.Id.ToString());
-           	Response.Redirect(string.Format("InsertOpportunity.aspx?modeid=insert"));
-        }
-        else
-        {
-            DialogService.ShowMessage("Please Select SalesProcess");
+			DialogService.ShowMessage("Please Select SalesProcess");
             return;
-            //throw new Exception("Please Select SalesProcess");
-        }
-    }</CSharpCodeSnippet>
+		}
+		else
+		{
+			string pluginID = drpsales.SelectedValue.ToString();
+		    //objOpp.Stage = "1-Suspect";
+		    //objOpp.Flagmode = Convert.ToInt32(Session["Flag"].ToString());
+		    objOpp.Owner = objOpp.Account.Owner;
+		   // objOpp.Status = drpsales.SelectedItem.Text;
+			if(objOpp.Account.Status == "Suspect")
+			{
+				objOpp.Account.Status = "Prospect";
+				objOpp.Account.Save();
+			}
+		    
+		    objOpp.Save();
+		    Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.ISalesProcesses&gt;();
+		    salesProcess.InitSalesProcess(pluginID, objOpp.Id.ToString());
+
+		    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+		    string _UserId = _IUserService.UserId;
+		    Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser&gt;((object)_UserId);
+		    objOpp.AccountManager = user;
+		    
+		   /* Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+		    System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+		    System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + _UserId + "' and name ='INSERTSECCODEID'", conObj);
+		    System.Data.DataTable dt2 = new System.Data.DataTable();
+		    dataAdapterObj2.Fill(dt2);
+		    if (dt2.Rows.Count &gt; 0)
+		    {
+		        Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
+		        objOpp.Owner = objowner;
+		    }
+		    else
+		    {
+		    }*/
+			objOpp.Save();
+		   	Response.Redirect(string.Format("InsertOpportunity.aspx?modeid=insert"));
+		       
+		}
+	}</CSharpCodeSnippet>
             </CSharpSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>

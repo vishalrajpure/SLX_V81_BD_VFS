@@ -1151,6 +1151,12 @@
             contact.Account.Address = objadd;
         }
         contact.Account.Save();
+		
+	 	Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+        string _UserId = _IUserService.UserId;
+        Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)_UserId);
+        contact.AccountManager = user;
+		
         contact.Save();
         
         objadd.EntityId = contact.Account.Id.ToString();        

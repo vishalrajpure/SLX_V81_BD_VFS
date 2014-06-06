@@ -25,7 +25,7 @@ EmptyTableRowText="<%$ resources: grdLeadProducts.EmptyTableRowText %>"  Expanda
       HeaderText="<%$ resources: grdLeadProducts.1c592c25-62ba-44df-9691-550c5ceb2c27.ColumnHeading %>"          >
       </asp:BoundField>
    <asp:ButtonField CommandName="Delete"
-  Text="<%$ resources: grdLeadProducts.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.Text %>"   DataTextField="Id"       HeaderText="<%$ resources: grdLeadProducts.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.ColumnHeading %>"        >
+  Text="<%$ resources: grdLeadProducts.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.Text %>"         HeaderText="<%$ resources: grdLeadProducts.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.ColumnHeading %>"        >
           </asp:ButtonField>
    </Columns>
 </SalesLogix:SlxGridView>

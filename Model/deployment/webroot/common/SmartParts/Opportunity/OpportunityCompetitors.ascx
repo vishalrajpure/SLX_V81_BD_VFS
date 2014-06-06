@@ -323,38 +323,9 @@ protected override void OnWireEventHandlers()
 }
 
 protected void quickformload0(object sender, EventArgs e) {
-Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-if (opportunity.Status == "Closed - Won" || opportunity.Status.ToUpper() == "LOST" || opportunity.Status.ToUpper() == "DROPPED")
-{
-   //grdOppCompetitors.Enabled = false;
-    lueAssociateCompetitor.Enabled=false;
-}
-else
-{
-   // grdOppCompetitors.Enabled = true;
-lueAssociateCompetitor.Enabled = true;
-}
-
-if (!IsPostBack)
-{
-    string _UserId = "", AccManager = "";
-    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
-    _UserId = _IUserService.UserId; //get login Userid
-	if(opportunity.AccountManager != null)
-	{
-    AccManager = Convert.ToString(opportunity.AccountManager.Id);
-    if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(opportunity.Account.AccountManager.Id) == _UserId.Trim())
-    {
-       // grdOppCompetitors.Enabled = true;
-		lueAssociateCompetitor.Enabled = true;
-    }
-    else
-    {
-       // grdOppCompetitors.Enabled = false;
-		lueAssociateCompetitor.Enabled = true;
-    }
-	}
-}
+Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;
+Object[] methodArgs = new Object[] { FormAdapter, e };
+lib.Execute("OpportunityCompetitors.OnLoad1", methodArgs);
 
 }
 private bool _runActivating;
@@ -455,6 +426,12 @@ public class OpportunityCompetitorsAdapter : Sage.Platform.WebPortal.Adapters.En
         get { return FindControl(ref _lueAssociateCompetitor, "lueAssociateCompetitor"); }
     }
 
+    public  void OnLoad1(System.EventArgs e)
+    {
+        Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;
+        Object[] methodArgs = new Object[] { this, e };
+        lib.Execute("OpportunityCompetitors.OnLoad1", methodArgs);
+    }
     public  void lueAssociateCompetitor_OnChange(System.EventArgs e)
     {
         Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;

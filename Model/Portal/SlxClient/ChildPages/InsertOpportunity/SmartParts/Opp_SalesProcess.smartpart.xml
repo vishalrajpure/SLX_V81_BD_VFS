@@ -3,8 +3,8 @@
   <SmartPartId>Opp_SalesProcess</SmartPartId>
   <ReferencedModelId>00000000-0000-0000-0000-000000000000</ReferencedModelId>
   <SmartPart>SmartParts\Opportunity\Opp_SalesProcess.ascx</SmartPart>
-  <TargetWorkspace>TabControl</TargetWorkspace>
-  <ShowInMode />
+  <TargetWorkspace>MainContent</TargetWorkspace>
+  <ShowInMode>Insert</ShowInMode>
   <Properties />
   <AllowRoles />
 </SmartPartMapping>

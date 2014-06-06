@@ -306,7 +306,7 @@ makeGrid : function(runtimeConfig) {
 						tabId : 'OpportunityContacts',
 		gridNodeId: 'OpportunityContactsgrdContacts_Grid',
 				id : 'OpportunityContactsgrdContacts',
-        rowsPerPage: 20,
+        rowsPerPage: 10,
         singleClickEdit: true
     };
 

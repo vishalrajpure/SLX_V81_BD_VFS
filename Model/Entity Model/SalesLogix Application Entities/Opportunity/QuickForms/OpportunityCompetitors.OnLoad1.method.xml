@@ -1,15 +1,21 @@
 <?xml version="1.0"?>
-<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="3a805bae-69e3-4eb3-855b-cf55d0eeea88" lastModifiedUtc="2014-06-05T11:01:03.1451966Z" name="OnLoad1" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="OpportunityCompetitors">
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="18bd0662-d647-40b5-b403-39dd4937ae35" lastModifiedUtc="2014-06-06T12:33:00.8902909Z" name="OnLoad1" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="OpportunityCompetitors">
   <extendedMetaData />
   <ExtendedPropertiesCollection>
     <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
   </ExtendedPropertiesCollection>
   <parameter>
-    <OrmEntityMethodParam id="e777af62-6954-4b44-898a-c325ee8df612" paramName="form" sequence="0" paramType="IOpportunityCompetitors" />
-    <OrmEntityMethodParam id="5597cc54-173b-4e8f-8d93-cf031459a81d" paramName="args" sequence="0" paramType="EventArgs" />
+    <OrmEntityMethodParam id="422748b8-0cda-4e2c-8a88-53ef753ff951" paramName="form" sequence="0" paramType="IOpportunityCompetitors" />
+    <OrmEntityMethodParam id="ea51ea23-5df3-4055-8f39-7e4cab4c2061" paramName="args" sequence="0" paramType="EventArgs" />
   </parameter>
   <preExecuteTargets />
-  <methodTargets />
+  <methodTargets>
+    <methodTarget xsi:type="OrmMethodTargetSnippet" id="4bd763ff-c8fc-45b9-ac9c-91fd0c9b69ba" lastModifiedUtc="2014-06-06T12:35:36.5791958Z" targetType="Sage.BusinessRules.CodeSnippets.OpportunityCompetitorsEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="OnLoad1Step" active="true" codeSnippetId="fca09298-b303-4613-b483-1179843cbbb0">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmMethodTargetSnippet" />
+      </ExtendedPropertiesCollection>
+    </methodTarget>
+  </methodTargets>
   <postExecuteTargets />
   <postFlushTargets />
 </method>

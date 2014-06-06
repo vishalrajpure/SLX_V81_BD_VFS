@@ -191,89 +191,9 @@ protected override void OnWireEventHandlers()
 }
 
 protected void quickformload0(object sender, EventArgs e) {
-Sage.Entity.Interfaces.IOpportunity opportunity = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-if (opportunity != null)
-{
-	 
-//pklStatus.PickListValue= objOpp.Status;
-/*if (opportunity.Status == "Closed - Won" || opportunity.Status.ToUpper() == "LOST" || opportunity.Status.ToUpper() == "DROPPED")
-{
-   grdOppProducts.Enabled = false;
-    
-}
-else
-{
-    grdOppProducts.Enabled = true;
-
-}
-
-if (!IsPostBack)
-{
-    string _UserId = "", AccManager = "";
-    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
-    _UserId = _IUserService.UserId; //get login Userid
-    AccManager = Convert.ToString(objOpp.AccountManager.Id);
-    if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id) == _UserId.Trim())
-    {
-        grdOppProducts.Enabled = true;
-    }
-    else
-    {
-        grdOppProducts.Enabled = false;
-    }
-}
-	*/
-	
-    Sage.Platform.SData.IAppIdMappingService mappingService =
-        Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.SData.IAppIdMappingService>(
-            true);
-	if (mappingService.IsIntegrationEnabled())
-	{
-		var clientContextService = PageWorkItem.Services.Get<Sage.Platform.WebPortal.Services.ClientContextService>();
-		if (clientContextService != null)
-		{
-			// OperatingCompany
-			if (clientContextService.CurrentContext.ContainsKey("OperatingCompany"))
-			{
-                if (opportunity.OperatingCompany != null)
-                {
-				    clientContextService.CurrentContext["OperatingCompany"] = opportunity.OperatingCompany.Id.ToString();
-                }
-                else
-                {
-                    clientContextService.CurrentContext.Remove("OperatingCompany");
-                }
-			}
-			else
-			{
-                if (opportunity.OperatingCompany != null)
-                {
-                    clientContextService.CurrentContext.Add("OperatingCompany", opportunity.OperatingCompany.Id.ToString());
-                }
-			}
-			
-			// SlxPriceList
-			if (clientContextService.CurrentContext.ContainsKey("SlxPriceList"))
-			{
-                if (opportunity.SlxPriceList != null)
-                {
-				    clientContextService.CurrentContext["SlxPriceList"] = opportunity.SlxPriceList.Id.ToString();
-                }
-                else
-                {
-                    clientContextService.CurrentContext.Remove("SlxPriceList");
-                }
-			}
-			else
-			{
-                if (opportunity.SlxPriceList != null)
-                {
-                    clientContextService.CurrentContext.Add("SlxPriceList", opportunity.SlxPriceList.Id.ToString());
-                }
-			}						
-        }
-	}
-}
+Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;
+Object[] methodArgs = new Object[] { FormAdapter, e };
+lib.Execute("OpportunityProducts.OnLoad1", methodArgs);
 
 }
 protected override void OnFormBound()
@@ -383,6 +303,12 @@ public class OpportunityProductsAdapter : Sage.Platform.WebPortal.Adapters.Entit
         : base(smartPart) {}
 
 
+    public  void OnLoad1(System.EventArgs e)
+    {
+        Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;
+        Object[] methodArgs = new Object[] { this, e };
+        lib.Execute("OpportunityProducts.OnLoad1", methodArgs);
+    }
 }
 
 </script>

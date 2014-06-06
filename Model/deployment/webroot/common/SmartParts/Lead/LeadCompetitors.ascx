@@ -38,10 +38,10 @@ EmptyTableRowText="<%$ resources: grdLeadCompetitors.EmptyTableRowText %>"  Expa
       HeaderText="<%$ resources: grdLeadCompetitors.30596f25-c917-4f05-87bf-fac0279937e9.ColumnHeading %>"          >
       </asp:BoundField>
   <asp:ButtonField CommandName="Edit"
-  Text="<%$ resources: grdLeadCompetitors.13644226-77de-437b-99d7-4194ad1ce617.Text %>"  DataTextField="Id"      HeaderText="<%$ resources: grdLeadCompetitors.13644226-77de-437b-99d7-4194ad1ce617.ColumnHeading %>"        >
+  Text="<%$ resources: grdLeadCompetitors.13644226-77de-437b-99d7-4194ad1ce617.Text %>"        HeaderText="<%$ resources: grdLeadCompetitors.13644226-77de-437b-99d7-4194ad1ce617.ColumnHeading %>"        >
           </asp:ButtonField>
      <asp:ButtonField CommandName="Delete"
-  Text="<%$ resources: grdLeadCompetitors.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.Text %>"   DataTextField="Id"       HeaderText="<%$ resources: grdLeadCompetitors.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.ColumnHeading %>"        >
+  Text="<%$ resources: grdLeadCompetitors.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.Text %>"         HeaderText="<%$ resources: grdLeadCompetitors.7c56d8ed-2fa7-4950-af38-cebc70ec4f85.ColumnHeading %>"        >
           </asp:ButtonField>
    </Columns>
 </SalesLogix:SlxGridView>
@@ -301,13 +301,9 @@ protected override void OnWireEventHandlers()
 }
 
 protected void quickformload0(object sender, EventArgs e) {
-Sage.Entity.Interfaces.ILead leadpro = BindingSource.Current as Sage.Entity.Interfaces.ILead;
-if(leadpro.Status.ToUpper() == "CONVERTED" || leadpro.Status.ToUpper() == "DROPPED" )
-	{
-		lueLeadCompetitor.Visible = false;
-		
-		
-	}
+Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;
+Object[] methodArgs = new Object[] { FormAdapter, e };
+lib.Execute("LeadCompetitors.OnLoad1", methodArgs);
 
 }
 private bool _runActivating;
@@ -406,6 +402,12 @@ public class LeadCompetitorsAdapter : Sage.Platform.WebPortal.Adapters.EntityFor
         get { return FindControl(ref _lueLeadCompetitor, "lueLeadCompetitor"); }
     }
 
+    public  void OnLoad1(System.EventArgs e)
+    {
+        Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;
+        Object[] methodArgs = new Object[] { this, e };
+        lib.Execute("LeadCompetitors.OnLoad1", methodArgs);
+    }
     public  void lueLeadCompetitor_OnChange(System.EventArgs e)
     {
         Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;

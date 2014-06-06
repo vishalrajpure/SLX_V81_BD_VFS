@@ -73,7 +73,7 @@ if(leadpro.Status.ToUpper() == "CONVERTED" || leadpro.Status.ToUpper() == "DROPP
           </QFDataGridCol>
           <QFDeleteCol>
             <StyleScheme />
-            <DataField>Id</DataField>
+            <DataField />
             <ColumnId>7c56d8ed-2fa7-4950-af38-cebc70ec4f85</ColumnId>
             <HorizontalAlignment>left</HorizontalAlignment>
             <HeaderAlignment>left</HeaderAlignment>
@@ -131,7 +131,7 @@ if(leadpro.Status.ToUpper() == "CONVERTED" || leadpro.Status.ToUpper() == "DROPP
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>3e3344e3b6c3e8c4d41604b4</ControlId>
+        <ControlId>e3344e3b6c3e8c4d41604b4</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
