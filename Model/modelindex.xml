@@ -1630,4 +1630,6 @@
  <ref id="c3081cc8-4292-4003-b907-53fccd68553a" url="\Entity Model\Saleslogix Application Entities\Vwsegmentmst\OnCreate.method.xml" />
  <ref id="f6d20a09-1edf-4fca-a082-d204d254b5a9" url="\Entity Model\Saleslogix Application Entities\Vwsegmentmst\Vwsegmentmst.VWSEGMENTMST.entity.xml" />
  <ref id="6ff17924-7909-4326-8049-d1c79295eb39" url="\Entity Model\Saleslogix Application Entities\Vwsegmentmst\QuickForms\SegmentDetails.main.quickform.xml" />
+ <ref id="53f5b8c1-f77c-4759-ad64-16875a7b599d" url="\Entity Model\SalesLogix Application Entities\Opportunity\QuickForms\OpportunityCompetitors.main.quickform.xml" />
+ <ref id="e1238a1c-8159-4110-8d43-0298e2a5807d" url="\Entity Model\SalesLogix Application Entities\Opportunity\QuickForms\InsertOpportunity.main.quickform.xml" />
 </modelItemIndex>

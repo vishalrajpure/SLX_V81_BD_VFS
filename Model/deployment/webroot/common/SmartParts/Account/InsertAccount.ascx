@@ -30,11 +30,11 @@
       </tr>
 <tr>
             <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="WebAddress_lbl" AssociatedControlID="WebAddress" runat="server" Text="<%$ resources: WebAddress.Caption %>" ></asp:Label>
- </div>   
-   <div  class="textcontrol"  > 
-    <SalesLogix:URL runat="server" ID="WebAddress" URLTextBoxStyle-ForeColor="#000099" URLTextBoxStyle-Font-Underline="false" />
+ <div class=" lbl alignleft" >
+   <asp:Label ID="txtLegalName_lbl" AssociatedControlID="txtLegalName" runat="server" Text="<%$ resources: txtLegalName.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="txtLegalName"  dojoType="Sage.UI.Controls.TextBox" MaxLength="128"  />
   </div>
 
       </td>
@@ -56,6 +56,19 @@
                 <td></td>
       </tr>
 <tr>
+            <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="WebAddress_lbl" AssociatedControlID="WebAddress" runat="server" Text="<%$ resources: WebAddress.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol"  > 
+    <SalesLogix:URL runat="server" ID="WebAddress" URLTextBoxStyle-ForeColor="#000099" URLTextBoxStyle-Font-Underline="false" />
+  </div>
+
+      </td>
+                <td></td>
+                <td></td>
+      </tr>
+<tr>
             <td  colspan="3" >
 <div class="mainContentHeader2"><span id="QFHorizontalSeparator" 	>
 <asp:Localize runat="server" Text="<%$ resources: QFHorizontalSeparator.Caption %>"   >Account Information</asp:Localize></span></div>
@@ -64,15 +77,16 @@
       </td>
                   </tr>
 <tr>
-            <td rowspan="4"  >
- <div class=" lbl alignleft">
-   <asp:Label ID="Address_lbl" AssociatedControlID="Address" runat="server" Text="<%$ resources: Address.Caption %>" ></asp:Label>
- </div>
-   <div  class="textcontrol address"  >
-    <SalesLogix:AddressControl runat="server" ID="Address" AddressDescriptionPickListName="Address Description (Account)" AddressDescriptionPickListId="kSYST0000014" ButtonToolTip="<%$ resources: Address.ButtonToolTip %>" AddressToolTip="<%$ resources: Address.AddressToolTip %>" >
-<AddressDescStyle Height="80"></AddressDescStyle> </SalesLogix:AddressControl>
-</div>
-
+            <td  >
+<asp:Panel runat="server" ID="QFControlsList" CssClass="controlslist "
+>
+   <asp:LinkButton runat="server" ID="cmdAddress"
+ Text="<%$ resources: cmdAddress.Caption %>"  />
+ 
+   <asp:ImageButton runat="server" ID="cmdShowMap"
+ ToolTip="<%$ resources: cmdShowMap.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Get_Map_16x16"  />
+ 
+</asp:Panel>
       </td>
                 <td  >
  <div class=" lbl alignleft">
@@ -95,12 +109,45 @@ MaxLength="32"  />
       </td>
       </tr>
 <tr>
-                  <td  >
+            <td rowspan="4"  >
+ <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="txtAccountAddress" Enabled="false"  Rows="4" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
+  </div>
+
+      </td>
+                <td  >
  <div class=" lbl alignleft">
    <asp:Label ID="pklType_lbl" AssociatedControlID="pklType" runat="server" Text="<%$ resources: pklType.Caption %>" ></asp:Label>
  </div>   
    <div  class="textcontrol picklist"  > 
-    <SalesLogix:PickListControl runat="server" ID="pklType" PickListName="Account Type" AutoPostBack="true" NoneEditable="true"  />
+    <SalesLogix:PickListControl runat="server" ID="pklType" ReadOnly="true" PickListName="Account Type" AutoPostBack="true" NoneEditable="true"  />
+  </div>
+
+      </td>
+                <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="lkpmktsegment_lbl" AssociatedControlID="lkpmktsegment" runat="server" Text="<%$ resources: lkpmktsegment.Caption %>" ></asp:Label>
+ </div>   
+  <div   class="textcontrol lookup"   >
+<SalesLogix:LookupControl runat="server" ID="lkpmktsegment" LookupEntityName="Vwsegmentmst" LookupEntityTypeName="Sage.Entity.Interfaces.IVwsegmentmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String"  >
+<LookupProperties>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpmktsegment.LookupProperties.Segmentname.PropertyHeader %>" PropertyName="Segmentname" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpmktsegment.LookupProperties.Industryid.PropertyHeader %>" PropertyName="Industryid" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+</LookupProperties>
+<LookupPreFilters>
+</LookupPreFilters>
+</SalesLogix:LookupControl>
+  </div>
+
+      </td>
+      </tr>
+<tr>
+                  <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="Status_lbl" AssociatedControlID="Status" runat="server" Text="<%$ resources: Status.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol picklist"  > 
+    <SalesLogix:PickListControl runat="server" ID="Status" ReadOnly="true" PickListName="Account Status" MustExistInList="false" AlphaSort="true"  />
   </div>
 
       </td>
@@ -117,24 +164,16 @@ MaxLength="32"  />
 <tr>
                   <td  >
  <div class=" lbl alignleft">
-   <asp:Label ID="pklSubType_lbl" AssociatedControlID="pklSubType" runat="server" Text="<%$ resources: pklSubType.Caption %>" ></asp:Label>
+   <asp:Label ID="pklSubType_lbl" AssociatedControlID="pklSubType" runat="server" Text="<%$ resources: pklSubType.Caption %>" Visible="false" ></asp:Label>
  </div>   
    <div  class="textcontrol picklist"  > 
-    <SalesLogix:PickListControl runat="server" ID="pklSubType" MustExistInList="false"  />
+    <SalesLogix:PickListControl runat="server" ID="pklSubType" MustExistInList="false" Visible="false"  />
   </div>
 
       </td>
             </tr>
 <tr>
-                  <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="Status_lbl" AssociatedControlID="Status" runat="server" Text="<%$ resources: Status.Caption %>" ></asp:Label>
- </div>   
-   <div  class="textcontrol picklist"  > 
-    <SalesLogix:PickListControl runat="server" ID="Status" PickListName="Account Status" MustExistInList="false" AlphaSort="true"  />
-  </div>
-
-      </td>
+                  <td></td>
                 <td></td>
       </tr>
 <tr>
@@ -168,7 +207,7 @@ MaxLength="32"  />
    <asp:Label ID="LeadSource_lbl" AssociatedControlID="LeadSource" runat="server" Text="<%$ resources: LeadSource.Caption %>" ></asp:Label>
  </div>   
   <div   class="textcontrol lookup"   >
-<SalesLogix:LookupControl runat="server" ID="LeadSource" ButtonToolTip="<%$ resources: LeadSource.ButtonToolTip %>" LookupEntityName="LeadSource" LookupEntityTypeName="Sage.Entity.Interfaces.ILeadSource, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"  >
+<SalesLogix:LookupControl runat="server" ID="LeadSource" ButtonToolTip="<%$ resources: LeadSource.ButtonToolTip %>" Enabled="false" LookupEntityName="LeadSource" LookupEntityTypeName="Sage.Entity.Interfaces.ILeadSource, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"  >
 <LookupProperties>
 <SalesLogix:LookupProperty PropertyHeader="<%$ resources: LeadSource.LookupProperties.Type.PropertyHeader %>" PropertyName="Type" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
 <SalesLogix:LookupProperty PropertyHeader="<%$ resources: LeadSource.LookupProperties.Description.PropertyHeader %>" PropertyName="Description" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
@@ -192,7 +231,7 @@ MaxLength="32"  />
  <SalesLogix:SmartPartToolsContainer runat="server" ID="InsertAccount_RTools" ToolbarLocation="right">
     <asp:ImageButton runat="server" ID="btnSave"
  AlternateText="<%$ resources: btnSave.Caption %>"  ToolTip="<%$ resources: btnSave.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_16x16"  />
-   
+ 
   <SalesLogix:PageLink ID="btnEditForm" CssClass="adminEditFormButton" runat="server" LinkType="RelativePath" ToolTip="<%$ resources: Portal, EditForm_ToolTip %>" NavigateUrl="~/FormManager.aspx?entityid=InsertAccount&modeid=Detail" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=form_manager_16x16"></SalesLogix:PageLink>
  
  
@@ -222,89 +261,36 @@ protected override void OnAddEntityBindings() {
                  // AccountName.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding AccountNameTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AccountName", AccountName, "Text");
         BindingSource.Bindings.Add(AccountNameTextBinding);
-                    // WebAddress.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding WebAddressTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("WebAddress", WebAddress, "Text");
-        BindingSource.Bindings.Add(WebAddressTextBinding);
+                    // txtLegalName.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtLegalNameTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LegalName", txtLegalName, "Text");
+        BindingSource.Bindings.Add(txtLegalNameTextBinding);
                     // MainPhone.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding MainPhoneTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("MainPhone", MainPhone, "Text");
         BindingSource.Bindings.Add(MainPhoneTextBinding);
-                       // Address.AddressCity Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressCityBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.City", Address, "AddressCity");
-        AddressAddressCityBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(AddressAddressCityBinding);
-                 // Address.AddressCountry Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressCountryBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.Country", Address, "AddressCountry");
-        AddressAddressCountryBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(AddressAddressCountryBinding);
-                 // Address.AddressCounty Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressCountyBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.County", Address, "AddressCounty");
-        AddressAddressCountyBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(AddressAddressCountyBinding);
-                 // Address.AddressDesc1 Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressDesc1Binding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.Address1", Address, "AddressDesc1");
-        BindingSource.Bindings.Add(AddressAddressDesc1Binding);
-                 // Address.AddressDesc2 Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressDesc2Binding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.Address2", Address, "AddressDesc2");
-        AddressAddressDesc2Binding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(AddressAddressDesc2Binding);
-                 // Address.AddressDesc3 Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressDesc3Binding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.Address3", Address, "AddressDesc3");
-        AddressAddressDesc3Binding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(AddressAddressDesc3Binding);
-                 // Address.AddressDescription Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressDescriptionBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.Description", Address, "AddressDescription");
-        AddressAddressDescriptionBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(AddressAddressDescriptionBinding);
-                 // Address.AddressDisplay Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressDisplayBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.FullAddress", Address, "AddressDisplay");
-        AddressAddressDisplayBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(AddressAddressDisplayBinding);
-                 // Address.AddressIsMailing Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressIsMailingBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.IsMailing", Address, "AddressIsMailing");
-        AddressAddressIsMailingBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(AddressAddressIsMailingBinding);
-                 // Address.AddressIsPrimary Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressIsPrimaryBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.IsPrimary", Address, "AddressIsPrimary");
-        AddressAddressIsPrimaryBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(AddressAddressIsPrimaryBinding);
-                 // Address.AddressPostalCode Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressPostalCodeBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.PostalCode", Address, "AddressPostalCode");
-        AddressAddressPostalCodeBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(AddressAddressPostalCodeBinding);
-                 // Address.AddressSalutation Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressSalutationBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.Salutation", Address, "AddressSalutation");
-        AddressAddressSalutationBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(AddressAddressSalutationBinding);
-                 // Address.AddressState Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressStateBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.State", Address, "AddressState");
-        AddressAddressStateBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(AddressAddressStateBinding);
-                 // Address.PrimaryAddress Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressPrimaryAddressBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.PrimaryAddress", Address, "PrimaryAddress");
-        AddressPrimaryAddressBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(AddressPrimaryAddressBinding);
-                 // Address.AddressType Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding AddressAddressTypeBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.AddressType", Address, "AddressType");
-        AddressAddressTypeBinding.IgnoreFLSDisabling = true;
-        BindingSource.Bindings.Add(AddressAddressTypeBinding);
-                    // Fax.Text Binding
+                    // WebAddress.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding WebAddressTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("WebAddress", WebAddress, "Text");
+        BindingSource.Bindings.Add(WebAddressTextBinding);
+                                // Fax.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding FaxTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Fax", Fax, "Text");
         BindingSource.Bindings.Add(FaxTextBinding);
                     // Industry.PickListValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding IndustryPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Industry", Industry, "PickListValue");
         BindingSource.Bindings.Add(IndustryPickListValueBinding);
-                    // pklType.PickListValue Binding
+                       // pklType.PickListValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding pklTypePickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Type", pklType, "PickListValue");
         BindingSource.Bindings.Add(pklTypePickListValueBinding);
+                    // lkpmktsegment.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpmktsegmentLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("SegmentmstID", lkpmktsegment, "LookupResultValue");
+        BindingSource.Bindings.Add(lkpmktsegmentLookupResultValueBinding);
+                    // Status.PickListValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding StatusPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Status", Status, "PickListValue");
+        BindingSource.Bindings.Add(StatusPickListValueBinding);
                     // BusinessDescription.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding BusinessDescriptionTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BusinessDescription", BusinessDescription, "Text");
         BindingSource.Bindings.Add(BusinessDescriptionTextBinding);
                     // pklSubType.PickListValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding pklSubTypePickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("SubType", pklSubType, "PickListValue");
         BindingSource.Bindings.Add(pklSubTypePickListValueBinding);
-                    // Status.PickListValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding StatusPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Status", Status, "PickListValue");
-        BindingSource.Bindings.Add(StatusPickListValueBinding);
                        // AccountManager.LookupResultValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding AccountManagerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AccountManager", AccountManager, "LookupResultValue");
         BindingSource.Bindings.Add(AccountManagerLookupResultValueBinding);
@@ -316,74 +302,86 @@ protected override void OnAddEntityBindings() {
         BindingSource.Bindings.Add(LeadSourceLookupResultValueBinding);
     
    
-         
-      
-      
-      
     }
-                                                                                                         
-protected void btnSave_ClickAction(object sender, EventArgs e) {
-  Sage.Entity.Interfaces.IAccount _entity = BindingSource.Current as Sage.Entity.Interfaces.IAccount;
-  if (_entity != null)
-  {
-    object _parent = GetParentEntity();
-    if (DialogService.ChildInsertInfo != null)
-    {
-        if (_parent != null)
-        {
-            if (DialogService.ChildInsertInfo.ParentReferenceProperty != null)
-            {
-                DialogService.ChildInsertInfo.ParentReferenceProperty.SetValue(_entity, _parent, null);
-            }
-        }
-    }
-    bool shouldSave = true;
-    Sage.Platform.WebPortal.EntityPage page = Page as Sage.Platform.WebPortal.EntityPage;
-    if (page != null)
-    {
-        if(IsInDialog() && page.ModeId.ToUpper() == "INSERT")
-        {
-            shouldSave = false;
-        }
-    }
-
-    if(shouldSave)
-    {
-       _entity.Save();
-    }
-
-    if (_parent != null)
-    {
-        if (DialogService.ChildInsertInfo != null)
-        {
-           if (DialogService.ChildInsertInfo.ParentsCollectionProperty != null)
-           {
-              System.Reflection.MethodInfo _add = DialogService.ChildInsertInfo.ParentsCollectionProperty.PropertyType.GetMethod("Add");
-              _add.Invoke(DialogService.ChildInsertInfo.ParentsCollectionProperty.GetValue(_parent, null), new object[] { _entity });
-           }
-        }
-     }
-  }
-
-          btnSave_ClickActionBRC(sender, e);
-    
-  
+                                                                                                                                            
+protected void cmdAddress_ClickAction(object sender, EventArgs e) {
+if (DialogService != null)
+{
+	//string _idname = lead.Address.Id.ToString() + ",Lead,"+lead.Id.ToString();
+    //Session["LeadAddressid"] = _idname;
+    DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
+    DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAddress);		
+    DialogService.ShowDialog();
 }
-protected void btnSave_ClickActionBRC(object sender, EventArgs e) {
-      Response.Redirect(string.Format("Account.aspx?entityId={0}", (this.BindingSource.Current as Sage.Platform.ComponentModel.IComponentReference).Id));
-  
+
+}
+protected void cmdShowMap_ClickAction(object sender, EventArgs e) {
+Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+string url= "http://maps.google.com/maps?q="+ lead.Address.Latitude +"," +lead.Address.Logitude;
+ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open('" + url + "');",true);
+
+
+}
+protected void btnSave_ClickAction(object sender, EventArgs e) {
+Sage.Entity.Interfaces.IAccount account = BindingSource.Current as Sage.Entity.Interfaces.IAccount;
+if(account.AccountName == null)
+{
+	DialogService.ShowMessage("Enter the AccountName...");
+	return;
+}
+if(account.MainPhone == null)
+{
+	DialogService.ShowMessage("Enter the MainPhone...");
+	return;
+}
+string qry = "Select Account From Account where Account = '" + AccountName.Text.Trim() + "'";
+Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+System.Data.DataTable dt = new System.Data.DataTable();
+dataAdapterObj.Fill(dt);
+if (dt.Rows.Count > 0)
+{
+    DialogService.ShowMessage("This Account is already exists");
+    return;
+}			
+qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + txtLegalName.Text.Trim() + "'";
+dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+dt = new System.Data.DataTable();
+dataAdapterObj.Fill(dt);
+if (dt.Rows.Count > 0)
+{
+    DialogService.ShowMessage("This legal Entity is already exists");
+    return;
+}
+
+Sage.Entity.Interfaces.IAddress objadd=null;
+if (Session["Addressid"] != null)
+{
+    objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Session["Addressid"].ToString());           
+    account.Address = objadd;
+	account.Save();
+	objadd.EntityId = account.Id.ToString(); 
+	Session.Remove("Addressid");
+	objadd.Save(); 	
+	Response.Redirect(string.Format("Account.aspx?entityId={0}",account.Id.ToString() ));	
+	//System.Web.HttpContext.Current.Response.Redirect(string.Format("Account.aspx?modeid=Detail"));
+}
+else
+{
+	DialogService.ShowMessage("Enter the Address");
+	return;
+}
+
+
 }
 
 protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
- if (RoleSecurityService != null)
-{
-if (RoleSecurityService.HasAccess("ENTITIES/ACCOUNT/ADD"))
-{
+ cmdAddress.Click += new EventHandler(cmdAddress_ClickAction);
+cmdShowMap.Click += new ImageClickEventHandler(cmdShowMap_ClickAction);
 btnSave.Click += new ImageClickEventHandler(btnSave_ClickAction);
-}
-}
 
 
 }
@@ -391,19 +389,61 @@ btnSave.Click += new ImageClickEventHandler(btnSave_ClickAction);
 protected void quickformload0(object sender, EventArgs e) {
      Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
      pklSubType.PickListName = account.GetSubTypePickListName();
+	
+	AccountName_lbl.ForeColor = System.Drawing.Color.Red;
+	MainPhone_lbl.ForeColor = System.Drawing.Color.Red;
+	
+	
+	if(!Page.IsPostBack)
+	{
+		
+		Sage.Platform.Security.IUserService userService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+
+		string currentUserId = userService.UserId;
+		Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)currentUserId);
+		
+
+		 string qry = "select case when userID is null then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
+			"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BDU') end " +
+			"From usersecurity US,VWEMPMASTER emp where emp.CEMPLCODE = US.USERCODE and US.USERID ='" + user.Id +  "'";
+		
+		Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+		System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+		System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+		System.Data.DataTable dt = new System.Data.DataTable();
+		dataAdapterObj.Fill(dt);
+		if(dt.Rows.Count > 0)
+		{
+			Sage.Entity.Interfaces.ILeadSource ls  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)dt.Rows[0][0].ToString());	
+			account.LeadSource = ls;
+		}
+		else
+		{
+			Sage.Entity.Interfaces.ILeadSource ld = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)"LDEMOA000003");	
+			account.LeadSource = ld;
+		}
+	}
+	if (Session["Addressid"] != null)
+    {
+        Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Session["Addressid"].ToString());
+        if (objadd != null)
+        {
+            string _add = objadd.Address1 + "," + objadd.Address2 + "," + objadd.Address3 + "\r\n";
+            _add += objadd.City + "," + objadd.State + "," + objadd.Country + "\r\n";
+            _add += objadd.PostalCode + "\r\n";
+            //_add += objadd.Latitude + "\r\n";
+            //_add += objadd.Logitude;
+            txtAccountAddress.Text = _add;
+        }
+    }
 
 }
 protected override void OnFormBound()
 {
-ClientBindingMgr.RegisterSaveButton(btnSave);
-
+ScriptManager.RegisterStartupScript(Page, GetType(), "cleanupcontainer", "jQuery(\".controlslist > div:empty\").remove();", true);
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
 {
 btnEditForm.Visible = false;
-}
-if (!RoleSecurityService.HasAccess("ENTITIES/ACCOUNT/ADD"))
-{
-btnSave.Visible = false;
 }
 quickformload0(this, EventArgs.Empty);
 ClientBindingMgr.SetFocusTo(AccountName);
@@ -474,20 +514,40 @@ public class InsertAccountAdapter : Sage.Platform.WebPortal.Adapters.EntityFormA
     {
         get { return FindControl(ref _AccountName, "AccountName"); }
     }
-    private Sage.Platform.Controls.IUrlControl _WebAddress;
-    public  Sage.Platform.Controls.IUrlControl WebAddress
+    private Sage.Platform.Controls.ITextBoxControl _txtLegalName;
+    public  Sage.Platform.Controls.ITextBoxControl txtLegalName
     {
-        get { return FindControl(ref _WebAddress, "WebAddress"); }
+        get { return FindControl(ref _txtLegalName, "txtLegalName"); }
     }
     private Sage.Platform.Controls.IPhoneControl _MainPhone;
     public  Sage.Platform.Controls.IPhoneControl MainPhone
     {
         get { return FindControl(ref _MainPhone, "MainPhone"); }
     }
-    private Sage.Platform.Controls.IAddressControl _Address;
-    public  Sage.Platform.Controls.IAddressControl Address
+    private Sage.Platform.Controls.IUrlControl _WebAddress;
+    public  Sage.Platform.Controls.IUrlControl WebAddress
     {
-        get { return FindControl(ref _Address, "Address"); }
+        get { return FindControl(ref _WebAddress, "WebAddress"); }
+    }
+    private Sage.Platform.Controls.IControlsListControl _QFControlsList;
+    public  Sage.Platform.Controls.IControlsListControl QFControlsList
+    {
+        get { return FindControl(ref _QFControlsList, "QFControlsList"); }
+    }
+    private Sage.Platform.Controls.IButtonControl _cmdAddress;
+    public  Sage.Platform.Controls.IButtonControl cmdAddress
+    {
+        get { return FindControl(ref _cmdAddress, "cmdAddress"); }
+    }
+    private Sage.Platform.Controls.IButtonControl _cmdShowMap;
+    public  Sage.Platform.Controls.IButtonControl cmdShowMap
+    {
+        get { return FindControl(ref _cmdShowMap, "cmdShowMap"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _txtAccountAddress;
+    public  Sage.Platform.Controls.ITextBoxControl txtAccountAddress
+    {
+        get { return FindControl(ref _txtAccountAddress, "txtAccountAddress"); }
     }
     private Sage.Platform.Controls.IUserControl _AccountManager;
     public  Sage.Platform.Controls.IUserControl AccountManager
@@ -504,15 +564,15 @@ public class InsertAccountAdapter : Sage.Platform.WebPortal.Adapters.EntityFormA
     {
         get { return FindControl(ref _pklType, "pklType"); }
     }
-    private Sage.Platform.Controls.IPickListControl _pklSubType;
-    public  Sage.Platform.Controls.IPickListControl pklSubType
-    {
-        get { return FindControl(ref _pklSubType, "pklSubType"); }
-    }
     private Sage.Platform.Controls.IPickListControl _Status;
     public  Sage.Platform.Controls.IPickListControl Status
     {
         get { return FindControl(ref _Status, "Status"); }
+    }
+    private Sage.Platform.Controls.IPickListControl _pklSubType;
+    public  Sage.Platform.Controls.IPickListControl pklSubType
+    {
+        get { return FindControl(ref _pklSubType, "pklSubType"); }
     }
     private Sage.Platform.Controls.IOwnerControl _Owner;
     public  Sage.Platform.Controls.IOwnerControl Owner
@@ -523,6 +583,11 @@ public class InsertAccountAdapter : Sage.Platform.WebPortal.Adapters.EntityFormA
     public  Sage.Platform.Controls.IPickListControl Industry
     {
         get { return FindControl(ref _Industry, "Industry"); }
+    }
+    private Sage.Platform.Controls.ILookupControl _lkpmktsegment;
+    public  Sage.Platform.Controls.ILookupControl lkpmktsegment
+    {
+        get { return FindControl(ref _lkpmktsegment, "lkpmktsegment"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _BusinessDescription;
     public  Sage.Platform.Controls.ITextBoxControl BusinessDescription

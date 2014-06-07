@@ -144,17 +144,11 @@
   <data name="phnMobilePhone.Caption" xml:space="preserve">
     <value>Cellulare:</value>
   </data>
-  <data name="chkIsServiceAuthorized.Caption" xml:space="preserve">
-    <value>Contatto autorizzato al supporto</value>
-  </data>
   <data name="adrContactAddress.Caption" xml:space="preserve">
     <value>Indirizzo:</value>
   </data>
   <data name="phnHomePhone.Caption" xml:space="preserve">
     <value>Abitazione:</value>
-  </data>
-  <data name="chkDoNotPhone.Caption" xml:space="preserve">
-    <value>No Telefonate</value>
   </data>
   <data name="cboPreferredContact_item4.Text" xml:space="preserve">
     <value>Lettera</value>
@@ -165,17 +159,11 @@
   <data name="cmdReset.ToolTip" xml:space="preserve">
     <value>Reimposta</value>
   </data>
-  <data name="chkDoNotEmail.Caption" xml:space="preserve">
-    <value>No e-mail</value>
-  </data>
   <data name="nmeContactName.ButtonToolTip" xml:space="preserve">
     <value>Modifica</value>
   </data>
   <data name="QFButton2.Caption" xml:space="preserve">
     <value>Copia Contatto</value>
-  </data>
-  <data name="chkDoNotMail.Caption" xml:space="preserve">
-    <value>No Posta</value>
   </data>
   <data name="txtAssistant.Caption" xml:space="preserve">
     <value>Assist:</value>
@@ -207,20 +195,11 @@
   <data name="pklTitle.Caption" xml:space="preserve">
     <value>Titolo:</value>
   </data>
-  <data name="chkDoNotSolicit.Caption" xml:space="preserve">
-    <value>Non sollecitare</value>
-  </data>
   <data name="cboPreferredContact.Caption" xml:space="preserve">
     <value>Contatto Preferito:</value>
   </data>
   <data name="cmdReset.Caption" xml:space="preserve">
     <value>Reimposta</value>
-  </data>
-  <data name="urlWebAddress.Caption" xml:space="preserve">
-    <value>Web URL:</value>
-  </data>
-  <data name="chkDoNotFax.Caption" xml:space="preserve">
-    <value>No Fax</value>
   </data>
   <data name="usrAcctMgr.Caption" xml:space="preserve">
     <value>Respons. Az.:</value>

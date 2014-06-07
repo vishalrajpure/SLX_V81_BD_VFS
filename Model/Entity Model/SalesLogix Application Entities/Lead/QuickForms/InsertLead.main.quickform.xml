@@ -7,7 +7,7 @@
       <ResourceKey>4aee41ba-75ec-4d69-a47b-69a2be5a17d6</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName />
+          <MethodName>quickformload0</MethodName>
           <CSharpCodeSnippet>ClientBindingMgr.UsePageExitWarning = false;
 Sage.SalesLogix.Security.SLXUserService service = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;() as Sage.SalesLogix.Security.SLXUserService;
 Sage.Platform.Application.Services.IUserOptionsService userOption = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Application.Services.IUserOptionsService&gt;();
@@ -61,7 +61,7 @@ lead.LeadEmployee = user;
     }
 }*/
 txtCompany_lbl.ForeColor = System.Drawing.Color.Red;
-txtLegalName_lbl.ForeColor = System.Drawing.Color.Red;
+//txtLegalName_lbl.ForeColor = System.Drawing.Color.Red;
 phnWorkPhone_lbl.ForeColor = System.Drawing.Color.Red;
 nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;	</CSharpCodeSnippet>
         </CSharpSnippetActionItem>
@@ -153,7 +153,7 @@ nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;	</CSharpCodeSnippet>
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnChangeAction>
-        <Required>true</Required>
+        <Required>false</Required>
       </QFTextBox>
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPersonName, Sage.SalesLogix.QuickForms.QFControls">
@@ -388,7 +388,7 @@ nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;	</CSharpCodeSnippet>
                 <CaptionAlignment>left</CaptionAlignment>
                 <StyleScheme />
                 <ButtonType>Icon</ButtonType>
-                <Image>[Localization!Global_Images:Help_16x16]</Image>
+                <Image>[Localization!Global_Images:Get_Map_16x16]</Image>
                 <OnClientClick />
                 <OnClickAction>
                   <ResourceKey>cmdShowMap</ResourceKey>
@@ -642,6 +642,7 @@ else
         <Column>0</Column>
         <Row>18</Row>
         <Enabled>false</Enabled>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>lkpQualifier</ControlId>
@@ -684,6 +685,7 @@ else
         <Column>0</Column>
         <Row>19</Row>
         <Enabled>false</Enabled>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>lkpBranchManager</ControlId>
@@ -1342,6 +1344,7 @@ userOption.SetCommonOption("AutoSearch", "General", chkAutoSearch.Checked.ToStri
         <Column>1</Column>
         <Row>18</Row>
         <Enabled>false</Enabled>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>dtpQualifiedOn</ControlId>
@@ -1387,6 +1390,7 @@ userOption.SetCommonOption("AutoSearch", "General", chkAutoSearch.Checked.ToStri
         <Column>1</Column>
         <Row>19</Row>
         <Enabled>false</Enabled>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>ownOwner</ControlId>
@@ -1516,11 +1520,11 @@ if(lead.Company == null)
 	DialogService.ShowMessage("Enter the Company");
 		return;
 }
-if(lead.LegalName == null)
+/*if(lead.LegalName == null)
 {
 	DialogService.ShowMessage("Enter the LegalName");
 		return;
-}
+}*/
 if(lead.WorkPhone == null)
 {
 	DialogService.ShowMessage("Enter the WorkPhone");
@@ -1667,11 +1671,11 @@ if(lead.Company == null)
 	DialogService.ShowMessage("Enter the Company");
 		return;
 }
-if(lead.LegalName == null)
+/*if(lead.LegalName == null)
 {
 	DialogService.ShowMessage("Enter the LegalName");
 		return;
-}
+}*/
 if(lead.WorkPhone == null)
 {
 	DialogService.ShowMessage("Enter the WorkPhone");

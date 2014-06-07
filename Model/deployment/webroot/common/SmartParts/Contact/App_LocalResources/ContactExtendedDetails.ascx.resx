@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cmdSaveContactExtendedDetails.Caption" xml:space="preserve">
     <value>Save</value>
@@ -224,5 +224,29 @@
   </data>
   <data name="pklLanguage.Caption" xml:space="preserve">
     <value>Language:</value>
+  </data>
+  <data name="chkIsServiceAuthorized.Caption" xml:space="preserve">
+    <value>Authorized Service Contact</value>
+  </data>
+  <data name="chkDoNotSolicit.Caption" xml:space="preserve">
+    <value>Do not Solicit</value>
+  </data>
+  <data name="chkDoNotEmail.Caption" xml:space="preserve">
+    <value>Do not Email</value>
+  </data>
+  <data name="chkDoNotPhone.Caption" xml:space="preserve">
+    <value>Do not Call</value>
+  </data>
+  <data name="chkDoNotMail.Caption" xml:space="preserve">
+    <value>Do not Mail</value>
+  </data>
+  <data name="chkDoNotFax.Caption" xml:space="preserve">
+    <value>Do not Fax</value>
+  </data>
+  <data name="urlWebAddress.ButtonToolTip" xml:space="preserve">
+    <value>WWW</value>
+  </data>
+  <data name="urlWebAddress.Caption" xml:space="preserve">
+    <value>Web URL:</value>
   </data>
 </root>

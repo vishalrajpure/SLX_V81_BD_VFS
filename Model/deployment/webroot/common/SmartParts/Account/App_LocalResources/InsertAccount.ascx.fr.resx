@@ -123,9 +123,6 @@
   <data name="LeadSource.LookupProperties.Description.PropertyHeader" xml:space="preserve">
     <value>Description</value>
   </data>
-  <data name="Address.Caption" xml:space="preserve">
-    <value>Adresse :</value>
-  </data>
   <data name="MainPhone.Caption" xml:space="preserve">
     <value>Téléphone principal :</value>
   </data>
@@ -164,9 +161,6 @@
   </data>
   <data name="LeadSource.ButtonToolTip" xml:space="preserve">
     <value>Rechercher</value>
-  </data>
-  <data name="Address.ButtonToolTip" xml:space="preserve">
-    <value>Modifier</value>
   </data>
   <data name="pklType.Caption" xml:space="preserve">
     <value>Type :</value>

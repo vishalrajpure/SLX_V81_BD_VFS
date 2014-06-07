@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <ModelItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Item Id="922302da-f19f-4130-852b-0d96837b1136">InsertAccount.smartpart.xml</Item>
+  <Item Id="d09a70dc-50c0-467f-abd4-6c250d82a8e6">AddAccountAddress.smartpart.xml</Item>
 </ModelItems>

@@ -326,12 +326,12 @@ protected void quickformload0(object sender, EventArgs e) {
 Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 if (opportunity.Status == "Closed - Won" || opportunity.Status.ToUpper() == "LOST" || opportunity.Status.ToUpper() == "DROPPED")
 {
-   	//grdOppCompetitors.Enabled = false;
+   	grdOppCompetitors.Enabled = false;
     lueAssociateCompetitor.Enabled=false;
 }
 else
 {
-  	//grdOppCompetitors.Enabled = true;
+  	grdOppCompetitors.Enabled = true;
 	lueAssociateCompetitor.Enabled = true;
 }
 
@@ -345,13 +345,13 @@ if (!IsPostBack)
 	    AccManager = Convert.ToString(opportunity.AccountManager.Id);
 	    if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(opportunity.Account.AccountManager.Id) == _UserId.Trim())
 	    {
-	     	//grdOppCompetitors.Enabled = false;
+	     	grdOppCompetitors.Enabled = true;
 			lueAssociateCompetitor.Enabled = true;
 	    }
 	    else
 	    {
-	       	//grdOppCompetitors.Enabled = true;
-			lueAssociateCompetitor.Enabled = true;
+	       	grdOppCompetitors.Enabled = false;
+			lueAssociateCompetitor.Enabled = false;
 	    }
 	}
 }

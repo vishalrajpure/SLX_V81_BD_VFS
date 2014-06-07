@@ -264,7 +264,8 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
                 _user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>(cUser);
                if(_user != null)
 				{
-				   _account.Owner =Sage.SalesLogix.BusinessRules.BusinessRuleHelper.OwnerOnInsert(_user);
+				   //_account.Owner =Sage.SalesLogix.BusinessRules.BusinessRuleHelper.OwnerOnInsert(_user);
+					_account.AccountManager = _user;
 				   _account.Save();
 				}
 				

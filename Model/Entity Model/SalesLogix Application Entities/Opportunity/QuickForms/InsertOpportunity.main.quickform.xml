@@ -142,7 +142,7 @@ if (Request.QueryString["copyOpportunity"] != null &amp;&amp; Request.QueryStrin
       <ResourceKey>5b9bfa99-0519-421c-b44a-ded96fc11dc5</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName>quickformload3</MethodName>
+          <MethodName />
           <CSharpCodeSnippet>Sage.SalesLogix.PickLists.PickList picklist = Sage.SalesLogix.PickLists.PickList.GetPickListItemByCode("kSYST0000346", "Reseller");
 if (picklist != null) {
 	lueReseller.SeedValue = picklist.Text;
@@ -157,6 +157,12 @@ lueAccount_lbl.ForeColor = System.Drawing.Color.Red;
 Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 objOpp.Status = "Active";
 pklStatus.Enabled = false;
+//objOpp.ActualAmount =0.0;
+
+Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+string _UserId = _IUserService.UserId;
+Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser&gt;((object)_UserId);
+objOpp.AccountManager = user;
 
 /*string script_FormatNumber="";
         script_FormatNumber += " function only_required(BusinessPotential,Description) ";
@@ -1193,7 +1199,7 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
           <ResourceKey>cmdSave</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName />
+              <MethodName>cmdSave_ClickAction</MethodName>
               <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 //Sage.Entity.Interfaces.IOpportunity objOpp = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.IOpportunity&gt;();
 	if(objOpp.Description == "")
@@ -1206,7 +1212,11 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
 		DialogService.ShowMessage("Please Select Account");
         return;
 	}
-	
+	if(objOpp.BusinessPotential &lt;= 0)
+{
+	 DialogService.ShowMessage("Please Enter Business Potential...");
+     return;
+}
 	
 	//////////Product Validation//////////////////
 	string text = Request.Form.Get("ctl00$MainContent$OpportunityProducts$OpportunityProductsgrdOppProducts_DataCarrier");
@@ -1282,11 +1292,11 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
 		    Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.ISalesProcesses&gt;();
 		    salesProcess.InitSalesProcess(pluginID, objOpp.Id.ToString());
 
-		    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+		    /*Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
 		    string _UserId = _IUserService.UserId;
 		    Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser&gt;((object)_UserId);
-		    objOpp.AccountManager = user;
-		    
+		    objOpp.AccountManager = user;*/
+		    objOpp.SalesPotential = Convert.ToDouble(objOpp.BusinessPotential);
 		   /* Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
 		    System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
 		    System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + _UserId + "' and name ='INSERTSECCODEID'", conObj);
@@ -1336,7 +1346,7 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
           <ResourceKey>cmdSaveNew</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName />
+              <MethodName>cmdSaveNew_ClickAction</MethodName>
               <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity objOpp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 //Sage.Entity.Interfaces.IOpportunity objOpp = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.IOpportunity&gt;();
 if(objOpp.Description == "")
@@ -1349,7 +1359,11 @@ if(objOpp.Description == "")
 		DialogService.ShowMessage("Please Select Account");
         return;
 	}
-	
+	if(objOpp.BusinessPotential &lt;= 0)
+{
+	 DialogService.ShowMessage("Please Enter Business Potential...");
+     return;
+}
 	//////////Product Validation//////////////////
 	
 	string text = Request.Form.Get("ctl00$MainContent$OpportunityProducts$OpportunityProductsgrdOppProducts_DataCarrier");
@@ -1423,11 +1437,11 @@ if(objOpp.Description == "")
 		    Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.ISalesProcesses&gt;();
 		    salesProcess.InitSalesProcess(pluginID, objOpp.Id.ToString());
 
-		    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+		   /* Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
 		    string _UserId = _IUserService.UserId;
 		    Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser&gt;((object)_UserId);
-		    objOpp.AccountManager = user;
-		    
+		    objOpp.AccountManager = user;*/
+		    objOpp.SalesPotential = Convert.ToDouble(objOpp.BusinessPotential);
 		   /* Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
 		    System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
 		    System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + _UserId + "' and name ='INSERTSECCODEID'", conObj);

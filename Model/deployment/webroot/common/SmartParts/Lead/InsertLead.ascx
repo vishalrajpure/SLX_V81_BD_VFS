@@ -40,7 +40,7 @@
    <asp:Label ID="txtLegalName_lbl" AssociatedControlID="txtLegalName" runat="server" Text="<%$ resources: txtLegalName.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtLegalName" Required="true"  dojoType="Sage.UI.Controls.TextBox"  />
+<asp:TextBox runat="server" ID="txtLegalName"  dojoType="Sage.UI.Controls.TextBox"  />
   </div>
 
       </td>
@@ -130,7 +130,7 @@ Required="true" AutoPostBack="true"  />
  Text="<%$ resources: cmdAddress.Caption %>"  />
  
    <asp:ImageButton runat="server" ID="cmdShowMap"
- ToolTip="<%$ resources: cmdShowMap.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16"  />
+ ToolTip="<%$ resources: cmdShowMap.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Get_Map_16x16"  />
  
 </asp:Panel>
       </td>
@@ -258,19 +258,19 @@ LabelPlacement="right" AutoPostBack="true"  />
 <tr>
             <td  >
  <div class=" lbl alignleft">
-   <asp:Label ID="lkpQualifier_lbl" AssociatedControlID="lkpQualifier" runat="server" Text="<%$ resources: lkpQualifier.Caption %>" ></asp:Label>
+   <asp:Label ID="lkpQualifier_lbl" AssociatedControlID="lkpQualifier" runat="server" Text="<%$ resources: lkpQualifier.Caption %>" Visible="false" ></asp:Label>
  </div>   
    <div  class="textcontrol"  > 
-    <SalesLogix:SlxUserControl runat="server" ID="lkpQualifier" Enabled="false"  />
+    <SalesLogix:SlxUserControl runat="server" ID="lkpQualifier" Enabled="false" Visible="false"  />
   </div>
 
       </td>
                 <td  >
  <div class=" lbl alignleft">
-   <asp:Label ID="dtpQualifiedOn_lbl" AssociatedControlID="dtpQualifiedOn" runat="server" Text="<%$ resources: dtpQualifiedOn.Caption %>" ></asp:Label>
+   <asp:Label ID="dtpQualifiedOn_lbl" AssociatedControlID="dtpQualifiedOn" runat="server" Text="<%$ resources: dtpQualifiedOn.Caption %>" Visible="false" ></asp:Label>
  </div>
    <div  class="textcontrol datepicker"  >
-    <SalesLogix:DateTimePicker runat="server" ID="dtpQualifiedOn" Enabled="false" DisplayTime="false" />
+    <SalesLogix:DateTimePicker runat="server" ID="dtpQualifiedOn" Enabled="false" DisplayTime="false" Visible="false" />
   </div>
 
       </td>
@@ -278,19 +278,19 @@ LabelPlacement="right" AutoPostBack="true"  />
 <tr>
             <td  >
  <div class=" lbl alignleft">
-   <asp:Label ID="lkpBranchManager_lbl" AssociatedControlID="lkpBranchManager" runat="server" Text="<%$ resources: lkpBranchManager.Caption %>" ></asp:Label>
+   <asp:Label ID="lkpBranchManager_lbl" AssociatedControlID="lkpBranchManager" runat="server" Text="<%$ resources: lkpBranchManager.Caption %>" Visible="false" ></asp:Label>
  </div>   
    <div  class="textcontrol"  > 
-    <SalesLogix:SlxUserControl runat="server" ID="lkpBranchManager" Enabled="false"  />
+    <SalesLogix:SlxUserControl runat="server" ID="lkpBranchManager" Enabled="false" Visible="false"  />
   </div>
 
       </td>
                 <td  >
  <div class=" lbl alignleft">
-   <asp:Label ID="ownOwner_lbl" AssociatedControlID="ownOwner" runat="server" Text="<%$ resources: ownOwner.Caption %>" ></asp:Label>
+   <asp:Label ID="ownOwner_lbl" AssociatedControlID="ownOwner" runat="server" Text="<%$ resources: ownOwner.Caption %>" Visible="false" ></asp:Label>
  </div>   
    <div  class="textcontrol"  > 
-<SalesLogix:OwnerControl runat="server" ID="ownOwner" Enabled="false" ButtonToolTip="<%$ resources: ownOwner.ButtonToolTip %>" Required="true" Types="$qfcontrol.Types"  />
+<SalesLogix:OwnerControl runat="server" ID="ownOwner" Enabled="false" ButtonToolTip="<%$ resources: ownOwner.ButtonToolTip %>" Required="true" Types="$qfcontrol.Types" Visible="false"  />
   </div>
 
       </td>
@@ -589,11 +589,11 @@ if(lead.Company == null)
 	DialogService.ShowMessage("Enter the Company");
 		return;
 }
-if(lead.LegalName == null)
+/*if(lead.LegalName == null)
 {
 	DialogService.ShowMessage("Enter the LegalName");
 		return;
-}
+}*/
 if(lead.WorkPhone == null)
 {
 	DialogService.ShowMessage("Enter the WorkPhone");
@@ -712,11 +712,11 @@ if(lead.Company == null)
 	DialogService.ShowMessage("Enter the Company");
 		return;
 }
-if(lead.LegalName == null)
+/*if(lead.LegalName == null)
 {
 	DialogService.ShowMessage("Enter the LegalName");
 		return;
-}
+}*/
 if(lead.WorkPhone == null)
 {
 	DialogService.ShowMessage("Enter the WorkPhone");
@@ -895,7 +895,7 @@ lead.LeadEmployee = user;
     }
 }*/
 txtCompany_lbl.ForeColor = System.Drawing.Color.Red;
-txtLegalName_lbl.ForeColor = System.Drawing.Color.Red;
+//txtLegalName_lbl.ForeColor = System.Drawing.Color.Red;
 phnWorkPhone_lbl.ForeColor = System.Drawing.Color.Red;
 nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;	
 

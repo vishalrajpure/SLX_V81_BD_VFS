@@ -55,7 +55,7 @@ LabelPlacement="right" AutoPostBack="true"  />
 >
    <asp:Button runat="server" ID="cmdOK"
  Text="<%$ resources: cmdOK.Caption %>" CssClass="slxbutton"  />
-   
+ 
    <asp:Button runat="server" ID="cmdCancel"
  Text="<%$ resources: cmdCancel.Caption %>" CssClass="slxbutton"  />
  
@@ -97,27 +97,16 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding chkbxOverrideSalesPotentialCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("OverrideSalesPotential", chkbxOverrideSalesPotential, "Checked");
         BindingSource.Bindings.Add(chkbxOverrideSalesPotentialCheckedBinding);
                     // curSalesPotential.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding curSalesPotentialTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("SalesPotential", curSalesPotential, "Text");
+        Sage.Platform.WebPortal.Binding.WebEntityBinding curSalesPotentialTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BusinessPotential", curSalesPotential, "Text");
         BindingSource.Bindings.Add(curSalesPotentialTextBinding);
              
    
 }
-                                         
-      
-      
-      
-          
+                                          
 protected void chkbxOverrideSalesPotential_ChangeAction(object sender, EventArgs e) {
 Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;
 Object[] methodArgs = new Object[] { FormAdapter, e };
 lib.Execute("EditSalesPotential.chkbxOverrideSalesPotential_OnChange", methodArgs);
-  Sage.Platform.WebPortal.Services.IPanelRefreshService refresher = PageWorkItem.Services.Get<Sage.Platform.WebPortal.Services.IPanelRefreshService>();
-    if (refresher != null) {
-      refresher.RefreshAll();
-    }
-    else {  
-      Response.Redirect(Request.Url.ToString());
-    }
 
 }
 protected void cmdOK_ClickAction(object sender, EventArgs e) {
@@ -129,13 +118,6 @@ if(DialogService.DialogParameters.ContainsKey("ExchangeRate"))
 	curSalesPotential.ExchangeRate = exchangeRate;
 }
 opp.Save();
-  Sage.Platform.WebPortal.Services.IPanelRefreshService refresher = PageWorkItem.Services.Get<Sage.Platform.WebPortal.Services.IPanelRefreshService>();
-    if (refresher != null) {
-      refresher.RefreshAll();
-    }
-    else {  
-      Response.Redirect(Request.Url.ToString());
-    }
 
 }
 
@@ -143,13 +125,7 @@ protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
  chkbxOverrideSalesPotential.CheckedChanged += new EventHandler(chkbxOverrideSalesPotential_ChangeAction);
-if (RoleSecurityService != null)
-{
-if (RoleSecurityService.HasAccess("ENTITIES/OPPORTUNITY/EDIT"))
-{
 cmdOK.Click += new EventHandler(cmdOK_ClickAction);
-}
-}
 cmdOK.Click += new EventHandler(DialogService.CloseEventHappened);
 cmdOK.Click += new EventHandler(Refresh);
 cmdCancel.Click += new EventHandler(DialogService.CloseEventHappened);
@@ -177,16 +153,10 @@ if (DialogService.DialogParameters.Count > 0 && (DialogService.DialogParameters.
 }
 protected override void OnFormBound()
 {
-ClientBindingMgr.RegisterSaveButton(cmdOK);
-
 ScriptManager.RegisterStartupScript(Page, GetType(), "cleanupcontainer", "jQuery(\".controlslist > div:empty\").remove();", true);
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
 {
 btnEditForm.Visible = false;
-}
-if (!RoleSecurityService.HasAccess("ENTITIES/OPPORTUNITY/EDIT"))
-{
-cmdOK.Visible = false;
 }
 ClientBindingMgr.RegisterDialogCancelButton(cmdCancel);
 quickformload0(this, EventArgs.Empty);

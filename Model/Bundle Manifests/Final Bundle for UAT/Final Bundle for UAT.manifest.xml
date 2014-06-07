@@ -17975,58 +17975,6 @@
                     </bundleItem>
                     <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
                       <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                        <ItemId>8a3fa537-9c10-412d-b280-9fb08338392f</ItemId>
-                        <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml</Url>
-                        <BundleItemType>ModelItem</BundleItemType>
-                        <Caption>Insert New Account</Caption>
-                        <InstallOrderOptions>
-                          <BeforeAll>false</BeforeAll>
-                          <InstallAfter>01c9e8ab-a6f7-481e-a3b6-741e8da4c508</InstallAfter>
-                        </InstallOrderOptions>
-                      </ModelItemBundleItem>
-                      <children>
-                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
-                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                            <ItemId>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\Pages</ItemId>
-                            <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\Pages</Url>
-                            <BundleItemType>Container</BundleItemType>
-                            <Caption>Pages</Caption>
-                          </ContainerBundleItem>
-                        </bundleItem>
-                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
-                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                            <ItemId>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\SmartParts</ItemId>
-                            <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\SmartParts</Url>
-                            <BundleItemType>Container</BundleItemType>
-                            <Caption>SmartParts</Caption>
-                          </ContainerBundleItem>
-                          <children>
-                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
-                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                                <ItemId>922302da-f19f-4130-852b-0d96837b1136</ItemId>
-                                <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\SmartParts\InsertAccount.smartpart.xml</Url>
-                                <BundleItemType>ModelItem</BundleItemType>
-                                <Caption>InsertAccount</Caption>
-                                <InstallOrderOptions>
-                                  <BeforeAll>true</BeforeAll>
-                                  <InstallAfter>00000000-0000-0000-0000-000000000000</InstallAfter>
-                                </InstallOrderOptions>
-                              </ModelItemBundleItem>
-                            </bundleItem>
-                          </children>
-                        </bundleItem>
-                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
-                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                            <ItemId>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\Modules</ItemId>
-                            <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\Modules</Url>
-                            <BundleItemType>Container</BundleItemType>
-                            <Caption>Modules</Caption>
-                          </ContainerBundleItem>
-                        </bundleItem>
-                      </children>
-                    </bundleItem>
-                    <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
-                      <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                         <ItemId>518351c3-c2a1-4e88-8f1c-e26cfbf31ae8</ItemId>
                         <Url>\Portal\SlxClient\ChildPages\Account\Account.page.xml</Url>
                         <BundleItemType>ModelItem</BundleItemType>
@@ -18829,6 +18777,70 @@
                           <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                             <ItemId>\Portal\SlxClient\ChildPages\InsertOpportunity\InsertOpportunity.page.xml\Modules</ItemId>
                             <Url>\Portal\SlxClient\ChildPages\InsertOpportunity\InsertOpportunity.page.xml\Modules</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Modules</Caption>
+                          </ContainerBundleItem>
+                        </bundleItem>
+                      </children>
+                    </bundleItem>
+                    <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                      <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <ItemId>8a3fa537-9c10-412d-b280-9fb08338392f</ItemId>
+                        <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml</Url>
+                        <BundleItemType>ModelItem</BundleItemType>
+                        <Caption>Insert New Account</Caption>
+                        <InstallOrderOptions>
+                          <BeforeAll>false</BeforeAll>
+                          <InstallAfter>01c9e8ab-a6f7-481e-a3b6-741e8da4c508</InstallAfter>
+                        </InstallOrderOptions>
+                      </ModelItemBundleItem>
+                      <children>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\Pages</ItemId>
+                            <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\Pages</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Pages</Caption>
+                          </ContainerBundleItem>
+                        </bundleItem>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\SmartParts</ItemId>
+                            <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\SmartParts</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>SmartParts</Caption>
+                          </ContainerBundleItem>
+                          <children>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>922302da-f19f-4130-852b-0d96837b1136</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\SmartParts\InsertAccount.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>InsertAccount</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>true</BeforeAll>
+                                  <InstallAfter>00000000-0000-0000-0000-000000000000</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>d09a70dc-50c0-467f-abd4-6c250d82a8e6</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\SmartParts\AddAccountAddress.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>AddAccountAddress (Custom)</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>922302da-f19f-4130-852b-0d96837b1136</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\Modules</ItemId>
+                            <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\Modules</Url>
                             <BundleItemType>Container</BundleItemType>
                             <Caption>Modules</Caption>
                           </ContainerBundleItem>

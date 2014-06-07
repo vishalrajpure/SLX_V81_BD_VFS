@@ -90,7 +90,7 @@ if (DialogService.DialogParameters.Count &gt; 0 &amp;&amp; (DialogService.Dialog
           <DialogActionResult>NoResult</DialogActionResult>
           <PerformsUpdate>False</PerformsUpdate>
           <AppliedSecurity />
-          <RefreshData>True</RefreshData>
+          <RefreshData>False</RefreshData>
         </OnChangeAction>
       </QFCheckBox>
     </Control>
@@ -104,7 +104,7 @@ if (DialogService.DialogParameters.Count &gt; 0 &amp;&amp; (DialogService.Dialog
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>SalesPotential</DataItemName>
+            <DataItemName>BusinessPotential</DataItemName>
             <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
@@ -169,7 +169,7 @@ if (DialogService.DialogParameters.Count &gt; 0 &amp;&amp; (DialogService.Dialog
                   <ResourceKey>cmdOK</ResourceKey>
                   <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
                     <CSharpSnippetActionItem>
-                      <MethodName>cmdOK_ClickAction</MethodName>
+                      <MethodName />
                       <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;        
 
 if(DialogService.DialogParameters.ContainsKey("ExchangeRate"))
@@ -180,12 +180,12 @@ if(DialogService.DialogParameters.ContainsKey("ExchangeRate"))
 opp.Save();</CSharpCodeSnippet>
                     </CSharpSnippetActionItem>
                   </Action>
-                  <IsDialogCloseAction>True</IsDialogCloseAction>
+                  <IsDialogCloseAction>False</IsDialogCloseAction>
                   <RunOnEveryRePaint>False</RunOnEveryRePaint>
                   <DialogActionResult>DialogOK</DialogActionResult>
-                  <PerformsUpdate>True</PerformsUpdate>
-                  <AppliedSecurity>ENTITIES/OPPORTUNITY/EDIT</AppliedSecurity>
-                  <RefreshData>True</RefreshData>
+                  <PerformsUpdate>False</PerformsUpdate>
+                  <AppliedSecurity />
+                  <RefreshData>False</RefreshData>
                 </OnClickAction>
               </QFButton>
             </Control>

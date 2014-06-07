@@ -46,7 +46,7 @@
    <asp:Label ID="txtLegalName_lbl" AssociatedControlID="txtLegalName" runat="server" Text="<%$ resources: txtLegalName.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtLegalName" Required="true"  dojoType="Sage.UI.Controls.TextBox" MaxLength="64"  />
+<asp:TextBox runat="server" ID="txtLegalName"  dojoType="Sage.UI.Controls.TextBox" MaxLength="64"  />
   </div>
 
       </td>
@@ -161,7 +161,7 @@ Required="true"  />
  Text="<%$ resources: cmdAddress.Caption %>"  />
  
    <asp:ImageButton runat="server" ID="cmdShowMap"
- ToolTip="<%$ resources: cmdShowMap.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16"  />
+ ToolTip="<%$ resources: cmdShowMap.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Get_Map_16x16"  />
  
 </asp:Panel>
       </td>
@@ -581,11 +581,11 @@ if(lead.Company == null)
 	DialogService.ShowMessage("Enter the Company");
 		return;
 }
-if(lead.LegalName == null)
+/*if(lead.LegalName == null)
 {
 	DialogService.ShowMessage("Enter the LegalName");
 		return;
-}
+}*/
 if(lead.WorkPhone == null)
 {
 	DialogService.ShowMessage("Enter the WorkPhone");
@@ -720,11 +720,11 @@ if(lead.Company == null)
 	DialogService.ShowMessage("Enter the Company");
 		return;
 }
-if(lead.LegalName == null)
+/*if(lead.LegalName == null)
 {
 	DialogService.ShowMessage("Enter the LegalName");
 		return;
-}
+}*/
 if(lead.WorkPhone == null)
 {
 	DialogService.ShowMessage("Enter the WorkPhone");
@@ -745,6 +745,13 @@ System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection
 				
 switch(lead.Status) 
 { 
+	case "New" :
+		if(lead.QualifiedON != null)
+		{
+			DialogService.ShowMessage("Please Choose correct Status...");
+			return;
+		}
+		break;
 	case "Dropped": //// Set Owner /// 
 		Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000002"); 
 		lead.Owner = objowner; 
@@ -808,7 +815,7 @@ switch(lead.Status)
 				} 
 		}
 		break; 
-	/*case "Converted": 
+	case "Converted": 
 		if(lead.BranchManager == null) 
 		{ 
 			DialogService.ShowMessage("You are not authorize to convert lead...");
@@ -817,17 +824,14 @@ switch(lead.Status)
 		} 
 		else 
 		{ 
-			if(cmdConvertLead.Visible ==true) 
-			{
-			}
-			else
+			if(cmdConvertLead.Visible == false) 
 			{
 				DialogService.ShowMessage("Please Convert lead via Convert Qualified Lead Button...");
 				return;
 			}
 			 
 		} 
-		break; */
+		break; 
 }
 
 lead.Save(); 
@@ -951,7 +955,7 @@ if (lead != null)
 	
 }
 txtCompany_lbl.ForeColor = System.Drawing.Color.Red;
-txtLegalName_lbl.ForeColor = System.Drawing.Color.Red;
+//txtLegalName_lbl.ForeColor = System.Drawing.Color.Red;
 phnWorkPhone_lbl.ForeColor = System.Drawing.Color.Red;
 nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;
 

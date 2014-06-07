@@ -147,9 +147,6 @@
   <data name="QFHorizontalSeparator.Caption" xml:space="preserve">
     <value>Informazione Azienda</value>
   </data>
-  <data name="Address.ButtonToolTip" xml:space="preserve">
-    <value>Modifica</value>
-  </data>
   <data name="LeadSource.LUPF.Status" xml:space="preserve">
     <value>Attivo</value>
   </data>
@@ -173,9 +170,6 @@
   </data>
   <data name="LeadSource.Caption" xml:space="preserve">
     <value>Fonte Nominativo:</value>
-  </data>
-  <data name="Address.Caption" xml:space="preserve">
-    <value>Indirizzo:</value>
   </data>
   <data name="AccountManager.ButtonToolTip" xml:space="preserve">
     <value>Trova</value>

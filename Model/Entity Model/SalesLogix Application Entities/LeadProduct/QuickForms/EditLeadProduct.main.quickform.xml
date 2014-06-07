@@ -15,6 +15,7 @@
       <QFTextBox>
         <Column>0</Column>
         <Row>0</Row>
+        <IsReadOnly>true</IsReadOnly>
         <HotKey>0</HotKey>
         <TabIndex>1</TabIndex>
         <ControlId>txtName</ControlId>
@@ -52,6 +53,7 @@
       <QFTextBox>
         <Column>0</Column>
         <Row>1</Row>
+        <IsReadOnly>true</IsReadOnly>
         <HotKey>0</HotKey>
         <TabIndex>2</TabIndex>
         <ControlId>txtfamily</ControlId>
@@ -182,7 +184,7 @@
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>1835a47b44408da312087385c35897</ControlId>
+        <ControlId>835a47b44408da312087385c35897</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />

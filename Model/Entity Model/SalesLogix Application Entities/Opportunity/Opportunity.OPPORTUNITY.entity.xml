@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="3172551b-f476-45ea-98de-2bb04ddba687" lastModifiedUtc="2014-05-14T07:03:01.0409917Z" manageSchema="true" tableName="OPPORTUNITY" name="Opportunity" displayPropertyId="bad2e420-4609-4246-bb29-babd7cfcf84a" isExtension="false" cacheUsage="ReadWrite" audited="true" smallImage="[Localization!Global_Images:Opportunity_List_16x16]" largeImage="[Localization!Global_Images:Opportunity_List_24x24]" onBeforeInsertMethodId="be2a12dc-ab82-40bb-9a35-84e480b92773" onAfterInsertMethodId="643dff39-8d8a-45b0-9d6e-5bfe6186dd4f" onBeforeUpdateMethodId="24cee8e1-2af4-455c-b37f-ab151407e791" onAfterUpdateMethodId="48988c22-4a24-4338-a20d-1b0780d7a9c4" onBeforeDeleteMethodId="ba124c54-dee7-4a02-bd11-862e19a652a0" onAfterDeleteMethodId="af13631b-5d6b-476b-a00b-5845cfcd44df" onCreateId="8badccb5-2911-406d-bfe2-a46ac96091e7">
+<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="3172551b-f476-45ea-98de-2bb04ddba687" lastModifiedUtc="2014-06-07T15:14:33.2691488Z" manageSchema="true" tableName="OPPORTUNITY" name="Opportunity" displayPropertyId="bad2e420-4609-4246-bb29-babd7cfcf84a" isExtension="false" cacheUsage="ReadWrite" audited="true" smallImage="[Localization!Global_Images:Opportunity_List_16x16]" largeImage="[Localization!Global_Images:Opportunity_List_24x24]" onBeforeInsertMethodId="be2a12dc-ab82-40bb-9a35-84e480b92773" onAfterInsertMethodId="643dff39-8d8a-45b0-9d6e-5bfe6186dd4f" onBeforeUpdateMethodId="24cee8e1-2af4-455c-b37f-ab151407e791" onAfterUpdateMethodId="48988c22-4a24-4338-a20d-1b0780d7a9c4" onBeforeDeleteMethodId="ba124c54-dee7-4a02-bd11-862e19a652a0" onAfterDeleteMethodId="af13631b-5d6b-476b-a00b-5845cfcd44df" onCreateId="8badccb5-2911-406d-bfe2-a46ac96091e7">
   <extendedMetaData />
   <ExtendedPropertiesCollection>
     <extendee type="Sage.Platform.Orm.Entities.OrmEntity">
@@ -43,7 +43,7 @@
         <StandardIdDataType />
       </SystemDataType>
     </property>
-    <property xsi:type="OrmFieldProperty" id="74077371-bc08-4053-a939-9f202f76df98" lastModifiedUtc="0001-01-01T00:00:00" name="ActualAmount" audited="false" columnName="ACTUALAMOUNT" maxLength="0" precision="17" scale="4" ordinal="11" isReadOnly="false">
+    <property xsi:type="OrmFieldProperty" id="74077371-bc08-4053-a939-9f202f76df98" lastModifiedUtc="2014-06-07T15:14:33.2681488Z" name="ActualAmount" audited="false" columnName="ACTUALAMOUNT" maxLength="0" precision="17" scale="4" ordinal="11" isReadOnly="false">
       <ExtendedPropertiesCollection>
         <extendee type="Sage.Platform.Orm.Entities.OrmFieldProperty">
           <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">

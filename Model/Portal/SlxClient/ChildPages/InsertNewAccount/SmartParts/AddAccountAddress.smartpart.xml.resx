@@ -117,79 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Owner.ButtonToolTip" xml:space="preserve">
-    <value>Suchen</value>
+  <data name="Title" xml:space="preserve">
+    <value>AddAccountAddress</value>
   </data>
-  <data name="LeadSource.LookupProperties.Description.PropertyHeader" xml:space="preserve">
-    <value>Beschreibung</value>
-  </data>
-  <data name="MainPhone.Caption" xml:space="preserve">
-    <value>Haupttel.nr.:</value>
-  </data>
-  <data name="AccountManager.Caption" xml:space="preserve">
-    <value>Acct. Manager:</value>
-  </data>
-  <data name="LeadSource.LUPF.Status" xml:space="preserve">
-    <value>Aktiv</value>
-  </data>
-  <data name="LeadSource.LookupProperties.AbbrevDescription.PropertyHeader" xml:space="preserve">
-    <value>Quellcode</value>
-  </data>
-  <data name="QFHorizontalSeparator.Caption" xml:space="preserve">
-    <value>Firmeninformationen</value>
-  </data>
-  <data name="BusinessDescription.Caption" xml:space="preserve">
-    <value>Unt.beschr.:</value>
-  </data>
-  <data name="btnSave.ToolTip" xml:space="preserve">
-    <value>Speichern</value>
-  </data>
-  <data name="LeadSource.LookupProperties.Type.PropertyHeader" xml:space="preserve">
-    <value>Typ</value>
-  </data>
-  <data name="btnSave.Caption" xml:space="preserve">
-    <value>Speichern</value>
-  </data>
-  <data name="Fax.Caption" xml:space="preserve">
-    <value>Fax:</value>
-  </data>
-  <data name="AccountName.Caption" xml:space="preserve">
-    <value>Firma:</value>
-  </data>
-  <data name="LeadSource.LookupProperties.SourceDate.PropertyHeader" xml:space="preserve">
-    <value>Datum der Interessentenquelle</value>
-  </data>
-  <data name="LeadSource.ButtonToolTip" xml:space="preserve">
-    <value>Suchen</value>
-  </data>
-  <data name="pklType.Caption" xml:space="preserve">
-    <value>Typ:</value>
-  </data>
-  <data name="LeadSource.LookupProperties.Status.PropertyHeader" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="pklSubType.Caption" xml:space="preserve">
-    <value>Untertyp:</value>
-  </data>
-  <data name="AccountManager.ButtonToolTip" xml:space="preserve">
-    <value>Suchen</value>
-  </data>
-  <data name="Address.AddressToolTip" xml:space="preserve">
-    <value>MapQuest</value>
-  </data>
-  <data name="Owner.Caption" xml:space="preserve">
-    <value>Zugriffsber.:</value>
-  </data>
-  <data name="Industry.Caption" xml:space="preserve">
-    <value>Branche:</value>
-  </data>
-  <data name="WebAddress.Caption" xml:space="preserve">
-    <value>Web:</value>
-  </data>
-  <data name="LeadSource.Caption" xml:space="preserve">
-    <value>Interessentenquelle:</value>
-  </data>
-  <data name="Status.Caption" xml:space="preserve">
-    <value>Status:</value>
+  <data name="Description" xml:space="preserve">
+    <value>AddAccountAddress</value>
   </data>
 </root>

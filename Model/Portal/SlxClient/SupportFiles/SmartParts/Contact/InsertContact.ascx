@@ -53,18 +53,18 @@
             alert("AccountName Length has more than 128 Characters");
             return false;
         }
-        else if (document.getElementById('MainContent_InsertContact_txtlegalname').value == '') {
-            alert("Please Enter the LegalName");
-            return false;
-        }
-        else if (document.getElementById('MainContent_InsertContact_txtlegalname').value.length > 128) {
-            alert("LegalName Length has more than 128 Characters");
-            return false;
-        }
+        //else if (document.getElementById('MainContent_InsertContact_txtlegalname').value == '') {
+            //alert("Please Enter the LegalName");
+            //return false;
+        //}
+        //else if (document.getElementById('MainContent_InsertContact_txtlegalname').value.length > 128) {
+            //alert("LegalName Length has more than 128 Characters");
+            //return false;
+        //}
         //else if (document.getElementById('MainContent_InsertContact_lkpmktsegment_text').value.length > 10) {
           //  alert("Mkt Segment Length has more than 10 Characters");
             //return false;
-        }
+        //}
 
         else if (document.getElementById('MainContent_InsertContact_phnContactWorkPhone_PhoneTextBox').value == '') {
             alert("Please Enter the WorkPhone");
@@ -186,7 +186,7 @@
     <tr>
         <td>
             <div class="lbl">
-                <asp:Label ID="lbllegalname" runat="server" Text="Legal Name:" ForeColor="Red"></asp:Label>
+                <asp:Label ID="lbllegalname" runat="server" Text="Legal Name:"></asp:Label>
             </div>
             <div class="textcontrol">
                <asp:TextBox ID="txtlegalname" runat="server" OnTextChanged="txtlegalname_TextChanged" AutoPostBack="true"></asp:TextBox>
@@ -283,7 +283,7 @@
     <tr>
         <td>
             <asp:LinkButton ID="lnkaddress" Text="Address:" runat="server" OnClick="lnkaddress_Click" Font-Underline="True"></asp:LinkButton>
-			<asp:ImageButton runat="server" ID="cmdShowMap" ToolTip="Show Map" onClick="cmdShowMap_Click" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16"  />
+			<asp:ImageButton runat="server" ID="cmdShowMap" ToolTip="Show Map" onClick="cmdShowMap_Click" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Get_Map_16x16"  />
         </td>
         <td>
             <div class="lbl">
@@ -353,10 +353,10 @@
         </td>
         <td>
             <div class="lbl">
-                <asp:Label ID="pklAccountSubType_lz" AssociatedControlID="pklAccountSubType" runat="server" Text="<%$ resources: pklAccountSubType.Caption %>"></asp:Label>
+                <asp:Label ID="pklAccountSubType_lz" AssociatedControlID="pklAccountSubType" runat="server" Text="<%$ resources: pklAccountSubType.Caption %>" Visible="false"></asp:Label>
             </div>
             <div class="textcontrol">
-                <SalesLogix:PickListControl runat="server" ID="pklAccountSubType" PickListId="kSYST0000382" MustExistInList="false" />
+                <SalesLogix:PickListControl runat="server" ID="pklAccountSubType" PickListId="kSYST0000382" MustExistInList="false"  Visible="false" />
             </div>
         </td>
     </tr>
@@ -374,7 +374,7 @@
 
         <td>
             <div class="lbl">
-                <asp:Label ID="phnContactHomePhone_lz" AssociatedControlID="phnContactHomePhone" runat="server" Text="<%$ resources:phnContactHomePhone.Caption %>" ForeColor="Red"></asp:Label>
+                <asp:Label ID="phnContactHomePhone_lz" AssociatedControlID="phnContactHomePhone" runat="server" Text="<%$ resources:phnContactHomePhone.Caption %>"></asp:Label>
             </div>
             <div class="textcontrol">
                 <SalesLogix:Phone runat="server" ID="phnContactHomePhone" />

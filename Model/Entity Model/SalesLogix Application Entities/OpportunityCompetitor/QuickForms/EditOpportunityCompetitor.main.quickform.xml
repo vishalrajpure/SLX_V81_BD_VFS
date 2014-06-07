@@ -241,7 +241,7 @@
         <DecimalDigits>
           <Strict>false</Strict>
         </DecimalDigits>
-        <FormatType>Number</FormatType>
+        <FormatType>Percent</FormatType>
       </QFSLXNumeric>
     </Control>
     <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">

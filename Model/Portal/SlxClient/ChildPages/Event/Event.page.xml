@@ -2,6 +2,7 @@
 <PortalPage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="a93a1806-8b87-4fe8-bde8-d18561c09425">
   <PageAlias>Event</PageAlias>
   <TemplateUrl>Masters\base.master</TemplateUrl>
+  <InheritTemplate>false</InheritTemplate>
   <InheritsFrom>Sage.Platform.WebPortal.EntityPage, Sage.Platform.WebPortal</InheritsFrom>
   <Properties>
     <Property Name="EntityTypeName" TypeConverter="">Sage.Entity.Interfaces.IEvent,Sage.Entity.Interfaces</Property>

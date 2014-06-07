@@ -153,7 +153,7 @@
             <td>
                 <asp:Button runat="server" ID="btnSave" CssClass="slxbutton" ToolTip="btnSave" Text="Ok" />
                 <asp:Button runat="server" ID="btnCancel" CssClass="slxbutton" ToolTip="btnCancel" Text="Cancel" />
-                <asp:Button runat="server" ID="btngetGL" CssClass="slxbutton" Text="Get Latitude/Logitute" OnClick="btngetGL_Click" />                
+                <asp:Button runat="server" ID="btngetGL" CssClass="slxbutton" Visible="false" Text="Get Latitude/Logitute" OnClick="btngetGL_Click" />                
             
         </tr>
     </table>

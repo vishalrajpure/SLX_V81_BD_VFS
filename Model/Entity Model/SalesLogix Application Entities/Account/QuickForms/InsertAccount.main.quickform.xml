@@ -9,7 +9,54 @@
         <CSharpSnippetActionItem>
           <MethodName>quickformload0</MethodName>
           <CSharpCodeSnippet>     Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
-     pklSubType.PickListName = account.GetSubTypePickListName();</CSharpCodeSnippet>
+     pklSubType.PickListName = account.GetSubTypePickListName();
+	
+	AccountName_lbl.ForeColor = System.Drawing.Color.Red;
+	MainPhone_lbl.ForeColor = System.Drawing.Color.Red;
+	
+	
+	if(!Page.IsPostBack)
+	{
+		
+		Sage.Platform.Security.IUserService userService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+
+		string currentUserId = userService.UserId;
+		Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser&gt;((object)currentUserId);
+		
+
+		 string qry = "select case when userID is null then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
+			"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BDU') end " +
+			"From usersecurity US,VWEMPMASTER emp where emp.CEMPLCODE = US.USERCODE and US.USERID ='" + user.Id +  "'";
+		
+		Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+		System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+		System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+		System.Data.DataTable dt = new System.Data.DataTable();
+		dataAdapterObj.Fill(dt);
+		if(dt.Rows.Count &gt; 0)
+		{
+			Sage.Entity.Interfaces.ILeadSource ls  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.ILeadSource&gt;((object)dt.Rows[0][0].ToString());	
+			account.LeadSource = ls;
+		}
+		else
+		{
+			Sage.Entity.Interfaces.ILeadSource ld = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.ILeadSource&gt;((object)"LDEMOA000003");	
+			account.LeadSource = ld;
+		}
+	}
+	if (Session["Addressid"] != null)
+    {
+        Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IAddress&gt;(Session["Addressid"].ToString());
+        if (objadd != null)
+        {
+            string _add = objadd.Address1 + "," + objadd.Address2 + "," + objadd.Address3 + "\r\n";
+            _add += objadd.City + "," + objadd.State + "," + objadd.Country + "\r\n";
+            _add += objadd.PostalCode + "\r\n";
+            //_add += objadd.Latitude + "\r\n";
+            //_add += objadd.Logitude;
+            txtAccountAddress.Text = _add;
+        }
+    }</CSharpCodeSnippet>
         </CSharpSnippetActionItem>
       </Action>
       <IsDialogCloseAction>False</IsDialogCloseAction>
@@ -66,17 +113,17 @@
         <Required>false</Required>
       </QFTextBox>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXUrl, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXUrl>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
+      <QFTextBox>
         <Column>0</Column>
         <Row>1</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>WebAddress</ControlId>
+        <ControlId>txtLegalName</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>WebAddress</DataItemName>
+            <DataItemName>LegalName</DataItemName>
             <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
@@ -86,8 +133,9 @@
         <ExtendedProperties />
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
+        <MaxLength>128</MaxLength>
         <OnChangeAction>
-          <ResourceKey>WebAddress</ResourceKey>
+          <ResourceKey>txtLegalName</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
             <NoActionActionItem>
               <MethodName />
@@ -101,7 +149,7 @@
           <RefreshData>False</RefreshData>
         </OnChangeAction>
         <Required>false</Required>
-      </QFSLXUrl>
+      </QFTextBox>
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPhone, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXPhone>
@@ -140,133 +188,18 @@
         <Required>false</Required>
       </QFSLXPhone>
     </Control>
-    <Control typeName="Sage.Platform.QuickForms.QFControls.QFHorizontalSeparator, Sage.Platform.QuickForms.QFControls">
-      <QFHorizontalSeparator>
-        <ColumnSpan>3</ColumnSpan>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXUrl, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXUrl>
         <Column>0</Column>
         <Row>3</Row>
-        <HotKey>48</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>QFHorizontalSeparator</ControlId>
-        <DataBindings />
-        <ControlLabelPlacement>none</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme />
-        <DisplayAsTitleBar>true</DisplayAsTitleBar>
-      </QFHorizontalSeparator>
-    </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXAddress, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXAddress>
-        <RowSpan>4</RowSpan>
-        <Column>0</Column>
-        <Row>4</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>Address</ControlId>
+        <ControlId>WebAddress</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.City</DataItemName>
-            <ControlItemName>AddressCity</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.Country</DataItemName>
-            <ControlItemName>AddressCountry</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.County</DataItemName>
-            <ControlItemName>AddressCounty</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.Address1</DataItemName>
-            <ControlItemName>AddressDesc1</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.Address2</DataItemName>
-            <ControlItemName>AddressDesc2</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.Address3</DataItemName>
-            <ControlItemName>AddressDesc3</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.Description</DataItemName>
-            <ControlItemName>AddressDescription</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.FullAddress</DataItemName>
-            <ControlItemName>AddressDisplay</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.IsMailing</DataItemName>
-            <ControlItemName>AddressIsMailing</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.IsPrimary</DataItemName>
-            <ControlItemName>AddressIsPrimary</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.PostalCode</DataItemName>
-            <ControlItemName>AddressPostalCode</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.Salutation</DataItemName>
-            <ControlItemName>AddressSalutation</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.State</DataItemName>
-            <ControlItemName>AddressState</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.PrimaryAddress</DataItemName>
-            <ControlItemName>PrimaryAddress</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Address.AddressType</DataItemName>
-            <ControlItemName>AddressType</ControlItemName>
+            <DataItemName>WebAddress</DataItemName>
+            <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
@@ -275,25 +208,8 @@
         <ExtendedProperties />
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
-        <AddressDescriptionPickListId>kSYST0000014</AddressDescriptionPickListId>
-        <AddressDescriptionPickListName>Address Description (Account)</AddressDescriptionPickListName>
-        <AddressDisplay />
-        <AddressDescription />
-        <PrimaryAddress>false</PrimaryAddress>
-        <AddressIsPrimary>false</AddressIsPrimary>
-        <AddressIsMailing>false</AddressIsMailing>
-        <AddressType />
-        <AddressDesc1 />
-        <AddressDesc2 />
-        <AddressDesc3 />
-        <AddressCity />
-        <AddressState />
-        <AddressPostalCode />
-        <AddressCountry />
-        <AddressCounty />
-        <AddressSalutation />
         <OnChangeAction>
-          <ResourceKey>Address</ResourceKey>
+          <ResourceKey>WebAddress</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
             <NoActionActionItem>
               <MethodName />
@@ -306,13 +222,155 @@
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnChangeAction>
-      </QFSLXAddress>
+        <Required>false</Required>
+      </QFSLXUrl>
     </Control>
     <Control typeName="Sage.Platform.QuickForms.QFControls.QFHorizontalSeparator, Sage.Platform.QuickForms.QFControls">
       <QFHorizontalSeparator>
         <ColumnSpan>3</ColumnSpan>
         <Column>0</Column>
-        <Row>8</Row>
+        <Row>4</Row>
+        <HotKey>48</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>QFHorizontalSeparator</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>none</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <DisplayAsTitleBar>true</DisplayAsTitleBar>
+      </QFHorizontalSeparator>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.QFControls.QFControlsList, Sage.Platform.QuickForms.QFControls">
+      <QFControlsList>
+        <Column>0</Column>
+        <Row>5</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>QFControlsList</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <Caption />
+        <Controls>
+          <ControlsCollection>
+            <Control TypeName="Sage.Platform.QuickForms.Controls.QFButton, Sage.Platform.QuickForms">
+              <QFButton>
+                <Column>0</Column>
+                <Row>0</Row>
+                <HotKey>0</HotKey>
+                <TabIndex>0</TabIndex>
+                <ControlId>cmdAddress</ControlId>
+                <DataBindings />
+                <ControlLabelPlacement>none</ControlLabelPlacement>
+                <ExtendedProperties />
+                <CaptionAlignment>left</CaptionAlignment>
+                <StyleScheme />
+                <ButtonType>Link</ButtonType>
+                <Image />
+                <OnClientClick />
+                <OnClickAction>
+                  <ResourceKey>cmdAddress</ResourceKey>
+                  <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+                    <CSharpSnippetActionItem>
+                      <MethodName>cmdAddress_ClickAction</MethodName>
+                      <CSharpCodeSnippet>if (DialogService != null)
+{
+	//string _idname = lead.Address.Id.ToString() + ",Lead,"+lead.Id.ToString();
+    //Session["LeadAddressid"] = _idname;
+    DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
+    DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAddress);		
+    DialogService.ShowDialog();
+}</CSharpCodeSnippet>
+                    </CSharpSnippetActionItem>
+                  </Action>
+                  <IsDialogCloseAction>False</IsDialogCloseAction>
+                  <RunOnEveryRePaint>False</RunOnEveryRePaint>
+                  <DialogActionResult>NoResult</DialogActionResult>
+                  <PerformsUpdate>False</PerformsUpdate>
+                  <AppliedSecurity />
+                  <RefreshData>False</RefreshData>
+                </OnClickAction>
+              </QFButton>
+            </Control>
+            <Control TypeName="Sage.Platform.QuickForms.Controls.QFButton, Sage.Platform.QuickForms">
+              <QFButton>
+                <Column>0</Column>
+                <Row>0</Row>
+                <HotKey>0</HotKey>
+                <TabIndex>0</TabIndex>
+                <ControlId>cmdShowMap</ControlId>
+                <DataBindings />
+                <ControlLabelPlacement>none</ControlLabelPlacement>
+                <ExtendedProperties />
+                <CaptionAlignment>left</CaptionAlignment>
+                <StyleScheme />
+                <ButtonType>Icon</ButtonType>
+                <Image>[Localization!Global_Images:Get_Map_16x16]</Image>
+                <OnClientClick />
+                <OnClickAction>
+                  <ResourceKey>cmdShowMap</ResourceKey>
+                  <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+                    <CSharpSnippetActionItem>
+                      <MethodName>cmdShowMap_ClickAction</MethodName>
+                      <CSharpCodeSnippet>Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+string url= "http://maps.google.com/maps?q="+ lead.Address.Latitude +"," +lead.Address.Logitude;
+ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open('" + url + "');",true);
+</CSharpCodeSnippet>
+                    </CSharpSnippetActionItem>
+                  </Action>
+                  <IsDialogCloseAction>False</IsDialogCloseAction>
+                  <RunOnEveryRePaint>False</RunOnEveryRePaint>
+                  <DialogActionResult>NoResult</DialogActionResult>
+                  <PerformsUpdate>False</PerformsUpdate>
+                  <AppliedSecurity />
+                  <RefreshData>False</RefreshData>
+                </OnClickAction>
+              </QFButton>
+            </Control>
+          </ControlsCollection>
+        </Controls>
+      </QFControlsList>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
+      <QFTextBox>
+        <RowSpan>4</RowSpan>
+        <Column>0</Column>
+        <Row>6</Row>
+        <Enabled>false</Enabled>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>txtAccountAddress</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <Lines>5</Lines>
+        <OnChangeAction>
+          <ResourceKey>txtAccountAddress</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+      </QFTextBox>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.QFControls.QFHorizontalSeparator, Sage.Platform.QuickForms.QFControls">
+      <QFHorizontalSeparator>
+        <ColumnSpan>3</ColumnSpan>
+        <Column>0</Column>
+        <Row>10</Row>
         <HotKey>48</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>QFHorizontalSeparator2</ControlId>
@@ -327,7 +385,7 @@
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXUser, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXUser>
         <Column>0</Column>
-        <Row>9</Row>
+        <Row>11</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>AccountManager</ControlId>
@@ -368,7 +426,7 @@
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPhone, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXPhone>
         <Column>1</Column>
-        <Row>4</Row>
+        <Row>5</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>Fax</ControlId>
@@ -406,7 +464,8 @@
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXPickList>
         <Column>1</Column>
-        <Row>5</Row>
+        <Row>6</Row>
+        <IsReadOnly>true</IsReadOnly>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>pklType</ControlId>
@@ -453,54 +512,8 @@
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXPickList>
         <Column>1</Column>
-        <Row>6</Row>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>pklSubType</ControlId>
-        <DataBindings>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>SubType</DataItemName>
-            <ControlItemName>PickListValue</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-        </DataBindings>
-        <ControlLabelPlacement>left</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme />
-        <OnChangeAction>
-          <ResourceKey>pklSubType</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-            <NoActionActionItem>
-              <MethodName />
-            </NoActionActionItem>
-          </Action>
-          <IsDialogCloseAction>False</IsDialogCloseAction>
-          <RunOnEveryRePaint>False</RunOnEveryRePaint>
-          <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>False</PerformsUpdate>
-          <AppliedSecurity />
-          <RefreshData>False</RefreshData>
-        </OnChangeAction>
-        <Required>false</Required>
-        <AutoPostBack>false</AutoPostBack>
-        <PickListName />
-        <StorageMode>Text</StorageMode>
-        <NameFormatString />
-        <AllowMultiples>false</AllowMultiples>
-        <AlphaSort>false</AlphaSort>
-        <MustExistInList>false</MustExistInList>
-        <NoneEditable>false</NoneEditable>
-        <PickListId>kSYST0000382</PickListId>
-        <ValueStoredAsText>true</ValueStoredAsText>
-      </QFSLXPickList>
-    </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXPickList>
-        <Column>1</Column>
         <Row>7</Row>
+        <IsReadOnly>true</IsReadOnly>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>Status</ControlId>
@@ -544,10 +557,58 @@
         <ValueStoredAsText>true</ValueStoredAsText>
       </QFSLXPickList>
     </Control>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXPickList>
+        <Column>1</Column>
+        <Row>8</Row>
+        <Visible>false</Visible>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>pklSubType</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>SubType</DataItemName>
+            <ControlItemName>PickListValue</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>pklSubType</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+        <AutoPostBack>false</AutoPostBack>
+        <PickListName />
+        <StorageMode>Text</StorageMode>
+        <NameFormatString />
+        <AllowMultiples>false</AllowMultiples>
+        <AlphaSort>false</AlphaSort>
+        <MustExistInList>false</MustExistInList>
+        <NoneEditable>false</NoneEditable>
+        <PickListId>kSYST0000382</PickListId>
+        <ValueStoredAsText>true</ValueStoredAsText>
+      </QFSLXPickList>
+    </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXOwner, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXOwner>
         <Column>1</Column>
-        <Row>9</Row>
+        <Row>11</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>Owner</ControlId>
@@ -586,7 +647,7 @@
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXPickList>
         <Column>2</Column>
-        <Row>4</Row>
+        <Row>5</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>Industry</ControlId>
@@ -630,11 +691,89 @@
         <ValueStoredAsText>true</ValueStoredAsText>
       </QFSLXPickList>
     </Control>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXLookup>
+        <Column>2</Column>
+        <Row>6</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>lkpmktsegment</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>SegmentmstID</DataItemName>
+            <ControlItemName>LookupResultValue</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>lkpmktsegment</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+        <LookupImage />
+        <LookupDialogWidth xsi:nil="true" />
+        <LookupDialogHeight xsi:nil="true" />
+        <LookupBindingMode>String</LookupBindingMode>
+        <LookupResultValue xsi:type="xsd:string" />
+        <SeedProperty />
+        <SeedValue />
+        <DropDownDisplayProperty />
+        <AllowClearingResult>false</AllowClearingResult>
+        <AppendStringValues>false</AppendStringValues>
+        <OverrideSeedOnSearch>false</OverrideSeedOnSearch>
+        <LookupEntityName>Vwsegmentmst</LookupEntityName>
+        <LookupEntityTypeName>Sage.Entity.Interfaces.IVwsegmentmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
+        <AutoPostBack>false</AutoPostBack>
+        <EnableHyperLinking>false</EnableHyperLinking>
+        <InitializeLookup>false</InitializeLookup>
+        <LookupProperties>
+          <LookupProperty>
+            <PropertyName>Segmentname</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Segmentname</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>Industryid</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Industryid</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+        </LookupProperties>
+        <LookupPreFilters />
+      </QFSLXLookup>
+    </Control>
     <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
       <QFTextBox>
         <RowSpan>2</RowSpan>
         <Column>2</Column>
-        <Row>5</Row>
+        <Row>7</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>BusinessDescription</ControlId>
@@ -672,7 +811,8 @@
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXLookup>
         <Column>2</Column>
-        <Row>9</Row>
+        <Row>11</Row>
+        <Enabled>false</Enabled>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>LeadSource</ControlId>
@@ -826,28 +966,66 @@
         <OnClientClick />
         <OnClickAction>
           <ResourceKey>btnSave</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.BusinessRuleActionItem, Sage.Platform.QuickForms">
-            <BusinessRuleActionItem>
-              <BusinessRule>Save</BusinessRule>
-              <Object>Account</Object>
-              <Parameters />
-              <PassResultsToNextAction>False</PassResultsToNextAction>
-              <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.RedirectActionItem, Sage.Platform.QuickForms">
-                <RedirectActionItem>
-                  <MethodName>btnSave_ClickActionBRC</MethodName>
-                  <RawURL />
-                  <MainViewEntityName>Account</MainViewEntityName>
-                  <UseCurrentIdInLink>true</UseCurrentIdInLink>
-                  <EntityViewMode>Detail</EntityViewMode>
-                </RedirectActionItem>
-              </OnComplete>
-            </BusinessRuleActionItem>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+            <CSharpSnippetActionItem>
+              <MethodName />
+              <CSharpCodeSnippet>Sage.Entity.Interfaces.IAccount account = BindingSource.Current as Sage.Entity.Interfaces.IAccount;
+if(account.AccountName == null)
+{
+	DialogService.ShowMessage("Enter the AccountName...");
+	return;
+}
+if(account.MainPhone == null)
+{
+	DialogService.ShowMessage("Enter the MainPhone...");
+	return;
+}
+string qry = "Select Account From Account where Account = '" + AccountName.Text.Trim() + "'";
+Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+System.Data.DataTable dt = new System.Data.DataTable();
+dataAdapterObj.Fill(dt);
+if (dt.Rows.Count &gt; 0)
+{
+    DialogService.ShowMessage("This Account is already exists");
+    return;
+}			
+qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + txtLegalName.Text.Trim() + "'";
+dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+dt = new System.Data.DataTable();
+dataAdapterObj.Fill(dt);
+if (dt.Rows.Count &gt; 0)
+{
+    DialogService.ShowMessage("This legal Entity is already exists");
+    return;
+}
+
+Sage.Entity.Interfaces.IAddress objadd=null;
+if (Session["Addressid"] != null)
+{
+    objadd = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IAddress&gt;(Session["Addressid"].ToString());           
+    account.Address = objadd;
+	account.Save();
+	objadd.EntityId = account.Id.ToString(); 
+	Session.Remove("Addressid");
+	objadd.Save(); 	
+	Response.Redirect(string.Format("Account.aspx?entityId={0}",account.Id.ToString() ));	
+	//System.Web.HttpContext.Current.Response.Redirect(string.Format("Account.aspx?modeid=Detail"));
+}
+else
+{
+	DialogService.ShowMessage("Enter the Address");
+	return;
+}
+</CSharpCodeSnippet>
+            </CSharpSnippetActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
           <RunOnEveryRePaint>False</RunOnEveryRePaint>
           <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>True</PerformsUpdate>
-          <AppliedSecurity>ENTITIES/ACCOUNT/ADD</AppliedSecurity>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnClickAction>
       </QFButton>
@@ -868,6 +1046,14 @@
     </ColumnStyle>
   </Columns>
   <Rows>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
     <RowStyle>
       <SizeType>Absolute</SizeType>
       <Height>35</Height>

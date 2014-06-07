@@ -223,7 +223,7 @@ LabelPlacement="left"  />
    <asp:Label ID="txtComments_lbl" AssociatedControlID="txtComments" runat="server" Text="<%$ resources: txtComments.Caption %>" ></asp:Label>
  </div>
   <div  class="twocoltextcontrol"   >
-<asp:TextBox runat="server" ID="txtComments" Required="true"  Rows="3" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
+<asp:TextBox runat="server" ID="txtComments"  Rows="3" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
   </div>
 
       </td>
@@ -418,6 +418,11 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);
 protected void cmdSave_ClickAction(object sender, EventArgs e) {
 Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 
+if(opp.BusinessPotential <= 0)
+{
+	 DialogService.ShowMessage("Please Enter Business Potential...");
+     return;
+}
 if (opp.Status == "Closed - Won")
 {
     //pklStatus.PickListValue = opportunity.Status;
@@ -434,6 +439,7 @@ else
 			 return;
          }
 	   }
+	opp.SalesPotential = Convert.ToDouble(opp.SalesPotential);
     opp.Save();
  }   
 

@@ -73,7 +73,7 @@ makeGrid : function(runtimeConfig) {
 	editable: false
 				}
   	          ],
-	 	         storeOptions: {
+		         storeOptions: {
             resourceKind: 'userRoles',
             newItemParentReferenceProperty: 'User',
             include: [],

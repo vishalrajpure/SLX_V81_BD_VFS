@@ -19,7 +19,7 @@
    <asp:Label ID="txtName_lbl" AssociatedControlID="txtName" runat="server" Text="<%$ resources: txtName.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtName"  dojoType="Sage.UI.Controls.TextBox" TabIndex="1"  />
+<asp:TextBox runat="server" ID="txtName" ReadOnly="true"  dojoType="Sage.UI.Controls.TextBox" TabIndex="1"  />
   </div>
 
       </td>
@@ -30,7 +30,7 @@
    <asp:Label ID="txtfamily_lbl" AssociatedControlID="txtfamily" runat="server" Text="<%$ resources: txtfamily.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtfamily"  dojoType="Sage.UI.Controls.TextBox" TabIndex="2"  />
+<asp:TextBox runat="server" ID="txtfamily" ReadOnly="true"  dojoType="Sage.UI.Controls.TextBox" TabIndex="2"  />
   </div>
 
       </td>

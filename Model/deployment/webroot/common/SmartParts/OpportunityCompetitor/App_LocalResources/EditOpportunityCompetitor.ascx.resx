@@ -148,12 +148,12 @@
     <value>Cancel</value>
   </data>
   <data name="chkCurrentMajorCompetitor.Caption" xml:space="preserve">
-    <value>Current Major Competitor</value>
+    <value>Is Major Competitor</value>
   </data>
   <data name="txtCompetitorShareOfWellet.Caption" xml:space="preserve">
-    <value>Competitor Share Of Wellet:</value>
+    <value>Share Of Wellet:</value>
   </data>
   <data name="txtCompetitorRate.Caption" xml:space="preserve">
-    <value>Competitor Rate:</value>
+    <value>Rate:</value>
   </data>
 </root>

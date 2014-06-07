@@ -147,24 +147,6 @@
   <data name="chkIsPrimary.Caption" xml:space="preserve">
     <value>Primary Contact for Acct.</value>
   </data>
-  <data name="chkIsServiceAuthorized.Caption" xml:space="preserve">
-    <value>Authorized Service Contact</value>
-  </data>
-  <data name="chkDoNotSolicit.Caption" xml:space="preserve">
-    <value>Do not Solicit</value>
-  </data>
-  <data name="chkDoNotEmail.Caption" xml:space="preserve">
-    <value>Do not Email</value>
-  </data>
-  <data name="chkDoNotPhone.Caption" xml:space="preserve">
-    <value>Do not Call</value>
-  </data>
-  <data name="chkDoNotMail.Caption" xml:space="preserve">
-    <value>Do not Mail</value>
-  </data>
-  <data name="chkDoNotFax.Caption" xml:space="preserve">
-    <value>Do not Fax</value>
-  </data>
   <data name="cboPreferredContact.Caption" xml:space="preserve">
     <value>Preferred  Contact:</value>
   </data>
@@ -203,9 +185,6 @@
   </data>
   <data name="pklContactStatus.Caption" xml:space="preserve">
     <value>Cont. Status:</value>
-  </data>
-  <data name="urlWebAddress.Caption" xml:space="preserve">
-    <value>Web URL:</value>
   </data>
   <data name="usrAcctMgr.Caption" xml:space="preserve">
     <value>Acct. Mgr:</value>
@@ -269,9 +248,6 @@
   </data>
   <data name="adrContactAddress.ButtonToolTip" xml:space="preserve">
     <value>Edit</value>
-  </data>
-  <data name="urlWebAddress.ButtonToolTip" xml:space="preserve">
-    <value>WWW</value>
   </data>
   <data name="nmeContactName.ButtonToolTip" xml:space="preserve">
     <value>Edit</value>

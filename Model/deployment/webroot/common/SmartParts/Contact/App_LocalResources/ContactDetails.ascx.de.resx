@@ -135,9 +135,6 @@
   <data name="txtAssistant.Caption" xml:space="preserve">
     <value>Assistent:</value>
   </data>
-  <data name="urlWebAddress.ButtonToolTip" xml:space="preserve">
-    <value>WWW</value>
-  </data>
   <data name="ee3027fb-0e00-4c1d-8e7f-c6b48787afb4.DialogTitleOverride" xml:space="preserve">
     <value>Kontakt verschieben</value>
   </data>
@@ -153,17 +150,11 @@
   <data name="phnMobilePhone.Caption" xml:space="preserve">
     <value>Mobil:</value>
   </data>
-  <data name="chkIsServiceAuthorized.Caption" xml:space="preserve">
-    <value>Autorisierter Servicekontakt</value>
-  </data>
   <data name="adrContactAddress.Caption" xml:space="preserve">
     <value>Adresse:</value>
   </data>
   <data name="phnFax.Caption" xml:space="preserve">
     <value>Fax:</value>
-  </data>
-  <data name="chkDoNotPhone.Caption" xml:space="preserve">
-    <value>Keine Anrufe</value>
   </data>
   <data name="cboPreferredContact_item4.Text" xml:space="preserve">
     <value>Brief</value>
@@ -174,17 +165,11 @@
   <data name="cmdReset.ToolTip" xml:space="preserve">
     <value>Zurücksetzen</value>
   </data>
-  <data name="chkDoNotEmail.Caption" xml:space="preserve">
-    <value>Keine E-Mails</value>
-  </data>
   <data name="nmeContactName.ButtonToolTip" xml:space="preserve">
     <value>Bearbeiten</value>
   </data>
   <data name="QFButton2.Caption" xml:space="preserve">
     <value>Kontakt kopieren</value>
-  </data>
-  <data name="chkDoNotMail.Caption" xml:space="preserve">
-    <value>Keine Briefe</value>
   </data>
   <data name="phnHomePhone.Caption" xml:space="preserve">
     <value>Privat:</value>
@@ -216,20 +201,11 @@
   <data name="pklTitle.Caption" xml:space="preserve">
     <value>Titel:</value>
   </data>
-  <data name="chkDoNotSolicit.Caption" xml:space="preserve">
-    <value>Keine Informationen erwünscht</value>
-  </data>
   <data name="cboPreferredContact.Caption" xml:space="preserve">
     <value>Bevorzugter Kontakt:</value>
   </data>
   <data name="cmdReset.Caption" xml:space="preserve">
     <value>Zurücksetzen</value>
-  </data>
-  <data name="urlWebAddress.Caption" xml:space="preserve">
-    <value>Web-URL:</value>
-  </data>
-  <data name="chkDoNotFax.Caption" xml:space="preserve">
-    <value>Keine Faxe</value>
   </data>
   <data name="usrAcctMgr.Caption" xml:space="preserve">
     <value>Acct. Mgr:</value>

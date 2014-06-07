@@ -7,7 +7,7 @@
       <ResourceKey>d1bdcec7-0a0f-429d-a85f-7b67d6024a73</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName />
+          <MethodName>quickformload0</MethodName>
           <CSharpCodeSnippet>lueReseller.SeedValue = GetLocalResourceObject("Reseller_rsc").ToString();
 
 
@@ -1025,7 +1025,7 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnChangeAction>
-        <Required>true</Required>
+        <Required>false</Required>
       </QFTextBox>
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
@@ -1273,9 +1273,14 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
           <ResourceKey>cmdSave</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName>cmdSave_ClickAction</MethodName>
+              <MethodName />
               <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 
+if(opp.BusinessPotential &lt;= 0)
+{
+	 DialogService.ShowMessage("Please Enter Business Potential...");
+     return;
+}
 if (opp.Status == "Closed - Won")
 {
     //pklStatus.PickListValue = opportunity.Status;
@@ -1292,6 +1297,7 @@ else
 			 return;
          }
 	   }
+	opp.SalesPotential = Convert.ToDouble(opp.SalesPotential);
     opp.Save();
  }   </CSharpCodeSnippet>
             </CSharpSnippetActionItem>

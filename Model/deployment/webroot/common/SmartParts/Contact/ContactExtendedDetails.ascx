@@ -249,6 +249,65 @@ MaxLength="32"  />
       </td>
       </tr>
 <tr>
+            <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="urlWebAddress_lbl" AssociatedControlID="urlWebAddress" runat="server" Text="<%$ resources: urlWebAddress.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol"  > 
+    <SalesLogix:URL runat="server" ID="urlWebAddress" ButtonToolTip="<%$ resources: urlWebAddress.ButtonToolTip %>" MaxLength="128" URLTextBoxStyle-ForeColor="#000099" URLTextBoxStyle-Font-Underline="false" />
+  </div>
+
+      </td>
+                <td></td>
+                <td></td>
+      </tr>
+<tr>
+            <td  >
+<div class="slxlabel  alignleft  checkbox ">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="chkIsServiceAuthorized"  Text="<%$ resources: chkIsServiceAuthorized.Caption %>"  CssClass=""
+LabelPlacement="right"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft  checkbox ">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotEmail"  Text="<%$ resources: chkDoNotEmail.Caption %>"  CssClass=""
+LabelPlacement="right" AutoPostBack="true"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft  checkbox ">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotMail"  Text="<%$ resources: chkDoNotMail.Caption %>"  CssClass=""
+LabelPlacement="right"  />
+</div>
+      </td>
+      </tr>
+<tr>
+            <td  >
+<div class="slxlabel  alignleft  checkbox ">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotSolicit"  Text="<%$ resources: chkDoNotSolicit.Caption %>"  CssClass=""
+LabelPlacement="right" AutoPostBack="true"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft  checkbox ">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotPhone"  Text="<%$ resources: chkDoNotPhone.Caption %>"  CssClass=""
+LabelPlacement="right"  />
+</div>
+      </td>
+                <td  >
+<div class="slxlabel  alignleft  checkbox ">
+
+  <SalesLogix:SLXCheckBox runat="server" ID="chkDoNotFax"  Text="<%$ resources: chkDoNotFax.Caption %>"  CssClass=""
+LabelPlacement="right"  />
+</div>
+      </td>
+      </tr>
+<tr>
             <td  colspan="3" >
   <hr />
  
@@ -372,6 +431,43 @@ protected override void OnAddEntityBindings() {
                     // pklLanguage.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding pklLanguageTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("PrimaryLanguage", pklLanguage, "Text");
         BindingSource.Bindings.Add(pklLanguageTextBinding);
+                    // urlWebAddress.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding urlWebAddressTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("WebAddress", urlWebAddress, "Text");
+        BindingSource.Bindings.Add(urlWebAddressTextBinding);
+                    // chkIsServiceAuthorized.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkIsServiceAuthorizedCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("IsServiceAuthorized", chkIsServiceAuthorized, "Checked");
+        BindingSource.Bindings.Add(chkIsServiceAuthorizedCheckedBinding);
+                    // chkDoNotEmail.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotEmailCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("DoNotEmail", chkDoNotEmail, "Checked");
+        BindingSource.Bindings.Add(chkDoNotEmailCheckedBinding);
+                 // chkDoNotEmail.Enabled Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotEmailEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotEmail, "Enabled");
+        chkDoNotEmailEnabledBinding.IgnoreFLSDisabling = true;
+        BindingSource.Bindings.Add(chkDoNotEmailEnabledBinding);
+                    // chkDoNotMail.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotMailCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("DoNotMail", chkDoNotMail, "Checked");
+        BindingSource.Bindings.Add(chkDoNotMailCheckedBinding);
+                 // chkDoNotMail.Enabled Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotMailEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotMail, "Enabled");
+        chkDoNotMailEnabledBinding.IgnoreFLSDisabling = true;
+        BindingSource.Bindings.Add(chkDoNotMailEnabledBinding);
+                    // chkDoNotSolicit.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotSolicitCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("DoNotSolicit", chkDoNotSolicit, "Checked");
+        BindingSource.Bindings.Add(chkDoNotSolicitCheckedBinding);
+                    // chkDoNotPhone.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotPhoneCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("DoNotPhone", chkDoNotPhone, "Checked");
+        BindingSource.Bindings.Add(chkDoNotPhoneCheckedBinding);
+                 // chkDoNotPhone.Enabled Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotPhoneEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotPhone, "Enabled");
+        chkDoNotPhoneEnabledBinding.IgnoreFLSDisabling = true;
+        BindingSource.Bindings.Add(chkDoNotPhoneEnabledBinding);
+                    // chkDoNotFax.Checked Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotFaxCheckedBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("DoNotFax", chkDoNotFax, "Checked");
+        BindingSource.Bindings.Add(chkDoNotFaxCheckedBinding);
+                 // chkDoNotFax.Enabled Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding chkDoNotFaxEnabledBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("!DoNotSolicit", chkDoNotFax, "Enabled");
+        chkDoNotFaxEnabledBinding.IgnoreFLSDisabling = true;
+        BindingSource.Bindings.Add(chkDoNotFaxEnabledBinding);
                        // tmzAddressTimeZone.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding tmzAddressTimeZoneTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.TimeZone", tmzAddressTimeZone, "Text");
         BindingSource.Bindings.Add(tmzAddressTimeZoneTextBinding);
@@ -382,7 +478,21 @@ protected override void OnAddEntityBindings() {
       
       
     }
-                                                                                                                                                                                      
+                                                                                                                                                                                                                                       
+protected void chkDoNotEmail_ChangeAction(object sender, EventArgs e) {
+  Sage.Platform.WebPortal.SmartParts.WebActionEventArgs args = e as Sage.Platform.WebPortal.SmartParts.WebActionEventArgs;
+  if (args != null && !string.IsNullOrEmpty(args.PassThroughObject.ToString()) && DialogService != null) {
+    DialogService.ShowMessage(args.PassThroughObject.ToString());
+  } 
+
+}
+protected void chkDoNotSolicit_ChangeAction(object sender, EventArgs e) {
+  Sage.Platform.WebPortal.SmartParts.WebActionEventArgs args = e as Sage.Platform.WebPortal.SmartParts.WebActionEventArgs;
+  if (args != null && !string.IsNullOrEmpty(args.PassThroughObject.ToString()) && DialogService != null) {
+    DialogService.ShowMessage(args.PassThroughObject.ToString());
+  } 
+
+}
 protected void cmdSaveContactExtendedDetails_ClickAction(object sender, EventArgs e) {
 Sage.Entity.Interfaces.IContact entity = (Sage.Entity.Interfaces.IContact) this.BindingSource.Current;
 if (entity.HasPropagationChanges()) {
@@ -463,7 +573,9 @@ else {
 protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
- if (RoleSecurityService != null)
+ chkDoNotEmail.CheckedChanged += new EventHandler(chkDoNotEmail_ChangeAction);
+chkDoNotSolicit.CheckedChanged += new EventHandler(chkDoNotSolicit_ChangeAction);
+if (RoleSecurityService != null)
 {
 if (RoleSecurityService.HasAccess("ENTITIES/CONTACT/EDIT"))
 {
@@ -612,6 +724,21 @@ public class ContactExtendedDetailsAdapter : Sage.Platform.WebPortal.Adapters.En
     {
         get { return FindControl(ref _phnPager, "phnPager"); }
     }
+    private Sage.Platform.Controls.IUrlControl _urlWebAddress;
+    public  Sage.Platform.Controls.IUrlControl urlWebAddress
+    {
+        get { return FindControl(ref _urlWebAddress, "urlWebAddress"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _chkIsServiceAuthorized;
+    public  Sage.Platform.Controls.ICheckBoxControl chkIsServiceAuthorized
+    {
+        get { return FindControl(ref _chkIsServiceAuthorized, "chkIsServiceAuthorized"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotSolicit;
+    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotSolicit
+    {
+        get { return FindControl(ref _chkDoNotSolicit, "chkDoNotSolicit"); }
+    }
     private Sage.Platform.Controls.ITextBoxControl _tmzAddressTimeZone;
     public  Sage.Platform.Controls.ITextBoxControl tmzAddressTimeZone
     {
@@ -657,6 +784,16 @@ public class ContactExtendedDetailsAdapter : Sage.Platform.WebPortal.Adapters.En
     {
         get { return FindControl(ref _dtpCreateDate, "dtpCreateDate"); }
     }
+    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotEmail;
+    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotEmail
+    {
+        get { return FindControl(ref _chkDoNotEmail, "chkDoNotEmail"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotPhone;
+    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotPhone
+    {
+        get { return FindControl(ref _chkDoNotPhone, "chkDoNotPhone"); }
+    }
     private Sage.Platform.Controls.IUserControl _usrModifyUser;
     public  Sage.Platform.Controls.IUserControl usrModifyUser
     {
@@ -696,6 +833,16 @@ public class ContactExtendedDetailsAdapter : Sage.Platform.WebPortal.Adapters.En
     public  Sage.Platform.Controls.ITextBoxControl pklLanguage
     {
         get { return FindControl(ref _pklLanguage, "pklLanguage"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotMail;
+    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotMail
+    {
+        get { return FindControl(ref _chkDoNotMail, "chkDoNotMail"); }
+    }
+    private Sage.Platform.Controls.ICheckBoxControl _chkDoNotFax;
+    public  Sage.Platform.Controls.ICheckBoxControl chkDoNotFax
+    {
+        get { return FindControl(ref _chkDoNotFax, "chkDoNotFax"); }
     }
     private Sage.Platform.Controls.IButtonControl _cmdSaveContactExtendedDetails;
     public  Sage.Platform.Controls.IButtonControl cmdSaveContactExtendedDetails

@@ -356,7 +356,11 @@ Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.
 		DialogService.ShowMessage("Please Select Account");
         return;
 	}
-	
+	if(objOpp.BusinessPotential <= 0)
+{
+	 DialogService.ShowMessage("Please Enter Business Potential...");
+     return;
+}
 	
 	//////////Product Validation//////////////////
 	string text = Request.Form.Get("ctl00$MainContent$OpportunityProducts$OpportunityProductsgrdOppProducts_DataCarrier");
@@ -432,11 +436,11 @@ Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.
 		    Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.ISalesProcesses>();
 		    salesProcess.InitSalesProcess(pluginID, objOpp.Id.ToString());
 
-		    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+		    /*Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
 		    string _UserId = _IUserService.UserId;
 		    Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)_UserId);
-		    objOpp.AccountManager = user;
-		    
+		    objOpp.AccountManager = user;*/
+		    objOpp.SalesPotential = Convert.ToDouble(objOpp.BusinessPotential);
 		   /* Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
 		    System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
 		    System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + _UserId + "' and name ='INSERTSECCODEID'", conObj);
@@ -471,7 +475,11 @@ if(objOpp.Description == "")
 		DialogService.ShowMessage("Please Select Account");
         return;
 	}
-	
+	if(objOpp.BusinessPotential <= 0)
+{
+	 DialogService.ShowMessage("Please Enter Business Potential...");
+     return;
+}
 	//////////Product Validation//////////////////
 	
 	string text = Request.Form.Get("ctl00$MainContent$OpportunityProducts$OpportunityProductsgrdOppProducts_DataCarrier");
@@ -545,11 +553,11 @@ if(objOpp.Description == "")
 		    Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.ISalesProcesses>();
 		    salesProcess.InitSalesProcess(pluginID, objOpp.Id.ToString());
 
-		    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+		   /* Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
 		    string _UserId = _IUserService.UserId;
 		    Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)_UserId);
-		    objOpp.AccountManager = user;
-		    
+		    objOpp.AccountManager = user;*/
+		    objOpp.SalesPotential = Convert.ToDouble(objOpp.BusinessPotential);
 		   /* Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
 		    System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
 		    System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + _UserId + "' and name ='INSERTSECCODEID'", conObj);
@@ -647,6 +655,12 @@ lueAccount_lbl.ForeColor = System.Drawing.Color.Red;
 Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 objOpp.Status = "Active";
 pklStatus.Enabled = false;
+//objOpp.ActualAmount =0.0;
+
+Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+string _UserId = _IUserService.UserId;
+Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)_UserId);
+objOpp.AccountManager = user;
 
 /*string script_FormatNumber="";
         script_FormatNumber += " function only_required(BusinessPotential,Description) ";

@@ -173,7 +173,7 @@ makeGrid : function(runtimeConfig) {
     	formObjectName: 'Sage.UI.Forms.TicketActivityParts'
     	    }
   	          ],
-	 	         storeOptions: {
+		         storeOptions: {
             resourceKind: 'ticketActivityItems',
             include: [],
             select: ['TicketActivity.Id'],
