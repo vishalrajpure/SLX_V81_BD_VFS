@@ -5,10 +5,63 @@
   <LoadActions>
     <FormActionDefinition>
       <ResourceKey>dc3d27ec-00a6-4846-8f55-e039b92d70e1</ResourceKey>
-      <Action typeName="Sage.Platform.QuickForms.ActionItems.CodeSnippetActionItem, Sage.Platform.QuickForms">
-        <CodeSnippetActionItem methodId="c663a167-d4bc-4175-ba8c-7c2b780daf1c">
+      <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+        <CSharpSnippetActionItem>
           <MethodName>quickformload0</MethodName>
-        </CodeSnippetActionItem>
+          <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity opportunity = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+if (opportunity != null)
+{
+    Sage.Platform.SData.IAppIdMappingService mappingService =
+        Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.SData.IAppIdMappingService&gt;(
+            true);
+	if (mappingService.IsIntegrationEnabled())
+	{
+		var clientContextService = PageWorkItem.Services.Get&lt;Sage.Platform.WebPortal.Services.ClientContextService&gt;();
+		if (clientContextService != null)
+		{
+			// OperatingCompany
+			if (clientContextService.CurrentContext.ContainsKey("OperatingCompany"))
+			{
+                if (opportunity.OperatingCompany != null)
+                {
+				    clientContextService.CurrentContext["OperatingCompany"] = opportunity.OperatingCompany.Id.ToString();
+                }
+                else
+                {
+                    clientContextService.CurrentContext.Remove("OperatingCompany");
+                }
+			}
+			else
+			{
+                if (opportunity.OperatingCompany != null)
+                {
+                    clientContextService.CurrentContext.Add("OperatingCompany", opportunity.OperatingCompany.Id.ToString());
+                }
+			}
+			
+			// SlxPriceList
+			if (clientContextService.CurrentContext.ContainsKey("SlxPriceList"))
+			{
+                if (opportunity.SlxPriceList != null)
+                {
+				    clientContextService.CurrentContext["SlxPriceList"] = opportunity.SlxPriceList.Id.ToString();
+                }
+                else
+                {
+                    clientContextService.CurrentContext.Remove("SlxPriceList");
+                }
+			}
+			else
+			{
+                if (opportunity.SlxPriceList != null)
+                {
+                    clientContextService.CurrentContext.Add("SlxPriceList", opportunity.SlxPriceList.Id.ToString());
+                }
+			}						
+        }
+	}
+}</CSharpCodeSnippet>
+        </CSharpSnippetActionItem>
       </Action>
       <IsDialogCloseAction>False</IsDialogCloseAction>
       <RunOnEveryRePaint>True</RunOnEveryRePaint>
@@ -46,8 +99,7 @@
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <GenerateMember>false</GenerateMember>
-        <ReadOnlyCondition>false
-</ReadOnlyCondition>
+        <ReadOnlyCondition>False</ReadOnlyCondition>
         <AppliedSecurity />
         <RelateToPropertyName>Products</RelateToPropertyName>
         <PreviewField />
@@ -56,7 +108,7 @@
           <GetPredicate />
         </ResourceKind>
         <PathSegments />
-        <PageSize>10</PageSize>
+        <PageSize>21</PageSize>
         <Columns>
           <QFEditableCol>
             <StyleScheme />

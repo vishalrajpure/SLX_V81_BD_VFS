@@ -301,9 +301,14 @@ protected override void OnWireEventHandlers()
 }
 
 protected void quickformload0(object sender, EventArgs e) {
-Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;
-Object[] methodArgs = new Object[] { FormAdapter, e };
-lib.Execute("LeadCompetitors.OnLoad1", methodArgs);
+Sage.Entity.Interfaces.ILead leadpro = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+if(leadpro.Status.ToUpper() == "CONVERTED" || leadpro.Status.ToUpper() == "DROPPED" )
+{
+	lueLeadCompetitor.Visible = false;
+	//form.grdLeadCompetitors.Enabled = false;
+
+
+}
 
 }
 private bool _runActivating;
@@ -402,12 +407,6 @@ public class LeadCompetitorsAdapter : Sage.Platform.WebPortal.Adapters.EntityFor
         get { return FindControl(ref _lueLeadCompetitor, "lueLeadCompetitor"); }
     }
 
-    public  void OnLoad1(System.EventArgs e)
-    {
-        Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;
-        Object[] methodArgs = new Object[] { this, e };
-        lib.Execute("LeadCompetitors.OnLoad1", methodArgs);
-    }
     public  void lueLeadCompetitor_OnChange(System.EventArgs e)
     {
         Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;

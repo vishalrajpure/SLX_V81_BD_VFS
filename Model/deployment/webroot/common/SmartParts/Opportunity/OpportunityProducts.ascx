@@ -191,9 +191,59 @@ protected override void OnWireEventHandlers()
 }
 
 protected void quickformload0(object sender, EventArgs e) {
-Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;
-Object[] methodArgs = new Object[] { FormAdapter, e };
-lib.Execute("OpportunityProducts.OnLoad1", methodArgs);
+Sage.Entity.Interfaces.IOpportunity opportunity = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+if (opportunity != null)
+{
+    Sage.Platform.SData.IAppIdMappingService mappingService =
+        Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.SData.IAppIdMappingService>(
+            true);
+	if (mappingService.IsIntegrationEnabled())
+	{
+		var clientContextService = PageWorkItem.Services.Get<Sage.Platform.WebPortal.Services.ClientContextService>();
+		if (clientContextService != null)
+		{
+			// OperatingCompany
+			if (clientContextService.CurrentContext.ContainsKey("OperatingCompany"))
+			{
+                if (opportunity.OperatingCompany != null)
+                {
+				    clientContextService.CurrentContext["OperatingCompany"] = opportunity.OperatingCompany.Id.ToString();
+                }
+                else
+                {
+                    clientContextService.CurrentContext.Remove("OperatingCompany");
+                }
+			}
+			else
+			{
+                if (opportunity.OperatingCompany != null)
+                {
+                    clientContextService.CurrentContext.Add("OperatingCompany", opportunity.OperatingCompany.Id.ToString());
+                }
+			}
+			
+			// SlxPriceList
+			if (clientContextService.CurrentContext.ContainsKey("SlxPriceList"))
+			{
+                if (opportunity.SlxPriceList != null)
+                {
+				    clientContextService.CurrentContext["SlxPriceList"] = opportunity.SlxPriceList.Id.ToString();
+                }
+                else
+                {
+                    clientContextService.CurrentContext.Remove("SlxPriceList");
+                }
+			}
+			else
+			{
+                if (opportunity.SlxPriceList != null)
+                {
+                    clientContextService.CurrentContext.Add("SlxPriceList", opportunity.SlxPriceList.Id.ToString());
+                }
+			}						
+        }
+	}
+}
 
 }
 protected override void OnFormBound()
@@ -303,12 +353,6 @@ public class OpportunityProductsAdapter : Sage.Platform.WebPortal.Adapters.Entit
         : base(smartPart) {}
 
 
-    public  void OnLoad1(System.EventArgs e)
-    {
-        Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;
-        Object[] methodArgs = new Object[] { this, e };
-        lib.Execute("OpportunityProducts.OnLoad1", methodArgs);
-    }
 }
 
 </script>

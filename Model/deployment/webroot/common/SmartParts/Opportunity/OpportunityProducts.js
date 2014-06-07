@@ -29,8 +29,7 @@ makeGrid : function(runtimeConfig) {
     var options = {		
 		        context: runtimeConfig,		
 				        		//Set to the value of the ReadOnlyCondition property
-		          readOnly: false
-(),
+		          readOnly: false,
 			        columns: [
     {
         field: '$key',
@@ -85,7 +84,7 @@ makeGrid : function(runtimeConfig) {
 	editable: false
 				}
   	          ],
-		         storeOptions: {
+	 	         storeOptions: {
             resourceKind: 'opportunityProducts',
             newItemParentReferenceProperty: 'Opportunity',
             include: ['Opportunity'],
@@ -710,7 +709,7 @@ makeGrid : function(runtimeConfig) {
 						tabId : 'OpportunityProducts',
 		gridNodeId: 'OpportunityProductsgrdOppProducts_Grid',
 				id : 'OpportunityProductsgrdOppProducts',
-        rowsPerPage: 10,
+        rowsPerPage: 21,
         singleClickEdit: true
     };
 

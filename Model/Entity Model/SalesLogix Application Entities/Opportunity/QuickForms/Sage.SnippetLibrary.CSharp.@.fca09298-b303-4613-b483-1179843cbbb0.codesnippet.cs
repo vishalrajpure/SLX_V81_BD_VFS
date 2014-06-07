@@ -37,38 +37,7 @@ namespace Sage.BusinessRules.CodeSnippets
     {
         public static void OnLoad1Step( IOpportunityCompetitors form,  EventArgs args)
         {
-            Sage.Entity.Interfaces.IOpportunity opportunity = form.CurrentEntity as Sage.Entity.Interfaces.IOpportunity;
-			if (opportunity.Status == "Closed - Won" || opportunity.Status.ToUpper() == "LOST" || opportunity.Status.ToUpper() == "DROPPED")
-			{
-			   	form.grdOppCompetitors.Enabled = false;
-			    form.lueAssociateCompetitor.Enabled=false;
-			}
-			else
-			{
-			  	form.grdOppCompetitors.Enabled = true;
-				form.lueAssociateCompetitor.Enabled = true;
-			}
-
-			//if (!form.PostBack)
-			//{
-			    string _UserId = "", AccManager = "";
-			    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
-			    _UserId = _IUserService.UserId; //get login Userid
-				if(opportunity.AccountManager != null)
-				{
-				    AccManager = Convert.ToString(opportunity.AccountManager.Id);
-				    if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(opportunity.Account.AccountManager.Id) == _UserId.Trim())
-				    {
-				     	form.grdOppCompetitors.Enabled = false;
-						form.lueAssociateCompetitor.Enabled = true;
-				    }
-				    else
-				    {
-				       	form.grdOppCompetitors.Enabled = true;
-						form.lueAssociateCompetitor.Enabled = true;
-				    }
-				}
-			//}
+            
 			
         }
     }

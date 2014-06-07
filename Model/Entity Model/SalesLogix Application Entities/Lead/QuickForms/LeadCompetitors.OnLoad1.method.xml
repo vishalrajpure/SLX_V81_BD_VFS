@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="a406ab3f-34f7-45f8-b7b1-401d05787909" lastModifiedUtc="2014-06-06T12:31:51.0692973Z" name="OnLoad1" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="LeadCompetitors">
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="a406ab3f-34f7-45f8-b7b1-401d05787909" lastModifiedUtc="2014-06-06T14:48:33.5724537Z" name="OnLoad1" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="LeadCompetitors">
   <extendedMetaData />
   <ExtendedPropertiesCollection>
     <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
@@ -10,7 +10,7 @@
   </parameter>
   <preExecuteTargets />
   <methodTargets>
-    <methodTarget xsi:type="OrmMethodTargetSnippet" id="149734c8-adcb-4d8c-bc53-bb57276de1af" lastModifiedUtc="2014-06-06T14:33:39.1812974Z" targetType="Sage.BusinessRules.CodeSnippets.LeadCompetitorsEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="OnLoad1Step" active="true" codeSnippetId="d11faa96-5680-40e0-8a91-5d55b4168394">
+    <methodTarget xsi:type="OrmMethodTargetSnippet" id="149734c8-adcb-4d8c-bc53-bb57276de1af" lastModifiedUtc="2014-06-06T14:47:49.3319233Z" targetType="Sage.BusinessRules.CodeSnippets.LeadCompetitorsEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="OnLoad1Step" active="true" codeSnippetId="d11faa96-5680-40e0-8a91-5d55b4168394">
       <ExtendedPropertiesCollection>
         <extendee type="Sage.Platform.Orm.Entities.OrmMethodTargetSnippet" />
       </ExtendedPropertiesCollection>

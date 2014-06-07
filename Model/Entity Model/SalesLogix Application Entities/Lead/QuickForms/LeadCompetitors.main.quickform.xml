@@ -5,10 +5,18 @@
   <LoadActions>
     <FormActionDefinition>
       <ResourceKey>9580cdd4-10ff-4f26-893a-a25e9baf85da</ResourceKey>
-      <Action typeName="Sage.Platform.QuickForms.ActionItems.CodeSnippetActionItem, Sage.Platform.QuickForms">
-        <CodeSnippetActionItem methodId="a406ab3f-34f7-45f8-b7b1-401d05787909">
+      <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+        <CSharpSnippetActionItem>
           <MethodName />
-        </CodeSnippetActionItem>
+          <CSharpCodeSnippet>Sage.Entity.Interfaces.ILead leadpro = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+if(leadpro.Status.ToUpper() == "CONVERTED" || leadpro.Status.ToUpper() == "DROPPED" )
+{
+	lueLeadCompetitor.Visible = false;
+	//form.grdLeadCompetitors.Enabled = false;
+
+
+}</CSharpCodeSnippet>
+        </CSharpSnippetActionItem>
       </Action>
       <IsDialogCloseAction>False</IsDialogCloseAction>
       <RunOnEveryRePaint>False</RunOnEveryRePaint>
