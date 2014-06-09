@@ -604,6 +604,12 @@ if(lead.FirstName == null)
 	DialogService.ShowMessage("Enter the Name");
 		return;
 }
+if (lead.Products.Count <= 0)
+{
+    DialogService.ShowMessage("Product Required...");
+    return;
+}
+
 string qry = "Select Account From Account where Account = '" + txtCompany.Text.Trim() + "'";
 Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
 System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
@@ -726,6 +732,11 @@ if(lead.FirstName == null)
 {
 	DialogService.ShowMessage("Enter the Name");
 		return;
+}
+if (lead.Products.Count <= 0)
+{
+    DialogService.ShowMessage("Product Required...");
+    return;
 }
 string qry = "Select Account From Account where Account = '" + txtCompany.Text.Trim() + "'";
 Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();

@@ -1513,7 +1513,7 @@ userOption.SetCommonOption("AutoSearch", "General", chkAutoSearch.Checked.ToStri
           <ResourceKey>cmdSave</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName>cmdSave_ClickAction</MethodName>
+              <MethodName />
               <CSharpCodeSnippet>Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
 if(lead.Company == null)
 {
@@ -1535,6 +1535,12 @@ if(lead.FirstName == null)
 	DialogService.ShowMessage("Enter the Name");
 		return;
 }
+if (lead.Products.Count &lt;= 0)
+{
+    DialogService.ShowMessage("Product Required...");
+    return;
+}
+
 string qry = "Select Account From Account where Account = '" + txtCompany.Text.Trim() + "'";
 Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
 System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
@@ -1658,7 +1664,7 @@ else
           <ResourceKey>cmdSaveNew</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName>cmdSaveNew_ClickAction</MethodName>
+              <MethodName />
               <CSharpCodeSnippet>/*	object[] objarray = new object[] {  this.BindingSource.Current };
 	Sage.Platform.EntityFactory.Execute&lt;Sage.SalesLogix.Entities.Lead&gt;("Lead.SaveLead", objarray);
 	Response.Redirect("InsertLead.aspx?modeid=Insert");
@@ -1685,6 +1691,11 @@ if(lead.FirstName == null)
 {
 	DialogService.ShowMessage("Enter the Name");
 		return;
+}
+if (lead.Products.Count &lt;= 0)
+{
+    DialogService.ShowMessage("Product Required...");
+    return;
 }
 string qry = "Select Account From Account where Account = '" + txtCompany.Text.Trim() + "'";
 Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();

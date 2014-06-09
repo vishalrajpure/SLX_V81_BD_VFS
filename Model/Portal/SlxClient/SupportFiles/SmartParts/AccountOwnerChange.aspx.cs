@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Configuration;
 using System.Data;
@@ -48,6 +48,8 @@ public partial class SmartParts_AccountOwnerChange : System.Web.UI.Page
         System.Data.OleDb.OleDbConnection conObj1 = new System.Data.OleDb.OleDbConnection(service.GetConnectionString());
         string query = "Select Distinct UI.Username,UI.userid from userprofile UP "
                      + " Inner join USERINFO UI on Up.Userid=UI.Userid "
+					 + " WHERE  UI.userID not in ('U6UJ9A000000','U6UJ9A000001','U6UJ9A000002',"
+                     + " 'U6UJ9A000003','U6UJ9A000004','U6UJ9A000005','U6UJ9A000006','U6UJ9A000007','U6UJ9A000008')"
                      + " order by UI.Username";
 
         System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(query, conObj1);

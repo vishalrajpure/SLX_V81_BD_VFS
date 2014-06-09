@@ -98,7 +98,7 @@
    <asp:Label ID="pklSatge_lbl" AssociatedControlID="pklSatge" runat="server" Text="<%$ resources: pklSatge.Caption %>" ></asp:Label>
  </div>   
    <div  class="textcontrol picklist"  > 
-    <SalesLogix:PickListControl runat="server" ID="pklSatge" PickListName="Opportunity Stage" MustExistInList="false" MaxLength="64"  />
+    <SalesLogix:PickListControl runat="server" ID="pklSatge" ReadOnly="true" PickListName="Opportunity Stage" MustExistInList="false" MaxLength="64"  />
   </div>
 
       </td>
@@ -379,7 +379,7 @@ else if (opportunity.StatusChangeWon())
 {
   dialog = "OpportunityClosedWon";
 }
-else if (opportunity.StatusChangeLost())
+else if (opportunity.StatusChangeLost() || opportunity.Status=="Lost")
 {
   dialog = "OpportunityClosedLost";
 }
@@ -500,59 +500,17 @@ txtBusinessPotential_lbl.ForeColor = System.Drawing.Color.Red;
 lueAccount_lbl.ForeColor = System.Drawing.Color.Red;
 Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
     
-//pklStatus.PickListValue= objOpp.Status;
-if (objOpp.Status == "Closed - Won" || objOpp.Status.ToUpper() == "LOST" || objOpp.Status.ToUpper() == "DROPPED")
-{
-   // pklStatus.PickListName = "Opportunity Status Closed";
-    //pklStatus.ReadOnly = true;
-    
-    txtDescription.Enabled = false;
-    lueAccount.Enabled = false;
-    usrUser.Enabled = false;
-    lueReseller.Enabled = false;
-    dtpEstimatedClose.Enabled = false;
-    pklCloseProbability.Enabled = false;
-    pklStatus.Enabled = false;
-    txtBusinessPotential.Enabled = false;
-    chkAddToForecast.Enabled = false;
-    txtComments.Enabled = false;
-    clIntegrationContract.Enabled = false;
-    cmdSave.Enabled = false;
-	pklSatge.Enabled = false;
-	cmdReset.Enabled = false;
-	cmdDelete.Enabled = false;
-    
-}
-else
-{
-    //pklStatus.PickListName = "Opportunity Status Detail";
-    //pklStatus.ReadOnly = false;
-    //pklStatus.PickListValue= objOpp.Status;
-    txtDescription.Enabled = true;
-    lueAccount.Enabled = true;
-    usrUser.Enabled = true;
-    lueReseller.Enabled = true;
-    dtpEstimatedClose.Enabled = true;
-    pklCloseProbability.Enabled = true;
-    pklStatus.Enabled = true;
-    txtBusinessPotential.Enabled = true;
-    chkAddToForecast.Enabled = true;
-    txtComments.Enabled = true;
-    clIntegrationContract.Enabled = true;
-    cmdSave.Enabled = true;
-	pklSatge.Enabled = true;
-	cmdReset.Enabled = true;
-	cmdDelete.Enabled = true;
 
-}
+Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = (Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace)PageWorkItem.Workspaces["TabControl"];
+       
 
-if (!IsPostBack)
-{
+/*if (!IsPostBack)
+{*/
     string _UserId = "", AccManager = "";
     Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
     _UserId = _IUserService.UserId; //get login Userid
     AccManager = Convert.ToString(objOpp.AccountManager.Id);
-    if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id) == _UserId.Trim())
+    if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id) == _UserId.Trim()) && (objOpp.Status != "Closed - Won" || objOpp.Status.ToUpper() != "LOST" || objOpp.Status.ToUpper() != "DROPPED"))
     {
         txtDescription.Enabled = true;
         lueAccount.Enabled = true;
@@ -569,6 +527,8 @@ if (!IsPostBack)
 		pklSatge.Enabled = true;
 		cmdReset.Enabled = true;
 		cmdDelete.Enabled = true;
+        tabWorkspace.Hide("OpportunityProducts_Read", true);
+        tabWorkspace.Hide("OpportunityContacts_Read", true);
     }
     else
     {
@@ -587,8 +547,59 @@ if (!IsPostBack)
 		pklSatge.Enabled = false;
 		cmdReset.Enabled = false;
 		cmdDelete.Enabled = false;
+		tabWorkspace.Hide("OpportunityProducts", true);
+        tabWorkspace.Hide("OpportunityContacts", true);
     }
-}
+	/*if (objOpp.Status == "Closed - Won" || objOpp.Status.ToUpper() == "LOST" || objOpp.Status.ToUpper() == "DROPPED")
+	{
+	   // pklStatus.PickListName = "Opportunity Status Closed";
+	    //pklStatus.ReadOnly = true;
+	    
+	    txtDescription.Enabled = false;
+	    lueAccount.Enabled = false;
+	    usrUser.Enabled = false;
+	    lueReseller.Enabled = false;
+	    dtpEstimatedClose.Enabled = false;
+	    pklCloseProbability.Enabled = false;
+	    pklStatus.Enabled = false;
+	    txtBusinessPotential.Enabled = false;
+	    chkAddToForecast.Enabled = false;
+	    txtComments.Enabled = false;
+	    clIntegrationContract.Enabled = false;
+	    cmdSave.Enabled = false;
+		pklSatge.Enabled = false;
+		cmdReset.Enabled = false;
+		cmdDelete.Enabled = false;
+		tabWorkspace.Hide("OpportunityProducts", true);
+	    tabWorkspace.Hide("OpportunityContacts", true);
+	    
+	}
+	else
+	{
+	    //pklStatus.PickListName = "Opportunity Status Detail";
+	    //pklStatus.ReadOnly = false;
+	    //pklStatus.PickListValue= objOpp.Status;
+	    txtDescription.Enabled = true;
+	    lueAccount.Enabled = true;
+	    usrUser.Enabled = true;
+	    lueReseller.Enabled = true;
+	    dtpEstimatedClose.Enabled = true;
+	    pklCloseProbability.Enabled = true;
+	    pklStatus.Enabled = true;
+	    txtBusinessPotential.Enabled = true;
+	    chkAddToForecast.Enabled = true;
+	    txtComments.Enabled = true;
+	    clIntegrationContract.Enabled = true;
+	    cmdSave.Enabled = true;
+		pklSatge.Enabled = true;
+		cmdReset.Enabled = true;
+		cmdDelete.Enabled = true;
+		tabWorkspace.Hide("OpportunityProducts_Read", true);
+	    tabWorkspace.Hide("OpportunityContacts_Read", true);
+	}*/
+//}
+
+//pklStatus.PickListValue= objOpp.Status;
 
 
 

@@ -142,7 +142,7 @@ if (Request.QueryString["copyOpportunity"] != null &amp;&amp; Request.QueryStrin
       <ResourceKey>5b9bfa99-0519-421c-b44a-ded96fc11dc5</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName />
+          <MethodName>quickformload3</MethodName>
           <CSharpCodeSnippet>Sage.SalesLogix.PickLists.PickList picklist = Sage.SalesLogix.PickLists.PickList.GetPickListItemByCode("kSYST0000346", "Reseller");
 if (picklist != null) {
 	lueReseller.SeedValue = picklist.Text;
@@ -1199,7 +1199,7 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
           <ResourceKey>cmdSave</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName>cmdSave_ClickAction</MethodName>
+              <MethodName />
               <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 //Sage.Entity.Interfaces.IOpportunity objOpp = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.IOpportunity&gt;();
 	if(objOpp.Description == "")

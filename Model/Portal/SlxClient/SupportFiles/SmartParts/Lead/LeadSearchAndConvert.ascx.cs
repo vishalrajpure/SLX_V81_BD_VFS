@@ -896,7 +896,7 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
     /// <param name="options">The options.</param>
     private void ConvertLeadToNewAccountAndContact(ILead lead, bool createOpportunity, string options)
     {
-		if (lead.LegalName != NULL)
+		if (lead.LegalName != null)
         {
             string qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + lead.LegalName + "'";
             Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();

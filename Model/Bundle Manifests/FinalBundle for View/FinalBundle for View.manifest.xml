@@ -5370,84 +5370,6 @@
                     </bundleItem>
                     <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
                       <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                        <ItemId>79b2f232-b419-43bc-b673-d4134da6ffef</ItemId>
-                        <Url>\Portal\SlxClient\ChildPages\VMEMPMASTER\VMEMPMASTER.page.xml</Url>
-                        <BundleItemType>ModelItem</BundleItemType>
-                        <Caption>Employee</Caption>
-                        <InstallOrderOptions>
-                          <BeforeAll>false</BeforeAll>
-                          <InstallAfter>c8c55beb-5741-4cf1-9e19-50fc501a1925</InstallAfter>
-                        </InstallOrderOptions>
-                      </ModelItemBundleItem>
-                      <children>
-                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
-                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                            <ItemId>\Portal\SlxClient\ChildPages\VMEMPMASTER\VMEMPMASTER.page.xml\Pages</ItemId>
-                            <Url>\Portal\SlxClient\ChildPages\VMEMPMASTER\VMEMPMASTER.page.xml\Pages</Url>
-                            <BundleItemType>Container</BundleItemType>
-                            <Caption>Pages</Caption>
-                          </ContainerBundleItem>
-                        </bundleItem>
-                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
-                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                            <ItemId>\Portal\SlxClient\ChildPages\VMEMPMASTER\VMEMPMASTER.page.xml\SmartParts</ItemId>
-                            <Url>\Portal\SlxClient\ChildPages\VMEMPMASTER\VMEMPMASTER.page.xml\SmartParts</Url>
-                            <BundleItemType>Container</BundleItemType>
-                            <Caption>SmartParts</Caption>
-                          </ContainerBundleItem>
-                          <children>
-                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
-                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                                <ItemId>46b6de68-3cd0-4713-b07d-58c252b29c9f</ItemId>
-                                <Url>\Portal\SlxClient\ChildPages\VMEMPMASTER\SmartParts\LiveGroupViewer.smartpart.xml</Url>
-                                <BundleItemType>ModelItem</BundleItemType>
-                                <Caption>LiveGroupViewer (Custom)</Caption>
-                                <InstallOrderOptions>
-                                  <BeforeAll>true</BeforeAll>
-                                  <InstallAfter>00000000-0000-0000-0000-000000000000</InstallAfter>
-                                </InstallOrderOptions>
-                              </ModelItemBundleItem>
-                            </bundleItem>
-                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
-                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                                <ItemId>a14d2256-7033-43cf-b6f7-4de5a299957f</ItemId>
-                                <Url>\Portal\SlxClient\ChildPages\VMEMPMASTER\SmartParts\EmployeeDetail.smartpart.xml</Url>
-                                <BundleItemType>ModelItem</BundleItemType>
-                                <Caption>EmployeeDetail</Caption>
-                                <InstallOrderOptions>
-                                  <BeforeAll>false</BeforeAll>
-                                  <InstallAfter>46b6de68-3cd0-4713-b07d-58c252b29c9f</InstallAfter>
-                                </InstallOrderOptions>
-                              </ModelItemBundleItem>
-                            </bundleItem>
-                          </children>
-                        </bundleItem>
-                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
-                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                            <ItemId>\Portal\SlxClient\ChildPages\VMEMPMASTER\VMEMPMASTER.page.xml\Modules</ItemId>
-                            <Url>\Portal\SlxClient\ChildPages\VMEMPMASTER\VMEMPMASTER.page.xml\Modules</Url>
-                            <BundleItemType>Container</BundleItemType>
-                            <Caption>Modules</Caption>
-                          </ContainerBundleItem>
-                          <children>
-                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
-                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                                <ItemId>1ad5e8b0-b6a7-459b-ad5e-98f8ff049589</ItemId>
-                                <Url>\Portal\SlxClient\ChildPages\VMEMPMASTER\Modules\Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule.module.xml</Url>
-                                <BundleItemType>ModelItem</BundleItemType>
-                                <Caption>Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule</Caption>
-                                <InstallOrderOptions>
-                                  <BeforeAll>true</BeforeAll>
-                                  <InstallAfter>00000000-0000-0000-0000-000000000000</InstallAfter>
-                                </InstallOrderOptions>
-                              </ModelItemBundleItem>
-                            </bundleItem>
-                          </children>
-                        </bundleItem>
-                      </children>
-                    </bundleItem>
-                    <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
-                      <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                         <ItemId>80db65eb-feb8-4c22-b88d-5bb57fac409c</ItemId>
                         <Url>\Portal\SlxClient\ChildPages\Vwsegmentmst\Vwsegmentmst.page.xml</Url>
                         <BundleItemType>ModelItem</BundleItemType>
@@ -5524,6 +5446,84 @@
                         </bundleItem>
                       </children>
                     </bundleItem>
+                    <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                      <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <ItemId>79b2f232-b419-43bc-b673-d4134da6ffef</ItemId>
+                        <Url>\Portal\SlxClient\ChildPages\VWEMPMASTER\VWEMPMASTER.page.xml</Url>
+                        <BundleItemType>ModelItem</BundleItemType>
+                        <Caption>Employee</Caption>
+                        <InstallOrderOptions>
+                          <BeforeAll>false</BeforeAll>
+                          <InstallAfter>c8c55beb-5741-4cf1-9e19-50fc501a1925</InstallAfter>
+                        </InstallOrderOptions>
+                      </ModelItemBundleItem>
+                      <children>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\ChildPages\VWEMPMASTER\VWEMPMASTER.page.xml\Pages</ItemId>
+                            <Url>\Portal\SlxClient\ChildPages\VWEMPMASTER\VWEMPMASTER.page.xml\Pages</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Pages</Caption>
+                          </ContainerBundleItem>
+                        </bundleItem>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\ChildPages\VWEMPMASTER\VWEMPMASTER.page.xml\SmartParts</ItemId>
+                            <Url>\Portal\SlxClient\ChildPages\VWEMPMASTER\VWEMPMASTER.page.xml\SmartParts</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>SmartParts</Caption>
+                          </ContainerBundleItem>
+                          <children>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>46b6de68-3cd0-4713-b07d-58c252b29c9f</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\VWEMPMASTER\SmartParts\LiveGroupViewer.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>LiveGroupViewer (Custom)</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>true</BeforeAll>
+                                  <InstallAfter>00000000-0000-0000-0000-000000000000</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>a14d2256-7033-43cf-b6f7-4de5a299957f</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\VWEMPMASTER\SmartParts\EmployeeDetail.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>EmployeeDetail</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>46b6de68-3cd0-4713-b07d-58c252b29c9f</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\ChildPages\VWEMPMASTER\VWEMPMASTER.page.xml\Modules</ItemId>
+                            <Url>\Portal\SlxClient\ChildPages\VWEMPMASTER\VWEMPMASTER.page.xml\Modules</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Modules</Caption>
+                          </ContainerBundleItem>
+                          <children>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>1ad5e8b0-b6a7-459b-ad5e-98f8ff049589</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\VWEMPMASTER\Modules\Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule.module.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>true</BeforeAll>
+                                  <InstallAfter>00000000-0000-0000-0000-000000000000</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                      </children>
+                    </bundleItem>
                   </children>
                 </bundleItem>
               </children>
@@ -5541,6 +5541,164 @@
         <BundleItemType>Container</BundleItemType>
         <Caption>Bundle Actions</Caption>
       </RootBundleAction>
+      <children>
+        <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.SchemaContainerAction, Sage.SalesLogix.BundleModel.BundleActions">
+          <SchemaContainerAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <ItemId>\Actions\Schema</ItemId>
+            <Url>\Actions\Schema</Url>
+            <BundleItemType>Container</BundleItemType>
+            <Caption>Schema</Caption>
+          </SchemaContainerAction>
+          <children>
+            <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateTableAction, Sage.SalesLogix.BundleModel.BundleActions">
+              <CreateTableAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <ItemId>\Actions\Schema\CreateTable\QUALIFIERANDSMPINCODE.xml</ItemId>
+                <Url>\Actions\Schema\CreateTable\QUALIFIERANDSMPINCODE.xml</Url>
+                <BundleItemType>Action</BundleItemType>
+                <Caption>CreateTable QUALIFIERANDSMPINCODE</Caption>
+                <TableName>QUALIFIERANDSMPINCODE</TableName>
+                <AllJoins>true</AllJoins>
+                <JoinIds />
+                <TableInfoTypeName>Sage.SalesLogix.SchemaSupport.SlxTableInfo, Sage.SalesLogix.SchemaSupport</TableInfoTypeName>
+              </CreateTableAction>
+              <children>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.QUALIFIERANDSMPINCODEID.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.QUALIFIERANDSMPINCODEID.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField QUALIFIERANDSMPINCODE.QUALIFIERANDSMPINCODEID</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>QUALIFIERANDSMPINCODE</TableName>
+                    <FieldName>QUALIFIERANDSMPINCODEID</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.CREATEUSER.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.CREATEUSER.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField QUALIFIERANDSMPINCODE.CREATEUSER</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>QUALIFIERANDSMPINCODE</TableName>
+                    <FieldName>CREATEUSER</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.CREATEDATE.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.CREATEDATE.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField QUALIFIERANDSMPINCODE.CREATEDATE</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>QUALIFIERANDSMPINCODE</TableName>
+                    <FieldName>CREATEDATE</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.MODIFYUSER.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.MODIFYUSER.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField QUALIFIERANDSMPINCODE.MODIFYUSER</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>QUALIFIERANDSMPINCODE</TableName>
+                    <FieldName>MODIFYUSER</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.MODIFYDATE.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.MODIFYDATE.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField QUALIFIERANDSMPINCODE.MODIFYDATE</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>QUALIFIERANDSMPINCODE</TableName>
+                    <FieldName>MODIFYDATE</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.PINCODEID.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.PINCODEID.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField QUALIFIERANDSMPINCODE.PINCODEID</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>QUALIFIERANDSMPINCODE</TableName>
+                    <FieldName>PINCODEID</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.QUALIFIERID.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.QUALIFIERID.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField QUALIFIERANDSMPINCODE.QUALIFIERID</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>QUALIFIERANDSMPINCODE</TableName>
+                    <FieldName>QUALIFIERID</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.QUALIFIERNAME.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.QUALIFIERNAME.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField QUALIFIERANDSMPINCODE.QUALIFIERNAME</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>QUALIFIERANDSMPINCODE</TableName>
+                    <FieldName>QUALIFIERNAME</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.SALESMANAGERID.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.SALESMANAGERID.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField QUALIFIERANDSMPINCODE.SALESMANAGERID</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>QUALIFIERANDSMPINCODE</TableName>
+                    <FieldName>SALESMANAGERID</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.SALESMANAGERNAME.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.SALESMANAGERNAME.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField QUALIFIERANDSMPINCODE.SALESMANAGERNAME</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>QUALIFIERANDSMPINCODE</TableName>
+                    <FieldName>SALESMANAGERNAME</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.PINCODE.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\QUALIFIERANDSMPINCODE.PINCODE.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField QUALIFIERANDSMPINCODE.PINCODE</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>QUALIFIERANDSMPINCODE</TableName>
+                    <FieldName>PINCODE</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+              </children>
+            </bundleItem>
+          </children>
+        </bundleItem>
+      </children>
     </bundleItem>
   </bundleActionHierarchy>
   <itemsToDelete />

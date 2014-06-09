@@ -272,7 +272,7 @@ Sage.Entity.Interfaces.ILead leadpro = BindingSource.Current as Sage.Entity.Inte
 if(leadpro.Status.ToUpper() == "CONVERTED" || leadpro.Status.ToUpper() == "DROPPED" )
 	{
 		lueLeadProduct.Visible = false;
-		
+		grdLeadProducts.Enabled = false;
 		
 	}
 

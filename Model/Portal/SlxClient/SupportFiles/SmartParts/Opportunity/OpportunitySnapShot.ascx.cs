@@ -43,9 +43,9 @@ public partial class SmartParts_OpportunitySnapShot : EntityBoundSmartPartInfoPr
         BindingSource.Bindings.Add(new WebEntityBinding("ExchangeRateLocked", chkLockRate, "Checked"));
 
         //Open Opportunity
-        BindingSource.Bindings.Add(new WebEntityBinding("SalesPotential", curOpenBaseSalesPotential, "Text"));
-        BindingSource.Bindings.Add(new WebEntityBinding("SalesPotential", curOpenSalesPotential, "Text"));
-        BindingSource.Bindings.Add(new WebEntityBinding("SalesPotential", curMyCurSalesPotential, "Text"));
+        BindingSource.Bindings.Add(new WebEntityBinding("BusinessPotential", curOpenBaseSalesPotential, "Text"));
+        BindingSource.Bindings.Add(new WebEntityBinding("BusinessPotential", curOpenSalesPotential, "Text"));
+        BindingSource.Bindings.Add(new WebEntityBinding("BusinessPotential", curMyCurSalesPotential, "Text"));
         BindingSource.Bindings.Add(new WebEntityBinding("DateOpened", dtpDateOpened, "DateTimeValue", String.Empty, null));
 
         //Closed Won Opportunity

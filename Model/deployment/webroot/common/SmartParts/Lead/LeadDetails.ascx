@@ -740,6 +740,11 @@ if(lead.Address.PostalCode == null)
 	DialogService.ShowMessage("Enter the Address");
 		return;
 }
+if (lead.Products.Count <= 0)
+{
+    DialogService.ShowMessage("Product Required...");
+    return;
+}
 Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>(); 
 System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString()); 
 				

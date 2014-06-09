@@ -660,8 +660,8 @@ Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Ent
         txtAccountAddress.Text = _add;
     }
 }*/
-if (!IsPostBack)
-    {
+/*if (!IsPostBack)
+    {*/
  string _UserId = "", AccManager = "";
     Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
     _UserId = _IUserService.UserId; //get login Userid
@@ -738,7 +738,7 @@ if (!IsPostBack)
 		cmdReset.Enabled = false;
 		cmdMoveContact.Enabled = false;
     }
-	}
+	//}
 
 }
 private bool _runActivating;

@@ -442,7 +442,7 @@
                   <ResourceKey>cmdCancel</ResourceKey>
                   <Action typeName="Sage.Platform.QuickForms.ActionItems.CodeSnippetActionItem, Sage.Platform.QuickForms">
                     <CodeSnippetActionItem methodId="d69377d0-5787-4786-8b72-1c3d333cfbc2">
-                      <MethodName>cmdCancel_ClickAction</MethodName>
+                      <MethodName />
                     </CodeSnippetActionItem>
                   </Action>
                   <IsDialogCloseAction>False</IsDialogCloseAction>
