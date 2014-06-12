@@ -112,19 +112,16 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="pklTitle.Caption" xml:space="preserve">
     <value>Titel:</value>
   </data>
   <data name="db9a6317-7f1e-4220-bac0-681479bab985.Message" xml:space="preserve">
     <value>Sie müssen zuerst einen Unternehmensnamen angeben, bevor Sie einen Interessenten umwandeln können.</value>
-  </data>
-  <data name="chkDoNotSolicit.Caption" xml:space="preserve">
-    <value>Keine Informationen erwünscht</value>
   </data>
   <data name="txtCompany.Caption" xml:space="preserve">
     <value>Unternehmen:</value>
@@ -150,9 +147,6 @@
   <data name="lueLeadSource.ButtonToolTip" xml:space="preserve">
     <value>Suchen</value>
   </data>
-  <data name="chkDoNotFax.Caption" xml:space="preserve">
-    <value>Keine Faxe</value>
-  </data>
   <data name="txtComments.Caption" xml:space="preserve">
     <value>Kommentare:</value>
   </data>
@@ -165,14 +159,8 @@
   <data name="lueLeadSource.Caption" xml:space="preserve">
     <value>Interessentenquelle:</value>
   </data>
-  <data name="chkDoNotEmail.Caption" xml:space="preserve">
-    <value>Keine E-Mails</value>
-  </data>
   <data name="cmdUpdateLead.Caption" xml:space="preserve">
     <value>Speichern</value>
-  </data>
-  <data name="txtInterests.Caption" xml:space="preserve">
-    <value>Interessiert an:</value>
   </data>
   <data name="pklIndustry.Caption" xml:space="preserve">
     <value>Branche:</value>
@@ -194,9 +182,6 @@
   </data>
   <data name="urlWeb.ButtonToolTip" xml:space="preserve">
     <value>WWW</value>
-  </data>
-  <data name="chkDoNotMail.Caption" xml:space="preserve">
-    <value>Keine Briefe</value>
   </data>
   <data name="adrAddress.ButtonToolTip" xml:space="preserve">
     <value>Bearbeiten</value>
@@ -227,9 +212,6 @@
   </data>
   <data name="phnWorkPhone.Caption" xml:space="preserve">
     <value>Telefon:</value>
-  </data>
-  <data name="chkDoNotCall.Caption" xml:space="preserve">
-    <value>Keine Anrufe</value>
   </data>
   <data name="emlEmail.Caption" xml:space="preserve">
     <value>E-Mail:</value>

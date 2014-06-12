@@ -127,7 +127,7 @@
     <value>Company:</value>
   </data>
   <data name="adrAddress.Caption" xml:space="preserve">
-    <value>Address</value>
+    <value />
   </data>
   <data name="urlWeb.Caption" xml:space="preserve">
     <value>Web:</value>
@@ -168,29 +168,11 @@
   <data name="lueLeadSource.LookupProperties.SourceDate.PropertyHeader" xml:space="preserve">
     <value>Source Date</value>
   </data>
-  <data name="txtInterests.Caption" xml:space="preserve">
-    <value>Interested in:</value>
-  </data>
   <data name="cmdConvertLead.Caption" xml:space="preserve">
     <value>Convert Qualified Lead</value>
   </data>
   <data name="txtComments.Caption" xml:space="preserve">
     <value>Comments:</value>
-  </data>
-  <data name="chkDoNotSolicit.Caption" xml:space="preserve">
-    <value>Do not Solicit</value>
-  </data>
-  <data name="chkDoNotEmail.Caption" xml:space="preserve">
-    <value>Do not E-mail</value>
-  </data>
-  <data name="chkDoNotCall.Caption" xml:space="preserve">
-    <value>Do not Call</value>
-  </data>
-  <data name="chkDoNotMail.Caption" xml:space="preserve">
-    <value>Do not Mail</value>
-  </data>
-  <data name="chkDoNotFax.Caption" xml:space="preserve">
-    <value>Do not Fax</value>
   </data>
   <data name="cmdUpdateLead.Caption" xml:space="preserve">
     <value>Save</value>

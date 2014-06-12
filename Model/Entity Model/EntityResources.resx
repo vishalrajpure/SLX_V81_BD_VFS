@@ -14944,6 +14944,6 @@
     <value>SegmentmstID</value>
   </data>
   <data name="Vwsegmentmst.DisplayNamePlural" xml:space="preserve">
-    <value>Vwsegmentmsts</value>
+    <value>Segments</value>
   </data>
 </root>

@@ -148,7 +148,7 @@ ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Get_Map_16x16"
    <asp:Label ID="AccManager_lbl" AssociatedControlID="AccManager" runat="server" Text="<%$ resources: AccManager.Caption %>" ></asp:Label>
  </div>   
    <div  class="textcontrol"  > 
-    <SalesLogix:SlxUserControl runat="server" ID="AccManager" Enabled="false" ButtonToolTip="<%$ resources: AccManager.ButtonToolTip %>"  />
+    <SalesLogix:SlxUserControl runat="server" ID="AccManager" ButtonToolTip="<%$ resources: AccManager.ButtonToolTip %>"  />
   </div>
 
       </td>
@@ -378,6 +378,7 @@ if (DialogService != null)
        // Session["Addressid"] = _idname;
 	    DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
 	    DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAddress);
+		DialogService.EntityID = account.Address.Id.ToString();
 	    DialogService.ShowDialog();
 	}
 }

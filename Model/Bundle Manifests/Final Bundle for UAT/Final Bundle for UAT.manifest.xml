@@ -340,20 +340,20 @@
                           <children>
                             <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.PropertyBundleItem, Sage.Platform">
                               <PropertyBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                                <ItemId>c397def6-e615-43b5-ab5e-f06f277849c9</ItemId>
-                                <Url>\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml::Properties::BusinessPotential</Url>
+                                <ItemId>74077371-bc08-4053-a939-9f202f76df98</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml::Properties::ActualAmount</Url>
                                 <BundleItemType>Other</BundleItemType>
-                                <Caption>BusinessPotential</Caption>
+                                <Caption>ActualAmount</Caption>
                                 <SerializationOptions>RecurseChildren</SerializationOptions>
                                 <InstallOptions>RecurseChildren</InstallOptions>
                               </PropertyBundleItem>
                             </bundleItem>
                             <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.PropertyBundleItem, Sage.Platform">
                               <PropertyBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                                <ItemId>74077371-bc08-4053-a939-9f202f76df98</ItemId>
-                                <Url>\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml::Properties::ActualAmount</Url>
+                                <ItemId>c397def6-e615-43b5-ab5e-f06f277849c9</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml::Properties::BusinessPotential</Url>
                                 <BundleItemType>Other</BundleItemType>
-                                <Caption>ActualAmount</Caption>
+                                <Caption>BusinessPotential</Caption>
                                 <SerializationOptions>RecurseChildren</SerializationOptions>
                                 <InstallOptions>RecurseChildren</InstallOptions>
                               </PropertyBundleItem>

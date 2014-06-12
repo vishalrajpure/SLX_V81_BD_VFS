@@ -448,6 +448,8 @@ if (DialogService != null)
        // Session["Addressid"] = _idname;
 	    DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
 	    DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAddress);
+		DialogService.EntityID = contact.Address.Id.ToString();
+		
 	    DialogService.ShowDialog();
 	}
 }
@@ -696,7 +698,7 @@ Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Ent
 
         pklContactType.Enabled = true;
         pklContactStatus.Enabled = true;
-        adrContactAddress.Enabled = true;
+        //adrContactAddress.Enabled = true;
         cmdSaveContactDetails.Enabled = true;
 		cmdDelete.Enabled = true;
 		cmdReset.Enabled = true;
@@ -732,7 +734,7 @@ Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Ent
 
         pklContactType.Enabled = false;
         pklContactStatus.Enabled = false;
-        adrContactAddress.Enabled = false;
+        //adrContactAddress.Enabled = false;
         cmdSaveContactDetails.Enabled = false;
 		cmdDelete.Enabled = false;
 		cmdReset.Enabled = false;

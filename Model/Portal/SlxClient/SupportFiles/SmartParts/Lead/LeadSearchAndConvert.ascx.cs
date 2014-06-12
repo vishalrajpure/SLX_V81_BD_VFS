@@ -933,10 +933,8 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
 			else
 				account.Type = "LEAD";
             account.Status = "Active";
-            account.Save();
+            account.Save();			
 			
-			opportunity.Status = "Active";
-			opportunity.Save();
             IList<ICampaignTarget> campaignTargets = EntityFactory.GetRepository<ICampaignTarget>().FindByProperty("EntityId", lead.Id.ToString());
             foreach (ICampaignTarget campaignTarget in campaignTargets)
                 lead.ChangeCampaignTargetEntityID(contact, campaignTarget);

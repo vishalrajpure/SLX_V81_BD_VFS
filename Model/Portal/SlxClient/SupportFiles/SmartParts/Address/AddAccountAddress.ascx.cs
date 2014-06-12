@@ -242,7 +242,7 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
                 }
                 IAddress curAdd2 = this.BindingSource.Current as IAddress;
                 Sage.Entity.Interfaces.IAddress objadd2 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_Entityid);
-                if (objadd2 != null && curAdd2.Address1 == null)
+                if (objadd2 != null && curAdd2.Address1 == null && Mode.Value != "ADD")
                 {
                     curAdd2.Address1 = objadd2.Address1;
                     curAdd2.Address2 = objadd2.Address2;
@@ -351,7 +351,7 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
 	                {                  
 	                    IAddress curAdd = this.BindingSource.Current as IAddress;
 	                    Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_Entityid);
-	                    if (objadd != null)
+	                    if (objadd != null && Mode.Value != "ADD")
 	                    {
 							
 	                        objadd.Address1 = curAdd.Address1;
@@ -369,6 +369,26 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
 	                        objadd.Save();
 	                        Response.Redirect(string.Format(ViewState["parentEntity"].ToString() + ".aspx?entityId={0}", objadd.EntityId));
 	                    }
+						else
+						{							
+							if (ViewState["parentEntity"].ToString() == "Contact")
+			                {
+			                    Sage.Entity.Interfaces.IContact objcontact1 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IContact>(ViewState["parentEntityID"].ToString());
+                                curAdd.EntityId = objcontact1.Id.ToString();
+                                curAdd.Save();
+			                    objcontact1.Addresses.Add(curAdd);
+                                objcontact1.Save();
+			                }
+			                else
+			                {
+			                    Sage.Entity.Interfaces.IAccount objaccount1 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAccount>(ViewState["parentEntityID"].ToString());
+                                curAdd.EntityId = objaccount1.Id.ToString();
+                                curAdd.Save();
+			                    objaccount1.Addresses.Add(curAdd);
+                                objaccount1.Save();
+			                }
+	                        Response.Redirect(string.Format(ViewState["parentEntity"].ToString() + ".aspx?entityId={0}", curAdd.EntityId));
+						}
 	                }
 	            }
 	            else

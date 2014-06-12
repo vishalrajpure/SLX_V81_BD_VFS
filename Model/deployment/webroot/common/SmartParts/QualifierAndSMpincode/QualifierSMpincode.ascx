@@ -131,7 +131,13 @@ protected override void OnAddEntityBindings() {
             }
                      
 protected void QFButton_ClickAction(object sender, EventArgs e) {
-Sage.Entity.Interfaces.IQualifierAndSMpincode Objqualifier = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.IQualifierAndSMpincode>();
+
+Sage.Entity.Interfaces.IQualifierAndSMpincode Objqualifier = BindingSource.Current as Sage.Entity.Interfaces.IQualifierAndSMpincode;
+
+if (Objqualifier == null)
+{
+    Objqualifier = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.IQualifierAndSMpincode>();
+}
 if (Objqualifier != null)
 {
     if (Convert.ToString(luePincode.LookupResultValue) == "")
@@ -156,7 +162,7 @@ if (Objqualifier != null)
 		if(objpin!=null)
 		{
 			Objqualifier.PinCode = objpin.Cpincode;
-			Objqualifier.PincodeId = objpin.Pincdmstid;
+			//Objqualifier.PincodeId = objpin.Pincdmstid;
 		}		
         Objqualifier.QualifierId = luequalifier.LookupResultValue.ToString();
 		Sage.Entity.Interfaces.IUserInfo objuser = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUserInfo>(Objqualifier.QualifierId);

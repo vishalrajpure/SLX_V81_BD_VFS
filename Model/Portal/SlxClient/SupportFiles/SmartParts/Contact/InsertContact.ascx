@@ -1073,7 +1073,11 @@
             if (account.Id != null)
             {
                 lueUseExistingAccount.LookupResultValue = account;
-
+				string _add = account.Address.Address1 + "," + account.Address.Address2 + "," + account.Address.Address3 + "\r\n";
+                _add += account.Address.City + "," + account.Address.State + "," + account.Address.Country + "\r\n";
+                _add += account.Address.PostalCode;
+                txtAccountAddress.Text = _add;
+                Session["Addressid"] = account.Address.Id.ToString();
                 pklAccountSubType.PickListName = account.GetSubTypePickListName();
             }
         }
@@ -1123,27 +1127,31 @@
     private bool saveOptions()
     {       
 	
-		string qry = "Select Account From Account where Account = '" + txtContactAccountName.Text.Trim() + "'";
-		Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
-		System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
-		System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
-		System.Data.DataTable dt = new System.Data.DataTable();
-		dataAdapterObj.Fill(dt);
-		if (dt.Rows.Count > 0)
+		
+		if(lueUseExistingAccount.LookupResultValue == null)
 		{
-		    DialogService.ShowMessage("This Account is already exists");
-		    return false;
-		}			
-		qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + txtlegalname.Text.Trim() + "'";
-        dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
-        dt = new System.Data.DataTable();
-        dataAdapterObj.Fill(dt);
-        if (dt.Rows.Count > 0)
-        {
-            DialogService.ShowMessage("This legal Entity is already exists");
-            return false;
+			string qry = "Select Account From Account where Account = '" + txtContactAccountName.Text.Trim() + "'";
+			Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+			System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+			System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+			System.Data.DataTable dt = new System.Data.DataTable();
+			dataAdapterObj.Fill(dt);
+			if (dt.Rows.Count > 0)
+			{
+			    DialogService.ShowMessage("This Account is already exists");
+			    return false;
+			}			
+			qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + txtlegalname.Text.Trim() + "'";
+	        dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	        dt = new System.Data.DataTable();
+	        dataAdapterObj.Fill(dt);
+	        if (dt.Rows.Count > 0)
+	        {
+	            DialogService.ShowMessage("This legal Entity is already exists");
+	            return false;
+	        }
         }
-        IContact contact = BindingSource.Current as IContact;
+		IContact contact = BindingSource.Current as IContact;
         IAddress objadd=null;
         if (Session["Addressid"] != null)
         {

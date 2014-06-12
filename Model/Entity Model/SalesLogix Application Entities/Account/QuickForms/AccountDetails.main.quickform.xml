@@ -7,7 +7,7 @@
       <ResourceKey>3e1b8a89-5ccb-49d4-ae6d-16f6d48a04a1</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName>quickformload0</MethodName>
+          <MethodName />
           <CSharpCodeSnippet>//Begin Load Action
 
 Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
@@ -218,6 +218,7 @@ if (dt.Rows.Count &gt; 0)
        // Session["Addressid"] = _idname;
 	    DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
 	    DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAddress);
+		DialogService.EntityID = account.Address.Id.ToString();
 	    DialogService.ShowDialog();
 	}
 }</CSharpCodeSnippet>
@@ -596,7 +597,6 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
       <QFSLXUser>
         <Column>1</Column>
         <Row>4</Row>
-        <Enabled>false</Enabled>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>AccManager</ControlId>

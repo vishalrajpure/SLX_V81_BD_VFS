@@ -7,7 +7,7 @@
       <ResourceKey>74894bd6-736d-481d-9b96-c580442d228b</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName />
+          <MethodName>quickformload0</MethodName>
           <CSharpCodeSnippet>luePincode_lbl.ForeColor = System.Drawing.Color.Red;
 luequalifier_lbl.ForeColor = System.Drawing.Color.Red;
 lueSaleManager_lbl.ForeColor = System.Drawing.Color.Red;</CSharpCodeSnippet>
@@ -404,7 +404,13 @@ lueSaleManager_lbl.ForeColor = System.Drawing.Color.Red;</CSharpCodeSnippet>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
               <MethodName />
-              <CSharpCodeSnippet>Sage.Entity.Interfaces.IQualifierAndSMpincode Objqualifier = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.IQualifierAndSMpincode&gt;();
+              <CSharpCodeSnippet>
+Sage.Entity.Interfaces.IQualifierAndSMpincode Objqualifier = BindingSource.Current as Sage.Entity.Interfaces.IQualifierAndSMpincode;
+
+if (Objqualifier == null)
+{
+    Objqualifier = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.IQualifierAndSMpincode&gt;();
+}
 if (Objqualifier != null)
 {
     if (Convert.ToString(luePincode.LookupResultValue) == "")
@@ -429,7 +435,7 @@ if (Objqualifier != null)
 		if(objpin!=null)
 		{
 			Objqualifier.PinCode = objpin.Cpincode;
-			Objqualifier.PincodeId = objpin.Pincdmstid;
+			//Objqualifier.PincodeId = objpin.Pincdmstid;
 		}		
         Objqualifier.QualifierId = luequalifier.LookupResultValue.ToString();
 		Sage.Entity.Interfaces.IUserInfo objuser = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUserInfo&gt;(Objqualifier.QualifierId);

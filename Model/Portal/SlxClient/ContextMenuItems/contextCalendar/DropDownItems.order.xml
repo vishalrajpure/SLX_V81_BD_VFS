@@ -5,6 +5,8 @@
   <Item Id="7fbb129c-49e2-4beb-92be-27cabbbee891">menuItemCalScheduleToDo.contextmenu.xml</Item>
   <Item Id="9918c8fb-6a3d-4bde-891c-3fb53ca381b3">menuItemCalSchedulePersonalActivity.contextmenu.xml</Item>
   <Item Id="b49b55a7-83c5-4dde-8b17-1f15f8037d9e">menuItemScheduleEvent.contextmenu.xml</Item>
-  <Item Id="fd839230-5d63-47ae-a76a-c226f1be78fb">bededceaeded.contextmenu.xml</Item>
-  <Item Id="6448c418-9a04-4fb6-b7fb-70173956b9ed">menuItemViewActivityManager.contextmenu.xml</Item>
+  <Item Id="21f39c3e-3645-4785-a499-deab3f2dc6b3">mnuCalendarHistory.contextmenu.xml</Item>
+  <Item Id="41ae9a17-0e3b-4280-aec3-dfacee77816c">mnuCalendarActivity.contextmenu.xml</Item>
+  <Item Id="93660908-c93a-4ebf-8d47-3504f1f7b37e">mnuCalendarSchedule.contextmenu.xml</Item>
+  <Item Id="fcd8e4ea-c516-4c51-87f0-5b2e60268297">mnuCalendarEvent.contextmenu.xml</Item>
 </ModelItems>

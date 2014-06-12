@@ -25,22 +25,22 @@
 
       </td>
                 <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="emlEmail_lbl" AssociatedControlID="emlEmail" runat="server" Text="<%$ resources: emlEmail.Caption %>" ></asp:Label>
- </div>   
-   <div  class="textcontrol"  > 
-<SalesLogix:Email runat="server" ID="emlEmail" ButtonToolTip="<%$ resources: emlEmail.ButtonToolTip %>" EmailTextBoxStyle-ForeColor="#000099" EmailTextBoxStyle-Font-Underline="false" />
+ <div class=" lbl alignleft" >
+   <asp:Label ID="txtLegalName_lbl" AssociatedControlID="txtLegalName" runat="server" Text="<%$ resources: txtLegalName.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="txtLegalName"  dojoType="Sage.UI.Controls.TextBox"  />
   </div>
 
       </td>
       </tr>
 <tr>
             <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="txtLegalName_lbl" AssociatedControlID="txtLegalName" runat="server" Text="<%$ resources: txtLegalName.Caption %>" ></asp:Label>
+ <div class=" lbl alignleft">
+   <asp:Label ID="nmeLeadName_lbl" AssociatedControlID="nmeLeadName" runat="server" Text="<%$ resources: nmeLeadName.Caption %>" ></asp:Label>
  </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtLegalName"  dojoType="Sage.UI.Controls.TextBox"  />
+   <div  class="textcontrol"  >
+    <SalesLogix:FullName runat="server" ID="nmeLeadName" Required="true" ButtonToolTip="<%$ resources: nmeLeadName.ButtonToolTip %>"  />
   </div>
 
       </td>
@@ -58,10 +58,10 @@ Required="true" AutoPostBack="true"  />
 <tr>
             <td  >
  <div class=" lbl alignleft">
-   <asp:Label ID="nmeLeadName_lbl" AssociatedControlID="nmeLeadName" runat="server" Text="<%$ resources: nmeLeadName.Caption %>" ></asp:Label>
- </div>
-   <div  class="textcontrol"  >
-    <SalesLogix:FullName runat="server" ID="nmeLeadName" Required="true" ButtonToolTip="<%$ resources: nmeLeadName.ButtonToolTip %>"  />
+   <asp:Label ID="emlEmail_lbl" AssociatedControlID="emlEmail" runat="server" Text="<%$ resources: emlEmail.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol"  > 
+<SalesLogix:Email runat="server" ID="emlEmail" ButtonToolTip="<%$ resources: emlEmail.ButtonToolTip %>" EmailTextBoxStyle-ForeColor="#000099" EmailTextBoxStyle-Font-Underline="false" />
   </div>
 
       </td>
@@ -359,15 +359,9 @@ protected override void OnAddEntityBindings() {
                  // txtCompany.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtCompanyTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Company", txtCompany, "Text");
         BindingSource.Bindings.Add(txtCompanyTextBinding);
-                    // emlEmail.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding emlEmailTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Email", emlEmail, "Text");
-        BindingSource.Bindings.Add(emlEmailTextBinding);
                     // txtLegalName.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtLegalNameTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LegalName", txtLegalName, "Text");
         BindingSource.Bindings.Add(txtLegalNameTextBinding);
-                    // phnWorkPhone.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding phnWorkPhoneTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("WorkPhone", phnWorkPhone, "Text");
-        BindingSource.Bindings.Add(phnWorkPhoneTextBinding);
                     // nmeLeadName.NameFirst Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding nmeLeadNameNameFirstBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("FirstName", nmeLeadName, "NameFirst");
         BindingSource.Bindings.Add(nmeLeadNameNameFirstBinding);
@@ -387,6 +381,12 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding nmeLeadNameNameSuffixBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Suffix", nmeLeadName, "NameSuffix");
         nmeLeadNameNameSuffixBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(nmeLeadNameNameSuffixBinding);
+                    // phnWorkPhone.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding phnWorkPhoneTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("WorkPhone", phnWorkPhone, "Text");
+        BindingSource.Bindings.Add(phnWorkPhoneTextBinding);
+                    // emlEmail.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding emlEmailTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Email", emlEmail, "Text");
+        BindingSource.Bindings.Add(emlEmailTextBinding);
                     // phnTollFree.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding phnTollFreeTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("TollFree", phnTollFree, "Text");
         BindingSource.Bindings.Add(phnTollFreeTextBinding);
@@ -610,7 +610,7 @@ if (lead.Products.Count <= 0)
     return;
 }
 
-string qry = "Select Account From Account where Account = '" + txtCompany.Text.Trim() + "'";
+string qry = "Select Account From Account where Account = '" + txtCompany.Text + "'";
 Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
 System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
 System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
@@ -648,7 +648,7 @@ if (Session["LeadAddressid"] != null)
 	}
 	else
 	{
-        DialogService.ShowMessage("Please map the branch manager with pincode-" + objadd.PostalCode.ToString());
+        DialogService.ShowMessage("Please map the Qualifier with pincode-" + objadd.PostalCode.ToString());
 		return;
 		 
 	}
@@ -738,7 +738,7 @@ if (lead.Products.Count <= 0)
     DialogService.ShowMessage("Product Required...");
     return;
 }
-string qry = "Select Account From Account where Account = '" + txtCompany.Text.Trim() + "'";
+string qry = "Select Account From Account where Account = '" + txtCompany.Text + "'";
 Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
 System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
 System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
@@ -777,7 +777,7 @@ if (Session["LeadAddressid"] != null)
 	}
 	else
 	{
-        DialogService.ShowMessage("Please map the branch manager with pincode-" + objadd.PostalCode.ToString());
+        DialogService.ShowMessage("Please map the Qualifier with pincode-" + objadd.PostalCode.ToString());
 		return;
 		 
 	}
@@ -992,15 +992,15 @@ public class InsertLeadAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     {
         get { return FindControl(ref _txtCompany, "txtCompany"); }
     }
-    private Sage.Platform.Controls.ITextBoxControl _txtLegalName;
-    public  Sage.Platform.Controls.ITextBoxControl txtLegalName
-    {
-        get { return FindControl(ref _txtLegalName, "txtLegalName"); }
-    }
     private Sage.Platform.Controls.IPersonNameControl _nmeLeadName;
     public  Sage.Platform.Controls.IPersonNameControl nmeLeadName
     {
         get { return FindControl(ref _nmeLeadName, "nmeLeadName"); }
+    }
+    private Sage.Platform.Controls.IEmailControl _emlEmail;
+    public  Sage.Platform.Controls.IEmailControl emlEmail
+    {
+        get { return FindControl(ref _emlEmail, "emlEmail"); }
     }
     private Sage.Platform.Controls.IPickListControl _pklTitle;
     public  Sage.Platform.Controls.IPickListControl pklTitle
@@ -1067,10 +1067,10 @@ public class InsertLeadAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     {
         get { return FindControl(ref _pklIndustry, "pklIndustry"); }
     }
-    private Sage.Platform.Controls.IEmailControl _emlEmail;
-    public  Sage.Platform.Controls.IEmailControl emlEmail
+    private Sage.Platform.Controls.ITextBoxControl _txtLegalName;
+    public  Sage.Platform.Controls.ITextBoxControl txtLegalName
     {
-        get { return FindControl(ref _emlEmail, "emlEmail"); }
+        get { return FindControl(ref _txtLegalName, "txtLegalName"); }
     }
     private Sage.Platform.Controls.IPhoneControl _phnWorkPhone;
     public  Sage.Platform.Controls.IPhoneControl phnWorkPhone
