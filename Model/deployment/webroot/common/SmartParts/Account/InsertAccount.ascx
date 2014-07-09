@@ -99,12 +99,21 @@ MaxLength="32"  />
 
       </td>
                 <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="Industry_lbl" AssociatedControlID="Industry" runat="server" Text="<%$ resources: Industry.Caption %>" ></asp:Label>
- </div>   
-   <div  class="textcontrol picklist"  > 
-    <SalesLogix:PickListControl runat="server" ID="Industry" PickListName="Industry" MustExistInList="false" AlphaSort="true"  />
-  </div>
+<div class="dependency">
+<SalesLogix:DependencyLookupControl runat="server" ID="ddlMKTSG"  LabelCssClass="lbl"  >
+<LookupResultsHeaderStyle BackColor="ActiveCaption" Font-Bold="True" ForeColor="White" />
+<LookupDialogStyle BackColor="ButtonFace" />
+<LookupResultsStyle CellPadding="4" ForeColor="Black" />
+<DependentLookups>
+ <SalesLogix:DependentLookup LookupEntityName="Indsgmst" LookupEntityTypeName="${lookup.LookupEntityTypeName}" DropDownDisplayProperty="Cindsgdesc" ParentProperty="" PropertyDisplay="<%$ resources: ddlMKTSG.DependentLookups.Cindsgdesc.PropertyDisplay %>" BindingPropertyName="Industry">
+  </SalesLogix:DependentLookup>
+ <SalesLogix:DependentLookup LookupEntityName="Indsgmst" LookupEntityTypeName="Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" DropDownDisplayProperty="Cmktsgdesc" ParentProperty="Cindsgdesc" PropertyDisplay="<%$ resources: ddlMKTSG.DependentLookups.Cmktsgdesc.PropertyDisplay %>" BindingPropertyName="MktSegment">
+  </SalesLogix:DependentLookup>
+  </DependentLookups>
+  <LookupPreFilters>
+      </LookupPreFilters>
+</SalesLogix:DependencyLookupControl>
+</div>
 
       </td>
       </tr>
@@ -124,22 +133,7 @@ MaxLength="32"  />
   </div>
 
       </td>
-                <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="lkpmktsegment_lbl" AssociatedControlID="lkpmktsegment" runat="server" Text="<%$ resources: lkpmktsegment.Caption %>" ></asp:Label>
- </div>   
-  <div   class="textcontrol lookup"   >
-<SalesLogix:LookupControl runat="server" ID="lkpmktsegment" LookupEntityName="Vwsegmentmst" LookupEntityTypeName="Sage.Entity.Interfaces.IVwsegmentmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String"  >
-<LookupProperties>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpmktsegment.LookupProperties.Segmentname.PropertyHeader %>" PropertyName="Segmentname" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpmktsegment.LookupProperties.Industryid.PropertyHeader %>" PropertyName="Industryid" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-</LookupProperties>
-<LookupPreFilters>
-</LookupPreFilters>
-</SalesLogix:LookupControl>
-  </div>
-
-      </td>
+                <td></td>
       </tr>
 <tr>
                   <td  >
@@ -273,15 +267,13 @@ protected override void OnAddEntityBindings() {
                                 // Fax.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding FaxTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Fax", Fax, "Text");
         BindingSource.Bindings.Add(FaxTextBinding);
-                    // Industry.PickListValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding IndustryPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Industry", Industry, "PickListValue");
-        BindingSource.Bindings.Add(IndustryPickListValueBinding);
+      BindingSource.AddBindingProvider(ddlMKTSG as Sage.Platform.EntityBinding.IEntityBindingProvider);
+                 // ddlMKTSG.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding ddlMKTSGTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Industry", ddlMKTSG, "Text");
+        BindingSource.Bindings.Add(ddlMKTSGTextBinding);
                        // pklType.PickListValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding pklTypePickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Type", pklType, "PickListValue");
         BindingSource.Bindings.Add(pklTypePickListValueBinding);
-                    // lkpmktsegment.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpmktsegmentLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("SegmentmstID", lkpmktsegment, "LookupResultValue");
-        BindingSource.Bindings.Add(lkpmktsegmentLookupResultValueBinding);
                     // Status.PickListValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding StatusPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Status", Status, "PickListValue");
         BindingSource.Bindings.Add(StatusPickListValueBinding);
@@ -303,7 +295,7 @@ protected override void OnAddEntityBindings() {
     
    
     }
-                                                                                                                                            
+                                                                                                                                     
 protected void cmdAddress_ClickAction(object sender, EventArgs e) {
 if (DialogService != null)
 {
@@ -579,15 +571,10 @@ public class InsertAccountAdapter : Sage.Platform.WebPortal.Adapters.EntityFormA
     {
         get { return FindControl(ref _Owner, "Owner"); }
     }
-    private Sage.Platform.Controls.IPickListControl _Industry;
-    public  Sage.Platform.Controls.IPickListControl Industry
+    private Sage.Platform.Controls.IDependencyLookupControl _ddlMKTSG;
+    public  Sage.Platform.Controls.IDependencyLookupControl ddlMKTSG
     {
-        get { return FindControl(ref _Industry, "Industry"); }
-    }
-    private Sage.Platform.Controls.ILookupControl _lkpmktsegment;
-    public  Sage.Platform.Controls.ILookupControl lkpmktsegment
-    {
-        get { return FindControl(ref _lkpmktsegment, "lkpmktsegment"); }
+        get { return FindControl(ref _ddlMKTSG, "ddlMKTSG"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _BusinessDescription;
     public  Sage.Platform.Controls.ITextBoxControl BusinessDescription

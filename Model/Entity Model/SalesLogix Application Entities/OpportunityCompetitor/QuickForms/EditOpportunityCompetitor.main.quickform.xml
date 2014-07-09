@@ -239,6 +239,7 @@
         </OnChangeAction>
         <Required>false</Required>
         <DecimalDigits>
+          <DecimalDigits>2</DecimalDigits>
           <Strict>false</Strict>
         </DecimalDigits>
         <FormatType>Percent</FormatType>
@@ -395,8 +396,8 @@
         <Required>false</Required>
       </QFTextBox>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXCurrency, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXCurrency>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXNumeric, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXNumeric>
         <Column>1</Column>
         <Row>4</Row>
         <HotKey>0</HotKey>
@@ -430,11 +431,12 @@
           <RefreshData>False</RefreshData>
         </OnChangeAction>
         <Required>false</Required>
-        <CurrentCode />
-        <ExchangeRate>1</ExchangeRate>
-        <ExchangeRateType>BaseRate</ExchangeRateType>
-        <DecimalDigits>-1</DecimalDigits>
-      </QFSLXCurrency>
+        <DecimalDigits>
+          <DecimalDigits>2</DecimalDigits>
+          <Strict>false</Strict>
+        </DecimalDigits>
+        <FormatType>Decimal</FormatType>
+      </QFSLXNumeric>
     </Control>
     <Control typeName="Sage.Platform.QuickForms.QFControls.QFControlsList, Sage.Platform.QuickForms.QFControls">
       <QFControlsList>

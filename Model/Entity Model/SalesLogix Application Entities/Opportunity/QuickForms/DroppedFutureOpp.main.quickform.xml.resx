@@ -123,4 +123,7 @@
   <data name="btnOk.Caption" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="btnCancel.Caption" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
 </root>

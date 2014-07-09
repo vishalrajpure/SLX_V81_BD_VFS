@@ -180,9 +180,6 @@
   <data name="Owner.Caption" xml:space="preserve">
     <value>Доступ:</value>
   </data>
-  <data name="Industry.Caption" xml:space="preserve">
-    <value>Отрасль:</value>
-  </data>
   <data name="WebAddress.Caption" xml:space="preserve">
     <value>Веб:</value>
   </data>

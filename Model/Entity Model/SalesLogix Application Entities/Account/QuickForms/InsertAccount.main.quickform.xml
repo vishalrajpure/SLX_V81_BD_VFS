@@ -644,28 +644,28 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         <AutoPostBack>false</AutoPostBack>
       </QFSLXOwner>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXPickList>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXDependencyLookup, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXDependencyLookup>
         <Column>2</Column>
         <Row>5</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>Industry</ControlId>
+        <ControlId>ddlMKTSG</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
             <DataItemName>Industry</DataItemName>
-            <ControlItemName>PickListValue</ControlItemName>
+            <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
         </DataBindings>
-        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ControlLabelPlacement>none</ControlLabelPlacement>
         <ExtendedProperties />
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <OnChangeAction>
-          <ResourceKey>Industry</ResourceKey>
+          <ResourceKey>ddlMKTSG</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
             <NoActionActionItem>
               <MethodName />
@@ -680,94 +680,25 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         </OnChangeAction>
         <Required>false</Required>
         <AutoPostBack>false</AutoPostBack>
-        <PickListName>Industry</PickListName>
-        <StorageMode>Text</StorageMode>
-        <NameFormatString />
-        <AllowMultiples>false</AllowMultiples>
-        <AlphaSort>true</AlphaSort>
-        <MustExistInList>false</MustExistInList>
-        <NoneEditable>false</NoneEditable>
-        <PickListId>kSYST0000388</PickListId>
-        <ValueStoredAsText>true</ValueStoredAsText>
-      </QFSLXPickList>
-    </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXLookup>
-        <Column>2</Column>
-        <Row>6</Row>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>lkpmktsegment</ControlId>
-        <DataBindings>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>SegmentmstID</DataItemName>
-            <ControlItemName>LookupResultValue</ControlItemName>
-            <FormatString />
-            <NullValueString />
-          </QuickFormPropertyDataBindingDefinition>
-        </DataBindings>
-        <ControlLabelPlacement>left</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme />
-        <OnChangeAction>
-          <ResourceKey>lkpmktsegment</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-            <NoActionActionItem>
-              <MethodName />
-            </NoActionActionItem>
-          </Action>
-          <IsDialogCloseAction>False</IsDialogCloseAction>
-          <RunOnEveryRePaint>False</RunOnEveryRePaint>
-          <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>False</PerformsUpdate>
-          <AppliedSecurity />
-          <RefreshData>False</RefreshData>
-        </OnChangeAction>
-        <Required>false</Required>
-        <LookupImage />
-        <LookupDialogWidth xsi:nil="true" />
-        <LookupDialogHeight xsi:nil="true" />
-        <LookupBindingMode>String</LookupBindingMode>
-        <LookupResultValue xsi:type="xsd:string" />
-        <SeedProperty />
-        <SeedValue />
-        <DropDownDisplayProperty />
-        <AllowClearingResult>false</AllowClearingResult>
-        <AppendStringValues>false</AppendStringValues>
-        <OverrideSeedOnSearch>false</OverrideSeedOnSearch>
-        <LookupEntityName>Vwsegmentmst</LookupEntityName>
-        <LookupEntityTypeName>Sage.Entity.Interfaces.IVwsegmentmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
-        <AutoPostBack>false</AutoPostBack>
-        <EnableHyperLinking>false</EnableHyperLinking>
-        <InitializeLookup>false</InitializeLookup>
-        <LookupProperties>
-          <LookupProperty>
-            <PropertyName>Segmentname</PropertyName>
-            <PropertyType>System.String</PropertyType>
-            <PropertyHeader>Segmentname</PropertyHeader>
-            <PropertyFormat>None</PropertyFormat>
-            <PropertyFormatString />
-            <UseAsResult>true</UseAsResult>
-            <ExcludeFromFilters>false</ExcludeFromFilters>
-            <IsSortable>true</IsSortable>
-            <HideCondition />
-          </LookupProperty>
-          <LookupProperty>
-            <PropertyName>Industryid</PropertyName>
-            <PropertyType>System.String</PropertyType>
-            <PropertyHeader>Industryid</PropertyHeader>
-            <PropertyFormat>None</PropertyFormat>
-            <PropertyFormatString />
-            <UseAsResult>true</UseAsResult>
-            <ExcludeFromFilters>false</ExcludeFromFilters>
-            <IsSortable>true</IsSortable>
-            <HideCondition />
-          </LookupProperty>
-        </LookupProperties>
+        <DependentLookups>
+          <DependencyLookup>
+            <PropertyDisplay>Industry</PropertyDisplay>
+            <LookupEntityName>Indsgmst</LookupEntityName>
+            <DropDownDisplayProperty>Cindsgdesc</DropDownDisplayProperty>
+            <ParentProperty />
+            <BindingPropertyName>Industry</BindingPropertyName>
+          </DependencyLookup>
+          <DependencyLookup>
+            <PropertyDisplay>MKT. Segment</PropertyDisplay>
+            <LookupEntityName>Indsgmst</LookupEntityName>
+            <LookupEntityTypeName>Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
+            <DropDownDisplayProperty>Cmktsgdesc</DropDownDisplayProperty>
+            <ParentProperty>Cindsgdesc</ParentProperty>
+            <BindingPropertyName>MktSegment</BindingPropertyName>
+          </DependencyLookup>
+        </DependentLookups>
         <LookupPreFilters />
-      </QFSLXLookup>
+      </QFSLXDependencyLookup>
     </Control>
     <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
       <QFTextBox>

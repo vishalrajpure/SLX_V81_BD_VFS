@@ -187,6 +187,31 @@ public partial class SmartParts_OpportunitySnapShot : EntityBoundSmartPartInfoPr
                 rowSalesProcess.Visible = false;
             }
         }
+       
+        string _UserId = "", AccManager = "";
+        Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+        _UserId = _IUserService.UserId; //get login Userid
+        AccManager = Convert.ToString(opportunity.AccountManager.Id);
+        if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(opportunity.Account.AccountManager.Id) == _UserId.Trim()) && (opportunity.Status != "Closed - Won"  && opportunity.Status.ToUpper() != "LOST" && opportunity.Status.ToUpper() != "DROPPED"))
+        {
+            lnkEmail.Enabled = true;
+            pklType.ReadOnly = false;
+            lueLeadSourceOpen.ReadOnly = false;
+            rowActualWon.Visible = false;
+            rowOpenSalesPotential.Disabled = false;
+            lnkOpenBaseSalesPotential.Enabled = true;
+        }
+        else
+        {            
+            lnkEmail.Enabled = false;            
+            pklType.ReadOnly = true;
+            lueLeadSourceOpen.ReadOnly = true;
+            rowActualWon.Visible = false;
+            rowOpenSalesPotential.Disabled = true;
+            lnkOpenBaseSalesPotential.Enabled = false;
+           
+        }
+    
     }
 
     /// <summary>

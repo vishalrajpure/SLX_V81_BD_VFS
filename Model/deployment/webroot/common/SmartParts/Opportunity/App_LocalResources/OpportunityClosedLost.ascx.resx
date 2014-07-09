@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="OpportunityClosedLost_0.Caption" xml:space="preserve">
     <value>Save</value>
@@ -173,5 +173,20 @@
   </data>
   <data name="grdOppCompetitors.bf54f9d9-9fdb-45ca-b70c-d119b174e015.ColumnHeading" xml:space="preserve">
     <value>Strengths</value>
+  </data>
+  <data name="chkCurrentMajorCompetitor.Caption" xml:space="preserve">
+    <value>Is Major Competitor</value>
+  </data>
+  <data name="txtCompetitorShareOfWellet.Caption" xml:space="preserve">
+    <value>Share Of Wellet:</value>
+  </data>
+  <data name="txtCompetitorRate.Caption" xml:space="preserve">
+    <value>Rate:</value>
+  </data>
+  <data name="lueCompetitor.LookupProperties.CompetitorName.PropertyHeader" xml:space="preserve">
+    <value>Competitor</value>
+  </data>
+  <data name="lueCompetitor.Caption" xml:space="preserve">
+    <value>Competitor:</value>
   </data>
 </root>

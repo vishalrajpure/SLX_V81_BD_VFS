@@ -17,6 +17,7 @@ using System.Data;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
+using System.Web;
 
 public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPartInfoProvider
 {
@@ -104,7 +105,7 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
         pklState.MaxLength = 32;
         pklCountry.MaxLength = 32;
         pklAddressType.MaxLength = 32;
-        Mode.Value = "ADD";
+       // Mode.Value = "ADD";
 
     }
 
@@ -124,9 +125,9 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
     /// Called when the smartpart has been bound.  Derived components should override this method to run code that depends on entity context being set and it not changing.
     /// </summary>
     protected override void OnFormBound()
-    {
+    {       
+        ClientBindingMgr.UsePageExitWarning = false;
         base.OnFormBound();
-
         _parentEntity = GetParentEntity() as IPersistentEntity;
         _parentEntityReference = _parentEntity as IComponentReference;
 
@@ -143,66 +144,82 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
 
         ClientBindingMgr.RegisterDialogCancelButton(btnCancel);
 
-
-        /*string script_FormatNumber = "";
-        //script_FormatNumber += " function only_required(Address1,pincode,Latitude,Logitute,description,isprimary,addtype,add2,add3,city,state,country,attn) ";
-        script_FormatNumber += " function only_required(Address1,pincode,Latitude,Logitute) ";
-        script_FormatNumber += " {";
-        script_FormatNumber += "    var df = true;";
-        script_FormatNumber += "     if(Address1 == '') { df =  false; }";     
-        script_FormatNumber += "     if(pincode == '') {df =  false; }";     
-        script_FormatNumber += "     if(Latitude == '') {df =  false; }";     
-        script_FormatNumber += "     if(Logitute == '') {df =  false; }";
-        script_FormatNumber += "     if(!df) {";
-        script_FormatNumber += "     alert('Please Fill Required fields');";
-        script_FormatNumber += " return df;} else {";
-        // script_FormatNumber += " { document.getElementById('MainContent_InsertContact_txtAccountAddress').value = Address1 + pincode + Latitude + Logitute;";
-        script_FormatNumber += " }}";
-        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate", script_FormatNumber, true);
-        btnSave.Attributes.Add("onclick", "return only_required(document.getElementById('" + txtAddress1.ClientID + "').value,document.getElementById('" + txtPostalCode.ClientID + "').value,document.getElementById('" + txtLatitude.ClientID + "').value,document.getElementById('" + txtLogitute.ClientID + "').value);");
-*/
-		string script_FormatNumber = "";
-        //script_FormatNumber += " function only_required(Address1,pincode,Latitude,Logitute,description,isprimary,addtype,add2,add3,city,state,country,attn) ";
-        script_FormatNumber += " function only_required(Address1,pincode,Latitude,Logitute,add2,add3,city,state,country) ";
-        script_FormatNumber += " {";
-        script_FormatNumber += "    var df = true;";
-        script_FormatNumber += "     if(Address1 == '') { df =  false; }";
-        script_FormatNumber += "     if(pincode == '') {df =  false; }";
-        //script_FormatNumber += "     if(Latitude == '') {df =  false; }";
-        //script_FormatNumber += "     if(Logitute == '') {df =  false; }";
-
-        script_FormatNumber += "     if(!df) {";
-        script_FormatNumber += "     alert('Please Fill Required fields');";
-        script_FormatNumber += " return df;} else {";
-        script_FormatNumber += " var add = Address1 + ', ' + add2 + ', ' + add3 + ', ' + city + ', '  + state + ', '  + country + ', '  + pincode;";
-
-		if (ViewState["parentEntity"].ToString() == "Contact")
+        if (ViewState["parentEntityID"] != null)
         {
-        	script_FormatNumber += " document.getElementById('MainContent_InsertContact_txtAccountAddress').value = add;";
-		}
-		else
-		{
-			script_FormatNumber += " document.getElementById('MainContent_InsertAccount_txtAccountAddress').value = add;";
-		}
-        script_FormatNumber += " return df;";
-        // script_FormatNumber += " { document.getElementById('MainContent_InsertContact_txtAccountAddress').value = Address1 + pincode + Latitude + Logitute;";
-        script_FormatNumber += " }}";
+            string script_FormatNumber = "";
+            script_FormatNumber += " function only_required(Address1,pincode,Latitude,Logitute,add2,add3,city,state,country) ";
+            script_FormatNumber += " {";
+            script_FormatNumber += "    var df = true;";
+            script_FormatNumber += "     if(Address1 == '') { df =  false; }";
+            script_FormatNumber += "     if(pincode == '') {df =  false; }";
+            script_FormatNumber += "     if(!df) {";
+            script_FormatNumber += "     alert('Please Fill Required fields');";
+            script_FormatNumber += " return df;} else {";
+            script_FormatNumber += " var add = Address1 + ', ' + add2 + ', ' + add3 + ', ' + city + ', '  + state + ', '  + country + ', '  + pincode;";
 
-        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate", script_FormatNumber, true);
-       // btnSave.Attributes.Add("onclick", "return only_required(document.getElementById('" + txtAddress1.ClientID + "').value,document.getElementById('" + txtPostalCode.ClientID + "').value,document.getElementById('" + txtLatitude.ClientID + "').value,document.getElementById('" + txtLogitute.ClientID + "').value,document.getElementById('" + txtAddress2.ClientID + "').value,document.getElementById('" + txtAddress3.ClientID + "').value,document.getElementById('" + pklCity.ClientID + "').value,document.getElementById('" + pklState.ClientID + "').value,document.getElementById('" + pklCountry.ClientID + "').value);");
-        btnSave.Attributes.Add("onclick", "return only_required(document.getElementById('" + txtAddress1.ClientID + "').value,document.getElementById('" + txtPostalCode.ClientID + "').value,document.getElementById('" + txtLatitude.ClientID + "').value,document.getElementById('" + txtLogitute.ClientID + "').value,document.getElementById('" + txtAddress2.ClientID + "').value,document.getElementById('" + txtAddress3.ClientID + "').value,document.getElementById('" + pklCity.ClientID + "_Text').value,document.getElementById('" + pklState.ClientID + "_Text').value,document.getElementById('"+ pklCountry.ClientID + "_Text').value);");
+
+            if (ViewState["parentEntity"].ToString() == "Contact")
+            {
+                script_FormatNumber += " document.getElementById('MainContent_InsertContact_txtAccountAddress').value = add;";
+            }
+            else
+            {
+                script_FormatNumber += " document.getElementById('MainContent_InsertAccount_txtAccountAddress').value = add;";
+            }
+            script_FormatNumber += " return df;";
+            script_FormatNumber += " }}";
+
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate", script_FormatNumber, true);
+            btnSave.Attributes.Add("onclick", "return only_required(document.getElementById('" + txtAddress1.ClientID + "').value,document.getElementById('" + txtPostalCode.ClientID + "').value,document.getElementById('" + txtLatitude.ClientID + "').value,document.getElementById('" + txtLogitute.ClientID + "').value,document.getElementById('" + txtAddress2.ClientID + "').value,document.getElementById('" + txtAddress3.ClientID + "').value,document.getElementById('" + pklCity.ClientID + "_Text').value,document.getElementById('" + pklState.ClientID + "_Text').value,document.getElementById('" + pklCountry.ClientID + "_Text').value);");
+        }
+        //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "<script type='text/javascript' src='map.js' />", false);
+
+        //ScriptResourceDefinition myScriptResDef = new ScriptResourceDefinition();
+        //myScriptResDef.Path = "http://maps.googleapis.com/maps/api/js?sensor=false";
+        //ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
+
+        //string script_FormatNumber1 = "";
+
+        ////  script_FormatNumber1 += " function Lon(Address1,pincode,Latitude,Logitute,add2,add3,city,state,country) ";
+        ////   script_FormatNumber1 += " { alert(1); return true;}";
+
+        //script_FormatNumber1 += " function Lon(Address1,pincode,Latitude,Logitute,add2,add3,city,state,country) ";
+        //script_FormatNumber1 += " {";
+
+        //script_FormatNumber1 += "    var df1 = true; alert(Address1);";
+        //script_FormatNumber1 += "     if(Address1 == '') { df =  false; } ";
+        //script_FormatNumber1 += "     if(pincode == '') {df =  false; } ";
+
+        //script_FormatNumber1 += "     if(!df1) {";
+        //script_FormatNumber1 += "     alert('Please Fill Required fields');";
+        //script_FormatNumber1 += " return df1;} else {";
+        //script_FormatNumber1 += " var add = Address1 + ', ' + add2 + ', ' + add3 + ', ' + city + ', '  + state + ', '  + country + ', '  + pincode;";
+
+        //script_FormatNumber1 += " alert(add);  ";
         
+        //script_FormatNumber1 += "var geocoder = new google.maps.Geocoder(); ";
+        //script_FormatNumber1 += " alert(geocoder); geocoder.geocode({ 'address': add }, function (results, status) {alert(22); ";
+        //script_FormatNumber1 += "     if (status == google.maps.GeocoderStatus.OK) { ";
+        //script_FormatNumber1 += "          var latitude = results[0].geometry.location.lat(); ";
+        //script_FormatNumber1 += "          var longitude = results[0].geometry.location.lng(); ";
+        //script_FormatNumber1 += "  alert(latitude + longitude);";
+        //// script_FormatNumber1 += "    document.getElementById('MainContent_InsertAccount_txtAccountAddress').value = latitude; ";
+        //script_FormatNumber1 += "   document.getElementById('" + txtLatitude.ClientID + "').value = latitude; ";
+        //script_FormatNumber1 += "   document.getElementById('" + txtLogitute.ClientID + "').value = longitude; } });";
+        //script_FormatNumber1 += " alert(4); return df1;";
+        //script_FormatNumber1 += " }}";
+        //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
+        //btngetGL.Attributes.Add("onclick", "return Lon(document.getElementById('" + txtAddress1.ClientID + "').value,document.getElementById('" + txtPostalCode.ClientID + "').value,document.getElementById('" + txtLatitude.ClientID + "').value,document.getElementById('" + txtLogitute.ClientID + "').value,document.getElementById('" + txtAddress2.ClientID + "').value,document.getElementById('" + txtAddress3.ClientID + "').value,document.getElementById('" + pklCity.ClientID + "_Text').value,document.getElementById('" + pklState.ClientID + "_Text').value,document.getElementById('" + pklCountry.ClientID + "_Text').value);");
+        ////btngetGL.Attributes.Add("onclick", "return Lon(document.getElementById('" + txtAddress1.ClientID + "').value,document.getElementById('" + txtPostalCode.ClientID + "').value,document.getElementById('" + txtLatitude.ClientID + "').value,document.getElementById('" + txtLogitute.ClientID + "').value,document.getElementById('" + txtAddress2.ClientID + "').value,document.getElementById('" + txtAddress3.ClientID + "').value,document.getElementById('" + pklCity.ClientID + "_Text').value,document.getElementById('" + pklState.ClientID + "_Text').value,document.getElementById('" + pklCountry.ClientID + "_Text').value);");
 
-		
-        if (Session["Addressid"] != null)
+
+        if (Global.ADDRESS_ID != "")
         {
-            string _idname = Session["Addressid"].ToString();
-            string[] parts = _idname.Split(',');
-            _id = parts[0].ToString();                    
-
+            //string _idname = Session["Addressid"].ToString();
+            string _idname = Global.ADDRESS_ID;
             IAddress curAdd = this.BindingSource.Current as IAddress;
-            Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_id);
-            if (objadd != null && curAdd.Address1 == null)
+            Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_idname);
+            if (objadd != null && objadd.Address1 != null)
             {
                 curAdd.Address1 = objadd.Address1;
                 curAdd.Address2 = objadd.Address2;
@@ -211,20 +228,21 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
                 curAdd.City = objadd.City;
                 curAdd.Country = objadd.Country;
                 curAdd.IsPrimary = objadd.IsPrimary;
-                curAdd.Latitude = objadd.Latitude != null ? objadd.Latitude : 0;
-                curAdd.Logitude = objadd.Logitude != null ? objadd.Logitude : 0;
+                curAdd.Latitude = objadd.Latitude != null ? objadd.Latitude : "0";
+                curAdd.Logitude = objadd.Logitude != null ? objadd.Logitude : "0";
                 curAdd.PostalCode = objadd.PostalCode;
                 curAdd.Salutation = objadd.Salutation;
                 curAdd.State = objadd.State;
                 curAdd.Description = objadd.Description;
             }
         }
-        string _Entityid = "";
+       
         if (ViewState["parentEntityID"] != null)
         {
+            IAddress curAdd2 = this.BindingSource.Current as IAddress;
             if (ViewState["parentEntity"] != null)
             {
-                if (ViewState["parentEntity"].ToString() == "Contact")
+                /*if (ViewState["parentEntity"].ToString() == "Contact")
                 {
                     Sage.Entity.Interfaces.IContact objcontact = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IContact>(ViewState["parentEntityID"].ToString());
                     if (objcontact != null)
@@ -239,9 +257,9 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
                     {
                         _Entityid = objaccount.Address.Id.ToString();
                     }
-                }
-                IAddress curAdd2 = this.BindingSource.Current as IAddress;
-                Sage.Entity.Interfaces.IAddress objadd2 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_Entityid);
+                }*/
+               
+                Sage.Entity.Interfaces.IAddress objadd2 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(curAdd2.Id.ToString());
                 if (objadd2 != null && curAdd2.Address1 == null && Mode.Value != "ADD")
                 {
                     curAdd2.Address1 = objadd2.Address1;
@@ -251,15 +269,16 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
                     curAdd2.City = objadd2.City;
                     curAdd2.Country = objadd2.Country;
                     curAdd2.IsPrimary = objadd2.IsPrimary;
-                    curAdd2.Latitude = objadd2.Latitude != null ? objadd2.Latitude : 0;
-                    curAdd2.Logitude = objadd2.Logitude != null ? objadd2.Logitude : 0;
+                    curAdd2.Latitude = objadd2.Latitude != null ? objadd2.Latitude : "0";
+                    curAdd2.Logitude = objadd2.Logitude != null ? objadd2.Logitude : "0";
                     curAdd2.PostalCode = objadd2.PostalCode;
                     curAdd2.Salutation = objadd2.Salutation;
                     curAdd2.State = objadd2.State;
                     curAdd2.Description = objadd2.Description;
+                   
                 }
             }
-
+            curAdd2.EntityId = ViewState["parentEntityID"].ToString();
         }
 
     }
@@ -330,79 +349,100 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
     protected void btnSave_ClickAction(object sender, EventArgs e)
     {
         try
-        {
-            string _parentId = "";
-            string _Entityid = "";
-			if(GetLatLong() == true)
-			{
-	            if (ViewState["parentEntityID"] != null)
-	            {
-	                if (ViewState["parentEntity"].ToString() == "Contact")
-	                {
-	                    Sage.Entity.Interfaces.IContact objcontact = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IContact>(ViewState["parentEntityID"].ToString());
-	                    _Entityid = objcontact.Address.Id.ToString();
-	                }
-	                else
-	                {
-	                    Sage.Entity.Interfaces.IAccount objaccount = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAccount>(ViewState["parentEntityID"].ToString());
-	                    _Entityid = objaccount.Address.Id.ToString();
-	                }
-	                if (_parentId != null)
-	                {                  
-	                    IAddress curAdd = this.BindingSource.Current as IAddress;
-	                    Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_Entityid);
-	                    if (objadd != null && Mode.Value != "ADD")
-	                    {
-							
-	                        objadd.Address1 = curAdd.Address1;
-	                        objadd.Address2 = curAdd.Address2;
-	                        objadd.Address3 = curAdd.Address3;
-	                        objadd.AddressType = curAdd.AddressType;
-	                        objadd.City = curAdd.City;
-	                        objadd.Country = curAdd.Country;
-	                        objadd.IsPrimary = curAdd.IsPrimary;
-	                        objadd.Latitude = curAdd.Latitude;
-	                        objadd.Logitude = curAdd.Logitude;
-	                        objadd.PostalCode = curAdd.PostalCode;
-	                        objadd.Salutation = curAdd.Salutation;
-	                        objadd.State = curAdd.State;
-	                        objadd.Save();
-	                        Response.Redirect(string.Format(ViewState["parentEntity"].ToString() + ".aspx?entityId={0}", objadd.EntityId));
-	                    }
-						else
-						{							
-							if (ViewState["parentEntity"].ToString() == "Contact")
-			                {
-			                    Sage.Entity.Interfaces.IContact objcontact1 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IContact>(ViewState["parentEntityID"].ToString());
-                                curAdd.EntityId = objcontact1.Id.ToString();
-                                curAdd.Save();
-			                    objcontact1.Addresses.Add(curAdd);
-                                objcontact1.Save();
-			                }
-			                else
-			                {
-			                    Sage.Entity.Interfaces.IAccount objaccount1 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAccount>(ViewState["parentEntityID"].ToString());
-                                curAdd.EntityId = objaccount1.Id.ToString();
-                                curAdd.Save();
-			                    objaccount1.Addresses.Add(curAdd);
-                                objaccount1.Save();
-			                }
-	                        Response.Redirect(string.Format(ViewState["parentEntity"].ToString() + ".aspx?entityId={0}", curAdd.EntityId));
-						}
-	                }
-	            }
-	            else
-	            {
-	                IAddress curAdd1 = this.BindingSource.Current as IAddress;
-	                curAdd1.EntityId = "123123123123";
-	                curAdd1.Save();
-	                Session["Addressid"] = curAdd1.Id.ToString();
-	                // Response.Redirect(string.Format("InsertContactAccount.aspx?modeid=Insert"));
-	            }
-			}
+        {           
+            if (ViewState["parentEntityID"] != null)
+            {
+                IAddress curAdd = this.BindingSource.Current as IAddress;
+                Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(curAdd.Id.ToString());
+                if (objadd != null && Mode.Value != "ADD")
+                {
+                    objadd.Address1 = curAdd.Address1;
+                    objadd.Address2 = curAdd.Address2;
+                    objadd.Address3 = curAdd.Address3;
+                    objadd.AddressType = curAdd.AddressType;
+                    objadd.City = curAdd.City;
+                    objadd.Country = curAdd.Country;
+                    objadd.IsPrimary = curAdd.IsPrimary;
+                    objadd.Latitude = curAdd.Latitude;
+                    objadd.Logitude = curAdd.Logitude;
+                    objadd.PostalCode = curAdd.PostalCode;
+                    objadd.Salutation = curAdd.Salutation;
+                    objadd.State = curAdd.State;
+                    objadd.EntityId = ViewState["parentEntityID"].ToString();
+                    objadd.Save();
+                    Response.Redirect(string.Format(ViewState["parentEntity"].ToString() + ".aspx?entityId={0}", objadd.EntityId), false);
+                }
+                else
+                {
+                    if (ViewState["parentEntity"].ToString() == "Contact")
+                    {
+                        Sage.Entity.Interfaces.IContact objcontact1 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IContact>(ViewState["parentEntityID"].ToString());
+                        curAdd.EntityId = objcontact1.Id.ToString();
+                        curAdd.Salutation = curAdd.Salutation;
+                        curAdd.Save();
+                        objcontact1.Addresses.Add(curAdd);
+                        objcontact1.Save();
+                    }
+                    else
+                    {
+                        Sage.Entity.Interfaces.IAccount objaccount1 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAccount>(ViewState["parentEntityID"].ToString());
+                        curAdd.EntityId = objaccount1.Id.ToString();
+                        curAdd.Salutation = curAdd.Salutation;
+                        curAdd.Save();
+                        objaccount1.Addresses.Add(curAdd);
+                        objaccount1.Save();
+                    }
+                    Response.Redirect(string.Format(ViewState["parentEntity"].ToString() + ".aspx?entityId={0}", curAdd.EntityId), false);
+                }
+                
+            }
+            else
+            {
+                
+                if (Global.ADDRESS_ID != "")
+                {
+                    string _idname = Global.ADDRESS_ID;
+                    IAddress curAdd3 = this.BindingSource.Current as IAddress;
+                    Sage.Entity.Interfaces.IAddress objadd3 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_idname);
+                    if (objadd3 != null && objadd3.Address1 != null)
+                    {
+                        objadd3 = curAdd3;
+                        objadd3.Address1 = curAdd3.Address1;
+                        objadd3.Address2 = curAdd3.Address2;
+                        objadd3.Address3 = curAdd3.Address3;
+                        objadd3.AddressType = curAdd3.AddressType;
+                        objadd3.City = curAdd3.City;
+                        objadd3.Country = curAdd3.Country;
+                        objadd3.IsPrimary = curAdd3.IsPrimary;
+                        HttpCookie _Latitude3 = Request.Cookies["Latitude"];
+                        HttpCookie _Logitute3 = Request.Cookies["Logitute"];
+                        objadd3.Latitude = _Latitude3.Value.ToString();
+                        objadd3.Logitude = _Logitute3.Value.ToString();
+                        objadd3.PostalCode = curAdd3.PostalCode;
+                        objadd3.Salutation = curAdd3.Salutation;
+                        objadd3.State = curAdd3.State;
+                        objadd3.Description = curAdd3.Description;
+                        objadd3.EntityId = "123123123123";                        
+                        objadd3.Save();
+                    }
+                }
+                else
+                {
+                    IAddress curAdd1 = this.BindingSource.Current as IAddress;
+                    curAdd1.EntityId = "123123123123";
+                    HttpCookie _Latitude = Request.Cookies["Latitude"];
+                    HttpCookie _Logitute = Request.Cookies["Logitute"];
+                    curAdd1.Latitude = _Latitude.Value.ToString();
+                    curAdd1.Logitude = _Logitute.Value.ToString();
+                    curAdd1.Save();
+                    Global.ADDRESS_ID = curAdd1.Id.ToString();
+                   // Session["Addressid"] = curAdd1.Id.ToString();
+                }
+            }            
         }
         catch (Exception ex)
         {
+            throw ex;
         }
 
     }
@@ -469,58 +509,68 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
                         DataSet dsResult = new DataSet();
                         dsResult.ReadXml(reader);
                         DataTable dtCoordinates = new DataTable();
-
-                        dtCoordinates.Columns.AddRange(new DataColumn[4] { new DataColumn("Id", typeof(int)),
+                        if (Convert.ToString(dsResult.Tables[0].Rows[0][0]) != "ZERO_RESULTS")
+                        {
+                            dtCoordinates.Columns.AddRange(new DataColumn[4] { new DataColumn("Id", typeof(int)),
 	                        new DataColumn("Address", typeof(string)),
 	                        new DataColumn("Latitude",typeof(string)),
 	                        new DataColumn("Longitude",typeof(string)) });
-                        foreach (DataRow row in dsResult.Tables["result"].Rows)
-                        {
-                            string geometry_id = dsResult.Tables["geometry"].Select("result_id = " + row["result_id"].ToString())[0]["geometry_id"].ToString();
-                            DataRow location = dsResult.Tables["location"].Select("geometry_id = " + geometry_id)[0];
-                            dtCoordinates.Rows.Add(row["result_id"], row["formatted_address"], location["lat"], location["lng"]);
-                        }
-                        if (dtCoordinates.Rows.Count > 0)
-                        {
-                            IAddress curAdd = this.BindingSource.Current as IAddress;
-                            curAdd.Latitude = Convert.ToDecimal(dtCoordinates.Rows[0]["Latitude"].ToString());
-                            curAdd.Logitude = Convert.ToDecimal(dtCoordinates.Rows[0]["Longitude"].ToString());
-                            txtLatitude.Text = dtCoordinates.Rows[0]["Latitude"].ToString();
-                            txtLogitute.Text = dtCoordinates.Rows[0]["Longitude"].ToString();
-
-
-                            string _EnitityId = "";                           
-                            if (ViewState["parentEntityID"] != null)
+                            foreach (DataRow row in dsResult.Tables["result"].Rows)
                             {
-                                if (ViewState["parentEntity"].ToString() == "Contact")
-                                {
-                                    Sage.Entity.Interfaces.IContact objcontact = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IContact>(ViewState["parentEntityID"].ToString());
-                                    _EnitityId = objcontact.Address.Id.ToString();
-                                }
-                                else
-                                {
-                                    Sage.Entity.Interfaces.IAccount objaccount = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAccount>(ViewState["parentEntityID"].ToString());
-                                    _EnitityId = objaccount.Address.Id.ToString();
-                                }
-                                if (_EnitityId != null)
-                                {
-                                    Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_EnitityId);
-                                    if (objadd != null)
-                                    {
-                                        objadd.Latitude = curAdd.Latitude;
-                                        objadd.Logitude = curAdd.Logitude;
-                                        objadd.Save();
-                                    }
-                                }
+                                string geometry_id = dsResult.Tables["geometry"].Select("result_id = " + row["result_id"].ToString())[0]["geometry_id"].ToString();
+                                DataRow location = dsResult.Tables["location"].Select("geometry_id = " + geometry_id)[0];
+                                dtCoordinates.Rows.Add(row["result_id"], row["formatted_address"], location["lat"], location["lng"]);
                             }
-							return true;
+                            if (dtCoordinates.Rows.Count > 0)
+                            {
+                                IAddress curAdd = this.BindingSource.Current as IAddress;
+                                curAdd.Latitude = dtCoordinates.Rows[0]["Latitude"].ToString();
+                                curAdd.Logitude = dtCoordinates.Rows[0]["Longitude"].ToString();
+                                txtLatitude.Text = dtCoordinates.Rows[0]["Latitude"].ToString();
+                                txtLogitute.Text = dtCoordinates.Rows[0]["Longitude"].ToString();
+
+
+                               /* string _EnitityId = "";
+                                if (ViewState["parentEntityID"] != null)
+                                {
+                                    if (ViewState["parentEntity"].ToString() == "Contact")
+                                    {
+                                        Sage.Entity.Interfaces.IContact objcontact = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IContact>(ViewState["parentEntityID"].ToString());
+                                        _EnitityId = objcontact.Address.Id.ToString();
+                                    }
+                                    else
+                                    {
+                                        Sage.Entity.Interfaces.IAccount objaccount = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAccount>(ViewState["parentEntityID"].ToString());
+                                        _EnitityId = objaccount.Address.Id.ToString();
+                                    }
+                                    if (_EnitityId != null)
+                                    {
+                                        Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_EnitityId);
+                                        if (objadd != null)
+                                        {
+                                            objadd.EntityId = ViewState["parentEntityID"].ToString();
+                                            objadd.Latitude = curAdd.Latitude;
+                                            objadd.Logitude = curAdd.Logitude;
+                                          // objadd.Save();
+                                        }
+                                    }
+                                }*/
+                                return true;
+
+                            }
+                            else
+                            {
+                                lblerr.Visible = true;
+                                lblerr.Text = "No Lat/Long match found for specified Address, Please Correct the address";
+                                return false;
+                            }
                         }
-						else
-						{
-							lblerr.Visible = true;
-                			lblerr.Text = "No Lat/Long match found for specified Address, Please Correct the address";
-							return false;
-						}
+                        else
+                        {
+                            lblerr.Visible = true;
+                            lblerr.Text = "No Lat/Long match found for specified Address, Please Correct the address";
+                            return false;
+                        }
                     }
                 }
             }
@@ -538,7 +588,7 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
         try
         {
 
-            if (txtAddress1.Text != "")
+           /* if (txtAddress1.Text != "")
             {
                 string addr = string.Empty;
 
@@ -614,7 +664,7 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
                         }
                     }
                 }
-            }
+            }*/
 
 
         }
@@ -626,9 +676,10 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
     protected void txtPostalCode_TextChanged(object sender, EventArgs e)
     {
         IAddress curAdd = this.BindingSource.Current as IAddress;
+		btnSave.Enabled = false;
         if (txtPostalCode.Text != "")
         {
-            string qry = "select CPINCODE from VWPINCODEMASTER where CPINCODE ='" + txtPostalCode.Text + "'";
+            string qry = "select CPINCODE from VWPINCODEMASTER where CPINCODE ='" + txtPostalCode.Text.Trim() + "'";
             Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
             System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
             System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
@@ -645,5 +696,7 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
                 lblerr.Text = "Pincode does not Exists in Pincode Masters";
             }
         }
+		btnSave.Enabled = true;
+		pklCountry.Focus();
     }
 }

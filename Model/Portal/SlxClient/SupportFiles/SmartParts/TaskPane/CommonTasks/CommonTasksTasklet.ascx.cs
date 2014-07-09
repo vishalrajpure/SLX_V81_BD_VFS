@@ -194,8 +194,14 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
         ScriptManager.GetCurrent(Page).RegisterPostBackControl(FindControl("tskExportToExcel"));
 		tskTransferAccount.Command += tskTransferAccount_Command;
         ScriptManager.GetCurrent(Page).RegisterPostBackControl(FindControl("tskTransferAccount"));
+		tskTransferContact.Command += tskTransferContact_Command;
+        ScriptManager.GetCurrent(Page).RegisterPostBackControl(FindControl("tskTransferContact"));
     }
 
+	private void tskTransferContact_Command(object sender, CommandEventArgs e)
+    {
+        ChangeContactUser();
+    }
     private void tskTransferAccount_Command(object sender, CommandEventArgs e)
     {
         ChangeAccountUser();
@@ -206,12 +212,12 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
         ExportToFile();
     }
 	
- 	private void ChangeAccountUser()
+	private void ChangeContactUser()
     {
         GroupContextService groupContextService = ApplicationContext.Current.Services.Get<IGroupContextService>() as GroupContextService;
         CachedGroup currentGroup = groupContextService.GetGroupContext().CurrentGroupInfo.CurrentGroup;
         GroupInfo gInfo = currentGroup.GroupInformation;
-
+        bool Cstatus = false;
         HttpCookie cUsers = Request.Cookies["User"];
        // HttpCookie cRoles = Request.Cookies["Role"];
         try
@@ -233,13 +239,143 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
                         //the passArgument has is the selection key.
                         ISelectionService srv = SelectionServiceRequest.GetSelectionService();
                         ISelectionContext selectionContext = srv.GetSelectionContext(passedArgument);
-                        RemoveUnSelectedRows(selectionContext, GroupTableSelections);
+                        if (selectionContext != null)
+                        {
+                            RemoveUnSelectedRows(selectionContext, GroupTableSelections);
+                            Cstatus = true;
+                        }
+                        
                     }
                     //remove hidden columns
-
-                    if (cUsers != null && cUsers.Value.Trim() != string.Empty)
+                    if (Cstatus)
                     {
-                        ToAccount(GroupTableSelections, cUsers.Value);
+                        if (cUsers != null && cUsers.Value.Trim() != string.Empty)
+                        {
+                            ToContact(GroupTableSelections, cUsers.Value);
+                        }
+                    }
+                    else
+                    {
+                        DataTable dtnew = new DataTable();
+                        DataRow[] result = GroupTableSelections.Select("Contactid='" + passedArgument + "' ");
+                        foreach (DataRow row in result)
+                        {
+                            dtnew = result.CopyToDataTable();
+                        }
+                        if (dtnew.Rows.Count > 0)
+                        {
+                            if (cUsers != null && cUsers.Value.Trim() != string.Empty)
+                            {
+                                ToContact(dtnew, cUsers.Value);
+                                Response.Redirect("Contact.aspx?entityid=" + passedArgument);
+                            }
+                        }
+                    }
+                }
+            }
+            DialogService.ShowMessage("Owner Changes Successfully...");
+        }
+        catch (Exception ex)
+        {
+            DialogService.ShowMessage(ex.Message);
+        }
+    }
+	 private void ToContact(DataTable GroupTableSelections, string cUser)
+    {
+        IContact _contact;
+        IUser _user;
+        //object pincodemapId;
+        //object[] objarray;
+        foreach (System.Data.DataRow row in GroupTableSelections.Rows)
+        {
+            _contact = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IContact>(row["ContactId"].ToString());
+            if (_contact != null)
+            {
+                _user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>(cUser);
+               if(_user != null)
+				{
+				   //_account.Owner =Sage.SalesLogix.BusinessRules.BusinessRuleHelper.OwnerOnInsert(_user);
+                    
+                    foreach (Sage.Entity.Interfaces.IOpportunityContact op in _contact.Opportunities)
+                    {
+                        if (op.Opportunity.AccountManager == _contact.AccountManager && op.Contact.IsPrimary == true && (op.Opportunity.Status.ToUpper() == "ACTIVE" || op.Opportunity.Status.ToUpper() == "FUTURE OPPORTUNITY"))
+                        {
+                            op.Opportunity.AccountManager = _user;
+                            op.Opportunity.Save();
+                        }
+                    }
+                    
+                    Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+                    System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+                    conObj.Open();
+                    System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand("Update activity SET UserID = '" + _user.Id.ToString() + "' Where UserID = '" + _contact.AccountManager.Id.ToString() + "' AND ContactID = '" + _contact.Id.ToString() + "'", conObj);
+                    cmd.ExecuteNonQuery();
+                    conObj.Close();
+					_contact.AccountManager = _user;
+				  	_contact.Save();
+				}				
+            }
+        }
+    }
+	
+ 	private void ChangeAccountUser()
+    {
+        GroupContextService groupContextService = ApplicationContext.Current.Services.Get<IGroupContextService>() as GroupContextService;
+        CachedGroup currentGroup = groupContextService.GetGroupContext().CurrentGroupInfo.CurrentGroup;
+        GroupInfo gInfo = currentGroup.GroupInformation;
+
+        HttpCookie cUsers = Request.Cookies["User"];
+        bool fstatus = false;
+       // HttpCookie cRoles = Request.Cookies["Role"];
+        try
+        {
+            string passedArgument = hfSelections.Value;
+
+            DataTable GroupTableAll = gInfo.GetGroupDataTable();
+            using (DataTable GroupTableSelections = GroupTableAll.Copy())
+            {
+                IDictionary<string, Layout> layout = new Dictionary<string, Layout>();
+                if (passedArgument != "cancel")
+                {
+                    if (passedArgument == "selectAll")
+                    {
+                    }
+                    else
+                    {
+                        //Get the selection service and remove un selected records.
+                        //the passArgument has is the selection key.
+                        ISelectionService srv = SelectionServiceRequest.GetSelectionService();
+                        ISelectionContext selectionContext = srv.GetSelectionContext(passedArgument);
+                        if (selectionContext != null)
+                        {                           
+                            RemoveUnSelectedRows(selectionContext, GroupTableSelections);
+                            fstatus = true;
+                        }
+                    }
+                    //remove hidden columns
+                    if (fstatus)
+                    {
+                        if (cUsers != null && cUsers.Value.Trim() != string.Empty)
+                        {
+                            ToAccount(GroupTableSelections, cUsers.Value);
+                        }
+                    }
+                    else
+                    {
+                        DataTable dtnew = new DataTable();
+                         DataRow[] result = GroupTableSelections.Select("Accountid='" + passedArgument + "' ");
+                         foreach (DataRow row in result)
+                         {
+                             dtnew = result.CopyToDataTable();
+                         }
+                         if (dtnew.Rows.Count > 0)
+                         {
+                             if (cUsers != null && cUsers.Value.Trim() != string.Empty)
+                             {
+                                 ToAccount(dtnew, cUsers.Value);
+                                 Response.Redirect("Account.aspx?entityid=" + passedArgument);
+                             }
+                         }
                     }
                 }
             }
@@ -265,6 +401,43 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
                if(_user != null)
 				{
 				   //_account.Owner =Sage.SalesLogix.BusinessRules.BusinessRuleHelper.OwnerOnInsert(_user);
+                    
+                    foreach (Sage.Entity.Interfaces.IContact con in _account.Contacts)
+                    {
+                        if (con.AccountManager == _account.AccountManager)
+                        {
+                            con.AccountManager = _user;
+                            con.Save();
+                        }
+                    }
+                    foreach (Sage.Entity.Interfaces.IOpportunity op in _account.Opportunities)
+                    {
+                        bool _statuscondition = true;
+                        if (op.Status != null)
+                        {
+                            _statuscondition = op.Status.ToUpper() == "ACTIVE" || op.Status.ToUpper() == "FUTURE OPPORTUNITY";
+                        }
+                        if (op.AccountManager == _account.AccountManager && _statuscondition)
+                        {
+                            op.AccountManager = _user;
+                            op.Save();                            
+                        }
+                    }
+                    
+                    Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+                    System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+                    System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + _user.Id.ToString() + "' and Upper(name) ='INSERTSECCODEID'", conObj);
+                    System.Data.DataTable dt2 = new System.Data.DataTable();
+                    dataAdapterObj2.Fill(dt2);
+                    if (dt2.Rows.Count > 0)
+                    {
+                        Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
+                        _account.Owner = objowner;
+                    }
+                    System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand("Update activity SET UserID = '" + _user.Id.ToString() + "' Where UserID = '" + _account.AccountManager.Id.ToString() + "'", conObj);
+                    conObj.Open();
+                    cmd.ExecuteNonQuery();
+                    conObj.Close();
 					_account.AccountManager = _user;
 				   _account.Save();
 				}
@@ -1317,8 +1490,9 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
              {"tskRemoveFromGroup","TaskText_Remove","javascript:commonTaskActions.removeSelectionsFromGroup();","false"},
              {"tskPromote", "TaskText_Promote", "javascript:Sage.Utility.Dashboard.promoteGroupToDashboard();", "false"},
              {"tskExportToExcel", "TaskText_Export", "javascript:commonTaskActions.exportToFile();", "false" },
-             {"tskWriteEmailToGroupSelection", "TaskText_WriteEmailToGroupSelection", "javascript:commonTaskActions.writeEmailToGroupSelection();", "false" }
-            };
+             {"tskWriteEmailToGroupSelection", "TaskText_WriteEmailToGroupSelection", "javascript:commonTaskActions.writeEmailToGroupSelection();", "false" },
+             {"tskTransferContact", "TaskText_CTransfer", "javascript:commonTaskActions.TransferContact();", "false" }
+			};
         tasksByEntityList.Add("IContact", contactListTasks);
 
         string[,] activitiesListTasks = { { "Mail Merge", "mailMerge" } };
@@ -1581,8 +1755,11 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
              {"tskAddResponse","TaskText_ResponseToCampaign","","false"},
              {"tskInsertNote","TaskText_AddNote","javascript:Sage.Link.newNote();","false"},
              {"tskNewMeeting","TaskText_Meeting","javascript:Sage.Link.scheduleActivity('Meeting');","false"},
-             {"tskNewPhoneCall","TaskText_PhoneCall","javascript:Sage.Link.scheduleActivity('PhoneCall');","false"},
-             {"tskNewToDo","TaskText_ToDo","javascript:Sage.Link.scheduleActivity('ToDo');","false"}};
+             {"tskNewPhoneCall","TaskText_PhoneCall","javascript:Sage.Link.scheduleActivity('PhoneCall');","false"},              
+             {"tskNewToDo","TaskText_ToDo","javascript:Sage.Link.scheduleActivity('ToDo');","false"},
+             {"tskTransferAccount", "TaskText_Transfer", "javascript:commonTaskActions.TransferAccount();", "false" }
+            
+            };
         tasksByEntity.Add("IAccount", accountDetailTasks);
 
         string[,] contactDetailTasks =
@@ -1595,7 +1772,9 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
              {"tskInsertNote","TaskText_AddNote","javascript:Sage.Link.newNote();","false"},
              {"tskNewMeeting","TaskText_Meeting","javascript:Sage.Link.scheduleActivity('Meeting');","false"},
              {"tskNewPhoneCall","TaskText_PhoneCall","javascript:Sage.Link.scheduleActivity('PhoneCall');","false"},
-             {"tskNewToDo","TaskText_ToDo","javascript:Sage.Link.scheduleActivity('ToDo');","false"}};
+             {"tskNewToDo","TaskText_ToDo","javascript:Sage.Link.scheduleActivity('ToDo');","false"},
+             {"tskTransferContact", "TaskText_CTransfer", "javascript:commonTaskActions.TransferContact();", "false" }
+            };
         tasksByEntity.Add("IContact", contactDetailTasks);
 
         string[,] opportunityDetailTasks =
@@ -1818,23 +1997,11 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
     {
         //To-Do break out according to Entity;
         IDictionary<string, string> maps = new Dictionary<string, string>();
-        maps.Add("tskExportToExcel", "Entities/Group/ExportToFile");
-		maps.Add("tskTransferAccount", "Entities/Group/ExportToFile");
+        maps.Add("tskExportToExcel", "Entities/Group/ExportToFile");		
         maps.Add("tskAddSalesOrder", "Entities/SalesOrder/Add");
         maps.Add("tskAddResponse", "Entities/Campaign/Edit");
-        //maps.Add("tskAddToGroup", "Entities/Group/AddToGroup");
-        //maps.Add("tskRemoveFromGroup", "Entities/Group/RemoveFromGroup");
-        //maps.Add("tskSaveAsNewGroup", "Entities/Group/SaveAsNew");
-        //maps.Add("tskPromote", "Entities/Group/Promote");
-        //maps.Add("tskEmail", "Entities/Group/Email");
-        //maps.Add("tskWriteEmailToGroupSelection", "Entities/Group/Email");
-        //maps.Add("tskMailMerge", "Entities/Group/MailMerge");
-        //maps.Add("IAccounttskDetailReport", "Entities/Account/Report");
-        //maps.Add("IContacttskDetailReport", "Entities/Contact/Report");
-        //maps.Add("IOpportunitytskDetailReport", "Entities/Opportunity/Report");
-        //maps.Add("ITickettskDetailReport", "Entities/Ticket/Report");
-        //maps.Add("IDefecttskDetailReport", "Entities/Defect/Report");
-        //maps.Add("ISalesOrdertskDetailReport", "Entities/SalesOrder/Report");
+        maps.Add("tskTransferAccount", "TransferAccount");
+        maps.Add("tskTransferContact", "TransferContact");
         return maps;
     }
 

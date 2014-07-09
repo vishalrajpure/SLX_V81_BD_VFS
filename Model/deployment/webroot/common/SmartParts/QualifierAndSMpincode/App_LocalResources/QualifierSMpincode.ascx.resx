@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="luePincode.LookupProperties.Carea.PropertyHeader" xml:space="preserve">
+  <data name="txtbranch.LookupProperties.Carea.PropertyHeader" xml:space="preserve">
     <value>Carea</value>
   </data>
   <data name="luequalifier.LookupProperties.Department.PropertyHeader" xml:space="preserve">
@@ -138,40 +138,16 @@
   <data name="luequalifier.Caption" xml:space="preserve">
     <value>Qualifier:</value>
   </data>
-  <data name="lueSaleManager.LookupProperties.Department.PropertyHeader" xml:space="preserve">
-    <value>Department</value>
-  </data>
-  <data name="lueSaleManager.LookupProperties.Division.PropertyHeader" xml:space="preserve">
-    <value>Division</value>
-  </data>
-  <data name="lueSaleManager.LookupProperties.Email.PropertyHeader" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="lueSaleManager.LookupProperties.FirstName.PropertyHeader" xml:space="preserve">
-    <value>FirstName</value>
-  </data>
-  <data name="lueSaleManager.LookupProperties.LastName.PropertyHeader" xml:space="preserve">
-    <value>LastName</value>
-  </data>
-  <data name="lueSaleManager.Caption" xml:space="preserve">
-    <value>Branch Manager:</value>
-  </data>
   <data name="QFButton.ToolTip" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="luePincode.LookupProperties.Cpincode.PropertyHeader" xml:space="preserve">
+  <data name="txtbranch.LookupProperties.Cpincode.PropertyHeader" xml:space="preserve">
     <value>Cpincode</value>
   </data>
-  <data name="luePincode.LookupProperties.Cpindesc.PropertyHeader" xml:space="preserve">
+  <data name="txtbranch.LookupProperties.Cpindesc.PropertyHeader" xml:space="preserve">
     <value>Cpindesc</value>
   </data>
-  <data name="luePincode.Caption" xml:space="preserve">
-    <value>Pincode:</value>
-  </data>
-  <data name="btndelete.ToolTip" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="btndelete.ActionConfirmationMessage" xml:space="preserve">
-    <value>You are about to permanently delete this Records.</value>
+  <data name="txtbranch.Caption" xml:space="preserve">
+    <value>Branch:</value>
   </data>
 </root>

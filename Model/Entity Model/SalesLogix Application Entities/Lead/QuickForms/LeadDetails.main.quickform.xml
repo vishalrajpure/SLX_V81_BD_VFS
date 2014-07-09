@@ -7,7 +7,7 @@
       <ResourceKey>3968105a-b7b8-49a2-8849-2b5903a11ef4</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName />
+          <MethodName>quickformload0</MethodName>
           <CSharpCodeSnippet>ClientBindingMgr.UsePageExitWarning = false;
 Sage.Entity.Interfaces.ILead lead = this.BindingSource.Current as Sage.Entity.Interfaces.ILead;
 if (lead != null)
@@ -24,17 +24,32 @@ if (lead != null)
 	bool doNotSolicit = System.Convert.ToBoolean(lead.DoNotSolicit);
     bool doNotEmail = System.Convert.ToBoolean(lead.DoNotEmail);
     emlEmail.Enabled = (!doNotSolicit &amp;&amp; !doNotEmail);*/
-	
-	if(lead.BranchManager == null)
+	string _UserId = "";
+    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+    _UserId = _IUserService.UserId; //get login Userid
+	if (lead.BranchManager == null &amp;&amp; lead.Qualifier == null)
+	{
+		cmdQualifyLead.Visible = false;
+		cmdConvertLead.Visible = false;
+	}
+	else if (lead.BranchManager == null &amp;&amp; lead.Qualifier.Id.ToString() == _UserId)
 	{
 		cmdQualifyLead.Visible = true;
 		cmdConvertLead.Visible = false;
+		txtQualifierComments_lbl.ForeColor = System.Drawing.Color.Red;
+		txtQualifierComments.Enabled = true;
 	}
-	else
-	{
-		cmdQualifyLead.Visible = false;
-		cmdConvertLead.Visible = true;
-	}
+    else if (lead.BranchManager != null &amp;&amp; lead.BranchManager.Id.ToString() == _UserId)
+    {
+        cmdQualifyLead.Visible = false;
+        cmdConvertLead.Visible = true;
+    }
+    else
+    {
+        cmdQualifyLead.Visible = false;
+        cmdConvertLead.Visible = false;
+    }
+	
 	if(lead.Status.ToUpper() == "CONVERTED" || lead.Status.ToUpper() == "DROPPED" )
 	{
 		cmdQualifyLead.Visible = false;
@@ -58,23 +73,17 @@ if (lead != null)
 		nmeLeadName.Enabled = false;
 		urlWeb.Enabled = false;
 		emlEmail.Enabled = false;
-		
-		
-		
-		
-		
 	}
-	if(lead.Status.ToUpper() == "QUALIFIED")
-	{
+	/*Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;(); 
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString()); 
+	string qry = "Select CPINCODE from VWPINCODEMASTER where CPINCODE ='" + lead.Address.PostalCode.ToString() + "'";
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	System.Data.DataTable dt = new System.Data.DataTable();
+	dataAdapterObj.Fill(dt);
+	if ((dt.Rows.Count &lt;= 0 &amp;&amp; cmdQualifyLead.Visible = true) || cmdConvertLead.Visible == false)
+    {	
 		lkpBranchManager.Enabled = true;
-		
-	}
-	//Begin Load Action
-
-
-	
-	
-//End Load Action}
+	}*/
 
 	
 }
@@ -292,8 +301,8 @@ nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;
         <Required>false</Required>
       </QFSLXEmail>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXCurrency, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXCurrency>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXNumeric, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXNumeric>
         <Column>0</Column>
         <Row>4</Row>
         <HotKey>0</HotKey>
@@ -327,16 +336,74 @@ nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;
           <RefreshData>False</RefreshData>
         </OnChangeAction>
         <Required>false</Required>
-        <CurrentCode />
-        <ExchangeRate>1</ExchangeRate>
-        <ExchangeRateType>BaseRate</ExchangeRateType>
-        <DecimalDigits>-1</DecimalDigits>
-      </QFSLXCurrency>
+        <DecimalDigits>
+          <DecimalDigits>2</DecimalDigits>
+          <Strict>false</Strict>
+        </DecimalDigits>
+        <FormatType>Decimal</FormatType>
+      </QFSLXNumeric>
+    </Control>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXDependencyLookup, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXDependencyLookup>
+        <Column>0</Column>
+        <Row>5</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>ddlMKTSG</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>Industry</DataItemName>
+            <ControlItemName>Text</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>none</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>ddlMKTSG</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+        <AutoPostBack>false</AutoPostBack>
+        <DependentLookups>
+          <DependencyLookup>
+            <PropertyDisplay>Industry:</PropertyDisplay>
+            <LookupEntityName>Indsgmst</LookupEntityName>
+            <LookupEntityTypeName>Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
+            <DropDownDisplayProperty>Cindsgdesc</DropDownDisplayProperty>
+            <ParentProperty />
+            <BindingPropertyName>Industry</BindingPropertyName>
+          </DependencyLookup>
+          <DependencyLookup>
+            <PropertyDisplay>MKT Segment:</PropertyDisplay>
+            <LookupEntityName>Indsgmst</LookupEntityName>
+            <LookupEntityTypeName>Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
+            <DropDownDisplayProperty>Cmktsgdesc</DropDownDisplayProperty>
+            <ParentProperty>Cindsgdesc</ParentProperty>
+            <BindingPropertyName>MKTSegment</BindingPropertyName>
+          </DependencyLookup>
+        </DependentLookups>
+        <LookupPreFilters />
+      </QFSLXDependencyLookup>
     </Control>
     <Control typeName="Sage.Platform.QuickForms.QFControls.QFControlsList, Sage.Platform.QuickForms.QFControls">
       <QFControlsList>
         <Column>0</Column>
-        <Row>5</Row>
+        <Row>6</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>QFControlsList</ControlId>
@@ -367,19 +434,21 @@ nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;
                   <ResourceKey>cmdAddress</ResourceKey>
                   <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
                     <CSharpSnippetActionItem>
-                      <MethodName>cmdAddress_ClickAction</MethodName>
+                      <MethodName />
                       <CSharpCodeSnippet>if (DialogService != null)
 {
 	Sage.Entity.Interfaces.ILead lead = this.BindingSource.Current as Sage.Entity.Interfaces.ILead;    
-	if(lead != null)
+	/*if(lead != null)
 	{
 		//string _idname = lead.Address.Id.ToString() + ",Lead,"+lead.Id.ToString();
         //Session["LeadAddressid"] = _idname;
-	    DialogService.SetSpecs(200, 200, 440, 300, "AddEditLeadAddress", "", true);
+	    DialogService.SetSpecs(200, 200, 440, 300, "AddLeadAddress", "", true);
 	    DialogService.EntityType = typeof(Sage.Entity.Interfaces.ILeadAddress);
 		DialogService.EntityID = lead.Address.Id.ToString();
 	    DialogService.ShowDialog();
-	}
+	}*/
+	string script_FormatNumber1 = "window.showModalDialog('InsertAddress.aspx?type=Lead&amp;id=" + lead.Address.Id.ToString() + "', '_blank', 'height=440,width=100,status=yes,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=no,titlebar=no' )";
+    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
 }</CSharpCodeSnippet>
                     </CSharpSnippetActionItem>
                   </Action>
@@ -435,7 +504,7 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
       <QFSLXAddress>
         <RowSpan>3</RowSpan>
         <Column>0</Column>
-        <Row>6</Row>
+        <Row>7</Row>
         <Enabled>false</Enabled>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
@@ -575,7 +644,7 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         <ColumnSpan>2</ColumnSpan>
         <RowSpan>3</RowSpan>
         <Column>0</Column>
-        <Row>9</Row>
+        <Row>10</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>txtComments</ControlId>
@@ -613,8 +682,49 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
     <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
       <QFTextBox>
         <ColumnSpan>2</ColumnSpan>
+        <RowSpan>3</RowSpan>
         <Column>0</Column>
-        <Row>12</Row>
+        <Row>13</Row>
+        <Enabled>false</Enabled>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>txtQualifierComments</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>QualifierComments</DataItemName>
+            <ControlItemName>Text</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <Lines>4</Lines>
+        <OnChangeAction>
+          <ResourceKey>txtQualifierComments</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+      </QFTextBox>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
+      <QFTextBox>
+        <ColumnSpan>2</ColumnSpan>
+        <Column>0</Column>
+        <Row>16</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>txtAnyInfo</ControlId>
@@ -652,7 +762,7 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXUser, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXUser>
         <Column>0</Column>
-        <Row>13</Row>
+        <Row>17</Row>
         <Enabled>false</Enabled>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
@@ -691,10 +801,10 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         <AutoPostBack>false</AutoPostBack>
       </QFSLXUser>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXUser, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXUser>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXLookup>
         <Column>0</Column>
-        <Row>14</Row>
+        <Row>18</Row>
         <Enabled>false</Enabled>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
@@ -702,7 +812,7 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>LeadEmployee</DataItemName>
+            <DataItemName>UserID</DataItemName>
             <ControlItemName>LookupResultValue</ControlItemName>
             <FormatString />
             <NullValueString />
@@ -727,17 +837,75 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
           <RefreshData>False</RefreshData>
         </OnChangeAction>
         <Required>false</Required>
-        <ShowNonLoginUsers>false</ShowNonLoginUsers>
-        <LookupBindingMode>Object</LookupBindingMode>
+        <LookupImage />
+        <LookupDialogWidth xsi:nil="true" />
+        <LookupDialogHeight xsi:nil="true" />
+        <LookupBindingMode>String</LookupBindingMode>
         <LookupResultValue xsi:type="xsd:string" />
+        <SeedProperty />
+        <SeedValue />
+        <DropDownDisplayProperty />
+        <AllowClearingResult>false</AllowClearingResult>
+        <AppendStringValues>false</AppendStringValues>
+        <OverrideSeedOnSearch>false</OverrideSeedOnSearch>
+        <LookupEntityName>Vwempmaster</LookupEntityName>
+        <LookupEntityTypeName>Sage.Entity.Interfaces.IVwempmaster, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
         <AutoPostBack>false</AutoPostBack>
-      </QFSLXUser>
+        <EnableHyperLinking>false</EnableHyperLinking>
+        <InitializeLookup>false</InitializeLookup>
+        <LookupProperties>
+          <LookupProperty>
+            <PropertyName>Cemplname</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Employee Name</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>Cemplcode</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Employee Code</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>Cjobrole</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Job Role</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>Carea</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Area</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+        </LookupProperties>
+        <LookupPreFilters />
+      </QFSLXLookup>
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXUser, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXUser>
         <Column>0</Column>
-        <Row>15</Row>
-        <Enabled>false</Enabled>
+        <Row>19</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>lkpBranchManager</ControlId>
@@ -775,26 +943,10 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         <AutoPostBack>false</AutoPostBack>
       </QFSLXUser>
     </Control>
-    <Control typeName="Sage.Platform.QuickForms.QFControls.QFHorizontalSeparator, Sage.Platform.QuickForms.QFControls">
-      <QFHorizontalSeparator>
-        <ColumnSpan>2</ColumnSpan>
-        <Column>0</Column>
-        <Row>16</Row>
-        <HotKey>48</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>hzsDetails</ControlId>
-        <DataBindings />
-        <ControlLabelPlacement>none</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme />
-        <DisplayAsTitleBar>false</DisplayAsTitleBar>
-      </QFHorizontalSeparator>
-    </Control>
     <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
       <QFTextBox>
         <Column>0</Column>
-        <Row>17</Row>
+        <Row>21</Row>
         <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
@@ -1030,7 +1182,7 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
       <QFTextBox>
         <RowSpan>2</RowSpan>
         <Column>1</Column>
-        <Row>6</Row>
+        <Row>7</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>txtBusinessDescription</ControlId>
@@ -1068,7 +1220,7 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXOwner, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXOwner>
         <Column>1</Column>
-        <Row>13</Row>
+        <Row>17</Row>
         <Enabled>false</Enabled>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
@@ -1108,7 +1260,7 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFDateTimePicker, Sage.SalesLogix.QuickForms.QFControls">
       <QFDateTimePicker>
         <Column>1</Column>
-        <Row>14</Row>
+        <Row>18</Row>
         <Enabled>false</Enabled>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
@@ -1153,7 +1305,7 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXLookup>
         <Column>1</Column>
-        <Row>15</Row>
+        <Row>19</Row>
         <Enabled>false</Enabled>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
@@ -1264,7 +1416,7 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXPickList>
         <Column>1</Column>
-        <Row>17</Row>
+        <Row>21</Row>
         <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
@@ -1355,37 +1507,70 @@ if(lead.Address.PostalCode == null)
 	DialogService.ShowMessage("Enter the Address");
 		return;
 }
+if(string.IsNullOrEmpty(lead.QualifierComments))
+{
+	DialogService.ShowMessage("Enter the Comments");
+		return;
+}
 if(lead.Products.Count &lt;= 0)
 {
 	DialogService.ShowMessage("Please Add Product...");
 	return;
 }
-//////////////Specify the Query for find BM///////////
-	string qry = "Select Q.SALESMANAGERID  from QUALIFIERANDSMPINCODE Q " +
-				"where Q.PINCODE = '"+ lead.Address.PostalCode.ToString() +"'";
+
+	string qry = "Select CPINCODE from VWPINCODEMASTER where CPINCODE ='" + lead.Address.PostalCode.ToString() + "'";
 	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
 	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
 	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
 	System.Data.DataTable dt = new System.Data.DataTable();
 	dataAdapterObj.Fill(dt);
-	if(dt.Rows.Count &gt;0)
-	{
-		Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser &gt;((object)dt.Rows[0][0].ToString());
-		lead.BranchManager = BM;
+	if (dt.Rows.Count &gt; 0)
+    {	
+		qry = "Select distinct(UserID) From Usersecurity U,VWEmpMaster E, VWPINCODEMASTER VW,VWAREAMASTER VA "+
+			"Where VA.cscrcd = VW.cscrcd AND VA.CSCRCD = E.CSCRCD AND E.CEMPLCODE = U.USERCODE AND E.CJOBROLE = 'BM' AND VW.CPINCODE = '" + lead.Address.PostalCode.ToString() + "'";
+
+
+
+		//Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+		//System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+		dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+		dt = new System.Data.DataTable();
+		dataAdapterObj.Fill(dt);
+		if (dt.Rows.Count &gt; 0)
+	    {
+			Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser&gt;((object)dt.Rows[0][0].ToString());
+			//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser &gt;((object)"ADMIN");
+			lead.BranchManager = BM;
+			lead.AccountManager = BM;
+		}
+		else if(lead.BranchManager != null)
+		{
+			lead.AccountManager = lead.BranchManager;
+		}
+		else
+		{			
+		    DialogService.ShowMessage("Branch Manager not present for pincode-" + lead.Address.PostalCode.ToString());
+			return;
+			 
+		}
 	}
 	else
 	{
-		DialogService.ShowMessage("Please map the branch manager with pincode-" + lead.Address.PostalCode);
-		return;
+		if(lead.BranchManager == null)
+		{
+			DialogService.ShowMessage("Please Select Branch Manager ...");
+			return;
+		}
+		else
+		{
+			lead.AccountManager = lead.BranchManager;
+		}
 		
 	}
 	lead.QualifiedON = DateTime.Now;
 	lead.Status = "Qualified";
 	
-	//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser &gt;((object)"ADMIN");
-	//lead.BranchManager = BM;
-	
-	System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and Upper(name) ='INSERTSECCODEID'", conObj);
     System.Data.DataTable dt2 = new System.Data.DataTable();
     dataAdapterObj2.Fill(dt2);
     if (dt2.Rows.Count &gt; 0)
@@ -1393,12 +1578,6 @@ if(lead.Products.Count &lt;= 0)
         Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
         lead.Owner = objowner;
     }
-	else
-	{
-		
-	}
-	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)"SYST00000001");
-    //lead.Owner = objowner;
 	lead.Save();
 	System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx?modeid=Detail"));
 </CSharpCodeSnippet>
@@ -1537,6 +1716,7 @@ if(lead.Company == null)
 	DialogService.ShowMessage("Enter the LegalName");
 		return;
 }*/
+
 if(lead.WorkPhone == null)
 {
 	DialogService.ShowMessage("Enter the WorkPhone");
@@ -1574,31 +1754,65 @@ switch(lead.Status)
 		lead.Owner = objowner; 
 		break; 
 	case "Qualified": 
-		if(lead.BranchManager == null) 
+		if(cmdQualifyLead.Visible == true) 
 		{ 
+			if(string.IsNullOrEmpty(lead.QualifierComments))
+			{
+				DialogService.ShowMessage("Enter the Comments");
+					return;
+			}	
 			if(lead.Products.Count &gt; 0)
 			{
-				string qry = "Select Q.SALESMANAGERID from QUALIFIERANDSMPINCODE Q " + 
-					"where Q.PINCODE = '"+ lead.Address.PostalCode.ToString() + "'"; 
-				System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj); 
-				System.Data.DataTable dt = new System.Data.DataTable(); 
+				string qry = "Select CPINCODE from VWPINCODEMASTER where CPINCODE ='" + lead.Address.PostalCode.ToString() + "'";
+				System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+				System.Data.DataTable dt = new System.Data.DataTable();
 				dataAdapterObj.Fill(dt);
-				if(dt.Rows.Count &gt;0)
-				{
-					Sage.Entity.Interfaces.IUser BM = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser&gt;((object)dt.Rows[0][0].ToString()); 
-					lead.BranchManager = BM; 
+				if (dt.Rows.Count &gt; 0)
+			    {	
+					qry = "Select distinct(UserID) From Usersecurity U,VWEmpMaster E, VWPINCODEMASTER VW,VWAREAMASTER VA " +
+						"Where VA.cscrcd = VW.cscrcd AND VA.CSCRCD = E.CSCRCD AND E.CEMPLCODE = U.USERCODE AND E.CJOBROLE = 'BM' AND VW.CPINCODE = '" + lead.Address.PostalCode.ToString() + "'";
+
+
+					//Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+					//System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+					dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+					dt = new System.Data.DataTable();
+					dataAdapterObj.Fill(dt);
+					if (dt.Rows.Count &gt; 0)
+				    {
+						Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser&gt;((object)dt.Rows[0][0].ToString());
+						//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser &gt;((object)"ADMIN");
+						lead.BranchManager = BM;
+						lead.AccountManager = BM;
+					}
+					else if(lead.BranchManager != null)
+					{
+						lead.AccountManager = lead.BranchManager;
+					}
+					else
+					{
+				        DialogService.ShowMessage("Branch Manager not present for pincode-" + lead.Address.PostalCode.ToString());
+						return;
+						 
+					}
 				}
 				else
 				{
-					DialogService.ShowMessage("Please map the branch manager with pincode-" + lead.Address.PostalCode);
-					return;
-					 
+					if(lead.BranchManager == null)
+					{
+						DialogService.ShowMessage("Please Select Branch Manager ...");
+						return;
+					}
+					else
+					{
+						lead.AccountManager = lead.BranchManager;
+					}
 				}
 				lead.QualifiedON = DateTime.Now; 
 				lead.Status = "Qualified"; 
 				//Sage.Entity.Interfaces.IUser BM = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IUser&gt;((object)"ADMIN"); 
 				//lead.BranchManager = BM; 
-				System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj); 
+				System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and Upper(name) ='INSERTSECCODEID'", conObj); 
 				System.Data.DataTable dt2 = new System.Data.DataTable(); 
 				dataAdapterObj2.Fill(dt2); 
 				if (dt2.Rows.Count &gt; 0) 
@@ -1620,7 +1834,7 @@ switch(lead.Status)
 			//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)"SYST00000001"); 
 			//lead.Owner = objowner; 
 		} 
-		else
+		else if(lead.BranchManager != null &amp;&amp; cmdConvertLead.Visible == true)
 		{
 				System.Data.OleDb.OleDbDataAdapter dataAdapterObj3 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + lead.BranchManager.Id.ToString() + "' and name ='INSERTSECCODEID'", conObj); 
 				System.Data.DataTable dt3 = new System.Data.DataTable(); 
@@ -1629,7 +1843,13 @@ switch(lead.Status)
 				{ 
 					Sage.Entity.Interfaces.IOwner objowner2 = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IOwner&gt;((object)dt3.Rows[0][0].ToString()); 
 					lead.Owner = objowner2; 
+					lead.AccountManager = lead.BranchManager;
 				} 
+		}
+		else
+		{
+			DialogService.ShowMessage("Please Choose correct Status...");
+			return;
 		}
 		break; 
 	case "Converted": 
@@ -1646,6 +1866,11 @@ switch(lead.Status)
 				DialogService.ShowMessage("Please Convert lead via Convert Qualified Lead Button...");
 				return;
 			}
+			else
+            {
+                DialogService.ShowMessage("You are not authorize to convert lead...");
+                return;
+            }
 			 
 		} 
 		break; 
@@ -1732,6 +1957,22 @@ System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx?modeid
     </ColumnStyle>
   </Columns>
   <Rows>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
     <RowStyle>
       <SizeType>Absolute</SizeType>
       <Height>35</Height>

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="OpportunitySalesProcess.ascx.cs" Inherits="SmartParts_OpportunitySalesProcess_SalesProcess" %>
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="OpportunitySalesProcess.ascx.cs" Inherits="SmartParts_OpportunitySalesProcess_SalesProcess" %>
 <%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls" TagPrefix="SalesLogix" %>
 <%@ Register Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI" TagPrefix="asp" %>
 <%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls.DependencyLookup" TagPrefix="SalesLogix" %>
@@ -219,11 +219,11 @@
         <tr>
             <td>
                           <span class="lbl" style="font-style:normal" >
-                 <asp:LinkButton OnClientClick="javascript:btnDisable(this.id);" id="btnStages" runat="server" CommandName="Stages" OnClick="cmdStages_Click" ToolTip="<%$ resources: linkManageStages.ToolTip %>" Text="<%$ resources: linkManageStages.Text %>" /> 
-                 <asp:Label runat="server" id="btnStagesHide" style="color:#0000CC;display:none;" Text="<%$ resources: linkManageStages.Text %>"></asp:Label>
+                 <asp:LinkButton OnClientClick="javascript:btnDisable(this.id);" id="btnStages" runat="server" CommandName="Stages" OnClick="cmdStages_Click" ToolTip="<%$ resources: linkManageStages.ToolTip %>" Text="<%$ resources: linkManageStages.Text %>" Visible = "false" /> 
+                 <asp:Label runat="server" id="btnStagesHide" style="color:#0000CC;display:none;" Text="<%$ resources: linkManageStages.Text %>" Visible = "false"></asp:Label>
                </span>
                <span class="textcontrol">
-                 <asp:DropDownList runat="server" ID="ddlStages" data-dojo-type="Sage.UI.Controls.Select" CssClass="select-control" shouldPublishMarkDirty="false" OnSelectedIndexChanged="ddlStages_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                 <asp:DropDownList runat="server" ID="ddlStages" data-dojo-type="Sage.UI.Controls.Select" CssClass="select-control" shouldPublishMarkDirty="false" Visible = "false" OnSelectedIndexChanged="ddlStages_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                 </span> 
                 
             </td>

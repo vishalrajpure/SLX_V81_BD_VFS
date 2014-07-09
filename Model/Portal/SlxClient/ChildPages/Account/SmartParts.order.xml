@@ -38,4 +38,5 @@
   <Item Id="6196c054-d72e-4093-91f4-de714e0817ed">MergeAddress.smartpart.xml</Item>
   <Item Id="68082fc3-3f1b-4fb6-b9c8-bbe48bf98873">MergeContactAddress.smartpart.xml</Item>
   <Item Id="6a822f60-a361-4228-9420-a9f93bbf99b5">AddAccountAddress.smartpart.xml</Item>
+  <Item Id="c69756f5-3552-4520-a203-a10e3c2a7d65">InsertAddress.smartpart.xml</Item>
 </ModelItems>

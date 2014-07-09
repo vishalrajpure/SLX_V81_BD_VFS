@@ -2,7 +2,7 @@
 <ModelItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Item Id="d430291f-cf1e-478a-921c-55f4ad5ea66d">ContactDetails.smartpart.xml</Item>
   <Item Id="ec0b5b9f-3c55-4116-a641-1647f3852c16">ContactExtendedDetails.smartpart.xml</Item>
-  <Item Id="a465c5dd-bada-4500-ba30-a9daee6c2497">ContactOpportunities.smartpart.xml</Item>
+  <Item Id="8e5bb5ac-8577-49c2-8957-efde8d8e5fb8">ContactOpportunities_Read.smartpart.xml</Item>
   <Item Id="902ce8b3-43f0-48f2-98d7-7482d3ace913">MoveContact.smartpart.xml</Item>
   <Item Id="cb69d994-a156-4460-9ae6-9ecff25729f2">CopyNewContact.smartpart.xml</Item>
   <Item Id="69fc0e4b-ae6e-4b10-bd1b-79100db52fab">NotesHistoryList.smartpart.xml</Item>
@@ -12,7 +12,7 @@
   <Item Id="cc794c4a-7ee1-4d29-87bb-3ab981ede2c4">ContactAssociations.smartpart.xml</Item>
   <Item Id="142cbe99-0bba-4f4f-93be-3b22cc9992a6">ContactAddresses.smartpart.xml</Item>
   <Item Id="1487fead-3234-4e38-ab09-fe2ea248d2f8">AttachmentList.smartpart.xml</Item>
-  <Item Id="310f1ee6-1286-4331-82d7-2f8fdeedaae1">ContactLeadSources.smartpart.xml</Item>
+  <Item Id="35e28a55-aa33-4127-85ea-0ba759f7c736">ContactLeadSources_Read.smartpart.xml</Item>
   <Item Id="594f86ed-92a5-416b-bb50-54811ec3d372">ContactLiteratureRequests.smartpart.xml</Item>
   <Item Id="2cd73904-c564-4811-a96c-c2e75f70bd29">ContactMarketing.smartpart.xml</Item>
   <Item Id="7fb55e09-dd92-4ab7-953b-737a73065c41">ContactResponses.smartpart.xml</Item>
@@ -30,4 +30,5 @@
   <Item Id="1db78bfa-a6b4-4b52-bf58-59dda118f812">MergeContactAddress.smartpart.xml</Item>
   <Item Id="5d37c64b-bf34-4fa8-91fc-a7248d9cbf66">MergeAddress.smartpart.xml</Item>
   <Item Id="174b8e8d-730f-48fc-bf48-088a7f868236">AddAccountAddress.smartpart.xml</Item>
+  <Item Id="625962a8-5cc1-4ddd-b679-5a668d3dad65">InsertAddress.smartpart.xml</Item>
 </ModelItems>

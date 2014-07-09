@@ -110,7 +110,7 @@
  </div>   
    <div  class="textcontrol numeric"  > 
     <SalesLogix:NumericControl runat="server" ID="txtBusinessPotential"
-Required="true" DecimalDigits="2" Strict="True" 
+MaxLength="13" DecimalDigits="2" Strict="False" 
  />
   </div>
 
@@ -269,7 +269,7 @@ LabelPlacement="left"  />
    <SalesLogix:GroupNavigator runat="server" ID="grnDetails" ></SalesLogix:GroupNavigator>
     <asp:ImageButton runat="server" ID="cmdSave"
  AlternateText="<%$ resources: cmdSave.Caption %>"  ToolTip="<%$ resources: cmdSave.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_16x16"  />
- 
+   
     <asp:ImageButton runat="server" ID="cmdCopyOpportunity"
  AlternateText="<%$ resources: cmdCopyOpportunity.Caption %>"  ToolTip="<%$ resources: cmdCopyOpportunity.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Copy_16x16"  />
  
@@ -369,6 +369,91 @@ protected void pklStatus_ChangeAction(object sender, EventArgs e) {
 Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 string dialog = "";
 
+Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
+
+string _UserId = "", AccManager = "";
+Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+_UserId = _IUserService.UserId; //get login Userid
+AccManager = Convert.ToString(opportunity.AccountManager.Id);
+if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(opportunity.Account.AccountManager.Id) == _UserId.Trim()) && (opportunity.Status != "Closed - Won" && opportunity.Status.ToUpper() != "LOST" && opportunity.Status.ToUpper() != "DROPPED"))
+{
+    txtDescription.Enabled = true;
+    lueAccount.Enabled = true;
+    usrUser.Enabled = true;
+    lueReseller.Enabled = true;
+    dtpEstimatedClose.Enabled = true;
+    pklCloseProbability.Enabled = true;
+    pklStatus.Enabled = true;
+    txtBusinessPotential.Enabled = true;
+    chkAddToForecast.Enabled = true;
+    txtComments.Enabled = true;
+    clIntegrationContract.Enabled = true;
+    cmdSave.Enabled = true;
+    pklSatge.Enabled = true;
+    cmdReset.Enabled = true;
+    cmdDelete.Enabled = true;
+    if (tabWorkspace != null)
+    {
+        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabproduct = null;
+        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabcontact = null;
+        foreach (Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tab in tabWorkspace.Tabs)
+        {
+            if (tab.ID == "OpportunityProducts_Read")
+            {
+                tabproduct = tab;
+            }
+            if (tab.ID == "OpportunityContacts_Read")
+            {
+                tabcontact = tab;
+            }
+        }
+
+        tabWorkspace.Tabs.Remove(tabproduct);
+        tabWorkspace.Tabs.Remove(tabcontact);
+    }    
+}
+else
+{
+    txtDescription.Enabled = false;
+    lueAccount.Enabled = false;
+    usrUser.Enabled = false;
+    lueReseller.Enabled = false;
+    dtpEstimatedClose.Enabled = false;
+    pklCloseProbability.Enabled = false;
+    pklStatus.Enabled = false;
+    txtBusinessPotential.Enabled = false;
+    chkAddToForecast.Enabled = false;
+    txtComments.Enabled = false;
+    clIntegrationContract.Enabled = false;
+    cmdSave.Enabled = false;
+    pklSatge.Enabled = false;
+    cmdReset.Enabled = false;
+    cmdDelete.Enabled = false;
+    if (tabWorkspace != null)
+    {
+        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabproduct = null;
+        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabcontact = null;
+        foreach (Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tab in tabWorkspace.Tabs)
+        {
+            if (tab.ID == "OpportunityProducts")
+            {
+                tabproduct = tab;
+            }
+            if (tab.ID == "OpportunityContacts")
+            {
+                tabcontact = tab;
+            }
+        }
+
+        tabWorkspace.Tabs.Remove(tabproduct);
+        tabWorkspace.Tabs.Remove(tabcontact);
+    }    
+}
+    
+
+
+
+
 if(opportunity.Status=="Dropped" || opportunity.Status=="Future Opportunity")
 {
 	//DialogService.SetSpecs(380, 600, dialog, "DroppedFutureOpp");
@@ -377,7 +462,14 @@ if(opportunity.Status=="Dropped" || opportunity.Status=="Future Opportunity")
 }
 else if (opportunity.StatusChangeWon())
 {
-  dialog = "OpportunityClosedWon";
+	DialogService.ShowMessage("You are not Authorise to Closed-Won Opportunity");
+	object resOpen = System.Web.HttpContext.GetGlobalResourceObject("Opportunity", "Opp_Status_Active");
+    if (resOpen != null)
+    {
+        opportunity.Status = resOpen.ToString(); //"Open";
+    } 
+	return;
+    //dialog = "OpportunityClosedWon";
 }
 else if (opportunity.StatusChangeLost() || opportunity.Status=="Lost")
 {
@@ -416,32 +508,57 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);
 
 }
 protected void cmdSave_ClickAction(object sender, EventArgs e) {
-Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+  Sage.Entity.Interfaces.IOpportunity _entity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+  if (_entity != null)
+  {
+    object _parent = GetParentEntity();
+    if (DialogService.ChildInsertInfo != null)
+    {
+        if (_parent != null)
+        {
+            if (DialogService.ChildInsertInfo.ParentReferenceProperty != null)
+            {
+                DialogService.ChildInsertInfo.ParentReferenceProperty.SetValue(_entity, _parent, null);
+            }
+        }
+    }
+    bool shouldSave = true;
+    Sage.Platform.WebPortal.EntityPage page = Page as Sage.Platform.WebPortal.EntityPage;
+    if (page != null)
+    {
+        if(IsInDialog() && page.ModeId.ToUpper() == "INSERT")
+        {
+            shouldSave = false;
+        }
+    }
 
-if(opp.BusinessPotential <= 0)
-{
-	 DialogService.ShowMessage("Please Enter Business Potential...");
-     return;
+    if(shouldSave)
+    {
+       _entity.Save();
+    }
+
+    if (_parent != null)
+    {
+        if (DialogService.ChildInsertInfo != null)
+        {
+           if (DialogService.ChildInsertInfo.ParentsCollectionProperty != null)
+           {
+              System.Reflection.MethodInfo _add = DialogService.ChildInsertInfo.ParentsCollectionProperty.PropertyType.GetMethod("Add");
+              _add.Invoke(DialogService.ChildInsertInfo.ParentsCollectionProperty.GetValue(_parent, null), new object[] { _entity });
+           }
+        }
+     }
+  }
+
+          cmdSave_ClickActionBRC(sender, e);
+    
+  
 }
-if (opp.Status == "Closed - Won")
-{
-    //pklStatus.PickListValue = opportunity.Status;
-    DialogService.ShowMessage("You are not authorised to change the status to Closed - Won.");
-    return;
-}
-else
-{
-	if (opp.Status == "Lost" || opp.Status == "Dropped" || opp.Status == "Future Opportunity")
-	   {
-         if (string.IsNullOrEmpty(opp.Notes))
-         {
-             DialogService.ShowMessage("Please  mention comments for changing the status.");
-			 return;
-         }
-	   }
-	opp.SalesPotential = Convert.ToDouble(opp.SalesPotential);
-    opp.Save();
- }   
+protected void cmdSave_ClickActionBRC(object sender, EventArgs e) {
+Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+opp.SalesPotential = Convert.ToDouble(opp.SalesPotential);
+opp.Save();
+System.Web.HttpContext.Current.Response.Redirect(string.Format("Opportunity.aspx?modeid=Detail&entityid=" + opp.Id.ToString()));
 
 }
 protected void cmdCopyOpportunity_ClickAction(object sender, EventArgs e) {
@@ -499,86 +616,17 @@ txtDescription_lbl.ForeColor = System.Drawing.Color.Red;
 txtBusinessPotential_lbl.ForeColor = System.Drawing.Color.Red;
 lueAccount_lbl.ForeColor = System.Drawing.Color.Red;
 Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-    
 
-Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = (Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace)PageWorkItem.Workspaces["TabControl"];
-       
+Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
+string _UserId = "", AccManager = "";
+Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+_UserId = _IUserService.UserId; //get login Userid
+AccManager = Convert.ToString(objOpp.AccountManager.Id);
 
-/*if (!IsPostBack)
-{*/
-    string _UserId = "", AccManager = "";
-    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
-    _UserId = _IUserService.UserId; //get login Userid
-    AccManager = Convert.ToString(objOpp.AccountManager.Id);
-    if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id) == _UserId.Trim()) && (objOpp.Status != "Closed - Won" || objOpp.Status.ToUpper() != "LOST" || objOpp.Status.ToUpper() != "DROPPED"))
-    {
-        txtDescription.Enabled = true;
-        lueAccount.Enabled = true;
-        usrUser.Enabled = true;
-        lueReseller.Enabled = true;
-        dtpEstimatedClose.Enabled = true;
-        pklCloseProbability.Enabled = true;
-        pklStatus.Enabled = true;
-        txtBusinessPotential.Enabled = true;
-        chkAddToForecast.Enabled = true;
-        txtComments.Enabled = true;
-        clIntegrationContract.Enabled = true;
-        cmdSave.Enabled = true;
-		pklSatge.Enabled = true;
-		cmdReset.Enabled = true;
-		cmdDelete.Enabled = true;
-        tabWorkspace.Hide("OpportunityProducts_Read", true);
-        tabWorkspace.Hide("OpportunityContacts_Read", true);
-    }
-    else
-    {
-        txtDescription.Enabled = false;
-        lueAccount.Enabled = false;
-        usrUser.Enabled = false;
-        lueReseller.Enabled = false;
-        dtpEstimatedClose.Enabled = false;
-        pklCloseProbability.Enabled = false;
-        pklStatus.Enabled = false;
-        txtBusinessPotential.Enabled = false;
-        chkAddToForecast.Enabled = false;
-        txtComments.Enabled = false;
-        clIntegrationContract.Enabled = false;
-        cmdSave.Enabled = false;
-		pklSatge.Enabled = false;
-		cmdReset.Enabled = false;
-		cmdDelete.Enabled = false;
-		tabWorkspace.Hide("OpportunityProducts", true);
-        tabWorkspace.Hide("OpportunityContacts", true);
-    }
-	/*if (objOpp.Status == "Closed - Won" || objOpp.Status.ToUpper() == "LOST" || objOpp.Status.ToUpper() == "DROPPED")
+if(!Page.IsPostBack)
+{
+	if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id) == _UserId.Trim()) && (objOpp.Status != "Closed - Won" && objOpp.Status.ToUpper() != "LOST" && objOpp.Status.ToUpper() != "DROPPED"))
 	{
-	   // pklStatus.PickListName = "Opportunity Status Closed";
-	    //pklStatus.ReadOnly = true;
-	    
-	    txtDescription.Enabled = false;
-	    lueAccount.Enabled = false;
-	    usrUser.Enabled = false;
-	    lueReseller.Enabled = false;
-	    dtpEstimatedClose.Enabled = false;
-	    pklCloseProbability.Enabled = false;
-	    pklStatus.Enabled = false;
-	    txtBusinessPotential.Enabled = false;
-	    chkAddToForecast.Enabled = false;
-	    txtComments.Enabled = false;
-	    clIntegrationContract.Enabled = false;
-	    cmdSave.Enabled = false;
-		pklSatge.Enabled = false;
-		cmdReset.Enabled = false;
-		cmdDelete.Enabled = false;
-		tabWorkspace.Hide("OpportunityProducts", true);
-	    tabWorkspace.Hide("OpportunityContacts", true);
-	    
-	}
-	else
-	{
-	    //pklStatus.PickListName = "Opportunity Status Detail";
-	    //pklStatus.ReadOnly = false;
-	    //pklStatus.PickListValue= objOpp.Status;
 	    txtDescription.Enabled = true;
 	    lueAccount.Enabled = true;
 	    usrUser.Enabled = true;
@@ -586,6 +634,7 @@ Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = (Sage.Platfor
 	    dtpEstimatedClose.Enabled = true;
 	    pklCloseProbability.Enabled = true;
 	    pklStatus.Enabled = true;
+		pklStatus.ReadOnly = false;
 	    txtBusinessPotential.Enabled = true;
 	    chkAddToForecast.Enabled = true;
 	    txtComments.Enabled = true;
@@ -594,14 +643,64 @@ Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = (Sage.Platfor
 		pklSatge.Enabled = true;
 		cmdReset.Enabled = true;
 		cmdDelete.Enabled = true;
-		tabWorkspace.Hide("OpportunityProducts_Read", true);
-	    tabWorkspace.Hide("OpportunityContacts_Read", true);
-	}*/
-//}
+	    /*if (tabWorkspace != null)
+	    {
+	        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabproduct = null;
+	        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabcontact = null;
+	        foreach (Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tab in tabWorkspace.Tabs)
+	        {
+	            if (tab.ID == "OpportunityProducts_Read")
+	            {
+	                tabproduct = tab;
+	            }
+	            if (tab.ID == "OpportunityContacts_Read")
+	            {
+	                tabcontact = tab; 
+	            }
+	        }
+	        tabWorkspace.Tabs.Remove(tabproduct);
+	        tabWorkspace.Tabs.Remove(tabcontact);
+	    }  */
+	}
+	else
+	{
+	    txtDescription.Enabled = false;
+	    lueAccount.Enabled = false;
+	    usrUser.Enabled = false;
+	    lueReseller.Enabled = false;
+	    dtpEstimatedClose.Enabled = false;
+	    pklCloseProbability.Enabled = false;
+	    pklStatus.Enabled = false;
+		 pklStatus.ReadOnly = true;
+	    txtBusinessPotential.Enabled = false;
+	    chkAddToForecast.Enabled = false;
+	    txtComments.Enabled = false;
+	    clIntegrationContract.Enabled = false;
+	    cmdSave.Enabled = false;
+		pklSatge.Enabled = false;
+		cmdReset.Enabled = false;
+		cmdDelete.Enabled = false;
+		/*if (tabWorkspace != null)
+	    {
+	        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabproduct = null;
+	        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabcontact = null;
+	        foreach (Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tab in tabWorkspace.Tabs)
+	        {
+	            if (tab.ID == "OpportunityProducts")
+	            {
+	                tabproduct = tab; 
+	            }
+	            if (tab.ID == "OpportunityContacts")
+	            {
+	                tabcontact = tab;
+	            }
+	        }
 
-//pklStatus.PickListValue= objOpp.Status;
-
-
+	        tabWorkspace.Tabs.Remove(tabproduct);
+	        tabWorkspace.Tabs.Remove(tabcontact);
+	    }  */  
+	}
+}
 
 }
 protected void quickformload1(object sender, EventArgs e) {
@@ -627,6 +726,8 @@ Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.Entit
             _runActivating = (epage.IsNewEntity || _runActivating);
 if (_runActivating) DoActivating();
 ScriptManager.RegisterStartupScript(Page, GetType(), "cleanupcontainer", "jQuery(\".controlslist > div:empty\").remove();", true);
+ClientBindingMgr.RegisterSaveButton(cmdSave);
+
 cmdDelete.OnClientClick = string.Format("return confirm('{0}');", Sage.Platform.WebPortal.PortalUtil.JavaScriptEncode(GetLocalResourceObject("cmdDelete.ActionConfirmationMessage").ToString()));
 
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))

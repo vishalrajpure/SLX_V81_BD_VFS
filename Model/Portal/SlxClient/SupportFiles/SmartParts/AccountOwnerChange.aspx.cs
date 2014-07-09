@@ -46,11 +46,8 @@ public partial class SmartParts_AccountOwnerChange : System.Web.UI.Page
     {
         Sage.Platform.Data.IDataService service = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
         System.Data.OleDb.OleDbConnection conObj1 = new System.Data.OleDb.OleDbConnection(service.GetConnectionString());
-        string query = "Select Distinct UI.Username,UI.userid from userprofile UP "
-                     + " Inner join USERINFO UI on Up.Userid=UI.Userid "
-					 + " WHERE  UI.userID not in ('U6UJ9A000000','U6UJ9A000001','U6UJ9A000002',"
-                     + " 'U6UJ9A000003','U6UJ9A000004','U6UJ9A000005','U6UJ9A000006','U6UJ9A000007','U6UJ9A000008')"
-                     + " order by UI.Username";
+        string query = " select * from Userinfo where (Title != '' or title is not null) And Userid !='ADMIN' "
+                     + " order by Username";
 
         System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(query, conObj1);
         System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(cmd);

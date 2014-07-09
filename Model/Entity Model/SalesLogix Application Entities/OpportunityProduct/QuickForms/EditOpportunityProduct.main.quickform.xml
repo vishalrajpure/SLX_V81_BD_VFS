@@ -7,9 +7,9 @@
       <ResourceKey>9a53104c-1223-4b78-9317-0db9e950b932</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName>quickformload0</MethodName>
+          <MethodName />
           <CSharpCodeSnippet>var optionSvc = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.SalesLogix.Services.ISystemOptionsService&gt;(true);
-bool multiCurrency = optionSvc.MultiCurrency;
+/*bool multiCurrency = optionSvc.MultiCurrency;
 Sage.Entity.Interfaces.IOpportunityProduct oppProduct = BindingSource.Current as Sage.Entity.Interfaces.IOpportunityProduct;
 if (multiCurrency)
 {
@@ -32,7 +32,7 @@ foreach (Sage.Entity.Interfaces.IProductProgram priceLevel in oppProduct.Product
 	if(oppProduct.Program == priceLevel.Program)
 		item.Selected = true;
     lstbxPriceLevel.Items.Add(item);
-}
+}*/
 
 </CSharpCodeSnippet>
         </CSharpSnippetActionItem>
@@ -58,6 +58,7 @@ foreach (Sage.Entity.Interfaces.IProductProgram priceLevel in oppProduct.Product
         <Column>0</Column>
         <Row>0</Row>
         <IsReadOnly>true</IsReadOnly>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>txtSort</ControlId>
@@ -129,18 +130,56 @@ foreach (Sage.Entity.Interfaces.IProductProgram priceLevel in oppProduct.Product
         <Required>false</Required>
       </QFTextBox>
     </Control>
-    <Control typeName="Sage.Platform.QuickForms.QFControls.QFControlsList, Sage.Platform.QuickForms.QFControls">
-      <QFControlsList>
-        <TabIndex>0</TabIndex>
-        <StyleScheme>qfActionContainer</StyleScheme>
-        <ControlLabelPlacement>left</ControlLabelPlacement>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
+      <QFTextBox>
         <Column>0</Column>
         <Row>2</Row>
+        <IsReadOnly>true</IsReadOnly>
         <HotKey>0</HotKey>
-        <ControlId>QFControlsList</ControlId>
-        <DataBindings />
+        <TabIndex>0</TabIndex>
+        <ControlId>txtFamily</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>Product.Family</DataItemName>
+            <ControlItemName>Text</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
         <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>txtFamily</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+      </QFTextBox>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.QFControls.QFControlsList, Sage.Platform.QuickForms.QFControls">
+      <QFControlsList>
+        <Column>0</Column>
+        <Row>3</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>QFControlsList</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme>qfActionContainer</StyleScheme>
         <Caption />
         <Controls>
           <ControlsCollection>
@@ -220,13 +259,11 @@ foreach (Sage.Entity.Interfaces.IProductProgram priceLevel in oppProduct.Product
     </Control>
     <Control typeName="Sage.Platform.QuickForms.QFControls.QFListBox, Sage.Platform.QuickForms.QFControls">
       <QFListBox>
-        <TabIndex>2</TabIndex>
-        <StyleScheme />
-        <ControlLabelPlacement>left</ControlLabelPlacement>
         <Column>0</Column>
-        <Row>3</Row>
+        <Row>4</Row>
         <Visible>false</Visible>
         <HotKey>0</HotKey>
+        <TabIndex>2</TabIndex>
         <ControlId>lstbxPriceLevel</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
@@ -237,8 +274,10 @@ foreach (Sage.Entity.Interfaces.IProductProgram priceLevel in oppProduct.Product
             <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
         </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
         <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
         <SelectedIndex>-1</SelectedIndex>
         <Items />
         <OnChangeAction>
@@ -272,7 +311,7 @@ foreach (Sage.Entity.Interfaces.IProductProgram priceLevel in oppProduct.Product
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXCurrency, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXCurrency>
         <Column>0</Column>
-        <Row>4</Row>
+        <Row>5</Row>
         <IsReadOnly>true</IsReadOnly>
         <Visible>false</Visible>
         <HotKey>0</HotKey>
@@ -315,13 +354,11 @@ foreach (Sage.Entity.Interfaces.IProductProgram priceLevel in oppProduct.Product
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXNumeric, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXNumeric>
-        <TabIndex>4</TabIndex>
-        <StyleScheme />
-        <ControlLabelPlacement>left</ControlLabelPlacement>
         <Column>0</Column>
-        <Row>5</Row>
+        <Row>6</Row>
         <Visible>false</Visible>
         <HotKey>0</HotKey>
+        <TabIndex>4</TabIndex>
         <ControlId>txtDiscount</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
@@ -332,8 +369,10 @@ foreach (Sage.Entity.Interfaces.IProductProgram priceLevel in oppProduct.Product
             <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
         </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
         <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
         <OnChangeAction>
           <ResourceKey>txtDiscount</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.BusinessRuleActionItem, Sage.Platform.QuickForms">
@@ -366,7 +405,7 @@ foreach (Sage.Entity.Interfaces.IProductProgram priceLevel in oppProduct.Product
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXCurrency, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXCurrency>
         <Column>0</Column>
-        <Row>6</Row>
+        <Row>7</Row>
         <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>5</TabIndex>
@@ -417,7 +456,7 @@ foreach (Sage.Entity.Interfaces.IProductProgram priceLevel in oppProduct.Product
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXCurrency, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXCurrency>
         <Column>0</Column>
-        <Row>7</Row>
+        <Row>8</Row>
         <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>6</TabIndex>
@@ -473,7 +512,7 @@ foreach (Sage.Entity.Interfaces.IProductProgram priceLevel in oppProduct.Product
     <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
       <QFTextBox>
         <Column>0</Column>
-        <Row>8</Row>
+        <Row>9</Row>
         <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>7</TabIndex>
@@ -519,7 +558,7 @@ foreach (Sage.Entity.Interfaces.IProductProgram priceLevel in oppProduct.Product
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXCurrency, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXCurrency>
         <Column>0</Column>
-        <Row>9</Row>
+        <Row>10</Row>
         <IsReadOnly>true</IsReadOnly>
         <Visible>false</Visible>
         <HotKey>0</HotKey>
@@ -598,6 +637,10 @@ foreach (Sage.Entity.Interfaces.IProductProgram priceLevel in oppProduct.Product
     </ColumnStyle>
   </Columns>
   <Rows>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
     <RowStyle>
       <SizeType>Absolute</SizeType>
       <Height>35</Height>

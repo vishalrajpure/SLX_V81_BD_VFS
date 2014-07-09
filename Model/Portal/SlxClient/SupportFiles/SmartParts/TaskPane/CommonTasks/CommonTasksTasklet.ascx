@@ -31,6 +31,7 @@
     </ul>
     <asp:Button ID="tskExportToExcel" runat="server" style="display:none;" />
 	<asp:Button ID="tskTransferAccount" runat="server" style="display:none;" />
+	<asp:Button ID="tskTransferContact" runat="server" style="display:none;" />
     <script type="text/javascript">
         var commonTaskActions;
         require([

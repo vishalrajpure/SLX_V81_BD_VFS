@@ -273,4 +273,19 @@
   <data name="cmdShowMap.ToolTip" xml:space="preserve">
     <value>Show Map</value>
   </data>
+  <data name="lkpLeadEmployee.LookupProperties.Cjobrole.PropertyHeader" xml:space="preserve">
+    <value>Job Role</value>
+  </data>
+  <data name="lkpLeadEmployee.LookupProperties.Cemplname.PropertyHeader" xml:space="preserve">
+    <value>Employee Name</value>
+  </data>
+  <data name="lkpLeadEmployee.LookupProperties.Cemplcode.PropertyHeader" xml:space="preserve">
+    <value>Employee Code</value>
+  </data>
+  <data name="lkpLeadEmployee.LookupProperties.Carea.PropertyHeader" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="lkpLeadEmployee.LookupProperties.Area.PropertyHeader" xml:space="preserve">
+    <value>Area</value>
+  </data>
 </root>

@@ -175,6 +175,61 @@ function (
                 jobs.triggerJobAndDisplayProgressDialog(options);
             };
         },
+		TransferContact: function () {
+            this.getCurrentEntity();
+            this.prepareSelectedRecords(this.promptForFileFormat2(this));
+        },
+        
+        // Prompt the user to select which delimiter the export should use.
+        // Their cultural version of csv or Excel preferred Tab.
+        // Also allow the user to save this preference, and not be prompted again.
+        promptForFileFormat2: function () {
+            var self = this,
+                promptForFileFormatDialogId = "promptForFileFormat-Dialog",
+                promptForFileFormatDialog = dijit.byId(promptForFileFormatDialogId);
+
+            if (!promptForFileFormatDialog) {
+                promptForFileFormatDialog = new DijitDialog({
+                    id: promptForFileFormatDialogId,
+                    title: "Transfer Contact"
+                });
+            }
+
+            promptForFileFormatDialog.attr("content", this.getPromptForFileFormatTemplate2().apply({ dialogId: promptForFileFormatDialogId }));
+            promptForFileFormatDialog.show();
+        },
+
+        getPromptForFileFormatTemplate2: function () {
+            return new Simplate([
+                '<div>',
+                    '<iframe id ="ie" src="smartparts/ContactOwnerChange.aspx" runat="server" width:300,height:150></iframe>',
+                    '<br />',
+                    '<div style="padding-right:5px; padding-bottom:5px; text-align:right;">',
+                        '<button data-dojo-type="dijit.form.Button" type="submit" class="ok-button" onClick="commonTaskActions.onTransferContactClick();">{%= commonTaskActions.exportToFile_OK %}</button>',
+                        '<button data-dojo-type="dijit.form.Button" type="button" class="cancel-button" onClick="dijit.byId(\'promptForFileFormat-Dialog\').hide();">{%= commonTaskActions.exportToFile_Cancel %}</button>',
+                    '</div>',
+                '</div>'
+            ]);
+        },
+        onTransferContactClick: function () {
+
+            //Call the click event for the hidden sumbit button.
+        var childiFrame = document.getElementById("ie");       
+        var innerDoc = childiFrame.contentDocument || childiFrame.contentWindow.document;
+        var Usr = innerDoc.getElementById('drpusers');
+        var User = Usr.options[Usr.selectedIndex].value;
+            if (User == '0') {
+                alert('Please select User');
+                window.frames['ie'].document.getElementById('drpusers').focus();
+            }
+            else {
+                document.cookie = "User=" + User;
+                dojo.byId([this.clientId, '_tskTransferContact'].join('')).click();
+                //dialog.hide(); 
+            }
+
+        },
+		
 		TransferAccount: function () {
             this.getCurrentEntity();
             this.prepareSelectedRecords(this.promptForFileFormat1(this));

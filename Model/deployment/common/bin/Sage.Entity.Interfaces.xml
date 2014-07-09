@@ -684,6 +684,16 @@
             <c>true</c> if the current object is being created.
             </summary>
         </member>
+        <member name="P:Sage.Entity.Interfaces.IIndsgmst.InstanceId">
+            <summary>
+            Gets the unique identifier for this instance
+            </summary>
+        </member>
+        <member name="P:Sage.Entity.Interfaces.IIndsgmst.Creating">
+            <summary>
+            <c>true</c> if the current object is being created.
+            </summary>
+        </member>
         <member name="P:Sage.Entity.Interfaces.IIntegration.InstanceId">
             <summary>
             Gets the unique identifier for this instance

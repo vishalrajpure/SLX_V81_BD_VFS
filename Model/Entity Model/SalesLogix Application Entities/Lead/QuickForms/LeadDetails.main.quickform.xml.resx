@@ -273,4 +273,28 @@
   <data name="cmdShowMap.ToolTip" xml:space="preserve">
     <value>Show Map</value>
   </data>
+  <data name="lkpLeadEmployee.LookupProperties.Cemplname.PropertyHeader" xml:space="preserve">
+    <value>Employee Name</value>
+  </data>
+  <data name="lkpLeadEmployee.LookupProperties.Cemplcode.PropertyHeader" xml:space="preserve">
+    <value>Employee Code</value>
+  </data>
+  <data name="lkpLeadEmployee.LookupProperties.Cjobrole.PropertyHeader" xml:space="preserve">
+    <value>Job Role</value>
+  </data>
+  <data name="lkpLeadEmployee.LookupProperties.Carea.PropertyHeader" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="txtQualifierComments.Caption" xml:space="preserve">
+    <value>Qualifier Comments:</value>
+  </data>
+  <data name="ddlMKTSG.DependentLookups..PropertyDisplay" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlMKTSG.DependentLookups.Cindsgdesc.PropertyDisplay" xml:space="preserve">
+    <value>Industry:</value>
+  </data>
+  <data name="ddlMKTSG.DependentLookups.Cmktsgdesc.PropertyDisplay" xml:space="preserve">
+    <value>MKT Segment:</value>
+  </data>
 </root>

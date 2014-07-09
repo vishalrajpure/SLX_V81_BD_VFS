@@ -135,9 +135,6 @@
   <data name="btnSave.ToolTip" xml:space="preserve">
     <value>Salva</value>
   </data>
-  <data name="Industry.Caption" xml:space="preserve">
-    <value>Settore:</value>
-  </data>
   <data name="MainPhone.Caption" xml:space="preserve">
     <value>Telefono principale:</value>
   </data>

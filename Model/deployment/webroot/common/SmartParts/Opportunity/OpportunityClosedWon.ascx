@@ -64,8 +64,11 @@
       </td>
       </tr>
 <tr>
+            <td></td>
+      </tr>
+<tr>
             <td  >
-<SalesLogix:LookupControl runat="server" ID="lueCompetitorReplaced" ButtonToolTip="<%$ resources: lueCompetitorReplaced.ButtonToolTip %>" LookupEntityName="Competitor" LookupEntityTypeName="Sage.Entity.Interfaces.ICompetitor, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupDisplayMode="ButtonOnly" AutoPostBack="true" CssClass="buttonAlignRight" LookupImageURL="~/ImageResource.axd?scope=global&type=Global_Images&key=plus_16x16"  >
+<SalesLogix:LookupControl runat="server" ID="lueCompetitorReplaced" ButtonToolTip="<%$ resources: lueCompetitorReplaced.ButtonToolTip %>" LookupEntityName="Competitor" LookupEntityTypeName="Sage.Entity.Interfaces.ICompetitor, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupDisplayMode="ButtonOnly" AutoPostBack="true" CssClass="buttonAlignRight" Visible="false" LookupImageURL="~/ImageResource.axd?scope=global&type=Global_Images&key=plus_16x16"  >
 <LookupProperties>
 <SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueCompetitorReplaced.LookupProperties.CompetitorName.PropertyHeader %>" PropertyName="CompetitorName" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
 <SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueCompetitorReplaced.LookupProperties.Rating.PropertyHeader %>" PropertyName="Rating" PropertyType="" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="True"></SalesLogix:LookupProperty>
@@ -82,7 +85,7 @@
 <SalesLogix:SlxGridView runat="server" ID="grdOppCompetitors" GridLines="None"
 AutoGenerateColumns="false" CellPadding="4" CssClass="datagrid" PagerStyle-CssClass="gridPager"
 AlternatingRowStyle-CssClass="rowdk" RowStyle-CssClass="rowlt" SelectedRowStyle-CssClass="rowSelected" ShowEmptyTable="true" EnableViewState="false"
- AllowPaging="true" PageSize="5" OnPageIndexChanging="grdOppCompetitorspage_changing" EmptyTableRowText="<%$ resources: grdOppCompetitors.EmptyTableRowText %>"  ExpandableRows="True" ResizableColumns="True"  AllowSorting="true" OnSorting="grdOppCompetitors_Sorting"  ShowSortIcon="true" >
+ AllowPaging="true" PageSize="5" OnPageIndexChanging="grdOppCompetitorspage_changing" EmptyTableRowText="<%$ resources: grdOppCompetitors.EmptyTableRowText %>"  ExpandableRows="True" ResizableColumns="True"  AllowSorting="true" OnSorting="grdOppCompetitors_Sorting" Visible="false"  ShowSortIcon="true" >
 <Columns>
    <asp:BoundField DataField="Competitor.CompetitorName"
       HeaderText="<%$ resources: grdOppCompetitors.2502806d-23a2-42f2-9917-3ae124d23ab6.ColumnHeading %>"       SortExpression="Competitor.CompetitorName"    >
@@ -264,7 +267,14 @@ protected void cmdOK_ClickAction(object sender, EventArgs e) {
      }
   }
 
+      		        cmdOK_ClickActionBRC(sender, e);
+    
   
+}
+protected void cmdOK_ClickActionBRC(object sender, EventArgs e) {
+Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+System.Web.HttpContext.Current.Response.Redirect(string.Format("Opportunity.aspx?modeid=Detail&entityid=" + opp.Id.ToString()));
+
 }
 protected void cmdCancel_ClickAction(object sender, EventArgs e) {
 Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;

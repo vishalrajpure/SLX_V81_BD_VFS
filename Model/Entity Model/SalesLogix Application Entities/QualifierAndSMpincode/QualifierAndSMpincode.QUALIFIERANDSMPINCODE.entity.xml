@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="cb5bb1b9-907b-4d23-974f-6bdac8d22d76" lastModifiedUtc="2014-05-29T12:50:41.6246422Z" manageSchema="true" tableName="QUALIFIERANDSMPINCODE" name="QualifierAndSMpincode" displayPropertyId="24e4a0bb-b402-4df2-8a29-c9562a5db960" isExtension="false" audited="false" onBeforeInsertMethodId="33138a49-3802-420d-b40a-637cb49a46ec" onAfterInsertMethodId="4bf23734-6e7f-44be-a079-6d579c5a5082" onBeforeUpdateMethodId="3b369ead-ccaf-4674-bbcb-195501a081fd" onAfterUpdateMethodId="f09bc021-38b7-4c43-8d25-6ba90377abc4" onBeforeDeleteMethodId="9b9102da-a1bd-4a47-a4b6-cae9af9337f4" onAfterDeleteMethodId="dd1d8585-b08f-48df-8b30-6177f30c74ad" onCreateId="da569393-2947-4675-992e-1729ae8ee91f">
+<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="cb5bb1b9-907b-4d23-974f-6bdac8d22d76" lastModifiedUtc="2014-06-21T05:06:40.3758151Z" manageSchema="true" tableName="QUALIFIERANDSMPINCODE" name="QualifierAndSMpincode" displayPropertyId="24e4a0bb-b402-4df2-8a29-c9562a5db960" isExtension="false" audited="false" onBeforeInsertMethodId="33138a49-3802-420d-b40a-637cb49a46ec" onAfterInsertMethodId="4bf23734-6e7f-44be-a079-6d579c5a5082" onBeforeUpdateMethodId="3b369ead-ccaf-4674-bbcb-195501a081fd" onAfterUpdateMethodId="f09bc021-38b7-4c43-8d25-6ba90377abc4" onBeforeDeleteMethodId="9b9102da-a1bd-4a47-a4b6-cae9af9337f4" onAfterDeleteMethodId="dd1d8585-b08f-48df-8b30-6177f30c74ad" onCreateId="da569393-2947-4675-992e-1729ae8ee91f">
   <extendedMetaData />
   <ExtendedPropertiesCollection>
     <extendee type="Sage.Platform.Orm.Entities.OrmEntity">
@@ -159,6 +159,20 @@
       <SystemDataType guid="ccc0f01d-7ba5-408e-8526-a3f942354b3a">
         <TextDataType>
           <Length>10</Length>
+        </TextDataType>
+      </SystemDataType>
+    </property>
+    <property xsi:type="OrmFieldProperty" id="f809f5db-d482-4721-b121-51e24a040957" lastModifiedUtc="2014-06-21T05:06:40.3758151Z" name="Branch" audited="false" columnName="BRANCH" maxLength="32" precision="0" scale="0" ordinal="12" isReadOnly="false">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmFieldProperty">
+          <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">
+            <OrmEntityPropertySDataExtension generate="true" />
+          </extender>
+        </extendee>
+      </ExtendedPropertiesCollection>
+      <SystemDataType guid="ccc0f01d-7ba5-408e-8526-a3f942354b3a">
+        <TextDataType>
+          <Length>32</Length>
         </TextDataType>
       </SystemDataType>
     </property>

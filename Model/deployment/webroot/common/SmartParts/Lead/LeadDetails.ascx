@@ -111,18 +111,14 @@ Required="true"  />
       </tr>
 <tr>
             <td  >
-<div class=" lbl alignleft">
-    <asp:Label ID="txtBusinessPotential_lbl" AssociatedControlID="txtBusinessPotential" runat="server" Text="<%$ resources: txtBusinessPotential.Caption %>" ></asp:Label>
-</div>
- <div  class="textcontrol currency"  >
-    <SalesLogix:Currency
-    runat="server"
-    ID="txtBusinessPotential" 
-    ExchangeRateType="BaseRate"
-     Required="false"
- DecimalDigits="-1"
+ <div class=" lbl alignleft">
+   <asp:Label ID="txtBusinessPotential_lbl" AssociatedControlID="txtBusinessPotential" runat="server" Text="<%$ resources: txtBusinessPotential.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol numeric"  > 
+    <SalesLogix:NumericControl runat="server" ID="txtBusinessPotential"
+FormatType="Decimal" DecimalDigits="2" Strict="False" 
  />
-</div>
+  </div>
 
       </td>
                 <td  >
@@ -134,6 +130,28 @@ Required="true"  />
   </div>
 
       </td>
+                <td></td>
+      </tr>
+<tr>
+            <td  >
+<div class="dependency">
+<SalesLogix:DependencyLookupControl runat="server" ID="ddlMKTSG"  LabelCssClass="lbl"  >
+<LookupResultsHeaderStyle BackColor="ActiveCaption" Font-Bold="True" ForeColor="White" />
+<LookupDialogStyle BackColor="ButtonFace" />
+<LookupResultsStyle CellPadding="4" ForeColor="Black" />
+<DependentLookups>
+ <SalesLogix:DependentLookup LookupEntityName="Indsgmst" LookupEntityTypeName="Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" DropDownDisplayProperty="Cindsgdesc" ParentProperty="" PropertyDisplay="<%$ resources: ddlMKTSG.DependentLookups.Cindsgdesc.PropertyDisplay %>" BindingPropertyName="Industry">
+  </SalesLogix:DependentLookup>
+ <SalesLogix:DependentLookup LookupEntityName="Indsgmst" LookupEntityTypeName="Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" DropDownDisplayProperty="Cmktsgdesc" ParentProperty="Cindsgdesc" PropertyDisplay="<%$ resources: ddlMKTSG.DependentLookups.Cmktsgdesc.PropertyDisplay %>" BindingPropertyName="MKTSegment">
+  </SalesLogix:DependentLookup>
+  </DependentLookups>
+  <LookupPreFilters>
+      </LookupPreFilters>
+</SalesLogix:DependencyLookupControl>
+</div>
+
+      </td>
+                <td></td>
                 <td></td>
       </tr>
 <tr>
@@ -196,6 +214,24 @@ Required="true"  />
                         <td></td>
       </tr>
 <tr>
+            <td rowspan="3"  colspan="2" >
+ <div class="twocollbl alignleft" >
+   <asp:Label ID="txtQualifierComments_lbl" AssociatedControlID="txtQualifierComments" runat="server" Text="<%$ resources: txtQualifierComments.Caption %>" ></asp:Label>
+ </div>
+  <div  class="twocoltextcontrol"   >
+<asp:TextBox runat="server" ID="txtQualifierComments" Enabled="false"  Rows="3" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
+  </div>
+
+      </td>
+                      <td></td>
+      </tr>
+<tr>
+                        <td></td>
+      </tr>
+<tr>
+                        <td></td>
+      </tr>
+<tr>
             <td  colspan="2" >
  <div class="twocollbl alignleft" >
    <asp:Label ID="txtAnyInfo_lbl" AssociatedControlID="txtAnyInfo" runat="server" Text="<%$ resources: txtAnyInfo.Caption %>" ></asp:Label>
@@ -233,8 +269,17 @@ Required="true"  />
  <div class=" lbl alignleft">
    <asp:Label ID="lkpLeadEmployee_lbl" AssociatedControlID="lkpLeadEmployee" runat="server" Text="<%$ resources: lkpLeadEmployee.Caption %>" ></asp:Label>
  </div>   
-   <div  class="textcontrol"  > 
-    <SalesLogix:SlxUserControl runat="server" ID="lkpLeadEmployee" Enabled="false"  />
+  <div   class="textcontrol lookup"   >
+<SalesLogix:LookupControl runat="server" ID="lkpLeadEmployee" Enabled="false" LookupEntityName="Vwempmaster" LookupEntityTypeName="Sage.Entity.Interfaces.IVwempmaster, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String"  >
+<LookupProperties>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpLeadEmployee.LookupProperties.Cemplname.PropertyHeader %>" PropertyName="Cemplname" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpLeadEmployee.LookupProperties.Cemplcode.PropertyHeader %>" PropertyName="Cemplcode" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpLeadEmployee.LookupProperties.Cjobrole.PropertyHeader %>" PropertyName="Cjobrole" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpLeadEmployee.LookupProperties.Carea.PropertyHeader %>" PropertyName="Carea" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+</LookupProperties>
+<LookupPreFilters>
+</LookupPreFilters>
+</SalesLogix:LookupControl>
   </div>
 
       </td>
@@ -255,7 +300,7 @@ Required="true"  />
    <asp:Label ID="lkpBranchManager_lbl" AssociatedControlID="lkpBranchManager" runat="server" Text="<%$ resources: lkpBranchManager.Caption %>" ></asp:Label>
  </div>   
    <div  class="textcontrol"  > 
-    <SalesLogix:SlxUserControl runat="server" ID="lkpBranchManager" Enabled="false"  />
+    <SalesLogix:SlxUserControl runat="server" ID="lkpBranchManager"  />
   </div>
 
       </td>
@@ -283,12 +328,9 @@ Required="true"  />
                 <td></td>
       </tr>
 <tr>
-            <td  colspan="2" >
-  <hr />
- 
-
-      </td>
-                      <td></td>
+            <td></td>
+                <td></td>
+                <td></td>
       </tr>
 <tr>
             <td  >
@@ -401,6 +443,10 @@ protected override void OnAddEntityBindings() {
                     // pklStatus.PickListValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding pklStatusPickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Status", pklStatus, "PickListValue");
         BindingSource.Bindings.Add(pklStatusPickListValueBinding);
+      BindingSource.AddBindingProvider(ddlMKTSG as Sage.Platform.EntityBinding.IEntityBindingProvider);
+                 // ddlMKTSG.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding ddlMKTSGTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Industry", ddlMKTSG, "Text");
+        BindingSource.Bindings.Add(ddlMKTSGTextBinding);
                              // adrAddress.AddressCity Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding adrAddressAddressCityBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.City", adrAddress, "AddressCity");
         adrAddressAddressCityBinding.IgnoreFLSDisabling = true;
@@ -458,6 +504,9 @@ protected override void OnAddEntityBindings() {
                     // txtComments.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtCommentsTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Notes", txtComments, "Text");
         BindingSource.Bindings.Add(txtCommentsTextBinding);
+                    // txtQualifierComments.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtQualifierCommentsTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("QualifierComments", txtQualifierComments, "Text");
+        BindingSource.Bindings.Add(txtQualifierCommentsTextBinding);
                     // txtAnyInfo.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtAnyInfoTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AnyOtherInformation", txtAnyInfo, "Text");
         BindingSource.Bindings.Add(txtAnyInfoTextBinding);
@@ -468,7 +517,7 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding ownOwnerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Owner", ownOwner, "LookupResultValue");
         BindingSource.Bindings.Add(ownOwnerLookupResultValueBinding);
                     // lkpLeadEmployee.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpLeadEmployeeLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LeadEmployee", lkpLeadEmployee, "LookupResultValue");
+        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpLeadEmployeeLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("UserID", lkpLeadEmployee, "LookupResultValue");
         BindingSource.Bindings.Add(lkpLeadEmployeeLookupResultValueBinding);
                     // dtpQualifiedOn.DateTimeValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding dtpQualifiedOnDateTimeValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("QualifiedON", dtpQualifiedOn, "DateTimeValue");
@@ -479,7 +528,7 @@ protected override void OnAddEntityBindings() {
                     // lueLeadSource.LookupResultValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding lueLeadSourceLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LeadSource", lueLeadSource, "LookupResultValue");
         BindingSource.Bindings.Add(lueLeadSourceLookupResultValueBinding);
-                       // txtSICCode.Text Binding
+                    // txtSICCode.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtSICCodeTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("SICCode", txtSICCode, "Text");
         BindingSource.Bindings.Add(txtSICCodeTextBinding);
                     // pklIndustry.PickListValue Binding
@@ -492,7 +541,7 @@ protected override void OnAddEntityBindings() {
       
       
     }
-                                                                                                                                                                                                    
+                                                                                                                                                                                                           
 protected void cmdQualifyLead_ClickAction(object sender, EventArgs e) {
 Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
 if(lead.Company == null)
@@ -520,37 +569,70 @@ if(lead.Address.PostalCode == null)
 	DialogService.ShowMessage("Enter the Address");
 		return;
 }
+if(string.IsNullOrEmpty(lead.QualifierComments))
+{
+	DialogService.ShowMessage("Enter the Comments");
+		return;
+}
 if(lead.Products.Count <= 0)
 {
 	DialogService.ShowMessage("Please Add Product...");
 	return;
 }
-//////////////Specify the Query for find BM///////////
-	string qry = "Select Q.SALESMANAGERID  from QUALIFIERANDSMPINCODE Q " +
-				"where Q.PINCODE = '"+ lead.Address.PostalCode.ToString() +"'";
+
+	string qry = "Select CPINCODE from VWPINCODEMASTER where CPINCODE ='" + lead.Address.PostalCode.ToString() + "'";
 	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
 	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
 	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
 	System.Data.DataTable dt = new System.Data.DataTable();
 	dataAdapterObj.Fill(dt);
-	if(dt.Rows.Count >0)
-	{
-		Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >((object)dt.Rows[0][0].ToString());
-		lead.BranchManager = BM;
+	if (dt.Rows.Count > 0)
+    {	
+		qry = "Select distinct(UserID) From Usersecurity U,VWEmpMaster E, VWPINCODEMASTER VW,VWAREAMASTER VA "+
+			"Where VA.cscrcd = VW.cscrcd AND VA.CSCRCD = E.CSCRCD AND E.CEMPLCODE = U.USERCODE AND E.CJOBROLE = 'BM' AND VW.CPINCODE = '" + lead.Address.PostalCode.ToString() + "'";
+
+
+
+		//Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+		//System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+		dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+		dt = new System.Data.DataTable();
+		dataAdapterObj.Fill(dt);
+		if (dt.Rows.Count > 0)
+	    {
+			Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)dt.Rows[0][0].ToString());
+			//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >((object)"ADMIN");
+			lead.BranchManager = BM;
+			lead.AccountManager = BM;
+		}
+		else if(lead.BranchManager != null)
+		{
+			lead.AccountManager = lead.BranchManager;
+		}
+		else
+		{			
+		    DialogService.ShowMessage("Branch Manager not present for pincode-" + lead.Address.PostalCode.ToString());
+			return;
+			 
+		}
 	}
 	else
 	{
-		DialogService.ShowMessage("Please map the branch manager with pincode-" + lead.Address.PostalCode);
-		return;
+		if(lead.BranchManager == null)
+		{
+			DialogService.ShowMessage("Please Select Branch Manager ...");
+			return;
+		}
+		else
+		{
+			lead.AccountManager = lead.BranchManager;
+		}
 		
 	}
 	lead.QualifiedON = DateTime.Now;
 	lead.Status = "Qualified";
 	
-	//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >((object)"ADMIN");
-	//lead.BranchManager = BM;
-	
-	System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and Upper(name) ='INSERTSECCODEID'", conObj);
     System.Data.DataTable dt2 = new System.Data.DataTable();
     dataAdapterObj2.Fill(dt2);
     if (dt2.Rows.Count > 0)
@@ -558,12 +640,6 @@ if(lead.Products.Count <= 0)
         Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
         lead.Owner = objowner;
     }
-	else
-	{
-		
-	}
-	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001");
-    //lead.Owner = objowner;
 	lead.Save();
 	System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx?modeid=Detail"));
 
@@ -599,15 +675,17 @@ protected void cmdAddress_ClickAction(object sender, EventArgs e) {
 if (DialogService != null)
 {
 	Sage.Entity.Interfaces.ILead lead = this.BindingSource.Current as Sage.Entity.Interfaces.ILead;    
-	if(lead != null)
+	/*if(lead != null)
 	{
 		//string _idname = lead.Address.Id.ToString() + ",Lead,"+lead.Id.ToString();
         //Session["LeadAddressid"] = _idname;
-	    DialogService.SetSpecs(200, 200, 440, 300, "AddEditLeadAddress", "", true);
+	    DialogService.SetSpecs(200, 200, 440, 300, "AddLeadAddress", "", true);
 	    DialogService.EntityType = typeof(Sage.Entity.Interfaces.ILeadAddress);
 		DialogService.EntityID = lead.Address.Id.ToString();
 	    DialogService.ShowDialog();
-	}
+	}*/
+	string script_FormatNumber1 = "window.showModalDialog('InsertAddress.aspx?type=Lead&id=" + lead.Address.Id.ToString() + "', '_blank', 'height=440,width=100,status=yes,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=no,titlebar=no' )";
+    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
 }
 
 }
@@ -630,6 +708,7 @@ if(lead.Company == null)
 	DialogService.ShowMessage("Enter the LegalName");
 		return;
 }*/
+
 if(lead.WorkPhone == null)
 {
 	DialogService.ShowMessage("Enter the WorkPhone");
@@ -667,31 +746,65 @@ switch(lead.Status)
 		lead.Owner = objowner; 
 		break; 
 	case "Qualified": 
-		if(lead.BranchManager == null) 
+		if(cmdQualifyLead.Visible == true) 
 		{ 
+			if(string.IsNullOrEmpty(lead.QualifierComments))
+			{
+				DialogService.ShowMessage("Enter the Comments");
+					return;
+			}	
 			if(lead.Products.Count > 0)
 			{
-				string qry = "Select Q.SALESMANAGERID from QUALIFIERANDSMPINCODE Q " + 
-					"where Q.PINCODE = '"+ lead.Address.PostalCode.ToString() + "'"; 
-				System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj); 
-				System.Data.DataTable dt = new System.Data.DataTable(); 
+				string qry = "Select CPINCODE from VWPINCODEMASTER where CPINCODE ='" + lead.Address.PostalCode.ToString() + "'";
+				System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+				System.Data.DataTable dt = new System.Data.DataTable();
 				dataAdapterObj.Fill(dt);
-				if(dt.Rows.Count >0)
-				{
-					Sage.Entity.Interfaces.IUser BM = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)dt.Rows[0][0].ToString()); 
-					lead.BranchManager = BM; 
+				if (dt.Rows.Count > 0)
+			    {	
+					qry = "Select distinct(UserID) From Usersecurity U,VWEmpMaster E, VWPINCODEMASTER VW,VWAREAMASTER VA " +
+						"Where VA.cscrcd = VW.cscrcd AND VA.CSCRCD = E.CSCRCD AND E.CEMPLCODE = U.USERCODE AND E.CJOBROLE = 'BM' AND VW.CPINCODE = '" + lead.Address.PostalCode.ToString() + "'";
+
+
+					//Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+					//System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+					dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+					dt = new System.Data.DataTable();
+					dataAdapterObj.Fill(dt);
+					if (dt.Rows.Count > 0)
+				    {
+						Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)dt.Rows[0][0].ToString());
+						//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >((object)"ADMIN");
+						lead.BranchManager = BM;
+						lead.AccountManager = BM;
+					}
+					else if(lead.BranchManager != null)
+					{
+						lead.AccountManager = lead.BranchManager;
+					}
+					else
+					{
+				        DialogService.ShowMessage("Branch Manager not present for pincode-" + lead.Address.PostalCode.ToString());
+						return;
+						 
+					}
 				}
 				else
 				{
-					DialogService.ShowMessage("Please map the branch manager with pincode-" + lead.Address.PostalCode);
-					return;
-					 
+					if(lead.BranchManager == null)
+					{
+						DialogService.ShowMessage("Please Select Branch Manager ...");
+						return;
+					}
+					else
+					{
+						lead.AccountManager = lead.BranchManager;
+					}
 				}
 				lead.QualifiedON = DateTime.Now; 
 				lead.Status = "Qualified"; 
 				//Sage.Entity.Interfaces.IUser BM = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)"ADMIN"); 
 				//lead.BranchManager = BM; 
-				System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj); 
+				System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and Upper(name) ='INSERTSECCODEID'", conObj); 
 				System.Data.DataTable dt2 = new System.Data.DataTable(); 
 				dataAdapterObj2.Fill(dt2); 
 				if (dt2.Rows.Count > 0) 
@@ -713,7 +826,7 @@ switch(lead.Status)
 			//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001"); 
 			//lead.Owner = objowner; 
 		} 
-		else
+		else if(lead.BranchManager != null && cmdConvertLead.Visible == true)
 		{
 				System.Data.OleDb.OleDbDataAdapter dataAdapterObj3 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + lead.BranchManager.Id.ToString() + "' and name ='INSERTSECCODEID'", conObj); 
 				System.Data.DataTable dt3 = new System.Data.DataTable(); 
@@ -722,7 +835,13 @@ switch(lead.Status)
 				{ 
 					Sage.Entity.Interfaces.IOwner objowner2 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt3.Rows[0][0].ToString()); 
 					lead.Owner = objowner2; 
+					lead.AccountManager = lead.BranchManager;
 				} 
+		}
+		else
+		{
+			DialogService.ShowMessage("Please Choose correct Status...");
+			return;
 		}
 		break; 
 	case "Converted": 
@@ -739,6 +858,11 @@ switch(lead.Status)
 				DialogService.ShowMessage("Please Convert lead via Convert Qualified Lead Button...");
 				return;
 			}
+			else
+            {
+                DialogService.ShowMessage("You are not authorize to convert lead...");
+                return;
+            }
 			 
 		} 
 		break; 
@@ -808,17 +932,32 @@ if (lead != null)
 	bool doNotSolicit = System.Convert.ToBoolean(lead.DoNotSolicit);
     bool doNotEmail = System.Convert.ToBoolean(lead.DoNotEmail);
     emlEmail.Enabled = (!doNotSolicit && !doNotEmail);*/
-	
-	if(lead.BranchManager == null)
+	string _UserId = "";
+    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+    _UserId = _IUserService.UserId; //get login Userid
+	if (lead.BranchManager == null && lead.Qualifier == null)
+	{
+		cmdQualifyLead.Visible = false;
+		cmdConvertLead.Visible = false;
+	}
+	else if (lead.BranchManager == null && lead.Qualifier.Id.ToString() == _UserId)
 	{
 		cmdQualifyLead.Visible = true;
 		cmdConvertLead.Visible = false;
+		txtQualifierComments_lbl.ForeColor = System.Drawing.Color.Red;
+		txtQualifierComments.Enabled = true;
 	}
-	else
-	{
-		cmdQualifyLead.Visible = false;
-		cmdConvertLead.Visible = true;
-	}
+    else if (lead.BranchManager != null && lead.BranchManager.Id.ToString() == _UserId)
+    {
+        cmdQualifyLead.Visible = false;
+        cmdConvertLead.Visible = true;
+    }
+    else
+    {
+        cmdQualifyLead.Visible = false;
+        cmdConvertLead.Visible = false;
+    }
+	
 	if(lead.Status.ToUpper() == "CONVERTED" || lead.Status.ToUpper() == "DROPPED" )
 	{
 		cmdQualifyLead.Visible = false;
@@ -842,23 +981,17 @@ if (lead != null)
 		nmeLeadName.Enabled = false;
 		urlWeb.Enabled = false;
 		emlEmail.Enabled = false;
-		
-		
-		
-		
-		
 	}
-	if(lead.Status.ToUpper() == "QUALIFIED")
-	{
+	/*Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>(); 
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString()); 
+	string qry = "Select CPINCODE from VWPINCODEMASTER where CPINCODE ='" + lead.Address.PostalCode.ToString() + "'";
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	System.Data.DataTable dt = new System.Data.DataTable();
+	dataAdapterObj.Fill(dt);
+	if ((dt.Rows.Count <= 0 && cmdQualifyLead.Visible = true) || cmdConvertLead.Visible == false)
+    {	
 		lkpBranchManager.Enabled = true;
-		
-	}
-	//Begin Load Action
-
-
-	
-	
-//End Load Action}
+	}*/
 
 	
 }
@@ -957,10 +1090,15 @@ public class LeadDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAda
     {
         get { return FindControl(ref _emlEmail, "emlEmail"); }
     }
-    private Sage.Platform.Controls.ICurrencyControl _txtBusinessPotential;
-    public  Sage.Platform.Controls.ICurrencyControl txtBusinessPotential
+    private Sage.Platform.Controls.INumericControl _txtBusinessPotential;
+    public  Sage.Platform.Controls.INumericControl txtBusinessPotential
     {
         get { return FindControl(ref _txtBusinessPotential, "txtBusinessPotential"); }
+    }
+    private Sage.Platform.Controls.IDependencyLookupControl _ddlMKTSG;
+    public  Sage.Platform.Controls.IDependencyLookupControl ddlMKTSG
+    {
+        get { return FindControl(ref _ddlMKTSG, "ddlMKTSG"); }
     }
     private Sage.Platform.Controls.IControlsListControl _QFControlsList;
     public  Sage.Platform.Controls.IControlsListControl QFControlsList
@@ -987,6 +1125,11 @@ public class LeadDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAda
     {
         get { return FindControl(ref _txtComments, "txtComments"); }
     }
+    private Sage.Platform.Controls.ITextBoxControl _txtQualifierComments;
+    public  Sage.Platform.Controls.ITextBoxControl txtQualifierComments
+    {
+        get { return FindControl(ref _txtQualifierComments, "txtQualifierComments"); }
+    }
     private Sage.Platform.Controls.ITextBoxControl _txtAnyInfo;
     public  Sage.Platform.Controls.ITextBoxControl txtAnyInfo
     {
@@ -997,8 +1140,8 @@ public class LeadDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAda
     {
         get { return FindControl(ref _lkpQualifier, "lkpQualifier"); }
     }
-    private Sage.Platform.Controls.IUserControl _lkpLeadEmployee;
-    public  Sage.Platform.Controls.IUserControl lkpLeadEmployee
+    private Sage.Platform.Controls.ILookupControl _lkpLeadEmployee;
+    public  Sage.Platform.Controls.ILookupControl lkpLeadEmployee
     {
         get { return FindControl(ref _lkpLeadEmployee, "lkpLeadEmployee"); }
     }

@@ -16,11 +16,11 @@
             <col width="33%" />
      <tr>
             <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="txtCompany_lbl" AssociatedControlID="txtCompany" runat="server" Text="<%$ resources: txtCompany.Caption %>" ></asp:Label>
+ <div class=" lbl alignleft">
+   <asp:Label ID="nmeLeadName_lbl" AssociatedControlID="nmeLeadName" runat="server" Text="<%$ resources: nmeLeadName.Caption %>" ></asp:Label>
  </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtCompany" Required="true"  dojoType="Sage.UI.Controls.TextBox"  />
+   <div  class="textcontrol"  >
+    <SalesLogix:FullName runat="server" ID="nmeLeadName" Required="true" ButtonToolTip="<%$ resources: nmeLeadName.ButtonToolTip %>"  />
   </div>
 
       </td>
@@ -36,11 +36,11 @@
       </tr>
 <tr>
             <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="nmeLeadName_lbl" AssociatedControlID="nmeLeadName" runat="server" Text="<%$ resources: nmeLeadName.Caption %>" ></asp:Label>
+ <div class=" lbl alignleft" >
+   <asp:Label ID="txtCompany_lbl" AssociatedControlID="txtCompany" runat="server" Text="<%$ resources: txtCompany.Caption %>" ></asp:Label>
  </div>
-   <div  class="textcontrol"  >
-    <SalesLogix:FullName runat="server" ID="nmeLeadName" Required="true" ButtonToolTip="<%$ resources: nmeLeadName.ButtonToolTip %>"  />
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="txtCompany" Required="true"  dojoType="Sage.UI.Controls.TextBox"  />
   </div>
 
       </td>
@@ -98,18 +98,14 @@ Required="true" AutoPostBack="true"  />
       </tr>
 <tr>
             <td  >
-<div class=" lbl alignleft">
-    <asp:Label ID="txtBusinessPotential_lbl" AssociatedControlID="txtBusinessPotential" runat="server" Text="<%$ resources: txtBusinessPotential.Caption %>" ></asp:Label>
-</div>
- <div  class="textcontrol currency"  >
-    <SalesLogix:Currency
-    runat="server"
-    ID="txtBusinessPotential" 
-    ExchangeRateType="BaseRate"
-     Required="false"
- DecimalDigits="-1"
+ <div class=" lbl alignleft">
+   <asp:Label ID="txtBusinessPotential_lbl" AssociatedControlID="txtBusinessPotential" runat="server" Text="<%$ resources: txtBusinessPotential.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol numeric"  > 
+    <SalesLogix:NumericControl runat="server" ID="txtBusinessPotential"
+FormatType="Decimal" DecimalDigits="2" Strict="False" 
  />
-</div>
+  </div>
 
       </td>
                 <td  >
@@ -228,8 +224,17 @@ LabelPlacement="right" AutoPostBack="true"  />
  <div class=" lbl alignleft">
    <asp:Label ID="lkpLeadEmployee_lbl" AssociatedControlID="lkpLeadEmployee" runat="server" Text="<%$ resources: lkpLeadEmployee.Caption %>" ></asp:Label>
  </div>   
-   <div  class="textcontrol"  > 
-    <SalesLogix:SlxUserControl runat="server" ID="lkpLeadEmployee" AutoPostBack="true" Required="true"  />
+  <div   class="textcontrol lookup"   >
+<SalesLogix:LookupControl runat="server" ID="lkpLeadEmployee" LookupEntityName="Vwempmaster" LookupEntityTypeName="Sage.Entity.Interfaces.IVwempmaster, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String" AutoPostBack="true"  >
+<LookupProperties>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpLeadEmployee.LookupProperties.Cemplname.PropertyHeader %>" PropertyName="Cemplname" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpLeadEmployee.LookupProperties.Cemplcode.PropertyHeader %>" PropertyName="Cemplcode" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpLeadEmployee.LookupProperties.Cjobrole.PropertyHeader %>" PropertyName="Cjobrole" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpLeadEmployee.LookupProperties.carea.PropertyHeader %>" PropertyName="carea" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+</LookupProperties>
+<LookupPreFilters>
+</LookupPreFilters>
+</SalesLogix:LookupControl>
   </div>
 
       </td>
@@ -356,13 +361,7 @@ public override Type EntityType
  
 
 protected override void OnAddEntityBindings() {
-                 // txtCompany.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding txtCompanyTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Company", txtCompany, "Text");
-        BindingSource.Bindings.Add(txtCompanyTextBinding);
-                    // txtLegalName.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding txtLegalNameTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LegalName", txtLegalName, "Text");
-        BindingSource.Bindings.Add(txtLegalNameTextBinding);
-                    // nmeLeadName.NameFirst Binding
+                 // nmeLeadName.NameFirst Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding nmeLeadNameNameFirstBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("FirstName", nmeLeadName, "NameFirst");
         BindingSource.Bindings.Add(nmeLeadNameNameFirstBinding);
                  // nmeLeadName.NameLast Binding
@@ -381,6 +380,12 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding nmeLeadNameNameSuffixBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Suffix", nmeLeadName, "NameSuffix");
         nmeLeadNameNameSuffixBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(nmeLeadNameNameSuffixBinding);
+                    // txtLegalName.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtLegalNameTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LegalName", txtLegalName, "Text");
+        BindingSource.Bindings.Add(txtLegalNameTextBinding);
+                    // txtCompany.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtCompanyTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Company", txtCompany, "Text");
+        BindingSource.Bindings.Add(txtCompanyTextBinding);
                     // phnWorkPhone.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding phnWorkPhoneTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("WorkPhone", phnWorkPhone, "Text");
         BindingSource.Bindings.Add(phnWorkPhoneTextBinding);
@@ -466,7 +471,7 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtAnyInfoTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AnyOtherInformation", txtAnyInfo, "Text");
         BindingSource.Bindings.Add(txtAnyInfoTextBinding);
                     // lkpLeadEmployee.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpLeadEmployeeLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LeadEmployee", lkpLeadEmployee, "LookupResultValue");
+        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpLeadEmployeeLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("UserID", lkpLeadEmployee, "LookupResultValue");
         BindingSource.Bindings.Add(lkpLeadEmployeeLookupResultValueBinding);
                     // lueLeadSource.LookupResultValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding lueLeadSourceLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("LeadSource", lueLeadSource, "LookupResultValue");
@@ -559,9 +564,9 @@ if (DialogService != null) {
 }
 protected void lkpLeadEmployee_ChangeAction(object sender, EventArgs e) {
     Sage.Entity.Interfaces.ILead lead = BindingSource.Current as Sage.Entity.Interfaces.ILead;
-	string qry = "select case when userID is null then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
+	string qry = "select case when CBU = 'DHL' then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
 		"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BDU') end " +
-		"From usersecurity US,VWEMPMASTER emp where emp.CEMPLCODE = US.USERCODE and US.USERID ='" + lead.LeadEmployee.Id +  "'";
+		"From VWEMPMASTER emp where emp.EMPMSTID = '" + lead.UserID +  "'";
 	
 	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
 	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
@@ -628,68 +633,99 @@ if (Session["LeadAddressid"] != null)
     if (objadd != null)
     {
 //////////////Specify the Query for find BM///////////
+		qry = "Select CPINCODE from VWPINCODEMASTER where CPINCODE ='" + objadd.PostalCode.ToString() + "'";
+			
+		dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+		dt = new System.Data.DataTable();
+		dataAdapterObj.Fill(dt);
+		if (dt.Rows.Count > 0)
+	    {	
+			qry = "Select distinct Q.QUALIFIERID From QUALIFIERANDSMPINCODE Q, VWPINCODEMASTER VW,VWAREAMASTER VA " +
+				"where VA.cscrcd = VW.cscrcd AND VA.CBranch = Q.Branch AND VW.CPINCODE = '" + objadd.PostalCode.ToString() + "'";
 
 
-
-	qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
-                "where Q.PINCODE = '" + objadd.PostalCode.ToString() + "'";//dt1.Rows[0]["PostalCode"].ToString() + "'";
-
-
-	//Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
-	//System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
-	dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
-	dt = new System.Data.DataTable();
-	dataAdapterObj.Fill(dt);
-	if (dt.Rows.Count > 0)
-    {
-		Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)dt.Rows[0][0].ToString());
-		//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >((object)"ADMIN");
-		lead.Qualifier = BM;
-	}
-	else
-	{
-        DialogService.ShowMessage("Please map the Qualifier with pincode-" + objadd.PostalCode.ToString());
-		return;
-		 
-	}
-	
-	
-	System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
-    System.Data.DataTable dt2 = new System.Data.DataTable();
-    dataAdapterObj2.Fill(dt2);
-    if (dt2.Rows.Count > 0)
-    {
-        Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
-        lead.Owner = objowner;
-    }
-	else
-	{
-	}
-	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001");
-    //lead.Owner = objowner;
-	lead.Address = objadd;
-	lead.Save();
-	//lead.Address.LeadId = lead.Id.ToString();
-	//lead.Address.Save();
-	if(lead.Products.Count > 0)
-	{
-		foreach(Sage.Entity.Interfaces.ILeadProduct prd in lead.Products )
-		{
-			prd.Save();
+			//Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+			//System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+			dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+			dt = new System.Data.DataTable();
+			dataAdapterObj.Fill(dt);
+			if (dt.Rows.Count > 0)
+		    {
+				Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)dt.Rows[0][0].ToString());
+				//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >((object)"ADMIN");
+				lead.Qualifier = BM;
+				lead.AccountManager = BM;
+			}
+			else
+			{
+		        DialogService.ShowMessage("Please map the Qualifier with pincode-" + objadd.PostalCode.ToString());
+				return;
+				 
+			}
 		}
-	}
-	if(lead.Competitors.Count > 0)
-	{
-		foreach(Sage.Entity.Interfaces.ILeadCompetitor cmp in lead.Competitors)
+		else
 		{
-			cmp.Save();
-		}	
-	}
-	
-	lead.Save();
-	
-	Session.Remove("LeadAddressid");
-	System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx", "&modeid=Detail"));
+			//qry = "select case when CPINCODE is null then (Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
+		     //           "where Q.PINCODE = '000000') else (Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
+		       //		"where Q.PINCODE = '" + objadd.PostalCode.ToString() + "') end QUALIFIERID from VWPINCODEMASTER where CPINCODE ='" + objadd.PostalCode.ToString() + "'";
+			qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
+		                "where Q.PINCODE = 'XXX'";
+
+
+			dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+			dt = new System.Data.DataTable();
+			dataAdapterObj.Fill(dt);
+			if (dt.Rows.Count > 0)
+		    {
+				Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)dt.Rows[0][0].ToString());
+				lead.Qualifier = BM;
+				lead.AccountManager = BM;
+			}
+			else
+			{
+		        DialogService.ShowMessage("Please map the Qualifier with pincode-Default");
+				return;
+				 
+			}
+		}
+		
+		
+		System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and Upper(name) ='INSERTSECCODEID'", conObj);
+	    System.Data.DataTable dt2 = new System.Data.DataTable();
+	    dataAdapterObj2.Fill(dt2);
+	    if (dt2.Rows.Count > 0)
+	    {
+	        Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
+	        lead.Owner = objowner;
+	    }
+		else
+		{
+		}
+		//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001");
+	    //lead.Owner = objowner;
+		lead.Address = objadd;
+		lead.Save();
+		//lead.Address.LeadId = lead.Id.ToString();
+		//lead.Address.Save();
+		if(lead.Products.Count > 0)
+		{
+			foreach(Sage.Entity.Interfaces.ILeadProduct prd in lead.Products )
+			{
+				prd.Save();
+			}
+		}
+		if(lead.Competitors.Count > 0)
+		{
+			foreach(Sage.Entity.Interfaces.ILeadCompetitor cmp in lead.Competitors)
+			{
+				cmp.Save();
+			}	
+		}
+		
+		lead.Save();
+		
+		Session.Remove("LeadAddressid");
+		System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx", "&modeid=Detail"));
 	}
 	else
 	{
@@ -757,67 +793,99 @@ if (Session["LeadAddressid"] != null)
     if (objadd != null)
     {
 //////////////Specify the Query for find BM///////////
+		qry = "Select CPINCODE from VWPINCODEMASTER where CPINCODE ='" + objadd.PostalCode.ToString() + "'";
+			
+		dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+		dt = new System.Data.DataTable();
+		dataAdapterObj.Fill(dt);
+		if (dt.Rows.Count > 0)
+	    {	
+			qry = "Select distinct Q.QUALIFIERID From QUALIFIERANDSMPINCODE Q, VWPINCODEMASTER VW,VWAREAMASTER VA " +
+				"where VA.cscrcd = VW.cscrcd AND VA.CBranch = Q.Branch AND VW.CPINCODE = '" + objadd.PostalCode.ToString() + "'";
 
 
-
-	qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
-                "where Q.PINCODE = '" + objadd.PostalCode.ToString() + "'";//dt1.Rows[0]["PostalCode"].ToString() + "'";
-
-
-	//Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
-	//System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
-	dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
-	dt = new System.Data.DataTable();
-	dataAdapterObj.Fill(dt);
-	if (dt.Rows.Count > 0)
-    {
-		Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)dt.Rows[0][0].ToString());
-		//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >((object)"ADMIN");
-		lead.Qualifier = BM;
-	}
-	else
-	{
-        DialogService.ShowMessage("Please map the Qualifier with pincode-" + objadd.PostalCode.ToString());
-		return;
-		 
-	}
-	
-	
-	System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and name ='INSERTSECCODEID'", conObj);
-    System.Data.DataTable dt2 = new System.Data.DataTable();
-    dataAdapterObj2.Fill(dt2);
-    if (dt2.Rows.Count > 0)
-    {
-        Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
-        lead.Owner = objowner;
-    }
-	else
-	{
-	}
-	//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001");
-    //lead.Owner = objowner;
-	lead.Address = objadd;
-	lead.Save();
-	//lead.Address.LeadId = lead.Id.ToString();
-	//lead.Address.Save();
-	if(lead.Products.Count > 0)
-	{
-		foreach(Sage.Entity.Interfaces.ILeadProduct prd in lead.Products )
-		{
-			prd.Save();
+			//Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+			//System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+			dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+			dt = new System.Data.DataTable();
+			dataAdapterObj.Fill(dt);
+			if (dt.Rows.Count > 0)
+		    {
+				Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)dt.Rows[0][0].ToString());
+				//Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser >((object)"ADMIN");
+				lead.Qualifier = BM;
+				lead.AccountManager = BM;
+			}
+			else
+			{
+		        DialogService.ShowMessage("Please map the Qualifier with pincode-" + objadd.PostalCode.ToString());
+				return;
+				 
+			}
 		}
-	}
-	if(lead.Competitors.Count > 0)
-	{
-		foreach(Sage.Entity.Interfaces.ILeadCompetitor cmp in lead.Competitors)
+		else
 		{
-			cmp.Save();
-		}		
-	}
-	//lead.Address = objadd;
-	lead.Save();
-	Session.Remove("LeadAddressid");
-	System.Web.HttpContext.Current.Response.Redirect(string.Format("InsertLead.aspx?modeid=Insert"));
+			//qry = "select case when CPINCODE is null then (Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
+		     //           "where Q.PINCODE = '000000') else (Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
+		       //		"where Q.PINCODE = '" + objadd.PostalCode.ToString() + "') end QUALIFIERID from VWPINCODEMASTER where CPINCODE ='" + objadd.PostalCode.ToString() + "'";
+			qry = "Select Q.QUALIFIERID  from QUALIFIERANDSMPINCODE Q " +
+		                "where Q.PINCODE = 'XXX'";
+
+
+			dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+			dt = new System.Data.DataTable();
+			dataAdapterObj.Fill(dt);
+			if (dt.Rows.Count > 0)
+		    {
+				Sage.Entity.Interfaces.IUser BM  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)dt.Rows[0][0].ToString());
+				lead.Qualifier = BM;
+				lead.AccountManager = BM;
+			}
+			else
+			{
+		        DialogService.ShowMessage("Please map the Qualifier with pincode-Default");
+				return;
+				 
+			}
+		}
+		
+		
+		System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + dt.Rows[0][0].ToString() + "' and Upper(name) ='INSERTSECCODEID'", conObj);
+	    System.Data.DataTable dt2 = new System.Data.DataTable();
+	    dataAdapterObj2.Fill(dt2);
+	    if (dt2.Rows.Count > 0)
+	    {
+	        Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
+	        lead.Owner = objowner;
+	    }
+		else
+		{
+		}
+		//Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)"SYST00000001");
+	    //lead.Owner = objowner;
+		lead.Address = objadd;
+		lead.Save();
+		//lead.Address.LeadId = lead.Id.ToString();
+		//lead.Address.Save();
+		if(lead.Products.Count > 0)
+		{
+			foreach(Sage.Entity.Interfaces.ILeadProduct prd in lead.Products )
+			{
+				prd.Save();
+			}
+		}
+		if(lead.Competitors.Count > 0)
+		{
+			foreach(Sage.Entity.Interfaces.ILeadCompetitor cmp in lead.Competitors)
+			{
+				cmp.Save();
+			}	
+		}
+		
+		lead.Save();
+		
+		Session.Remove("LeadAddressid");
+		System.Web.HttpContext.Current.Response.Redirect(string.Format("Lead.aspx", "&modeid=Detail"));
 	}
 	else
 	{
@@ -867,11 +935,12 @@ Sage.Platform.Security.IUserService userService = Sage.Platform.Application.Appl
 
 string currentUserId = userService.UserId;
 Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)currentUserId);
-lead.LeadEmployee = user;
 
- string qry = "select case when userID is null then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
-		"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BDU') end " +
-		"From usersecurity US,VWEMPMASTER emp where emp.CEMPLCODE = US.USERCODE and US.USERID ='" + lead.LeadEmployee.Id +  "'";
+
+
+ string qry = "select case when CBU = 'DHL' then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
+		"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BDU') end, emp.CEMPLCODE " +
+		"From usersecurity US,VWEMPMASTER emp where upper(emp.CEMPLCODE) = upper(US.USERCODE) and upper(US.USERID) ='" + user.Id.ToString().ToUpper() +  "'";
 	
 	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
 	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
@@ -882,13 +951,22 @@ lead.LeadEmployee = user;
 	{
 		Sage.Entity.Interfaces.ILeadSource ls  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)dt.Rows[0][0].ToString());	
 		lead.LeadSource = ls;
+		lead.UserID = dt.Rows[0][1].ToString();
 	}
 	else
 	{
 		Sage.Entity.Interfaces.ILeadSource ld = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)"LDEMOA000003");	
 		lead.LeadSource = ld;
 	}
-	
+	if(!Page.IsPostBack)
+	{
+		if (Session["LeadAddressid"] != null)
+	    {
+			Sage.Entity.Interfaces.ILeadAddress ad = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadAddress>(Session["LeadAddressid"].ToString());
+	        ad.Delete();
+			Session.Remove("LeadAddressid");
+		}
+	}
 	
 /*if (Session["LeadAddressid"] != null)
 {
@@ -987,15 +1065,15 @@ public class InsertLeadAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     public InsertLeadAdapter(Sage.Platform.WebPortal.SmartParts.EntityBoundSmartPartInfoProvider smartPart)
         : base(smartPart) {}
 
-    private Sage.Platform.Controls.ITextBoxControl _txtCompany;
-    public  Sage.Platform.Controls.ITextBoxControl txtCompany
-    {
-        get { return FindControl(ref _txtCompany, "txtCompany"); }
-    }
     private Sage.Platform.Controls.IPersonNameControl _nmeLeadName;
     public  Sage.Platform.Controls.IPersonNameControl nmeLeadName
     {
         get { return FindControl(ref _nmeLeadName, "nmeLeadName"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _txtCompany;
+    public  Sage.Platform.Controls.ITextBoxControl txtCompany
+    {
+        get { return FindControl(ref _txtCompany, "txtCompany"); }
     }
     private Sage.Platform.Controls.IEmailControl _emlEmail;
     public  Sage.Platform.Controls.IEmailControl emlEmail
@@ -1007,8 +1085,8 @@ public class InsertLeadAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     {
         get { return FindControl(ref _pklTitle, "pklTitle"); }
     }
-    private Sage.Platform.Controls.ICurrencyControl _txtBusinessPotential;
-    public  Sage.Platform.Controls.ICurrencyControl txtBusinessPotential
+    private Sage.Platform.Controls.INumericControl _txtBusinessPotential;
+    public  Sage.Platform.Controls.INumericControl txtBusinessPotential
     {
         get { return FindControl(ref _txtBusinessPotential, "txtBusinessPotential"); }
     }
@@ -1047,8 +1125,8 @@ public class InsertLeadAdapter : Sage.Platform.WebPortal.Adapters.EntityFormAdap
     {
         get { return FindControl(ref _txtAnyInfo, "txtAnyInfo"); }
     }
-    private Sage.Platform.Controls.IUserControl _lkpLeadEmployee;
-    public  Sage.Platform.Controls.IUserControl lkpLeadEmployee
+    private Sage.Platform.Controls.ILookupControl _lkpLeadEmployee;
+    public  Sage.Platform.Controls.ILookupControl lkpLeadEmployee
     {
         get { return FindControl(ref _lkpLeadEmployee, "lkpLeadEmployee"); }
     }

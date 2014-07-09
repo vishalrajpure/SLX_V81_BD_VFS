@@ -29,7 +29,7 @@ makeGrid : function(runtimeConfig) {
     var options = {		
 		        context: runtimeConfig,		
 				        		//Set to the value of the ReadOnlyCondition property
-		          readOnly: false,
+		          readOnly: function() { return 'Lead.Status.ToUpper() == "CONVERTED" || Lead.Status.ToUpper() == "DROPPED"'; } (),
 			        columns: [
     {
         field: '$key',
@@ -103,7 +103,7 @@ makeGrid : function(runtimeConfig) {
 		         storeOptions: {
             resourceKind: 'leadProducts',
             newItemParentReferenceProperty: 'Lead',
-            include: ['Product'],
+            include: ['Lead'],
             select: ['Id'],
 	    //The .net vehicle to store grid data on postback
             dataCarrierId: 'LeadProductgrdLeadProducts_DataCarrier',

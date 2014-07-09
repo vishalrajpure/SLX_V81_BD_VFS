@@ -24,7 +24,7 @@
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <GenerateMember>false</GenerateMember>
-        <ReadOnlyCondition>False</ReadOnlyCondition>
+        <ReadOnlyCondition>function() { return 'Lead.Status.ToUpper() == "CONVERTED" || Lead.Status.ToUpper() == "DROPPED"'; } </ReadOnlyCondition>
         <AppliedSecurity />
         <RelateToPropertyName>Products</RelateToPropertyName>
         <PreviewField />
@@ -100,7 +100,7 @@
           <string>Id</string>
         </Select>
         <Include>
-          <string>Product</string>
+          <string>Lead</string>
         </Include>
         <FeedCategory>InternalAppEntities</FeedCategory>
         <OnGetMappingId />
@@ -767,7 +767,7 @@ function () {
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>3c12fe7f79f467c8271a9c167478d2f</ControlId>
+        <ControlId>c12fe7f79f467c8271a9c167478d2f</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />

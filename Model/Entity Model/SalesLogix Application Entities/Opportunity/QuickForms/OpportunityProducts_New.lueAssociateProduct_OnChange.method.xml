@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="880093f1-8edf-4f73-b387-f7c2281a80a2" lastModifiedUtc="2014-06-21T10:41:05.664484Z" name="lueAssociateProduct_OnChange" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="OpportunityProducts_New">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="7ce5711c-01b9-43a1-88cc-75451373e4a2" paramName="form" sequence="0" paramType="IOpportunityProducts_New" />
+    <OrmEntityMethodParam id="af10c973-01bf-4c49-9e66-844fa20371c4" paramName="args" sequence="0" paramType="EventArgs" />
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets>
+    <methodTarget xsi:type="OrmMethodTargetSnippet" id="3d87ca7d-9b23-4452-a268-7bb702533f28" lastModifiedUtc="2014-06-21T11:25:31.6779712Z" targetType="Sage.BusinessRules.CodeSnippets.OpportunityProducts_NewEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="lueAssociateProduct_OnChangeStep" active="true" codeSnippetId="cd611f68-707c-40a3-9c8e-5ebb26141b5d">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmMethodTargetSnippet" />
+      </ExtendedPropertiesCollection>
+    </methodTarget>
+  </methodTargets>
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

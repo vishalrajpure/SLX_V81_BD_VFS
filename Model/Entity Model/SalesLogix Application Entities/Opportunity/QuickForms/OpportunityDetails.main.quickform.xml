@@ -15,86 +15,17 @@ txtDescription_lbl.ForeColor = System.Drawing.Color.Red;
 txtBusinessPotential_lbl.ForeColor = System.Drawing.Color.Red;
 lueAccount_lbl.ForeColor = System.Drawing.Color.Red;
 Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-    
 
-Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = (Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace)PageWorkItem.Workspaces["TabControl"];
-       
+Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
+string _UserId = "", AccManager = "";
+Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+_UserId = _IUserService.UserId; //get login Userid
+AccManager = Convert.ToString(objOpp.AccountManager.Id);
 
-/*if (!IsPostBack)
-{*/
-    string _UserId = "", AccManager = "";
-    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
-    _UserId = _IUserService.UserId; //get login Userid
-    AccManager = Convert.ToString(objOpp.AccountManager.Id);
-    if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id) == _UserId.Trim()) &amp;&amp; (objOpp.Status != "Closed - Won" || objOpp.Status.ToUpper() != "LOST" || objOpp.Status.ToUpper() != "DROPPED"))
-    {
-        txtDescription.Enabled = true;
-        lueAccount.Enabled = true;
-        usrUser.Enabled = true;
-        lueReseller.Enabled = true;
-        dtpEstimatedClose.Enabled = true;
-        pklCloseProbability.Enabled = true;
-        pklStatus.Enabled = true;
-        txtBusinessPotential.Enabled = true;
-        chkAddToForecast.Enabled = true;
-        txtComments.Enabled = true;
-        clIntegrationContract.Enabled = true;
-        cmdSave.Enabled = true;
-		pklSatge.Enabled = true;
-		cmdReset.Enabled = true;
-		cmdDelete.Enabled = true;
-        tabWorkspace.Hide("OpportunityProducts_Read", true);
-        tabWorkspace.Hide("OpportunityContacts_Read", true);
-    }
-    else
-    {
-        txtDescription.Enabled = false;
-        lueAccount.Enabled = false;
-        usrUser.Enabled = false;
-        lueReseller.Enabled = false;
-        dtpEstimatedClose.Enabled = false;
-        pklCloseProbability.Enabled = false;
-        pklStatus.Enabled = false;
-        txtBusinessPotential.Enabled = false;
-        chkAddToForecast.Enabled = false;
-        txtComments.Enabled = false;
-        clIntegrationContract.Enabled = false;
-        cmdSave.Enabled = false;
-		pklSatge.Enabled = false;
-		cmdReset.Enabled = false;
-		cmdDelete.Enabled = false;
-		tabWorkspace.Hide("OpportunityProducts", true);
-        tabWorkspace.Hide("OpportunityContacts", true);
-    }
-	/*if (objOpp.Status == "Closed - Won" || objOpp.Status.ToUpper() == "LOST" || objOpp.Status.ToUpper() == "DROPPED")
+if(!Page.IsPostBack)
+{
+	if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id) == _UserId.Trim()) &amp;&amp; (objOpp.Status != "Closed - Won" &amp;&amp; objOpp.Status.ToUpper() != "LOST" &amp;&amp; objOpp.Status.ToUpper() != "DROPPED"))
 	{
-	   // pklStatus.PickListName = "Opportunity Status Closed";
-	    //pklStatus.ReadOnly = true;
-	    
-	    txtDescription.Enabled = false;
-	    lueAccount.Enabled = false;
-	    usrUser.Enabled = false;
-	    lueReseller.Enabled = false;
-	    dtpEstimatedClose.Enabled = false;
-	    pklCloseProbability.Enabled = false;
-	    pklStatus.Enabled = false;
-	    txtBusinessPotential.Enabled = false;
-	    chkAddToForecast.Enabled = false;
-	    txtComments.Enabled = false;
-	    clIntegrationContract.Enabled = false;
-	    cmdSave.Enabled = false;
-		pklSatge.Enabled = false;
-		cmdReset.Enabled = false;
-		cmdDelete.Enabled = false;
-		tabWorkspace.Hide("OpportunityProducts", true);
-	    tabWorkspace.Hide("OpportunityContacts", true);
-	    
-	}
-	else
-	{
-	    //pklStatus.PickListName = "Opportunity Status Detail";
-	    //pklStatus.ReadOnly = false;
-	    //pklStatus.PickListValue= objOpp.Status;
 	    txtDescription.Enabled = true;
 	    lueAccount.Enabled = true;
 	    usrUser.Enabled = true;
@@ -102,6 +33,7 @@ Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = (Sage.Platfor
 	    dtpEstimatedClose.Enabled = true;
 	    pklCloseProbability.Enabled = true;
 	    pklStatus.Enabled = true;
+		pklStatus.ReadOnly = false;
 	    txtBusinessPotential.Enabled = true;
 	    chkAddToForecast.Enabled = true;
 	    txtComments.Enabled = true;
@@ -110,14 +42,64 @@ Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = (Sage.Platfor
 		pklSatge.Enabled = true;
 		cmdReset.Enabled = true;
 		cmdDelete.Enabled = true;
-		tabWorkspace.Hide("OpportunityProducts_Read", true);
-	    tabWorkspace.Hide("OpportunityContacts_Read", true);
-	}*/
-//}
+	    /*if (tabWorkspace != null)
+	    {
+	        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabproduct = null;
+	        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabcontact = null;
+	        foreach (Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tab in tabWorkspace.Tabs)
+	        {
+	            if (tab.ID == "OpportunityProducts_Read")
+	            {
+	                tabproduct = tab;
+	            }
+	            if (tab.ID == "OpportunityContacts_Read")
+	            {
+	                tabcontact = tab; 
+	            }
+	        }
+	        tabWorkspace.Tabs.Remove(tabproduct);
+	        tabWorkspace.Tabs.Remove(tabcontact);
+	    }  */
+	}
+	else
+	{
+	    txtDescription.Enabled = false;
+	    lueAccount.Enabled = false;
+	    usrUser.Enabled = false;
+	    lueReseller.Enabled = false;
+	    dtpEstimatedClose.Enabled = false;
+	    pklCloseProbability.Enabled = false;
+	    pklStatus.Enabled = false;
+		 pklStatus.ReadOnly = true;
+	    txtBusinessPotential.Enabled = false;
+	    chkAddToForecast.Enabled = false;
+	    txtComments.Enabled = false;
+	    clIntegrationContract.Enabled = false;
+	    cmdSave.Enabled = false;
+		pklSatge.Enabled = false;
+		cmdReset.Enabled = false;
+		cmdDelete.Enabled = false;
+		/*if (tabWorkspace != null)
+	    {
+	        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabproduct = null;
+	        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabcontact = null;
+	        foreach (Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tab in tabWorkspace.Tabs)
+	        {
+	            if (tab.ID == "OpportunityProducts")
+	            {
+	                tabproduct = tab; 
+	            }
+	            if (tab.ID == "OpportunityContacts")
+	            {
+	                tabcontact = tab;
+	            }
+	        }
 
-//pklStatus.PickListValue= objOpp.Status;
-
-</CSharpCodeSnippet>
+	        tabWorkspace.Tabs.Remove(tabproduct);
+	        tabWorkspace.Tabs.Remove(tabcontact);
+	    }  */  
+	}
+}</CSharpCodeSnippet>
         </CSharpSnippetActionItem>
       </Action>
       <IsDialogCloseAction>False</IsDialogCloseAction>
@@ -411,10 +393,95 @@ Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = (Sage.Platfor
           <ResourceKey>pklStatus</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName>pklStatus_ChangeAction</MethodName>
+              <MethodName />
               <CSharpCodeSnippet>
 Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 string dialog = "";
+
+Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
+
+string _UserId = "", AccManager = "";
+Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+_UserId = _IUserService.UserId; //get login Userid
+AccManager = Convert.ToString(opportunity.AccountManager.Id);
+if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(opportunity.Account.AccountManager.Id) == _UserId.Trim()) &amp;&amp; (opportunity.Status != "Closed - Won" &amp;&amp; opportunity.Status.ToUpper() != "LOST" &amp;&amp; opportunity.Status.ToUpper() != "DROPPED"))
+{
+    txtDescription.Enabled = true;
+    lueAccount.Enabled = true;
+    usrUser.Enabled = true;
+    lueReseller.Enabled = true;
+    dtpEstimatedClose.Enabled = true;
+    pklCloseProbability.Enabled = true;
+    pklStatus.Enabled = true;
+    txtBusinessPotential.Enabled = true;
+    chkAddToForecast.Enabled = true;
+    txtComments.Enabled = true;
+    clIntegrationContract.Enabled = true;
+    cmdSave.Enabled = true;
+    pklSatge.Enabled = true;
+    cmdReset.Enabled = true;
+    cmdDelete.Enabled = true;
+    if (tabWorkspace != null)
+    {
+        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabproduct = null;
+        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabcontact = null;
+        foreach (Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tab in tabWorkspace.Tabs)
+        {
+            if (tab.ID == "OpportunityProducts_Read")
+            {
+                tabproduct = tab;
+            }
+            if (tab.ID == "OpportunityContacts_Read")
+            {
+                tabcontact = tab;
+            }
+        }
+
+        tabWorkspace.Tabs.Remove(tabproduct);
+        tabWorkspace.Tabs.Remove(tabcontact);
+    }    
+}
+else
+{
+    txtDescription.Enabled = false;
+    lueAccount.Enabled = false;
+    usrUser.Enabled = false;
+    lueReseller.Enabled = false;
+    dtpEstimatedClose.Enabled = false;
+    pklCloseProbability.Enabled = false;
+    pklStatus.Enabled = false;
+    txtBusinessPotential.Enabled = false;
+    chkAddToForecast.Enabled = false;
+    txtComments.Enabled = false;
+    clIntegrationContract.Enabled = false;
+    cmdSave.Enabled = false;
+    pklSatge.Enabled = false;
+    cmdReset.Enabled = false;
+    cmdDelete.Enabled = false;
+    if (tabWorkspace != null)
+    {
+        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabproduct = null;
+        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabcontact = null;
+        foreach (Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tab in tabWorkspace.Tabs)
+        {
+            if (tab.ID == "OpportunityProducts")
+            {
+                tabproduct = tab;
+            }
+            if (tab.ID == "OpportunityContacts")
+            {
+                tabcontact = tab;
+            }
+        }
+
+        tabWorkspace.Tabs.Remove(tabproduct);
+        tabWorkspace.Tabs.Remove(tabcontact);
+    }    
+}
+    
+
+
+
 
 if(opportunity.Status=="Dropped" || opportunity.Status=="Future Opportunity")
 {
@@ -424,7 +491,14 @@ if(opportunity.Status=="Dropped" || opportunity.Status=="Future Opportunity")
 }
 else if (opportunity.StatusChangeWon())
 {
-  dialog = "OpportunityClosedWon";
+	DialogService.ShowMessage("You are not Authorise to Closed-Won Opportunity");
+	object resOpen = System.Web.HttpContext.GetGlobalResourceObject("Opportunity", "Opp_Status_Active");
+    if (resOpen != null)
+    {
+        opportunity.Status = resOpen.ToString(); //"Open";
+    } 
+	return;
+    //dialog = "OpportunityClosedWon";
 }
 else if (opportunity.StatusChangeLost() || opportunity.Status=="Lost")
 {
@@ -534,6 +608,7 @@ if (!String.IsNullOrEmpty(dialog))
         <ExtendedProperties />
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
+        <MaxLength>13</MaxLength>
         <OnChangeAction>
           <ResourceKey>txtBusinessPotential</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
@@ -548,10 +623,10 @@ if (!String.IsNullOrEmpty(dialog))
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnChangeAction>
-        <Required>true</Required>
+        <Required>false</Required>
         <DecimalDigits>
           <DecimalDigits>2</DecimalDigits>
-          <Strict>true</Strict>
+          <Strict>false</Strict>
         </DecimalDigits>
         <FormatType>Number</FormatType>
       </QFSLXNumeric>
@@ -1283,41 +1358,27 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);</CSharpCodeSnippe
         <OnClientClick />
         <OnClickAction>
           <ResourceKey>cmdSave</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
-            <CSharpSnippetActionItem>
-              <MethodName>cmdSave_ClickAction</MethodName>
-              <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-
-if(opp.BusinessPotential &lt;= 0)
-{
-	 DialogService.ShowMessage("Please Enter Business Potential...");
-     return;
-}
-if (opp.Status == "Closed - Won")
-{
-    //pklStatus.PickListValue = opportunity.Status;
-    DialogService.ShowMessage("You are not authorised to change the status to Closed - Won.");
-    return;
-}
-else
-{
-	if (opp.Status == "Lost" || opp.Status == "Dropped" || opp.Status == "Future Opportunity")
-	   {
-         if (string.IsNullOrEmpty(opp.Notes))
-         {
-             DialogService.ShowMessage("Please  mention comments for changing the status.");
-			 return;
-         }
-	   }
-	opp.SalesPotential = Convert.ToDouble(opp.SalesPotential);
-    opp.Save();
- }   </CSharpCodeSnippet>
-            </CSharpSnippetActionItem>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.BusinessRuleActionItem, Sage.Platform.QuickForms">
+            <BusinessRuleActionItem>
+              <BusinessRule>Save</BusinessRule>
+              <Object>Opportunity</Object>
+              <Parameters />
+              <PassResultsToNextAction>False</PassResultsToNextAction>
+              <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+                <CSharpSnippetActionItem>
+                  <MethodName>cmdSave_ClickActionBRC</MethodName>
+                  <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+opp.SalesPotential = Convert.ToDouble(opp.SalesPotential);
+opp.Save();
+System.Web.HttpContext.Current.Response.Redirect(string.Format("Opportunity.aspx?modeid=Detail&amp;entityid=" + opp.Id.ToString()));</CSharpCodeSnippet>
+                </CSharpSnippetActionItem>
+              </OnComplete>
+            </BusinessRuleActionItem>
           </Action>
           <IsDialogCloseAction>False</IsDialogCloseAction>
           <RunOnEveryRePaint>False</RunOnEveryRePaint>
           <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>False</PerformsUpdate>
+          <PerformsUpdate>True</PerformsUpdate>
           <AppliedSecurity />
           <RefreshData>False</RefreshData>
         </OnClickAction>

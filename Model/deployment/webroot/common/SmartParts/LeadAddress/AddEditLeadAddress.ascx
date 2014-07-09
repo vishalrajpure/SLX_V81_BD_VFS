@@ -167,7 +167,7 @@ FormatType="Decimal" Strict="False"
  Text="<%$ resources: btnCancel.Caption %>"  />
  
    <asp:Button runat="server" ID="btnGetLatLong"
- Text="<%$ resources: btnGetLatLong.Caption %>"  />
+ Text="<%$ resources: btnGetLatLong.Caption %>" Visible="false"  />
  
 </asp:Panel>
       </td>
@@ -362,8 +362,8 @@ if (txtAddress1.Text != "")
             }
             if (dtCoordinates.Rows.Count > 0)
             {
-                curAdd.Latitude = Convert.ToDecimal(dtCoordinates.Rows[0]["Latitude"].ToString());
-                curAdd.Logitude = Convert.ToDecimal(dtCoordinates.Rows[0]["Longitude"].ToString());
+                curAdd.Latitude = dtCoordinates.Rows[0]["Latitude"].ToString();
+                curAdd.Logitude = dtCoordinates.Rows[0]["Longitude"].ToString();
                 txtLatitute.Text = dtCoordinates.Rows[0]["Latitude"].ToString();
                 txtLongitude.Text = dtCoordinates.Rows[0]["Longitude"].ToString();
                 /*if (ViewState["parentEntityID"] != null)
@@ -458,14 +458,6 @@ ClientBindingMgr.RegisterDialogCancelButton(btnCancel);
 public override Sage.Platform.Application.UI.ISmartPartInfo GetSmartPartInfo(Type smartPartInfoType)
 {
     ToolsSmartPartInfo tinfo = new ToolsSmartPartInfo();
-        if (BindingSource != null)
-    {
-        if (BindingSource.Current != null)
-        {
-            tinfo.Description = BindingSource.Current.ToString();
-            tinfo.Title = BindingSource.Current.ToString();
-        }
-    }
     
     foreach (Control c in Controls)
     {

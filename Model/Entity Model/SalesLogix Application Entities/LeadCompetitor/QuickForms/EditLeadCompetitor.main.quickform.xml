@@ -239,9 +239,10 @@
         </OnChangeAction>
         <Required>false</Required>
         <DecimalDigits>
+          <DecimalDigits>2</DecimalDigits>
           <Strict>false</Strict>
         </DecimalDigits>
-        <FormatType>Number</FormatType>
+        <FormatType>Percent</FormatType>
       </QFSLXNumeric>
     </Control>
     <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">

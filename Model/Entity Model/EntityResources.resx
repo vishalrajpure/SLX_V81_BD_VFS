@@ -14946,4 +14946,49 @@
   <data name="Vwsegmentmst.DisplayNamePlural" xml:space="preserve">
     <value>Segments</value>
   </data>
+  <data name="QualifierAndSMpincode.Branch.DisplayName" xml:space="preserve">
+    <value>Branch</value>
+  </data>
+  <data name="Vwempmaster.Cbu.DisplayName" xml:space="preserve">
+    <value>Cbu</value>
+  </data>
+  <data name="Opportunity.OPPCOMPETITOR.DisplayName" xml:space="preserve">
+    <value>OPPCOMPETITOR</value>
+  </data>
+  <data name="Lead.LEADFORMNO.DisplayName" xml:space="preserve">
+    <value>LEAD_FORM_NO</value>
+  </data>
+  <data name="Indsgmst.DisplayName" xml:space="preserve">
+    <value>Indsgmst</value>
+  </data>
+  <data name="Indsgmst.Indsgmstid.DisplayName" xml:space="preserve">
+    <value>Indsgmstid</value>
+  </data>
+  <data name="Indsgmst.CreateUser.DisplayName" xml:space="preserve">
+    <value>Createuser</value>
+  </data>
+  <data name="Indsgmst.CreateDate.DisplayName" xml:space="preserve">
+    <value>Createdate</value>
+  </data>
+  <data name="Indsgmst.ModifyUser.DisplayName" xml:space="preserve">
+    <value>Modifyuser</value>
+  </data>
+  <data name="Indsgmst.ModifyDate.DisplayName" xml:space="preserve">
+    <value>Modifydate</value>
+  </data>
+  <data name="Indsgmst.Cindsgcode.DisplayName" xml:space="preserve">
+    <value>Cindsgcode</value>
+  </data>
+  <data name="Indsgmst.Cindsgdesc.DisplayName" xml:space="preserve">
+    <value>Cindsgdesc</value>
+  </data>
+  <data name="Indsgmst.Cmktsgcode.DisplayName" xml:space="preserve">
+    <value>Cmktsgcode</value>
+  </data>
+  <data name="Indsgmst.Cmktsgdesc.DisplayName" xml:space="preserve">
+    <value>Cmktsgdesc</value>
+  </data>
+  <data name="Lead.MKTSegment.DisplayName" xml:space="preserve">
+    <value>MKTSegment</value>
+  </data>
 </root>

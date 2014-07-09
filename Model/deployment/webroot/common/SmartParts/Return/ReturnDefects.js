@@ -218,7 +218,7 @@ makeGrid : function(runtimeConfig) {
 	displayMode: 'AsText'
 }
   	          ],
-		         storeOptions: {
+	 	         storeOptions: {
             resourceKind: 'defectReturns',
             newItemParentReferenceProperty: 'Return',
             include: [],

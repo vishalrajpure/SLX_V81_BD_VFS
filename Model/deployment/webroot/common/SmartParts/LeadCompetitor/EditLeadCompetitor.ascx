@@ -125,7 +125,7 @@ LabelPlacement="left"  />
  </div>   
    <div  class="textcontrol numeric"  > 
     <SalesLogix:NumericControl runat="server" ID="txtCompetitorShareOfWellet"
-Strict="False" 
+FormatType="Percent" DecimalDigits="2" Strict="False" 
  />
   </div>
 

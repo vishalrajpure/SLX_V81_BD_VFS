@@ -1,0 +1,44 @@
+03-07-2014 04:50:08
+INFO  2014-07-03 10:20:02,892 - Installing bundle...
+INFO  2014-07-03 10:20:02,896 - Performing pre-install.
+INFO  2014-07-03 10:20:02,902 - Installing context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-07-03 10:20:03,292 - Successfully installed Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-07-03 10:20:03,295 - Installing model item: Insert Contact/Account (\Portal\SlxClient\ChildPages\InsertContactAccount\InsertContactAccount.page.xml)
+INFO  2014-07-03 10:20:03,446 - Successfully installed Insert Contact/Account (\Portal\SlxClient\ChildPages\InsertContactAccount\InsertContactAccount.page.xml)
+INFO  2014-07-03 10:20:03,448 - Installing model item: InsertContact (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\InsertContact.smartpart.xml)
+INFO  2014-07-03 10:20:03,484 - Successfully installed InsertContact (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\InsertContact.smartpart.xml)
+INFO  2014-07-03 10:20:03,487 - Installing model item: SelectAccountAddress (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\SelectAccountAddress.smartpart.xml)
+INFO  2014-07-03 10:20:03,522 - Successfully installed SelectAccountAddress (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\SelectAccountAddress.smartpart.xml)
+INFO  2014-07-03 10:20:03,525 - Installing model item: ContactSearchForDuplicates (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\ContactSearchForDuplicates.smartpart.xml)
+INFO  2014-07-03 10:20:03,551 - Successfully installed ContactSearchForDuplicates (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\ContactSearchForDuplicates.smartpart.xml)
+INFO  2014-07-03 10:20:03,554 - Installing model item: AddAccountAddress (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\AddAccountAddress.smartpart.xml)
+INFO  2014-07-03 10:20:03,565 - Successfully installed AddAccountAddress (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\AddAccountAddress.smartpart.xml)
+INFO  2014-07-03 10:20:03,569 - Installing model item: AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-07-03 10:20:03,580 - Successfully installed AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-07-03 10:20:03,584 - Saving context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-07-03 10:20:03,590 - Successfully saved Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-07-03 10:20:03,595 - Saving model item: Insert Contact/Account (\Portal\SlxClient\ChildPages\InsertContactAccount\InsertContactAccount.page.xml)
+INFO  2014-07-03 10:20:03,604 - Successfully saved Insert Contact/Account (\Portal\SlxClient\ChildPages\InsertContactAccount\InsertContactAccount.page.xml)
+INFO  2014-07-03 10:20:03,609 - Saving model item: InsertContact (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\InsertContact.smartpart.xml)
+INFO  2014-07-03 10:20:03,618 - Successfully saved InsertContact (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\InsertContact.smartpart.xml)
+INFO  2014-07-03 10:20:03,623 - Saving model item: SelectAccountAddress (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\SelectAccountAddress.smartpart.xml)
+INFO  2014-07-03 10:20:03,628 - Successfully saved SelectAccountAddress (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\SelectAccountAddress.smartpart.xml)
+INFO  2014-07-03 10:20:03,632 - Saving model item: ContactSearchForDuplicates (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\ContactSearchForDuplicates.smartpart.xml)
+INFO  2014-07-03 10:20:03,637 - Successfully saved ContactSearchForDuplicates (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\ContactSearchForDuplicates.smartpart.xml)
+INFO  2014-07-03 10:20:03,641 - Saving model item: AddAccountAddress (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\AddAccountAddress.smartpart.xml)
+INFO  2014-07-03 10:20:03,647 - Successfully saved AddAccountAddress (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\AddAccountAddress.smartpart.xml)
+INFO  2014-07-03 10:20:03,651 - Saving model item: AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-07-03 10:20:03,657 - Successfully saved AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\InsertContactAccount\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-07-03 10:20:03,664 - Configuring installed items.
+INFO  2014-07-03 10:20:03,669 - Configuring Saleslogix Client...
+INFO  2014-07-03 10:20:03,890 - Configuring Insert Contact/Account...
+INFO  2014-07-03 10:20:08,109 - Configuring InsertContact (Custom)...
+INFO  2014-07-03 10:20:08,115 - Configuring SelectAccountAddress...
+INFO  2014-07-03 10:20:08,129 - Configuring ContactSearchForDuplicates (Custom)...
+INFO  2014-07-03 10:20:08,134 - Configuring AddAccountAddress (Custom)...
+INFO  2014-07-03 10:20:08,139 - Configuring AddEditAddress (Custom)...
+INFO  2014-07-03 10:20:08,146 - Performing pre-commit to target project.
+INFO  2014-07-03 10:20:08,233 - Committing items to target project...
+INFO  2014-07-03 10:20:08,323 - Committing transactions...
+INFO  2014-07-03 10:20:08,491 - Copying bundle manifest to project.
+INFO  2014-07-03 10:20:08,612 - Install complete.

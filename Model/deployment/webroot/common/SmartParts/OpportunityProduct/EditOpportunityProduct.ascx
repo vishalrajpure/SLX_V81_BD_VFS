@@ -16,10 +16,10 @@
      <tr>
             <td  >
  <div class=" lbl alignleft" >
-   <asp:Label ID="txtSort_lbl" AssociatedControlID="txtSort" runat="server" Text="<%$ resources: txtSort.Caption %>" ></asp:Label>
+   <asp:Label ID="txtSort_lbl" AssociatedControlID="txtSort" runat="server" Text="<%$ resources: txtSort.Caption %>" Visible="false" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtSort" ReadOnly="true"  dojoType="Sage.UI.Controls.TextBox"  />
+<asp:TextBox runat="server" ID="txtSort" ReadOnly="true"  dojoType="Sage.UI.Controls.TextBox" Visible="false"  />
   </div>
 
       </td>
@@ -31,6 +31,17 @@
  </div>
   <div  class="textcontrol"   >
 <asp:TextBox runat="server" ID="txtName" ReadOnly="true"  dojoType="Sage.UI.Controls.TextBox" TabIndex="1"  />
+  </div>
+
+      </td>
+      </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft" >
+   <asp:Label ID="txtFamily_lbl" AssociatedControlID="txtFamily" runat="server" Text="<%$ resources: txtFamily.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="txtFamily" ReadOnly="true"  dojoType="Sage.UI.Controls.TextBox"  />
   </div>
 
       </td>
@@ -189,6 +200,9 @@ protected override void OnAddEntityBindings() {
                     // txtName.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtNameTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Product.Name", txtName, "Text");
         BindingSource.Bindings.Add(txtNameTextBinding);
+                    // txtFamily.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtFamilyTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Product.Family", txtFamily, "Text");
+        BindingSource.Bindings.Add(txtFamilyTextBinding);
                              // lstbxPriceLevel.SelectedValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding lstbxPriceLevelSelectedValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Program", lstbxPriceLevel, "SelectedValue");
         lstbxPriceLevelSelectedValueBinding.ChangeNotificationEventName = "TextChanged";
@@ -223,7 +237,7 @@ protected override void OnAddEntityBindings() {
     
    
 }
-                                                                                    
+                                                                                           
 protected void btnOK_ClickAction(object sender, EventArgs e) {
   Sage.Entity.Interfaces.IOpportunityProduct _entity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunityProduct;
   if (_entity != null)
@@ -373,7 +387,7 @@ txtQuantity.TextChanged += new EventHandler(txtQuantity_ChangeAction);
 
 protected void quickformload0(object sender, EventArgs e) {
 var optionSvc = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.SalesLogix.Services.ISystemOptionsService>(true);
-bool multiCurrency = optionSvc.MultiCurrency;
+/*bool multiCurrency = optionSvc.MultiCurrency;
 Sage.Entity.Interfaces.IOpportunityProduct oppProduct = BindingSource.Current as Sage.Entity.Interfaces.IOpportunityProduct;
 if (multiCurrency)
 {
@@ -396,7 +410,7 @@ foreach (Sage.Entity.Interfaces.IProductProgram priceLevel in oppProduct.Product
 	if(oppProduct.Program == priceLevel.Program)
 		item.Selected = true;
     lstbxPriceLevel.Items.Add(item);
-}
+}*/
 
 
 
@@ -475,6 +489,11 @@ public class EditOpportunityProductAdapter : Sage.Platform.WebPortal.Adapters.En
     public  Sage.Platform.Controls.ITextBoxControl txtName
     {
         get { return FindControl(ref _txtName, "txtName"); }
+    }
+    private Sage.Platform.Controls.ITextBoxControl _txtFamily;
+    public  Sage.Platform.Controls.ITextBoxControl txtFamily
+    {
+        get { return FindControl(ref _txtFamily, "txtFamily"); }
     }
     private Sage.Platform.Controls.IControlsListControl _QFControlsList;
     public  Sage.Platform.Controls.IControlsListControl QFControlsList

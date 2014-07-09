@@ -2,7 +2,24 @@
 <QuickForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="e5bf272f-7056-45c8-926a-f54c8c297fdb" DefinitionType="Sage.Platform.QuickForms.QuickFormMainDetailViewDefinition, Sage.Platform.QuickForms">
   <ActiveControl />
   <ImagePath />
-  <LoadActions />
+  <LoadActions>
+    <FormActionDefinition>
+      <ResourceKey>da7060a8-8312-4622-b174-bf8070965302</ResourceKey>
+      <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+        <CSharpSnippetActionItem>
+          <MethodName />
+          <CSharpCodeSnippet>this.txtComments.TextMode = TextBoxMode.MultiLine;
+this.txtComments.Height =  100;</CSharpCodeSnippet>
+        </CSharpSnippetActionItem>
+      </Action>
+      <IsDialogCloseAction>False</IsDialogCloseAction>
+      <RunOnEveryRePaint>False</RunOnEveryRePaint>
+      <DialogActionResult>NoResult</DialogActionResult>
+      <PerformsUpdate>False</PerformsUpdate>
+      <AppliedSecurity />
+      <RefreshData>False</RefreshData>
+    </FormActionDefinition>
+  </LoadActions>
   <Name>DroppedFutureOpp</Name>
   <ClientScriptIncludes />
   <ClientResourceKeys />
@@ -13,6 +30,8 @@
   <Controls>
     <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
       <QFTextBox>
+        <ColumnSpan>2</ColumnSpan>
+        <RowSpan>2</RowSpan>
         <Column>0</Column>
         <Row>0</Row>
         <HotKey>0</HotKey>
@@ -52,7 +71,7 @@
     <Control typeName="Sage.Platform.QuickForms.QFControls.QFControlsList, Sage.Platform.QuickForms.QFControls">
       <QFControlsList>
         <Column>0</Column>
-        <Row>1</Row>
+        <Row>2</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>QFControlsList</ControlId>
@@ -87,10 +106,12 @@
                       <Object>Opportunity</Object>
                       <Parameters />
                       <PassResultsToNextAction>True</PassResultsToNextAction>
-                      <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-                        <NoActionActionItem>
-                          <MethodName />
-                        </NoActionActionItem>
+                      <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+                        <CSharpSnippetActionItem>
+                          <MethodName>btnOk_ClickActionBRC</MethodName>
+                          <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+System.Web.HttpContext.Current.Response.Redirect(string.Format("Opportunity.aspx?modeid=Detail&amp;entityid=" + opp.Id.ToString()));</CSharpCodeSnippet>
+                        </CSharpSnippetActionItem>
                       </OnComplete>
                     </BusinessRuleActionItem>
                   </Action>
@@ -98,6 +119,37 @@
                   <RunOnEveryRePaint>False</RunOnEveryRePaint>
                   <DialogActionResult>DialogOK</DialogActionResult>
                   <PerformsUpdate>True</PerformsUpdate>
+                  <AppliedSecurity />
+                  <RefreshData>False</RefreshData>
+                </OnClickAction>
+              </QFButton>
+            </Control>
+            <Control TypeName="Sage.Platform.QuickForms.Controls.QFButton, Sage.Platform.QuickForms">
+              <QFButton>
+                <Column>0</Column>
+                <Row>0</Row>
+                <HotKey>0</HotKey>
+                <TabIndex>0</TabIndex>
+                <ControlId>btnCancel</ControlId>
+                <DataBindings />
+                <ControlLabelPlacement>none</ControlLabelPlacement>
+                <ExtendedProperties />
+                <CaptionAlignment>left</CaptionAlignment>
+                <StyleScheme />
+                <ButtonType>StandardButton</ButtonType>
+                <Image />
+                <OnClientClick />
+                <OnClickAction>
+                  <ResourceKey>btnCancel</ResourceKey>
+                  <Action typeName="Sage.Platform.QuickForms.ActionItems.CodeSnippetActionItem, Sage.Platform.QuickForms">
+                    <CodeSnippetActionItem methodId="6c3b41de-a718-4b2a-b0b5-612941dad3a8">
+                      <MethodName>btnCancel_ClickAction</MethodName>
+                    </CodeSnippetActionItem>
+                  </Action>
+                  <IsDialogCloseAction>False</IsDialogCloseAction>
+                  <RunOnEveryRePaint>False</RunOnEveryRePaint>
+                  <DialogActionResult>DialogCancel</DialogActionResult>
+                  <PerformsUpdate>False</PerformsUpdate>
                   <AppliedSecurity />
                   <RefreshData>False</RefreshData>
                 </OnClickAction>
@@ -145,6 +197,10 @@
     </ColumnStyle>
   </Columns>
   <Rows>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
     <RowStyle>
       <SizeType>Absolute</SizeType>
       <Height>35</Height>

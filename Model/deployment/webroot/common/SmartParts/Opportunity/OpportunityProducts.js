@@ -84,7 +84,7 @@ makeGrid : function(runtimeConfig) {
 	editable: false
 				}
   	          ],
-		         storeOptions: {
+	 	         storeOptions: {
             resourceKind: 'opportunityProducts',
             newItemParentReferenceProperty: 'Opportunity',
             include: ['Opportunity'],

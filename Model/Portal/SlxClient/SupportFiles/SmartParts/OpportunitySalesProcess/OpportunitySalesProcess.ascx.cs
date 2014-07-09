@@ -108,6 +108,28 @@ public partial class SmartParts_OpportunitySalesProcess_SalesProcess : EntityBou
             txtOppContactCount.Value = Convert.ToString(GetOppContactCount(opportunityId));
             LoadSalesProcessDropDown();
             LoadSalesProcess(opportunityId);
+			string _UserId = "", AccManager = "";
+            Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+            _UserId = _IUserService.UserId; //get login Userid
+            AccManager = Convert.ToString(this._opportunity.AccountManager.Id);
+            if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(this._opportunity.Account.AccountManager.Id) == _UserId.Trim()) && (this._opportunity.Status != "Closed - Won" && this._opportunity.Status.ToUpper() != "LOST" && this._opportunity.Status.ToUpper() != "DROPPED"))
+            {                
+                
+            }
+			else
+			{
+				ddlStages.Enabled = false;
+                ddLSalesProcess.Enabled = false;
+                SalesProcessGrid.Enabled = false;
+                btnStages.Enabled = false;
+                cmdCompleteDate.Enabled = false;
+                cmdCompleteStep.Enabled = false;
+                cmdDoAction.Enabled = false;
+                cmdSelectContactNext.Enabled=false;
+                cmdSelectUserNext.Enabled = false;
+                cmdStartDate.Enabled = false;
+			}
+			
         }
 
     }
@@ -377,6 +399,8 @@ public partial class SmartParts_OpportunitySalesProcess_SalesProcess : EntityBou
     {
         if (stage != null)
         {
+			this._opportunity = GetParentEntity() as IOpportunity;
+			this._opportunity.Stage = stage.StageName;			
             valueCurrnetStage.Text = stage.StageName;
             valueProbabilty.Text = stage.Probability.ToString() + "%";
             valueDaysInStage.Text = Convert.ToString(this._salesProcess.DaysInStage(stage.Id.ToString()));

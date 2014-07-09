@@ -179,7 +179,7 @@ MaxLength="32"  />
  Text="<%$ resources: btnAddress.Caption %>"  />
  
    <asp:ImageButton runat="server" ID="btnShowMap"
- ToolTip="<%$ resources: btnShowMap.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Help_16x16"  />
+ ToolTip="<%$ resources: btnShowMap.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Get_Map_16x16"  />
  
 </asp:Panel>
       </td>
@@ -442,16 +442,18 @@ protected void btnAddress_ClickAction(object sender, EventArgs e) {
 if (DialogService != null)
 {
 	Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Entity.Interfaces.IContact;   
-	if(contact != null)
+	/*if(contact != null)
 	{
 		//string _idname = contact.Address.Id.ToString() + ",Contact," + contact.Id.ToString() ;
        // Session["Addressid"] = _idname;
-	    DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
+	    DialogService.SetSpecs(200, 200, 440, 300, "AddEditAddress", "", true);
 	    DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAddress);
 		DialogService.EntityID = contact.Address.Id.ToString();
 		
 	    DialogService.ShowDialog();
-	}
+	}*/
+	string script_FormatNumber1 = "window.showModalDialog('InsertAddress.aspx?type=Account&id=" + contact.Address.Id.ToString() + "', '_blank', 'height=440,width=100,status=yes,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=no,titlebar=no' )";
+    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
 }
 
 }
@@ -662,85 +664,124 @@ Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Ent
         txtAccountAddress.Text = _add;
     }
 }*/
-/*if (!IsPostBack)
-    {*/
- string _UserId = "", AccManager = "";
-    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
-    _UserId = _IUserService.UserId; //get login Userid
-    AccManager = Convert.ToString(contact.AccountManager.Id);
-    if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(contact.Account.AccountManager.Id) == _UserId.Trim() )
+Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
+
+string _UserId = "", AccManager = "";
+Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+_UserId = _IUserService.UserId; //get login Userid
+AccManager = Convert.ToString(contact.AccountManager.Id);
+if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(contact.Account.AccountManager.Id) == _UserId.Trim() )
+{
+    nmeContactName.Enabled = true;
+    lueAccountName.Enabled = true;
+    pklTitle.Enabled = true;
+    txtAssistant.Enabled = true;
+    txtSalutation.Enabled = true;
+    btnAddress.Enabled = true;
+   // txtAccountAddress.Enabled = true;
+    phnWorkPhone.Enabled = true;
+    phnFax.Enabled = true;
+    phnMobilePhone.Enabled = true;
+    phnHomePhone.Enabled = true;
+    phnOtherPhone.Enabled = true;
+
+    cboPreferredContact.Enabled = true;
+	//cboPreferredContact.IsReadOnly = false;
+    emlEmailAddress.Enabled = true;
+    //urlWebAddress.Enabled = true;
+    chkIsPrimary.Enabled = true;
+    //chkIsServiceAuthorized.Enabled = true;
+    //chkDoNotSolicit.Enabled = true;
+    //chkDoNotEmail.Enabled = true;
+    //chkDoNotPhone.Enabled = true;
+    //chkDoNotMail.Enabled = true;
+    //chkDoNotFax.Enabled = true;
+    ownContactOwner.Enabled = true;
+    usrAcctMgr.Enabled = true;
+
+    pklContactType.Enabled = true;
+    pklContactStatus.Enabled = true;
+    //adrContactAddress.Enabled = true;
+    cmdSaveContactDetails.Enabled = true;
+	cmdDelete.Enabled = true;
+	cmdReset.Enabled = true;
+	cmdMoveContact.Enabled = true;
+	//pklContactType.IsReadOnly = false;
+	//pklContactStatus.IsReadOnly = false;
+	
+/* if (tabWorkspace != null)
     {
-        nmeContactName.Enabled = true;
-        lueAccountName.Enabled = true;
-        pklTitle.Enabled = true;
-        txtAssistant.Enabled = true;
-        txtSalutation.Enabled = true;
-        btnAddress.Enabled = true;
-       // txtAccountAddress.Enabled = true;
-        phnWorkPhone.Enabled = true;
-        phnFax.Enabled = true;
-        phnMobilePhone.Enabled = true;
-        phnHomePhone.Enabled = true;
-        phnOtherPhone.Enabled = true;
+        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabopportunity = null;
+        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tableadsources = null;
+        foreach (Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tab in tabWorkspace.Tabs)
+        {
+            if (tab.ID == "ContactOpportunities_Read")
+            {
+                tabopportunity = tab;     
+				 
+            }
+            if (tab.ID == "ContactLeadSources_Read")
+            {
+                tableadsources = tab;
+            }
+        }
+        tabWorkspace.Tabs.Remove(tabopportunity);
+        tabWorkspace.Tabs.Remove(tableadsources);
+    }    */
+}
+else
+{
+    nmeContactName.Enabled = false;
+    lueAccountName.Enabled = false;
+    pklTitle.Enabled = false;
+	//pklTitle.IsReadOnly = false;
+    txtAssistant.Enabled = false;
+    txtSalutation.Enabled = false;
+    btnAddress.Enabled = false;
+    //txtAccountAddress.Enabled = false;
+    phnWorkPhone.Enabled = false;
+    phnFax.Enabled = false;
+    phnMobilePhone.Enabled = false;
+    phnHomePhone.Enabled = false;
+    phnOtherPhone.Enabled = false;
 
-        cboPreferredContact.Enabled = true;
-        emlEmailAddress.Enabled = true;
-        //urlWebAddress.Enabled = true;
-        chkIsPrimary.Enabled = true;
-        //chkIsServiceAuthorized.Enabled = true;
-        //chkDoNotSolicit.Enabled = true;
-        //chkDoNotEmail.Enabled = true;
-        //chkDoNotPhone.Enabled = true;
-        //chkDoNotMail.Enabled = true;
-        //chkDoNotFax.Enabled = true;
-        ownContactOwner.Enabled = true;
-        usrAcctMgr.Enabled = true;
+    cboPreferredContact.Enabled = false;
+	//cboPreferredContact.IsReadOnly = false;
+    emlEmailAddress.Enabled = false;
+    //urlWebAddress.Enabled = false;
+    chkIsPrimary.Enabled = false;
+    ownContactOwner.Enabled = false;
+    usrAcctMgr.Enabled = false;
 
-        pklContactType.Enabled = true;
-        pklContactStatus.Enabled = true;
-        //adrContactAddress.Enabled = true;
-        cmdSaveContactDetails.Enabled = true;
-		cmdDelete.Enabled = true;
-		cmdReset.Enabled = true;
-		cmdMoveContact.Enabled = true;
-    }
-    else
+    pklContactType.Enabled = false;
+	//pklContactType.IsReadOnly = true;
+    pklContactStatus.Enabled = false;
+	//pklContactStatus.IsReadOnly = true;
+    //adrContactAddress.Enabled = false;
+    cmdSaveContactDetails.Enabled = false;
+	cmdDelete.Enabled = false;
+	cmdReset.Enabled = false;
+	cmdMoveContact.Enabled = false;
+	/*if (tabWorkspace != null)
     {
-        nmeContactName.Enabled = false;
-        lueAccountName.Enabled = false;
-        pklTitle.Enabled = false;
-        txtAssistant.Enabled = false;
-        txtSalutation.Enabled = false;
-        btnAddress.Enabled = false;
-        //txtAccountAddress.Enabled = false;
-        phnWorkPhone.Enabled = false;
-        phnFax.Enabled = false;
-        phnMobilePhone.Enabled = false;
-        phnHomePhone.Enabled = false;
-        phnOtherPhone.Enabled = false;
+        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabopportunity = null;
+        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tableadsources = null;
+        foreach (Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tab in tabWorkspace.Tabs)
+        {
+            if (tab.ID == "ContactOpportunities")
+            {
+                tabopportunity = tab;   
+            }
+            if (tab.ID == "ContactLeadSources")
+            {
+                tableadsources = tab;      
+            }
+        }
+        tabWorkspace.Tabs.Remove(tabopportunity);
+        tabWorkspace.Tabs.Remove(tableadsources);
+    }   */ 
+}
 
-        cboPreferredContact.Enabled = false;
-        emlEmailAddress.Enabled = false;
-        //urlWebAddress.Enabled = false;
-        chkIsPrimary.Enabled = false;
-        //chkIsServiceAuthorized.Enabled = false;
-        //chkDoNotSolicit.Enabled = false;
-        //chkDoNotEmail.Enabled = false;
-        //chkDoNotPhone.Enabled = false;
-       // chkDoNotMail.Enabled = false;
-        //chkDoNotFax.Enabled = false;
-        ownContactOwner.Enabled = false;
-        usrAcctMgr.Enabled = false;
-
-        pklContactType.Enabled = false;
-        pklContactStatus.Enabled = false;
-        //adrContactAddress.Enabled = false;
-        cmdSaveContactDetails.Enabled = false;
-		cmdDelete.Enabled = false;
-		cmdReset.Enabled = false;
-		cmdMoveContact.Enabled = false;
-    }
-	//}
 
 }
 private bool _runActivating;

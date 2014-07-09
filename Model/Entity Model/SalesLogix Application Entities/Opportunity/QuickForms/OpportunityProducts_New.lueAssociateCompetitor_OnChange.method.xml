@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="e1b170bf-61a9-4a39-b481-89913193f429" lastModifiedUtc="2014-06-21T09:53:38.7996526Z" name="lueAssociateCompetitor_OnChange" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="OpportunityProducts_New">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="762d3adc-12a8-400a-b453-8602d10e7030" paramName="form" sequence="0" paramType="IOpportunityProducts_New" />
+    <OrmEntityMethodParam id="85fa486b-97c1-4ce2-952c-29464d0480dc" paramName="args" sequence="0" paramType="EventArgs" />
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets />
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

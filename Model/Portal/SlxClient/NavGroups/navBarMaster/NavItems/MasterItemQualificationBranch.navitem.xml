@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<NavigationItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="b6def3d6-b897-4d53-b89b-dcd9cc9cca30">
+  <ItemId>MasterItemQualificationBranch</ItemId>
+  <NavUrl>QualifierBranchMapping.aspx</NavUrl>
+  <LargeImageUrl>[Localization!Global_Images:advanced_analytic_config_32x32]</LargeImageUrl>
+  <SmallImageUrl>[Localization!Global_Images:advanced_analytic_config_24x24]</SmallImageUrl>
+  <ContextMenuId />
+  <Target />
+  <AppliedSecurity />
+</NavigationItem>

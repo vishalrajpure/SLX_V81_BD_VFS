@@ -47,21 +47,21 @@
             <td class="snapshot-column alignright">
                 <asp:LinkButton ID="lnkOpenBaseSalesPotential" runat="server" OnClick="OnClickSalesPotentialBaseRate" Text="">
                     <SalesLogix:Currency runat="server" ID="curOpenBaseSalesPotential" DisplayMode="AsText" ExchangeRateType="BaseRate"
-                        DisplayCurrencyCode="true">
+                        DisplayCurrencyCode="false">
                     </SalesLogix:Currency>
                 </asp:LinkButton>
             </td>
             <td runat="server" class="snapshot-column alignright" id="colOppSalesPotential" visible="false">
                 <asp:LinkButton ID="lnkOpenSalesPotential" runat="server" OnClick="OnClickSalesPotentialEntityRate" Text="">
                     <SalesLogix:Currency runat="server" ID="curOpenSalesPotential" DisplayMode="AsText" ExchangeRateType="EntityRate"
-                        DisplayCurrencyCode="true">
+                        DisplayCurrencyCode="false">
                     </SalesLogix:Currency>
                 </asp:LinkButton>
             </td>
             <td runat="server" class="snapshot-column alignright" id="colMyCurSalesPotential" visible="false">
                 <asp:LinkButton ID="lnkMyCurSalesPotential" runat="server" OnClick="OnClickSalesPotentialMyRate" Text="">
                     <SalesLogix:Currency runat="server" ID="curMyCurSalesPotential" DisplayMode="AsText" ExchangeRateType="MyRate"
-                        DisplayCurrencyCode="true">
+                        DisplayCurrencyCode="false">
                     </SalesLogix:Currency>
                 </asp:LinkButton>
             </td>
@@ -77,21 +77,21 @@
             <td class="snapshot-column alignright">
                 <asp:LinkButton ID="lnkActualAmountBaseRate" runat="server" OnClick="OnClickActualAmountBaseRate" Text="">
                     <SalesLogix:Currency runat="server" ID="curBaseActualWon" DisplayMode="AsText" ExchangeRateType="BaseRate"
-                        DisplayCurrencyCode="true">
+                        DisplayCurrencyCode="false">
                     </SalesLogix:Currency>
                 </asp:LinkButton>
             </td>
             <td runat="server" class="snapshot-column alignright" id="colOppActualWon" visible="false">
                 <asp:LinkButton ID="lnkActualAmountEnityRate"  runat="server" OnClick="OnClickActualAmountEntityRate" Text="">
                     <SalesLogix:Currency runat="server" ID="curActualWon" DisplayMode="AsText" ExchangeRateType="EntityRate"
-                        DisplayCurrencyCode="true">
+                        DisplayCurrencyCode="false">
                     </SalesLogix:Currency>
                 </asp:LinkButton>
             </td>
             <td runat="server" class="snapshot-column alignright" id="colMyCurActualWon" visible="false">
                 <asp:LinkButton ID="lnkActualAmountMyRate"  runat="server" OnClick="OnClickActualAmountMyRate" Text="">
                     <SalesLogix:Currency runat="server" ID="curMyCurActualWon" DisplayMode="AsText" ExchangeRateType="MyRate"
-                        DisplayCurrencyCode="true">
+                        DisplayCurrencyCode="false">
                     </SalesLogix:Currency>
                 </asp:LinkButton>
             </td>
@@ -107,21 +107,21 @@
             <td class="snapshot-column alignright">
                 <asp:LinkButton ID="lnkActualAmountBaseRateLost" runat="server" OnClick="OnClickActualAmountBaseRate" Text="">
                     <SalesLogix:Currency runat="server" ID="curBasePotentialLost" DisplayMode="AsText" ExchangeRateType="BaseRate"
-                        DisplayCurrencyCode="true">
+                        DisplayCurrencyCode="false">
                     </SalesLogix:Currency>
                 </asp:LinkButton>
             </td>
             <td runat="server" id="colOppPotentialLost" visible="false" class="snapshot-column alignright">
                 <asp:LinkButton ID="lnkActualAmountEntityRateLost" runat="server" OnClick="OnClickActualAmountEntityRate" Text="">
                     <SalesLogix:Currency runat="server" ID="curPotentialLost" DisplayMode="AsText" ExchangeRateType="EntityRate"
-                        DisplayCurrencyCode="true">
+                        DisplayCurrencyCode="false">
                     </SalesLogix:Currency>
                 </asp:LinkButton>
             </td>
             <td runat="server" id="colMyCurPotentialLost" visible="false" class="snapshot-column alignright">
                 <asp:LinkButton ID="lnkActualAmountMyRateLost" runat="server" OnClick="OnClickActualAmountMyRate" Text="">
                     <SalesLogix:Currency runat="server" ID="curMyCurPotentialLost" DisplayMode="AsText" ExchangeRateType="MyRate"
-                        DisplayCurrencyCode="true">
+                        DisplayCurrencyCode="false">
                     </SalesLogix:Currency>
                 </asp:LinkButton>
             </td>
@@ -136,17 +136,17 @@
             </td>
             <td class="snapshot-column alignright">
                 <SalesLogix:Currency runat="server" ID="curBaseWeighted" DisplayMode="AsText" ExchangeRateType="BaseRate"
-                    DisplayCurrencyCode="true">
+                    DisplayCurrencyCode="false">
                 </SalesLogix:Currency>
             </td>
             <td runat="server" id="colOppWeighted" visible="false" class="snapshot-column alignright">
                 <SalesLogix:Currency runat="server" ID="curWeighted" DisplayMode="AsText" ExchangeRateType="EntityRate"
-                    DisplayCurrencyCode="true">
+                    DisplayCurrencyCode="false">
                 </SalesLogix:Currency>
             </td>
             <td runat="server" id="colMyCurWeighted" visible="false" class="snapshot-column alignright">
                 <SalesLogix:Currency runat="server" ID="curMyCurWeighted" DisplayMode="AsText" ExchangeRateType="MyRate"
-                    DisplayCurrencyCode="true">
+                    DisplayCurrencyCode="false">
                 </SalesLogix:Currency>
             </td>
         </tr>

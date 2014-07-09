@@ -35,7 +35,7 @@ EmptyTableRowText="<%$ resources: grdLeadCompetitors.EmptyTableRowText %>"  Expa
  <SalesLogix:Currency runat="server" ID="grdLeadCompetitorscol5" DisplayMode="AsText"  ExchangeRateType="BaseRate"   Text='<%#  dsLeadCompetitors.getPropertyValue(Container.DataItem, "COMPETITORRATE")  %>' CssClass=""  DecimalDigits="2"  />
    </itemtemplate></asp:TemplateField>
     <asp:BoundField DataField="COMPETITORSHAREOFWELLET"
-      HeaderText="<%$ resources: grdLeadCompetitors.30596f25-c917-4f05-87bf-fac0279937e9.ColumnHeading %>"          >
+  DataFormatString="<%$ resources: grdLeadCompetitors.30596f25-c917-4f05-87bf-fac0279937e9.FormatString %>" HtmlEncode="false"    HeaderText="<%$ resources: grdLeadCompetitors.30596f25-c917-4f05-87bf-fac0279937e9.ColumnHeading %>"          >
       </asp:BoundField>
   <asp:ButtonField CommandName="Edit"
   Text="<%$ resources: grdLeadCompetitors.b0ca6db6-9322-4531-a74c-fef268d3d254.Text %>"        HeaderText="<%$ resources: grdLeadCompetitors.b0ca6db6-9322-4531-a74c-fef268d3d254.ColumnHeading %>"        >

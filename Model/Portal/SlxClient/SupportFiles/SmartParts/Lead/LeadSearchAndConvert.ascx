@@ -282,15 +282,25 @@
                     </div>
                 </td>
                 <td><span>
-                    <asp:CheckBox ID="chkCreateOpportunity" runat="server" OnCheckedChanged="chkCreateOpportunity_CheckedChanged" AutoPostBack ="true" />
+                    <asp:CheckBox ID="chkCreateOpportunity" runat="server" AutoPostBack ="false" />
                     </span><span class="lblright">
                     <asp:Label ID="lblCreateOpportunity" runat="server" AssociatedControlID="chkCreateOpportunity" Text="<%$ resources: lblCreateOpportunity.Caption %>"> </asp:Label>
                     </span></td>
-                <td><span>
-                    <asp:Label ID="lblSalesprocess" runat="server" Font-Bold="True" Text="Sales Process *"></asp:Label>
-                    <asp:DropDownList ID="ddLSalesProcess" runat="server" AutoPostBack="false">
-                    </asp:DropDownList>
-                    </span></td>
+                <td>
+                    
+
+                </td>
+                    
+            </tr>
+            <tr>
+                <td>
+                <div class=" lbl alignleft">
+                       <asp:Label ID="lkpBranchManager_lbl" AssociatedControlID="lkpBranchManager" runat="server" Text="<%$ resources: lkpBranchManager.Caption %>" ></asp:Label>
+                     </div>   
+                       <div  class="textcontrol"  > 
+                        <SalesLogix:SlxUserControl runat="server" ID="lkpBranchManager"  />
+                      </div>
+                    </td>
             </tr>
             <tr>
                 <td><span class="lblright">

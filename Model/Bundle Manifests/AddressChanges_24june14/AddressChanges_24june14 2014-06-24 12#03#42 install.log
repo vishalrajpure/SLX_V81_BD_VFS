@@ -1,0 +1,14 @@
+24-06-2014 12:03:42
+INFO  2014-06-24 17:33:41,239 - Installing bundle...
+INFO  2014-06-24 17:33:41,293 - Performing pre-install.
+INFO  2014-06-24 17:33:41,332 - Installing context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-06-24 17:33:41,530 - Successfully installed Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-06-24 17:33:41,533 - Saving context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-06-24 17:33:41,536 - Successfully saved Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-06-24 17:33:41,541 - Configuring installed items.
+INFO  2014-06-24 17:33:41,544 - Configuring Saleslogix Client...
+INFO  2014-06-24 17:33:41,548 - Performing pre-commit to target project.
+INFO  2014-06-24 17:33:42,025 - Committing items to target project...
+INFO  2014-06-24 17:33:42,123 - Committing transactions...
+INFO  2014-06-24 17:33:42,784 - Copying bundle manifest to project.
+INFO  2014-06-24 17:33:42,794 - Install complete.

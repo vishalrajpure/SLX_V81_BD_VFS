@@ -189,9 +189,6 @@
   <data name="Owner.Caption" xml:space="preserve">
     <value>Zugriffsber.:</value>
   </data>
-  <data name="Industry.Caption" xml:space="preserve">
-    <value>Branche:</value>
-  </data>
   <data name="WebAddress.Caption" xml:space="preserve">
     <value>Web-URL:</value>
   </data>

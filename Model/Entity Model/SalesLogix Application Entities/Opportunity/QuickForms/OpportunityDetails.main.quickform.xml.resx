@@ -333,4 +333,10 @@
   <data name="lueLeadSource.ButtonToolTip" xml:space="preserve">
     <value>Find</value>
   </data>
+  <data name="txtBusinessPotential.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Opp_Status_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
 </root>

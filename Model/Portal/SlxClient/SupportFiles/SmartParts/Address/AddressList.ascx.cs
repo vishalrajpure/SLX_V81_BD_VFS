@@ -76,13 +76,19 @@ public partial class SmartParts_AddressList : EntityBoundSmartPartInfoProvider
             return;
         }
         
-        if (DialogService != null)
+        /*if (DialogService != null)
         {
-            DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
+            DialogService.SetSpecs(200, 200, 440, 300, "InsertAddress", "", true);
             DialogService.EntityType = typeof(IAddress);
             DialogService.ShowDialog();
             LoadGrid();
-        }
+        }*/
+        IPersistentEntity parentEntity = GetParentEntity() as IPersistentEntity;
+        IComponentReference _parentEntityReference = parentEntity as IComponentReference;
+
+        string script_FormatNumber1 = "window.showModalDialog('InsertAddress.aspx?type=Account&EntityID=" + _parentEntityReference.Id.ToString() + "', '_blank', 'height=440,width=100,status=yes,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=no,titlebar=no' )";
+        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
+        return;
     }
 
     private int _deleteColumnIndex = -2;
@@ -145,13 +151,15 @@ public partial class SmartParts_AddressList : EntityBoundSmartPartInfoProvider
         {
             int rowIndex = Convert.ToInt32(e.CommandArgument);
             string Id = AddressGrid.DataKeys[rowIndex].Value.ToString();
-            if (DialogService != null)
+            /*if (DialogService != null)
             {
-                DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
+                DialogService.SetSpecs(200, 200, 440, 300, "AddEditAddress", "", true);
                 DialogService.EntityType = typeof(IAddress);
                 DialogService.EntityID = Id;
                 DialogService.ShowDialog();
-            }
+            }*/
+            string script_FormatNumber1 = "window.showModalDialog('InsertAddress.aspx?type=Account&id=" + Id.ToString() + "', '_blank', 'height=440,width=100,status=yes,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=no,titlebar=no' )";
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
             return;
         }
         if (e.CommandName.Equals("Delete"))

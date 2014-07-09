@@ -193,10 +193,49 @@ protected override void OnAddEntityBindings() {
 }
                                                                                     
 protected void cmdOK_ClickAction(object sender, EventArgs e) {
-Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;
-Object[] methodArgs = new Object[] { FormAdapter, e };
-lib.Execute("EditOpportunityContact.cmdOK_OnClick", methodArgs);
+  Sage.Entity.Interfaces.IOpportunityContact _entity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunityContact;
+  if (_entity != null)
+  {
+    object _parent = GetParentEntity();
+    if (DialogService.ChildInsertInfo != null)
+    {
+        if (_parent != null)
+        {
+            if (DialogService.ChildInsertInfo.ParentReferenceProperty != null)
+            {
+                DialogService.ChildInsertInfo.ParentReferenceProperty.SetValue(_entity, _parent, null);
+            }
+        }
+    }
+    bool shouldSave = true;
+    Sage.Platform.WebPortal.EntityPage page = Page as Sage.Platform.WebPortal.EntityPage;
+    if (page != null)
+    {
+        if(IsInDialog() && page.ModeId.ToUpper() == "INSERT")
+        {
+            shouldSave = false;
+        }
+    }
 
+    if(shouldSave)
+    {
+       _entity.Save();
+    }
+
+    if (_parent != null)
+    {
+        if (DialogService.ChildInsertInfo != null)
+        {
+           if (DialogService.ChildInsertInfo.ParentsCollectionProperty != null)
+           {
+              System.Reflection.MethodInfo _add = DialogService.ChildInsertInfo.ParentsCollectionProperty.PropertyType.GetMethod("Add");
+              _add.Invoke(DialogService.ChildInsertInfo.ParentsCollectionProperty.GetValue(_parent, null), new object[] { _entity });
+           }
+        }
+     }
+  }
+
+  
 }
 
 protected override void OnWireEventHandlers()
@@ -335,12 +374,6 @@ public class EditOpportunityContactAdapter : Sage.Platform.WebPortal.Adapters.En
         get { return FindControl(ref _cmdCancel, "cmdCancel"); }
     }
 
-    public  void cmdOK_OnClick(System.EventArgs e)
-    {
-        Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;
-        Object[] methodArgs = new Object[] { this, e };
-        lib.Execute("EditOpportunityContact.cmdOK_OnClick", methodArgs);
-    }
 }
 
 </script>

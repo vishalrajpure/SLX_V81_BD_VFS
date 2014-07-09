@@ -99,6 +99,52 @@
 
 </script>
 
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+
+
+
+<script lang="javascript" type="text/javascript">
+
+    function GetLocation() {
+       
+        var geocoder = new google.maps.Geocoder();
+        var df = true;        
+        var address = document.getElementById('DialogWorkspace_AddEditAddress_txtAddress1').value + ',' + document.getElementById('DialogWorkspace_AddEditAddress_txtAddress2').value + ',' + document.getElementById('DialogWorkspace_AddEditAddress_txtAddress3').value + ',' + document.getElementById('DialogWorkspace_AddEditAddress_pklCity_Text').value + ',' + document.getElementById('DialogWorkspace_AddEditAddress_pklState_Text').value + ',' + document.getElementById('DialogWorkspace_AddEditAddress_pklCountry_Text').value + ',' + document.getElementById('DialogWorkspace_AddEditAddress_txtPostalCode').value;
+        var add1 = document.getElementById('DialogWorkspace_AddEditAddress_txtAddress1').value;
+        var pin = document.getElementById('DialogWorkspace_AddEditAddress_txtPostalCode').value;
+        if (add1 == '') {
+            alert('Please Fill Required fields');           
+            return false;
+        }
+        else if(pin == '')
+        {
+            alert('Please Fill Required fields');
+            return false;
+        }
+
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var latitude = results[0].geometry.location.lat();
+                var longitude = results[0].geometry.location.lng();
+                document.cookie = "Latitude=" + latitude;
+                document.cookie = "Logitute=" + longitude;
+
+                document.getElementById('MainContent_InsertContact_txtAccountAddress').value = address;
+                //alert(document.getElementById('DialogWorkspace_AddEditAddress_btnSave'));
+                document.getElementById('DialogWorkspace_AddEditAddress_btnSave').click();
+               
+                 df = true;
+            } else {
+                alert("No Lat/Long match found for specified Address, Please Correct the address.")
+                df = false;
+            }
+        });
+        
+        return df;
+    }
+</script>
+
 <div style="display: none">
     <asp:Panel ID="pnlInsertContact_LTools" runat="server"></asp:Panel>
     <asp:Panel ID="pnlInsertContact_CTools" runat="server"></asp:Panel>
@@ -189,7 +235,7 @@
                 <asp:Label ID="lbllegalname" runat="server" Text="Legal Name:"></asp:Label>
             </div>
             <div class="textcontrol">
-               <asp:TextBox ID="txtlegalname" runat="server" OnTextChanged="txtlegalname_TextChanged" AutoPostBack="true"></asp:TextBox>
+               <asp:TextBox ID="txtlegalname" runat="server" AutoPostBack="false"></asp:TextBox>
             </div>
         </td>
     </tr>
@@ -674,6 +720,7 @@
         IContact contact = (BindingSource.Current as IContact);
         if (account == null || contact == null) return;
         txtContactAccountName.Enabled = false;
+		txtlegalname.Enabled = false;
         adrAccountAddress.Enabled = false;
         phnAccountMainPhone.Enabled = false;
         phnAccountFax.Enabled = false;
@@ -750,6 +797,7 @@
         if (contact.Account.Id == null)
         {
             contact.Account.MainPhone = contact.WorkPhone;
+			phnAccountMainPhone.Focus();
         }
         if ((DialogService != null) && (chkAutoSearch.Checked))
         {
@@ -760,6 +808,7 @@
             DialogService.SetSpecs(0, 0, 800, 1000, "ContactSearchForDuplicates", "", true);
             DialogService.ShowDialog();
         }
+		
     }
 
     protected void cmdMatchingRecords_ClickAction(object sender, EventArgs e)
@@ -827,7 +876,11 @@
            
             object[] objarray = new object[] { contact, contact.Account };
             object contactId = EntityFactory.Execute<Contact>("Contact.SaveContactAccount", objarray);
-           
+            Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+            string _UserId = _IUserService.UserId;
+            Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)_UserId);
+            contact.AccountManager = user;
+            contact.Save();
              Response.Redirect(string.Format("Contact.aspx?entityId={0}", (contactId)));
             
         }
@@ -845,6 +898,11 @@
         {
             object[] objarray = new object[] { contact, contact.Account };
             EntityFactory.Execute<Contact>("Contact.SaveContactAccount", objarray);
+            Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+            string _UserId = _IUserService.UserId;
+            Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)_UserId);
+            contact.AccountManager = user;
+            contact.Save();
             Response.Redirect(string.Format("InsertContactAccount.aspx?modeid=Insert&accountId={0}", contact.Account.Id));
         }
     }
@@ -860,6 +918,11 @@
         {
             object[] objarray = new object[] { contact, contact.Account };
             EntityFactory.Execute<Contact>("Contact.SaveContactAccount", objarray);
+            Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+            string _UserId = _IUserService.UserId;
+            Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)_UserId);
+            contact.AccountManager = user;
+            contact.Save();
             Response.Redirect("InsertContactAccount.aspx?modeid=Insert");
         }
     }
@@ -918,7 +981,7 @@
 
             IAccount account = GetCurrentAccount(contact);
             if (account == null) return;
-			if(!Page.IsPostBack)
+			/*if(!Page.IsPostBack)
 			{
 				
 				Sage.Platform.Security.IUserService userService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
@@ -946,9 +1009,10 @@
 					Sage.Entity.Interfaces.ILeadSource ld = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)"LDEMOA000003");	
 					account.LeadSource = ld;
 				}
-			}
+			}*/
             Boolean changeEnable = (account.Id == null);
             txtContactAccountName.Enabled = changeEnable;
+			txtlegalname.Enabled = changeEnable;
             adrAccountAddress.Enabled = changeEnable;
             phnAccountMainPhone.Enabled = changeEnable;
             phnAccountFax.Enabled = changeEnable;
@@ -971,7 +1035,12 @@
 
             if (!IsPostBack)
             {
-			
+                if (Global.ADDRESS_ID != "")
+	            {
+                    Sage.Entity.Interfaces.IAddress ad = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Global.ADDRESS_ID);
+                    ad.Delete();
+                    Global.ADDRESS_ID="";
+				}
                 contact.WebAddress = account.WebAddress;
                 contact.WorkPhone = account.MainPhone;
                 contact.Fax = account.Fax;
@@ -1006,9 +1075,9 @@
 
 
             }
-            if (Session["Addressid"] != null)
+            if (Global.ADDRESS_ID != "")
             {
-                Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Session["Addressid"].ToString());
+                Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Global.ADDRESS_ID);
                 if (objadd != null)
                 {
                     string _add = objadd.Address1 + "," + objadd.Address2 + "," + objadd.Address3 + "\r\n";
@@ -1058,7 +1127,7 @@
         cmdSaveNew.Click += cmdSaveNew_ClickAction;
         cmdSaveClear.Click += cmdSaveClear_ClickAction;
         DialogService.onDialogClosing += DialogService_onDialogClosing;
-		txtlegalname.TextChanged += txtlegalname_TextChanged;
+		//txtlegalname.TextChanged += txtlegalname_TextChanged;
 
     }
 
@@ -1075,9 +1144,11 @@
                 lueUseExistingAccount.LookupResultValue = account;
 				string _add = account.Address.Address1 + "," + account.Address.Address2 + "," + account.Address.Address3 + "\r\n";
                 _add += account.Address.City + "," + account.Address.State + "," + account.Address.Country + "\r\n";
-                _add += account.Address.PostalCode;
+                _add += account.Address.PostalCode + "\r\n";
+                _add += account.Address.Latitude + "\r\n";
+                _add += account.Address.Logitude;
                 txtAccountAddress.Text = _add;
-                Session["Addressid"] = account.Address.Id.ToString();
+                Global.ADDRESS_ID = account.Address.Id.ToString();
                 pklAccountSubType.PickListName = account.GetSubTypePickListName();
             }
         }
@@ -1153,17 +1224,15 @@
         }
 		IContact contact = BindingSource.Current as IContact;
         IAddress objadd=null;
-        if (Session["Addressid"] != null)
+        if (Global.ADDRESS_ID != "")
         {
-            objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Session["Addressid"].ToString());           
+            objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Global.ADDRESS_ID);           
             contact.Account.Address = objadd;
+			contact.Account.WebAddress = contact.WebAddress;
         }
         contact.Account.Save();
 		
-	 	Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
-        string _UserId = _IUserService.UserId;
-        Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)_UserId);
-        contact.AccountManager = user;
+	 	
 		
         contact.Save();
         
@@ -1174,7 +1243,7 @@
         contact.Address.Address2 = objadd.Address2;
         contact.Address.Address3 = objadd.Address3;
         contact.Address.AddressType = objadd.AddressType;
-        contact.Address.City = objadd.AddressType;
+        contact.Address.City = objadd.City;
         contact.Address.Country = objadd.Country;
         contact.Address.CreateDate = objadd.CreateDate;
         contact.Address.CreateUser = objadd.CreateUser;
@@ -1185,12 +1254,13 @@
         contact.Address.Logitude = objadd.Logitude;
         contact.Address.PostalCode = objadd.PostalCode;
         contact.Address.PrimaryAddress = objadd.PrimaryAddress;
+		contact.Address.Salutation = objadd.Salutation;
         contact.Address.State = objadd.State;
-        contact.Address.Type = objadd.Type;
+        contact.Address.Salutation = objadd.Salutation;
         //contact.Address.EntityId = contact.Id.ToString();
-        contact.Address.Save();        
-        
-        Session.Remove("Addressid");
+        contact.Address.Save();
+
+        Global.ADDRESS_ID="";
        
         string option = "N";
         if (chkAutoSearch.Checked)
@@ -1202,9 +1272,9 @@
     }
 	protected void cmdShowMap_Click(object sender, EventArgs e)
     {
-        if (Session["Addressid"] != null)
+        if (Global.ADDRESS_ID != "")
 		{
-		    Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Session["Addressid"].ToString());
+            Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Global.ADDRESS_ID);
 			
 		    if (objadd != null)
 		    {		
@@ -1221,15 +1291,23 @@
     }
 
     protected void lnkaddress_Click(object sender, EventArgs e)
-    {
+    {       
         if (DialogService != null)
         {
-            DialogService.SetSpecs(200, 200, 440, 300, "AddAccountAddress", "", true);
+            DialogService.SetSpecs(200, 200, 440, 300, "AddEditAddress", "", true);
             DialogService.EntityType = typeof(IAddress);
+            if (Global.ADDRESS_ID != "")
+            {
+                DialogService.EntityID = Global.ADDRESS_ID;
+            }
+            else
+            {
+                DialogService.EntityID = "";
+            }
             DialogService.ShowDialog();
         }
     }
-	protected void txtlegalname_TextChanged(object sender, EventArgs e)
+	/*protected void txtlegalname_TextChanged(object sender, EventArgs e)
     {
         if(txtlegalname.Text != "")
 		{
@@ -1248,6 +1326,6 @@
             {               
             }
         }        
-    }
+    }*/
   
 </script>

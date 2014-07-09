@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="f9308b2d-58eb-4c1c-aa76-f36e5925870d" lastModifiedUtc="2014-06-21T11:37:26.8528769Z" name="cmdSave_OnClick" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="InsertOpportunity">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="7ea1f2ab-2df3-4626-b680-b4bbb0c5a92c" paramName="form" sequence="0" paramType="IInsertOpportunity" />
+    <OrmEntityMethodParam id="9e918ceb-01df-4c36-a536-688b74485a18" paramName="args" sequence="0" paramType="EventArgs" />
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets />
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

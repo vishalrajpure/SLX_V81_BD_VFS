@@ -7,7 +7,7 @@
       <ResourceKey>4abaab1e-4062-4c20-94ac-749957d994eb</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName>quickformload0</MethodName>
+          <MethodName />
           <CSharpCodeSnippet>string script_FormatNumber = "";
 script_FormatNumber += " function only_required(Address1,pincode,Latitude,Logitute) ";
 script_FormatNumber += " {";
@@ -691,6 +691,7 @@ if (txtPostalCode.Text != "")
               <QFButton>
                 <Column>0</Column>
                 <Row>0</Row>
+                <Visible>false</Visible>
                 <HotKey>0</HotKey>
                 <TabIndex>0</TabIndex>
                 <ControlId>btnGetLatLong</ControlId>
@@ -706,7 +707,7 @@ if (txtPostalCode.Text != "")
                   <ResourceKey>btnGetLatLong</ResourceKey>
                   <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
                     <CSharpSnippetActionItem>
-                      <MethodName>btnGetLatLong_ClickAction</MethodName>
+                      <MethodName />
                       <CSharpCodeSnippet>
 Sage.Entity.Interfaces.ILeadAddress curAdd = this.BindingSource.Current as Sage.Entity.Interfaces.ILeadAddress;
 if (txtAddress1.Text != "")
@@ -751,8 +752,8 @@ if (txtAddress1.Text != "")
             }
             if (dtCoordinates.Rows.Count &gt; 0)
             {
-                curAdd.Latitude = Convert.ToDecimal(dtCoordinates.Rows[0]["Latitude"].ToString());
-                curAdd.Logitude = Convert.ToDecimal(dtCoordinates.Rows[0]["Longitude"].ToString());
+                curAdd.Latitude = dtCoordinates.Rows[0]["Latitude"].ToString();
+                curAdd.Logitude = dtCoordinates.Rows[0]["Longitude"].ToString();
                 txtLatitute.Text = dtCoordinates.Rows[0]["Latitude"].ToString();
                 txtLongitude.Text = dtCoordinates.Rows[0]["Longitude"].ToString();
                 /*if (ViewState["parentEntityID"] != null)
@@ -826,7 +827,7 @@ if (txtAddress1.Text != "")
         <Row>0</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>400c656a51a4ad5a2d4186fac65a318</ControlId>
+        <ControlId>0c656a51a4ad5a2d4186fac65a318</ControlId>
         <DataBindings />
         <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
@@ -904,7 +905,7 @@ if (txtAddress1.Text != "")
     </RowStyle>
   </Rows>
   <Description />
-  <UseEntityNameAsTitle>true</UseEntityNameAsTitle>
+  <UseEntityNameAsTitle>false</UseEntityNameAsTitle>
   <EntityTypeName>ILeadAddress</EntityTypeName>
   <DefaultNamespace>Sage.Entity.Interfaces</DefaultNamespace>
   <AssemblyName>Sage.Entity.Interfaces</AssemblyName>

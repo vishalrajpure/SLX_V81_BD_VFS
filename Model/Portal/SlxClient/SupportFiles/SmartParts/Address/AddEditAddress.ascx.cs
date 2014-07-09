@@ -9,6 +9,7 @@ using Sage.Platform.EntityBinding;
 using Sage.Platform.Application.UI;
 using Sage.Platform.WebPortal.Services;
 using Sage.SalesLogix.Address;
+using System.Web;
 
 public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInfoProvider
 {
@@ -29,50 +30,61 @@ public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInf
     /// </summary>
     protected override void OnAddEntityBindings()
     {
-        BindingSource.AddBindingProvider(txtEntityId as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("EntityId", txtEntityId, "Value", "", ""));
+        if (BindingSource != null)
+        {
+            BindingSource.AddBindingProvider(txtEntityId as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("EntityId", txtEntityId, "Value", "", ""));
 
-        BindingSource.AddBindingProvider(pklDecription as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("Description", pklDecription, "PickListValue", "", ""));
+            BindingSource.AddBindingProvider(pklDecription as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("Description", pklDecription, "PickListValue", "", ""));
 
-        BindingSource.AddBindingProvider(cbxPrimaryAddr as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("PrimaryAddress", cbxPrimaryAddr, "Checked", "", false));
+            BindingSource.AddBindingProvider(cbxPrimaryAddr as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("PrimaryAddress", cbxPrimaryAddr, "Checked", "", false));
 
-        BindingSource.AddBindingProvider(cbxIsPrimary as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("IsPrimary", cbxIsPrimary, "Checked", "", false));
+            BindingSource.AddBindingProvider(cbxIsPrimary as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("IsPrimary", cbxIsPrimary, "Checked", "", false));
 
-        BindingSource.AddBindingProvider(cbxIsShipping as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("IsMailing", cbxIsShipping, "Checked", "", false));
+            BindingSource.AddBindingProvider(cbxIsShipping as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("IsMailing", cbxIsShipping, "Checked", "", false));
 
-        BindingSource.AddBindingProvider(pklAddressType as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("AddressType", pklAddressType, "PickListValue", "", ""));
+            BindingSource.AddBindingProvider(pklAddressType as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("AddressType", pklAddressType, "PickListValue", "", ""));
 
-        BindingSource.AddBindingProvider(txtAddress1 as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("Address1", txtAddress1, "Text", "", ""));
+            BindingSource.AddBindingProvider(txtAddress1 as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("Address1", txtAddress1, "Text", "", ""));
 
-        BindingSource.AddBindingProvider(txtAddress2 as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("Address2", txtAddress2, "Text", "", ""));
+            BindingSource.AddBindingProvider(txtAddress2 as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("Address2", txtAddress2, "Text", "", ""));
 
-        BindingSource.AddBindingProvider(txtAddress3 as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("Address3", txtAddress3, "Text", "", ""));
+            BindingSource.AddBindingProvider(txtAddress3 as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("Address3", txtAddress3, "Text", "", ""));
 
-        BindingSource.AddBindingProvider(pklCity as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("City", pklCity, "PickListValue", "", ""));
+            BindingSource.AddBindingProvider(pklCity as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("City", pklCity, "PickListValue", "", ""));
 
-        BindingSource.AddBindingProvider(pklState as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("State", pklState, "PickListValue", "", ""));
+            BindingSource.AddBindingProvider(pklState as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("State", pklState, "PickListValue", "", ""));
 
-        BindingSource.AddBindingProvider(txtPostalCode as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("PostalCode", txtPostalCode, "Text", "", ""));
+            BindingSource.AddBindingProvider(txtPostalCode as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("PostalCode", txtPostalCode, "Text", "", ""));
+
+            //BindingSource.AddBindingProvider(txtCounty as IEntityBindingProvider);
+            //BindingSource.Bindings.Add(new PropertyBinding("County", txtCounty, "Text", "", ""));
+
+            BindingSource.AddBindingProvider(pklCountry as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("Country", pklCountry, "PickListValue", "", ""));
+
+            BindingSource.AddBindingProvider(txtSalutation as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("Salutation", txtSalutation, "Text", "", ""));
+
+            BindingSource.AddBindingProvider(txtSalutation as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("Latitude", txtLatitude, "Text", "", ""));
+
+            BindingSource.AddBindingProvider(txtSalutation as IEntityBindingProvider);
+            BindingSource.Bindings.Add(new PropertyBinding("Logitude", txtLogitute, "Text", "", ""));
+        }
         
-        BindingSource.AddBindingProvider(txtCounty as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("County", txtCounty, "Text", "", ""));
 
-        BindingSource.AddBindingProvider(pklCountry as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("Country", pklCountry, "PickListValue", "", ""));
-
-        BindingSource.AddBindingProvider(txtSalutation as IEntityBindingProvider);
-        BindingSource.Bindings.Add(new PropertyBinding("Salutation", txtSalutation, "Text", "", ""));
     }
 
     /// <summary>
@@ -94,12 +106,16 @@ public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInf
     /// </summary>
     protected override void OnWireEventHandlers()
     {
-        btnSave.Click += btnSave_ClickAction;
+        btnSave.Click += btnSave_ClickAction;       
         btnSave.Click += DialogService.CloseEventHappened;
         btnCancel.Click += DialogService.CloseEventHappened;
 
+        btngetGL.Click += btngetGL_ClickAction;
+       // btngetGL.Click += DialogService.CloseEventHappened;
         base.OnWireEventHandlers();
     }
+
+   
 
     /// <summary>
     /// Called when the smartpart has been bound.  Derived components should override this method to run code that depends on entity context being set and it not changing.
@@ -109,7 +125,8 @@ public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInf
         base.OnFormBound();
         _parentEntity = GetParentEntity() as IPersistentEntity;
         _parentEntityReference = _parentEntity as IComponentReference;
-        ClientBindingMgr.RegisterDialogCancelButton(btnCancel);
+        ClientBindingMgr.RegisterDialogCancelButton(btnCancel);       
+
     }
 
     public override ISmartPartInfo GetSmartPartInfo(Type smartPartInfoType)
@@ -119,9 +136,19 @@ public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInf
         {
             if (BindingSource.Current != null)
             {
-                IAddress address = (IAddress) BindingSource.Current;
-
-                txtEntityId.Value = _parentEntityReference.Id.ToString();
+                btngetGL1.Visible = false;
+				btnCancelDetail.Visible = false;
+				btnSave1.Visible = true;
+				btnCancel.Visible = true;
+                IAddress address = (IAddress)BindingSource.Current;
+                if (_parentEntityReference.Id != null)
+                {
+                    txtEntityId.Value = _parentEntityReference.Id.ToString();
+                }
+                else
+                {
+                    txtEntityId.Value = "";
+                }
 
                 if (address.Id != null)
                 {
@@ -155,8 +182,47 @@ public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInf
                                       : GetLocalResourceObject("DialogTitleEdit").ToString();
                 }
             }
+            else
+            {
+                if (Request.QueryString["Type"] != null)
+                {
+                    
+                    btngetGL1.Visible = true;
+					btnCancelDetail.Visible = true;
+					btnSave1.Visible = false;
+					btnCancel.Visible = false;
+					if(!Page.IsPostBack)
+					{
+						if(Request.QueryString["id"] != null)
+						{
+		                    string _addid = Request.QueryString["id"].ToString();
+		                    Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_addid);
+		                    if (objadd != null)
+		                    {
+		                        pklDecription.PickListValue = objadd.Description;
+		                        txtAddress1.Text = objadd.Address1;
+		                        txtAddress2.Text = objadd.Address2;
+		                        txtAddress3.Text = objadd.Address3;
+		                        pklAddressType.PickListValue = objadd.AddressType;
+		                        pklCity.PickListValue = objadd.City;
+		                        pklState.PickListValue = objadd.State;
+		                        pklCountry.PickListValue = objadd.Country;
+		                        cbxPrimaryAddr.Checked = objadd.IsPrimary == true ? true : false;
+		                        cbxIsShipping.Checked = objadd.IsMailing == true ? true : false;
+		                        cbxIsPrimary.Checked = objadd.PrimaryAddress == true ? true : false;
+		                        txtLatitude.Text = Convert.ToString(objadd.Latitude);
+		                        txtLogitute.Text = Convert.ToString(objadd.Logitude);
+		                        txtPostalCode.Text = objadd.PostalCode;
+		                        txtSalutation.Text = objadd.Salutation;          
+		                    }
+						}
+						
+						
+					}
+                }
+            }
         }
-
+       
         foreach (Control c in AddressForm_LTools.Controls)
             tinfo.LeftTools.Add(c);
         foreach (Control c in AddressForm_CTools.Controls)
@@ -173,52 +239,81 @@ public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInf
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
     protected void btnSave_ClickAction(object sender, EventArgs e)
     {
-        IPersistentEntity persistentEntity = BindingSource.Current as IPersistentEntity;
-
-        _parentEntity = GetParentEntity() as IPersistentEntity;
-        _parentEntityReference = _parentEntity as IComponentReference;
-
-        if (persistentEntity != null)
+        try
         {
-            bool hasContactMatches = false;
-            IAddress address = (IAddress) BindingSource.Current;
-            if (Mode.Value == "ADD")
-                persistentEntity.Save();
-            if (Mode.Value == "UPDATE")
+            IPersistentEntity persistentEntity = BindingSource.Current as IPersistentEntity;
+
+            _parentEntity = GetParentEntity() as IPersistentEntity;
+            _parentEntityReference = _parentEntity as IComponentReference;
+
+            if (persistentEntity != null)
             {
-                IContact contact = _parentEntityReference as IContact;
-                IAccount account = _parentEntityReference as IAccount;
-
-                bool hasSalesOrderMatches = (Helpers.HasMatchingSalesOrderAddresses(_parentEntityReference));
-                if (contact != null)
-                    hasContactMatches = contact.HasAddressChanges();
-                else if (account != null)
-                    hasContactMatches = account.HasAddressChanges();
-                if ((hasContactMatches || hasSalesOrderMatches) && DialogService != null)
+                bool hasContactMatches = false;
+                IAddress address = (IAddress)BindingSource.Current;
+                if (address.EntityId == null)
                 {
-                    UpdateAddressOptionManager addressOptions = new UpdateAddressOptionManager();
-                    addressOptions.HasContactAddressChanges = hasContactMatches;
-                    addressOptions.OldAddressValues = contact != null
-                                                          ? Sage.SalesLogix.Contact.Rules.getOriginalAddressValues(
-                                                              contact)
-                                                          : Sage.SalesLogix.Account.Rules.getOriginalAddressValues(
-                                                              account);
-                    addressOptions.HasSalesOrderAddressChanges = hasSalesOrderMatches;
-                    addressOptions.ParentEntityReference = _parentEntityReference;
-                    addressOptions.IsPrimaryAddress = (address.IsPrimary ?? false);
-
-                    DialogService.SetSpecs(200, 200, 200, 450,
-                                           contact != null ? "UpdateContactOptions" : "UpdateAccountOptions", "", true);
-                    DialogService.EntityType = typeof (IAddress);
-                    DialogService.EntityID = address.Id.ToString();
-                    DialogService.DialogParameters.Add("UpdateAddressOptionManager", addressOptions);
-                    DialogService.ShowDialog();
+                    address.EntityId = "123123123123";
+                    HttpCookie _Latitude = Request.Cookies["Latitude"];
+                    HttpCookie _Logitute = Request.Cookies["Logitute"];
+                    if (_Latitude == null)                   
+                    {
+                        address.Latitude = "0";
+                        address.Logitude = "0";
+                    }
+                    else
+                    {
+                        address.Latitude = _Latitude.Value.ToString();
+                        address.Logitude = _Logitute.Value.ToString();
+                    }
                 }
-                persistentEntity.Save();
+                if (Mode.Value == "ADD")
+                {
+                    persistentEntity.Save();
+                    Global.ADDRESS_ID = address.Id.ToString();
+                }
+                if (Mode.Value == "UPDATE")
+                {
+                    if (address.EntityId != "123123123123")
+                    {
+
+                        IContact contact = _parentEntityReference as IContact;
+                        IAccount account = _parentEntityReference as IAccount;
+
+                        bool hasSalesOrderMatches = (Helpers.HasMatchingSalesOrderAddresses(_parentEntityReference));
+                        if (contact != null)
+                            hasContactMatches = contact.HasAddressChanges();
+                        else if (account != null)
+                            hasContactMatches = account.HasAddressChanges();
+                        if ((hasContactMatches || hasSalesOrderMatches) && DialogService != null)
+                        {
+                            UpdateAddressOptionManager addressOptions = new UpdateAddressOptionManager();
+                            addressOptions.HasContactAddressChanges = hasContactMatches;
+                            addressOptions.OldAddressValues = contact != null
+                                                                  ? Sage.SalesLogix.Contact.Rules.getOriginalAddressValues(
+                                                                      contact)
+                                                                  : Sage.SalesLogix.Account.Rules.getOriginalAddressValues(
+                                                                      account);
+                            addressOptions.HasSalesOrderAddressChanges = hasSalesOrderMatches;
+                            addressOptions.ParentEntityReference = _parentEntityReference;
+                            addressOptions.IsPrimaryAddress = (address.IsPrimary ?? false);
+
+                            DialogService.SetSpecs(200, 200, 200, 450,
+                                                   contact != null ? "UpdateContactOptions" : "UpdateAccountOptions", "", true);
+                            DialogService.EntityType = typeof(IAddress);
+                            DialogService.EntityID = address.Id.ToString();
+                            DialogService.DialogParameters.Add("UpdateAddressOptionManager", addressOptions);
+                            DialogService.ShowDialog();
+                        }
+                    }
+                    persistentEntity.Save();
+                }
             }
+            UpdateFlags();
+            //btnSave_ClickActionBRC(sender, e);
         }
-        UpdateFlags();
-        btnSave_ClickActionBRC(sender, e);
+        catch (Exception ex)
+        {
+        }
     }
 
     private void UpdateFlags()
@@ -248,5 +343,106 @@ public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInf
     {
         IPanelRefreshService refresher = PageWorkItem.Services.Get<IPanelRefreshService>();
         refresher.RefreshAll();
+    }
+    protected void txtPostalCode_TextChanged(object sender, EventArgs e)
+    {
+        IAddress curAdd = this.BindingSource.Current as IAddress;
+        btnSave.Enabled = false;
+        if (txtPostalCode.Text != "")
+        {
+            string qry = "select CPINCODE from VWPINCODEMASTER where CPINCODE ='" + txtPostalCode.Text.Trim() + "'";
+            Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+            System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+            System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+            System.Data.DataTable dt = new System.Data.DataTable();
+            dataAdapterObj.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                lblerr.Visible = false;
+                //lblerr.Text = "Pincode does not Exists in Pincode Masters";
+            }
+            else
+            {
+                lblerr.Visible = true;
+                lblerr.Text = "Pincode does not Exists in Pincode Masters";
+            }
+        }
+        btnSave.Enabled = true;
+        pklCountry.Focus();
+    }
+    private void btngetGL_ClickAction(object sender, EventArgs e)
+    {
+        try
+        {
+            HttpCookie _Latitude1 = Request.Cookies["Latitude1"];
+            HttpCookie _Logitute1 = Request.Cookies["Logitute1"];
+			Sage.Entity.Interfaces.IAddress objadd;
+            if (_Latitude1 == null || _Logitute1 == null)
+            {
+               _Latitude1.Value = "0";
+               _Logitute1.Value = "0";
+            }   
+			if(Request.QueryString["id"] != null)
+			{
+	            string _addid = Request.QueryString["id"].ToString();
+	            objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_addid);
+	            if (objadd != null)
+	            {
+	                objadd.Description = pklDecription.PickListValue;
+	                objadd.Address1 = txtAddress1.Text;
+	                objadd.Address2 = txtAddress2.Text;
+	                objadd.Address3 = txtAddress3.Text;
+	                objadd.AddressType = pklAddressType.PickListValue;
+	                objadd.City = pklCity.PickListValue;
+	                objadd.State = pklState.PickListValue;
+	                objadd.Country = pklCountry.PickListValue;
+	                objadd.IsPrimary = cbxPrimaryAddr.Checked == true ? true : false;
+	                objadd.IsMailing = cbxIsShipping.Checked == true ? true : false;
+	                objadd.PrimaryAddress = cbxIsPrimary.Checked == true ? true : false;
+	                objadd.Latitude = _Latitude1.Value.ToString();
+	                objadd.Logitude = _Logitute1.Value.ToString();
+	                objadd.PostalCode = txtPostalCode.Text;
+	                objadd.Salutation = txtSalutation.Text;
+	                objadd.Save();
+	            }
+			}
+			else
+			{
+				string entityID = Request.QueryString["EntityID"].ToString();
+				objadd = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.IAddress>();
+				objadd.Description = pklDecription.PickListValue;
+                objadd.Address1 = txtAddress1.Text;
+                objadd.Address2 = txtAddress2.Text;
+                objadd.Address3 = txtAddress3.Text;
+                objadd.AddressType = pklAddressType.PickListValue;
+                objadd.City = pklCity.PickListValue;
+                objadd.State = pklState.PickListValue;
+                objadd.Country = pklCountry.PickListValue;
+                objadd.IsPrimary = cbxPrimaryAddr.Checked == true ? true : false;
+                objadd.IsMailing = cbxIsShipping.Checked == true ? true : false;
+                objadd.PrimaryAddress = cbxIsPrimary.Checked == true ? true : false;
+                objadd.Latitude = _Latitude1.Value.ToString();
+                objadd.Logitude = _Logitute1.Value.ToString();
+                objadd.PostalCode = txtPostalCode.Text;
+                objadd.Salutation = txtSalutation.Text;
+				objadd.EntityId = entityID;
+                objadd.Save();
+			}
+            btnSave_ClickActionBRC(sender, e);
+
+           // string url = string.Format("Account.aspx?entityid=" + objadd.EntityId.ToString());
+            //Page.ClientScript.RegisterStartupScript(typeof(Page), "closePage", "window.open('Close.html', '_self', null);", true);
+            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", "window.open('Close.html', '_self', null);", true);
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", "window.close();if (window.opener && !window.opener.closed) { window.opener.location.reload(); }", true);
+            //Page.ClientScript.RegisterClientScriptBlock(GetType(), "sas", "<script>window.close();if (window.opener && !window.opener.closed) { window.opener.location.reload(); }</script>", false);
+        }
+        catch (Exception ex)
+        {
+          //  throw ex;
+        }
+    }
+	protected void btnCancelDetail_Click(object sender, EventArgs e)
+    {
+        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", "window.close();", true);
     }
 }

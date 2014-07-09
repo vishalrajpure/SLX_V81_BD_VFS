@@ -5,6 +5,62 @@
 <%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls.Lookup" TagPrefix="SalesLogix" %>
 <%@ Register Assembly="Sage.SalesLogix.HighLevelTypes" Namespace="Sage.SalesLogix.HighLevelTypes" TagPrefix="SalesLogix" %>
 
+
+<script lang="javascript" type="text/javascript">
+
+    function Get2() {
+
+        alert("hello");
+
+        return false;
+    }
+
+</script>
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+<script lang="javascript" type="text/javascript">
+
+    function Get() {
+        //alert("1");
+        var geocoder = new google.maps.Geocoder();
+        //alert(geocoder);
+        var df = true;
+        var address = document.getElementById('MainContent_AddEditAddress_txtAddress1').value + ',' + document.getElementById('MainContent_AddEditAddress_txtAddress2').value + ',' + document.getElementById('MainContent_AddEditAddress_txtAddress3').value + ',' + document.getElementById('MainContent_AddEditAddress_pklCity_Text').value + ',' + document.getElementById('MainContent_AddEditAddress_pklState_Text').value + ',' + document.getElementById('MainContent_AddEditAddress_pklCountry_Text').value + ',' + document.getElementById('MainContent_AddEditAddress_txtPostalCode').value;
+        var add1 = document.getElementById('MainContent_AddEditAddress_txtAddress1').value;
+        var pin = document.getElementById('MainContent_AddEditAddress_txtPostalCode').value;
+        if (add1 == '') {
+            alert('Please Fill Required fields');
+            return false;
+        }
+        else if (pin == '') {
+            alert('Please Fill Required fields');
+            return false;
+        }
+
+       // alert(address);
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var latitude = results[0].geometry.location.lat();
+                var longitude = results[0].geometry.location.lng();
+                document.cookie = "Latitude1=" + latitude;
+                document.cookie = "Logitute1=" + longitude;
+                document.getElementById('MainContent_AddEditAddress_btngetGL').click();
+                //document.getElementById('MainContent_AccountDetails_Address').value = address;
+                df = true;
+            } else {
+                alert("No Lat/Long match found for specified Address, Please Correct the address.")
+                df = false;
+            }
+        }); 
+        
+        
+        return df;
+    }
+</script>
+
+
+
 <div style="display:none">
     <asp:Panel ID="AddressForm_LTools" runat="server"></asp:Panel>
     <asp:Panel ID="AddressForm_CTools" runat="server"></asp:Panel>
@@ -18,7 +74,12 @@
     <asp:HiddenField runat="server" ID="Mode" />
 </div>
 
-<table id="tblTest" border="0" cellpadding="1" cellspacing="1" style="width:100%;height:100%;padding-right:10px" >
+<table id="tblTest" border="0" cellpadding="1" cellspacing="1" style="width:90%;height:100%;padding-right:10px" >
+     <tr>
+        <td colspan="3">
+              <asp:Label ID="lblerr" runat="server" ForeColor="Red"></asp:Label>
+        </td>
+    </tr>
     <tr>
         <td>
             <asp:Label ID="lblDescription" AssociatedControlID="pklDecription" runat="server" Text="Description:" meta:resourcekey="lblDecription"></asp:Label>
@@ -103,20 +164,20 @@
     </tr>
     <tr>
         <td>
-            <asp:Label ID="lblPostalCode"  AssociatedControlID="txtPostalCode" runat="server" Text="PostalCode:" meta:resourcekey="lblPostalCode"></asp:Label>
+            <asp:Label ID="lblPostalCode"  AssociatedControlID="txtPostalCode" runat="server" Text="PostalCode:" meta:resourcekey="lblPostalCode" ForeColor="Red"></asp:Label>
         </td>
         <td style="width: 150px; ">
-            <asp:TextBox runat="server" ID="txtPostalCode" style="width: 100%" MaxLength="24"  />
+            <asp:TextBox runat="server" ID="txtPostalCode" style="width: 100%" MaxLength="24" AutoPostBack="True" OnTextChanged="txtPostalCode_TextChanged"/>
         </td>
     </tr>
-    <tr>
+   <%-- <tr>
         <td>
             <asp:Label ID="lblCounty"  AssociatedControlID="txtCounty" runat="server" Text="<%$ resources: txtCounty.Text %>"></asp:Label>
         </td>
         <td style="width: 150px;">
             <asp:TextBox runat="server" ID="txtCounty" style="width: 100%" MaxLength="32" />
         </td>
-    </tr>
+    </tr>--%>
     <tr>
         <td>
             <asp:Label ID="lblCountry" AssociatedControlID="pklCountry" runat="server" Text="Country:" meta:resourcekey="lblCountry"></asp:Label>
@@ -134,8 +195,31 @@
             <asp:TextBox runat="server" ID="txtSalutation" style="width: 100%" MaxLength="64" />
         </td>
     </tr>
+    <tr>
+        <td>
+            <asp:Label ID="Label2" AssociatedControlID="txtLatitude" runat="server" Text="Latitude:" ForeColor="Red"></asp:Label>
+        </td>
+        <td style="width: 150px;">
+            <asp:TextBox runat="server" Enabled = "false" ID="txtLatitude" Style="width: 100%" MaxLength="64" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <asp:Label ID="Label3" AssociatedControlID="txtLogitute" runat="server" Text="Logitute:" ForeColor="Red"></asp:Label>
+        </td>
+        <td style="width: 150px;">
+            <asp:TextBox runat="server" Enabled = "false" ID="txtLogitute" Style="width: 100%" MaxLength="64" />
+        </td>
+    </tr>
+    
 </table>
 <div class="button-bar alignright">
-            <asp:Button runat="server" ID="btnSave" CssClass="slxbutton" ToolTip="btnSave" meta:resourcekey="btnSave" />  
-            <asp:Button runat="server" ID="btnCancel" CssClass="slxbutton" ToolTip="btnCancel" meta:resourcekey="btnCancel" />             
+    <asp:Button runat="server" ID="btngetGL1" CssClass="slxbutton" ToolTip="Ok" Text="Ok" OnClientClick="return Get()"/>
+    <asp:Button runat="server" ID="btnSave1" CssClass="slxbutton" ToolTip="Ok" Text ="Ok" OnClientClick="return GetLocation()"/>  
+    <asp:Button runat="server" ID="btnCancel" CssClass="slxbutton" ToolTip="btnCancel" meta:resourcekey="btnCancel" /> 
+    <asp:Button runat="server" ID="btnCancelDetail" CssClass="slxbutton" ToolTip="Cancel" Text="Cancel" OnClick="btnCancelDetail_Click" /> 
+</div>
+<div>
+    <asp:Button runat="server" ID="btngetGL" CssClass="slxbutton" Width="1px" Height="1px"/>
+    <asp:Button runat="server" ID="btnSave" CssClass="slxbutton" Width="1px" Height="1px"/>
 </div>

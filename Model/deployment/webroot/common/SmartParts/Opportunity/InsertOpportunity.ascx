@@ -107,7 +107,7 @@
  </div>   
    <div  class="textcontrol numeric"  > 
     <SalesLogix:NumericControl runat="server" ID="txtBusinessPotential"
-Required="true" DecimalDigits="2" Strict="True" 
+MaxLength="13" FormatType="Decimal" DecimalDigits="2" Strict="False" 
  />
   </div>
 
@@ -216,10 +216,10 @@ Required="true" DecimalDigits="2" Strict="True"
  <SalesLogix:SmartPartToolsContainer runat="server" ID="InsertOpportunity_RTools" ToolbarLocation="right">
     <asp:ImageButton runat="server" ID="cmdSave"
  AlternateText="<%$ resources: cmdSave.Caption %>"  ToolTip="<%$ resources: cmdSave.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_16x16"  />
- 
+   
     <asp:ImageButton runat="server" ID="cmdSaveNew"
  AlternateText="<%$ resources: cmdSaveNew.Caption %>"  ToolTip="<%$ resources: cmdSaveNew.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_New16x16"  />
- 
+   
   <SalesLogix:PageLink ID="btnEditForm" CssClass="adminEditFormButton" runat="server" LinkType="RelativePath" ToolTip="<%$ resources: Portal, EditForm_ToolTip %>" NavigateUrl="~/FormManager.aspx?entityid=InsertOpportunity&modeid=Detail" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=form_manager_16x16"></SalesLogix:PageLink>
  
  
@@ -344,238 +344,134 @@ else {
 }
 }
 protected void cmdSave_ClickAction(object sender, EventArgs e) {
-Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-//Sage.Entity.Interfaces.IOpportunity objOpp = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.IOpportunity>();
-	if(objOpp.Description == "")
-	{
-		DialogService.ShowMessage("Please Select Decription");
-        return;
-	}
-	if(objOpp.Account == null)
-	{
-		DialogService.ShowMessage("Please Select Account");
-        return;
-	}
-	if(objOpp.BusinessPotential <= 0)
-{
-	 DialogService.ShowMessage("Please Enter Business Potential...");
-     return;
-}
-	
-	//////////Product Validation//////////////////
-	string text = Request.Form.Get("ctl00$MainContent$OpportunityProducts$OpportunityProductsgrdOppProducts_DataCarrier");
-    //string text = Request.Form.Get("MainContent_OpportunityProducts_OpportunityProductsgrdOppProducts_DataCarrier");
-    if (text.Length > 0)
+  Sage.Entity.Interfaces.IOpportunity _entity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+  if (_entity != null)
+  {
+    object _parent = GetParentEntity();
+    if (DialogService.ChildInsertInfo != null)
     {
-        var feed = new Sage.Integration.Entity.Feeds.OpportunityProductFeed();
-
-        using (var stream = new System.IO.MemoryStream(Encoding.UTF8.GetBytes(text)))
+        if (_parent != null)
         {
-            new Sage.Common.Syndication.JsonSerializer().LoadFromStream<Sage.Integration.Entity.Feeds.OpportunityProductEntry>(feed, stream);
-        }
-        if (feed.Entries.Count > 0)
-        {
-            /*var transformer =
-            Sage.Platform.Application.ApplicationContext.Current.Services.Get
-                <Sage.Platform.SData.IAtomEntryToEntityTransformationService>();
-            foreach (Sage.Integration.Entity.Feeds.OpportunityProductEntry entry in feed.Entries)
+            if (DialogService.ChildInsertInfo.ParentReferenceProperty != null)
             {
-              // logic to validate each entry, if needed
-              // do NOT call this:
-              //var item = transformer.ConvertEntry(entry) as Sage.Entity.Interfaces.IOpportunityProduct;
-              
-              // Apparently the simple fact of converting the entry to an OpportunityProduct 
-              // somehow registers it with NHibernate in a way that can't be undone.  So we need to make sure that is done only 
-              // AFTER the opportunity is persisted.                  
+                DialogService.ChildInsertInfo.ParentReferenceProperty.SetValue(_entity, _parent, null);
             }
-            return; // OK!*/
         }
-		else
-		{
-			DialogService.ShowMessage("Product Required.");
-        	return;
-		}
     }
-    else
+    bool shouldSave = true;
+    Sage.Platform.WebPortal.EntityPage page = Page as Sage.Platform.WebPortal.EntityPage;
+    if (page != null)
     {
-        DialogService.ShowMessage("Product Required.");
-        return;
-    }
-    //throw new ValidationException("Product Required.");    
-	/////////////////////////////
-    
-    
-
-    Sage.Platform.WebPortal.Workspaces.MainContentWorkspace SalesProcessTabs = PageWorkItem.Workspaces["MainContent"] as Sage.Platform.WebPortal.Workspaces.MainContentWorkspace;
-    if (SalesProcessTabs != null)
-    {
-        int index = 1;
-        Control tabControl = SalesProcessTabs.Controls[index];
-        DropDownList drpsales = tabControl.FindControl("ddLSalesProcess") as DropDownList;
-
-        //pluginID = drpsales.SelectedValue.ToString();
-        if (drpsales.SelectedIndex <= 0)			
+        if(IsInDialog() && page.ModeId.ToUpper() == "INSERT")
         {
-			DialogService.ShowMessage("Please Select SalesProcess");
-            return;
-       
-		}
-		else
-		{
-			string pluginID = drpsales.SelectedValue.ToString();
-		    //objOpp.Stage = "1-Suspect";
-		    //objOpp.Flagmode = Convert.ToInt32(Session["Flag"].ToString());
-		    objOpp.Owner = objOpp.Account.Owner;
-		   // objOpp.Status = drpsales.SelectedItem.Text;
-			if(objOpp.Account.Status == "Suspect")
-			{
-				objOpp.Account.Status = "Prospect";
-				objOpp.Account.Save();
-			}
-			objOpp.Save();
-		    Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.ISalesProcesses>();
-		    salesProcess.InitSalesProcess(pluginID, objOpp.Id.ToString());
+            shouldSave = false;
+        }
+    }
 
-		    /*Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
-		    string _UserId = _IUserService.UserId;
-		    Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)_UserId);
-		    objOpp.AccountManager = user;*/
-		    objOpp.SalesPotential = Convert.ToDouble(objOpp.BusinessPotential);
-		   /* Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
-		    System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
-		    System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + _UserId + "' and name ='INSERTSECCODEID'", conObj);
-		    System.Data.DataTable dt2 = new System.Data.DataTable();
-		    dataAdapterObj2.Fill(dt2);
-		    if (dt2.Rows.Count > 0)
-		    {
-		        Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
-		        objOpp.Owner = objowner;
-		    }
-		    else
-		    {
-		    }*/
-			objOpp.Save();
-		    Response.Redirect(string.Format("Opportunity.aspx?entityId={0}",objOpp.Id.ToString() ));	
+    if(shouldSave)
+    {
+       _entity.Save();
+    }
+
+    if (_parent != null)
+    {
+        if (DialogService.ChildInsertInfo != null)
+        {
+           if (DialogService.ChildInsertInfo.ParentsCollectionProperty != null)
+           {
+              System.Reflection.MethodInfo _add = DialogService.ChildInsertInfo.ParentsCollectionProperty.PropertyType.GetMethod("Add");
+              _add.Invoke(DialogService.ChildInsertInfo.ParentsCollectionProperty.GetValue(_parent, null), new object[] { _entity });
+           }
+        }
+     }
+  }
+
+          cmdSave_ClickActionBRC(sender, e);
     
-		}
-	}
-       
+  
+}
+protected void cmdSave_ClickActionBRC(object sender, EventArgs e) {
+Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+if(objOpp.Account.Type == "Suspect" || objOpp.Account.Type.ToUpper() == "LEAD")
+{
+	objOpp.Account.Type = "Prospect";
+	objOpp.Account.Save();
+}
+
+objOpp.SalesPotential = Convert.ToDouble(objOpp.BusinessPotential);
+objOpp.Owner = objOpp.Account.Owner;
+Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+string _UserId = _IUserService.UserId;
+Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)_UserId);
+objOpp.AccountManager = user;
+objOpp.Save();
+Response.Redirect(string.Format("Opportunity.aspx?entityId={0}",objOpp.Id.ToString() ));	      
+
 
 }
 protected void cmdSaveNew_ClickAction(object sender, EventArgs e) {
-Sage.Entity.Interfaces.IOpportunity objOpp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-//Sage.Entity.Interfaces.IOpportunity objOpp = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.IOpportunity>();
-if(objOpp.Description == "")
-	{
-		DialogService.ShowMessage("Please Select Decription");
-        return;
-	}
-	if(objOpp.Account == null)
-	{
-		DialogService.ShowMessage("Please Select Account");
-        return;
-	}
-	if(objOpp.BusinessPotential <= 0)
-{
-	 DialogService.ShowMessage("Please Enter Business Potential...");
-     return;
-}
-	//////////Product Validation//////////////////
-	
-	string text = Request.Form.Get("ctl00$MainContent$OpportunityProducts$OpportunityProductsgrdOppProducts_DataCarrier");
-    //string text = Request.Form.Get("MainContent_OpportunityProducts_OpportunityProductsgrdOppProducts_DataCarrier");
-    if (text.Length > 0)
+  Sage.Entity.Interfaces.IOpportunity _entity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+  if (_entity != null)
+  {
+    object _parent = GetParentEntity();
+    if (DialogService.ChildInsertInfo != null)
     {
-        var feed = new Sage.Integration.Entity.Feeds.OpportunityProductFeed();
-
-        using (var stream = new System.IO.MemoryStream(Encoding.UTF8.GetBytes(text)))
+        if (_parent != null)
         {
-            new Sage.Common.Syndication.JsonSerializer().LoadFromStream<Sage.Integration.Entity.Feeds.OpportunityProductEntry>(feed, stream);
-        }
-        if (feed.Entries.Count > 0)
-        {
-            /*var transformer =
-            Sage.Platform.Application.ApplicationContext.Current.Services.Get
-                <Sage.Platform.SData.IAtomEntryToEntityTransformationService>();
-            foreach (Sage.Integration.Entity.Feeds.OpportunityProductEntry entry in feed.Entries)
+            if (DialogService.ChildInsertInfo.ParentReferenceProperty != null)
             {
-              // logic to validate each entry, if needed
-              // do NOT call this:
-              //var item = transformer.ConvertEntry(entry) as Sage.Entity.Interfaces.IOpportunityProduct;
-              
-              // Apparently the simple fact of converting the entry to an OpportunityProduct 
-              // somehow registers it with NHibernate in a way that can't be undone.  So we need to make sure that is done only 
-              // AFTER the opportunity is persisted.                  
+                DialogService.ChildInsertInfo.ParentReferenceProperty.SetValue(_entity, _parent, null);
             }
-            return; // OK!*/
         }
-		else
-		{
-			DialogService.ShowMessage("Product Required.");
-        	return;
-		}
     }
-    else
+    bool shouldSave = true;
+    Sage.Platform.WebPortal.EntityPage page = Page as Sage.Platform.WebPortal.EntityPage;
+    if (page != null)
     {
-        DialogService.ShowMessage("Product Required.");
-        return;
-    }
-    //throw new ValidationException("Product Required.");    
-	/////////////////////////////
-    
-	Sage.Platform.WebPortal.Workspaces.MainContentWorkspace SalesProcessTabs = PageWorkItem.Workspaces["MainContent"] as Sage.Platform.WebPortal.Workspaces.MainContentWorkspace;
-    if (SalesProcessTabs != null)
-    {
-        int index = 1;
-        Control tabControl = SalesProcessTabs.Controls[index];
-        DropDownList drpsales = tabControl.FindControl("ddLSalesProcess") as DropDownList;
-
-        //pluginID = drpsales.SelectedValue.ToString();
-        if (drpsales.SelectedIndex > 0)
+        if(IsInDialog() && page.ModeId.ToUpper() == "INSERT")
         {
-			DialogService.ShowMessage("Please Select SalesProcess");
-            return;
-		}
-		else
-		{
-			string pluginID = drpsales.SelectedValue.ToString();
-		    //objOpp.Stage = "1-Suspect";
-		    //objOpp.Flagmode = Convert.ToInt32(Session["Flag"].ToString());
-		    objOpp.Owner = objOpp.Account.Owner;
-		   // objOpp.Status = drpsales.SelectedItem.Text;
-			if(objOpp.Account.Status == "Suspect")
-			{
-				objOpp.Account.Status = "Prospect";
-				objOpp.Account.Save();
-			}
-		    
-		    objOpp.Save();
-		    Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.ISalesProcesses>();
-		    salesProcess.InitSalesProcess(pluginID, objOpp.Id.ToString());
+            shouldSave = false;
+        }
+    }
 
-		   /* Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
-		    string _UserId = _IUserService.UserId;
-		    Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)_UserId);
-		    objOpp.AccountManager = user;*/
-		    objOpp.SalesPotential = Convert.ToDouble(objOpp.BusinessPotential);
-		   /* Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
-		    System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
-		    System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + _UserId + "' and name ='INSERTSECCODEID'", conObj);
-		    System.Data.DataTable dt2 = new System.Data.DataTable();
-		    dataAdapterObj2.Fill(dt2);
-		    if (dt2.Rows.Count > 0)
-		    {
-		        Sage.Entity.Interfaces.IOwner objowner = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt2.Rows[0]["DEFAULTSECCODEID"].ToString());
-		        objOpp.Owner = objowner;
-		    }
-		    else
-		    {
-		    }*/
-			objOpp.Save();
-		   	Response.Redirect(string.Format("InsertOpportunity.aspx?modeid=insert"));
-		       
-		}
-	}
+    if(shouldSave)
+    {
+       _entity.Save();
+    }
+
+    if (_parent != null)
+    {
+        if (DialogService.ChildInsertInfo != null)
+        {
+           if (DialogService.ChildInsertInfo.ParentsCollectionProperty != null)
+           {
+              System.Reflection.MethodInfo _add = DialogService.ChildInsertInfo.ParentsCollectionProperty.PropertyType.GetMethod("Add");
+              _add.Invoke(DialogService.ChildInsertInfo.ParentsCollectionProperty.GetValue(_parent, null), new object[] { _entity });
+           }
+        }
+     }
+  }
+
+          cmdSaveNew_ClickActionBRC(sender, e);
+    
+  
+}
+protected void cmdSaveNew_ClickActionBRC(object sender, EventArgs e) {
+Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+string _UserId = _IUserService.UserId;
+Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)_UserId);
+objOpp.AccountManager = user;
+objOpp.SalesPotential = Convert.ToDouble(objOpp.BusinessPotential);	
+objOpp.Owner = objOpp.Account.Owner;
+// objOpp.Status = drpsales.SelectedItem.Text;
+if(objOpp.Account.Type == "Suspect" || objOpp.Account.Type.ToUpper() == "LEAD")
+{
+	objOpp.Account.Type = "Prospect";
+	objOpp.Account.Save();
+}
+objOpp.Save();
+Response.Redirect(string.Format("InsertOpportunity.aspx?modeid=insert"));
 
 }
 
@@ -656,7 +552,7 @@ Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.
 objOpp.Status = "Active";
 pklStatus.Enabled = false;
 //objOpp.ActualAmount =0.0;
-
+objOpp.BusinessPotential = Convert.ToDecimal(0);
 Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
 string _UserId = _IUserService.UserId;
 Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)_UserId);
@@ -702,6 +598,10 @@ Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.Entit
             _runActivating = (epage.IsNewEntity || _runActivating);
 if (_runActivating) DoActivating();
 ScriptManager.RegisterStartupScript(Page, GetType(), "cleanupcontainer", "jQuery(\".controlslist > div:empty\").remove();", true);
+ClientBindingMgr.RegisterSaveButton(cmdSave);
+
+ClientBindingMgr.RegisterSaveButton(cmdSaveNew);
+
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
 {
 btnEditForm.Visible = false;

@@ -1,0 +1,208 @@
+13-06-2014 10:47:08
+INFO  2014-06-13 16:16:51,944 - Installing bundle...
+INFO  2014-06-13 16:16:52,364 - Performing pre-install.
+INFO  2014-06-13 16:16:52,406 - Installing context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-06-13 16:16:52,487 - Successfully installed Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-06-13 16:16:52,492 - Installing model item: Contact Detail (\Portal\SlxClient\ChildPages\Contact\Contact.page.xml)
+INFO  2014-06-13 16:16:53,312 - Successfully installed Contact Detail (\Portal\SlxClient\ChildPages\Contact\Contact.page.xml)
+INFO  2014-06-13 16:16:53,317 - Installing model item: ContactDetails (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactDetails.smartpart.xml)
+INFO  2014-06-13 16:16:53,365 - Successfully installed ContactDetails (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactDetails.smartpart.xml)
+INFO  2014-06-13 16:16:53,369 - Installing model item: ContactExtendedDetails (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactExtendedDetails.smartpart.xml)
+INFO  2014-06-13 16:16:53,429 - Successfully installed ContactExtendedDetails (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactExtendedDetails.smartpart.xml)
+INFO  2014-06-13 16:16:53,433 - Installing model item: ContactOpportunities (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactOpportunities.smartpart.xml)
+INFO  2014-06-13 16:16:53,472 - Successfully installed ContactOpportunities (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactOpportunities.smartpart.xml)
+INFO  2014-06-13 16:16:53,476 - Installing model item: MoveContact (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MoveContact.smartpart.xml)
+INFO  2014-06-13 16:16:53,499 - Successfully installed MoveContact (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MoveContact.smartpart.xml)
+INFO  2014-06-13 16:16:53,503 - Installing model item: CopyNewContact (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\CopyNewContact.smartpart.xml)
+INFO  2014-06-13 16:16:53,527 - Successfully installed CopyNewContact (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\CopyNewContact.smartpart.xml)
+INFO  2014-06-13 16:16:53,531 - Installing model item: NotesHistoryList (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\NotesHistoryList.smartpart.xml)
+INFO  2014-06-13 16:16:53,555 - Successfully installed NotesHistoryList (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\NotesHistoryList.smartpart.xml)
+INFO  2014-06-13 16:16:53,559 - Installing model item: ActivityList (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ActivityList.smartpart.xml)
+INFO  2014-06-13 16:16:53,593 - Successfully installed ActivityList (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ActivityList.smartpart.xml)
+INFO  2014-06-13 16:16:53,599 - Installing model item: ContactTickets (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactTickets.smartpart.xml)
+INFO  2014-06-13 16:16:53,622 - Successfully installed ContactTickets (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactTickets.smartpart.xml)
+INFO  2014-06-13 16:16:53,688 - Installing model item: ContactProcesses (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactProcesses.smartpart.xml)
+INFO  2014-06-13 16:16:53,727 - Successfully installed ContactProcesses (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactProcesses.smartpart.xml)
+INFO  2014-06-13 16:16:53,735 - Installing model item: ContactAssociations (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactAssociations.smartpart.xml)
+INFO  2014-06-13 16:16:53,770 - Successfully installed ContactAssociations (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactAssociations.smartpart.xml)
+INFO  2014-06-13 16:16:53,775 - Installing model item: ContactAddresses (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactAddresses.smartpart.xml)
+INFO  2014-06-13 16:16:53,797 - Successfully installed ContactAddresses (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactAddresses.smartpart.xml)
+INFO  2014-06-13 16:16:53,802 - Installing model item: AttachmentList (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AttachmentList.smartpart.xml)
+INFO  2014-06-13 16:16:53,830 - Successfully installed AttachmentList (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AttachmentList.smartpart.xml)
+INFO  2014-06-13 16:16:53,835 - Installing model item: ContactLeadSources (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactLeadSources.smartpart.xml)
+INFO  2014-06-13 16:16:53,878 - Successfully installed ContactLeadSources (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactLeadSources.smartpart.xml)
+INFO  2014-06-13 16:16:53,888 - Installing model item: ContactLiteratureRequests (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactLiteratureRequests.smartpart.xml)
+INFO  2014-06-13 16:16:53,923 - Successfully installed ContactLiteratureRequests (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactLiteratureRequests.smartpart.xml)
+INFO  2014-06-13 16:16:53,933 - Installing model item: ContactMarketing (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactMarketing.smartpart.xml)
+INFO  2014-06-13 16:16:53,961 - Successfully installed ContactMarketing (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactMarketing.smartpart.xml)
+INFO  2014-06-13 16:16:53,974 - Installing model item: ContactResponses (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactResponses.smartpart.xml)
+INFO  2014-06-13 16:16:54,006 - Successfully installed ContactResponses (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactResponses.smartpart.xml)
+INFO  2014-06-13 16:16:54,011 - Installing model item: WebAccess (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\WebAccess.smartpart.xml)
+INFO  2014-06-13 16:16:54,033 - Successfully installed WebAccess (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\WebAccess.smartpart.xml)
+INFO  2014-06-13 16:16:54,038 - Installing model item: AddEditContactAssociation (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditContactAssociation.smartpart.xml)
+INFO  2014-06-13 16:16:54,075 - Successfully installed AddEditContactAssociation (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditContactAssociation.smartpart.xml)
+INFO  2014-06-13 16:16:54,081 - Installing model item: ScheduleProcess (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ScheduleProcess.smartpart.xml)
+INFO  2014-06-13 16:16:54,110 - Successfully installed ScheduleProcess (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ScheduleProcess.smartpart.xml)
+INFO  2014-06-13 16:16:54,116 - Installing model item: UpdateContactOptions (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\UpdateContactOptions.smartpart.xml)
+INFO  2014-06-13 16:16:54,137 - Successfully installed UpdateContactOptions (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\UpdateContactOptions.smartpart.xml)
+INFO  2014-06-13 16:16:54,143 - Installing model item: AddEditContactLeadSource (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditContactLeadSource.smartpart.xml)
+INFO  2014-06-13 16:16:54,164 - Successfully installed AddEditContactLeadSource (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditContactLeadSource.smartpart.xml)
+INFO  2014-06-13 16:16:54,170 - Installing model item: AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,197 - Successfully installed AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,203 - Installing model item: AddEditTargetResponse (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditTargetResponse.smartpart.xml)
+INFO  2014-06-13 16:16:54,225 - Successfully installed AddEditTargetResponse (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditTargetResponse.smartpart.xml)
+INFO  2014-06-13 16:16:54,231 - Installing model item: LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-06-13 16:16:54,251 - Successfully installed LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-06-13 16:16:54,256 - Installing model item: MergeRecords (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeRecords.smartpart.xml)
+INFO  2014-06-13 16:16:54,283 - Successfully installed MergeRecords (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeRecords.smartpart.xml)
+INFO  2014-06-13 16:16:54,288 - Installing model item: MergeChildren (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeChildren.smartpart.xml)
+INFO  2014-06-13 16:16:54,310 - Successfully installed MergeChildren (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeChildren.smartpart.xml)
+INFO  2014-06-13 16:16:54,315 - Installing model item: SyncResultsHistory (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\SyncResultsHistory.smartpart.xml)
+INFO  2014-06-13 16:16:54,337 - Successfully installed SyncResultsHistory (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\SyncResultsHistory.smartpart.xml)
+INFO  2014-06-13 16:16:54,343 - Installing model item: MergeContactAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeContactAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,364 - Successfully installed MergeContactAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeContactAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,387 - Installing model item: MergeAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,419 - Successfully installed MergeAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,425 - Installing model item: AddAccountAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddAccountAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,435 - Successfully installed AddAccountAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddAccountAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,441 - Installing model item: ContactOpportunities_Read (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactOpportunities_Read.smartpart.xml)
+INFO  2014-06-13 16:16:54,451 - Successfully installed ContactOpportunities_Read (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactOpportunities_Read.smartpart.xml)
+INFO  2014-06-13 16:16:54,456 - Installing model item: ContactLeadSources_Read (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactLeadSources_Read.smartpart.xml)
+INFO  2014-06-13 16:16:54,467 - Successfully installed ContactLeadSources_Read (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactLeadSources_Read.smartpart.xml)
+INFO  2014-06-13 16:16:54,472 - Installing model item: Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Contact\Modules\32a850cccf824d5391e0730022635dea.module.xml)
+INFO  2014-06-13 16:16:54,480 - Successfully installed Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Contact\Modules\32a850cccf824d5391e0730022635dea.module.xml)
+INFO  2014-06-13 16:16:54,486 - Installing context item: Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-06-13 16:16:54,497 - Successfully installed Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-06-13 16:16:54,502 - Installing context item: Opportunity (\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml)
+INFO  2014-06-13 16:16:54,511 - Successfully installed Opportunity (\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml)
+INFO  2014-06-13 16:16:54,516 - Installing model item: OpportunityDetails (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityDetails.main.quickform.xml)
+INFO  2014-06-13 16:16:54,549 - Successfully installed OpportunityDetails (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityDetails.main.quickform.xml)
+INFO  2014-06-13 16:16:54,555 - Installing context item: Contact (\Entity Model\Saleslogix Application Entities\Contact\Contact.CONTACT.entity.xml)
+INFO  2014-06-13 16:16:54,559 - Successfully installed Contact (\Entity Model\Saleslogix Application Entities\Contact\Contact.CONTACT.entity.xml)
+INFO  2014-06-13 16:16:54,564 - Installing model item: ContactOpportunities_Read (\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactOpportunities_Read.main.quickform.xml)
+INFO  2014-06-13 16:16:54,576 - Successfully installed ContactOpportunities_Read (\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactOpportunities_Read.main.quickform.xml)
+INFO  2014-06-13 16:16:54,588 - Installing model item: ContactLeadSources_Read (\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactLeadSources_Read.main.quickform.xml)
+INFO  2014-06-13 16:16:54,599 - Successfully installed ContactLeadSources_Read (\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactLeadSources_Read.main.quickform.xml)
+INFO  2014-06-13 16:16:54,605 - Saving context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-06-13 16:16:54,610 - Successfully saved Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-06-13 16:16:54,615 - Saving model item: Contact Detail (\Portal\SlxClient\ChildPages\Contact\Contact.page.xml)
+INFO  2014-06-13 16:16:54,620 - Successfully saved Contact Detail (\Portal\SlxClient\ChildPages\Contact\Contact.page.xml)
+INFO  2014-06-13 16:16:54,625 - Saving model item: ContactDetails (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactDetails.smartpart.xml)
+INFO  2014-06-13 16:16:54,630 - Successfully saved ContactDetails (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactDetails.smartpart.xml)
+INFO  2014-06-13 16:16:54,635 - Saving model item: ContactExtendedDetails (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactExtendedDetails.smartpart.xml)
+INFO  2014-06-13 16:16:54,640 - Successfully saved ContactExtendedDetails (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactExtendedDetails.smartpart.xml)
+INFO  2014-06-13 16:16:54,644 - Saving model item: ContactOpportunities (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactOpportunities.smartpart.xml)
+INFO  2014-06-13 16:16:54,649 - Successfully saved ContactOpportunities (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactOpportunities.smartpart.xml)
+INFO  2014-06-13 16:16:54,654 - Saving model item: MoveContact (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MoveContact.smartpart.xml)
+INFO  2014-06-13 16:16:54,659 - Successfully saved MoveContact (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MoveContact.smartpart.xml)
+INFO  2014-06-13 16:16:54,663 - Saving model item: CopyNewContact (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\CopyNewContact.smartpart.xml)
+INFO  2014-06-13 16:16:54,668 - Successfully saved CopyNewContact (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\CopyNewContact.smartpart.xml)
+INFO  2014-06-13 16:16:54,683 - Saving model item: NotesHistoryList (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\NotesHistoryList.smartpart.xml)
+INFO  2014-06-13 16:16:54,688 - Successfully saved NotesHistoryList (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\NotesHistoryList.smartpart.xml)
+INFO  2014-06-13 16:16:54,692 - Saving model item: ActivityList (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ActivityList.smartpart.xml)
+INFO  2014-06-13 16:16:54,697 - Successfully saved ActivityList (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ActivityList.smartpart.xml)
+INFO  2014-06-13 16:16:54,702 - Saving model item: ContactTickets (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactTickets.smartpart.xml)
+INFO  2014-06-13 16:16:54,707 - Successfully saved ContactTickets (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactTickets.smartpart.xml)
+INFO  2014-06-13 16:16:54,712 - Saving model item: ContactProcesses (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactProcesses.smartpart.xml)
+INFO  2014-06-13 16:16:54,717 - Successfully saved ContactProcesses (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactProcesses.smartpart.xml)
+INFO  2014-06-13 16:16:54,722 - Saving model item: ContactAssociations (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactAssociations.smartpart.xml)
+INFO  2014-06-13 16:16:54,727 - Successfully saved ContactAssociations (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactAssociations.smartpart.xml)
+INFO  2014-06-13 16:16:54,732 - Saving model item: ContactAddresses (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactAddresses.smartpart.xml)
+INFO  2014-06-13 16:16:54,737 - Successfully saved ContactAddresses (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactAddresses.smartpart.xml)
+INFO  2014-06-13 16:16:54,742 - Saving model item: AttachmentList (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AttachmentList.smartpart.xml)
+INFO  2014-06-13 16:16:54,746 - Successfully saved AttachmentList (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AttachmentList.smartpart.xml)
+INFO  2014-06-13 16:16:54,751 - Saving model item: ContactLeadSources (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactLeadSources.smartpart.xml)
+INFO  2014-06-13 16:16:54,777 - Successfully saved ContactLeadSources (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactLeadSources.smartpart.xml)
+INFO  2014-06-13 16:16:54,781 - Saving model item: ContactLiteratureRequests (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactLiteratureRequests.smartpart.xml)
+INFO  2014-06-13 16:16:54,786 - Successfully saved ContactLiteratureRequests (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactLiteratureRequests.smartpart.xml)
+INFO  2014-06-13 16:16:54,791 - Saving model item: ContactMarketing (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactMarketing.smartpart.xml)
+INFO  2014-06-13 16:16:54,796 - Successfully saved ContactMarketing (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactMarketing.smartpart.xml)
+INFO  2014-06-13 16:16:54,801 - Saving model item: ContactResponses (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactResponses.smartpart.xml)
+INFO  2014-06-13 16:16:54,805 - Successfully saved ContactResponses (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactResponses.smartpart.xml)
+INFO  2014-06-13 16:16:54,811 - Saving model item: WebAccess (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\WebAccess.smartpart.xml)
+INFO  2014-06-13 16:16:54,815 - Successfully saved WebAccess (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\WebAccess.smartpart.xml)
+INFO  2014-06-13 16:16:54,821 - Saving model item: AddEditContactAssociation (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditContactAssociation.smartpart.xml)
+INFO  2014-06-13 16:16:54,826 - Successfully saved AddEditContactAssociation (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditContactAssociation.smartpart.xml)
+INFO  2014-06-13 16:16:54,831 - Saving model item: ScheduleProcess (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ScheduleProcess.smartpart.xml)
+INFO  2014-06-13 16:16:54,836 - Successfully saved ScheduleProcess (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\ScheduleProcess.smartpart.xml)
+INFO  2014-06-13 16:16:54,854 - Saving model item: UpdateContactOptions (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\UpdateContactOptions.smartpart.xml)
+INFO  2014-06-13 16:16:54,859 - Successfully saved UpdateContactOptions (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\UpdateContactOptions.smartpart.xml)
+INFO  2014-06-13 16:16:54,864 - Saving model item: AddEditContactLeadSource (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditContactLeadSource.smartpart.xml)
+INFO  2014-06-13 16:16:54,869 - Successfully saved AddEditContactLeadSource (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditContactLeadSource.smartpart.xml)
+INFO  2014-06-13 16:16:54,874 - Saving model item: AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,879 - Successfully saved AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,884 - Saving model item: AddEditTargetResponse (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditTargetResponse.smartpart.xml)
+INFO  2014-06-13 16:16:54,889 - Successfully saved AddEditTargetResponse (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddEditTargetResponse.smartpart.xml)
+INFO  2014-06-13 16:16:54,894 - Saving model item: LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-06-13 16:16:54,899 - Successfully saved LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-06-13 16:16:54,904 - Saving model item: MergeRecords (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeRecords.smartpart.xml)
+INFO  2014-06-13 16:16:54,913 - Successfully saved MergeRecords (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeRecords.smartpart.xml)
+INFO  2014-06-13 16:16:54,919 - Saving model item: MergeChildren (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeChildren.smartpart.xml)
+INFO  2014-06-13 16:16:54,925 - Successfully saved MergeChildren (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeChildren.smartpart.xml)
+INFO  2014-06-13 16:16:54,930 - Saving model item: SyncResultsHistory (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\SyncResultsHistory.smartpart.xml)
+INFO  2014-06-13 16:16:54,935 - Successfully saved SyncResultsHistory (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\SyncResultsHistory.smartpart.xml)
+INFO  2014-06-13 16:16:54,940 - Saving model item: MergeContactAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeContactAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,946 - Successfully saved MergeContactAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeContactAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,951 - Saving model item: MergeAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,956 - Successfully saved MergeAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\MergeAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,961 - Saving model item: AddAccountAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddAccountAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,966 - Successfully saved AddAccountAddress (Custom) (\Portal\SlxClient\ChildPages\Contact\SmartParts\AddAccountAddress.smartpart.xml)
+INFO  2014-06-13 16:16:54,978 - Saving model item: ContactOpportunities_Read (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactOpportunities_Read.smartpart.xml)
+INFO  2014-06-13 16:16:54,983 - Successfully saved ContactOpportunities_Read (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactOpportunities_Read.smartpart.xml)
+INFO  2014-06-13 16:16:54,988 - Saving model item: ContactLeadSources_Read (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactLeadSources_Read.smartpart.xml)
+INFO  2014-06-13 16:16:54,994 - Successfully saved ContactLeadSources_Read (\Portal\SlxClient\ChildPages\Contact\SmartParts\ContactLeadSources_Read.smartpart.xml)
+INFO  2014-06-13 16:16:54,999 - Saving model item: Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Contact\Modules\32a850cccf824d5391e0730022635dea.module.xml)
+INFO  2014-06-13 16:16:55,004 - Successfully saved Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Contact\Modules\32a850cccf824d5391e0730022635dea.module.xml)
+INFO  2014-06-13 16:16:55,010 - Saving context item: Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-06-13 16:16:55,015 - Successfully saved Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-06-13 16:16:55,020 - Saving context item: Opportunity (\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml)
+INFO  2014-06-13 16:17:02,046 - Successfully saved Opportunity (\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml)
+INFO  2014-06-13 16:17:02,052 - Saving model item: OpportunityDetails (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityDetails.main.quickform.xml)
+INFO  2014-06-13 16:17:02,058 - Successfully saved OpportunityDetails (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityDetails.main.quickform.xml)
+INFO  2014-06-13 16:17:02,063 - Saving context item: Contact (\Entity Model\Saleslogix Application Entities\Contact\Contact.CONTACT.entity.xml)
+INFO  2014-06-13 16:17:02,219 - Successfully saved Contact (\Entity Model\Saleslogix Application Entities\Contact\Contact.CONTACT.entity.xml)
+INFO  2014-06-13 16:17:02,225 - Saving model item: ContactOpportunities_Read (\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactOpportunities_Read.main.quickform.xml)
+INFO  2014-06-13 16:17:02,248 - Successfully saved ContactOpportunities_Read (\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactOpportunities_Read.main.quickform.xml)
+INFO  2014-06-13 16:17:02,254 - Saving model item: ContactLeadSources_Read (\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactLeadSources_Read.main.quickform.xml)
+INFO  2014-06-13 16:17:02,259 - Successfully saved ContactLeadSources_Read (\Entity Model\Saleslogix Application Entities\Contact\QuickForms\ContactLeadSources_Read.main.quickform.xml)
+INFO  2014-06-13 16:17:02,267 - Configuring installed items.
+INFO  2014-06-13 16:17:02,273 - Configuring Saleslogix Client...
+INFO  2014-06-13 16:17:02,281 - Configuring Contact Detail...
+INFO  2014-06-13 16:17:04,595 - Configuring ContactDetails...
+INFO  2014-06-13 16:17:04,612 - Configuring ContactExtendedDetails...
+INFO  2014-06-13 16:17:04,619 - Configuring ContactOpportunities...
+INFO  2014-06-13 16:17:04,625 - Configuring MoveContact (Custom)...
+INFO  2014-06-13 16:17:04,631 - Configuring CopyNewContact (Custom)...
+INFO  2014-06-13 16:17:04,650 - Configuring NotesHistoryList (Custom)...
+INFO  2014-06-13 16:17:04,656 - Configuring ActivityList (Custom)...
+INFO  2014-06-13 16:17:04,661 - Configuring ContactTickets...
+INFO  2014-06-13 16:17:04,666 - Configuring ContactProcesses...
+INFO  2014-06-13 16:17:04,672 - Configuring ContactAssociations (Custom)...
+INFO  2014-06-13 16:17:04,677 - Configuring ContactAddresses (Custom)...
+INFO  2014-06-13 16:17:04,682 - Configuring AttachmentList (Custom)...
+INFO  2014-06-13 16:17:04,687 - Configuring ContactLeadSources...
+INFO  2014-06-13 16:17:04,692 - Configuring ContactLiteratureRequests...
+INFO  2014-06-13 16:17:04,702 - Configuring ContactMarketing (Custom)...
+INFO  2014-06-13 16:17:04,708 - Configuring ContactResponses...
+INFO  2014-06-13 16:17:04,713 - Configuring WebAccess (Custom)...
+INFO  2014-06-13 16:17:04,718 - Configuring AddEditContactAssociation (Custom)...
+INFO  2014-06-13 16:17:04,724 - Configuring ScheduleProcess (Custom)...
+INFO  2014-06-13 16:17:04,729 - Configuring UpdateContactOptions (Custom)...
+INFO  2014-06-13 16:17:04,734 - Configuring AddEditContactLeadSource...
+INFO  2014-06-13 16:17:04,740 - Configuring AddEditAddress (Custom)...
+INFO  2014-06-13 16:17:04,745 - Configuring AddEditTargetResponse (Custom)...
+INFO  2014-06-13 16:17:04,759 - Configuring LiveGroupViewer (Custom)...
+INFO  2014-06-13 16:17:04,765 - Configuring MergeRecords (Custom)...
+INFO  2014-06-13 16:17:04,771 - Configuring MergeChildren (Custom)...
+INFO  2014-06-13 16:17:04,776 - Configuring SyncResultsHistory (Custom)...
+INFO  2014-06-13 16:17:04,781 - Configuring MergeContactAddress (Custom)...
+INFO  2014-06-13 16:17:04,786 - Configuring MergeAddress (Custom)...
+INFO  2014-06-13 16:17:04,792 - Configuring AddAccountAddress (Custom)...
+INFO  2014-06-13 16:17:04,797 - Configuring ContactOpportunities_Read...
+INFO  2014-06-13 16:17:04,802 - Configuring ContactLeadSources_Read...
+INFO  2014-06-13 16:17:04,822 - Configuring Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule...
+INFO  2014-06-13 16:17:04,832 - Performing pre-commit to target project.
+INFO  2014-06-13 16:17:05,269 - Committing items to target project...
+INFO  2014-06-13 16:17:05,648 - Committing transactions...
+INFO  2014-06-13 16:17:08,288 - Copying bundle manifest to project.
+INFO  2014-06-13 16:17:08,329 - Install complete.

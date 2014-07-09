@@ -20,7 +20,7 @@
    <asp:Label ID="txtCompetitor_lbl" AssociatedControlID="txtCompetitor" runat="server" Text="<%$ resources: txtCompetitor.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtCompetitor"  dojoType="Sage.UI.Controls.TextBox"  />
+<asp:TextBox runat="server" ID="txtCompetitor" Required="true"  dojoType="Sage.UI.Controls.TextBox"  />
   </div>
 
       </td>
@@ -119,7 +119,7 @@ Strict="False"
    <asp:Label ID="txtWeaknesses_lbl" AssociatedControlID="txtWeaknesses" runat="server" Text="<%$ resources: txtWeaknesses.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtWeaknesses"  Rows="4" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
+<asp:TextBox runat="server" ID="txtWeaknesses"  Rows="4" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea" MultiLineMaxLength="128"  />
   </div>
 
       </td>
@@ -131,7 +131,7 @@ Strict="False"
    <asp:Label ID="txtStrengths_lbl" AssociatedControlID="txtStrengths" runat="server" Text="<%$ resources: txtStrengths.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtStrengths"  Rows="4" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
+<asp:TextBox runat="server" ID="txtStrengths"  Rows="4" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea" MultiLineMaxLength="128"  />
   </div>
 
       </td>
@@ -143,7 +143,7 @@ Strict="False"
    <asp:Label ID="txtStrategy_lbl" AssociatedControlID="txtStrategy" runat="server" Text="<%$ resources: txtStrategy.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtStrategy"  Rows="4" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
+<asp:TextBox runat="server" ID="txtStrategy"  Rows="4" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea" MultiLineMaxLength="128"  />
   </div>
 
       </td>
@@ -155,7 +155,7 @@ Strict="False"
    <asp:Label ID="txtNotes_lbl" AssociatedControlID="txtNotes" runat="server" Text="<%$ resources: txtNotes.Caption %>" ></asp:Label>
  </div>
   <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="txtNotes"  Rows="4" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea"  />
+<asp:TextBox runat="server" ID="txtNotes"  Rows="4" TextMode="MultiLine" Columns="40" dojoType="Sage.UI.Controls.SimpleTextarea" MultiLineMaxLength="2000"  />
   </div>
 
       </td>

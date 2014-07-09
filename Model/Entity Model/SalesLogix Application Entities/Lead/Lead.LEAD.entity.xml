@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="27f9e8e9-34d8-4eaf-8fd7-c70d133e6f90" lastModifiedUtc="2014-05-14T08:57:40.0564489Z" manageSchema="true" tableName="LEAD" name="Lead" displayPropertyId="551e80d8-99e8-49aa-8710-a7a6429d6192" isExtension="false" audited="true" smallImage="[Localization!Global_Images:lead_16x16]" largeImage="[Localization!Global_Images:Leads_24x24]" onBeforeInsertMethodId="facc3100-9ffd-4e83-bb86-6c62987f6a11" onAfterInsertMethodId="c222d3e7-979e-4878-b675-2fee03877ab8" onBeforeUpdateMethodId="63b07e84-8b94-42c8-961a-da9fc7fbfdae" onAfterUpdateMethodId="d63343b1-8d6e-4015-a6eb-ddcb6c1de180" onBeforeDeleteMethodId="c25bf2f2-5036-4d0a-a14e-a740444ff5ed" onAfterDeleteMethodId="dee25e24-9f9a-482f-9996-a5b1ab52d6aa" onCreateId="378fd86f-840d-4708-90b1-7802c7c93904">
+<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="27f9e8e9-34d8-4eaf-8fd7-c70d133e6f90" lastModifiedUtc="2014-07-03T06:12:03.9945058Z" manageSchema="true" tableName="LEAD" name="Lead" displayPropertyId="551e80d8-99e8-49aa-8710-a7a6429d6192" isExtension="false" audited="true" smallImage="[Localization!Global_Images:lead_16x16]" largeImage="[Localization!Global_Images:Leads_24x24]" onBeforeInsertMethodId="facc3100-9ffd-4e83-bb86-6c62987f6a11" onAfterInsertMethodId="c222d3e7-979e-4878-b675-2fee03877ab8" onBeforeUpdateMethodId="63b07e84-8b94-42c8-961a-da9fc7fbfdae" onAfterUpdateMethodId="d63343b1-8d6e-4015-a6eb-ddcb6c1de180" onBeforeDeleteMethodId="c25bf2f2-5036-4d0a-a14e-a740444ff5ed" onAfterDeleteMethodId="dee25e24-9f9a-482f-9996-a5b1ab52d6aa" onCreateId="378fd86f-840d-4708-90b1-7802c7c93904">
   <extendedMetaData />
   <ExtendedPropertiesCollection>
     <extendee type="Sage.Platform.Orm.Entities.OrmEntity">
@@ -310,7 +310,7 @@
         </TextDataType>
       </SystemDataType>
     </property>
-    <property xsi:type="OrmFieldProperty" id="80ccd0b2-1f42-4252-b0d5-0b0f522b6df5" lastModifiedUtc="2012-07-25T15:10:42.2381937Z" name="Industry" audited="true" columnName="INDUSTRY" maxLength="64" precision="0" scale="0" ordinal="22" isReadOnly="false">
+    <property xsi:type="OrmFieldProperty" id="80ccd0b2-1f42-4252-b0d5-0b0f522b6df5" lastModifiedUtc="2014-07-03T06:11:48.5976251Z" name="Industry" audited="true" columnName="INDUSTRY" maxLength="64" precision="0" scale="0" ordinal="22" isReadOnly="false">
       <ExtendedPropertiesCollection>
         <extendee type="Sage.Platform.Orm.Entities.OrmFieldProperty">
           <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">
@@ -318,10 +318,14 @@
           </extender>
         </extendee>
       </ExtendedPropertiesCollection>
-      <SystemDataType guid="ccc0f01d-7ba5-408e-8526-a3f942354b3a">
-        <TextDataType>
+      <SystemDataType guid="517d5e69-9efa-4d0a-8e7a-1c7691f921ba">
+        <DependencyLookupDataType>
           <Length>64</Length>
-        </TextDataType>
+          <LookupGroup>1.0</LookupGroup>
+          <ParentProperty />
+          <LookupEntityName />
+          <LookupEntityTypeName />
+        </DependencyLookupDataType>
       </SystemDataType>
     </property>
     <property xsi:type="OrmFieldProperty" id="76110121-85f2-4845-a0bc-66785473c8bd" lastModifiedUtc="2012-07-25T15:10:42.2521945Z" name="Interests" audited="true" columnName="INTERESTS" maxLength="128" precision="0" scale="0" ordinal="23" isReadOnly="false">
@@ -1083,6 +1087,38 @@
       </ExtendedPropertiesCollection>
       <SystemDataType guid="30053f5a-8d40-4db1-b185-1e4128eb26cc">
         <StandardIdDataType />
+      </SystemDataType>
+    </property>
+    <property xsi:type="OrmFieldProperty" id="f165cb3f-69a0-4476-a9d0-8677455bd0ee" lastModifiedUtc="2014-07-01T07:57:12.7290985Z" name="LEADFORMNO" audited="false" columnName="LEAD_FORM_NO" maxLength="50" precision="0" scale="0" ordinal="77" isReadOnly="false">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmFieldProperty">
+          <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">
+            <OrmEntityPropertySDataExtension generate="true" />
+          </extender>
+        </extendee>
+      </ExtendedPropertiesCollection>
+      <SystemDataType guid="ccc0f01d-7ba5-408e-8526-a3f942354b3a">
+        <TextDataType>
+          <Length>50</Length>
+        </TextDataType>
+      </SystemDataType>
+    </property>
+    <property xsi:type="OrmFieldProperty" id="262b13bc-74ab-4002-a35b-c845292aa0f5" lastModifiedUtc="2014-07-03T06:12:03.9945058Z" name="MKTSegment" audited="false" columnName="MKTSEGMENT" maxLength="64" precision="0" scale="0" ordinal="82" isReadOnly="false">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmFieldProperty">
+          <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">
+            <OrmEntityPropertySDataExtension generate="true" />
+          </extender>
+        </extendee>
+      </ExtendedPropertiesCollection>
+      <SystemDataType guid="517d5e69-9efa-4d0a-8e7a-1c7691f921ba">
+        <DependencyLookupDataType>
+          <Length>64</Length>
+          <LookupGroup>1.0</LookupGroup>
+          <ParentProperty />
+          <LookupEntityName />
+          <LookupEntityTypeName />
+        </DependencyLookupDataType>
       </SystemDataType>
     </property>
   </properties>

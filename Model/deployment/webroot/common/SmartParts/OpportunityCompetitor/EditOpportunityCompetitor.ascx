@@ -103,18 +103,14 @@ LabelPlacement="left"  />
 </div>
       </td>
                 <td  >
-<div class=" lbl alignleft">
-    <asp:Label ID="txtCompetitorRate_lbl" AssociatedControlID="txtCompetitorRate" runat="server" Text="<%$ resources: txtCompetitorRate.Caption %>" ></asp:Label>
-</div>
- <div  class="textcontrol currency"  >
-    <SalesLogix:Currency
-    runat="server"
-    ID="txtCompetitorRate" 
-    ExchangeRateType="BaseRate"
-     Required="false"
- DecimalDigits="-1"
+ <div class=" lbl alignleft">
+   <asp:Label ID="txtCompetitorRate_lbl" AssociatedControlID="txtCompetitorRate" runat="server" Text="<%$ resources: txtCompetitorRate.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol numeric"  > 
+    <SalesLogix:NumericControl runat="server" ID="txtCompetitorRate"
+FormatType="Decimal" DecimalDigits="2" Strict="False" 
  />
-</div>
+  </div>
 
       </td>
       </tr>
@@ -125,7 +121,7 @@ LabelPlacement="left"  />
  </div>   
    <div  class="textcontrol numeric"  > 
     <SalesLogix:NumericControl runat="server" ID="txtCompetitorShareOfWellet"
-FormatType="Percent" Strict="False" 
+FormatType="Percent" DecimalDigits="2" Strict="False" 
  />
   </div>
 
@@ -385,8 +381,8 @@ public class EditOpportunityCompetitorAdapter : Sage.Platform.WebPortal.Adapters
     {
         get { return FindControl(ref _txtNotes, "txtNotes"); }
     }
-    private Sage.Platform.Controls.ICurrencyControl _txtCompetitorRate;
-    public  Sage.Platform.Controls.ICurrencyControl txtCompetitorRate
+    private Sage.Platform.Controls.INumericControl _txtCompetitorRate;
+    public  Sage.Platform.Controls.INumericControl txtCompetitorRate
     {
         get { return FindControl(ref _txtCompetitorRate, "txtCompetitorRate"); }
     }

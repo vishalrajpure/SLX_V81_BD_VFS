@@ -1,0 +1,224 @@
+21-06-2014 12:44:10
+INFO  2014-06-21 18:14:06,684 - Installing bundle...
+INFO  2014-06-21 18:14:06,689 - Performing pre-install.
+INFO  2014-06-21 18:14:06,693 - Installing context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-06-21 18:14:06,914 - Successfully installed Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-06-21 18:14:06,918 - Installing model item: Account Detail (\Portal\SlxClient\ChildPages\Account\Account.page.xml)
+INFO  2014-06-21 18:14:07,063 - Successfully installed Account Detail (\Portal\SlxClient\ChildPages\Account\Account.page.xml)
+INFO  2014-06-21 18:14:07,115 - Installing model item: AccountDetails (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountDetails.smartpart.xml)
+INFO  2014-06-21 18:14:07,156 - Successfully installed AccountDetails (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountDetails.smartpart.xml)
+INFO  2014-06-21 18:14:07,161 - Installing model item: AccountExtendedDetails (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountExtendedDetails.smartpart.xml)
+INFO  2014-06-21 18:14:07,188 - Successfully installed AccountExtendedDetails (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountExtendedDetails.smartpart.xml)
+INFO  2014-06-21 18:14:07,193 - Installing model item: AccountContacts (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountContacts.smartpart.xml)
+INFO  2014-06-21 18:14:07,215 - Successfully installed AccountContacts (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountContacts.smartpart.xml)
+INFO  2014-06-21 18:14:07,237 - Installing model item: AccountOpportunities (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountOpportunities.smartpart.xml)
+INFO  2014-06-21 18:14:07,261 - Successfully installed AccountOpportunities (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountOpportunities.smartpart.xml)
+INFO  2014-06-21 18:14:07,267 - Installing model item: ActivityList (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ActivityList.smartpart.xml)
+INFO  2014-06-21 18:14:07,291 - Successfully installed ActivityList (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ActivityList.smartpart.xml)
+INFO  2014-06-21 18:14:07,298 - Installing model item: AttachmentList (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AttachmentList.smartpart.xml)
+INFO  2014-06-21 18:14:07,321 - Successfully installed AttachmentList (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AttachmentList.smartpart.xml)
+INFO  2014-06-21 18:14:07,327 - Installing model item: AccountTickets (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountTickets.smartpart.xml)
+INFO  2014-06-21 18:14:07,349 - Successfully installed AccountTickets (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountTickets.smartpart.xml)
+INFO  2014-06-21 18:14:07,357 - Installing model item: AccountAddresses (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountAddresses.smartpart.xml)
+INFO  2014-06-21 18:14:07,398 - Successfully installed AccountAddresses (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountAddresses.smartpart.xml)
+INFO  2014-06-21 18:14:07,405 - Installing model item: AccountAssociations (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountAssociations.smartpart.xml)
+INFO  2014-06-21 18:14:07,425 - Successfully installed AccountAssociations (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountAssociations.smartpart.xml)
+INFO  2014-06-21 18:14:07,434 - Installing model item: AddEditAccountAssociation (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditAccountAssociation.smartpart.xml)
+INFO  2014-06-21 18:14:07,458 - Successfully installed AddEditAccountAssociation (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditAccountAssociation.smartpart.xml)
+INFO  2014-06-21 18:14:07,465 - Installing model item: NotesHistoryList (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\NotesHistoryList.smartpart.xml)
+INFO  2014-06-21 18:14:07,507 - Successfully installed NotesHistoryList (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\NotesHistoryList.smartpart.xml)
+INFO  2014-06-21 18:14:07,515 - Installing model item: AccountMarketing (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountMarketing.smartpart.xml)
+INFO  2014-06-21 18:14:07,535 - Successfully installed AccountMarketing (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountMarketing.smartpart.xml)
+INFO  2014-06-21 18:14:07,543 - Installing model item: AccountResponses (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountResponses.smartpart.xml)
+INFO  2014-06-21 18:14:07,567 - Successfully installed AccountResponses (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountResponses.smartpart.xml)
+INFO  2014-06-21 18:14:07,575 - Installing model item: UpdateAccountOptions (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\UpdateAccountOptions.smartpart.xml)
+INFO  2014-06-21 18:14:07,600 - Successfully installed UpdateAccountOptions (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\UpdateAccountOptions.smartpart.xml)
+INFO  2014-06-21 18:14:07,608 - Installing model item: AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-06-21 18:14:07,631 - Successfully installed AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-06-21 18:14:07,639 - Installing model item: AccountReseller (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountReseller.smartpart.xml)
+INFO  2014-06-21 18:14:07,667 - Successfully installed AccountReseller (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountReseller.smartpart.xml)
+INFO  2014-06-21 18:14:07,678 - Installing model item: AddEditTargetResponse (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditTargetResponse.smartpart.xml)
+INFO  2014-06-21 18:14:07,709 - Successfully installed AddEditTargetResponse (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditTargetResponse.smartpart.xml)
+INFO  2014-06-21 18:14:07,717 - Installing model item: AccountContracts (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountContracts.smartpart.xml)
+INFO  2014-06-21 18:14:07,740 - Successfully installed AccountContracts (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountContracts.smartpart.xml)
+INFO  2014-06-21 18:14:07,747 - Installing model item: AccountAssets (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountAssets.smartpart.xml)
+INFO  2014-06-21 18:14:07,781 - Successfully installed AccountAssets (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountAssets.smartpart.xml)
+INFO  2014-06-21 18:14:07,789 - Installing model item: AccountReturns (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountReturns.smartpart.xml)
+INFO  2014-06-21 18:14:07,814 - Successfully installed AccountReturns (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountReturns.smartpart.xml)
+INFO  2014-06-21 18:14:07,822 - Installing model item: AddEditAccountProduct (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditAccountProduct.smartpart.xml)
+INFO  2014-06-21 18:14:07,847 - Successfully installed AddEditAccountProduct (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditAccountProduct.smartpart.xml)
+INFO  2014-06-21 18:14:07,855 - Installing model item: LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-06-21 18:14:07,877 - Successfully installed LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-06-21 18:14:07,885 - Installing model item: AccountTimeline (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountTimeline.smartpart.xml)
+INFO  2014-06-21 18:14:07,906 - Successfully installed AccountTimeline (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountTimeline.smartpart.xml)
+INFO  2014-06-21 18:14:07,913 - Installing model item: AccountSalesOrders (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountSalesOrders.smartpart.xml)
+INFO  2014-06-21 18:14:07,940 - Successfully installed AccountSalesOrders (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountSalesOrders.smartpart.xml)
+INFO  2014-06-21 18:14:07,947 - Installing model item: MergeRecords (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeRecords.smartpart.xml)
+INFO  2014-06-21 18:14:07,970 - Successfully installed MergeRecords (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeRecords.smartpart.xml)
+INFO  2014-06-21 18:14:07,977 - Installing model item: SearchResults (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\SearchResults.smartpart.xml)
+INFO  2014-06-21 18:14:08,001 - Successfully installed SearchResults (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\SearchResults.smartpart.xml)
+INFO  2014-06-21 18:14:08,008 - Installing model item: LinkResults (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\LinkResults.smartpart.xml)
+INFO  2014-06-21 18:14:08,025 - Successfully installed LinkResults (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\LinkResults.smartpart.xml)
+INFO  2014-06-21 18:14:08,033 - Installing model item: SelectOperatingAccount (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\SelectOperatingAccount.smartpart.xml)
+INFO  2014-06-21 18:14:08,048 - Successfully installed SelectOperatingAccount (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\SelectOperatingAccount.smartpart.xml)
+INFO  2014-06-21 18:14:08,056 - Installing model item: ICAccounting (\Portal\SlxClient\ChildPages\Account\SmartParts\ICAccounting.smartpart.xml)
+INFO  2014-06-21 18:14:08,076 - Successfully installed ICAccounting (\Portal\SlxClient\ChildPages\Account\SmartParts\ICAccounting.smartpart.xml)
+INFO  2014-06-21 18:14:08,083 - Installing model item: MergeChildren (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeChildren.smartpart.xml)
+INFO  2014-06-21 18:14:08,106 - Successfully installed MergeChildren (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeChildren.smartpart.xml)
+INFO  2014-06-21 18:14:08,114 - Installing model item: ICAccountExtendedDetails (\Portal\SlxClient\ChildPages\Account\SmartParts\ICAccountExtendedDetails.smartpart.xml)
+INFO  2014-06-21 18:14:08,137 - Successfully installed ICAccountExtendedDetails (\Portal\SlxClient\ChildPages\Account\SmartParts\ICAccountExtendedDetails.smartpart.xml)
+INFO  2014-06-21 18:14:08,145 - Installing model item: ICInvoices (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ICInvoices.smartpart.xml)
+INFO  2014-06-21 18:14:08,163 - Successfully installed ICInvoices (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ICInvoices.smartpart.xml)
+INFO  2014-06-21 18:14:08,171 - Installing model item: ICCustomerPayments (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ICCustomerPayments.smartpart.xml)
+INFO  2014-06-21 18:14:08,192 - Successfully installed ICCustomerPayments (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ICCustomerPayments.smartpart.xml)
+INFO  2014-06-21 18:14:08,200 - Installing model item: ICSalesOrders (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ICSalesOrders.smartpart.xml)
+INFO  2014-06-21 18:14:08,220 - Successfully installed ICSalesOrders (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ICSalesOrders.smartpart.xml)
+INFO  2014-06-21 18:14:08,228 - Installing model item: AccountLiteratureRequests (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountLiteratureRequests.smartpart.xml)
+INFO  2014-06-21 18:14:08,250 - Successfully installed AccountLiteratureRequests (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountLiteratureRequests.smartpart.xml)
+INFO  2014-06-21 18:14:08,258 - Installing model item: MergeAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeAddress.smartpart.xml)
+INFO  2014-06-21 18:14:08,280 - Successfully installed MergeAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeAddress.smartpart.xml)
+INFO  2014-06-21 18:14:08,288 - Installing model item: MergeContactAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeContactAddress.smartpart.xml)
+INFO  2014-06-21 18:14:08,309 - Successfully installed MergeContactAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeContactAddress.smartpart.xml)
+INFO  2014-06-21 18:14:08,331 - Installing model item: AddAccountAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddAccountAddress.smartpart.xml)
+INFO  2014-06-21 18:14:08,343 - Successfully installed AddAccountAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddAccountAddress.smartpart.xml)
+INFO  2014-06-21 18:14:08,350 - Installing model item: InsertAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\InsertAddress.smartpart.xml)
+INFO  2014-06-21 18:14:08,362 - Successfully installed InsertAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\InsertAddress.smartpart.xml)
+INFO  2014-06-21 18:14:08,370 - Installing model item: Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Account\Modules\cb2fecb920dd4ee7a3d08bd739020301.module.xml)
+INFO  2014-06-21 18:14:08,380 - Successfully installed Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Account\Modules\cb2fecb920dd4ee7a3d08bd739020301.module.xml)
+INFO  2014-06-21 18:14:08,388 - Installing model item: Sage.SalesLogix.Client.Account.Modules.AccountModule (\Portal\SlxClient\ChildPages\Account\Modules\Sage.SalesLogix.Client.Account.Modules.AccountModule.module.xml)
+INFO  2014-06-21 18:14:08,412 - Successfully installed Sage.SalesLogix.Client.Account.Modules.AccountModule (\Portal\SlxClient\ChildPages\Account\Modules\Sage.SalesLogix.Client.Account.Modules.AccountModule.module.xml)
+INFO  2014-06-21 18:14:08,420 - Saving context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-06-21 18:14:08,428 - Successfully saved Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-06-21 18:14:08,435 - Saving model item: Account Detail (\Portal\SlxClient\ChildPages\Account\Account.page.xml)
+INFO  2014-06-21 18:14:08,442 - Successfully saved Account Detail (\Portal\SlxClient\ChildPages\Account\Account.page.xml)
+INFO  2014-06-21 18:14:08,450 - Saving model item: AccountDetails (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountDetails.smartpart.xml)
+INFO  2014-06-21 18:14:08,457 - Successfully saved AccountDetails (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountDetails.smartpart.xml)
+INFO  2014-06-21 18:14:08,464 - Saving model item: AccountExtendedDetails (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountExtendedDetails.smartpart.xml)
+INFO  2014-06-21 18:14:08,472 - Successfully saved AccountExtendedDetails (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountExtendedDetails.smartpart.xml)
+INFO  2014-06-21 18:14:08,479 - Saving model item: AccountContacts (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountContacts.smartpart.xml)
+INFO  2014-06-21 18:14:08,487 - Successfully saved AccountContacts (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountContacts.smartpart.xml)
+INFO  2014-06-21 18:14:08,503 - Saving model item: AccountOpportunities (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountOpportunities.smartpart.xml)
+INFO  2014-06-21 18:14:08,510 - Successfully saved AccountOpportunities (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountOpportunities.smartpart.xml)
+INFO  2014-06-21 18:14:08,518 - Saving model item: ActivityList (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ActivityList.smartpart.xml)
+INFO  2014-06-21 18:14:08,525 - Successfully saved ActivityList (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ActivityList.smartpart.xml)
+INFO  2014-06-21 18:14:08,533 - Saving model item: AttachmentList (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AttachmentList.smartpart.xml)
+INFO  2014-06-21 18:14:08,541 - Successfully saved AttachmentList (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AttachmentList.smartpart.xml)
+INFO  2014-06-21 18:14:08,548 - Saving model item: AccountTickets (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountTickets.smartpart.xml)
+INFO  2014-06-21 18:14:08,555 - Successfully saved AccountTickets (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountTickets.smartpart.xml)
+INFO  2014-06-21 18:14:08,563 - Saving model item: AccountAddresses (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountAddresses.smartpart.xml)
+INFO  2014-06-21 18:14:08,570 - Successfully saved AccountAddresses (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountAddresses.smartpart.xml)
+INFO  2014-06-21 18:14:08,577 - Saving model item: AccountAssociations (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountAssociations.smartpart.xml)
+INFO  2014-06-21 18:14:08,585 - Successfully saved AccountAssociations (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountAssociations.smartpart.xml)
+INFO  2014-06-21 18:14:08,597 - Saving model item: AddEditAccountAssociation (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditAccountAssociation.smartpart.xml)
+INFO  2014-06-21 18:14:08,605 - Successfully saved AddEditAccountAssociation (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditAccountAssociation.smartpart.xml)
+INFO  2014-06-21 18:14:08,613 - Saving model item: NotesHistoryList (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\NotesHistoryList.smartpart.xml)
+INFO  2014-06-21 18:14:08,620 - Successfully saved NotesHistoryList (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\NotesHistoryList.smartpart.xml)
+INFO  2014-06-21 18:14:08,628 - Saving model item: AccountMarketing (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountMarketing.smartpart.xml)
+INFO  2014-06-21 18:14:08,636 - Successfully saved AccountMarketing (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountMarketing.smartpart.xml)
+INFO  2014-06-21 18:14:08,644 - Saving model item: AccountResponses (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountResponses.smartpart.xml)
+INFO  2014-06-21 18:14:08,651 - Successfully saved AccountResponses (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountResponses.smartpart.xml)
+INFO  2014-06-21 18:14:08,659 - Saving model item: UpdateAccountOptions (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\UpdateAccountOptions.smartpart.xml)
+INFO  2014-06-21 18:14:08,667 - Successfully saved UpdateAccountOptions (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\UpdateAccountOptions.smartpart.xml)
+INFO  2014-06-21 18:14:08,675 - Saving model item: AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-06-21 18:14:08,683 - Successfully saved AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-06-21 18:14:08,707 - Saving model item: AccountReseller (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountReseller.smartpart.xml)
+INFO  2014-06-21 18:14:08,715 - Successfully saved AccountReseller (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountReseller.smartpart.xml)
+INFO  2014-06-21 18:14:08,722 - Saving model item: AddEditTargetResponse (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditTargetResponse.smartpart.xml)
+INFO  2014-06-21 18:14:08,730 - Successfully saved AddEditTargetResponse (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditTargetResponse.smartpart.xml)
+INFO  2014-06-21 18:14:08,738 - Saving model item: AccountContracts (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountContracts.smartpart.xml)
+INFO  2014-06-21 18:14:08,745 - Successfully saved AccountContracts (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountContracts.smartpart.xml)
+INFO  2014-06-21 18:14:08,753 - Saving model item: AccountAssets (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountAssets.smartpart.xml)
+INFO  2014-06-21 18:14:08,761 - Successfully saved AccountAssets (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountAssets.smartpart.xml)
+INFO  2014-06-21 18:14:08,769 - Saving model item: AccountReturns (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountReturns.smartpart.xml)
+INFO  2014-06-21 18:14:08,777 - Successfully saved AccountReturns (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountReturns.smartpart.xml)
+INFO  2014-06-21 18:14:08,785 - Saving model item: AddEditAccountProduct (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditAccountProduct.smartpart.xml)
+INFO  2014-06-21 18:14:08,799 - Successfully saved AddEditAccountProduct (\Portal\SlxClient\ChildPages\Account\SmartParts\AddEditAccountProduct.smartpart.xml)
+INFO  2014-06-21 18:14:08,807 - Saving model item: LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-06-21 18:14:09,067 - Successfully saved LiveGroupViewer (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\LiveGroupViewer.smartpart.xml)
+INFO  2014-06-21 18:14:09,076 - Saving model item: AccountTimeline (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountTimeline.smartpart.xml)
+INFO  2014-06-21 18:14:09,083 - Successfully saved AccountTimeline (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountTimeline.smartpart.xml)
+INFO  2014-06-21 18:14:09,090 - Saving model item: AccountSalesOrders (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountSalesOrders.smartpart.xml)
+INFO  2014-06-21 18:14:09,098 - Successfully saved AccountSalesOrders (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountSalesOrders.smartpart.xml)
+INFO  2014-06-21 18:14:09,106 - Saving model item: MergeRecords (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeRecords.smartpart.xml)
+INFO  2014-06-21 18:14:09,114 - Successfully saved MergeRecords (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeRecords.smartpart.xml)
+INFO  2014-06-21 18:14:09,121 - Saving model item: SearchResults (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\SearchResults.smartpart.xml)
+INFO  2014-06-21 18:14:09,129 - Successfully saved SearchResults (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\SearchResults.smartpart.xml)
+INFO  2014-06-21 18:14:09,137 - Saving model item: LinkResults (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\LinkResults.smartpart.xml)
+INFO  2014-06-21 18:14:09,144 - Successfully saved LinkResults (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\LinkResults.smartpart.xml)
+INFO  2014-06-21 18:14:09,174 - Saving model item: SelectOperatingAccount (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\SelectOperatingAccount.smartpart.xml)
+INFO  2014-06-21 18:14:09,181 - Successfully saved SelectOperatingAccount (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\SelectOperatingAccount.smartpart.xml)
+INFO  2014-06-21 18:14:09,189 - Saving model item: ICAccounting (\Portal\SlxClient\ChildPages\Account\SmartParts\ICAccounting.smartpart.xml)
+INFO  2014-06-21 18:14:09,196 - Successfully saved ICAccounting (\Portal\SlxClient\ChildPages\Account\SmartParts\ICAccounting.smartpart.xml)
+INFO  2014-06-21 18:14:09,204 - Saving model item: MergeChildren (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeChildren.smartpart.xml)
+INFO  2014-06-21 18:14:09,212 - Successfully saved MergeChildren (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeChildren.smartpart.xml)
+INFO  2014-06-21 18:14:09,220 - Saving model item: ICAccountExtendedDetails (\Portal\SlxClient\ChildPages\Account\SmartParts\ICAccountExtendedDetails.smartpart.xml)
+INFO  2014-06-21 18:14:09,227 - Successfully saved ICAccountExtendedDetails (\Portal\SlxClient\ChildPages\Account\SmartParts\ICAccountExtendedDetails.smartpart.xml)
+INFO  2014-06-21 18:14:09,236 - Saving model item: ICInvoices (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ICInvoices.smartpart.xml)
+INFO  2014-06-21 18:14:09,243 - Successfully saved ICInvoices (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ICInvoices.smartpart.xml)
+INFO  2014-06-21 18:14:09,251 - Saving model item: ICCustomerPayments (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ICCustomerPayments.smartpart.xml)
+INFO  2014-06-21 18:14:09,259 - Successfully saved ICCustomerPayments (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ICCustomerPayments.smartpart.xml)
+INFO  2014-06-21 18:14:09,283 - Saving model item: ICSalesOrders (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ICSalesOrders.smartpart.xml)
+INFO  2014-06-21 18:14:09,291 - Successfully saved ICSalesOrders (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\ICSalesOrders.smartpart.xml)
+INFO  2014-06-21 18:14:09,299 - Saving model item: AccountLiteratureRequests (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountLiteratureRequests.smartpart.xml)
+INFO  2014-06-21 18:14:09,307 - Successfully saved AccountLiteratureRequests (\Portal\SlxClient\ChildPages\Account\SmartParts\AccountLiteratureRequests.smartpart.xml)
+INFO  2014-06-21 18:14:09,315 - Saving model item: MergeAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeAddress.smartpart.xml)
+INFO  2014-06-21 18:14:09,323 - Successfully saved MergeAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeAddress.smartpart.xml)
+INFO  2014-06-21 18:14:09,331 - Saving model item: MergeContactAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeContactAddress.smartpart.xml)
+INFO  2014-06-21 18:14:09,339 - Successfully saved MergeContactAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\MergeContactAddress.smartpart.xml)
+INFO  2014-06-21 18:14:09,347 - Saving model item: AddAccountAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddAccountAddress.smartpart.xml)
+INFO  2014-06-21 18:14:09,354 - Successfully saved AddAccountAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\AddAccountAddress.smartpart.xml)
+INFO  2014-06-21 18:14:09,362 - Saving model item: InsertAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\InsertAddress.smartpart.xml)
+INFO  2014-06-21 18:14:09,377 - Successfully saved InsertAddress (Custom) (\Portal\SlxClient\ChildPages\Account\SmartParts\InsertAddress.smartpart.xml)
+INFO  2014-06-21 18:14:09,385 - Saving model item: Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Account\Modules\cb2fecb920dd4ee7a3d08bd739020301.module.xml)
+INFO  2014-06-21 18:14:09,393 - Successfully saved Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule (\Portal\SlxClient\ChildPages\Account\Modules\cb2fecb920dd4ee7a3d08bd739020301.module.xml)
+INFO  2014-06-21 18:14:09,402 - Saving model item: Sage.SalesLogix.Client.Account.Modules.AccountModule (\Portal\SlxClient\ChildPages\Account\Modules\Sage.SalesLogix.Client.Account.Modules.AccountModule.module.xml)
+INFO  2014-06-21 18:14:09,411 - Successfully saved Sage.SalesLogix.Client.Account.Modules.AccountModule (\Portal\SlxClient\ChildPages\Account\Modules\Sage.SalesLogix.Client.Account.Modules.AccountModule.module.xml)
+INFO  2014-06-21 18:14:09,418 - Configuring installed items.
+INFO  2014-06-21 18:14:09,427 - Configuring Saleslogix Client...
+INFO  2014-06-21 18:14:09,437 - Configuring Account Detail...
+INFO  2014-06-21 18:14:09,691 - Configuring AccountDetails...
+INFO  2014-06-21 18:14:09,700 - Configuring AccountExtendedDetails...
+INFO  2014-06-21 18:14:09,709 - Configuring AccountContacts...
+INFO  2014-06-21 18:14:09,716 - Configuring AccountOpportunities...
+INFO  2014-06-21 18:14:09,724 - Configuring ActivityList (Custom)...
+INFO  2014-06-21 18:14:09,732 - Configuring AttachmentList (Custom)...
+INFO  2014-06-21 18:14:09,739 - Configuring AccountTickets...
+INFO  2014-06-21 18:14:09,747 - Configuring AccountAddresses (Custom)...
+INFO  2014-06-21 18:14:09,754 - Configuring AccountAssociations (Custom)...
+INFO  2014-06-21 18:14:09,762 - Configuring AddEditAccountAssociation (Custom)...
+INFO  2014-06-21 18:14:09,769 - Configuring NotesHistoryList (Custom)...
+INFO  2014-06-21 18:14:09,777 - Configuring AccountMarketing (Custom)...
+INFO  2014-06-21 18:14:09,785 - Configuring AccountResponses...
+INFO  2014-06-21 18:14:09,792 - Configuring UpdateAccountOptions (Custom)...
+INFO  2014-06-21 18:14:09,800 - Configuring AddEditAddress (Custom)...
+INFO  2014-06-21 18:14:09,808 - Configuring AccountReseller (Custom)...
+INFO  2014-06-21 18:14:09,829 - Configuring AddEditTargetResponse (Custom)...
+INFO  2014-06-21 18:14:09,837 - Configuring AccountContracts...
+INFO  2014-06-21 18:14:09,845 - Configuring AccountAssets...
+INFO  2014-06-21 18:14:09,852 - Configuring AccountReturns...
+INFO  2014-06-21 18:14:09,861 - Configuring AddEditAccountProduct...
+INFO  2014-06-21 18:14:09,868 - Configuring LiveGroupViewer (Custom)...
+INFO  2014-06-21 18:14:09,876 - Configuring AccountTimeline...
+INFO  2014-06-21 18:14:09,883 - Configuring AccountSalesOrders...
+INFO  2014-06-21 18:14:09,891 - Configuring MergeRecords (Custom)...
+INFO  2014-06-21 18:14:09,899 - Configuring SearchResults (Custom)...
+INFO  2014-06-21 18:14:09,923 - Configuring LinkResults (Custom)...
+INFO  2014-06-21 18:14:09,931 - Configuring SelectOperatingAccount (Custom)...
+INFO  2014-06-21 18:14:09,940 - Configuring ICAccounting...
+INFO  2014-06-21 18:14:09,947 - Configuring MergeChildren (Custom)...
+INFO  2014-06-21 18:14:09,955 - Configuring ICAccountExtendedDetails...
+INFO  2014-06-21 18:14:09,962 - Configuring ICInvoices (Custom)...
+INFO  2014-06-21 18:14:09,970 - Configuring ICCustomerPayments (Custom)...
+INFO  2014-06-21 18:14:09,978 - Configuring ICSalesOrders (Custom)...
+INFO  2014-06-21 18:14:09,987 - Configuring AccountLiteratureRequests...
+INFO  2014-06-21 18:14:09,995 - Configuring MergeAddress (Custom)...
+INFO  2014-06-21 18:14:10,003 - Configuring MergeContactAddress (Custom)...
+INFO  2014-06-21 18:14:10,016 - Configuring AddAccountAddress (Custom)...
+INFO  2014-06-21 18:14:10,024 - Configuring InsertAddress (Custom)...
+INFO  2014-06-21 18:14:10,032 - Configuring Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule...
+INFO  2014-06-21 18:14:10,043 - Configuring Sage.SalesLogix.Client.Account.Modules.AccountModule...
+INFO  2014-06-21 18:14:10,051 - Performing pre-commit to target project.
+INFO  2014-06-21 18:14:10,063 - Committing items to target project...
+INFO  2014-06-21 18:14:10,352 - Committing transactions...
+INFO  2014-06-21 18:14:10,691 - Copying bundle manifest to project.
+INFO  2014-06-21 18:14:10,709 - Install complete.

@@ -1,5 +1,5 @@
 /*
- * This metadata is used by the Sage platform.  Do not remove.
+ * This metadata is used by the Saleslogix platform.  Do not remove.
 <snippetHeader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="d44aa26d-ea57-49a7-a1c5-fc400d1ab404">
  <assembly>Sage.SnippetLibrary.CSharp</assembly>
  <name>lueCompetitorLoss_OnChange</name>

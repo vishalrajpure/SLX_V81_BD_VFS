@@ -8,4 +8,5 @@
   <Item Id="b1ed4f04-0e99-419d-a6ab-10fb99d37c16">MasterItemQualifierSMpincode.navitem.xml</Item>
   <Item Id="eace27bb-976e-4958-8909-1509f8db6918">MasterItemLegalMaster.navitem.xml</Item>
   <Item Id="a74d91cf-8225-4f42-a223-2920248cf893">MasterItemSegmentMaster.navitem.xml</Item>
+  <Item Id="b6def3d6-b897-4d53-b89b-dcd9cc9cca30">MasterItemQualificationBranch.navitem.xml</Item>
 </ModelItems>

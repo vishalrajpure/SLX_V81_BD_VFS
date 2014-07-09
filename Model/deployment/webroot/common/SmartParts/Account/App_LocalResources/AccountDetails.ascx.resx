@@ -165,7 +165,7 @@
   <data name="Status.Caption" xml:space="preserve">
     <value>Status:</value>
   </data>
-  <data name="Industry.Caption" xml:space="preserve">
+  <data name="ddlMKTSG.Caption" xml:space="preserve">
     <value>Industry:</value>
   </data>
   <data name="WebAddress.Caption" xml:space="preserve">
@@ -204,8 +204,8 @@
   <data name="txtLegalName.Caption" xml:space="preserve">
     <value>Legal Name:</value>
   </data>
-  <data name="lkpmktsegment.Caption" xml:space="preserve">
-    <value>MKT Segment:</value>
+  <data name="ddlMKTSG.DependentLookups..PropertyDisplay" xml:space="preserve">
+    <value />
   </data>
   <data name="ccAddress.Caption" xml:space="preserve">
     <value>Address:</value>
@@ -213,10 +213,10 @@
   <data name="btnAddress.Caption" xml:space="preserve">
     <value>Address</value>
   </data>
-  <data name="lkpmktsegment.LookupProperties.Segmentname.PropertyHeader" xml:space="preserve">
-    <value>Segmentname</value>
+  <data name="ddlMKTSG.DependentLookups.Cmktsgdesc.PropertyDisplay" xml:space="preserve">
+    <value>MKT Segment:</value>
   </data>
-  <data name="lkpmktsegment.LookupProperties.Industryid.PropertyHeader" xml:space="preserve">
-    <value>Industryid</value>
+  <data name="ddlMKTSG.DependentLookups.Cindsgdesc.PropertyDisplay" xml:space="preserve">
+    <value>Industry:</value>
   </data>
 </root>

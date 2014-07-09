@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="167c3c2e-bd5f-4c1e-941d-f4dacc1364a7" lastModifiedUtc="2014-06-21T10:03:06.7441372Z" name="SetOppProductDefaults" methodType="Rule" actionType="None" returnMode="None">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmEntityMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="7aa60d89-c195-4895-9a8b-c1392967cf92" paramName="product" sequence="0" paramType="IProduct" />
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets>
+    <methodTarget xsi:type="OrmMethodTargetSnippet" id="c3b731ab-b522-4391-9a4f-ca4614f64386" lastModifiedUtc="2014-06-21T10:03:02.0978714Z" targetType="Sage.BusinessRules.CodeSnippets.OpportunityProductBusinessRules, Sage.SnippetLibrary.CSharp" targetMethod="SetOppProductDefaultsStep" active="true" codeSnippetId="b648bc27-fe4b-498b-9f87-25c022fbbc6b">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmMethodTargetSnippet" />
+      </ExtendedPropertiesCollection>
+    </methodTarget>
+  </methodTargets>
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

@@ -1632,4 +1632,18 @@
  <ref id="6ff17924-7909-4326-8049-d1c79295eb39" url="\Entity Model\Saleslogix Application Entities\Vwsegmentmst\QuickForms\SegmentDetails.main.quickform.xml" />
  <ref id="53f5b8c1-f77c-4759-ad64-16875a7b599d" url="\Entity Model\SalesLogix Application Entities\Opportunity\QuickForms\OpportunityCompetitors.main.quickform.xml" />
  <ref id="e1238a1c-8159-4110-8d43-0298e2a5807d" url="\Entity Model\SalesLogix Application Entities\Opportunity\QuickForms\InsertOpportunity.main.quickform.xml" />
+ <ref id="2b31e85d-6b22-4a99-894d-24e123304356" url="\Entity Model\Saleslogix Application Entities\Lead\QuickForms\InsertLead.main.quickform.xml" />
+ <ref id="4b822f2c-d1a4-403c-b4a9-59fd1a917008" url="\Bundle Manifests\Error Bundle\Error Bundle.manifest.xml" />
+ <ref id="fc85cd74-f321-4f99-99be-5b953de1637d" url="\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\Sage.SnippetLibrary.CSharp.@.fc85cd74-f321-4f99-99be-5b953de1637d.codesnippet.cs" />
+ <ref id="44d21768-aac3-4725-8a4e-fac151da1fed" url="\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityContacts_New.lueAssociateContacts_OnChange.method.xml" />
+ <ref id="880093f1-8edf-4f73-b387-f7c2281a80a2" url="\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityProducts_New.lueAssociateProduct_OnChange.method.xml" />
+ <ref id="6c3b41de-a718-4b2a-b0b5-612941dad3a8" url="\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\DroppedFutureOpp.btnCancel_OnClick.method.xml" />
+ <ref id="97173bfd-3a42-41bb-8765-103b006533e4" url="\Entity Model\Saleslogix Application Entities\Indsgmst\OnBeforeInsert.method.xml" />
+ <ref id="dfad03fa-fede-4467-a8a9-c25aee59a518" url="\Entity Model\Saleslogix Application Entities\Indsgmst\OnAfterInsert.method.xml" />
+ <ref id="92a79ce8-c883-4e3e-b233-e1045cff7d5d" url="\Entity Model\Saleslogix Application Entities\Indsgmst\OnBeforeUpdate.method.xml" />
+ <ref id="bcc0ba2c-bf8b-4f95-9828-467a51c431f5" url="\Entity Model\Saleslogix Application Entities\Indsgmst\OnAfterUpdate.method.xml" />
+ <ref id="3a1e2e4d-bca6-46fb-99aa-e3f8f0ce7b14" url="\Entity Model\Saleslogix Application Entities\Indsgmst\OnBeforeDelete.method.xml" />
+ <ref id="bedc1280-6943-4e83-9877-501c10a3faf3" url="\Entity Model\Saleslogix Application Entities\Indsgmst\OnAfterDelete.method.xml" />
+ <ref id="e621370f-4889-4bf9-9d9d-fa25da8e2929" url="\Entity Model\Saleslogix Application Entities\Indsgmst\OnCreate.method.xml" />
+ <ref id="ba3e6813-21a1-4cea-b48a-0cb81f7c3ed7" url="\Entity Model\Saleslogix Application Entities\Indsgmst\Indsgmst.INDSGMST.entity.xml" />
 </modelItemIndex>

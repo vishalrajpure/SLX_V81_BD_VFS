@@ -16,19 +16,11 @@
             <col width="50%" />
      <tr>
             <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="luePincode_lbl" AssociatedControlID="luePincode" runat="server" Text="<%$ resources: luePincode.Caption %>" ></asp:Label>
- </div>   
-  <div   class="textcontrol lookup"   >
-<SalesLogix:LookupControl runat="server" ID="luePincode" LookupEntityName="Vwpincodemaster" LookupEntityTypeName="Sage.Entity.Interfaces.IVwpincodemaster, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String" Required="true"  >
-<LookupProperties>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luePincode.LookupProperties.Carea.PropertyHeader %>" PropertyName="Carea" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luePincode.LookupProperties.Cpincode.PropertyHeader %>" PropertyName="Cpincode" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: luePincode.LookupProperties.Cpindesc.PropertyHeader %>" PropertyName="Cpindesc" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-</LookupProperties>
-<LookupPreFilters>
-</LookupPreFilters>
-</SalesLogix:LookupControl>
+ <div class=" lbl alignleft" >
+   <asp:Label ID="txtbranch_lbl" AssociatedControlID="txtbranch" runat="server" Text="<%$ resources: txtbranch.Caption %>" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="txtbranch" ReadOnly="true"  dojoType="Sage.UI.Controls.TextBox" MaxLength="12"  />
   </div>
 
       </td>
@@ -57,25 +49,7 @@
                 <td></td>
       </tr>
 <tr>
-            <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="lueSaleManager_lbl" AssociatedControlID="lueSaleManager" runat="server" Text="<%$ resources: lueSaleManager.Caption %>" ></asp:Label>
- </div>   
-  <div   class="textcontrol lookup"   >
-<SalesLogix:LookupControl runat="server" ID="lueSaleManager" LookupEntityName="UserInfo" LookupEntityTypeName="Sage.Entity.Interfaces.IUserInfo, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String" Required="true"  >
-<LookupProperties>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueSaleManager.LookupProperties.FirstName.PropertyHeader %>" PropertyName="FirstName" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueSaleManager.LookupProperties.LastName.PropertyHeader %>" PropertyName="LastName" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueSaleManager.LookupProperties.Department.PropertyHeader %>" PropertyName="Department" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueSaleManager.LookupProperties.Division.PropertyHeader %>" PropertyName="Division" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueSaleManager.LookupProperties.Email.PropertyHeader %>" PropertyName="Email" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
-</LookupProperties>
-<LookupPreFilters>
-</LookupPreFilters>
-</SalesLogix:LookupControl>
-  </div>
-
-      </td>
+            <td></td>
                 <td></td>
       </tr>
 </table>
@@ -83,13 +57,8 @@
 
 
  <SalesLogix:SmartPartToolsContainer runat="server" ID="QualifierSMpincode_RTools" ToolbarLocation="right">
-   <SalesLogix:GroupNavigator runat="server" ID="grupnavqualifierBM" ></SalesLogix:GroupNavigator>
     <asp:ImageButton runat="server" ID="QFButton"
  ToolTip="<%$ resources: QFButton.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_16x16"  />
- 
-    <asp:ImageButton runat="server" ID="btndelete"
- ToolTip="<%$ resources: btndelete.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Delete_16x16" 
- />
  
   <SalesLogix:PageLink ID="btnEditForm" CssClass="adminEditFormButton" runat="server" LinkType="RelativePath" ToolTip="<%$ resources: Portal, EditForm_ToolTip %>" NavigateUrl="~/FormManager.aspx?entityid=QualifierSMpincode&modeid=Detail" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=form_manager_16x16"></SalesLogix:PageLink>
  
@@ -117,93 +86,58 @@ public override Type EntityType
  
 
 protected override void OnAddEntityBindings() {
-                 // luePincode.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding luePincodeLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("PincodeId", luePincode, "LookupResultValue");
-        BindingSource.Bindings.Add(luePincodeLookupResultValueBinding);
+                 // txtbranch.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtbranchTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Branch", txtbranch, "Text");
+        BindingSource.Bindings.Add(txtbranchTextBinding);
                     // luequalifier.LookupResultValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding luequalifierLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("QualifierId", luequalifier, "LookupResultValue");
         BindingSource.Bindings.Add(luequalifierLookupResultValueBinding);
-                    // lueSaleManager.LookupResultValue Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding lueSaleManagerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("SalesManagerId", lueSaleManager, "LookupResultValue");
-        BindingSource.Bindings.Add(lueSaleManagerLookupResultValueBinding);
     
    
-            }
-                     
-protected void QFButton_ClickAction(object sender, EventArgs e) {
-
-Sage.Entity.Interfaces.IQualifierAndSMpincode Objqualifier = BindingSource.Current as Sage.Entity.Interfaces.IQualifierAndSMpincode;
-
-if (Objqualifier == null)
-{
-    Objqualifier = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.IQualifierAndSMpincode>();
-}
-if (Objqualifier != null)
-{
-    if (Convert.ToString(luePincode.LookupResultValue) == "")
-    {
-        DialogService.ShowMessage("Please Select Pincode");
-        return;
     }
+              
+protected void QFButton_ClickAction(object sender, EventArgs e) {
+Sage.Entity.Interfaces.IQualifierAndSMpincode Objqualifier = BindingSource.Current as Sage.Entity.Interfaces.IQualifierAndSMpincode;
+if (Objqualifier != null)
+{    
     if (Convert.ToString(luequalifier.LookupResultValue) == "")
     {
         DialogService.ShowMessage("Please Select Qualifier");
         return;
-    }
-    if (Convert.ToString(lueSaleManager.LookupResultValue) == "")
-    {
-        DialogService.ShowMessage("Please Select Branch Manager");
-        return;
-    }
+    } 
     else
     {
-        Objqualifier.PincodeId = luePincode.LookupResultValue.ToString(); 		
-		Sage.Entity.Interfaces.IVwpincodemaster objpin = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IVwpincodemaster>(Objqualifier.PincodeId);
-		if(objpin!=null)
-		{
-			Objqualifier.PinCode = objpin.Cpincode;
-			//Objqualifier.PincodeId = objpin.Pincdmstid;
-		}		
+        Objqualifier.Branch = txtbranch.Text;			
         Objqualifier.QualifierId = luequalifier.LookupResultValue.ToString();
 		Sage.Entity.Interfaces.IUserInfo objuser = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUserInfo>(Objqualifier.QualifierId);
 		if(objuser!=null)
 		{
 			Objqualifier.QualifierName = objuser.UserName;
 		}
-        Objqualifier.SalesManagerId = lueSaleManager.LookupResultValue.ToString();
-		Sage.Entity.Interfaces.IUserInfo objuser1 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUserInfo>(Objqualifier.SalesManagerId);
-		if(objuser1!=null)
-		{
-			Objqualifier.SalesManagerName = objuser1.UserName;
-		}
         Objqualifier.Save();
-        Response.Redirect(string.Format("QualifierAndSMpincode.aspx?entityId={0}", (Objqualifier.Id.ToString())));            
+        Response.Redirect("QualifierBranchMapping.aspx");            
     }
 }
 
-}
-protected void btndelete_ClickAction(object sender, EventArgs e) {
-  Sage.Platform.Orm.Interfaces.IPersistentEntity persistentEntity = this.BindingSource.Current as Sage.Platform.Orm.Interfaces.IPersistentEntity;
-  if (persistentEntity != null) {
-    persistentEntity.Delete();
-  }
-
-  
 }
 
 protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
  QFButton.Click += new ImageClickEventHandler(QFButton_ClickAction);
-btndelete.Click += new ImageClickEventHandler(btndelete_ClickAction);
 
 
 }
 
 protected void quickformload0(object sender, EventArgs e) {
-luePincode_lbl.ForeColor = System.Drawing.Color.Red;
+Sage.Entity.Interfaces.IQualifierAndSMpincode Objqualifier = this.BindingSource.Current as Sage.Entity.Interfaces.IQualifierAndSMpincode;
+if(Objqualifier != null)
+{
+	txtbranch.Text =  Objqualifier.Branch;	
+}
+txtbranch_lbl.ForeColor = System.Drawing.Color.Red;
 luequalifier_lbl.ForeColor = System.Drawing.Color.Red;
-lueSaleManager_lbl.ForeColor = System.Drawing.Color.Red;
+
 
 }
 private bool _runActivating;
@@ -222,8 +156,6 @@ Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.Entit
         if (epage != null)
             _runActivating = (epage.IsNewEntity || _runActivating);
 if (_runActivating) DoActivating();
-btndelete.OnClientClick = string.Format("return confirm('{0}');", Sage.Platform.WebPortal.PortalUtil.JavaScriptEncode(GetLocalResourceObject("btndelete.ActionConfirmationMessage").ToString()));
-
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
 {
 btnEditForm.Visible = false;
@@ -282,35 +214,20 @@ public class QualifierSMpincodeAdapter : Sage.Platform.WebPortal.Adapters.Entity
     public QualifierSMpincodeAdapter(Sage.Platform.WebPortal.SmartParts.EntityBoundSmartPartInfoProvider smartPart)
         : base(smartPart) {}
 
-    private Sage.Platform.Controls.ILookupControl _luePincode;
-    public  Sage.Platform.Controls.ILookupControl luePincode
+    private Sage.Platform.Controls.ITextBoxControl _txtbranch;
+    public  Sage.Platform.Controls.ITextBoxControl txtbranch
     {
-        get { return FindControl(ref _luePincode, "luePincode"); }
+        get { return FindControl(ref _txtbranch, "txtbranch"); }
     }
     private Sage.Platform.Controls.ILookupControl _luequalifier;
     public  Sage.Platform.Controls.ILookupControl luequalifier
     {
         get { return FindControl(ref _luequalifier, "luequalifier"); }
     }
-    private Sage.Platform.Controls.ILookupControl _lueSaleManager;
-    public  Sage.Platform.Controls.ILookupControl lueSaleManager
-    {
-        get { return FindControl(ref _lueSaleManager, "lueSaleManager"); }
-    }
-    private Sage.Platform.Controls.IGroupNavigatorControl _grupnavqualifierBM;
-    public  Sage.Platform.Controls.IGroupNavigatorControl grupnavqualifierBM
-    {
-        get { return FindControl(ref _grupnavqualifierBM, "grupnavqualifierBM"); }
-    }
     private Sage.Platform.Controls.IButtonControl _QFButton;
     public  Sage.Platform.Controls.IButtonControl QFButton
     {
         get { return FindControl(ref _QFButton, "QFButton"); }
-    }
-    private Sage.Platform.Controls.IButtonControl _btndelete;
-    public  Sage.Platform.Controls.IButtonControl btndelete
-    {
-        get { return FindControl(ref _btndelete, "btndelete"); }
     }
 
 }

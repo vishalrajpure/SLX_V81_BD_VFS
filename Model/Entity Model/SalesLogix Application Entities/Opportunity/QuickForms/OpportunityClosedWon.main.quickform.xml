@@ -7,7 +7,7 @@
       <ResourceKey>c61c649f-3ac7-4141-83d5-a3a361efaec9</ResourceKey>
       <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
         <CSharpSnippetActionItem>
-          <MethodName />
+          <MethodName>quickformload0</MethodName>
           <CSharpCodeSnippet> if (DialogService.DialogParameters.Count &gt; 0 &amp;&amp; (DialogService.DialogParameters.ContainsKey("ExchangeRateType")))
  {
      Sage.Platform.Controls.ExchangeRateTypeEnum rateType = (Sage.Platform.Controls.ExchangeRateTypeEnum)Enum.Parse(typeof(Sage.Platform.Controls.ExchangeRateTypeEnum), DialogService.DialogParameters["ExchangeRateType"].ToString());
@@ -214,7 +214,8 @@
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXLookup>
         <Column>0</Column>
-        <Row>4</Row>
+        <Row>5</Row>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>lueCompetitorReplaced</ControlId>
@@ -232,7 +233,7 @@
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme>buttonAlignRight</StyleScheme>
         <OnChangeAction>
-          <ResourceKey>5cf9ac66-cdf1-4b94-b5e7-a79ec2488b06</ResourceKey>
+          <ResourceKey>lueCompetitorReplaced</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CodeSnippetActionItem, Sage.Platform.QuickForms">
             <CodeSnippetActionItem methodId="da8e6de2-a18d-4034-a34b-23b98f094d3f">
               <MethodName />
@@ -304,7 +305,8 @@
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFDataGrid, Sage.SalesLogix.QuickForms.QFControls">
       <QFDataGrid>
         <Column>0</Column>
-        <Row>5</Row>
+        <Row>6</Row>
+        <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>grdOppCompetitors</ControlId>
@@ -373,7 +375,7 @@
     <Control typeName="Sage.Platform.QuickForms.QFControls.QFControlsList, Sage.Platform.QuickForms.QFControls">
       <QFControlsList>
         <Column>0</Column>
-        <Row>6</Row>
+        <Row>7</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
         <ControlId>QFControlsList</ControlId>
@@ -408,10 +410,12 @@
                       <Object>Opportunity</Object>
                       <Parameters />
                       <PassResultsToNextAction>True</PassResultsToNextAction>
-                      <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-                        <NoActionActionItem>
-                          <MethodName />
-                        </NoActionActionItem>
+                      <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+                        <CSharpSnippetActionItem>
+                          <MethodName>cmdOK_ClickActionBRC</MethodName>
+                          <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+System.Web.HttpContext.Current.Response.Redirect(string.Format("Opportunity.aspx?modeid=Detail&amp;entityid=" + opp.Id.ToString()));</CSharpCodeSnippet>
+                        </CSharpSnippetActionItem>
                       </OnComplete>
                     </BusinessRuleActionItem>
                   </Action>
@@ -443,7 +447,7 @@
                   <ResourceKey>cmdCancel</ResourceKey>
                   <Action typeName="Sage.Platform.QuickForms.ActionItems.CodeSnippetActionItem, Sage.Platform.QuickForms">
                     <CodeSnippetActionItem methodId="0ddaf688-e306-4cae-8934-e912b7a3ed3a">
-                      <MethodName />
+                      <MethodName>cmdCancel_ClickAction</MethodName>
                     </CodeSnippetActionItem>
                   </Action>
                   <IsDialogCloseAction>False</IsDialogCloseAction>
@@ -517,6 +521,10 @@
     </ColumnStyle>
   </Columns>
   <Rows>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
     <RowStyle>
       <SizeType>Absolute</SizeType>
       <Height>35</Height>

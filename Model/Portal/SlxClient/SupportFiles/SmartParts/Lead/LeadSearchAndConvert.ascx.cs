@@ -564,11 +564,11 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
         if (Visible)
         {
             RegisterClientScript();
-			if (chkCreateOpportunity.Checked == false)
+			/*if (chkCreateOpportunity.Checked == false)
             {
                 lblSalesprocess.Visible = false;
                 ddLSalesProcess.Visible = false;
-            }
+            }*/
         }
     }
 
@@ -910,8 +910,8 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
                 return;
             }
 		}
-		if (ddLSalesProcess.SelectedIndex > 0 || chkCreateOpportunity.Checked == false)
-        {
+		//if (ddLSalesProcess.SelectedIndex > 0 || chkCreateOpportunity.Checked == false)
+        //{
             var keyGen = new SalesLogixEntityKeyGenerator();
             string key = keyGen.GenerateIds(typeof(IContact), 1).FirstOrDefault();
             IContact contact = EntityFactory.Create<IContact>();
@@ -924,7 +924,23 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
             lead.ConvertLeadAddressToContactAddress(contact);
             contact.SaveContactAccount(account);
             IOpportunity opportunity = CreateOpportunity(createOpportunity, contact, lead);
+            IUser usr = lead.AccountManager;
+            IOwner own = lead.Owner;
+            if (lkpBranchManager.LookupResultValue != null)
+            {
+                usr = (IUser)lkpBranchManager.LookupResultValue;//Sage.Platform.EntityFactory.GetById<IUser>(lkpBranchManager.LookupResultValue.ToString());
 
+                Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+                System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+                System.Data.OleDb.OleDbDataAdapter dataAdapterObj3 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + usr.Id.ToString() + "' and name ='INSERTSECCODEID'", conObj);
+                System.Data.DataTable dt3 = new System.Data.DataTable();
+                dataAdapterObj3.Fill(dt3);
+                if (dt3.Rows.Count > 0)
+                {
+                    Sage.Entity.Interfaces.IOwner objowner2 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt3.Rows[0][0].ToString());
+                    own = objowner2;
+                }
+            }
             AddAttachmentsToLead(lead, account, contact, opportunity);
             lead.AddHistoryAndQualificationRecords(contact, account, opportunity, false);
             lead.AddActivities(contact, account, opportunity);
@@ -932,7 +948,15 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
 				account.Type = "Prospect";
 			else
 				account.Type = "LEAD";
+			account.LegalName = lead.LegalName;			
+			account.Industry = lead.Industry;
+			account.MktSegment = lead.MKTSegment;
+            account.AccountManager = usr;
+            account.Owner = own;
+            contact.Owner = own;
+            contact.AccountManager = usr;            
             account.Status = "Active";
+            contact.Save();
             account.Save();			
 			
             IList<ICampaignTarget> campaignTargets = EntityFactory.GetRepository<ICampaignTarget>().FindByProperty("EntityId", lead.Id.ToString());
@@ -956,6 +980,9 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
             if (opportunity != null)
             {
                 opportunity.Status = "Active";
+				opportunity.BusinessPotential = lead.BussinessPortential;
+                opportunity.AccountManager = usr;
+                opportunity.Owner = own;
                 foreach (ILeadProduct prd in lead.Products)
                 {
                     IOpportunityProduct oppr = Sage.Platform.EntityFactory.Create<IOpportunityProduct>();
@@ -963,6 +990,31 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
                     oppr.Opportunity = opportunity;
                     oppr.Save();
                     opportunity.Products.Add(oppr);
+                }
+				foreach (ILeadCompetitor prd in lead.Competitors)
+				{
+				    IOpportunityCompetitor oppr = Sage.Platform.EntityFactory.Create<IOpportunityCompetitor>();
+				    oppr.Competitor = prd.Competitor;
+				    oppr.Opportunity = opportunity;
+				    oppr.Save();
+				    opportunity.Competitors.Add(oppr);
+				}
+                if (lkpBranchManager.LookupResultValue != null)
+                {
+                    usr = (IUser)lkpBranchManager.LookupResultValue;//Sage.Platform.EntityFactory.GetById<IUser>(lkpBranchManager.LookupResultValue.ToString());
+                    account.AccountManager = usr;
+                    contact.AccountManager = usr;
+                    Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+                    System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+                    System.Data.OleDb.OleDbDataAdapter dataAdapterObj3 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + usr.Id.ToString() + "' and name ='INSERTSECCODEID'", conObj);
+                    System.Data.DataTable dt3 = new System.Data.DataTable();
+                    dataAdapterObj3.Fill(dt3);
+                    if (dt3.Rows.Count > 0)
+                    {
+                        Sage.Entity.Interfaces.IOwner objowner2 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IOwner>((object)dt3.Rows[0][0].ToString());
+                        account.Owner = objowner2;
+                        contact.Owner = objowner2;
+                    }
                 }
                 opportunity.Save();
                 url = string.Format("Opportunity.aspx?entityid={0}", opportunity.Id);
@@ -975,12 +1027,12 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
                 opportunity != null
                     ? string.Format("Opportunity.aspx?entityid={0}", opportunity.Id)
                     : string.Format("Contact.aspx?entityId={0}", contact.Id), false);
-        }
+        /*}
         else
         {
             lblmsg.Text = "Please Select SalesProcess,Then Continue Convert Opportunity";
             //throw new Sage.Platform.Application.ValidationException("The call to LeadSearchAndConvert.cmdConvert_Click() failed");
-        }
+        }*/
         
     }
 
@@ -994,8 +1046,8 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
             opportunity.Description = String.Format(GetLocalResourceObject("Opportunity_Description").ToString(), lead.LeadNameLastFirst);
             opportunity.Owner = contact.Account.Owner;
             opportunity.AccountManager = contact.Account.AccountManager;
-			string pluginID = "";
-            pluginID = ddLSalesProcess.SelectedValue.ToString();
+			/*string pluginID = "";
+            pluginID = ddLSalesProcess.SelectedValue.ToString();*/
             //assign opp contact based on opportunity default options
             string oppContactOption =
                 BusinessRuleHelper.GetUserOption(BusinessRuleEnums.UserOptionType.String, "grpContact",
@@ -1009,8 +1061,8 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
                 opportunity.Contacts.Add(opportunityContact);
             }
             opportunity.Save();
-			Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.ISalesProcesses>();
-            salesProcess.InitSalesProcess(pluginID, opportunity.Id.ToString());
+			/*Sage.Entity.Interfaces.ISalesProcesses salesProcess = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.ISalesProcesses>();
+            salesProcess.InitSalesProcess(pluginID, opportunity.Id.ToString());*/
         }
         return opportunity;
     }
@@ -1333,7 +1385,7 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
             log.Error("The call to LeadSearchAndConvert.SetResolveData() failed", ex);
         }
     }
-	protected void chkCreateOpportunity_CheckedChanged(object sender, EventArgs e)
+	/*protected void chkCreateOpportunity_CheckedChanged(object sender, EventArgs e)
     {
         if (chkCreateOpportunity.Checked == true)
         {
@@ -1347,7 +1399,7 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
 
             item.Text = "--None--";
             item.Value = "0";
-            ddLSalesProcess.Items.Add(item);
+            .Items.Add(item);
             foreach (Plugin plugin in pluginList)
             {
               	item = new ListItem();
@@ -1362,5 +1414,5 @@ public partial class LeadSearchAndConvert : EntityBoundSmartPartInfoProvider
             ddLSalesProcess.Visible = false;
             lblSalesprocess.Visible = false;
         }
-    }
+    }*/
 }

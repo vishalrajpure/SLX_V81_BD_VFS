@@ -135,9 +135,6 @@
   <data name="pklType.Caption" xml:space="preserve">
     <value>Tipo:</value>
   </data>
-  <data name="Industry.Caption" xml:space="preserve">
-    <value>Settore:</value>
-  </data>
   <data name="MainPhone.Caption" xml:space="preserve">
     <value>Tel.Principale:</value>
   </data>

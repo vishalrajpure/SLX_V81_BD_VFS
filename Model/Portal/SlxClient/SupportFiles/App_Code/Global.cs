@@ -1,4 +1,4 @@
-﻿#define EnableDynamicFormSupport
+//#define EnableDynamicFormSupport
 //#define EnableNHibernateProfiler
 
 using System;
@@ -645,6 +645,18 @@ public class Global : HttpApplication
         }
     }
 
+    public static string ADDRESSID="";
+    public static string ADDRESS_ID
+    {
+        get
+        {
+            return ADDRESSID;
+        }
+        set
+        {
+            ADDRESSID = value;
+        }
+    }
     // ReSharper disable UnusedMember.Global
 
     /// <summary>

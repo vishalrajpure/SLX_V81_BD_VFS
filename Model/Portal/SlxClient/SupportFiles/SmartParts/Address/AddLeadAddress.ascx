@@ -5,7 +5,46 @@
 <%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls.Lookup" TagPrefix="SalesLogix" %>
 <%@ Register Assembly="Sage.SalesLogix.HighLevelTypes" Namespace="Sage.SalesLogix.HighLevelTypes" TagPrefix="SalesLogix" %>
 <a href="App_LocalResources/AddAccountAddress.ascx.resx"></a>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
+<script lang="javascript" type="text/javascript">
+
+    function Get() {
+        // alert("1");
+        var geocoder = new google.maps.Geocoder();
+        //alert(geocoder);
+        var df = true;
+        var address = document.getElementById('MainContent_AddLeadAddress_txtAddress1').value + ',' + document.getElementById('MainContent_AddLeadAddress_txtAddress2').value + ',' + document.getElementById('MainContent_AddLeadAddress_pklCity_Text').value + ',' + document.getElementById('MainContent_AddLeadAddress_pklState_Text').value + ',' + document.getElementById('MainContent_AddLeadAddress_pklCountry_Text').value + ',' + document.getElementById('MainContent_AddLeadAddress_txtPostalCode').value;
+        var add1 = document.getElementById('MainContent_AddLeadAddress_txtAddress1').value;
+        var pin = document.getElementById('MainContent_AddLeadAddress_txtPostalCode').value;
+        if (add1 == '') {
+            alert('Please Fill Required fields');
+            return false;
+        }
+        else if (pin == '') {
+            alert('Please Fill Required fields');
+            return false;
+        }
+
+        // alert(address);
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var latitude = results[0].geometry.location.lat();
+                var longitude = results[0].geometry.location.lng();
+                document.cookie = "Latitude1=" + latitude;
+                document.cookie = "Logitute1=" + longitude;
+
+                document.getElementById('MainContent_AddLeadAddress_btnSave').click();
+                //document.getElementById('MainContent_AccountDetails_Address').value = address;
+                df = true;
+            } else {
+                alert("No Lat/Long match found for specified Address, Please Correct the address.")
+                df = false;
+            }
+        });
+        return df;
+    }
+</script>
 <div style="display: none">
     <asp:Panel ID="AddressForm_LTools" runat="server"></asp:Panel>
     <asp:Panel ID="AddressForm_CTools" runat="server"></asp:Panel>
@@ -151,11 +190,14 @@
     <table style"width: 100%">
         <tr>
             <td>
-                <asp:Button runat="server" ID="btnSave" CssClass="slxbutton" ToolTip="btnSave" Text="Ok" />
+                <asp:Button runat="server" ID="btnSave1" CssClass="slxbutton" ToolTip="btnSave" Text="Ok" OnClientClick="return Get()"/>
                 <asp:Button runat="server" ID="btnCancel" CssClass="slxbutton" ToolTip="btnCancel" Text="Cancel" />
                 <asp:Button runat="server" ID="btngetGL" CssClass="slxbutton" Visible="false" Text="Get Latitude/Logitute" OnClick="btngetGL_Click" />                
             
         </tr>
     </table>
 
+</div>
+<div>
+    <asp:Button runat="server" ID="btnSave" CssClass="slxbutton" Width="1px" Height =""/>               
 </div>

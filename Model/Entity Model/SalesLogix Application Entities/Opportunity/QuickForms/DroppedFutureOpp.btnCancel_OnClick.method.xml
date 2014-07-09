@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="6c3b41de-a718-4b2a-b0b5-612941dad3a8" lastModifiedUtc="2014-06-21T07:41:46.3420859Z" name="btnCancel_OnClick" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="DroppedFutureOpp">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="6d18a322-2eae-41e0-bfc5-da5c90caf0be" paramName="form" sequence="0" paramType="IDroppedFutureOpp" />
+    <OrmEntityMethodParam id="d2a5fe77-1909-4789-8eae-fab7480afc2e" paramName="args" sequence="0" paramType="EventArgs" />
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets>
+    <methodTarget xsi:type="OrmMethodTargetSnippet" id="87129969-1054-4154-afdc-16180ec4bbff" lastModifiedUtc="2014-06-21T07:42:39.7961433Z" targetType="Sage.BusinessRules.CodeSnippets.DroppedFutureOppEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="btnCancel_OnClickStep" active="true" codeSnippetId="b59c6839-5a88-4542-b7db-4aa138737b11">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmMethodTargetSnippet" />
+      </ExtendedPropertiesCollection>
+    </methodTarget>
+  </methodTargets>
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

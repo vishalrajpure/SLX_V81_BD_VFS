@@ -195,4 +195,7 @@
   <data name="grdLeadCompetitors.13644226-77de-437b-99d7-4194ad1ce617.Text" xml:space="preserve">
     <value>Edit</value>
   </data>
+  <data name="grdLeadCompetitors.30596f25-c917-4f05-87bf-fac0279937e9.FormatString" xml:space="preserve">
+    <value>{0:P}</value>
+  </data>
 </root>

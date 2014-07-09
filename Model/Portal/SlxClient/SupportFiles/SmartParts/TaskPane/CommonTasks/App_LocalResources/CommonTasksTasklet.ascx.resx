@@ -213,6 +213,9 @@
    <data name="TaskText_Transfer" xml:space="preserve">
     <value>Transfer Account</value>
   </data>
+   <data name="TaskText_CTransfer" xml:space="preserve">
+    <value>Transfer Contact</value>
+  </data>
   <data name="TaskText_MailMerge" xml:space="preserve">
     <value>Mail Merge</value>
   </data>

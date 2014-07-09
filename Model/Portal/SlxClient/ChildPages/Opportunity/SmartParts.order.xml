@@ -2,14 +2,12 @@
 <ModelItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Item Id="c21deb55-a270-4cc5-94ca-7fe68732d9e9">OpportunityDetails.smartpart.xml</Item>
   <Item Id="ff796754-6ad4-4818-a965-ff7de4d93f06">AttachmentList.smartpart.xml</Item>
-  <Item Id="6456f8d1-373b-423d-9b2a-c56c216f8a33">OpportunityProducts.smartpart.xml</Item>
-  <Item Id="99a73ca8-dfb8-4c27-9a1c-0be875a0c58d">OpportunityProducts_Read.smartpart.xml</Item>
   <Item Id="ccb5ee1e-ec61-49e6-8817-c36aa8cda4d3">OpportunityCompetitors.smartpart.xml</Item>
+  <Item Id="7b603823-0e13-4d47-80fc-46a29509752a">OpportunityProducts_Detail.smartpart.xml</Item>
+  <Item Id="c15fa4aa-ccd5-47ac-9293-12045fb5cdb3">OpportunityContacts_Detail.smartpart.xml</Item>
   <Item Id="12575842-d1ab-4a87-a4e7-f102e3fc7e95">OpportunityClosedWon.smartpart.xml</Item>
   <Item Id="59f385e6-b357-4c9c-8c11-7c5117f5bc8a">OpportunityClosedLost.smartpart.xml</Item>
   <Item Id="d171aeb8-4923-40fb-8195-52b926ea6be0">EditOpportunityProduct.smartpart.xml</Item>
-  <Item Id="54d7f317-2661-4bdf-97ba-11b94cf0efee">OpportunityContacts.smartpart.xml</Item>
-  <Item Id="b459e4bd-62ff-4844-b8d8-49efe7b7a1df">OpportunityContacts_Read.smartpart.xml</Item>
   <Item Id="d2189957-8fa3-43ef-abb2-cfc178a0713b">EditOpportunityContact.smartpart.xml</Item>
   <Item Id="287a97df-e87c-4f72-87df-838d3d048c38">NotesHistoryList.smartpart.xml</Item>
   <Item Id="2c6625f1-e616-40fe-ad8f-ed30e89a0bb5">OpportunitySalesProcess.smartpart.xml</Item>
