@@ -1,3 +1,4 @@
+
 <%@ Import Namespace="Sage.Platform.Application.UI" %>
 <%@ Import Namespace="Sage.Platform.Security" %>
 <%@ Import Namespace="Sage.Platform.WebPortal.SmartParts" %>
@@ -53,18 +54,18 @@
             alert("AccountName Length has more than 128 Characters");
             return false;
         }
-        //else if (document.getElementById('MainContent_InsertContact_txtlegalname').value == '') {
+            //else if (document.getElementById('MainContent_InsertContact_txtlegalname').value == '') {
             //alert("Please Enter the LegalName");
             //return false;
-        //}
-        //else if (document.getElementById('MainContent_InsertContact_txtlegalname').value.length > 128) {
+            //}
+            //else if (document.getElementById('MainContent_InsertContact_txtlegalname').value.length > 128) {
             //alert("LegalName Length has more than 128 Characters");
             //return false;
-        //}
-        //else if (document.getElementById('MainContent_InsertContact_lkpmktsegment_text').value.length > 10) {
-          //  alert("Mkt Segment Length has more than 10 Characters");
+            //}
+            //else if (document.getElementById('MainContent_InsertContact_lkpmktsegment_text').value.length > 10) {
+            //  alert("Mkt Segment Length has more than 10 Characters");
             //return false;
-        //}
+            //}
 
         else if (document.getElementById('MainContent_InsertContact_phnContactWorkPhone_PhoneTextBox').value == '') {
             alert("Please Enter the WorkPhone");
@@ -99,7 +100,6 @@
 
 </script>
 
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
 
 
@@ -107,23 +107,22 @@
 <script lang="javascript" type="text/javascript">
 
     function GetLocation() {
-       
-        var geocoder = new google.maps.Geocoder();
-        var df = true;        
+
+        //var geocoder = new google.maps.Geocoder();
+                
+        var df = true;
         var address = document.getElementById('DialogWorkspace_AddEditAddress_txtAddress1').value + ',' + document.getElementById('DialogWorkspace_AddEditAddress_txtAddress2').value + ',' + document.getElementById('DialogWorkspace_AddEditAddress_txtAddress3').value + ',' + document.getElementById('DialogWorkspace_AddEditAddress_pklCity_Text').value + ',' + document.getElementById('DialogWorkspace_AddEditAddress_pklState_Text').value + ',' + document.getElementById('DialogWorkspace_AddEditAddress_pklCountry_Text').value + ',' + document.getElementById('DialogWorkspace_AddEditAddress_txtPostalCode').value;
         var add1 = document.getElementById('DialogWorkspace_AddEditAddress_txtAddress1').value;
         var pin = document.getElementById('DialogWorkspace_AddEditAddress_txtPostalCode').value;
         if (add1 == '') {
-            alert('Please Fill Required fields');           
-            return false;
-        }
-        else if(pin == '')
-        {
             alert('Please Fill Required fields');
             return false;
         }
-
-        geocoder.geocode({ 'address': address }, function (results, status) {
+        else if (pin == '') {
+            alert('Please Fill Required fields');
+            return false;
+        }
+        /*geocoder.geocode({ 'address': address }, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 var latitude = results[0].geometry.location.lat();
                 var longitude = results[0].geometry.location.lng();
@@ -133,14 +132,15 @@
                 document.getElementById('MainContent_InsertContact_txtAccountAddress').value = address;
                 //alert(document.getElementById('DialogWorkspace_AddEditAddress_btnSave'));
                 document.getElementById('DialogWorkspace_AddEditAddress_btnSave').click();
-               
-                 df = true;
+
+                df = true;
             } else {
-                alert("No Lat/Long match found for specified Address, Please Correct the address.")
+        		alert("Geocode was not successful for the following reason: " + status);
                 df = false;
             }
-        });
-        
+        });*/
+        document.getElementById('MainContent_InsertContact_txtAccountAddress').value = address;
+        //document.getElementById('DialogWorkspace_AddEditAddress_btnSave').click();
         return df;
     }
 </script>
@@ -253,14 +253,35 @@
 	</tr>
     <tr>
         <td>
-            <!--<div class="lbl">
-                <asp:Label ID="lblmktsegment" runat="server" Text="MKT Segment:"></asp:Label>
-            </div>
-            <div class="textcontrol">
-                <asp:TextBox ID="txtmktsegment" runat="server"></asp:TextBox>
-            </div>-->
             <div class=" lbl alignleft">
-   <asp:Label ID="lkpmktsegment_lbl" AssociatedControlID="lkpmktsegment" runat="server" Text="MKT Segment:" ></asp:Label>
+   <asp:Label ID="lkpIndustry1_lbl" AssociatedControlID="lkpIndustry" runat="server" Text="MKT Segment:" ></asp:Label>
+ </div>   
+  <div   class="textcontrol lookup"   >
+<SalesLogix:LookupControl runat="server" ID="lkpIndustry" Enabled="true" LookupEntityName="Indsgmst" LookupEntityTypeName="Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String"  >
+<LookupProperties>
+<SalesLogix:LookupProperty PropertyHeader="MKT Segment" PropertyName="Cmktsgdesc" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="Industry" PropertyName="Cindsgdesc" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+</LookupProperties>
+<LookupPreFilters>
+</LookupPreFilters>
+</SalesLogix:LookupControl>
+  </div>
+
+            <!--<div class=" lbl alignleft">
+   <asp:Label ID="lkpIndustry_lbl" runat="server" Text="Industry:" ></asp:Label>
+ </div>   
+  <div   class="textcontrol lookup">
+      <asp:DropDownList ID ="ddlIndustry"  runat ="server" AutoPostBack="true" OnSelectedIndexChanged="ddlIndustry_SelectedIndexChanged" ></asp:DropDownList>
+  </div>
+        </td>
+
+        
+    </tr>
+    <tr>
+        <td>
+
+            <div class=" lbl alignleft">
+   <asp:Label ID="lkpMKTSegment_lbl" runat="server" Text="MKT Segment:" ></asp:Label>
  </div>   
   <div   class="textcontrol lookup"   >
 <SalesLogix:LookupControl runat="server" ID="lkpmktsegment" LookupEntityName="Vwsegmentmst" LookupEntityTypeName="Sage.Entity.Interfaces.IVwsegmentmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String"  >
@@ -271,11 +292,10 @@
 <LookupPreFilters>
 </LookupPreFilters>
 </SalesLogix:LookupControl>
-  </div>
+      <asp:DropDownList ID ="ddlMKTSegment"  runat ="server"></asp:DropDownList>
+  </div>-->
         </td>
 
-        <%-- </tr>
-    <tr>--%>
         
     </tr>
     <tr>
@@ -329,7 +349,7 @@
     <tr>
         <td>
             <asp:LinkButton ID="lnkaddress" Text="Address:" runat="server" OnClick="lnkaddress_Click" Font-Underline="True"></asp:LinkButton>
-			<asp:ImageButton runat="server" ID="cmdShowMap" ToolTip="Show Map" onClick="cmdShowMap_Click" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Get_Map_16x16"  />
+			<asp:ImageButton runat="server" ID="cmdShowMap" Visible ="false" ToolTip="Show Map" onClick="cmdShowMap_Click" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Get_Map_16x16"  />
         </td>
         <td>
             <div class="lbl">
@@ -341,10 +361,10 @@
         </td>
         <td>
             <div class="lbl">
-                <asp:Label ID="pklAccountIndustry_lz" AssociatedControlID="pklAccountIndustry" runat="server" Text="<%$ resources: pklAccountIndustry.Caption %>"></asp:Label>
+                <asp:Label ID="pklAccountIndustry_lz" AssociatedControlID="pklAccountIndustry" runat="server" Visible="false" Text="<%$ resources: pklAccountIndustry.Caption %>"></asp:Label>
             </div>
             <div class="textcontrol">
-                <SalesLogix:PickListControl runat="server" ID="pklAccountIndustry" PickListId="kSYST0000388" PickListName="Industry" MustExistInList="false"
+                <SalesLogix:PickListControl runat="server" ID="pklAccountIndustry" PickListId="kSYST0000388" Visible="false" PickListName="Industry" MustExistInList="false"
                     NoneEditable="true" AlphaSort="true" />
             </div>
         </td>
@@ -420,7 +440,7 @@
 
         <td>
             <div class="lbl">
-                <asp:Label ID="phnContactHomePhone_lz" AssociatedControlID="phnContactHomePhone" runat="server" Text="<%$ resources:phnContactHomePhone.Caption %>"></asp:Label>
+                <asp:Label ID="phnContactHomePhone_lz" AssociatedControlID="phnContactHomePhone" runat="server" Text="Direct Phone:" ></asp:Label>
             </div>
             <div class="textcontrol">
                 <SalesLogix:Phone runat="server" ID="phnContactHomePhone" />
@@ -450,7 +470,7 @@
 
         <td>
             <div class="lbl">
-                <asp:Label ID="phnContactMobile_lz" AssociatedControlID="phnContactMobile" runat="server" Text="<%$ resources: phnContactMobile.Caption %>"></asp:Label>
+                <asp:Label ID="phnContactMobile_lz" font AssociatedControlID="phnContactMobile" runat="server" Text="<%$ resources: phnContactMobile.Caption %>"  ForeColor="Red"></asp:Label>
             </div>
             <div class="textcontrol">
                 <SalesLogix:Phone runat="server" ID="phnContactMobile" />
@@ -696,7 +716,9 @@
         BindingSource.Bindings.Add(new WebEntityBinding("Address.AddressType", adrAccountAddress, "AddressType"));
         BindingSource.Bindings.Add(new WebEntityBinding("Address.PrimaryAddress", adrAccountAddress, "PrimaryAddress"));
         BindingSource.Bindings.Add(new WebEntityBinding("Account.MainPhone", phnAccountMainPhone, "Text"));
-        BindingSource.Bindings.Add(new WebEntityBinding("Account.Industry", pklAccountIndustry, "PickListValue"));
+        //BindingSource.Bindings.Add(new WebEntityBinding("Account.Industry", pklAccountIndustry, "PickListValue"));
+        //BindingSource.Bindings.Add(new WebEntityBinding("Account.Industry", ddlIndustry, "PickListValue"));
+        //BindingSource.Bindings.Add(new WebEntityBinding("Account.MktSegment", ddlMKTSegment, "PickListValue"));
         BindingSource.Bindings.Add(new WebEntityBinding("Account.Fax", phnAccountFax, "Text"));
         BindingSource.Bindings.Add(new WebEntityBinding("Account.BusinessDescription", txtAccountBusinessDescription, "Text"));
         BindingSource.Bindings.Add(new WebEntityBinding("Account.Type", pklAccountType, "PickListValue"));
@@ -707,7 +729,7 @@
         BindingSource.Bindings.Add(new WebEntityBinding("Account.LeadSource", lucLeadSource, "LookupResultValue"));
 
         BindingSource.Bindings.Add(new WebEntityBinding("Account.LEGALNAME", txtlegalname, "Text"));
-        BindingSource.Bindings.Add(new WebEntityBinding("Account.SegmentmstID", lkpmktsegment, "LookupResultValue"));
+        BindingSource.Bindings.Add(new WebEntityBinding("Account.SegmentmstID", lkpIndustry, "LookupResultValue"));
 
 
         DiasbleFLS();
@@ -727,7 +749,11 @@
         pklAccountType.Enabled = false;
         pklAccountSubType.Enabled = false;
         pklAccountStatus.Enabled = false;
-        pklAccountIndustry.Enabled = false;
+        //pklAccountIndustry.Enabled = false;
+        lkpIndustry.Enabled = false;
+        lkpIndustry.ReadOnly = true;
+        //ddlIndustry.Enabled = false;
+        //ddlMKTSegment.Enabled = false;
         txtAccountBusinessDescription.Enabled = false;
         usrAccountManager.Enabled = false;
         ownAccountOwner.Enabled = false;
@@ -926,7 +952,33 @@
             Response.Redirect("InsertContactAccount.aspx?modeid=Insert");
         }
     }
+    protected void ddlIndustry_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (ddlIndustry.SelectedItem.Text != "")
+        {
+            string qry = "select CMKTSGDESC From INDSGMST where CINDSGDESC = '" + ddlIndustry.SelectedItem.Text + "'";
 
+            Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+            System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+            System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+            System.Data.DataTable dt = new System.Data.DataTable();
+            dataAdapterObj.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                ddlMKTSegment.DataTextField = "CMKTSGDESC";
+                ddlMKTSegment.DataValueField = "CMKTSGDESC";
+                ddlMKTSegment.DataSource = dt;                
+                ddlMKTSegment.DataBind();
+                ddlMKTSegment.Items.Insert(0, new ListItem("", ""));
+
+            }
+            else
+            {
+                ddlMKTSegment.DataSource = null;
+                ddlMKTSegment.DataBind();
+            }
+        }
+    }
     protected override void OnLoad(EventArgs e)
     {
         base.OnLoad(e);
@@ -956,8 +1008,12 @@
             pklAccountSubType.ReadOnly = true;
             pklAccountStatus.Enabled = false;
             pklAccountStatus.ReadOnly = true;
-            pklAccountIndustry.Enabled = false;
-            pklAccountIndustry.ReadOnly = true;
+            //pklAccountIndustry.Enabled = false;
+            //pklAccountIndustry.ReadOnly = true;
+            //ddlIndustry.Enabled = false;
+            //ddlMKTSegment.Enabled = false;
+            lkpIndustry.Enabled = false;
+            lkpIndustry.ReadOnly = true;
             txtAccountBusinessDescription.Enabled = false;
             txtAccountBusinessDescription.ReadOnly = true;
             usrAccountManager.Enabled = false;
@@ -981,35 +1037,31 @@
 
             IAccount account = GetCurrentAccount(contact);
             if (account == null) return;
-			/*if(!Page.IsPostBack)
-			{
-				
-				Sage.Platform.Security.IUserService userService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+            if (!Page.IsPostBack)
+            {
 
-				string currentUserId = userService.UserId;
-				Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>((object)currentUserId);
-				
+                string qry = "select CINDSGDESC From INDSGMST";
 
-				 string qry = "select case when userID is null then (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'XBU') " +
-					"else (Select LEADSOURCEID From LEADSOURCE LS where LS.DESCRIPTION = 'BDU') end " +
-					"From usersecurity US,VWEMPMASTER emp where emp.CEMPLCODE = US.USERCODE and US.USERID ='" + user.Id +  "'";
-				
-				Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
-				System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
-				System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
-				System.Data.DataTable dt = new System.Data.DataTable();
-				dataAdapterObj.Fill(dt);
-				if(dt.Rows.Count > 0)
-				{
-					Sage.Entity.Interfaces.ILeadSource ls  = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)dt.Rows[0][0].ToString());	
-					account.LeadSource = ls;
-				}
-				else
-				{
-					Sage.Entity.Interfaces.ILeadSource ld = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadSource>((object)"LDEMOA000003");	
-					account.LeadSource = ld;
-				}
-			}*/
+                Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+                System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+                System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+                System.Data.DataTable dt = new System.Data.DataTable();
+                dataAdapterObj.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    ddlIndustry.DataTextField = "CINDSGDESC";
+                    ddlIndustry.DataValueField = "CINDSGDESC";
+                    ddlIndustry.DataSource = dt;                    
+                    ddlIndustry.DataBind();
+                    ddlIndustry.Items.Insert(0, new ListItem("", ""));
+
+                }
+                else
+                {
+                    ddlIndustry.DataSource = null;
+                    ddlIndustry.DataBind();
+                }
+            }
             Boolean changeEnable = (account.Id == null);
             txtContactAccountName.Enabled = changeEnable;
 			txtlegalname.Enabled = changeEnable;
@@ -1019,7 +1071,11 @@
             pklAccountType.Enabled = changeEnable;
             pklAccountSubType.Enabled = changeEnable;
             pklAccountStatus.Enabled = changeEnable;
-            pklAccountIndustry.Enabled = changeEnable;
+            //pklAccountIndustry.Enabled = changeEnable;
+            lkpIndustry.Enabled = changeEnable;
+            
+            //ddlIndustry.Enabled = changeEnable;
+            //ddlMKTSegment.Enabled = changeEnable;
             txtAccountBusinessDescription.Enabled = changeEnable;
             usrAccountManager.Enabled = changeEnable;
             ownAccountOwner.Enabled = changeEnable;
@@ -1139,14 +1195,24 @@
         {
             pklAccountSubType.PickListName = account.GetSubTypePickListName();
             cmdSelectAddress.Enabled = (account.Addresses.Count > 0);
-            if (account.Id != null)
+            if (Global.ADDRESS_ID != "")
+            {
+                IAddress address = Sage.Platform.EntityFactory.GetById<IAddress>(Global.ADDRESS_ID);
+                string _add = address.Address1 + "," + address.Address2 + "," + address.Address3 + "\r\n";
+                _add += address.City + "," + address.State + "," + address.Country + "\r\n";
+                _add += address.PostalCode;
+                //_add += account.Address.Latitude + "\r\n";
+                //_add += account.Address.Logitude;
+                txtAccountAddress.Text = _add;
+            }
+            else if (account.Id != null)
             {
                 lueUseExistingAccount.LookupResultValue = account;
 				string _add = account.Address.Address1 + "," + account.Address.Address2 + "," + account.Address.Address3 + "\r\n";
                 _add += account.Address.City + "," + account.Address.State + "," + account.Address.Country + "\r\n";
-                _add += account.Address.PostalCode + "\r\n";
-                _add += account.Address.Latitude + "\r\n";
-                _add += account.Address.Logitude;
+                _add += account.Address.PostalCode;
+                //_add += account.Address.Latitude + "\r\n";
+                //_add += account.Address.Logitude;
                 txtAccountAddress.Text = _add;
                 Global.ADDRESS_ID = account.Address.Id.ToString();
                 pklAccountSubType.PickListName = account.GetSubTypePickListName();
@@ -1212,7 +1278,7 @@
 			    DialogService.ShowMessage("This Account is already exists");
 			    return false;
 			}			
-			qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + txtlegalname.Text.Trim() + "'";
+			qry = "select LegalCompanyName from LegalMaster where upper(LegalCompanyName) ='" + txtlegalname.Text.Trim().ToUpper() + "'";
 	        dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
 	        dt = new System.Data.DataTable();
 	        dataAdapterObj.Fill(dt);
@@ -1227,17 +1293,25 @@
         if (Global.ADDRESS_ID != "")
         {
             objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Global.ADDRESS_ID);           
-            contact.Account.Address = objadd;
-			contact.Account.WebAddress = contact.WebAddress;
+            
+            if (lueUseExistingAccount.LookupResultValue == null)
+            {
+                contact.Account.Address = objadd;
+                contact.Account.WebAddress = contact.WebAddress;
+                contact.Account.Save();
+                objadd.EntityId = contact.Account.Id.ToString();
+                objadd.Save();  
+            }
         }
+        //contact.Account.Industry = ddlIndustry.SelectedItem.Text;
+        //contact.Account.MktSegment = ddlMKTSegment.SelectedItem.Text;
         contact.Account.Save();
 		
 	 	
 		
         contact.Save();
         
-        objadd.EntityId = contact.Account.Id.ToString();        
-        objadd.Save();        
+              
        
         contact.Address.Address1 = objadd.Address1;
         contact.Address.Address2 = objadd.Address2;
@@ -1274,11 +1348,12 @@
     {
         if (Global.ADDRESS_ID != "")
 		{
-            Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Global.ADDRESS_ID);
+            Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(Global.ADDRESS_ID);            
 			
 		    if (objadd != null)
-		    {		
-				string url = "http://maps.google.com/maps?q=" + objadd.Latitude +"," + objadd.Logitude;
+		    {
+                //string url = "http://maps.google.com/maps?key=AIzaSyDKK-1E4tfTgGlBptK5TCCfap5coV_kzC0&q=" + objadd.Latitude + "," + objadd.Logitude;
+                string url = "ViewMap.html?latlon=" + objadd.Latitude + "," + objadd.Logitude;
 				ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open('" + url + "');",true);
 			}
 		}
@@ -1294,38 +1369,41 @@
     {       
         if (DialogService != null)
         {
-            DialogService.SetSpecs(200, 200, 440, 300, "AddEditAddress", "", true);
-            DialogService.EntityType = typeof(IAddress);
-            if (Global.ADDRESS_ID != "")
+            if (lueUseExistingAccount.LookupResultValue == null)
             {
-                DialogService.EntityID = Global.ADDRESS_ID;
+                DialogService.SetSpecs(200, 200, 440, 300, "AddEditAddress", "", true);
+                DialogService.EntityType = typeof(IAddress);
+                if (Global.ADDRESS_ID != "")
+                {
+                    DialogService.EntityID = Global.ADDRESS_ID;
+                }
+                else
+                {
+                    DialogService.EntityID = "";
+                }
+                DialogService.ShowDialog();
             }
             else
             {
-                DialogService.EntityID = "";
+                string script_FormatNumber1 = "";
+                if (Global.ADDRESS_ID != "")
+                {
+                    script_FormatNumber1 = "window.showModalDialog('InsertAddress.aspx?type=Account&id=" + Global.ADDRESS_ID.ToString() + "&EntityID=123123123123', '_blank', 'dialogHeight=480,dialogWidth=100,status=yes,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=no,titlebar=no' )";
+                }
+                else
+                {
+                    IAccount account = (IAccount)lueUseExistingAccount.LookupResultValue;
+                    script_FormatNumber1 = "window.showModalDialog('InsertAddress.aspx?type=Account&id=" + account.Address.Id.ToString() + "&EntityID=123123123123', '_blank', 'dialogHeight=480,dialogWidth=100,status=yes,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=no,titlebar=no' )";
+                    
+                }
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
             }
-            DialogService.ShowDialog();
         }
     }
-	/*protected void txtlegalname_TextChanged(object sender, EventArgs e)
-    {
-        if(txtlegalname.Text != "")
-		{
-            string qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + txtlegalname.Text.Trim() + "'";
-            Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
-            System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
-            System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
-            System.Data.DataTable dt = new System.Data.DataTable();
-            dataAdapterObj.Fill(dt);
-            if (dt.Rows.Count > 0)
-            {
-                DialogService.ShowMessage("This legal Name is already exists");
-                return;
-            }
-            else
-            {               
-            }
-        }        
-    }*/
   
 </script>
+
+	
+
+
+

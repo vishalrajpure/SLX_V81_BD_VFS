@@ -172,46 +172,7 @@ public partial class SmartParts_Address_AddAccountAddress : EntityBoundSmartPart
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate", script_FormatNumber, true);
             btnSave.Attributes.Add("onclick", "return only_required(document.getElementById('" + txtAddress1.ClientID + "').value,document.getElementById('" + txtPostalCode.ClientID + "').value,document.getElementById('" + txtLatitude.ClientID + "').value,document.getElementById('" + txtLogitute.ClientID + "').value,document.getElementById('" + txtAddress2.ClientID + "').value,document.getElementById('" + txtAddress3.ClientID + "').value,document.getElementById('" + pklCity.ClientID + "_Text').value,document.getElementById('" + pklState.ClientID + "_Text').value,document.getElementById('" + pklCountry.ClientID + "_Text').value);");
         }
-        //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "<script type='text/javascript' src='map.js' />", false);
-
-        //ScriptResourceDefinition myScriptResDef = new ScriptResourceDefinition();
-        //myScriptResDef.Path = "http://maps.googleapis.com/maps/api/js?sensor=false";
-        //ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
-
-        //string script_FormatNumber1 = "";
-
-        ////  script_FormatNumber1 += " function Lon(Address1,pincode,Latitude,Logitute,add2,add3,city,state,country) ";
-        ////   script_FormatNumber1 += " { alert(1); return true;}";
-
-        //script_FormatNumber1 += " function Lon(Address1,pincode,Latitude,Logitute,add2,add3,city,state,country) ";
-        //script_FormatNumber1 += " {";
-
-        //script_FormatNumber1 += "    var df1 = true; alert(Address1);";
-        //script_FormatNumber1 += "     if(Address1 == '') { df =  false; } ";
-        //script_FormatNumber1 += "     if(pincode == '') {df =  false; } ";
-
-        //script_FormatNumber1 += "     if(!df1) {";
-        //script_FormatNumber1 += "     alert('Please Fill Required fields');";
-        //script_FormatNumber1 += " return df1;} else {";
-        //script_FormatNumber1 += " var add = Address1 + ', ' + add2 + ', ' + add3 + ', ' + city + ', '  + state + ', '  + country + ', '  + pincode;";
-
-        //script_FormatNumber1 += " alert(add);  ";
         
-        //script_FormatNumber1 += "var geocoder = new google.maps.Geocoder(); ";
-        //script_FormatNumber1 += " alert(geocoder); geocoder.geocode({ 'address': add }, function (results, status) {alert(22); ";
-        //script_FormatNumber1 += "     if (status == google.maps.GeocoderStatus.OK) { ";
-        //script_FormatNumber1 += "          var latitude = results[0].geometry.location.lat(); ";
-        //script_FormatNumber1 += "          var longitude = results[0].geometry.location.lng(); ";
-        //script_FormatNumber1 += "  alert(latitude + longitude);";
-        //// script_FormatNumber1 += "    document.getElementById('MainContent_InsertAccount_txtAccountAddress').value = latitude; ";
-        //script_FormatNumber1 += "   document.getElementById('" + txtLatitude.ClientID + "').value = latitude; ";
-        //script_FormatNumber1 += "   document.getElementById('" + txtLogitute.ClientID + "').value = longitude; } });";
-        //script_FormatNumber1 += " alert(4); return df1;";
-        //script_FormatNumber1 += " }}";
-        //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
-        //btngetGL.Attributes.Add("onclick", "return Lon(document.getElementById('" + txtAddress1.ClientID + "').value,document.getElementById('" + txtPostalCode.ClientID + "').value,document.getElementById('" + txtLatitude.ClientID + "').value,document.getElementById('" + txtLogitute.ClientID + "').value,document.getElementById('" + txtAddress2.ClientID + "').value,document.getElementById('" + txtAddress3.ClientID + "').value,document.getElementById('" + pklCity.ClientID + "_Text').value,document.getElementById('" + pklState.ClientID + "_Text').value,document.getElementById('" + pklCountry.ClientID + "_Text').value);");
-        ////btngetGL.Attributes.Add("onclick", "return Lon(document.getElementById('" + txtAddress1.ClientID + "').value,document.getElementById('" + txtPostalCode.ClientID + "').value,document.getElementById('" + txtLatitude.ClientID + "').value,document.getElementById('" + txtLogitute.ClientID + "').value,document.getElementById('" + txtAddress2.ClientID + "').value,document.getElementById('" + txtAddress3.ClientID + "').value,document.getElementById('" + pklCity.ClientID + "_Text').value,document.getElementById('" + pklState.ClientID + "_Text').value,document.getElementById('" + pklCountry.ClientID + "_Text').value);");
-
 
         if (Global.ADDRESS_ID != "")
         {

@@ -61,11 +61,11 @@ define('Mobile/SalesLogix/Views/Activity/Detail', [
         titleText: 'Activity',
         typeText: 'type',
         companyText: 'company',
-        leadText: 'lead',
+        //leadText: 'lead',
         accountText: 'account',
         contactText: 'contact',
         opportunityText: 'opportunity',
-        ticketNumberText: 'ticket',
+        //ticketNumberText: 'ticket',
         whenText: 'When',
         whoText: 'Who',
         startDateFormatText: 'M/D/YYYY h:mm:ss A',
@@ -96,8 +96,8 @@ define('Mobile/SalesLogix/Views/Activity/Detail', [
             'Description',
             'Duration',
             'Leader/$key',
-            'LeadId',
-            'LeadName',
+            //'LeadId',
+            //'LeadName',
             'Location',
             'LongNotes',
             'OpportunityId',
@@ -107,8 +107,8 @@ define('Mobile/SalesLogix/Views/Activity/Detail', [
             'Rollover',
             'StartDate',
             'EndDate',
-            'TicketId',
-            'TicketNumber',
+            //'TicketId',
+            //'TicketNumber',
             'Timeless',
             'Type',
             'Recurring',
@@ -451,7 +451,7 @@ define('Mobile/SalesLogix/Views/Activity/Detail', [
                             view: 'opportunity_detail',
                             key: 'OpportunityId',
                             descriptor: 'OpportunityName'
-                        }, {
+                        } /*,{
                             name: 'TicketNumber',
                             property: 'TicketNumber',
                             exclude: this.isActivityForLead,
@@ -472,7 +472,7 @@ define('Mobile/SalesLogix/Views/Activity/Detail', [
                             property: 'AccountName',
                             include: this.isActivityForLead,
                             label: this.companyText
-                        }]
+                        }*/]
                 },{
                     title: this.relatedItemsText,
                     list: true,

@@ -167,6 +167,7 @@ define('Mobile/SalesLogix/Views/Activity/List', [
             'Priority',
             'ModifyDate',
             'RecurrenceState',
+			'Longnotes',
             'Recurring'
         ],
         resourceKind: 'activities',
@@ -484,7 +485,8 @@ define('Mobile/SalesLogix/Views/Activity/List', [
        },
        completeActivity: function(entry) {
            var completeActivity, request, completeActivityEntry;
-
+		   
+			if(entry['LongNotes']!=null) {
            completeActivityEntry = {
                "$name": "ActivityComplete",
                "request": {
@@ -513,6 +515,11 @@ define('Mobile/SalesLogix/Views/Activity/List', [
                failure: this.onRequestFailure,
                scope: this
            });
+		   }
+		   else
+			{
+				alert("Please fill the notes");
+			}
        },
        onRequestFailure: function(response, o) {
            ErrorManager.addError(response, o, {}, 'failure');

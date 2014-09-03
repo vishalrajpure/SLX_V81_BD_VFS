@@ -31,9 +31,9 @@ define('Mobile/SalesLogix/Views/Activity/Complete', [
         accountText: 'account',
         contactText: 'contact',
         opportunityText: 'opportunity',
-        ticketNumberText: 'ticket',
+        //ticketNumberText: 'ticket',
         companyText: 'company',
-        leadText: 'lead',
+        //leadText: 'lead',
         asScheduledText: 'as scheduled',
         categoryText: 'category',
         categoryTitleText: 'Activity Category',
@@ -123,8 +123,8 @@ define('Mobile/SalesLogix/Views/Activity/Complete', [
             'Description',
             'Duration',
             'Leader/$key',
-            'LeadId',
-            'LeadName',
+            //'LeadId',
+            //'LeadName',
             'LongNotes',
             'OpportunityId',
             'OpportunityName',
@@ -133,8 +133,8 @@ define('Mobile/SalesLogix/Views/Activity/Complete', [
             'Result',
             'Rollover',
             'StartDate',
-            'TicketId',
-            'TicketNumber',
+            //'TicketId',
+            //'TicketNumber',
             'Timeless',
             'Type',
             'Recurring',
@@ -317,14 +317,14 @@ define('Mobile/SalesLogix/Views/Activity/Complete', [
                     'AccountName': entry.AccountName,
                     'ContactId': entry.ContactId,
                     'ContactName': entry.ContactName,
-                    'LeadId': entry.LeadId,
-                    'LeadName': entry.LeadName,
+                    //'LeadId': entry.LeadId,
+                    //'LeadName': entry.LeadName,
                     'LongNotes': (this.fields['CarryOverNotes'].getValue() && entry['LongNotes']) || '',
                     'OpportunityId': entry.OpportunityId,
                     'OpportunityName': entry.OpportunityName,
-                    'StartDate': Date.now(),
-                    'TicketId': entry.TicketId,
-                    'TicketNumber': entry.TicketNumber
+                    'StartDate': Date.now()//,
+                    //'TicketId': entry.TicketId,
+                    //'TicketNumber': entry.TicketNumber
                 };
 
             //Return to activity list view after follow up.
@@ -402,7 +402,7 @@ define('Mobile/SalesLogix/Views/Activity/Complete', [
                             orderBy: 'text asc',
                             type: 'picklist',
                             maxTextLength: 64,
-                            validator: validator.exceedsMaxTextLength
+                            validator: validator.exists
                         }, {
                             label: this.startingText,
                             name: 'StartDate',
@@ -504,7 +504,8 @@ define('Mobile/SalesLogix/Views/Activity/Complete', [
                             property: 'LongNotes',
                             title: this.longNotesTitleText,
                             type: 'note',
-                            view: 'text_edit'
+                            view: 'text_edit',
+							validator: validator.exists
                         }]
                 }, {
                     title: this.otherInfoText,
@@ -578,7 +579,7 @@ define('Mobile/SalesLogix/Views/Activity/Complete', [
                             valueTextProperty: 'OpportunityName',
                             view: 'opportunity_related',
                             where: this.formatDependentQuery.bindDelegate(this, 'Account.Id eq "${0}"', 'AccountId')
-                        }, {
+                        }/*, {
                             dependsOn: 'Account',
                             label: this.ticketNumberText,
                             name: 'Ticket',
@@ -605,7 +606,7 @@ define('Mobile/SalesLogix/Views/Activity/Complete', [
                             name: 'AccountName',
                             property: 'AccountName',
                             type: 'text'
-                        }]
+                        }*/]
                 }]);
         }
     });

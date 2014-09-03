@@ -38,8 +38,8 @@ define('Mobile/SalesLogix/Views/Contact/Detail', [
         relatedHistoriesText: 'Notes/History',
         relatedItemsText: 'Related Items',
         relatedNotesText: 'Notes',
-        relatedOpportunitiesText: 'Opportunities',
-        relatedTicketsText: 'Tickets',
+        //relatedOpportunitiesText: 'Opportunities',
+       // relatedTicketsText: 'Tickets',
         relatedAddressesText: 'Addresses',
         relatedAttachmentText: 'Attachments',
         relatedAttachmentTitleText: 'Contact Attachments',
@@ -53,7 +53,7 @@ define('Mobile/SalesLogix/Views/Contact/Detail', [
         scheduleActivityText: 'Schedule activity',
         addNoteText: 'Add note',
         sendEmailText: 'Send email',
-        viewAddressText: 'View address',
+        viewAddressText: 'Address',
         moreDetailsText: 'More Details',
 
         //View Properties
@@ -67,6 +67,7 @@ define('Mobile/SalesLogix/Views/Contact/Detail', [
             'AccountManager/UserInfo/FirstName',
             'AccountManager/UserInfo/LastName',
             'AccountName',
+			'Account/Type',
             'Address/*',
             'CuisinePreference',
             'CreateDate',
@@ -222,7 +223,7 @@ define('Mobile/SalesLogix/Views/Contact/Detail', [
                             property: 'Address',
                             label: this.viewAddressText,
                             icon: 'content/images/icons/Map_24.png',
-                            action: 'viewAddress',
+                            //action: 'viewAddress',
                             disabled: this.checkAddress,
                             renderer: format.address.bindDelegate(this, true, ' ')
                         }]
@@ -249,6 +250,10 @@ define('Mobile/SalesLogix/Views/Contact/Detail', [
                             name: 'Title',
                             property: 'Title',
                             label: this.contactTitleText
+                        },{
+                            name: 'Account.Type',
+                            property: 'Account.Type',
+                            label: 'Account Type'
                         }]
                 }, {
                     title: this.moreDetailsText,
@@ -288,7 +293,7 @@ define('Mobile/SalesLogix/Views/Contact/Detail', [
                             label: this.relatedActivitiesText,
                             view: 'activity_related',
                             where: this.formatRelatedQuery.bindDelegate(this, 'ContactId eq "${0}"')
-                        }, {
+                        }, /*{
                             name: 'OpportunityRelated',
                             icon: 'content/images/icons/opportunity_24.png',
                             label: this.relatedOpportunitiesText,
@@ -300,7 +305,7 @@ define('Mobile/SalesLogix/Views/Contact/Detail', [
                             label: this.relatedTicketsText,
                             view: 'ticket_related',
                             where: this.formatRelatedQuery.bindDelegate(this, 'Contact.Id eq "${0}"')
-                        }, {
+                        },*/ {
                             name: 'HistoryRelated',
                             icon: 'content/images/icons/journal_24.png',
                             label: this.relatedHistoriesText,

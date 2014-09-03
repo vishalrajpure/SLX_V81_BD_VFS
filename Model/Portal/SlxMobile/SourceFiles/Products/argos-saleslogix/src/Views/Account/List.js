@@ -106,28 +106,36 @@ define('Mobile/SalesLogix/Views/Account/List', [
                 return 'AccountManager.Id eq "' + App.context.user.$key + '"';
             },
             'active': 'Status eq "Active"',
-            'inactive': 'Status eq "Inactive"',
+            'Lost': 'Status eq "Lost"',
+			'Dropped': 'Status eq "Dropped"',
+			'Future Opportunity': 'Status eq "Future Opportunity"',
             'suspect': 'Type eq "Suspect"',
             'lead': 'Type eq "Lead"',
             'prospect': 'Type eq "Prospect"',
-            'customer': 'Type eq "Customer"',
-            'partner': 'Type eq "Partner"',
-            'vendor': 'Type eq "Vendor"',
-            'influencer': 'Type eq "Influencer"',
-            'competitor': 'Type eq "Competitor"'
+            'customer': 'Type eq "Customer"'
+            //'partner': 'Type eq "Partner"',
+            //'vendor': 'Type eq "Vendor"',
+            //'influencer': 'Type eq "Influencer"',
+            //'competitor': 'Type eq "Competitor"'
+			
+
+
         },
         hashTagQueriesText: {
             'my-accounts': 'my-accounts',
             'active': 'active',
-            'inactive': 'inactive',
+			'Lost': 'Lost',
+			'Dropped': 'Dropped',
+			'Future Opportunity': 'Future Opportunity',
+            //'inactive': 'inactive',
             'suspect': 'suspect',
             'lead': 'lead',
             'prospect': 'prospect',
-            'customer': 'customer',
-            'partner': 'partner',
-            'vendor': 'vendor',
-            'influencer': 'influencer',
-            'competitor': 'competitor'
+            'customer': 'customer'
+            //'partner': 'partner',
+            //'vendor': 'vendor',
+            //'influencer': 'influencer',
+            //'competitor': 'competitor'
         },
         defaultSearchTerm: function() {
             return '#' + this.hashTagQueriesText['my-accounts'];

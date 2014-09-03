@@ -14991,4 +14991,61 @@
   <data name="Lead.MKTSegment.DisplayName" xml:space="preserve">
     <value>MKTSegment</value>
   </data>
+  <data name="Indsgmst.DisplayNamePlural" xml:space="preserve">
+    <value>Indsgmsts</value>
+  </data>
+  <data name="Lead.EnteredBy.DisplayName" xml:space="preserve">
+    <value>Entered_By</value>
+  </data>
+  <data name="Opportunity.AreaMasterid.DisplayName" xml:space="preserve">
+    <value>AreaMasterid</value>
+  </data>
+  <data name="Opportunity.CustmerCode.DisplayName" xml:space="preserve">
+    <value>CustmerCode</value>
+  </data>
+  <data name="OppClosedCustCode.DisplayName" xml:space="preserve">
+    <value>OppClosedCustCode</value>
+  </data>
+  <data name="OppClosedCustCode.CustomerCode.DisplayName" xml:space="preserve">
+    <value>CustomerCode</value>
+  </data>
+  <data name="OppClosedCustCode.AreaMstID.DisplayName" xml:space="preserve">
+    <value>AreaMstID</value>
+  </data>
+  <data name="OppClosedCustCode.ModifyDate.DisplayName" xml:space="preserve">
+    <value>Modify Date</value>
+  </data>
+  <data name="OppClosedCustCode.ModifyUser.DisplayName" xml:space="preserve">
+    <value>Modify User</value>
+  </data>
+  <data name="OppClosedCustCode.CreateDate.DisplayName" xml:space="preserve">
+    <value>Create Date</value>
+  </data>
+  <data name="OppClosedCustCode.CreateUser.DisplayName" xml:space="preserve">
+    <value>Create User</value>
+  </data>
+  <data name="OppClosedCustCode.OpportunityId.DisplayName" xml:space="preserve">
+    <value>Opportunity Id</value>
+  </data>
+  <data name="OppClosedCustCode.OppClosedCustCodeId.DisplayName" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Opportunity.OppClosedCustCodes.DisplayName" xml:space="preserve">
+    <value>OppClosedCustCodes</value>
+  </data>
+  <data name="OppClosedCustCode.Opportunity.DisplayName" xml:space="preserve">
+    <value>Opportunity</value>
+  </data>
+  <data name="OppClosedCustCode.DisplayNamePlural" xml:space="preserve">
+    <value>OppClosedCustCodes</value>
+  </data>
+  <data name="OppClosedCustCode.Vwareamaster.DisplayName" xml:space="preserve">
+    <value>Area Master</value>
+  </data>
+  <data name="Vwareamaster.OppClosedCustCodes.DisplayName" xml:space="preserve">
+    <value>OppClosedCustCodes</value>
+  </data>
+  <data name="OppClosedCustCode.CArea.DisplayName" xml:space="preserve">
+    <value>CArea</value>
+  </data>
 </root>

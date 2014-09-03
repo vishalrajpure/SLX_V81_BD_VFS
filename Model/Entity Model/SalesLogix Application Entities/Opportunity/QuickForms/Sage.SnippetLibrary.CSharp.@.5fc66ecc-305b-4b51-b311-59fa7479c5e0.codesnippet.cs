@@ -43,6 +43,7 @@ namespace Sage.BusinessRules.CodeSnippets
         public static void cmdCancel_OnClickStep1( IOpportunityClosedWon form,  EventArgs args)
         {
             IOpportunity opportunity = form.CurrentEntity as IOpportunity;
+			 opportunity.Status = "Active";
             if (!(opportunity.Closed ?? false))
 			{
 			    object resOpen = System.Web.HttpContext.GetGlobalResourceObject("Opportunity", "Opp_Status_Active");

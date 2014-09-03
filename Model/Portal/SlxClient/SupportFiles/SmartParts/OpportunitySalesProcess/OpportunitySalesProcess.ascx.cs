@@ -23,6 +23,7 @@ using Sage.SalesLogix.Plugins;
 using Sage.Common.Syndication.Json;
 using Sage.Platform.Application.UI;
 using Sage.SalesLogix.Activity;
+using System.Data.OleDb;
 
 
 public partial class SmartParts_OpportunitySalesProcess_SalesProcess : EntityBoundSmartPartInfoProvider , IScriptControl
@@ -443,9 +444,12 @@ public partial class SmartParts_OpportunitySalesProcess_SalesProcess : EntityBou
         string pluginID = ddLSalesProcess.SelectedItem.Value;
         ISalesProcesses salesProcess = EntityFactory.Create<ISalesProcesses>();
         salesProcess.InitSalesProcess(pluginID, opportunityId);
+        IList<ISalesProcessAudit> list = salesProcess.GetSalesProcessAudits();
+        LoadStagesDropDown(list);
         IPanelRefreshService refresher = PageWorkItem.Services.Get<IPanelRefreshService>();
         refresher.RefreshAll();
         this.UpdateSnapShot();
+        
     }
 
     /// <summary>
@@ -570,8 +574,75 @@ public partial class SmartParts_OpportunitySalesProcess_SalesProcess : EntityBou
             string result = salesProcess.CanCompleteStep(spaid);
             if (result == string.Empty)
             {
+                Sage.Entity.Interfaces.ISalesProcessAudit objsalesAudit = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ISalesProcessAudit>(spaid);
                 salesProcess.CompleteStep(spaid, DateTime.Now);
                 salesProcess.Save();
+                /*string _query2 = "Select Case when 	(Select top 1 StageOrder From SALESPROCESSAUDIT where STAGEORDER in (select StageOrder from SALESPROCESSAUDIT where SALESPROCESSAUDITID = '" + spaid + "') and COMPLETED = 'F' and  entityID = '" + objsalesAudit.EntityId + "') is null " +
+                                " then Case When (Select top 1 StageOrder from SALESPROCESSAUDIT where StageOrder = (select StageOrder + 1 from SALESPROCESSAUDIT where SALESPROCESSAUDITID = '" + spaid + "') and PROCESSTYPE = 'Stage' and entityID = '" + objsalesAudit.EntityId + "') IS not null " +
+                                " then (select StageOrder + 1 from SALESPROCESSAUDIT where SALESPROCESSAUDITID = '" + spaid + "') else (select StageOrder from SALESPROCESSAUDIT where SALESPROCESSAUDITID = '" + spaid + "') end " +
+                                " else (select StageOrder from SALESPROCESSAUDIT where SALESPROCESSAUDITID = '" + spaid + "') end ";
+                */
+                System.Data.DataTable dt2 = new System.Data.DataTable(); ;
+                string _query2 = "Select MAX(StageOrder) From SALESPROCESSAUDIT where STAGEORDER in (select StageOrder from SALESPROCESSAUDIT where SALESPROCESSAUDITID = '" + spaid + "') and COMPLETED = 'F' and  entityID = '" + objsalesAudit.EntityId + "'";                              
+                string SlxConnectionString2 = GetSLXConnectionString();
+                OleDbDataAdapter dataAdapterObj3 = new OleDbDataAdapter(_query2, SlxConnectionString2);
+                System.Data.DataTable dt13 = new System.Data.DataTable();
+                dataAdapterObj3.Fill(dt13);
+                if (dt13.Rows.Count > 0)
+                {
+                    if (dt13.Rows[0][0] == DBNull.Value)
+                    {
+                        _query2 = "Select MAX(StageOrder) from SALESPROCESSAUDIT where StageOrder = (select StageOrder + 1 from SALESPROCESSAUDIT where SALESPROCESSAUDITID = '" + spaid + "') and PROCESSTYPE = 'STAGE' and entityID = '" + objsalesAudit.EntityId + "' ";
+                        dataAdapterObj3 = new OleDbDataAdapter(_query2, SlxConnectionString2);
+                        System.Data.DataTable dt14 = new System.Data.DataTable();
+                        dataAdapterObj3.Fill(dt14);
+                        if (dt14.Rows.Count > 0)
+                        {
+                            if (dt14.Rows[0][0] != DBNull.Value)
+                            {
+                                _query2 = "select StageOrder + 1 from SALESPROCESSAUDIT where SALESPROCESSAUDITID = '" + spaid + "'";
+                                dataAdapterObj3 = new OleDbDataAdapter(_query2, SlxConnectionString2);
+                                dt2 = new System.Data.DataTable();
+                                dataAdapterObj3.Fill(dt2);
+                            }
+                            else
+                            {
+                                _query2 = "select StageOrder from SALESPROCESSAUDIT where SALESPROCESSAUDITID = '" + spaid + "' ";
+                                dataAdapterObj3 = new OleDbDataAdapter(_query2, SlxConnectionString2);
+                                dt2 = new System.Data.DataTable();
+                                dataAdapterObj3.Fill(dt2);
+                            }
+                        }
+                        
+                    }
+                    else
+                    {
+                        _query2 = "select StageOrder from SALESPROCESSAUDIT where SALESPROCESSAUDITID = '" + spaid + "'";
+                        dataAdapterObj3 = new OleDbDataAdapter(_query2, SlxConnectionString2);
+                        dt2 = new System.Data.DataTable();
+                        dataAdapterObj3.Fill(dt2);
+                    }
+                    if (dt2.Rows.Count > 0)
+                    {
+                        if (ddlStages.SelectedIndex != Convert.ToInt32(dt2.Rows[0][0]) - 1)
+                        {
+                            ddlStages.SelectedIndex = Convert.ToInt32(dt2.Rows[0][0]) - 1;
+                            ddlStages_SelectedIndexChanged(sender, e);
+                        }
+                        string stageId7 = ddlStages.SelectedItem.Value;
+
+                        string _query8 = "update SALESPROCESSAUDIT set IsCurrent = 'F' Where entityID = '" + objsalesAudit.EntityId + "' AND StageOrder <> '" + dt2.Rows[0][0].ToString() + "'";
+                        string SlxConnectionString8 = GetSLXConnectionString();
+                        OleDbConnection con1 = new OleDbConnection(SlxConnectionString8);
+                        OleDbCommand cmd1 = new OleDbCommand(_query8, con1);
+                        con1.Open();
+                        cmd1.ExecuteNonQuery();
+                        con1.Close();
+
+                    }
+                }              
+
+                
             }
             else
             {
@@ -582,8 +653,91 @@ public partial class SmartParts_OpportunitySalesProcess_SalesProcess : EntityBou
         }
         else
         {
-            salesProcess.UnCompleteStep(spaid);
-            salesProcess.Save();
+            Sage.Entity.Interfaces.ISalesProcessAudit objsalesAudit1 = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ISalesProcessAudit>(spaid);
+            if (objsalesAudit1 != null)
+            {
+                string _query3 = "Select max(stepname) From SALESPROCESSAUDIT where SALESPROCESSAUDITID > '" + spaid + "' and PROCESSTYPE = 'STEP' and ENTITYID = '" + objsalesAudit1.EntityId + "' and COMPLETED = 'T'";
+
+                string SlxConnectionString3 = GetSLXConnectionString();
+                OleDbDataAdapter dataAdapterObj5 = new OleDbDataAdapter(_query3, SlxConnectionString3);
+                System.Data.DataTable dt3 = new System.Data.DataTable();
+                dataAdapterObj5.Fill(dt3);
+                if (dt3.Rows.Count > 0 && dt3.Rows[0][0] != DBNull.Value)
+                {
+                    DialogService.ShowMessage("First Uncheck the step " + dt3.Rows[0][0].ToString() + ".");
+                    return;
+                }
+                else
+                {
+
+                    salesProcess.UnCompleteStep(spaid);
+                    salesProcess.Save();
+
+                    /*string _query7 = "Select case when (Select MAX(Stageorder) from SALESPROCESSAUDIT where SALESPROCESSAUDITID < '" + spaid + "' AND completed = 'T' and entityid = '" + objsalesAudit1.EntityId + "' and processtype = 'step') is null then '1'" +
+                        " else case when (Select MAX(Stageorder) from SALESPROCESSAUDIT where Stageorder = (Select MAX(Stageorder) from SALESPROCESSAUDIT where SALESPROCESSAUDITID < '" + spaid + "' AND completed = 'T' and entityid = '" + objsalesAudit1.EntityId + "' and processtype = 'step') and completed = 'F' and entityid = '" + objsalesAudit1.EntityId + "' and processtype = 'Step' ) is null " +
+                        " then (Select MAX(Stageorder) + 1 from SALESPROCESSAUDIT where SALESPROCESSAUDITID < '" + spaid + "' AND completed = 'T' and entityid = '" + objsalesAudit1.EntityId + "' and processtype = 'step') " +
+                        " else (Select MAX(Stageorder)  from SALESPROCESSAUDIT where SALESPROCESSAUDITID < '" + spaid + "' AND completed = 'T' and entityid = '" + objsalesAudit1.EntityId + "' and processtype = 'step') end end";
+                    
+                    string SlxConnectionString7 = GetSLXConnectionString();
+                    OleDbDataAdapter dataAdapterObj7 = new OleDbDataAdapter(_query7, SlxConnectionString7);
+                    System.Data.DataTable dt7 = new System.Data.DataTable();
+                    dataAdapterObj7.Fill(dt7);
+                    */
+                    System.Data.DataTable dt7 = new System.Data.DataTable(); ;
+                    string _query7 = "Select MAX(Stageorder) from SALESPROCESSAUDIT where SALESPROCESSAUDITID < '" + spaid + "' AND completed = 'T' and entityid = '" + objsalesAudit1.EntityId + "' and processtype = 'STEP'";                              
+                    string SlxConnectionString2 = GetSLXConnectionString();
+                    OleDbDataAdapter dataAdapterObj3 = new OleDbDataAdapter(_query7, SlxConnectionString2);
+                    System.Data.DataTable dt20 = new System.Data.DataTable();
+                    dataAdapterObj3.Fill(dt20);
+                    if (dt20.Rows.Count > 0)
+                    {
+                        if (dt20.Rows[0][0] == DBNull.Value)
+                        {
+                            _query7 = "select max(1) as Stageorder from SALESPROCESSAUDIT";
+                            dataAdapterObj3 = new OleDbDataAdapter(_query7, SlxConnectionString2);
+                            dt7 = new System.Data.DataTable();
+                            dataAdapterObj3.Fill(dt7);
+                            
+                            
+                        }
+                        else
+                        {
+                            _query7 = "Select MAX(Stageorder) from SALESPROCESSAUDIT where Stageorder = (Select MAX(Stageorder) from SALESPROCESSAUDIT where SALESPROCESSAUDITID < '" + spaid + "' AND completed = 'T' and entityid = '" + objsalesAudit1.EntityId + "' and processtype = 'STEP') and completed = 'F' and entityid = '" + objsalesAudit1.EntityId + "' and processtype = 'STEP'";
+                            dataAdapterObj3 = new OleDbDataAdapter(_query7, SlxConnectionString2);
+                            System.Data.DataTable dt19 = new System.Data.DataTable();
+                            dataAdapterObj3.Fill(dt19);
+                            if (dt19.Rows.Count > 0)
+                            {
+                                if (dt19.Rows[0][0] != DBNull.Value)
+                                {
+                                    _query7 = "Select MAX(Stageorder)  from SALESPROCESSAUDIT where SALESPROCESSAUDITID < '" + spaid + "' AND completed = 'T' and entityid = '" + objsalesAudit1.EntityId + "' and processtype = 'STEP'";
+                                    dataAdapterObj3 = new OleDbDataAdapter(_query7, SlxConnectionString2);
+                                    dt7 = new System.Data.DataTable();
+                                    dataAdapterObj3.Fill(dt7);
+                                }
+                                else
+                                {
+                                    _query7 = "Select MAX(Stageorder) + 1 from SALESPROCESSAUDIT where SALESPROCESSAUDITID < '" + spaid + "' AND completed = 'T' and entityid = '" + objsalesAudit1.EntityId + "' and processtype = 'STEP' ";
+                                    dataAdapterObj3 = new OleDbDataAdapter(_query7, SlxConnectionString2);
+                                    dt7 = new System.Data.DataTable();
+                                    dataAdapterObj3.Fill(dt7);
+                                }
+                            }
+                        }
+                        if (dt7.Rows.Count > 0)
+                        {
+                            if (ddlStages.SelectedIndex != Convert.ToInt32(dt7.Rows[0][0]) - 1)
+                            {
+                                ddlStages.SelectedIndex = Convert.ToInt32(dt7.Rows[0][0]) - 1;
+                                ddlStages_SelectedIndexChanged(sender, e);
+                            }
+
+                        }
+                    }                   
+                    
+                    
+                }
+            }
         }
         IPanelRefreshService refresher = PageWorkItem.Services.Get<IPanelRefreshService>();
         refresher.RefreshAll();
@@ -591,6 +745,12 @@ public partial class SmartParts_OpportunitySalesProcess_SalesProcess : EntityBou
         this.UpdateSnapShot();
     }
 
+    public string GetSLXConnectionString()
+    {
+        string result = string.Empty;
+        Sage.Platform.Data.IDataService service = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+        return service.GetConnectionString();
+    }
     /// <summary>
     /// Handles the OnClick event of the cmdCompleteDate control.
     /// </summary>

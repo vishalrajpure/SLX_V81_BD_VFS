@@ -29,15 +29,17 @@ define('Mobile/SalesLogix/Views/Contact/Edit', [
         webText: 'web',
         acctMgrText: 'acct mgr',
         accountNameText: 'account',
-        homePhoneText: 'home phone',
+        homePhoneText: 'direct phone',
         faxText: 'fax',
         addressText: 'address',
+        accounttype: 'account type',
         contactTitleText: 'title',
         titleTitleText: 'Title',
         addressTitleText: 'Address',
         ownerText: 'owner',
         cuisinePreferenceText: 'cuisine',
         cuisinePreferenceTitleText: 'Cuisine',
+		durationInvalidText: "Insert contact only for Account type Prospect/Customer.",
 
         //View Properties
         entityName: 'Contact',
@@ -50,6 +52,7 @@ define('Mobile/SalesLogix/Views/Contact/Edit', [
             'AccountManager/UserInfo/LastName',
             'AccountName',
             'Address/*',
+			'Account/Type',
             'CuisinePreference',
             'CreateDate',
             'CreateUser',
@@ -69,10 +72,10 @@ define('Mobile/SalesLogix/Views/Contact/Edit', [
             'WorkPhone'
         ],
         resourceKind: 'contacts',
-
+		
         startup: function() {
             this.inherited(arguments);
-            this.connect(this.fields['Account'], 'onChange', this.onAccountChange);
+             this.connect(this.fields['Account'], 'onChange', this.onAccountChange);
         },
         onAccountChange: function(value, field) {
             if (value && value.text) {
@@ -115,6 +118,7 @@ define('Mobile/SalesLogix/Views/Contact/Edit', [
                 .setQueryArg('select', [
                     'AccountName',
                     'Address/*',
+                    'Type',
                     'Fax',
                     'MainPhone',
                     'WebAddress'
@@ -135,6 +139,7 @@ define('Mobile/SalesLogix/Views/Contact/Edit', [
                 webAddress = utility.getValue(entry, 'WebAddress'),
                 mainPhone = utility.getValue(entry, 'MainPhone'),
                 address = utility.getValue(entry, 'Address'),
+                acctype = utility.getValue(entry, 'Type'),
                 fax = utility.getValue(entry, 'Fax');
 
             if (account) {
@@ -152,6 +157,9 @@ define('Mobile/SalesLogix/Views/Contact/Edit', [
             if (address) {
                 this.fields['Address'].setValue(this.cleanAddressEntry(address));
             }
+            if (acctype) {
+                this.fields['Account.Type'].setValue(acctype);
+            }
             if (fax) {
                 this.fields['Fax'].setValue(fax);
             }
@@ -166,6 +174,7 @@ define('Mobile/SalesLogix/Views/Contact/Edit', [
                 webAddress = utility.getValue(entry, 'Account.WebAddress'),
                 mainPhone = utility.getValue(entry, 'Account.MainPhone'),
                 address = utility.getValue(entry, 'Account.Address'),
+                acctype = utility.getValue(entry, 'Account.Type'),
                 fax = utility.getValue(entry, 'Account.Fax');
 
             if (opportunityId) {
@@ -185,6 +194,9 @@ define('Mobile/SalesLogix/Views/Contact/Edit', [
             }
             if (address) {
                 this.fields['Address'].setValue(this.cleanAddressEntry(address));
+            }
+            if (acctype) {
+                this.fields['Type'].setValue(acctype);
             }
             if (fax) {
                 this.fields['Fax'].setValue(fax);
@@ -296,13 +308,34 @@ define('Mobile/SalesLogix/Views/Contact/Edit', [
                     property: 'Address',
                     type: 'address',
                     view: 'address_edit'
-                },
+                },                
+				 {
+                    name: 'Account.Type',
+                    property: 'Account.Type',
+                    label: this.accounttype,
+                    type: 'text',
+                    maxTextLength: 32,
+                    readonly: true,
+                    //validator: validator.exceedsMaxTextLength   
+					 validator: {
+                                fn: function(val, field) {
+                                    if (val === 'Prospect' || val === 'Customer') {
+                                        return false;
+                                    }
+                                    if (!/^\d+$/.test(val)) {
+                                        return true;
+                                    }
+                                },
+                                message: this.durationInvalidText
+                            }
+                    
+                 },
                 {
                     name: 'HomePhone',
                     property: 'HomePhone',
                     label: this.homePhoneText,
                     type: 'phone',
-                    maxTextLength: 32,
+                    maxTextLength: 15,					
                     validator: validator.exceedsMaxTextLength
                 },
                 {
@@ -310,8 +343,8 @@ define('Mobile/SalesLogix/Views/Contact/Edit', [
                     property: 'Mobile',
                     label: this.mobileText,
                     type: 'phone',
-                    maxTextLength: 32,
-                    validator: validator.exceedsMaxTextLength
+                    maxTextLength: 15,
+                    validator: [validator.exists,validator.exceedsMaxTextLength]
                 },
                 {
                     name: 'Fax',

@@ -984,6 +984,16 @@
             <c>true</c> if the current object is being created.
             </summary>
         </member>
+        <member name="P:Sage.Entity.Interfaces.IOppClosedCustCode.InstanceId">
+            <summary>
+            Gets the unique identifier for this instance
+            </summary>
+        </member>
+        <member name="P:Sage.Entity.Interfaces.IOppClosedCustCode.Creating">
+            <summary>
+            <c>true</c> if the current object is being created.
+            </summary>
+        </member>
         <member name="P:Sage.Entity.Interfaces.IOpportunity.InstanceId">
             <summary>
             Gets the unique identifier for this instance

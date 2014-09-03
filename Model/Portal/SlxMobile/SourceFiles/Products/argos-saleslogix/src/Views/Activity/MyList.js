@@ -125,6 +125,7 @@ define('Mobile/SalesLogix/Views/Activity/MyList', [
             'Activity/Recurring',
             'Activity/Alarm',
             'Activity/ModifyDate',
+			'Activity/Longnotes',
             'Activity/Priority'
         ],
         resourceKind: 'userActivities',
@@ -453,7 +454,8 @@ define('Mobile/SalesLogix/Views/Activity/MyList', [
         },
         completeActivity: function(entry) {
             var completeActivity, request, completeActivityEntry;
-
+			
+			if(entry['LongNotes']!=null) {
             completeActivityEntry = {
                 "$name": "ActivityComplete",
                 "request": {
@@ -464,7 +466,7 @@ define('Mobile/SalesLogix/Views/Activity/MyList', [
                     "completeDate": entry['CompletedDate']
                 }
             };
-
+			
             request = new Sage.SData.Client.SDataServiceOperationRequest(this.getService())
                 .setResourceKind('activities')
                 .setContractName('system')
@@ -482,6 +484,12 @@ define('Mobile/SalesLogix/Views/Activity/MyList', [
                 failure: this.onRequestFailure,
                 scope: this
             });
+			}
+			else
+			{
+				alert("Please fill the notes");
+				//ErrorManager.addError('', o, {}, 'failure');
+			}
         },
         onRequestFailure: function(response, o) {
             ErrorManager.addError(response, o, {}, 'failure');

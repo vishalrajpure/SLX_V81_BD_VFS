@@ -31,11 +31,13 @@ using Sage.SalesLogix.Services;
 using Sage.SalesLogix.Web.Controls;
 using Sage.SalesLogix.Web.SelectionService;
 using log4net;
+using System.Collections;
 
 public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserControl, ISmartPartInfoProvider
 {
     private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
+    Sage.Platform.Security.IUserService _IUserService = ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+    
     #region Initialize Items
 
     [ServiceDependency]
@@ -214,6 +216,7 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
 	
 	private void ChangeContactUser()
     {
+        string _UserId = _IUserService.UserId.Trim();
         GroupContextService groupContextService = ApplicationContext.Current.Services.Get<IGroupContextService>() as GroupContextService;
         CachedGroup currentGroup = groupContextService.GetGroupContext().CurrentGroupInfo.CurrentGroup;
         GroupInfo gInfo = currentGroup.GroupInformation;
@@ -223,7 +226,7 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
         try
         {
             string passedArgument = hfSelections.Value;
-
+            int counter = 0;
             DataTable GroupTableAll = gInfo.GetGroupDataTable();
             using (DataTable GroupTableSelections = GroupTableAll.Copy())
             {
@@ -249,9 +252,30 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
                     //remove hidden columns
                     if (Cstatus)
                     {
-                        if (cUsers != null && cUsers.Value.Trim() != string.Empty)
+                        DataTable _accmgr1 = AccoutMgr(_UserId);
+                        if (_accmgr1.Rows.Count > 0)
                         {
-                            ToContact(GroupTableSelections, cUsers.Value);
+                            for (int i = 0; i < GroupTableSelections.Rows.Count; i++)
+                            {
+                                DataTable dtnew1 = new DataTable();
+                                DataRow[] result1 = GroupTableSelections.Select("ContactId='" + GroupTableSelections.Rows[i]["ContactId"] + "' ");
+                                foreach (DataRow row in result1)
+                                {
+                                    dtnew1 = result1.CopyToDataTable();
+                                }
+                                for (int k = 0; k < _accmgr1.Rows.Count; k++)
+                                {
+                                    if (dtnew1.Rows[0]["AccountManagerid"].ToString() == _accmgr1.Rows[k][0].ToString())
+                                    {
+                                        if (cUsers != null && cUsers.Value.Trim() != string.Empty)
+                                        {
+                                            ToContact(dtnew1, cUsers.Value);
+                                            counter = counter + 1;
+                                        }
+                                    }
+                                }
+                            }
+                           
                         }
                     }
                     else
@@ -264,16 +288,26 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
                         }
                         if (dtnew.Rows.Count > 0)
                         {
-                            if (cUsers != null && cUsers.Value.Trim() != string.Empty)
+                            DataTable _accmgr = AccoutMgr(_UserId);
+                            if (_accmgr.Rows.Count > 0)
                             {
-                                ToContact(dtnew, cUsers.Value);
-                                Response.Redirect("Contact.aspx?entityid=" + passedArgument);
-                            }
+                                for (int k = 0; k < _accmgr.Rows.Count; k++)
+                                {
+                                    if (dtnew.Rows[0]["AccountManagerid"].ToString() == _accmgr.Rows[k][0].ToString())
+                                    {
+                                        if (cUsers != null && cUsers.Value.Trim() != string.Empty)
+                                        {
+                                            ToContact(dtnew, cUsers.Value);                                           
+                                        }
+                                    }
+                                }
+                                Response.Redirect("Contact.aspx?entityid=" + passedArgument, false);
+                            }                           
                         }
                     }
                 }
             }
-            DialogService.ShowMessage("Owner Changes Successfully...");
+            DialogService.ShowMessage("Owner(" + counter + ") Changes Successfully...");
         }
         catch (Exception ex)
         {
@@ -294,8 +328,7 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
                 _user = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IUser>(cUser);
                if(_user != null)
 				{
-				   //_account.Owner =Sage.SalesLogix.BusinessRules.BusinessRuleHelper.OwnerOnInsert(_user);
-                    
+				   //_account.Owner =Sage.SalesLogix.BusinessRules.BusinessRuleHelper.OwnerOnInsert(_user);                    
                     foreach (Sage.Entity.Interfaces.IOpportunityContact op in _contact.Opportunities)
                     {
                         if (op.Opportunity.AccountManager == _contact.AccountManager && op.Contact.IsPrimary == true && (op.Opportunity.Status.ToUpper() == "ACTIVE" || op.Opportunity.Status.ToUpper() == "FUTURE OPPORTUNITY"))
@@ -320,6 +353,7 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
 	
  	private void ChangeAccountUser()
     {
+        string _UserId = _IUserService.UserId.Trim();
         GroupContextService groupContextService = ApplicationContext.Current.Services.Get<IGroupContextService>() as GroupContextService;
         CachedGroup currentGroup = groupContextService.GetGroupContext().CurrentGroupInfo.CurrentGroup;
         GroupInfo gInfo = currentGroup.GroupInformation;
@@ -330,7 +364,7 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
         try
         {
             string passedArgument = hfSelections.Value;
-
+            int counter = 0;
             DataTable GroupTableAll = gInfo.GetGroupDataTable();
             using (DataTable GroupTableSelections = GroupTableAll.Copy())
             {
@@ -355,14 +389,34 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
                     //remove hidden columns
                     if (fstatus)
                     {
-                        if (cUsers != null && cUsers.Value.Trim() != string.Empty)
+                        DataTable _accmgr1 = AccoutMgr(_UserId);
+                        if (_accmgr1.Rows.Count > 0)
                         {
-                            ToAccount(GroupTableSelections, cUsers.Value);
+                            for (int i = 0; i < GroupTableSelections.Rows.Count; i++)
+                            {
+                                DataTable dtnew1 = new DataTable();
+                                DataRow[] result1 = GroupTableSelections.Select("Accountid='" + GroupTableSelections.Rows[i]["Accountid"] + "' ");
+                                foreach (DataRow row in result1)
+                                {
+                                    dtnew1 = result1.CopyToDataTable();
+                                }
+                                for (int k = 0; k < _accmgr1.Rows.Count; k++)
+                                {
+                                    if (dtnew1.Rows[0]["AccountManagerid"].ToString() == _accmgr1.Rows[k][0].ToString())
+                                    {
+                                        if (cUsers != null && cUsers.Value.Trim() != string.Empty)
+                                        {
+                                            ToAccount(dtnew1, cUsers.Value);
+                                            counter = counter + 1;
+                                        }
+                                    }
+                                }
+                            }                          
                         }
                     }
                     else
                     {
-                        DataTable dtnew = new DataTable();
+                         DataTable dtnew = new DataTable();
                          DataRow[] result = GroupTableSelections.Select("Accountid='" + passedArgument + "' ");
                          foreach (DataRow row in result)
                          {
@@ -370,16 +424,26 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
                          }
                          if (dtnew.Rows.Count > 0)
                          {
-                             if (cUsers != null && cUsers.Value.Trim() != string.Empty)
+                             DataTable _accmgr = AccoutMgr(_UserId);
+                             if (_accmgr.Rows.Count > 0)
                              {
-                                 ToAccount(dtnew, cUsers.Value);
-                                 Response.Redirect("Account.aspx?entityid=" + passedArgument);
+                                 for (int k = 0; k < _accmgr.Rows.Count; k++)
+                                 {
+                                     if (dtnew.Rows[0]["AccountManagerid"].ToString() == _accmgr.Rows[k][0].ToString())
+                                     {
+                                         if (cUsers != null && cUsers.Value.Trim() != string.Empty)
+                                         {
+                                             ToAccount(dtnew, cUsers.Value);                                           
+                                         }                                         
+                                     }
+                                 }
+                                 Response.Redirect("Account.aspx?entityid=" + passedArgument, false);
                              }
                          }
                     }
                 }
             }
-            DialogService.ShowMessage("Owner Changes Successfully...");
+            DialogService.ShowMessage("Owner(" + counter + ") Changes Successfully...");
         }
         catch (Exception ex)
         {
@@ -426,7 +490,7 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
                     
                     Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
                     System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
-                    System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + _user.Id.ToString() + "' and Upper(name) ='INSERTSECCODEID'", conObj);
+                    System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter("Select Optionvalue as DEFAULTSECCODEID from UserOptions where userid = '" + _user.Id.ToString() + "' and name ='InsertSecCodeID'", conObj);
                     System.Data.DataTable dt2 = new System.Data.DataTable();
                     dataAdapterObj2.Fill(dt2);
                     if (dt2.Rows.Count > 0)
@@ -460,6 +524,78 @@ public partial class SmartParts_TaskPane_CommonTasks_CommonTasksTasklet : UserCo
                 conObj.Close();*/
             }
         }
+    }
+
+    private DataTable AccoutMgr(string userid)
+    {
+        DataTable dt = new DataTable();
+        Sage.Platform.Data.IDataService service = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+        System.Data.OleDb.OleDbConnection conObj1 = new System.Data.OleDb.OleDbConnection(Connection());       
+        //System.Data.OleDb.OleDbConnection conObj1 = new System.Data.OleDb.OleDbConnection(service.GetConnectionString());      
+
+        string query = "select  USERID,USERNAME from ( select us.USERID,us.UserCode,u.USERNAME, nullif(us.MANAGERID,us.USERID) MANAGER "
+                    + " from USERSECURITY us inner join userinfo u on u.userid = us.userid AND us.TYPE != 'W' ) "
+                    + " connect by nocycle prior MANAGER= USERID start with USERID = ('" + userid + "')";
+
+        System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(query, conObj1);
+        System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(cmd);        
+        da.Fill(dt);
+        return dt;
+    }
+    public string Connection()
+    {
+        Hashtable keyPairs = new Hashtable();
+        String iniFilePath;
+        string iniPath = Server.MapPath(@"Temp");
+        iniPath = iniPath + "\\Config.ini";
+        System.IO.TextReader
+            iniFile = null;
+        String strLine = null;
+        String currentRoot = null;
+        String[] keyPair = null;
+        iniFilePath = iniPath;
+        string Conn = "";
+
+
+        if (System.IO.File.Exists(iniPath))
+        {
+            try
+            {
+                iniFile = new System.IO.StreamReader(iniPath);
+                strLine = iniFile.ReadLine();
+                while (strLine != null)
+                {
+                    strLine = strLine.Trim();//.ToUpper();
+                    if (strLine != "")
+                    {
+                        if (strLine.StartsWith("[") && strLine.EndsWith("]"))
+                        {
+                            currentRoot = strLine.Substring(1, strLine.Length - 2);
+                        }
+                        else
+                        {
+                            keyPair = strLine.Split(new char[] { '=' }, 2);
+
+                            if (keyPair[0].ToString() == "constr")
+                            {
+                                Conn = keyPair[1].ToString();
+                            }
+                        }
+                    }
+                    strLine = iniFile.ReadLine();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (iniFile != null)
+                    iniFile.Close();
+            }
+        }
+        return Conn;
     }
     protected override void OnPreRender(EventArgs e)
     {

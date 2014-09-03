@@ -50,7 +50,7 @@ namespace Sage.BusinessRules.CodeSnippets
 			if (opportunity.Status == "Closed - Won")
 			{
 			    //pklStatus.PickListValue = opportunity.Status;
-				throw new Sage.Platform.Application.ValidationException("You are not authorised to change the status to Closed - Won.");
+				//throw new Sage.Platform.Application.ValidationException("You are not authorised to change the status to Closed - Won.");
 			}
 			else
 			{

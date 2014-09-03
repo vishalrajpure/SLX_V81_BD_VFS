@@ -27,6 +27,7 @@ define('Mobile/SalesLogix/Views/AddAccountContact', [
         accountStatusTitleText: 'Account Status',
         accountSubTypeTitleText: 'Account SubType',
         accountText: 'Account',
+		legalnameText: 'legal name',
         accountTypeTitleText: 'Account Type',
         acctMgrText: 'acct mgr',
         addressText: 'address',
@@ -37,7 +38,7 @@ define('Mobile/SalesLogix/Views/AddAccountContact', [
         detailsText: 'Contact / Account Info',
         emailText: 'email',
         faxText: 'fax',
-        homePhoneText: 'home phone',
+        homePhoneText: 'direct phone',
         industryText: 'industry',
         ownerText: 'owner',
         lastNameText: 'last',
@@ -49,7 +50,7 @@ define('Mobile/SalesLogix/Views/AddAccountContact', [
         typeText: 'type',
         webText: 'web',
         workText: 'work phone',
-        industryTitleText: 'Industry',
+        //industryTitleText: 'Industry',
 
         //View Properties
         id: 'add_account_contact',
@@ -59,10 +60,11 @@ define('Mobile/SalesLogix/Views/AddAccountContact', [
             'AccountManager/UserInfo/FirstName',
             'AccountManager/UserInfo/LastName',
             'AccountName',
+			'LegalName',
             'Address',
             'BusinessDescription',
             'Contact/AccountName',
-            'Contact/Address',
+            'Address',
             'Contact/Email',
             'Contact/Fax',
             'Contact/FirstName',
@@ -73,16 +75,63 @@ define('Mobile/SalesLogix/Views/AddAccountContact', [
             'Contact/WebAddress',
             'Contact/WorkPhone',
             'Fax',
-            'Industry',
+            //'Industry',
+			'Indsgmst/Cmktsgdesc',
             'Owner/OwnerDescription',
             'Status',
             'SubType',
             'Type'
         ],
+		authenticate: function() {
+            if (this.busy) {
+                return;
+            }   
+            var credentials = this.getValues(),
+                LegalName = credentials && credentials.LegalName;
+    
+            if (LegalName && /\w+/.test(LegalName)) {
+                this.validateCredentials(LegalName.toUpperCase());
+    			
+            }
+        },
+		validateCredentials: function(LegalName) {
+			//this.fields['Status'].setValue("Active");
+			
+		    var request = new Sage.SData.Client.SDataSingleResourceRequest(this.getService())
+                .setResourceKind('vwlegalmasters')
+                //.setResourceSelector(string.substitute("'${0}'", [LegalName]))
+                .setQueryArg('select', 'Legalcompanyname')
+				.setQueryArg('where', "upper(Legalcompanyname) eq '" + [LegalName] + "'");
+            request.allowCacheUse = true;
+			
+            request.read({
+                success: this.processAccountLegal,
+                failure: this.requestAccountLegalFailure,
+                scope: this
+            });	
+        },
+		requestAccountLegalFailure: function(xhr, o) {
+			alert("false");
+        },
+        processAccountLegal: function(entry) {
+			
+			if(entry)
+			{
+				this.fields['LegalName'].setValue("");
+            	alert("Legalname already present");  
+				
+			}
+            
+        },
+		  onLegalChange: function() {
+		  this.authenticate();
+		},
         init: function() {
             this.inherited(arguments);
 
-            this.connect(this.fields['Contacts.$resources[0].Address'], 'onChange', this.onContactAddressChange);
+            //this.connect(this.fields['Contacts.$resources[0].Address'], 'onChange', this.onContactAddressChange);
+			this.connect(this.fields['Address'], 'onChange', this.onAddressChange);
+			this.connect(this.fields['LegalName'], 'onChange', this.onLegalChange);
         },
         getValues: function(all) {
             var values = this.inherited(arguments);
@@ -111,9 +160,16 @@ define('Mobile/SalesLogix/Views/AddAccountContact', [
                 this.inherited(arguments);
             }
         },
-        onContactAddressChange: function(value, field) {
+        /*onContactAddressChange: function(value, field) {
+		
             if (this.fields['Address'].getValue() && !this.fields['Address'].getValue().Address1) {
                 this.fields['Address'].setValue(value);
+            }
+        },*/
+		onAddressChange: function(value, field) {
+				//alert(this.fields['Contacts.$resources[0].Address'].getValue());
+            if (!this.fields['Contacts.$resources[0].Address'].getValue()) {			
+                this.fields['Contacts.$resources[0].Address'].setValue(value);
             }
         },
         applyContext: function(templateEntry) {
@@ -144,6 +200,15 @@ define('Mobile/SalesLogix/Views/AddAccountContact', [
                     type: 'text',
                     validator: validator.notEmpty
                 },
+				{
+                    label: this.legalnameText,
+                    name: 'LegalName',
+                    property: 'LegalName',                   
+                    type: 'text',  
+                    maxTextLength: 128,
+					notificationTrigger: 'blur',
+                    validator: validator.exceedsMaxTextLength
+                },
                 {
                     label: this.emailText,
                     name: 'Contacts.$resources[0].Email',
@@ -166,56 +231,9 @@ define('Mobile/SalesLogix/Views/AddAccountContact', [
                     property: 'MainPhone',
                     type: 'phone',
                     maxTextLength: 32,
-                    validator: validator.exceedsMaxTextLength
+                    validator: validator.notEmpty
                 },
-                {
-                    title: this.detailsContactText,
-                    name: 'ContactInfoSection',
-                    children: [{
-                            label: this.contactTitleText,
-                            name: 'Contacts.$resources[0].Title',
-                            property: 'Contacts.$resources[0].Title',
-                            picklist: 'Title',
-                            title: this.contactTitleText,
-                            type: 'picklist',
-                            orderBy: 'text asc'
-                        },
-                        {
-                            label: this.homePhoneText,
-                            name: 'Contacts.$resources[0].HomePhone',
-                            property: 'Contacts.$resources[0].HomePhone',
-                            type: 'phone',
-                            maxTextLength: 32,
-                            validator: validator.exceedsMaxTextLength
-                        },
-                        {
-                            name: 'Contacts.$resources[0].Mobile',
-                            property: 'Contacts.$resources[0].Mobile',
-                            label: this.mobileText,
-                            type: 'phone',
-                            maxTextLength: 32,
-                            validator: validator.exceedsMaxTextLength
-                        },
-                        {
-                            name: 'Contacts.$resources[0].Fax',
-                            property: 'Contacts.$resources[0].Fax',
-                            label: this.faxText,
-                            type: 'phone',
-                            maxTextLength: 32,
-                            validator: validator.exceedsMaxTextLength
-                        },
-                        {
-                            emptyText: '',
-                            formatValue: format.address.bindDelegate(this, true, true),
-                            label: this.addressText,
-                            name: 'Contacts.$resources[0].Address',
-                            property: 'Contacts.$resources[0].Address',
-                            type: 'address',
-                            view: 'address_edit',
-                            entityName: 'Contact'
-                        }]
-                },
-                {
+				 {
                     title: this.detailsAccountText,
                     name: 'AccountInfoSection',
                     children: [{
@@ -230,11 +248,12 @@ define('Mobile/SalesLogix/Views/AddAccountContact', [
                             name: 'Type',
                             property: 'Type',
                             label: this.typeText,
-                            type: 'picklist',
-                            picklist: 'Account Type',
-                            title: this.accountTypeTitleText
+                            type: 'text',
+                            //picklist: 'Account Type',
+                            title: this.accountTypeTitleText,
+							readonly: true							 
                         },
-                        {
+                       /* {
                             name: 'SubType',
                             property: 'SubType',
                             label: this.subTypeText,
@@ -245,23 +264,32 @@ define('Mobile/SalesLogix/Views/AddAccountContact', [
                             ),
                             title: this.accountSubTypeTitleText,
                             dependsOn: 'Type'
-                        },
+                        },*/
                         {
                             name: 'Status',
                             property: 'Status',
                             label: this.statusText,
-                            type: 'picklist',
-                            picklist: 'Account Status',
-                            title: this.accountStatusTitleText
+                            type: 'text',
+                            //picklist: 'Account Status',
+                            title: this.accountStatusTitleText,
+							readonly: true
                         },
-                        {
+                        /*{
                             name: 'Industry',
                             property: 'Industry',
                             label: this.industryText,
                             type: 'picklist',
                             picklist: 'Industry',
                             title: this.industryTitleText
-                        },
+                        },*/
+						{
+		                    label: 'MKT Segment',
+		                    name: 'Indsgmst',
+		                    property: 'Indsgmst',
+		                    textProperty: 'Cmktsgdesc',
+		                    type: 'lookup',
+		                    view: 'Indsgmst_list'
+		                },
                         {
                             name: 'BusinessDescription',
                             property: 'BusinessDescription',
@@ -293,10 +321,59 @@ define('Mobile/SalesLogix/Views/AddAccountContact', [
                             property: 'Address',
                             type: 'address',
                             view: 'address_edit',
-                            entityName: 'Account'
+                            entityName: 'Account',
+							validator: validator.exists
                         }
                     ]
+                },
+                {
+                    title: this.detailsContactText,
+                    name: 'ContactInfoSection',
+                    children: [{
+                            label: this.contactTitleText,
+                            name: 'Contacts.$resources[0].Title',
+                            property: 'Contacts.$resources[0].Title',
+                            picklist: 'Title',
+                            title: this.contactTitleText,
+                            type: 'picklist',
+                            orderBy: 'text asc'
+                        },
+                        {
+                            label: this.homePhoneText,
+                            name: 'Contacts.$resources[0].HomePhone',
+                            property: 'Contacts.$resources[0].HomePhone',
+                            type: 'phone',
+                            maxTextLength: 15,
+							validator: validator.exceedsMaxTextLength
+                        },
+                        {
+                            name: 'Contacts.$resources[0].Mobile',
+                            property: 'Contacts.$resources[0].Mobile',
+                            label: this.mobileText,
+                            type: 'phone',
+                            maxTextLength: 32,
+                            validator: [validator.exists,validator.exceedsMaxTextLength]
+                        },
+                        {
+                            name: 'Contacts.$resources[0].Fax',
+                            property: 'Contacts.$resources[0].Fax',
+                            label: this.faxText,
+                            type: 'phone',
+                            maxTextLength: 32,
+                            validator: validator.exceedsMaxTextLength
+                        },
+                        {
+                            emptyText: '',
+                            formatValue: format.address.bindDelegate(this, true, true),
+                            label: this.addressText,
+                            name: 'Contacts.$resources[0].Address',
+                            property: 'Contacts.$resources[0].Address',
+                            type: 'address',
+                            view: 'address_edit',
+                            entityName: 'Contact'
+                        }]
                 }
+               
             ]);
         }
     });

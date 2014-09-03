@@ -178,7 +178,7 @@
     </tr>
     <tr>
         <td>
-            <asp:Label ID="Label3" AssociatedControlID="txtLogitute" runat="server" Text="Logitute:"  ForeColor="Red"></asp:Label>
+            <asp:Label ID="Label3" AssociatedControlID="txtLogitute" runat="server" Text="Longitute:"  ForeColor="Red"></asp:Label>
         </td>
         <td style="width: 150px;">
             <asp:TextBox runat="server" Enabled = "false" ID="txtLogitute" Style="width: 100%" MaxLength="64" />

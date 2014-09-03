@@ -1,0 +1,425 @@
+<?xml version="1.0"?>
+<QuickForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="f3cc60a8-4948-41e7-9054-3830f8db5f2e" DefinitionType="Sage.Platform.QuickForms.QuickFormMainDetailViewDefinition, Sage.Platform.QuickForms">
+  <ActiveControl />
+  <ImagePath />
+  <LoadActions>
+    <FormActionDefinition>
+      <ResourceKey>9b5bd3bd-9ba9-47e2-81b6-8c8fcf2e6a42</ResourceKey>
+      <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+        <CSharpSnippetActionItem>
+          <MethodName>quickformload0</MethodName>
+          <CSharpCodeSnippet>lueAreamaster_lbl.ForeColor = System.Drawing.Color.Red;
+lblmsg.ForeColor = System.Drawing.Color.Red;
+txtcustomerCode_lbl.ForeColor = System.Drawing.Color.Red;</CSharpCodeSnippet>
+        </CSharpSnippetActionItem>
+      </Action>
+      <IsDialogCloseAction>False</IsDialogCloseAction>
+      <RunOnEveryRePaint>False</RunOnEveryRePaint>
+      <DialogActionResult>NoResult</DialogActionResult>
+      <PerformsUpdate>False</PerformsUpdate>
+      <AppliedSecurity />
+      <RefreshData>False</RefreshData>
+    </FormActionDefinition>
+  </LoadActions>
+  <Name>CustomerCodeDetails</Name>
+  <ClientScriptIncludes />
+  <ClientResourceKeys />
+  <ExtendedProperties />
+  <HelpFile />
+  <ReadOnly>false</ReadOnly>
+  <GeneratePrintView>false</GeneratePrintView>
+  <Controls>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXLookup>
+        <Column>0</Column>
+        <Row>0</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>lueAreamaster</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>AreaMasterid</DataItemName>
+            <ControlItemName>LookupResultValue</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>lueAreamaster</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+            <CSharpSnippetActionItem>
+              <MethodName>lueAreamaster_ChangeAction</MethodName>
+              <CSharpCodeSnippet>//Sage.Entity.Interfaces.IOpportunity objopp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+//lblmsg.Visible = false;
+lblmsg.Text = "";
+//txtNotes.Text = objopp.Notes;</CSharpCodeSnippet>
+            </CSharpSnippetActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>true</Required>
+        <LookupImage />
+        <LookupDialogWidth xsi:nil="true" />
+        <LookupDialogHeight xsi:nil="true" />
+        <LookupBindingMode>Object</LookupBindingMode>
+        <LookupResultValue xsi:type="xsd:string" />
+        <SeedProperty />
+        <SeedValue />
+        <DropDownDisplayProperty />
+        <AllowClearingResult>false</AllowClearingResult>
+        <AppendStringValues>false</AppendStringValues>
+        <OverrideSeedOnSearch>false</OverrideSeedOnSearch>
+        <LookupEntityName>Vwareamaster</LookupEntityName>
+        <LookupEntityTypeName>Sage.Entity.Interfaces.IVwareamaster, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
+        <AutoPostBack>false</AutoPostBack>
+        <EnableHyperLinking>false</EnableHyperLinking>
+        <InitializeLookup>false</InitializeLookup>
+        <LookupProperties>
+          <LookupProperty>
+            <PropertyName>Carea</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Area Code</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>Cscrcddesc</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Description</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>Cscrcd</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Code</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+        </LookupProperties>
+        <LookupPreFilters />
+      </QFSLXLookup>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.QFControls.QFLabel, Sage.Platform.QuickForms.QFControls">
+      <QFLabel>
+        <Column>0</Column>
+        <Row>1</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>lblmsg</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <AssociatedControlID />
+      </QFLabel>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.QFControls.QFControlsList, Sage.Platform.QuickForms.QFControls">
+      <QFControlsList>
+        <Column>0</Column>
+        <Row>2</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>QFControlsList</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <Caption />
+        <Controls>
+          <ControlsCollection>
+            <Control TypeName="Sage.Platform.QuickForms.Controls.QFButton, Sage.Platform.QuickForms">
+              <QFButton>
+                <Column>0</Column>
+                <Row>0</Row>
+                <HotKey>0</HotKey>
+                <TabIndex>0</TabIndex>
+                <ControlId>btnOK</ControlId>
+                <DataBindings />
+                <ControlLabelPlacement>none</ControlLabelPlacement>
+                <ExtendedProperties />
+                <CaptionAlignment>left</CaptionAlignment>
+                <StyleScheme />
+                <ButtonType>StandardButton</ButtonType>
+                <Image />
+                <OnClientClick />
+                <OnClickAction>
+                  <ResourceKey>btnOK</ResourceKey>
+                  <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+                    <CSharpSnippetActionItem>
+                      <MethodName />
+                      <CSharpCodeSnippet>Sage.Entity.Interfaces.IOppClosedCustCode oppClose = BindingSource.Current as Sage.Entity.Interfaces.IOppClosedCustCode;
+Sage.Entity.Interfaces.IOpportunity opp = GetParentEntity() as Sage.Entity.Interfaces.IOpportunity;
+
+   //validate Area &amp; customer code 
+Sage.Entity.Interfaces.IVwareamaster objarea = (Sage.Entity.Interfaces.IVwareamaster)lueAreamaster.LookupResultValue;
+foreach(Sage.Entity.Interfaces.IOppClosedCustCode oppcode in opp.OppClosedCustCodes)
+{
+    if (oppcode.CArea == objarea.Carea &amp;&amp; oppcode.CustomerCode == Convert.ToInt32(txtcustomerCode.Text.Trim()))
+	{
+		lblmsg.Text = "Duplicate customercode...";
+		return;
+	}
+}
+string qry = "select * From CUSTMST where CCUSTCODE = '" + txtcustomerCode.Text.Trim() + "' and CAREA = '"+ objarea.Carea.Trim() +"'";
+Sage.Platform.Data.IDataService service = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service.GetConnectionString());
+System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+System.Data.DataTable dt = new System.Data.DataTable();
+dataAdapterObj.Fill(dt);
+if (dt.Rows.Count &gt; 0)
+{
+    //validate all account axcept cureent account
+    string qry1 = "select * From OppClosedCustCode where CUSTOMERCODE = '" + txtcustomerCode.Text.Trim() + "' and CAREA = '" + objarea.Carea.Trim() + "' and OPPORTUNITYID not in (Select OpportunityID From Opportunity where AccountID = '" + opp.Account.Id + "')";
+    Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+    System.Data.OleDb.OleDbConnection conObj1 = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+    System.Data.OleDb.OleDbDataAdapter dataAdapterObj1 = new System.Data.OleDb.OleDbDataAdapter(qry1, conObj1);
+    System.Data.DataTable dt1 = new System.Data.DataTable();
+    dataAdapterObj1.Fill(dt1);
+    if (dt1.Rows.Count &gt; 0)
+    {
+        //DialogService.ShowMessage("Customer Code already allocated to another Account");
+		lblmsg.Text="Customer Code already allocated to another Account";
+    }
+    else
+    {
+        //validate Accountmanger to employeecode
+        string qry2 = "select * From CUSTMST where CCUSTCODE = '" + txtcustomerCode.Text.Trim() + "' and CAREA = '" + objarea.Carea.Trim() + "' and CSALEMPCD = '" + opp.AccountManager.UserName + "'";
+        Sage.Platform.Data.IDataService service2 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+        System.Data.OleDb.OleDbConnection conObj2 = new System.Data.OleDb.OleDbConnection(service.GetConnectionString());
+        System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter(qry2, conObj2);
+        System.Data.DataTable dt2 = new System.Data.DataTable();
+        dataAdapterObj2.Fill(dt2);
+        if (dt2.Rows.Count &gt; 0)
+        {
+            //save data with status closed
+			if(oppClose == null)
+			{
+				oppClose = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.IOppClosedCustCode&gt;();
+			}
+            oppClose.Vwareamaster = objarea;
+            oppClose.CustomerCode = Convert.ToInt32(txtcustomerCode.Text.Trim());
+            oppClose.Opportunity = opp;
+			oppClose.CArea = objarea.Carea.Trim();
+            oppClose.Save();
+			lblmsg.Text = "";
+            System.Web.HttpContext.Current.Response.Redirect(string.Format("Opportunity.aspx?modeid=Detail&amp;entityid=" + opp.Id.ToString()));         
+        }
+        else
+        {
+            //save according to warning
+			
+            if (lblmsg.Text != "")
+            {
+				if(oppClose == null)
+				{
+					oppClose = Sage.Platform.EntityFactory.Create&lt;Sage.Entity.Interfaces.IOppClosedCustCode&gt;();
+				}
+                oppClose.Vwareamaster = objarea;
+                oppClose.CustomerCode = Convert.ToInt32(txtcustomerCode.Text.Trim());
+                oppClose.Opportunity = opp;
+				oppClose.CArea = objarea.Carea.Trim();
+				oppClose.Save();
+                //lblmsg.Visible = false;
+                lblmsg.Text = "";
+                System.Web.HttpContext.Current.Response.Redirect(string.Format("Opportunity.aspx?modeid=Detail&amp;entityid=" + opp.Id.ToString()));
+            }
+            else
+            {
+                //DialogService.ShowMessage("Customer code is not relate to Account Manager, if you want continue then click again ok");
+                lblmsg.Visible = true;
+                lblmsg.Text = "Customer code is not relate to Account Manager, if you want continue then click again ok";
+            }
+           
+        }
+    }
+}
+else
+{
+    //DialogService.ShowMessage("Invalid Customer Code");
+	lblmsg.Text="Invalid Customer Code";
+}    </CSharpCodeSnippet>
+                    </CSharpSnippetActionItem>
+                  </Action>
+                  <IsDialogCloseAction>False</IsDialogCloseAction>
+                  <RunOnEveryRePaint>False</RunOnEveryRePaint>
+                  <DialogActionResult>NoResult</DialogActionResult>
+                  <PerformsUpdate>False</PerformsUpdate>
+                  <AppliedSecurity />
+                  <RefreshData>False</RefreshData>
+                </OnClickAction>
+              </QFButton>
+            </Control>
+            <Control TypeName="Sage.Platform.QuickForms.Controls.QFButton, Sage.Platform.QuickForms">
+              <QFButton>
+                <Column>0</Column>
+                <Row>0</Row>
+                <HotKey>0</HotKey>
+                <TabIndex>0</TabIndex>
+                <ControlId>btnCancel</ControlId>
+                <DataBindings />
+                <ControlLabelPlacement>none</ControlLabelPlacement>
+                <ExtendedProperties />
+                <CaptionAlignment>left</CaptionAlignment>
+                <StyleScheme />
+                <ButtonType>StandardButton</ButtonType>
+                <Image />
+                <OnClientClick />
+                <OnClickAction>
+                  <ResourceKey>btnCancel</ResourceKey>
+                  <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+                    <CSharpSnippetActionItem>
+                      <MethodName>btnCancel_ClickAction</MethodName>
+                      <CSharpCodeSnippet>Sage.Entity.Interfaces.IOpportunity opportunity = GetParentEntity() as Sage.Entity.Interfaces.IOpportunity;
+    //opportunity.Status = "Active";
+    opportunity.Closed = false;
+    if (!(opportunity.Closed ?? false))
+    {
+        object resOpen = System.Web.HttpContext.GetGlobalResourceObject("Opportunity", "Opp_Status_Active");
+        if (resOpen != null)
+        {
+            opportunity.Status = resOpen.ToString(); //"Open";
+        }
+    }
+    
+//opp.Status = "Active";
+  System.Web.HttpContext.Current.Response.Redirect(string.Format("Opportunity.aspx?modeid=Detail&amp;entityid=" + opportunity.Id.ToString()));
+</CSharpCodeSnippet>
+                    </CSharpSnippetActionItem>
+                  </Action>
+                  <IsDialogCloseAction>False</IsDialogCloseAction>
+                  <RunOnEveryRePaint>False</RunOnEveryRePaint>
+                  <DialogActionResult>DialogCancel</DialogActionResult>
+                  <PerformsUpdate>False</PerformsUpdate>
+                  <AppliedSecurity />
+                  <RefreshData>False</RefreshData>
+                </OnClickAction>
+              </QFButton>
+            </Control>
+          </ControlsCollection>
+        </Controls>
+      </QFControlsList>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
+      <QFTextBox>
+        <Column>1</Column>
+        <Row>0</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>txtcustomerCode</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>CustomerCode</DataItemName>
+            <ControlItemName>Text</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>txtcustomerCode</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
+            <CSharpSnippetActionItem>
+              <MethodName>txtcustomerCode_ChangeAction</MethodName>
+              <CSharpCodeSnippet>lblmsg.Text = "";</CSharpCodeSnippet>
+            </CSharpSnippetActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>true</Required>
+      </QFTextBox>
+    </Control>
+  </Controls>
+  <ToolControls>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFElementSpacer, Sage.Platform.QuickForms">
+      <QFElementSpacer>
+        <Column>0</Column>
+        <Row>0</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>e292ef363bab4131ad558f0213de3537</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+      </QFElementSpacer>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFElementSpacer, Sage.Platform.QuickForms">
+      <QFElementSpacer>
+        <Column>0</Column>
+        <Row>0</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>df54a0a51ae14ab987306b79823fa04e</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+      </QFElementSpacer>
+    </Control>
+  </ToolControls>
+  <Columns>
+    <ColumnStyle>
+      <SizeType>Percent</SizeType>
+      <Width>50</Width>
+    </ColumnStyle>
+    <ColumnStyle>
+      <SizeType>Percent</SizeType>
+      <Width>50</Width>
+    </ColumnStyle>
+  </Columns>
+  <Rows>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
+  </Rows>
+  <Description />
+  <UseEntityNameAsTitle>true</UseEntityNameAsTitle>
+  <EntityTypeName>IOppClosedCustCode</EntityTypeName>
+  <DefaultNamespace>Sage.Entity.Interfaces</DefaultNamespace>
+  <AssemblyName>Sage.Entity.Interfaces</AssemblyName>
+</QuickForm>

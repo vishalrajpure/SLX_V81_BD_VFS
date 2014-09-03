@@ -30,10 +30,9 @@ AlternatingRowStyle-CssClass="rowdk" RowStyle-CssClass="rowlt" SelectedRowStyle-
     <asp:CheckBoxField DataField="CurrentMajorCompetitor" ReadOnly="True"
       HeaderText="<%$ resources: grdOppCompetitors.ce453213-3bc0-42a0-8545-26a9ad5985f5.ColumnHeading %>"        >
           </asp:CheckBoxField>
-    <asp:TemplateField   HeaderText="<%$ resources: grdOppCompetitors.e5c5aa99-5983-4577-b38a-47283aea5089.ColumnHeading %>"        >
-    <itemtemplate>
- <SalesLogix:Currency runat="server" ID="grdOppCompetitorscol5" DisplayMode="AsText"  ExchangeRateType="BaseRate"   Text='<%#  dtsOppCompetitors.getPropertyValue(Container.DataItem, "CompetitorRate")  %>' CssClass=""  DecimalDigits="2"  />
-   </itemtemplate></asp:TemplateField>
+    <asp:BoundField DataField="CompetitorRate"
+      HeaderText="<%$ resources: grdOppCompetitors.c943735b-bd29-4a8f-a2c1-cdca039857e6.ColumnHeading %>"          >
+      </asp:BoundField>
     <asp:BoundField DataField="CompetitorShareOfWellet"
   DataFormatString="<%$ resources: grdOppCompetitors.8b2a3dea-a970-474d-b3d0-8d51563bd14a.FormatString %>" HtmlEncode="false"    HeaderText="<%$ resources: grdOppCompetitors.8b2a3dea-a970-474d-b3d0-8d51563bd14a.ColumnHeading %>"          >
       </asp:BoundField>
@@ -328,21 +327,82 @@ Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.
 string _UserId = "", AccManager = "";
 Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
 _UserId = _IUserService.UserId; //get login Userid
-if(opportunity.AccountManager != null)
+if(opportunity.AccountManager != null && opportunity.Account != null)
 {
+	System.Collections.Hashtable keyPairs = new System.Collections.Hashtable();
+    string iniPath = Server.MapPath(@"Temp") + "\\Config.ini";
+    System.IO.TextReader
+        iniFile = null;
+    String strLine = null;
+    String currentRoot = null;
+    String[] keyPair = null;
+    string Conn = "";
+
+
+    if (System.IO.File.Exists(iniPath))
+    {
+        iniFile = new System.IO.StreamReader(iniPath);
+        strLine = iniFile.ReadLine();
+        while (strLine != null)
+        {
+            strLine = strLine.Trim();//.ToUpper();
+            if (strLine != "")
+            {
+                if (strLine.StartsWith("[") && strLine.EndsWith("]"))
+                {
+                    currentRoot = strLine.Substring(1, strLine.Length - 2);
+                }
+                else
+                {
+                    keyPair = strLine.Split(new char[] { '=' }, 2);
+
+                    if (keyPair[0].ToString() == "constr")
+                    {
+                        Conn = keyPair[1].ToString();
+                        break;
+                    }
+                }
+            }
+            strLine = iniFile.ReadLine();
+        }
+        if (iniFile != null)
+            iniFile.Close();
+
+    }
     AccManager = Convert.ToString(opportunity.AccountManager.Id);
-    if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(opportunity.Account.AccountManager.Id) == _UserId.Trim()) && (opportunity.Status != "Closed - Won" && opportunity.Status.ToUpper() != "LOST" && opportunity.Status.ToUpper() != "DROPPED"))
+    string qry = "select  USERID from (select USERID,UserCode, nullif(MANAGERID,USERID) MANAGER from USERSECURITY) connect by nocycle prior MANAGER= USERID start with USERID = ('" + opportunity.Account.AccountManager.Id.ToString() + "')" +
+				" UNION select  USERID from (select USERID,UserCode, nullif(MANAGERID,USERID) MANAGER from USERSECURITY) connect by nocycle prior MANAGER= USERID start with USERID = ('" + opportunity.AccountManager.Id.ToString() + "')";
+    Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+    //System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(Conn);//"Provider=OraOLEDB.Oracle.1;Password=Ma$t3rk3y;Persist Security Info=True;User ID=sysdba;Data Source=BLUEDART");
+    System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+    System.Data.DataTable dt = new System.Data.DataTable();
+    dataAdapterObj.Fill(dt);
+    bool flag = false;
+    if (dt.Rows.Count > 0)
+    {
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(dt.Rows[i][0].ToString()).Trim() == _UserId.Trim()) && (opportunity.Status != "Closed - Won" && opportunity.Status.ToUpper() != "LOST" && opportunity.Status.ToUpper() != "DROPPED"))
+            {
+                grdOppCompetitors.Enabled = true;
+                lueAssociateCompetitor.Enabled = true;
+                flag = true;
+            }
+        }
+    }
+    else if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(opportunity.Account.AccountManager.Id).Trim() == _UserId.Trim()) && (opportunity.Status != "Closed - Won" && opportunity.Status.ToUpper() != "LOST" && opportunity.Status.ToUpper() != "DROPPED"))
     {
      	grdOppCompetitors.Enabled = true;
-		lueAssociateCompetitor.Enabled = true;
+		        lueAssociateCompetitor.Enabled = true;
+                flag = true;
     }
-    else
+    if(flag == false)
     {
        	grdOppCompetitors.Enabled = false;
 		lueAssociateCompetitor.Enabled = false;
     }
 }
-
 
 }
 private bool _runActivating;

@@ -15,18 +15,14 @@
          <col width="100%" />
      <tr>
             <td  >
-<div class=" lbl alignleft">
-    <asp:Label ID="curActualAmount_lbl" AssociatedControlID="curActualAmount" runat="server" Text="<%$ resources: curActualAmount.Caption %>" ></asp:Label>
-</div>
- <div  class="textcontrol currency"  >
-    <SalesLogix:Currency
-    runat="server"
-    ID="curActualAmount" 
-    ExchangeRateType="EntityRate"
-     Required="false"
- DisplayCurrencyCode="false" DecimalDigits="-1"
+ <div class=" lbl alignleft">
+   <asp:Label ID="curActualAmount_lbl" AssociatedControlID="curActualAmount" runat="server" Text="<%$ resources: curActualAmount.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol numeric"  > 
+    <SalesLogix:NumericControl runat="server" ID="curActualAmount"
+MaxLength="10" FormatType="Decimal" DecimalDigits="2" Strict="True" 
  />
-</div>
+  </div>
 
       </td>
       </tr>
@@ -64,7 +60,42 @@
       </td>
       </tr>
 <tr>
-            <td></td>
+            <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="lueAreamaster_lbl" AssociatedControlID="lueAreamaster" runat="server" Text="<%$ resources: lueAreamaster.Caption %>" ></asp:Label>
+ </div>   
+  <div   class="textcontrol lookup"   >
+<SalesLogix:LookupControl runat="server" ID="lueAreamaster" LookupEntityName="Vwareamaster" LookupEntityTypeName="Sage.Entity.Interfaces.IVwareamaster, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" LookupBindingMode="String" AutoPostBack="true" Required="true"  >
+<LookupProperties>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueAreamaster.LookupProperties.Carea.PropertyHeader %>" PropertyName="Carea" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueAreamaster.LookupProperties.Cscrcddesc.PropertyHeader %>" PropertyName="Cscrcddesc" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lueAreamaster.LookupProperties.Cscrcd.PropertyHeader %>" PropertyName="Cscrcd" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+</LookupProperties>
+<LookupPreFilters>
+</LookupPreFilters>
+</SalesLogix:LookupControl>
+  </div>
+
+      </td>
+      </tr>
+<tr>
+            <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="txtcustomerCode_lbl" AssociatedControlID="txtcustomerCode" runat="server" Text="<%$ resources: txtcustomerCode.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol numeric"  > 
+    <SalesLogix:NumericControl runat="server" ID="txtcustomerCode"
+Required="true" Strict="False" 
+AutoPostBack="true"  />
+  </div>
+
+      </td>
+      </tr>
+<tr>
+            <td  colspan="2" >
+ <div class="slxlabel"><asp:Label runat="server" ID="lblmsg"  />
+</div>
+      </td>
       </tr>
 <tr>
             <td  >
@@ -119,7 +150,7 @@ protected void grdOppCompetitors_Sorting(object sender, GridViewSortEventArgs e)
 >
    <asp:Button runat="server" ID="cmdOK"
  Text="<%$ resources: cmdOK.Caption %>" CssClass="slxbutton"  />
-   
+ 
    <asp:Button runat="server" ID="cmdCancel"
  Text="<%$ resources: cmdCancel.Caption %>" CssClass="slxbutton"  />
  
@@ -207,17 +238,33 @@ protected override void OnAddEntityBindings() {
                     // txtNotes.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding txtNotesTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Notes", txtNotes, "Text");
         BindingSource.Bindings.Add(txtNotesTextBinding);
-                      dtsOppCompetitors.Bindings.Add(new Sage.Platform.WebPortal.Binding.WebEntityListBinding("GetClosedWonLostOppCompetitors()", grdOppCompetitors ));
+                    // lueAreamaster.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding lueAreamasterLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AreaMasterid", lueAreamaster, "LookupResultValue");
+        BindingSource.Bindings.Add(lueAreamasterLookupResultValueBinding);
+                    // txtcustomerCode.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding txtcustomerCodeTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("CustmerCode", txtcustomerCode, "Text");
+        BindingSource.Bindings.Add(txtcustomerCodeTextBinding);
+                         dtsOppCompetitors.Bindings.Add(new Sage.Platform.WebPortal.Binding.WebEntityListBinding("GetClosedWonLostOppCompetitors()", grdOppCompetitors ));
    dtsOppCompetitors.BindFieldNames = new String[] { "OpportunityId","CompetitorId","Competitor.CompetitorName","Rating","Weaknesses" };
               
      BindingSource.OnCurrentEntitySet += new EventHandler(dtsOppCompetitors_OnCurrentEntitySet);
     
 }
-                                                              
-      
-      
-      
-          
+                                                                                    
+protected void lueAreamaster_ChangeAction(object sender, EventArgs e) {
+Sage.Entity.Interfaces.IOpportunity objopp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+//lblmsg.Visible = false;
+lblmsg.Text = "";
+txtNotes.Text = objopp.Notes;
+
+}
+protected void txtcustomerCode_ChangeAction(object sender, EventArgs e) {
+Sage.Entity.Interfaces.IOpportunity objopp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+//lblmsg.Visible = false;
+lblmsg.Text = "";
+txtNotes.Text = objopp.Notes;
+
+}
 protected void lueCompetitorReplaced_ChangeAction(object sender, EventArgs e) {
 Sage.Platform.DynamicMethod.DynamicMethodLibrary lib = Sage.Platform.Orm.DynamicMethodLibraryHelper.Instance;
 Object[] methodArgs = new Object[] { FormAdapter, e };
@@ -225,55 +272,70 @@ lib.Execute("OpportunityClosedWon.lueCompetitorReplaced_OnChange", methodArgs);
 
 }
 protected void cmdOK_ClickAction(object sender, EventArgs e) {
-  Sage.Entity.Interfaces.IOpportunity _entity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-  if (_entity != null)
-  {
-    object _parent = GetParentEntity();
-    if (DialogService.ChildInsertInfo != null)
-    {
-        if (_parent != null)
-        {
-            if (DialogService.ChildInsertInfo.ParentReferenceProperty != null)
-            {
-                DialogService.ChildInsertInfo.ParentReferenceProperty.SetValue(_entity, _parent, null);
-            }
-        }
-    }
-    bool shouldSave = true;
-    Sage.Platform.WebPortal.EntityPage page = Page as Sage.Platform.WebPortal.EntityPage;
-    if (page != null)
-    {
-        if(IsInDialog() && page.ModeId.ToUpper() == "INSERT")
-        {
-            shouldSave = false;
-        }
-    }
-
-    if(shouldSave)
-    {
-       _entity.Save();
-    }
-
-    if (_parent != null)
-    {
-        if (DialogService.ChildInsertInfo != null)
-        {
-           if (DialogService.ChildInsertInfo.ParentsCollectionProperty != null)
-           {
-              System.Reflection.MethodInfo _add = DialogService.ChildInsertInfo.ParentsCollectionProperty.PropertyType.GetMethod("Add");
-              _add.Invoke(DialogService.ChildInsertInfo.ParentsCollectionProperty.GetValue(_parent, null), new object[] { _entity });
-           }
-        }
-     }
-  }
-
-      		        cmdOK_ClickActionBRC(sender, e);
-    
-  
-}
-protected void cmdOK_ClickActionBRC(object sender, EventArgs e) {
 Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-System.Web.HttpContext.Current.Response.Redirect(string.Format("Opportunity.aspx?modeid=Detail&entityid=" + opp.Id.ToString()));
+   //validate Area & customer code 
+string qry = "select * From CCU_BASE where CCUSTCODE = '" + opp.CustmerCode + "' and CAREA = '"+ lueAreamaster.Text.Trim() +"'";
+Sage.Platform.Data.IDataService service = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service.GetConnectionString());
+System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+System.Data.DataTable dt = new System.Data.DataTable();
+dataAdapterObj.Fill(dt);
+if (dt.Rows.Count > 0)
+{
+    //validate all account axcept cureent account
+    string qry1 = "select * From Opportunity where CUSTMERCODE = '" + opp.CustmerCode + "' and Areamasterid = '" + opp.AreaMasterid + "' and Accountid not in( '" + opp.Account.Id + "' )";
+    Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+    System.Data.OleDb.OleDbConnection conObj1 = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+    System.Data.OleDb.OleDbDataAdapter dataAdapterObj1 = new System.Data.OleDb.OleDbDataAdapter(qry1, conObj1);
+    System.Data.DataTable dt1 = new System.Data.DataTable();
+    dataAdapterObj1.Fill(dt1);
+    if (dt1.Rows.Count > 0)
+    {
+        //DialogService.ShowMessage("Customer Code already allocated to another Account");
+		lblmsg.Text="Customer Code already allocated to another Account";
+    }
+    else
+    {
+        //validate Accountmanger to employeecode
+        string qry2 = "select * From CCU_BASE where CCUSTCODE = '" + opp.CustmerCode + "' and CAREA = '" + lueAreamaster.Text.Trim() + "' and CSALEMPCD = '" + opp.AccountManager.UserName + "'";
+        Sage.Platform.Data.IDataService service2 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+        System.Data.OleDb.OleDbConnection conObj2 = new System.Data.OleDb.OleDbConnection(service.GetConnectionString());
+        System.Data.OleDb.OleDbDataAdapter dataAdapterObj2 = new System.Data.OleDb.OleDbDataAdapter(qry2, conObj2);
+        System.Data.DataTable dt2 = new System.Data.DataTable();
+        dataAdapterObj2.Fill(dt2);
+        if (dt2.Rows.Count > 0)
+        {
+            //save data with status closed
+            opp.Save();
+			lblmsg.Text = "";
+            System.Web.HttpContext.Current.Response.Redirect(string.Format("Opportunity.aspx?modeid=Detail&entityid=" + opp.Id.ToString()));         
+        }
+        else
+        {
+            //save according to warning
+            if (lblmsg.Text != "")
+            {
+				opp.Save();
+                //lblmsg.Visible = false;
+                lblmsg.Text = "";
+                System.Web.HttpContext.Current.Response.Redirect(string.Format("Opportunity.aspx?modeid=Detail&entityid=" + opp.Id.ToString()));
+            }
+            else
+            {
+                //DialogService.ShowMessage("Customer code is not relate to Account Manager, if you want continue then click again ok");
+                lblmsg.Visible = true;
+                lblmsg.Text = "Customer code is not relate to Account Manager, if you want continue then click again ok";
+            }
+           
+        }
+    }
+}
+else
+{
+    //DialogService.ShowMessage("Invalid Customer Code");
+	lblmsg.Text="Invalid Customer Code";
+}    
+  
 
 }
 protected void cmdCancel_ClickAction(object sender, EventArgs e) {
@@ -286,36 +348,32 @@ lib.Execute("OpportunityClosedWon.cmdCancel_OnClick", methodArgs);
 protected override void OnWireEventHandlers()
 {
  base.OnWireEventHandlers();
- lueCompetitorReplaced.LookupResultValueChanged += new EventHandler(lueCompetitorReplaced_ChangeAction);
-if (RoleSecurityService != null)
-{
-if (RoleSecurityService.HasAccess("ENTITIES/OPPORTUNITY/EDIT"))
-{
+ lueAreamaster.LookupResultValueChanged += new EventHandler(lueAreamaster_ChangeAction);
+txtcustomerCode.TextChanged += new EventHandler(txtcustomerCode_ChangeAction);
+lueCompetitorReplaced.LookupResultValueChanged += new EventHandler(lueCompetitorReplaced_ChangeAction);
 cmdOK.Click += new EventHandler(cmdOK_ClickAction);
-}
-}
-cmdOK.Click += new EventHandler(DialogService.CloseEventHappened);
-cmdOK.Click += new EventHandler(Refresh);
 cmdCancel.Click += new EventHandler(cmdCancel_ClickAction);
-cmdCancel.Click += new EventHandler(DialogService.CloseEventHappened);
 
 
 }
 
 protected void quickformload0(object sender, EventArgs e) {
- if (DialogService.DialogParameters.Count > 0 && (DialogService.DialogParameters.ContainsKey("ExchangeRateType")))
+/* if (DialogService.DialogParameters.Count > 0 && (DialogService.DialogParameters.ContainsKey("ExchangeRateType")))
  {
      Sage.Platform.Controls.ExchangeRateTypeEnum rateType = (Sage.Platform.Controls.ExchangeRateTypeEnum)Enum.Parse(typeof(Sage.Platform.Controls.ExchangeRateTypeEnum), DialogService.DialogParameters["ExchangeRateType"].ToString());
   
      string exchangeRateCode = DialogService.DialogParameters["ExchangeRateCode"].ToString();
      double exchangeRate = System.Convert.ToDouble(DialogService.DialogParameters["ExchangeRate"]);
-      Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+     Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
      curActualAmount.DisplayCurrencyCode = true;
      curActualAmount.ExchangeRate = exchangeRate;
      curActualAmount.CurrentCode = exchangeRateCode;
      curActualAmount.ExchangeRateType = rateType;
-     curActualAmount.Text = System.Convert.ToString(opp.ActualAmount);
- } 
+     curActualAmount.Text = System.Convert.ToString(opp.ActualAmount);	
+ } */
+	Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+    curActualAmount.Text = System.Convert.ToString(opp.ActualAmount);
+lblmsg.ForeColor = System.Drawing.Color.Red;
 
 }
 private bool _runActivating;
@@ -334,8 +392,6 @@ Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.Entit
         if (epage != null)
             _runActivating = (epage.IsNewEntity || _runActivating);
 if (_runActivating) DoActivating();
-ClientBindingMgr.RegisterSaveButton(cmdOK);
-
 ScriptManager.RegisterStartupScript(Page, GetType(), "cleanupcontainer", "jQuery(\".controlslist > div:empty\").remove();", true);
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))
 {
@@ -345,11 +401,6 @@ if (dtsOppCompetitors.SourceObject == null) { dtsOppCompetitors.SourceObject = B
 if (dtsOppCompetitors.SourceObject == null) { RegisterBindingsWithClient(dtsOppCompetitors); }
 dtsOppCompetitors.Bind();
 
-if (!RoleSecurityService.HasAccess("ENTITIES/OPPORTUNITY/EDIT"))
-{
-cmdOK.Visible = false;
-}
-ClientBindingMgr.RegisterDialogCancelButton(cmdCancel);
 
 
 }
@@ -404,8 +455,8 @@ public class OpportunityClosedWonAdapter : Sage.Platform.WebPortal.Adapters.Enti
     public OpportunityClosedWonAdapter(Sage.Platform.WebPortal.SmartParts.EntityBoundSmartPartInfoProvider smartPart)
         : base(smartPart) {}
 
-    private Sage.Platform.Controls.ICurrencyControl _curActualAmount;
-    public  Sage.Platform.Controls.ICurrencyControl curActualAmount
+    private Sage.Platform.Controls.INumericControl _curActualAmount;
+    public  Sage.Platform.Controls.INumericControl curActualAmount
     {
         get { return FindControl(ref _curActualAmount, "curActualAmount"); }
     }
@@ -423,6 +474,21 @@ public class OpportunityClosedWonAdapter : Sage.Platform.WebPortal.Adapters.Enti
     public  Sage.Platform.Controls.ITextBoxControl txtNotes
     {
         get { return FindControl(ref _txtNotes, "txtNotes"); }
+    }
+    private Sage.Platform.Controls.ILookupControl _lueAreamaster;
+    public  Sage.Platform.Controls.ILookupControl lueAreamaster
+    {
+        get { return FindControl(ref _lueAreamaster, "lueAreamaster"); }
+    }
+    private Sage.Platform.Controls.INumericControl _txtcustomerCode;
+    public  Sage.Platform.Controls.INumericControl txtcustomerCode
+    {
+        get { return FindControl(ref _txtcustomerCode, "txtcustomerCode"); }
+    }
+    private Sage.Platform.Controls.ILabelControl _lblmsg;
+    public  Sage.Platform.Controls.ILabelControl lblmsg
+    {
+        get { return FindControl(ref _lblmsg, "lblmsg"); }
     }
     private Sage.Platform.Controls.ILookupControl _lueCompetitorReplaced;
     public  Sage.Platform.Controls.ILookupControl lueCompetitorReplaced

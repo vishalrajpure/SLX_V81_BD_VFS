@@ -53,7 +53,7 @@ define('Mobile/SalesLogix/Views/Address/List', [
                 key = row ? domAttr.get(row, 'data-key') : false;
 
             if (this._selectionModel && key) {
-                App.showMapForAddress(format.address(this.entries[key], true, ' '));
+                //App.showMapForAddress(format.address(this.entries[key], true, ' '));
             }
         }
     });

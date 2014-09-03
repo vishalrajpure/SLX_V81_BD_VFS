@@ -2076,11 +2076,11 @@ function (_Widget, _Templated, declare, SingleEntrySDataStore, BindingsManager, 
                 return;
             }
             if (this.dtp_startDate.get('value') === '') {
-                alert("Please Select Regarding...");
+                alert("Please Select StartDate...");
                 return;
             }
             if (this.sel_Duration.get('value') === '') {
-                alert("Please Select Regarding...");
+                alert("Please Select Duration...");
                 return;
             }
             if (this.rdo_Contact.get('value') == 'contact') {

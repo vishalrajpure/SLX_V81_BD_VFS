@@ -3,7 +3,7 @@
     '<div dojoType="dijit.Dialog" id="activityDialog" title="" dojoAttachPoint="_dialog" dojoAttachEvent="onHide:_onDlgHide">',
         '<div class="activity-dialog">',  //body
             '<div dojoType="dojox.layout.TableContainer" orientation="horiz" cols="1" labelWidth="{%= $.labelWidth %}" dojoAttachPoint="regardingContainer">',
-                '<select id="pk_Regarding" label="{%= $.regardingText %}"  id="{%= $.id %}_pk_Regarding" shouldPublishMarkDirty="false" dojoType="Sage.UI.Controls.SingleSelectPickList" dojoAttachPoint="pk_Regarding" canEditText="true" itemMustExist="false" maxLength="64" ></select>',
+                '<select id="pk_Regarding" forecolor="RED" label="{%= $.regardingText %}"  id="{%= $.id %}_pk_Regarding" shouldPublishMarkDirty="false" dojoType="Sage.UI.Controls.SingleSelectPickList" dojoAttachPoint="pk_Regarding" canEditText="true" itemMustExist="false" maxLength="64" ></select>',
                 '<div dojoType="dijit.form.TextBox" label="{%= $.locationText %}" id="{%= $.id %}_tb_Location" dojoAttachPoint="tb_Location" maxLength="255" ></div>',
             '</div>', //first tablecontainer 1 col
         //Dates section for add/edit mode..................

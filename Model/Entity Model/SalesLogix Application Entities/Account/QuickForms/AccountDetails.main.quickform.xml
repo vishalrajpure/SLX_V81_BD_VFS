@@ -114,8 +114,8 @@ MainPhone_lbl.ForeColor = System.Drawing.Color.Red;
           <ResourceKey>txtLegalName</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
             <CSharpSnippetActionItem>
-              <MethodName>txtLegalName_ChangeAction</MethodName>
-              <CSharpCodeSnippet>string qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + txtLegalName.Text.Trim() + "'";
+              <MethodName />
+              <CSharpCodeSnippet>string qry = "select LegalCompanyName from LegalMaster where upper(LegalCompanyName) ='" + txtLegalName.Text.Trim().ToUpper() + "'";
 Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
 System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
 System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
@@ -174,6 +174,84 @@ if (dt.Rows.Count &gt; 0)
         <Required>true</Required>
       </QFSLXPhone>
     </Control>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXLookup, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXLookup>
+        <Column>0</Column>
+        <Row>3</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>lkpIndustry</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>Indsgmst</DataItemName>
+            <ControlItemName>LookupResultValue</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>lkpIndustry</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+        <LookupImage />
+        <LookupDialogWidth xsi:nil="true" />
+        <LookupDialogHeight xsi:nil="true" />
+        <LookupBindingMode>Object</LookupBindingMode>
+        <LookupResultValue xsi:type="xsd:string" />
+        <SeedProperty />
+        <SeedValue />
+        <DropDownDisplayProperty />
+        <AllowClearingResult>false</AllowClearingResult>
+        <AppendStringValues>false</AppendStringValues>
+        <OverrideSeedOnSearch>false</OverrideSeedOnSearch>
+        <LookupEntityName>Indsgmst</LookupEntityName>
+        <LookupEntityTypeName>Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
+        <AutoPostBack>false</AutoPostBack>
+        <EnableHyperLinking>false</EnableHyperLinking>
+        <InitializeLookup>false</InitializeLookup>
+        <LookupProperties>
+          <LookupProperty>
+            <PropertyName>Cmktsgdesc</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>MKT Segment</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+          <LookupProperty>
+            <PropertyName>Cindsgdesc</PropertyName>
+            <PropertyType>System.String</PropertyType>
+            <PropertyHeader>Industry</PropertyHeader>
+            <PropertyFormat>None</PropertyFormat>
+            <PropertyFormatString />
+            <UseAsResult>true</UseAsResult>
+            <ExcludeFromFilters>false</ExcludeFromFilters>
+            <IsSortable>true</IsSortable>
+            <HideCondition />
+          </LookupProperty>
+        </LookupProperties>
+        <LookupPreFilters />
+      </QFSLXLookup>
+    </Control>
     <Control typeName="Sage.Platform.QuickForms.QFControls.QFControlsList, Sage.Platform.QuickForms.QFControls">
       <QFControlsList>
         <Column>0</Column>
@@ -208,7 +286,7 @@ if (dt.Rows.Count &gt; 0)
                   <ResourceKey>btnAddress</ResourceKey>
                   <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
                     <CSharpSnippetActionItem>
-                      <MethodName>btnAddress_ClickAction</MethodName>
+                      <MethodName />
                       <CSharpCodeSnippet>if (DialogService != null)
 {
 	Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;    
@@ -221,8 +299,13 @@ if (dt.Rows.Count &gt; 0)
 		DialogService.EntityID = account.Address.Id.ToString();
 	    DialogService.ShowDialog();
 	}*/
-	string script_FormatNumber1 = "window.showModalDialog('InsertAddress.aspx?type=Account&amp;id=" + account.Address.Id.ToString() + "', '_blank', 'height=440,width=100,status=yes,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=no,titlebar=no' )";
-    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
+	if(txtLegalName.Enabled == false || txtLegalName.ReadOnly == true)
+	{}
+	else
+	{
+		string script_FormatNumber1 = "window.showModalDialog('InsertAddress.aspx?type=Account&amp;id=" + account.Address.Id.ToString() + "', '_blank', 'dialogHeight=480,dialogWidth=100,status=no,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=no,titlebar=no' )";
+    	ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
+	}
 }</CSharpCodeSnippet>
                     </CSharpSnippetActionItem>
                   </Action>
@@ -239,6 +322,7 @@ if (dt.Rows.Count &gt; 0)
               <QFButton>
                 <Column>0</Column>
                 <Row>0</Row>
+                <Visible>false</Visible>
                 <HotKey>0</HotKey>
                 <TabIndex>0</TabIndex>
                 <ControlId>btnShowMap</ControlId>
@@ -256,7 +340,8 @@ if (dt.Rows.Count &gt; 0)
                     <CSharpSnippetActionItem>
                       <MethodName>btnShowMap_ClickAction</MethodName>
                       <CSharpCodeSnippet>Sage.Entity.Interfaces.IAccount cnt = BindingSource.Current as Sage.Entity.Interfaces.IAccount;
-string url = "http://maps.google.com/maps?q=" + cnt.Address.Latitude + "," + cnt.Address.Logitude;
+//string url = "http://maps.google.com/maps?key=AIzaSyDKK-1E4tfTgGlBptK5TCCfap5coV_kzC0&amp;q=" + cnt.Address.Latitude + "," + cnt.Address.Logitude;
+string url = "ViewMap.html?latlon=" + cnt.Address.Latitude + "," + cnt.Address.Logitude;
 ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open('" + url + "');",true);</CSharpCodeSnippet>
                     </CSharpSnippetActionItem>
                   </Action>
@@ -589,49 +674,10 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         <AutoPostBack>false</AutoPostBack>
       </QFSLXUser>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXOwner, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXOwner>
-        <Column>1</Column>
-        <Row>4</Row>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>Owner</ControlId>
-        <DataBindings>
-          <QuickFormPropertyDataBindingDefinition>
-            <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Owner</DataItemName>
-            <ControlItemName>LookupResultValue</ControlItemName>
-            <FormatString />
-            <NullValueString>null</NullValueString>
-          </QuickFormPropertyDataBindingDefinition>
-        </DataBindings>
-        <ControlLabelPlacement>left</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme />
-        <OnChangeAction>
-          <ResourceKey>Owner</ResourceKey>
-          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-            <NoActionActionItem>
-              <MethodName />
-            </NoActionActionItem>
-          </Action>
-          <IsDialogCloseAction>False</IsDialogCloseAction>
-          <RunOnEveryRePaint>False</RunOnEveryRePaint>
-          <DialogActionResult>NoResult</DialogActionResult>
-          <PerformsUpdate>False</PerformsUpdate>
-          <AppliedSecurity />
-          <RefreshData>False</RefreshData>
-        </OnChangeAction>
-        <Required>false</Required>
-        <LookupResultValue xsi:type="xsd:string" />
-        <AutoPostBack>false</AutoPostBack>
-      </QFSLXOwner>
-    </Control>
     <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
       <QFTextBox>
         <Column>1</Column>
-        <Row>6</Row>
+        <Row>4</Row>
         <Visible>false</Visible>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
@@ -666,6 +712,64 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         </OnChangeAction>
         <Required>false</Required>
       </QFTextBox>
+    </Control>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXDependencyLookup, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXDependencyLookup>
+        <Column>1</Column>
+        <Row>6</Row>
+        <Visible>false</Visible>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>ddlMKTSG</ControlId>
+        <DataBindings>
+          <QuickFormPropertyDataBindingDefinition>
+            <DataSourceID>MainEntity</DataSourceID>
+            <DataItemName>Industry</DataItemName>
+            <ControlItemName>Text</ControlItemName>
+            <FormatString />
+            <NullValueString />
+          </QuickFormPropertyDataBindingDefinition>
+        </DataBindings>
+        <ControlLabelPlacement>none</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme />
+        <OnChangeAction>
+          <ResourceKey>ddlMKTSG</ResourceKey>
+          <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+            <NoActionActionItem>
+              <MethodName />
+            </NoActionActionItem>
+          </Action>
+          <IsDialogCloseAction>False</IsDialogCloseAction>
+          <RunOnEveryRePaint>False</RunOnEveryRePaint>
+          <DialogActionResult>NoResult</DialogActionResult>
+          <PerformsUpdate>False</PerformsUpdate>
+          <AppliedSecurity />
+          <RefreshData>False</RefreshData>
+        </OnChangeAction>
+        <Required>false</Required>
+        <AutoPostBack>false</AutoPostBack>
+        <DependentLookups>
+          <DependencyLookup>
+            <PropertyDisplay>Industry:</PropertyDisplay>
+            <LookupEntityName>Indsgmst</LookupEntityName>
+            <LookupEntityTypeName>Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
+            <DropDownDisplayProperty>Cindsgdesc</DropDownDisplayProperty>
+            <ParentProperty />
+            <BindingPropertyName>Industry</BindingPropertyName>
+          </DependencyLookup>
+          <DependencyLookup>
+            <PropertyDisplay>MKT Segment:</PropertyDisplay>
+            <LookupEntityName>Indsgmst</LookupEntityName>
+            <LookupEntityTypeName>Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
+            <DropDownDisplayProperty>Cmktsgdesc</DropDownDisplayProperty>
+            <ParentProperty>Cindsgdesc</ParentProperty>
+            <BindingPropertyName>MktSegment</BindingPropertyName>
+          </DependencyLookup>
+        </DependentLookups>
+        <LookupPreFilters />
+      </QFSLXDependencyLookup>
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPickList, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXPickList>
@@ -751,28 +855,28 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
         <Required>false</Required>
       </QFSLXPhone>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXDependencyLookup, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXDependencyLookup>
+    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXOwner, Sage.SalesLogix.QuickForms.QFControls">
+      <QFSLXOwner>
         <Column>2</Column>
         <Row>3</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>ddlMKTSG</ControlId>
+        <ControlId>Owner</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>Industry</DataItemName>
-            <ControlItemName>Text</ControlItemName>
+            <DataItemName>Owner</DataItemName>
+            <ControlItemName>LookupResultValue</ControlItemName>
             <FormatString />
-            <NullValueString />
+            <NullValueString>null</NullValueString>
           </QuickFormPropertyDataBindingDefinition>
         </DataBindings>
-        <ControlLabelPlacement>none</ControlLabelPlacement>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <OnChangeAction>
-          <ResourceKey>ddlMKTSG</ResourceKey>
+          <ResourceKey>Owner</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
             <NoActionActionItem>
               <MethodName />
@@ -786,27 +890,9 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
           <RefreshData>False</RefreshData>
         </OnChangeAction>
         <Required>false</Required>
+        <LookupResultValue xsi:type="xsd:string" />
         <AutoPostBack>false</AutoPostBack>
-        <DependentLookups>
-          <DependencyLookup>
-            <PropertyDisplay>Industry:</PropertyDisplay>
-            <LookupEntityName>Indsgmst</LookupEntityName>
-            <LookupEntityTypeName>Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
-            <DropDownDisplayProperty>Cindsgdesc</DropDownDisplayProperty>
-            <ParentProperty />
-            <BindingPropertyName>Industry</BindingPropertyName>
-          </DependencyLookup>
-          <DependencyLookup>
-            <PropertyDisplay>MKT Segment:</PropertyDisplay>
-            <LookupEntityName>Indsgmst</LookupEntityName>
-            <LookupEntityTypeName>Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</LookupEntityTypeName>
-            <DropDownDisplayProperty>Cmktsgdesc</DropDownDisplayProperty>
-            <ParentProperty>Cindsgdesc</ParentProperty>
-            <BindingPropertyName>MktSegment</BindingPropertyName>
-          </DependencyLookup>
-        </DependentLookups>
-        <LookupPreFilters />
-      </QFSLXDependencyLookup>
+      </QFSLXOwner>
     </Control>
     <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
       <QFTextBox>
@@ -963,6 +1049,7 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
                 <CSharpSnippetActionItem>
                   <MethodName />
                   <CSharpCodeSnippet>Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
+
 if(string.IsNullOrEmpty(account.AccountName))
 {
    DialogService.ShowMessage("Please Enter the AccountName");
@@ -978,12 +1065,12 @@ if(string.IsNullOrEmpty(account.MainPhone))
    DialogService.ShowMessage("Please Enter the MainPhone");
    return;
 }
-if(account.Type == "Customer" &amp;&amp; account.Status != "LOST" &amp;&amp; account.Status != "Active" )
+if(account.Type.ToUpper() == "CUSTOMER" &amp;&amp; account.Status.ToUpper() != "LOST" &amp;&amp; account.Status.ToUpper() != "ACTIVE" )
 {
 	DialogService.ShowMessage("Invalid Status of Account");
    	return;
 }
-if((account.Type == "Prospect"|| account.Type == "Suspect") &amp;&amp; account.Status == "LOST")
+if((account.Type.ToUpper() == "PROSPECT"|| account.Type.ToUpper() == "SUSPECT") &amp;&amp; account.Status.ToUpper() == "LOST")
 {
 	DialogService.ShowMessage("Invalid Status of Account");
    	return;
@@ -1013,7 +1100,7 @@ else
 	    DialogService.ShowMessage("This Account is already exists");
 	    return;
 	}			*/
-	string qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + txtLegalName.Text.Trim() + "'";
+	string qry = "select LegalCompanyName from LegalMaster where upper(LegalCompanyName) ='" + txtLegalName.Text.Trim().ToUpper() + "'";
 	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
     System.Data.DataTable dt = new System.Data.DataTable();
     dataAdapterObj.Fill(dt);
@@ -1046,12 +1133,12 @@ if(string.IsNullOrEmpty(account.MainPhone))
    DialogService.ShowMessage("Please Enter the MainPhone");
    return;
 }
-if(account.Type == "Customer" &amp;&amp; account.Status != "LOST" &amp;&amp; account.Status != "Active" )
+if(account.Type.ToUpper() == "CUSTOMER" &amp;&amp; account.Status.ToUpper() != "LOST" &amp;&amp; account.Status.ToUpper() != "ACTIVE" )
 {
 	DialogService.ShowMessage("Invalid Status of Account");
    	return;
 }
-if((account.Type == "Prospect"|| account.Type == "Suspect") &amp;&amp; account.Status == "LOST")
+if((account.Type.ToUpper() == "PROSPECT"|| account.Type.ToUpper() == "SUSPECT") &amp;&amp; account.Status.ToUpper() == "LOST")
 {
 	DialogService.ShowMessage("Invalid Status of Account");
    	return;
@@ -1068,6 +1155,27 @@ if(string.IsNullOrEmpty(account.Address.PostalCode))
 }
 else
 {
+		//string qry = "Select Account From Account where Account = '" + account.AccountName.Trim() + "'";
+	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	/*System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	System.Data.DataTable dt = new System.Data.DataTable();
+	dataAdapterObj.Fill(dt);
+	if (dt.Rows.Count &gt; 0)
+	{
+	    DialogService.ShowMessage("This Account is already exists");
+	    return;
+	}			*/
+	string qry = "select LegalCompanyName from LegalMaster where upper(LegalCompanyName) ='" + txtLegalName.Text.Trim().ToUpper() + "'";
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+    System.Data.DataTable dt = new System.Data.DataTable();
+    dataAdapterObj.Fill(dt);
+    if (dt.Rows.Count &gt; 0)
+    {
+        DialogService.ShowMessage("This legal Entity is already exists");
+        return;
+    }
+	
 	//Session.Remove("Addressid");
 	DialogService.SetSpecs(400, 400, "UpdateAccountOptions", string.Empty);
 	DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAccount);
@@ -1198,6 +1306,10 @@ else
     </ColumnStyle>
   </Columns>
   <Rows>
+    <RowStyle>
+      <SizeType>Absolute</SizeType>
+      <Height>35</Height>
+    </RowStyle>
     <RowStyle>
       <SizeType>Absolute</SizeType>
       <Height>35</Height>

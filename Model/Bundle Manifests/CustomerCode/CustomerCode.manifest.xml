@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<BundleManifest id="a65e3a4e-3ec2-42e9-8648-83ff2392209b">
+  <bundleProperties>
+    <name>CustomerCode</name>
+    <description><![CDATA[]]></description>
+    <address><![CDATA[]]></address>
+    <company />
+    <copyright><![CDATA[]]></copyright>
+    <majorVersion>0</majorVersion>
+    <minorVersion>0</minorVersion>
+    <revision>0</revision>
+    <build>1</build>
+    <autoIncrement>false</autoIncrement>
+    <installDate>0001-01-01T00:00:00</installDate>
+    <installPassword />
+    <formatVersion>8.1.0.1146</formatVersion>
+  </bundleProperties>
+  <bundleItemHierarchy>
+    <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.Platform.BundleModel.BundleManifestItem, Sage.Platform.BundleModel">
+      <BundleManifestItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <ItemId>a65e3a4e-3ec2-42e9-8648-83ff2392209b</ItemId>
+        <Url>\</Url>
+        <BundleItemType>Container</BundleItemType>
+        <Caption>CustomerCode</Caption>
+      </BundleManifestItem>
+      <children>
+        <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntityModelContext, Sage.Platform">
+          <EntityModelContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <ItemId>entitymodel</ItemId>
+            <Url>\::Entity Model</Url>
+            <BundleItemType>Container</BundleItemType>
+            <Caption>Entity Model</Caption>
+          </EntityModelContext>
+          <children>
+            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.PackagesContext, Sage.Platform">
+              <PackagesContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <ItemId>entitymodel\packages</ItemId>
+                <Url>\::Entity Model::Packages</Url>
+                <BundleItemType>Container</BundleItemType>
+                <Caption>Packages</Caption>
+              </PackagesContext>
+              <children>
+                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.PackageBundleItem, Sage.Platform">
+                  <PackageBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>7ddc7cbe-e71d-483a-8599-6c5c483ee050</ItemId>
+                    <Url>\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml</Url>
+                    <BundleItemType>Context</BundleItemType>
+                    <Caption>Saleslogix Application Entities</Caption>
+                  </PackageBundleItem>
+                  <children>
+                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntityBundleItem, Sage.Platform">
+                      <EntityBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <ItemId>9a9b36bc-66f4-4ef5-8fb2-d971b91d39dd</ItemId>
+                        <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml</Url>
+                        <BundleItemType>Context</BundleItemType>
+                        <Caption>OppClosedCustCode</Caption>
+                      </EntityBundleItem>
+                      <children>
+                        <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntitySubFolderContext, Sage.Platform">
+                          <EntitySubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>9a9b36bc-66f4-4ef5-8fb2-d971b91d39ddquickforms</ItemId>
+                            <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Forms</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Forms</Caption>
+                            <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml</ParentUrl>
+                            <CaptionKey>quickforms</CaptionKey>
+                          </EntitySubFolderContext>
+                          <children>
+                            <bundleItem modelId="b2741b79-02a2-4f4c-81cd-c204f82cf41c" itemTypeName="Sage.Platform.QuickForms.BundleSupport.QuickFormBundleItem, Sage.Platform.QuickForms">
+                              <QuickFormBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>f3cc60a8-4948-41e7-9054-3830f8db5f2e</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\QuickForms\CustomerCodeDetails.main.quickform.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>CustomerCodeDetails</Caption>
+                              </QuickFormBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                      </children>
+                    </bundleItem>
+                  </children>
+                </bundleItem>
+              </children>
+            </bundleItem>
+          </children>
+        </bundleItem>
+      </children>
+    </bundleItem>
+  </bundleItemHierarchy>
+  <bundleActionHierarchy>
+    <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.Platform.BundleModel.RootBundleAction, Sage.Platform.BundleModel">
+      <RootBundleAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <ItemId>\Actions</ItemId>
+        <Url>\Actions</Url>
+        <BundleItemType>Container</BundleItemType>
+        <Caption>Bundle Actions</Caption>
+      </RootBundleAction>
+    </bundleItem>
+  </bundleActionHierarchy>
+  <itemsToDelete />
+  <globalResources />
+</BundleManifest>

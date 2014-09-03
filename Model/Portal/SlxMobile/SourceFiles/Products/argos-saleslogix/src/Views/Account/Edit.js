@@ -7,22 +7,26 @@ define('Mobile/SalesLogix/Views/Account/Edit', [
     'Mobile/SalesLogix/Validator',
     'Mobile/SalesLogix/Format',
     'Mobile/SalesLogix/Template',
-    'Sage/Platform/Mobile/Edit'
+    'Sage/Platform/Mobile/Edit',
+	'Sage/Platform/Mobile/Utility'
 ], function(
     declare,
     string,
     validator,
     format,
     template,
-    Edit
+    Edit,
+    utility
 ) {
 
     return declare('Mobile.SalesLogix.Views.Account.Edit', [Edit], {
+	
         //Localization
         accountStatusTitleText: 'Account Status',
         accountSubTypeTitleText: 'Account Subtype',
         accountText: 'account',
-        accountTypeTitleText: 'Account Type',
+		legalnameText: 'legal name',
+        accountTypeTitleText: 'account type',
         acctMgrText: 'acct mgr',
         businessDescriptionText: 'bus desc',
         businessDescriptionTitleText: 'Business Description',
@@ -30,8 +34,9 @@ define('Mobile/SalesLogix/Views/Account/Edit', [
         faxText: 'fax',
         fullAddressText: 'address',
         importSourceText: 'lead source',
-        industryText: 'industry',
-        industryTitleText: 'Industry',
+		//MSTsegmentText: 'MSTsegment',
+       // industryText: 'industry',
+        //industryTitleText: 'Industry',
         ownerText: 'owner',
         phoneText: 'phone',
         statusText: 'status',
@@ -39,32 +44,134 @@ define('Mobile/SalesLogix/Views/Account/Edit', [
         titleText: 'Account',
         typeText: 'type',
         webText: 'web',
+		InvalidText: "Please fill Address.",
+		durationInvalidText:"Invalid status...",
+		legalInvalidText:"Invalid legalname...",
 
         //View Properties
         entityName: 'Account',
-        id: 'account_edit',
+        id: 'account_edit',		
         insertSecurity: 'Entities/Account/Add',
         updateSecurity: 'Entities/Account/Edit',
         querySelect: [
             'AccountManager/UserInfo/FirstName',
             'AccountManager/UserInfo/LastName',
             'AccountName',
+			'LegalName',
+			'AccountId',
             'BusinessDescription',
             'Description',
             'Fax',
-            'Industry',
-            'LeadSource/Description',
+            //'Industry',
+			'Indsgmst/Cmktsgdesc',
+            'LeadSource/Description',			
             'MainPhone',
             'Notes',
             'Owner/OwnerDescription',
             'Status',
-            'SubType',
+            //'SubType',
             'Type',
             'User/UserInfo/UserName',
+			'Address/*',
             'WebAddress'
         ],
         resourceKind: 'accounts',
+ 		startup: function() {
+            this.inherited(arguments);
+            this.connect(this.fields['Status'], 'onChange', this.onStatusChange);
+			this.connect(this.fields['LegalName'], 'onChange', this.onLegalChange);
+		},
+		authenticate: function() {
+            if (this.busy) {
+                return;
+            }   
+            var credentials = this.getValues(),
+                LegalName = credentials && credentials.LegalName;
+    
+            if (LegalName && /\w+/.test(LegalName)) {
+                this.validateCredentials(LegalName.toUpperCase());
+    			
+            }
+        },
+		validateCredentials: function(LegalName) {
+			//this.fields['Status'].setValue("Active");
+			//alert(LegalName);
+		    var request = new Sage.SData.Client.SDataSingleResourceRequest(this.getService())
+                .setResourceKind('vwlegalmasters')
+                //.setResourceSelector(string.substitute("'${0}'", [LegalName]))
+                .setQueryArg('select', 'Legalcompanyname')
+				.setQueryArg('where', "upper(Legalcompanyname) eq '" + [LegalName] + "'");
+            request.allowCacheUse = true;
+			//alert(request);
+            request.read({
+                success: this.processAccountLegal,
+                failure: this.requestAccountLegalFailure,
+                scope: this
+            });	
+        },
+		requestAccountLegalFailure: function(xhr, o) {
+			alert("false");
+        },
+        processAccountLegal: function(entry) {
+			
+			if(entry)
+			{
+				this.fields['LegalName'].setValue("");
+            	alert("Legalname already present");  
+				
+			}
+            
+        },
+		  onLegalChange: function() {
+		  this.authenticate();
+		},
+		
+		onStatusChange: function(value, field) {
+		
+            var fields, entry, phoneField;
 
+            fields = this.fields;
+            entry = field.currentSelection;	
+            if (entry) {			
+				if(this.fields['Type'].getValue().toUpperCase() == "CUSTOMER" && value.text.toUpperCase() != "LOST" && value.text.toUpperCase() != "ACTIVE" )
+				{
+					alert("Invalid Status of Account");
+					this.requestAccount(this.fields['Address.EntityId'].getValue());
+				   	
+				}
+				else if((this.fields['Type'].getValue().toUpperCase() == "PROSPECT"|| this.fields['Type'].getValue().toUpperCase() == "SUSPECT") && value.text.toUpperCase() == "LOST")
+				{
+					alert("Invalid Status of Account");
+				   	this.requestAccount(this.fields['Address.EntityId'].getValue());
+				}
+            }
+        },
+		requestAccount: function(accountId) {
+			//this.fields['Status'].setValue("Active");
+			
+		    var request = new Sage.SData.Client.SDataSingleResourceRequest(this.getService())
+                .setResourceKind('accounts')
+                .setResourceSelector(string.substitute("'${0}'", [accountId]))
+                .setQueryArg('select', 'Status');
+            request.allowCacheUse = true;
+			
+            request.read({
+                success: this.processAccount,
+                failure: this.requestAccountFailure,
+                scope: this
+            });			
+        },
+        requestAccountFailure: function(xhr, o) {
+		
+        },
+        processAccount: function(entry) {
+					
+            var accstatus = utility.getValue(entry, 'Status');			
+            if (accstatus) {
+                this.fields['Status'].setValue(accstatus);
+            }
+            
+        },
         formatDependentPicklist: function(dependentValue, format) {
             return string.substitute(format, [dependentValue]);
         },
@@ -77,13 +184,27 @@ define('Mobile/SalesLogix/Views/Account/Edit', [
             this.fields['Type'].setValue(templateEntry.Type);
             this.fields['Status'].setValue(templateEntry.Status);
         },
+		
         createLayout: function() {
             return this.layout || (this.layout = [{
+					name: 'Address.EntityId',
+                    property: 'Address.EntityId',
+                    type: 'hidden'
+                }, {
                     label: this.accountText,
                     name: 'AccountName',
                     property: 'AccountName',
                     type: 'text',
                     validator: validator.notEmpty
+				}, {
+                    label: this.legalnameText,
+                    name: 'LegalName',
+                    property: 'LegalName',                   
+                    type: 'text',  
+                    maxTextLength: 128,					
+					notificationTrigger: 'blur',
+					validator: validator.exceedsMaxTextLength
+                    
                 }, {
                     label: this.webText,
                     name: 'WebAddress',
@@ -99,7 +220,7 @@ define('Mobile/SalesLogix/Views/Account/Edit', [
                     property: 'MainPhone',
                     type: 'phone',
                     maxTextLength: 32,
-                    validator: validator.exceedsMaxTextLength
+                    validator: validator.notEmpty
                 }, {
                     emptyText: '',
                     formatValue: format.address.bindDelegate(this, [true], true),
@@ -107,7 +228,8 @@ define('Mobile/SalesLogix/Views/Account/Edit', [
                     name: 'Address',
                     property: 'Address',
                     type: 'address',
-                    view: 'address_edit'
+                    view: 'address_edit',
+					validator: validator.exists					
                 }, {
                     label: this.faxText,
                     name: 'Fax',
@@ -119,11 +241,13 @@ define('Mobile/SalesLogix/Views/Account/Edit', [
                     label: this.typeText,
                     name: 'Type',
                     property: 'Type',
-                    picklist: 'Account Type',
-                    requireSelection: true,
+                    //picklist: 'Account Type',
+                   // requireSelection: true,
                     title: this.accountTypeTitleText,
-                    type: 'picklist'
-                }, {
+                    type: 'text',
+                    readonly: true
+					
+                },/* {
                     dependsOn: 'Type',
                     label: this.subTypeText,
                     name: 'SubType',
@@ -136,15 +260,16 @@ define('Mobile/SalesLogix/Views/Account/Edit', [
                     type: 'picklist',
                     maxTextLength: 64,
                     validator: validator.exceedsMaxTextLength
-                }, {
+                },*/ {
                     label: this.statusText,
                     name: 'Status',
                     property: 'Status',
                     picklist: 'Account Status',
                     requireSelection: false,
                     title: this.accountStatusTitleText,
-                    type: 'picklist'
-                }, {
+                    type: 'picklist',
+                    readonly: true
+                },/* {
                     label: this.industryText,
                     name: 'Industry',
                     property: 'Industry',
@@ -154,7 +279,16 @@ define('Mobile/SalesLogix/Views/Account/Edit', [
                     type: 'picklist',
                     maxTextLength: 64,
                     validator: validator.exceedsMaxTextLength
-                }, {
+                }, */
+				{
+                    label: 'MKT Segment',
+                    name: 'Indsgmst',
+                    property: 'Indsgmst',
+                    textProperty: 'Cmktsgdesc',
+                    type: 'lookup',
+                    view: 'Indsgmst_list'
+                },
+				{
                     label: this.businessDescriptionText,
                     name: 'BusinessDescription',
                     property: 'BusinessDescription',
@@ -177,7 +311,7 @@ define('Mobile/SalesLogix/Views/Account/Edit', [
                     textProperty: 'OwnerDescription',
                     type: 'lookup',
                     view: 'owner_list'
-                }, {
+				},  {
                     label: this.importSourceText,
                     name: 'LeadSource',
                     property: 'LeadSource',

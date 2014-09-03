@@ -100,7 +100,7 @@ makeGrid : function(runtimeConfig) {
 	editable: false
 				}
   	          ],
-		         storeOptions: {
+	 	         storeOptions: {
             resourceKind: 'leadProducts',
             newItemParentReferenceProperty: 'Lead',
             include: ['Lead'],

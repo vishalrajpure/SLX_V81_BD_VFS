@@ -222,4 +222,25 @@
   <data name="ddlMKTSG.DependentLookups..PropertyDisplay" xml:space="preserve">
     <value />
   </data>
+  <data name="lkpIndustry.Caption" xml:space="preserve">
+    <value>MKT Segment:</value>
+  </data>
+  <data name="lkpIndustry.LookupProperties.Cemplname.PropertyHeader" xml:space="preserve">
+    <value>Employee Name</value>
+  </data>
+  <data name="lkpIndustry.LookupProperties.Cemplcode.PropertyHeader" xml:space="preserve">
+    <value>Employee Code</value>
+  </data>
+  <data name="lkpIndustry.LookupProperties.Cjobrole.PropertyHeader" xml:space="preserve">
+    <value>Job Role</value>
+  </data>
+  <data name="lkpIndustry.LookupProperties.Carea.PropertyHeader" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="lkpIndustry.LookupProperties.Cindsgdesc.PropertyHeader" xml:space="preserve">
+    <value>Industry</value>
+  </data>
+  <data name="lkpIndustry.LookupProperties.Cmktsgdesc.PropertyHeader" xml:space="preserve">
+    <value>MKT Segment</value>
+  </data>
 </root>

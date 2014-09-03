@@ -91,8 +91,8 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
         //View Properties
         id: 'activity_edit',
         detailView: 'activity_detail',
-        fieldsForLeads: ['AccountName', 'Lead'],
-        fieldsForStandard: ['Account', 'Contact', 'Opportunity', 'Ticket'],
+        //fieldsForLeads: ['AccountName', 'Lead'],
+        fieldsForStandard: ['Account', 'Contact', 'Opportunity'],
         picklistsByType: {
             'atAppointment': {
                 'Category': 'Meeting Category Codes',
@@ -169,8 +169,8 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
         init: function() {
             this.inherited(arguments);
 
-            this.connect(this.fields['Lead'], 'onChange', this.onLeadChange);
-            this.connect(this.fields['IsLead'], 'onChange', this.onIsLeadChange);
+            //this.connect(this.fields['Lead'], 'onChange', this.onLeadChange);
+            //this.connect(this.fields['IsLead'], 'onChange', this.onIsLeadChange);
             this.connect(this.fields['Leader'], 'onChange', this.onLeaderChange);
             this.connect(this.fields['Timeless'], 'onChange', this.onTimelessChange);
             this.connect(this.fields['Alarm'], 'onChange', this.onAlarmChange);
@@ -178,7 +178,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
             this.connect(this.fields['Account'], 'onChange', this.onAccountChange);
             this.connect(this.fields['Contact'], 'onChange', this.onContactChange);
             this.connect(this.fields['Opportunity'], 'onChange', this.onOpportunityChange);
-            this.connect(this.fields['Ticket'], 'onChange', this.onTicketChange);
+            //this.connect(this.fields['Ticket'], 'onChange', this.onTicketChange);
             this.connect(this.fields['StartDate'], 'onChange', this.onStartDateChange);
             this.connect(this.fields['RecurrenceUI'], 'onChange', this.onRecurrenceUIChange);
             this.connect(this.fields['Recurrence'], 'onChange', this.onRecurrenceChange);
@@ -213,18 +213,18 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
             }
         },
         currentUserCanEdit: function(entry) {
-            return !!entry && (entry['Leader']['$key'] === App.context['user']['$key']);
+            return !!entry && (entry['er']['$key'] === App.context['user']['$key']);
         },
         currentUserCanSetAlarm: function(entry) {
-            return !!entry && (entry['Leader']['$key'] === App.context['user']['$key']);
+            return !!entry && (entry['er']['$key'] === App.context['user']['$key']);
         },
-        isActivityForLead: function(entry) {
+        /*isActivityForLead: function(entry) {
             return entry && /^[\w]{12}$/.test(entry['LeadId']);
-        },
+        },*/
         isActivityRecurring: function(entry) {
             return (/rstMaster/).test(this.fields['RecurrenceState'].getValue());
         },
-        isInLeadContext: function() {
+        /*isInLeadContext: function() {
             var insert = this.options && this.options.insert,
                 entry = this.options && this.options.entry,
                 lead = (insert && App.isNavigationFromResourceKind('leads', function(o, c) {
@@ -232,23 +232,23 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                 })) || this.isActivityForLead(entry);
 
             return !!lead;
-        },
+        },*/
         beforeTransitionTo: function() {
             this.inherited(arguments);
 
             // we hide the lead or standard fields here, as the view is currently hidden, in order to prevent flashing.
             // the value for the 'IsLead' field will be set later, based on the value derived here.
-            if (this.options.isForLead !== undefined) {
+            /*if (this.options.isForLead !== undefined) {
                 return;
-            }
+            }*/
 
-            this.options.isForLead = this.isInLeadContext();
+            //this.options.isForLead = this.isInLeadContext();
 
-            if (this.options.isForLead) {
-                this.showFieldsForLead();
-            } else {
+            //if (this.options.isForLead) {
+           //     this.showFieldsForLead();
+           // } else {
                 this.showFieldsForStandard();
-            }
+           // }
         },
         disableFields: function(predicate) {
             for (var name in this.fields) {
@@ -264,7 +264,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                 }
             }
         },
-        onIsLeadChange: function(value, field) {
+        /*onIsLeadChange: function(value, field) {
             this.options.isForLead = value;
 
             if (this.options.isForLead) {
@@ -273,7 +273,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                 this.showFieldsForStandard();
             }
         },
-        showFieldsForLead: function() {
+		showFieldsForLead: function() {
             array.forEach(this.fieldsForStandard.concat(this.fieldsForLeads), function(item) {
                 if (this.fields[item]) {
                     this.fields[item].hide();
@@ -285,13 +285,13 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                     this.fields[item].show();
                 }
             }, this);
-        },
+        },*/
         showFieldsForStandard: function() {
-            array.forEach(this.fieldsForStandard.concat(this.fieldsForLeads), function(item) {
+            /*array.forEach(this.fieldsForStandard.concat(this.fieldsForLeads), function(item) {
                 if (this.fields[item]) {
                     this.fields[item].hide();
                 }
-            }, this);
+            }, this);*/
 
             array.forEach(this.fieldsForStandard, function(item) {
                 if (this.fields[item]) {
@@ -343,7 +343,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                 this.fields['Reminder'].disable();
             }
         },
-        onLeadChange: function(value, field) {
+        /*onLeadChange: function(value, field) {
             var selection = field.getSelection(),
                 phoneField,
                 entry;
@@ -357,7 +357,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                 phoneField = this.fields['PhoneNumber'];
                 phoneField.setValue(entry.WorkPhone);
             }
-        },
+        },*/
         onLeaderChange: function(value, field) {
             var userId = field.getValue();
             this.fields['UserId'].setValue(userId && userId['$key']);
@@ -366,7 +366,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
             var fields, entry, phoneField;
 
             fields = this.fields;
-            array.forEach(['Contact', 'Opportunity', 'Ticket'], function(f) {
+            array.forEach(['Contact', 'Opportunity'], function(f) {
                 if (value) {
                     fields[f].dependsOn = 'Account';
                     fields[f].where = string.substitute('Account.Id eq "${0}"', [value['AccountId'] || value['key']]);
@@ -413,7 +413,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                 phoneField.setValue(entry.Account.MainPhone);
             }
         },
-        onTicketChange: function(value, field) {
+        /*onTicketChange: function(value, field) {
             this.onAccountDependentChange(value, field);
 
             var entry, phoneField, phone;
@@ -424,7 +424,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                 phoneField = this.fields['PhoneNumber'];
                 phoneField.setValue(phone);
             }
-        },
+        },*/
         onAccountDependentChange: function(value, field) {
             if (value && !field.dependsOn && field.currentSelection && field.currentSelection['Account']) {
                 var accountField = this.fields['Account'];
@@ -566,7 +566,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
             var found = App.queryNavigationContext(function(o) {
                 var context = (o.options && o.options.source) || o;
 
-                if (/^(accounts|contacts|opportunities|tickets|leads)$/.test(context.resourceKind) && context.key) {
+                if (/^(accounts|contacts|opportunities)$/.test(context.resourceKind) && context.key) {
                     return true;
                 }
 
@@ -589,8 +589,8 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                     'accounts': this.applyAccountContext,
                     'contacts': this.applyContactContext,
                     'opportunities': this.applyOpportunityContext,
-                    'tickets': this.applyTicketContext,
-                    'leads': this.applyLeadContext,
+                    //'tickets': this.applyTicketContext,
+                    //'leads': this.applyLeadContext,
                     'useractivities': this.applyUserActivityContext,
                     'activities': this.applyUserActivityContext
                 };
@@ -646,7 +646,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                 phoneField.setValue(entry.WorkPhone);
             }
         },
-        applyTicketContext: function(context) {
+        /*applyTicketContext: function(context) {
             var view = App.getView(context.id),
                 entry = context.entry || (view && view.entry),
                 phoneField,
@@ -685,7 +685,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                 phoneField = this.fields['PhoneNumber'];
                 phoneField.setValue(phone);
             }
-        },
+        },*/
         applyOpportunityContext: function(context) {
             var view = App.getView(context.id),
                 entry = context.entry || (view && view.entry),
@@ -714,7 +714,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                 phoneField.setValue(entry.Account.MainPhone);
             }
         },
-        applyLeadContext: function(context) {
+        /*applyLeadContext: function(context) {
             var view = App.getView(context.id),
                 entry = context.entry || (view && view.entry),
                 phoneField;
@@ -741,7 +741,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                 phoneField = this.fields['PhoneNumber'];
                 phoneField.setValue(entry.WorkPhone);
             }
-        },
+        },*/
         setValues: function(values) {
             this._settingValues = true;
             if (values['StartDate'] && values['AlarmTime']) {
@@ -773,13 +773,13 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                 this.fields['Reminder'].disable();
             }
 
-            if (this.isInLeadContext()) {
+           /* if (this.isInLeadContext()) {
                 var isLeadField = this.fields['IsLead'];
                 isLeadField.setValue(true);
                 this.onIsLeadChange(isLeadField.getValue(), isLeadField);
                 this.fields['Lead'].setValue(values, true);
                 this.fields['AccountName'].setValue(values['AccountName']);
-            }
+            }*/
 
             var entry = this.options.entry || this.entry,
                 denyEdit = !this.options.insert && !this.currentUserCanEdit(entry),
@@ -956,7 +956,8 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                     orderBy: 'text asc',
                     type: 'picklist',
                     maxTextLength: 64,
-                    validator: validator.exceedsMaxTextLength
+                    validator: [validator.exceedsMaxTextLength,
+					validator.exists]
                 }, {
                     name: 'Location',
                     property: 'Location',
@@ -1057,6 +1058,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                     property: 'Duration',
                     type: 'duration',
                     view: 'select_list',
+					validator: validator.exists,
                     data: this.createDurationData()
                 }, {
                     name: 'Alarm',
@@ -1100,15 +1102,15 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                     title: this.longNotesTitleText,
                     type: 'note',
                     view: 'text_edit'
-                }, {
+                },/* {
                     label: this.isLeadText,
                     name: 'IsLead',
-                    property: 'IsLead',
+                    property: '',
                     include: false,
                     type: 'boolean',
                     onText: this.yesText,
                     offText: this.noText
-                }, {
+                }, */{
                     label: this.accountText,
                     name: 'Account',
                     property: 'Account',
@@ -1146,7 +1148,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                     where: this.formatDependentQuery.bindDelegate(
                         this, 'Account.Id eq "${0}"', 'AccountId'
                     )
-                }, {
+                },/* {
                     dependsOn: 'Account',
                     label: this.ticketNumberText,
                     name: 'Ticket',
@@ -1175,7 +1177,7 @@ define('Mobile/SalesLogix/Views/Activity/Edit', [
                     name: 'AccountName',
                     property: 'AccountName',
                     type: 'text'
-                }, {
+                },*/ {
                     name: 'PhoneNumber',
                     property: 'PhoneNumber',
                     label: this.phoneText,

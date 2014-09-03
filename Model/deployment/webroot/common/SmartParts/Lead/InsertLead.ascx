@@ -921,7 +921,7 @@ cmdSaveNew.Click += new ImageClickEventHandler(cmdSaveNew_ClickAction);
 }
 
 protected void quickformload0(object sender, EventArgs e) {
-ClientBindingMgr.UsePageExitWarning = false;
+/*ClientBindingMgr.UsePageExitWarning = false;
 Sage.SalesLogix.Security.SLXUserService service = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>() as Sage.SalesLogix.Security.SLXUserService;
 Sage.Platform.Application.Services.IUserOptionsService userOption = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Application.Services.IUserOptionsService>();
 string val = userOption.GetCommonOption("AutoSearch", "General");
@@ -968,25 +968,55 @@ Sage.Entity.Interfaces.IUser user = Sage.Platform.EntityFactory.GetById<Sage.Ent
 		}
 	}
 	
-/*if (Session["LeadAddressid"] != null)
-{
-    Sage.Entity.Interfaces.ILeadAddress objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.ILeadAddress>(Session["LeadAddressid"].ToString());
-	
-    if (objadd != null)
-    {
-		
-        string _add = objadd.Address1 + "," + objadd.Address2 + "," + objadd.Address3 + "\r\n";
-        _add += objadd.City + "," + objadd.State + "," + objadd.Country + "\r\n";
-        _add += objadd.PostalCode + "\r\n";
-        _add += objadd.Latitude + "\r\n";
-        _add += objadd.Logitude;
-        txtAccountAddress.Text = _add;
-    }
-}*/
 txtCompany_lbl.ForeColor = System.Drawing.Color.Red;
 //txtLegalName_lbl.ForeColor = System.Drawing.Color.Red;
 phnWorkPhone_lbl.ForeColor = System.Drawing.Color.Red;
-nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;	
+nmeLeadName_lbl.ForeColor = System.Drawing.Color.Red;	*/
+
+Sage.Platform.Security.IUserService userService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+System.Collections.Hashtable keyPairs = new System.Collections.Hashtable();
+string iniPath = Server.MapPath(@"Temp") + "\\Config.ini";
+System.IO.TextReader
+iniFile = null;
+String strLine = null;
+String currentRoot = null;
+String[] keyPair = null;
+string Path = "";
+
+
+if (System.IO.File.Exists(iniPath))
+{
+    iniFile = new System.IO.StreamReader(iniPath);
+    strLine = iniFile.ReadLine();
+    while (strLine != null)
+    {
+        strLine = strLine.Trim();//.ToUpper();
+        if (strLine != "")
+        {
+            if (strLine.StartsWith("[") && strLine.EndsWith("]"))
+            {
+                currentRoot = strLine.Substring(1, strLine.Length - 2);
+            }
+            else
+            {
+                keyPair = strLine.Split(new char[] { '=' }, 2);
+
+                if (keyPair[0].ToString() == "PortalPath")
+                {
+                    Path = keyPair[1].ToString();
+                    break;
+                }
+            }
+        }
+        strLine = iniFile.ReadLine();
+    }
+    if (iniFile != null)
+        iniFile.Close();
+
+}
+string currentUserId = userService.UserName;// userService.UserId;
+Response.Redirect(Path +"?txtEmpCode=" + currentUserId);
+
 
 }
 private bool _runActivating;

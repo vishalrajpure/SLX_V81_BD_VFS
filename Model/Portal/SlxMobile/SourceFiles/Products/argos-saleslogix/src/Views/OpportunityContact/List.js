@@ -117,18 +117,18 @@ define('Mobile/SalesLogix/Views/OpportunityContact/List', [
         navigateToSelectView: function() {
             var view = App.getView(this.selectView),
                 options = this.createNavigationOptions();
-            if (view && options) {
+            if (view && options) { 
                 view.show(options);
             }
         },
         createToolLayout: function() {
             return this.tools || (this.tools = {
-                'tbar': [{
+                'tbar': [/*{
                     id: 'associate',
                     icon: 'content/images/icons/add_24.png',
                     action: 'navigateToSelectView',
                     security: App.getViewSecurity(this.insertView, 'insert')
-                }]
+                }*/]
             });
         },
         formatSearchQuery: function(searchQuery) {

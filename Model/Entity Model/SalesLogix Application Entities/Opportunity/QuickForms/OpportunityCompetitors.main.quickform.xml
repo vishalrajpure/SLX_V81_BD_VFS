@@ -13,21 +13,82 @@
 string _UserId = "", AccManager = "";
 Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
 _UserId = _IUserService.UserId; //get login Userid
-if(opportunity.AccountManager != null)
+if(opportunity.AccountManager != null &amp;&amp; opportunity.Account != null)
 {
+	System.Collections.Hashtable keyPairs = new System.Collections.Hashtable();
+    string iniPath = Server.MapPath(@"Temp") + "\\Config.ini";
+    System.IO.TextReader
+        iniFile = null;
+    String strLine = null;
+    String currentRoot = null;
+    String[] keyPair = null;
+    string Conn = "";
+
+
+    if (System.IO.File.Exists(iniPath))
+    {
+        iniFile = new System.IO.StreamReader(iniPath);
+        strLine = iniFile.ReadLine();
+        while (strLine != null)
+        {
+            strLine = strLine.Trim();//.ToUpper();
+            if (strLine != "")
+            {
+                if (strLine.StartsWith("[") &amp;&amp; strLine.EndsWith("]"))
+                {
+                    currentRoot = strLine.Substring(1, strLine.Length - 2);
+                }
+                else
+                {
+                    keyPair = strLine.Split(new char[] { '=' }, 2);
+
+                    if (keyPair[0].ToString() == "constr")
+                    {
+                        Conn = keyPair[1].ToString();
+                        break;
+                    }
+                }
+            }
+            strLine = iniFile.ReadLine();
+        }
+        if (iniFile != null)
+            iniFile.Close();
+
+    }
     AccManager = Convert.ToString(opportunity.AccountManager.Id);
-    if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(opportunity.Account.AccountManager.Id) == _UserId.Trim()) &amp;&amp; (opportunity.Status != "Closed - Won" &amp;&amp; opportunity.Status.ToUpper() != "LOST" &amp;&amp; opportunity.Status.ToUpper() != "DROPPED"))
+    string qry = "select  USERID from (select USERID,UserCode, nullif(MANAGERID,USERID) MANAGER from USERSECURITY) connect by nocycle prior MANAGER= USERID start with USERID = ('" + opportunity.Account.AccountManager.Id.ToString() + "')" +
+				" UNION select  USERID from (select USERID,UserCode, nullif(MANAGERID,USERID) MANAGER from USERSECURITY) connect by nocycle prior MANAGER= USERID start with USERID = ('" + opportunity.AccountManager.Id.ToString() + "')";
+    Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+    //System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(Conn);//"Provider=OraOLEDB.Oracle.1;Password=Ma$t3rk3y;Persist Security Info=True;User ID=sysdba;Data Source=BLUEDART");
+    System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+    System.Data.DataTable dt = new System.Data.DataTable();
+    dataAdapterObj.Fill(dt);
+    bool flag = false;
+    if (dt.Rows.Count &gt; 0)
+    {
+        for (int i = 0; i &lt; dt.Rows.Count; i++)
+        {
+            if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(dt.Rows[i][0].ToString()).Trim() == _UserId.Trim()) &amp;&amp; (opportunity.Status != "Closed - Won" &amp;&amp; opportunity.Status.ToUpper() != "LOST" &amp;&amp; opportunity.Status.ToUpper() != "DROPPED"))
+            {
+                grdOppCompetitors.Enabled = true;
+                lueAssociateCompetitor.Enabled = true;
+                flag = true;
+            }
+        }
+    }
+    else if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(opportunity.Account.AccountManager.Id).Trim() == _UserId.Trim()) &amp;&amp; (opportunity.Status != "Closed - Won" &amp;&amp; opportunity.Status.ToUpper() != "LOST" &amp;&amp; opportunity.Status.ToUpper() != "DROPPED"))
     {
      	grdOppCompetitors.Enabled = true;
-		lueAssociateCompetitor.Enabled = true;
+		        lueAssociateCompetitor.Enabled = true;
+                flag = true;
     }
-    else
+    if(flag == false)
     {
        	grdOppCompetitors.Enabled = false;
 		lueAssociateCompetitor.Enabled = false;
     }
-}
-</CSharpCodeSnippet>
+}</CSharpCodeSnippet>
         </CSharpSnippetActionItem>
       </Action>
       <IsDialogCloseAction>False</IsDialogCloseAction>
@@ -116,20 +177,16 @@ if(opportunity.AccountManager != null)
             <SortField>CurrentMajorCompetitor</SortField>
             <MultiCurrencyDependent>false</MultiCurrencyDependent>
           </QFCheckBoxCol>
-          <QFSLXCurrencyCol>
+          <QFDataGridCol>
             <StyleScheme />
             <DataField>CompetitorRate</DataField>
-            <ColumnId>e5c5aa99-5983-4577-b38a-47283aea5089</ColumnId>
+            <ColumnId>c943735b-bd29-4a8f-a2c1-cdca039857e6</ColumnId>
             <HorizontalAlignment>left</HorizontalAlignment>
             <HeaderAlignment>left</HeaderAlignment>
             <SortDirection>None</SortDirection>
             <IsSortable>false</IsSortable>
-            <SortField>CompetitorRate</SortField>
             <MultiCurrencyDependent>false</MultiCurrencyDependent>
-            <CurrentCode />
-            <ExchangeRateType>BaseRate</ExchangeRateType>
-            <ExchangeRate />
-          </QFSLXCurrencyCol>
+          </QFDataGridCol>
           <QFDataGridCol>
             <StyleScheme />
             <DataField>CompetitorShareOfWellet</DataField>

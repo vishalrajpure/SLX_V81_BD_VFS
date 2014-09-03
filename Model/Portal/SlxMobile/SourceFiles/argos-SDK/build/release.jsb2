@@ -55,6 +55,7 @@
           "text": "Application.js",
           "path": "../src"
         },
+		
         {
           "text": "ApplicationModule.js",
           "path": "../src"

@@ -311,28 +311,86 @@ protected override void OnWireEventHandlers()
 }
 
 protected void quickformload0(object sender, EventArgs e) {
-
 Sage.Entity.Interfaces.IOpportunity objOpp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 string _UserId = "", AccManager = "";
 Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
 _UserId = _IUserService.UserId; //get login Userid
-if(objOpp.AccountManager != null)
+if (objOpp.AccountManager != null)
 {
-	AccManager = Convert.ToString(objOpp.AccountManager.Id);
+	System.Collections.Hashtable keyPairs = new System.Collections.Hashtable();
+    string iniPath = Server.MapPath(@"Temp") + "\\Config.ini";
+    System.IO.TextReader
+        iniFile = null;
+    String strLine = null;
+    String currentRoot = null;
+    String[] keyPair = null;
+    string Conn = "";
 
-	if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id) == _UserId.Trim()) && (objOpp.Status != "Closed - Won" && objOpp.Status.ToUpper() != "LOST" && objOpp.Status.ToUpper() != "DROPPED"))
-	{
-		lueAssociateContacts.Visible = true;
-		grdOppContacts.Enabled = true;
-	}
-	else
-	{
-		lueAssociateContacts.Visible = false;
-		grdOppContacts.Enabled = false;
-	}
+
+    if (System.IO.File.Exists(iniPath))
+    {
+        iniFile = new System.IO.StreamReader(iniPath);
+        strLine = iniFile.ReadLine();
+        while (strLine != null)
+        {
+            strLine = strLine.Trim();//.ToUpper();
+            if (strLine != "")
+            {
+                if (strLine.StartsWith("[") && strLine.EndsWith("]"))
+                {
+                    currentRoot = strLine.Substring(1, strLine.Length - 2);
+                }
+                else
+                {
+                    keyPair = strLine.Split(new char[] { '=' }, 2);
+
+                    if (keyPair[0].ToString() == "constr")
+                    {
+                        Conn = keyPair[1].ToString();
+                        break;
+                    }
+                }
+            }
+            strLine = iniFile.ReadLine();
+        }
+        if (iniFile != null)
+            iniFile.Close();
+
+    }
+    AccManager = Convert.ToString(objOpp.AccountManager.Id);
+    string qry = "select  USERID from (select USERID,UserCode, nullif(MANAGERID,USERID) MANAGER from USERSECURITY) connect by nocycle prior MANAGER= USERID start with USERID = ('" + objOpp.Account.AccountManager.Id.ToString() + "')" +
+				" UNION select  USERID from (select USERID,UserCode, nullif(MANAGERID,USERID) MANAGER from USERSECURITY) connect by nocycle prior MANAGER= USERID start with USERID = ('" + objOpp.AccountManager.Id.ToString() + "')";
+    Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+    //System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(Conn);//"Provider=OraOLEDB.Oracle.1;Password=Ma$t3rk3y;Persist Security Info=True;User ID=sysdba;Data Source=BLUEDART");
+    System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+    System.Data.DataTable dt = new System.Data.DataTable();
+    dataAdapterObj.Fill(dt);
+    bool flag = false;
+    if (dt.Rows.Count > 0)
+    {
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(dt.Rows[i][0].ToString()).Trim() == _UserId.Trim()) && (objOpp.Status != "Closed - Won" && objOpp.Status.ToUpper() != "LOST" && objOpp.Status.ToUpper() != "DROPPED"))
+            {
+                lueAssociateContacts.Visible = true;
+                grdOppContacts.Enabled = true;
+                flag = true;
+            }
+        }
+    }
+    else if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id).Trim() == _UserId.Trim()) && (objOpp.Status != "Closed - Won" && objOpp.Status.ToUpper() != "LOST" && objOpp.Status.ToUpper() != "DROPPED"))
+    {
+        lueAssociateContacts.Visible = true;
+        grdOppContacts.Enabled = true;
+        flag = true;
+    }
+    if (flag == false)
+    {
+        lueAssociateContacts.Visible = false;
+        grdOppContacts.Enabled = false;
+    }
 }
-
-
 
 }
 private bool _runActivating;

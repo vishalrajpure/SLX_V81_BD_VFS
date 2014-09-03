@@ -1,0 +1,14 @@
+30-07-2014 07:27:27
+INFO  2014-07-30 12:57:26,188 - Installing bundle...
+INFO  2014-07-30 12:57:26,283 - Performing pre-install.
+INFO  2014-07-30 12:57:26,294 - Installing context item: Saleslogix Mobile Client (\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml)
+INFO  2014-07-30 12:57:26,613 - Successfully installed Saleslogix Mobile Client (\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml)
+INFO  2014-07-30 12:57:26,617 - Saving context item: Saleslogix Mobile Client (\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml)
+INFO  2014-07-30 12:57:26,620 - Successfully saved Saleslogix Mobile Client (\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml)
+INFO  2014-07-30 12:57:26,625 - Configuring installed items.
+INFO  2014-07-30 12:57:26,628 - Configuring Saleslogix Mobile Client...
+INFO  2014-07-30 12:57:26,632 - Performing pre-commit to target project.
+INFO  2014-07-30 12:57:27,262 - Committing items to target project...
+INFO  2014-07-30 12:57:27,451 - Committing transactions...
+INFO  2014-07-30 12:57:27,921 - Copying bundle manifest to project.
+INFO  2014-07-30 12:57:29,225 - Install complete.

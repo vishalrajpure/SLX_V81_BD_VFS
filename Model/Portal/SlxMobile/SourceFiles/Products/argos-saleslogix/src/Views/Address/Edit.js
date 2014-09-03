@@ -27,8 +27,10 @@ define('Mobile/SalesLogix/Views/Address/Edit', [
         descriptionTitleText: 'Description',
         isMailingText: 'shipping',
         isPrimaryText: 'primary',
-        postalCodeText: 'postal',
+        postalCodeText: 'postal',		
         salutationText: 'attention',
+		LatitudeText: 'Latitude',
+        LogitudeText: 'Longitude',
         stateText: 'state',
         stateTitleText: 'State',
         titleText: 'Address',
@@ -51,6 +53,7 @@ define('Mobile/SalesLogix/Views/Address/Edit', [
         init: function() {
             this.inherited(arguments);
             this.connect(this.fields['Country'], 'onChange', this.onCountryChange);
+			this.connect(this.fields['PostalCode'], 'onChange', this.onPostalCode);
         },
         onCountryChange: function(value, field) {
             var locale = format.countryCultures[value] || 'en-US';
@@ -61,6 +64,50 @@ define('Mobile/SalesLogix/Views/Address/Edit', [
          * Doing so enables a user to enter an address
          * @param locale Localization string (Ex: 'en-US' or 'de-DE')
          */
+		 
+		 
+		 onPostalCode: function() {		
+		  this.authenticate();
+		},
+		 
+		authenticate: function() {
+            if (this.busy) {
+                return;
+            }   
+            var credentials = this.getValues(),
+                PostalCode = credentials && credentials.PostalCode;
+    
+            if (PostalCode && /\w+/.test(PostalCode)) {			
+                this.validateCredentials(PostalCode);    			
+            }
+        },
+		 validateCredentials: function(PostalCode) {
+		    var request = new Sage.SData.Client.SDataSingleResourceRequest(this.getService())
+                .setResourceKind('vwpincodemasters')
+                //.setResourceSelector(string.substitute("'${0}'", [LegalName]))
+                .setQueryArg('select', 'Cpincode')
+				.setQueryArg('where', "Cpincode eq '" + [PostalCode] + "'");
+            request.allowCacheUse = true;
+			
+            request.read({
+                success: this.processPostalCode,
+                failure: this.requestPostalCodeFailure,
+                scope: this
+            });	
+			
+        },
+		 processPostalCode: function(entry) {			
+			if(entry)
+			{	
+			}
+			else
+			{
+			 	alert("PostalCode not exists"); 
+			}
+        }, 
+		 requestPostalCodeFailure: function(xhr, o) {		
+        },
+		
         hideFieldsForLocale: function(locale) {
             var fieldsToHide = this.localeFieldHidden[locale];
             if (!fieldsToHide) {
@@ -113,7 +160,7 @@ define('Mobile/SalesLogix/Views/Address/Edit', [
                     label: this.address1Text,
                     type: 'text',
                     maxTextLength: 64,
-                    validator: validator.exceedsMaxTextLength
+                    validator: validator.exists
                 }, {
                     name: 'Address2',
                     property: 'Address2',
@@ -148,13 +195,17 @@ define('Mobile/SalesLogix/Views/Address/Edit', [
                     type: 'picklist',
                     maxTextLength: 32,
                     validator: validator.exceedsMaxTextLength
-                }, {
+                },{
                     name: 'PostalCode',
                     property: 'PostalCode',
                     label: this.postalCodeText,
                     type: 'text',
-                    maxTextLength: 24,
-                    validator: validator.exceedsMaxTextLength
+                    maxTextLength: 6,  					
+					notificationTrigger: 'blur',
+					validator: [
+							validator.exists,
+							validator.exceedsMaxTextLength
+							]
                 }, {
                     label: this.countryText,
                     name: 'Country',
@@ -172,7 +223,19 @@ define('Mobile/SalesLogix/Views/Address/Edit', [
                     type: 'text',
                     maxTextLength: 64,
                     validator: validator.exceedsMaxTextLength
-                }]);
+                },{
+                     name: 'Latitude',
+                     property: 'Latitude',
+                     label: this.LatitudeText,
+                     type: 'decimal',                    
+                     notificationTrigger: 'blur'
+                 }, {
+                     name: 'Logitude',
+                     property: 'Logitude',
+                     label: this.LogitudeText,
+                     type: 'decimal',                    
+                     notificationTrigger: 'blur'
+                 }]);
         }
     });
 });

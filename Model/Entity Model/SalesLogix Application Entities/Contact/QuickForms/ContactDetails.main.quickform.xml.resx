@@ -172,7 +172,7 @@
     <value>Mobile:</value>
   </data>
   <data name="phnHomePhone.Caption" xml:space="preserve">
-    <value>Home:</value>
+    <value>Direct Phone:</value>
   </data>
   <data name="phnOtherPhone.Caption" xml:space="preserve">
     <value>Other:</value>

@@ -1,5 +1,11 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeFile="LeadSearchAndConvert.ascx.cs" Inherits="LeadSearchAndConvert" %>
+<%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls.PickList" TagPrefix="SalesLogix" %>
 <%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls" TagPrefix="SalesLogix" %>
+<%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls.DependencyLookup" TagPrefix="SalesLogix" %>
+<%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls.Lookup" TagPrefix="SalesLogix" %>
+<%@ Register Assembly="Sage.SalesLogix.Web.Controls" Namespace="Sage.SalesLogix.Web.Controls.Timeline" TagPrefix="SalesLogix" %>
+<%@ Register Assembly="Sage.SalesLogix.HighLevelTypes" Namespace="Sage.SalesLogix.HighLevelTypes" TagPrefix="SalesLogix" %>
+<%@ Register Assembly="Sage.Platform.WebPortal" Namespace="Sage.Platform.WebPortal.SmartParts" TagPrefix="SalesLogix" %>
 <%@ Register Src="~/SmartParts/Lead/MatchOptions.ascx" TagName="MatchOptions" TagPrefix="SalesLogix" %>
 
 <asp:HiddenField ID="Mode" runat="server" Value="View" />
@@ -293,12 +299,21 @@
                     
             </tr>
             <tr>
-                <td>
+                <td colspan ="3">
                 <div class=" lbl alignleft">
-                       <asp:Label ID="lkpBranchManager_lbl" AssociatedControlID="lkpBranchManager" runat="server" Text="<%$ resources: lkpBranchManager.Caption %>" ></asp:Label>
+                       <div class=" lbl alignleft">
+                       <asp:Label ID="lkpBranchManager_lbl" AssociatedControlID="lkpBranchManager" runat="server" Text="Sales Executive:" ></asp:Label>
                      </div>   
-                       <div  class="textcontrol"  > 
-                        <SalesLogix:SlxUserControl runat="server" ID="lkpBranchManager"  />
+                      <div   class="textcontrol lookup"   >
+                    <SalesLogix:LookupControl runat="server" ID="lkpBranchManager" LookupEntityName="User" LookupEntityTypeName="Sage.Entity.Interfaces.IUser, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"  >
+                    <LookupProperties>                        
+                    <SalesLogix:LookupProperty PropertyHeader="User Name" PropertyName="UserInfo.NameLF" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+                    <SalesLogix:LookupProperty PropertyHeader="User Code" PropertyName="UserInfo.UserName" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+                    <SalesLogix:LookupProperty PropertyHeader="User Type" PropertyName="Type" PropertyType="Sage.Entity.Interfaces.UserType" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+                    </LookupProperties>
+                    <LookupPreFilters>
+                    </LookupPreFilters>
+                    </SalesLogix:LookupControl>
                       </div>
                     </td>
             </tr>

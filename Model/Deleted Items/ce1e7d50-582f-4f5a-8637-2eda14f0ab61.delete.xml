@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<DeletedItem>
+  <id>ce1e7d50-582f-4f5a-8637-2eda14f0ab61</id>
+  <url>\Entity Model\Relationships\Vwareamaster.OppClosedCustCode.ce1e7d50582f4f5a86372eda14f0ab61.relationship.xml</url>
+  <caption>Area Master.OppClosedCustCodes 1:M OppClosedCustCode.Vwareamaster</caption>
+  <extension>.relationship.xml</extension>
+  <modelId>a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28</modelId>
+  <dateDeleted>2014-08-22T14:58:55.4742102Z</dateDeleted>
+  <image>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAAB6JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAACXBIWXMAAAsRAAALEQF/ZF+RAAABJElEQVQ4T2P4//8/AzG4e9Wr/01LXv4vnf3if9rE5//D25/+96p7TJxmkAUgAxYd+v9/6s6//1tW//xfNO/bf8PUs6QZgHDBs/9hQBe4VNwn3oDl284AHYIAP379+2/qmQxxGja/wcIloGgDd1DJ1lSYAXuO3/i/bOPh/68//UUYgM1vkfXHWYGaA0Ir9/6zCav/MnfNof9//v4Davzz/8aTX/+P3PiOzQUIv4U3XvlnG970zD1tjjXINdOX7QZrQMcMuPzmkT7PjpjohRuA7jffvJViMAPwhRMDLr+5JEz451+4LhpfGgDJ4fSbZ8Y8t7Dq/cAAbPiD6gJEOIENwOdP1+SpfH75qz1xhRNBA2CG40oDRBuAK5yINgBXGiDaAHzhBABkV+mEQ5q7fAAAAABJRU5ErkJggg==</image>
+  <restoreDataType>System.String, mscorlib</restoreDataType>
+  <restoreData>
+    <string>&lt;?xml version="1.0"?&gt;
+&lt;relationship xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="ce1e7d50-582f-4f5a-8637-2eda14f0ab61" lastModifiedUtc="2014-08-22T14:37:07.4263941Z" parentEntityId="ecc23318-592b-4987-a573-e79b50d8a7c3" childEntityId="9a9b36bc-66f4-4ef5-8fb2-d971b91d39dd"&gt;
+  &lt;extendedMetaData /&gt;
+  &lt;ExtendedPropertiesCollection&gt;
+    &lt;extendee type="Sage.Platform.Orm.Entities.OrmRelationship" /&gt;
+  &lt;/ExtendedPropertiesCollection&gt;
+  &lt;parentProperty id="7d9e3d47-5ee6-480b-b2d2-d17c294f6bbd" lastModifiedUtc="2014-08-22T14:37:05.1032612Z" name="OppClosedCustCodes" audited="false"&gt;
+    &lt;ExtendedPropertiesCollection&gt;
+      &lt;extendee type="Sage.Platform.Orm.Entities.OrmRelationProperty"&gt;
+        &lt;extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131"&gt;
+          &lt;OrmEntityPropertySDataExtension generate="true" /&gt;
+        &lt;/extender&gt;
+      &lt;/extendee&gt;
+    &lt;/ExtendedPropertiesCollection&gt;
+    &lt;SystemDataType guid="2f770d03-c93c-4605-8ae8-7cdae04830d7"&gt;
+      &lt;RelationshipDataType /&gt;
+    &lt;/SystemDataType&gt;
+  &lt;/parentProperty&gt;
+  &lt;childProperty id="0d33001c-d878-4852-84ce-2454b402787a" lastModifiedUtc="2014-08-22T14:37:05.1062614Z" name="Vwareamaster" audited="false"&gt;
+    &lt;ExtendedPropertiesCollection&gt;
+      &lt;extendee type="Sage.Platform.Orm.Entities.OrmRelationProperty"&gt;
+        &lt;extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131"&gt;
+          &lt;OrmEntityPropertySDataExtension generate="true" /&gt;
+        &lt;/extender&gt;
+      &lt;/extendee&gt;
+    &lt;/ExtendedPropertiesCollection&gt;
+    &lt;SystemDataType guid="2f770d03-c93c-4605-8ae8-7cdae04830d7"&gt;
+      &lt;RelationshipDataType /&gt;
+    &lt;/SystemDataType&gt;
+  &lt;/childProperty&gt;
+  &lt;column&gt;
+    &lt;OrmRelationshipColumn id="e3ab6078-f5f1-4b35-bcfa-ae644ecca226" parentPropertyId="416c200b-2940-4dfa-ba9f-a279ac679ee7" childPropertyId="baa41b9a-9ba0-4a09-8513-98ffbd051542" ordinal="0" /&gt;
+  &lt;/column&gt;
+&lt;/relationship&gt;</string>
+  </restoreData>
+</DeletedItem>

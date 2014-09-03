@@ -154,6 +154,7 @@ define('Mobile/SalesLogix/Views/Activity/Recurring', [
             this.resetUI();
         },
         onIntervalChange: function(value, field) {
+		
             var currentSpec = parseInt(this.fields['RecurPeriodSpec'].getValue(), 10),
                 interval = currentSpec % 65536;
 

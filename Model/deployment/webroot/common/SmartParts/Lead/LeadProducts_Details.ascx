@@ -268,13 +268,86 @@ protected override void OnWireEventHandlers()
 }
 
 protected void quickformload0(object sender, EventArgs e) {
+
 Sage.Entity.Interfaces.ILead leadpro = BindingSource.Current as Sage.Entity.Interfaces.ILead;
+Hashtable keyPairs = new Hashtable();
+string iniPath = Server.MapPath(@"Temp") + "\\Config.ini";
+System.IO.TextReader
+    iniFile = null;
+String strLine = null;
+String currentRoot = null;
+String[] keyPair = null;
+string Conn = "";
+
+
+if (System.IO.File.Exists(iniPath))
+{
+    iniFile = new System.IO.StreamReader(iniPath);
+    strLine = iniFile.ReadLine();
+    while (strLine != null)
+    {
+        strLine = strLine.Trim();//.ToUpper();
+        if (strLine != "")
+        {
+            if (strLine.StartsWith("[") && strLine.EndsWith("]"))
+            {
+                currentRoot = strLine.Substring(1, strLine.Length - 2);
+            }
+            else
+            {
+                keyPair = strLine.Split(new char[] { '=' }, 2);
+
+                if (keyPair[0].ToString() == "constr")
+                {
+                    Conn = keyPair[1].ToString();
+                    break;
+                }
+            }
+        }
+        strLine = iniFile.ReadLine();
+    }
+    if (iniFile != null)
+        iniFile.Close();
+
+}
+
+string _UserId = "";
+Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+_UserId = _IUserService.UserId; //get login Userid
+
+if (leadpro.AccountManager != null)
+{
+//Sage.Platform.Data.IDataService service = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(Conn);
+string qry = "select  USERID from (select USERID,UserCode, nullif(MANAGERID,USERID) MANAGER from USERSECURITY) connect by nocycle prior MANAGER= USERID start with USERID = ('" + leadpro.AccountManager.Id.ToString() + "')";
+System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+System.Data.DataTable dt = new System.Data.DataTable();
+dataAdapterObj.Fill(dt);
+bool flag = false;
+if (dt.Rows.Count > 0)
+{
+    for (int i = 0; i < dt.Rows.Count; i++)
+    {
+        if (Convert.ToString(dt.Rows[i][0].ToString()).Trim() == _UserId.Trim())
+        {
+            lueLeadProduct.Visible = true;
+            grdLeadProducts.Enabled = true;
+            flag = true;
+        }
+    }
+}
+if (flag == false)
+{
+    lueLeadProduct.Visible = false;
+    grdLeadProducts.Enabled = false;
+}    
 if(leadpro.Status.ToUpper() == "CONVERTED" || leadpro.Status.ToUpper() == "DROPPED" )
 	{
 		lueLeadProduct.Visible = false;
 		grdLeadProducts.Enabled = false;
 		
 	}
+}
 
 }
 private bool _runActivating;

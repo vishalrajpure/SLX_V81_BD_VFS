@@ -164,6 +164,10 @@
           "text": "Environment.js",
           "path": "../src"
         },
+		{
+          "text": "List.js",
+          "path": "../src/views/Indsgmst"
+        },
         {
           "text": "Application.js",
           "path": "../src"

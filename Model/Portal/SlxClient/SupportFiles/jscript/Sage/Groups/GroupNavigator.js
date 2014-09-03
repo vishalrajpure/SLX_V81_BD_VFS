@@ -1,4 +1,4 @@
-﻿/*globals Sage, dojo, dojox, dijit, Simplate, window, Sys, define */
+/*globals Sage, dojo, dojox, dijit, Simplate, window, Sys, define */
 define([
     'Sage/_Templated',
     'dijit/_Widget',
@@ -78,6 +78,7 @@ function (_Templated, _Widget, ToolBarlabel, ImageButton, GroupContextService, C
                 }
 
                 var lbl = dojo.string.substitute(this.labelFmtText, [position, count]);
+                alert(groupCtx.CurrentEntity);
                 this._groupNavLabel.set('label', lbl);
 
                 // Disable the appropriate buttons if we are at the 
@@ -98,12 +99,22 @@ function (_Templated, _Widget, ToolBarlabel, ImageButton, GroupContextService, C
             this._previousButton.set('disabled', false);
             this._firstButton.set('disabled', false);
         },
+        _enablefields: function () {            
+            var eCtx = this._entityContextService.getContext();
+            var url = window.location.href;
+            var u1 = url.substring(0, (url.indexOf("entityid") + 9));
+            var u2 = url.substring((url.indexOf("entityid") + 21), url.length);
+            url = u1 + eCtx.EntityId + u2;
+            window.location.href = url;
+        },
         _moveFirst: function () {
             var groupCtx = this._getGroupContext();
             var eCtx = this._entityContextService.getContext();
             if (groupCtx.FirstEntityID !== '' && groupCtx.FirstEntityID != eCtx.EntityId) {
                 this._publishTopic("/group/nav/first", groupCtx.FirstEntityID, eCtx.EntityId, groupCtx.CurrentEntityPosition, groupCtx.CurrentGroupCount);
                 this._entityContextService.navigateSLXGroupEntity(groupCtx.FirstEntityID, eCtx.EntityId);
+                this._enablefields();
+                
             }
         },
         _movePrevious: function () {
@@ -112,22 +123,28 @@ function (_Templated, _Widget, ToolBarlabel, ImageButton, GroupContextService, C
             if (groupCtx.PreviousEntityID !== '' && groupCtx.PreviousEntityID != eCtx.EntityId) {
                 this._publishTopic("/group/nav/previous", groupCtx.PreviousEntityID, eCtx.EntityId, groupCtx.CurrentEntityPosition, groupCtx.CurrentGroupCount);
                 this._entityContextService.navigateSLXGroupEntity(groupCtx.PreviousEntityID, eCtx.EntityId);
+                this._enablefields();
+                
             }
         },
         _moveNext: function () {
             var groupCtx = this._getGroupContext();
-            var eCtx = this._entityContextService.getContext();
+            var eCtx = this._entityContextService.getContext();            
             if (groupCtx.NextEntityID !== '' && groupCtx.NextEntityID != eCtx.EntityId) {
                 this._publishTopic("/group/nav/next", groupCtx.NextEntityID, eCtx.EntityId, groupCtx.CurrentEntityPosition, groupCtx.CurrentGroupCount);
                 this._entityContextService.navigateSLXGroupEntity(groupCtx.NextEntityID, eCtx.EntityId);
+                this._enablefields();
+                
             }
         },
         _moveLast: function () {
             var groupCtx = this._getGroupContext();
-            var eCtx = this._entityContextService.getContext();
+            var eCtx = this._entityContextService.getContext();			
             if (groupCtx.LastEntityID !== '' && groupCtx.LastEntityID != eCtx.EntityId) {
                 this._publishTopic("/group/nav/last", groupCtx.LastEntityID, eCtx.EntityId, groupCtx.CurrentEntityPosition, groupCtx.CurrentGroupCount);
                 this._entityContextService.navigateSLXGroupEntity(groupCtx.LastEntityID, eCtx.EntityId);
+                this._enablefields();
+               
             }
         },
         _moveToList: function () {
@@ -138,6 +155,7 @@ function (_Templated, _Widget, ToolBarlabel, ImageButton, GroupContextService, C
         },
         _publishTopic: function (key, toEntityID, currentEntityID, currentPosition, count){
             topic.publish(key, { 'toEntityId': toEntityID, 'fromEntityId': currentEntityID, 'position': currentPosition, 'count': count });
+            
         }
     });
     return groupNavigator;

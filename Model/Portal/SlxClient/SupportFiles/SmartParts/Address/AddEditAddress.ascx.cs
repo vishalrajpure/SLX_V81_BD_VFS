@@ -136,9 +136,9 @@ public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInf
         {
             if (BindingSource.Current != null)
             {
-                btngetGL1.Visible = false;
+                btngetGL.Visible = false;
 				btnCancelDetail.Visible = false;
-				btnSave1.Visible = true;
+				btnSave.Visible = true;
 				btnCancel.Visible = true;
                 IAddress address = (IAddress)BindingSource.Current;
                 if (_parentEntityReference.Id != null)
@@ -187,9 +187,9 @@ public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInf
                 if (Request.QueryString["Type"] != null)
                 {
                     
-                    btngetGL1.Visible = true;
+                    btngetGL.Visible = true;
 					btnCancelDetail.Visible = true;
-					btnSave1.Visible = false;
+					btnSave.Visible = false;
 					btnCancel.Visible = false;
 					if(!Page.IsPostBack)
 					{
@@ -253,7 +253,7 @@ public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInf
                 if (address.EntityId == null)
                 {
                     address.EntityId = "123123123123";
-                    HttpCookie _Latitude = Request.Cookies["Latitude"];
+                    /*HttpCookie _Latitude = Request.Cookies["Latitude"];
                     HttpCookie _Logitute = Request.Cookies["Logitute"];
                     if (_Latitude == null)                   
                     {
@@ -263,8 +263,10 @@ public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInf
                     else
                     {
                         address.Latitude = _Latitude.Value.ToString();
-                        address.Logitude = _Logitute.Value.ToString();
-                    }
+                        address.Logitude = _Logitute.Value.ToString();*/
+                    address.Latitude = txtLatitude.Text;
+                    address.Logitude = txtLogitute.Text;
+                   // }
                 }
                 if (Mode.Value == "ADD")
                 {
@@ -374,15 +376,19 @@ public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInf
     {
         try
         {
-            HttpCookie _Latitude1 = Request.Cookies["Latitude1"];
+            /*HttpCookie _Latitude1 = Request.Cookies["Latitude1"];
             HttpCookie _Logitute1 = Request.Cookies["Logitute1"];
-			Sage.Entity.Interfaces.IAddress objadd;
+			
             if (_Latitude1 == null || _Logitute1 == null)
             {
                _Latitude1.Value = "0";
                _Logitute1.Value = "0";
-            }   
-			if(Request.QueryString["id"] != null)
+            }  */
+             Sage.Entity.Interfaces.IAddress objadd;
+            string entityID = "";
+            if( Request.QueryString["EntityID"] != null)
+                entityID = Request.QueryString["EntityID"].ToString();
+            if (Request.QueryString["id"] != null && entityID == "")
 			{
 	            string _addid = Request.QueryString["id"].ToString();
 	            objadd = Sage.Platform.EntityFactory.GetById<Sage.Entity.Interfaces.IAddress>(_addid);
@@ -399,16 +405,20 @@ public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInf
 	                objadd.IsPrimary = cbxPrimaryAddr.Checked == true ? true : false;
 	                objadd.IsMailing = cbxIsShipping.Checked == true ? true : false;
 	                objadd.PrimaryAddress = cbxIsPrimary.Checked == true ? true : false;
-	                objadd.Latitude = _Latitude1.Value.ToString();
-	                objadd.Logitude = _Logitute1.Value.ToString();
+	               /* objadd.Latitude = _Latitude1.Value.ToString();
+	                objadd.Logitude = _Logitute1.Value.ToString();*/
+                    objadd.Latitude = txtLatitude.Text;
+                    objadd.Logitude = txtLogitute.Text;
 	                objadd.PostalCode = txtPostalCode.Text;
 	                objadd.Salutation = txtSalutation.Text;
 	                objadd.Save();
 	            }
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", "window.close();if (window.opener && !window.opener.closed) { window.opener.location.reload(); }", true);
+                btnSave_ClickActionBRC(sender, e);
 			}
 			else
 			{
-				string entityID = Request.QueryString["EntityID"].ToString();
+				
 				objadd = Sage.Platform.EntityFactory.Create<Sage.Entity.Interfaces.IAddress>();
 				objadd.Description = pklDecription.PickListValue;
                 objadd.Address1 = txtAddress1.Text;
@@ -421,19 +431,29 @@ public partial class SmartParts_Address_AddEditAddress : EntityBoundSmartPartInf
                 objadd.IsPrimary = cbxPrimaryAddr.Checked == true ? true : false;
                 objadd.IsMailing = cbxIsShipping.Checked == true ? true : false;
                 objadd.PrimaryAddress = cbxIsPrimary.Checked == true ? true : false;
-                objadd.Latitude = _Latitude1.Value.ToString();
-                objadd.Logitude = _Logitute1.Value.ToString();
+                /*objadd.Latitude = _Latitude1.Value.ToString();
+                objadd.Logitude = _Logitute1.Value.ToString();*/
+                objadd.Latitude = txtLatitude.Text;
+                objadd.Logitude = txtLogitute.Text;
                 objadd.PostalCode = txtPostalCode.Text;
                 objadd.Salutation = txtSalutation.Text;
 				objadd.EntityId = entityID;
                 objadd.Save();
+                Global.ADDRESS_ID = objadd.Id.ToString();
+                 if (entityID == "123123123123")
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", "window.close();", true);
+                else
+                {
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", "window.close();if (window.opener && !window.opener.closed) { window.opener.location.reload(); }", true);
+                    btnSave_ClickActionBRC(sender, e);
+                }
 			}
-            btnSave_ClickActionBRC(sender, e);
+            
 
            // string url = string.Format("Account.aspx?entityid=" + objadd.EntityId.ToString());
             //Page.ClientScript.RegisterStartupScript(typeof(Page), "closePage", "window.open('Close.html', '_self', null);", true);
             //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", "window.open('Close.html', '_self', null);", true);
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", "window.close();if (window.opener && !window.opener.closed) { window.opener.location.reload(); }", true);
+            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", "window.close();if (window.opener && !window.opener.closed) { window.opener.location.reload(); }", true);
             //Page.ClientScript.RegisterClientScriptBlock(GetType(), "sas", "<script>window.close();if (window.opener && !window.opener.closed) { window.opener.location.reload(); }</script>", false);
         }
         catch (Exception ex)

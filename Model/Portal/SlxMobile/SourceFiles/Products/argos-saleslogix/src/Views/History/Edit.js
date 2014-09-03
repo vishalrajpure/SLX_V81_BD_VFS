@@ -27,22 +27,22 @@ define('Mobile/SalesLogix/Views/History/Edit', [
         longNotesText: 'notes',
         longNotesTitleText: 'Notes',
         opportunityText: 'opportunity',
-        ticketNumberText: 'ticket',
+        //ticketNumberText: 'ticket',
         regardingText: 'regarding',
-        isLeadText: 'for lead',
+        //isLeadText: 'for lead',
         startingText: 'time',
         startingFormatText : 'M/D/YYYY h:mm A',
         titleText: 'Note',
         companyText: 'company',
-        leadText: 'lead',
+        //leadText: 'lead',
         relatedItemsText: 'Related Items',
         yesText: 'YES',
         noText: 'NO',
 
         //View Properties
         id: 'history_edit',
-        fieldsForLeads: ['AccountName', 'Lead'],
-        fieldsForStandard: ['Account', 'Contact', 'Opportunity', 'Ticket'],
+        //fieldsForLeads: ['AccountName', 'Lead'],
+        fieldsForStandard: ['Account', 'Contact', 'Opportunity'],
         entityName: 'History',
         resourceKind: 'history',
         insertSecurity: null, //'Entities/History/Add',
@@ -57,26 +57,26 @@ define('Mobile/SalesLogix/Views/History/Edit', [
             'Notes',
             'OpportunityId',
             'OpportunityName',
-            'TicketId',
-            'TicketNumber',
+            //'TicketId',
+            //'TicketNumber',
             'Type',
-            'LeadId',
-            'LeadName',
+            //'LeadId',
+            //'LeadName',
             'StartDate'
         ],
         existsRE: /^[\w]{12}$/,
         init: function() {
             this.inherited(arguments);
 
-            this.connect(this.fields['Lead'], 'onChange', this.onLeadChange);
-            this.connect(this.fields['IsLead'], 'onChange', this.onIsLeadChange);
+            //this.connect(this.fields['Lead'], 'onChange', this.onLeadChange);
+            //this.connect(this.fields['IsLead'], 'onChange', this.onIsLeadChange);
 
             this.connect(this.fields['Account'], 'onChange', this.onAccountChange);
             this.connect(this.fields['Contact'], 'onChange', this.onAccountDependentChange);
             this.connect(this.fields['Opportunity'], 'onChange', this.onAccountDependentChange);
-            this.connect(this.fields['Ticket'], 'onChange', this.onAccountDependentChange);
+            //this.connect(this.fields['Ticket'], 'onChange', this.onAccountDependentChange);
         },
-        isHistoryForLead: function(entry) {
+       /* isHistoryForLead: function(entry) {
             return entry &&  this.existsRE.test(entry['LeadId']);
         },
         isInLeadContext: function() {
@@ -92,7 +92,7 @@ define('Mobile/SalesLogix/Views/History/Edit', [
                 });
             lead = (insert && isLeadContext) || this.isHistoryForLead(entry);
             return !!lead;
-        },
+        },*/
         beforeTransitionTo: function() {
             this.inherited(arguments);
 
@@ -100,7 +100,7 @@ define('Mobile/SalesLogix/Views/History/Edit', [
             // the value for the 'IsLead' field will be set later, based on the value derived here.
 
             // todo: there is an issue when refreshing the edit view as options.isLead is persisted in the navigation state.
-            if (this.options.isForLead !== undefined) {
+            /*if (this.options.isForLead !== undefined) {
                 return;
             }
 
@@ -108,11 +108,11 @@ define('Mobile/SalesLogix/Views/History/Edit', [
 
             if (this.options.isForLead) {
                 this.showFieldsForLead();
-            } else {
+            } else {*/
                 this.showFieldsForStandard();
-            }
+            //}
         },
-        onIsLeadChange: function(value, field) {
+        /*onIsLeadChange: function(value, field) {
             this.options.isForLead = value;
 
             if (this.options.isForLead) {
@@ -127,10 +127,10 @@ define('Mobile/SalesLogix/Views/History/Edit', [
             if (selection && this.insert) {
                 this.fields['AccountName'].setValue(utility.getValue(selection, 'Company'));
             }
-        },
+        },*/
         onAccountChange: function(value, field) {
             var fields = this.fields;
-            array.forEach(['Contact', 'Opportunity', 'Ticket'], function(f) {
+            array.forEach(['Contact', 'Opportunity'], function(f) {
                 if (value) {
                     fields[f].dependsOn = 'Account';
                     fields[f].where = string.substitute('Account.Id eq "${0}"', [value['AccountId'] || value['key']]);
@@ -158,7 +158,7 @@ define('Mobile/SalesLogix/Views/History/Edit', [
                 this.onAccountChange(accountField.getValue(), accountField);
             }
         },
-        showFieldsForLead: function() {
+       /* showFieldsForLead: function() {
             array.forEach(this.fieldsForStandard.concat(this.fieldsForStandard), function(item) {
                 if (this.fields[item]) {
                     this.fields[item].hide();
@@ -170,13 +170,13 @@ define('Mobile/SalesLogix/Views/History/Edit', [
                     this.fields[item].show();
                 }
             }, this);
-        },
+        },*/
         showFieldsForStandard: function() {
-            array.forEach(this.fieldsForStandard.concat(this.fieldsForLeads), function(item) {
+            /*array.forEach(this.fieldsForStandard.concat(this.fieldsForLeads), function(item) {
                 if (this.fields[item]) {
                     this.fields[item].hide();
                 }
-            }, this);
+            }, this);*/
 
             array.forEach(this.fieldsForStandard, function(item) {
                 if (this.fields[item]) {
@@ -191,7 +191,7 @@ define('Mobile/SalesLogix/Views/History/Edit', [
         applyContext: function() {
             var found = App.queryNavigationContext(function(o) {
                 var context = (o.options && o.options.source) || o;
-                return (/^(accounts|contacts|opportunities|leads|tickets)$/).test(context.resourceKind) && context.key;
+                return (/^(accounts|contacts|opportunities)$/).test(context.resourceKind) && context.key;
             });
 
             found = (found && found.options && found.options.source) || found;
@@ -200,8 +200,8 @@ define('Mobile/SalesLogix/Views/History/Edit', [
                 'accounts': this.applyAccountContext,
                 'contacts': this.applyContactContext,
                 'opportunities': this.applyOpportunityContext,
-                'leads': this.applyLeadContext,
-                'tickets': this.applyTicketContext
+                //'leads': this.applyLeadContext,
+                //'tickets': this.applyTicketContext
             };
 
             if (found && lookup[found.resourceKind]) {
@@ -227,7 +227,7 @@ define('Mobile/SalesLogix/Views/History/Edit', [
             accountField.setValue(accountValue);
             this.onAccountChange(accountValue, accountField);
         },
-        applyLeadContext: function(context) {
+        /*applyLeadContext: function(context) {
             var view = App.getView(context.id),
                 entry = context.entry || (view && view.entry);
 
@@ -248,7 +248,7 @@ define('Mobile/SalesLogix/Views/History/Edit', [
             var isLeadField = this.fields['IsLead'];
             isLeadField.setValue(context.resourceKind == 'leads');
             this.onIsLeadChange(isLeadField.getValue(), isLeadField);
-        },
+        },*/
         applyOpportunityContext: function(context) {
             var opportunityField = this.fields['Opportunity'];
             opportunityField.setValue({
@@ -303,7 +303,7 @@ define('Mobile/SalesLogix/Views/History/Edit', [
                 this.onAccountChange(accountField.getValue(), accountField);
             }
         },
-        applyTicketContext: function(context) {
+        /*applyTicketContext: function(context) {
             var ticketField = this.fields['Ticket'];
             ticketField.setValue({
                 'TicketId': context.key,
@@ -339,12 +339,12 @@ define('Mobile/SalesLogix/Views/History/Edit', [
                 });
                 this.onAccountDependentChange(contactField.getValue(), contactField);
             }
-        },
+        },*/
         setValues: function(values) {
             var isLeadField, field, value, leadCompany, longNotes, insert;
 
             this.inherited(arguments);
-            isLeadField = this.fields['IsLead'];
+            /*isLeadField = this.fields['IsLead'];
             if (this.isInLeadContext()) {
                 isLeadField.setValue(true);
                 this.onIsLeadChange(true, isLeadField);
@@ -357,7 +357,7 @@ define('Mobile/SalesLogix/Views/History/Edit', [
                 }
             } else {
                 isLeadField.setValue(false);
-            }
+            }*/
 
             longNotes = utility.getValue(values, 'LongNotes');
             if (longNotes) {
@@ -371,8 +371,8 @@ define('Mobile/SalesLogix/Views/History/Edit', [
                     'accounts': this.applyAccountContext,
                     'contacts': this.applyContactContext,
                     'opportunities': this.applyOpportunityContext,
-                    'leads': this.applyLeadContext,
-                    'tickets': this.applyTicketContext
+                    //'leads': this.applyLeadContext,
+                    //'tickets': this.applyTicketContext
                 };
                 lookup[this.context.resourceKind].call(this, this.context);
             }
@@ -448,14 +448,14 @@ define('Mobile/SalesLogix/Views/History/Edit', [
                 }, {
                     title: this.relatedItemsText,
                     name: 'RelatedItemsSection',
-                    children: [{
+                    children: [/*{
                             label: this.isLeadText,
                             name: 'IsLead',
                             include: false,
                             type: 'boolean',
                             onText: this.yesText,
                             offText: this.noText
-                        }, {
+                        }, */{
                             label: this.accountText,
                             name: 'Account',
                             property: 'Account',
@@ -493,7 +493,7 @@ define('Mobile/SalesLogix/Views/History/Edit', [
                             where: this.formatDependentQuery.bindDelegate(
                                 this, 'Account.Id eq "${0}"', 'AccountId'
                             )
-                        }, {
+                        }/*, {
                             dependsOn: 'Account',
                             label: this.ticketNumberText,
                             name: 'Ticket',
@@ -523,7 +523,7 @@ define('Mobile/SalesLogix/Views/History/Edit', [
                             name: 'AccountName',
                             property: 'AccountName',
                             type: 'text'
-                        }]
+                        }*/]
                 }]);
         }
     });

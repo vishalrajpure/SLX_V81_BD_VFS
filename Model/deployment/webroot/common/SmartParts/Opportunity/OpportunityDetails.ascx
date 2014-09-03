@@ -269,7 +269,7 @@ LabelPlacement="left"  />
    <SalesLogix:GroupNavigator runat="server" ID="grnDetails" ></SalesLogix:GroupNavigator>
     <asp:ImageButton runat="server" ID="cmdSave"
  AlternateText="<%$ resources: cmdSave.Caption %>"  ToolTip="<%$ resources: cmdSave.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Save_16x16"  />
-   
+ 
     <asp:ImageButton runat="server" ID="cmdCopyOpportunity"
  AlternateText="<%$ resources: cmdCopyOpportunity.Caption %>"  ToolTip="<%$ resources: cmdCopyOpportunity.ToolTip %>" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Copy_16x16"  />
  
@@ -369,7 +369,7 @@ protected void pklStatus_ChangeAction(object sender, EventArgs e) {
 Sage.Entity.Interfaces.IOpportunity opportunity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
 string dialog = "";
 
-Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
+/*Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
 
 string _UserId = "", AccManager = "";
 Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
@@ -449,7 +449,7 @@ else
         tabWorkspace.Tabs.Remove(tabcontact);
     }    
 }
-    
+    */
 
 
 
@@ -462,14 +462,15 @@ if(opportunity.Status=="Dropped" || opportunity.Status=="Future Opportunity")
 }
 else if (opportunity.StatusChangeWon())
 {
-	DialogService.ShowMessage("You are not Authorise to Closed-Won Opportunity");
+	/*DialogService.ShowMessage("You are not Authorise to Closed-Won Opportunity");
 	object resOpen = System.Web.HttpContext.GetGlobalResourceObject("Opportunity", "Opp_Status_Active");
     if (resOpen != null)
     {
         opportunity.Status = resOpen.ToString(); //"Open";
     } 
-	return;
+	return;*/
     //dialog = "OpportunityClosedWon";
+	dialog = "CustomerCodeDetails";
 }
 else if (opportunity.StatusChangeLost() || opportunity.Status=="Lost")
 {
@@ -508,57 +509,20 @@ luePriceList.Enabled = (opportunity.OperatingCompany != null);
 
 }
 protected void cmdSave_ClickAction(object sender, EventArgs e) {
-  Sage.Entity.Interfaces.IOpportunity _entity = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-  if (_entity != null)
-  {
-    object _parent = GetParentEntity();
-    if (DialogService.ChildInsertInfo != null)
-    {
-        if (_parent != null)
-        {
-            if (DialogService.ChildInsertInfo.ParentReferenceProperty != null)
-            {
-                DialogService.ChildInsertInfo.ParentReferenceProperty.SetValue(_entity, _parent, null);
-            }
-        }
-    }
-    bool shouldSave = true;
-    Sage.Platform.WebPortal.EntityPage page = Page as Sage.Platform.WebPortal.EntityPage;
-    if (page != null)
-    {
-        if(IsInDialog() && page.ModeId.ToUpper() == "INSERT")
-        {
-            shouldSave = false;
-        }
-    }
-
-    if(shouldSave)
-    {
-       _entity.Save();
-    }
-
-    if (_parent != null)
-    {
-        if (DialogService.ChildInsertInfo != null)
-        {
-           if (DialogService.ChildInsertInfo.ParentsCollectionProperty != null)
-           {
-              System.Reflection.MethodInfo _add = DialogService.ChildInsertInfo.ParentsCollectionProperty.PropertyType.GetMethod("Add");
-              _add.Invoke(DialogService.ChildInsertInfo.ParentsCollectionProperty.GetValue(_parent, null), new object[] { _entity });
-           }
-        }
-     }
-  }
-
-          cmdSave_ClickActionBRC(sender, e);
-    
-  
-}
-protected void cmdSave_ClickActionBRC(object sender, EventArgs e) {
 Sage.Entity.Interfaces.IOpportunity opp = BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-opp.SalesPotential = Convert.ToDouble(opp.SalesPotential);
-opp.Save();
-System.Web.HttpContext.Current.Response.Redirect(string.Format("Opportunity.aspx?modeid=Detail&entityid=" + opp.Id.ToString()));
+if(opp.Status != "Closed - Won")
+{
+	opp.SalesPotential = Convert.ToDouble(opp.SalesPotential);
+	opp.Save();
+	System.Web.HttpContext.Current.Response.Redirect(string.Format("Opportunity.aspx?modeid=Detail&entityid=" + opp.Id.ToString()));
+}
+else
+{
+	opp.Status = "Active";
+	DialogService.ShowMessage("Without customercode can not save opportunity as closed won");
+}
+	
+
 
 }
 protected void cmdCopyOpportunity_ClickAction(object sender, EventArgs e) {
@@ -609,23 +573,98 @@ cmdDelete.Click += new ImageClickEventHandler(cmdDelete_ClickAction);
 }
 
 protected void quickformload0(object sender, EventArgs e) {
+ ClientBindingMgr.UsePageExitWarning = false;
 lueReseller.SeedValue = GetLocalResourceObject("Reseller_rsc").ToString();
 
 
 txtDescription_lbl.ForeColor = System.Drawing.Color.Red;
 txtBusinessPotential_lbl.ForeColor = System.Drawing.Color.Red;
 lueAccount_lbl.ForeColor = System.Drawing.Color.Red;
-Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
-
-Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
-string _UserId = "", AccManager = "";
-Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
-_UserId = _IUserService.UserId; //get login Userid
-AccManager = Convert.ToString(objOpp.AccountManager.Id);
 
 if(!Page.IsPostBack)
 {
-	if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id) == _UserId.Trim()) && (objOpp.Status != "Closed - Won" && objOpp.Status.ToUpper() != "LOST" && objOpp.Status.ToUpper() != "DROPPED"))
+	System.Collections.Hashtable keyPairs = new System.Collections.Hashtable();
+    string iniPath = Server.MapPath(@"Temp") + "\\Config.ini";
+    System.IO.TextReader
+        iniFile = null;
+    String strLine = null;
+    String currentRoot = null;
+    String[] keyPair = null;
+    string Conn = "";
+
+
+    if (System.IO.File.Exists(iniPath))
+    {
+        iniFile = new System.IO.StreamReader(iniPath);
+        strLine = iniFile.ReadLine();
+        while (strLine != null)
+        {
+            strLine = strLine.Trim();//.ToUpper();
+            if (strLine != "")
+            {
+                if (strLine.StartsWith("[") && strLine.EndsWith("]"))
+                {
+                    currentRoot = strLine.Substring(1, strLine.Length - 2);
+                }
+                else
+                {
+                    keyPair = strLine.Split(new char[] { '=' }, 2);
+
+                    if (keyPair[0].ToString() == "constr")
+                    {
+                        Conn = keyPair[1].ToString();
+                        break;
+                    }
+                }
+            }
+            strLine = iniFile.ReadLine();
+        }
+        if (iniFile != null)
+            iniFile.Close();
+
+    }
+    Sage.Entity.Interfaces.IOpportunity objOpp = this.BindingSource.Current as Sage.Entity.Interfaces.IOpportunity;
+    Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
+    string _UserId = "", AccManager = "";
+    Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Security.IUserService>();
+    _UserId = _IUserService.UserId; //get login Userid
+    AccManager = Convert.ToString(objOpp.AccountManager.Id);
+    string qry = "select  USERID from (select USERID,UserCode, nullif(MANAGERID,USERID) MANAGER from USERSECURITY) connect by nocycle prior MANAGER= USERID start with USERID = ('" + objOpp.Account.AccountManager.Id.ToString() + "')" +
+				" UNION select  USERID from (select USERID,UserCode, nullif(MANAGERID,USERID) MANAGER from USERSECURITY) connect by nocycle prior MANAGER= USERID start with USERID = ('" + objOpp.AccountManager.Id.ToString() + "')";
+    Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+    //System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(Conn);//"Provider=OraOLEDB.Oracle.1;Password=Ma$t3rk3y;Persist Security Info=True;User ID=sysdba;Data Source=BLUEDART");
+    System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+    System.Data.DataTable dt = new System.Data.DataTable();
+    dataAdapterObj.Fill(dt);
+    bool flag = false;
+    if (dt.Rows.Count > 0)
+    {
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(dt.Rows[i][0].ToString()).Trim() == _UserId.Trim()) && (objOpp.Status != "Closed - Won" && objOpp.Status.ToUpper() != "LOST" && objOpp.Status.ToUpper() != "DROPPED"))
+            {
+                txtDescription.Enabled = true;
+                lueAccount.Enabled = true;
+                usrUser.Enabled = true;
+                lueReseller.Enabled = true;
+                dtpEstimatedClose.Enabled = true;
+                pklCloseProbability.Enabled = true;
+                pklStatus.Enabled = true;
+                pklStatus.ReadOnly = false;
+                txtBusinessPotential.Enabled = true;
+                chkAddToForecast.Enabled = true;
+                txtComments.Enabled = true;
+                clIntegrationContract.Enabled = true;
+                cmdSave.Enabled = true;
+                pklSatge.Enabled = true;
+                cmdReset.Enabled = true;                
+                cmdDelete.Enabled = true;
+                flag = true;
+            }
+        }
+    }
+	else if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(objOpp.Account.AccountManager.Id).Trim() == _UserId.Trim()) && (objOpp.Status != "Closed - Won" && objOpp.Status.ToUpper() != "LOST" && objOpp.Status.ToUpper() != "DROPPED"))
 	{
 	    txtDescription.Enabled = true;
 	    lueAccount.Enabled = true;
@@ -643,26 +682,9 @@ if(!Page.IsPostBack)
 		pklSatge.Enabled = true;
 		cmdReset.Enabled = true;
 		cmdDelete.Enabled = true;
-	    /*if (tabWorkspace != null)
-	    {
-	        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabproduct = null;
-	        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabcontact = null;
-	        foreach (Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tab in tabWorkspace.Tabs)
-	        {
-	            if (tab.ID == "OpportunityProducts_Read")
-	            {
-	                tabproduct = tab;
-	            }
-	            if (tab.ID == "OpportunityContacts_Read")
-	            {
-	                tabcontact = tab; 
-	            }
-	        }
-	        tabWorkspace.Tabs.Remove(tabproduct);
-	        tabWorkspace.Tabs.Remove(tabcontact);
-	    }  */
+        flag = true;
 	}
-	else
+	if(flag == false)
 	{
 	    txtDescription.Enabled = false;
 	    lueAccount.Enabled = false;
@@ -680,25 +702,6 @@ if(!Page.IsPostBack)
 		pklSatge.Enabled = false;
 		cmdReset.Enabled = false;
 		cmdDelete.Enabled = false;
-		/*if (tabWorkspace != null)
-	    {
-	        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabproduct = null;
-	        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabcontact = null;
-	        foreach (Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tab in tabWorkspace.Tabs)
-	        {
-	            if (tab.ID == "OpportunityProducts")
-	            {
-	                tabproduct = tab; 
-	            }
-	            if (tab.ID == "OpportunityContacts")
-	            {
-	                tabcontact = tab;
-	            }
-	        }
-
-	        tabWorkspace.Tabs.Remove(tabproduct);
-	        tabWorkspace.Tabs.Remove(tabcontact);
-	    }  */  
 	}
 }
 
@@ -726,8 +729,6 @@ Sage.Platform.WebPortal.EntityPage epage = Page as Sage.Platform.WebPortal.Entit
             _runActivating = (epage.IsNewEntity || _runActivating);
 if (_runActivating) DoActivating();
 ScriptManager.RegisterStartupScript(Page, GetType(), "cleanupcontainer", "jQuery(\".controlslist > div:empty\").remove();", true);
-ClientBindingMgr.RegisterSaveButton(cmdSave);
-
 cmdDelete.OnClientClick = string.Format("return confirm('{0}');", Sage.Platform.WebPortal.PortalUtil.JavaScriptEncode(GetLocalResourceObject("cmdDelete.ActionConfirmationMessage").ToString()));
 
 if (!RoleSecurityService.HasAccess("Administration/Forms/View"))

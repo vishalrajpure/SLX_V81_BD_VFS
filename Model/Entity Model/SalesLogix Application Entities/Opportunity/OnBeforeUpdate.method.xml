@@ -14,7 +14,7 @@
     </methodTarget>
   </methodTargets>
   <postExecuteTargets>
-    <methodTarget xsi:type="OrmMethodTargetSnippet" id="8c664f5b-9d8e-4284-96b8-89102cd1bcd9" lastModifiedUtc="2014-06-21T07:52:10.5017858Z" targetType="Sage.BusinessRules.CodeSnippets.OpportunityBusinessRules, Sage.SnippetLibrary.CSharp" targetMethod="OnBeforeUpdateStep" active="true" codeSnippetId="1d754cf2-597d-4842-837e-afb134f6efb0">
+    <methodTarget xsi:type="OrmMethodTargetSnippet" id="8c664f5b-9d8e-4284-96b8-89102cd1bcd9" lastModifiedUtc="2014-08-19T07:22:03.9474178Z" targetType="Sage.BusinessRules.CodeSnippets.OpportunityBusinessRules, Sage.SnippetLibrary.CSharp" targetMethod="OnBeforeUpdateStep" active="true" codeSnippetId="1d754cf2-597d-4842-837e-afb134f6efb0">
       <ExtendedPropertiesCollection>
         <extendee type="Sage.Platform.Orm.Entities.OrmMethodTargetSnippet" />
       </ExtendedPropertiesCollection>

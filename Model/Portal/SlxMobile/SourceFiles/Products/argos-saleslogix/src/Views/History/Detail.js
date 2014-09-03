@@ -41,12 +41,12 @@ define('Mobile/SalesLogix/Views/History/Detail', [
         scheduledText: 'scheduled',
         timelessText: 'timeless',
         companyText: 'company',
-        leadText: 'lead',
+        //leadText: 'lead',
         titleText: 'History',
         accountText: 'account',
         contactText: 'contact',
         opportunityText: 'opportunity',
-        ticketNumberText: 'ticket',
+        //ticketNumberText: 'ticket',
         moreDetailsText: 'More Details',
         relatedItemsText: 'Related Items',
         relatedAttachmentText: 'Attachments',
@@ -86,10 +86,10 @@ define('Mobile/SalesLogix/Views/History/Detail', [
             'OpportunityName',
             'Priority',
             'StartDate',
-            'TicketId',
-            'TicketNumber',
-            'LeadId',
-            'LeadName',
+            //'TicketId',
+            //'TicketNumber',
+            //'LeadId',
+            //'LeadName',
             'Timeless',
             'Type',
             'UserName'
@@ -98,9 +98,9 @@ define('Mobile/SalesLogix/Views/History/Detail', [
         formatActivityType: function(val) {
             return this.activityTypeText[val] || val;
         },
-        isHistoryForLead: function(entry) {
+        /*isHistoryForLead: function(entry) {
             return this.existsRE.test(entry && entry['LeadId']);
-        },
+        },*/
         isHistoryForActivity: function(entry) {
             return this.existsRE.test(entry && entry['ActivityId']);
         },
@@ -215,7 +215,7 @@ define('Mobile/SalesLogix/Views/History/Detail', [
                     children: [{
                             name: 'AccountName',
                             property: 'AccountName',
-                            exclude: this.isHistoryForLead,
+                            //exclude: this.isHistoryForLead,
                             label: this.accountText,
                             view: 'account_detail',
                             key: 'AccountId',
@@ -223,7 +223,7 @@ define('Mobile/SalesLogix/Views/History/Detail', [
                         }, {
                             name: 'ContactName',
                             property: 'ContactName',
-                            exclude: this.isHistoryForLead,
+                            //exclude: this.isHistoryForLead,
                             label: this.contactText,
                             view: 'contact_detail',
                             key: 'ContactId',
@@ -231,12 +231,12 @@ define('Mobile/SalesLogix/Views/History/Detail', [
                         }, {
                             name: 'OpportunityName',
                             property: 'OpportunityName',
-                            exclude: this.isHistoryForLead,
+                            //exclude: this.isHistoryForLead,
                             label: this.opportunityText,
                             view: 'opportunity_detail',
                             key: 'OpportunityId',
                             descriptor: 'OpportunityName'
-                        }, {
+                        }/*, {
                             name: 'TicketNumber',
                             property: 'TicketNumber',
                             exclude: this.isHistoryForLead,
@@ -257,7 +257,7 @@ define('Mobile/SalesLogix/Views/History/Detail', [
                             property: 'AccountName',
                             include: this.isHistoryForLead,
                             label: this.companyText
-                        }]
+                        }*/]
                 }, {
                     title: this.relatedItemsText,
                     list: true,

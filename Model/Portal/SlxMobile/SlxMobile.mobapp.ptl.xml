@@ -1,7 +1,13 @@
 <?xml version="1.0"?>
 <MobileApplicationPortal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="8b4b9ec4-73da-4394-882c-714219f73ba6">
   <PortalAlias>SlxMobile</PortalAlias>
-  <PortalReferences />
+  <PortalReferences>
+    <PortalReference>
+      <ModelId>73d4e7d0-a7fa-40ae-8b45-1ad7ed954154</ModelId>
+      <ItemTypeName>Sage.Platform.WebPortal.Design.PortalBase, Sage.Platform.WebPortal.Design, Version=8.1.0.1179, Culture=neutral, PublicKeyToken=null</ItemTypeName>
+      <ItemId>73c2d444-e18c-43b0-9543-4022b8632e3a</ItemId>
+    </PortalReference>
+  </PortalReferences>
   <DeploymentActions>
     <ActionType TypeName="Sage.SalesLogix.Web.AdminModule.SLXClientConnectionStringDeploymentAction, Sage.SalesLogix.Web.AdminModule">
       <Properties />

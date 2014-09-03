@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="3172551b-f476-45ea-98de-2bb04ddba687" lastModifiedUtc="2014-06-27T11:02:28.5004591Z" manageSchema="true" tableName="OPPORTUNITY" name="Opportunity" displayPropertyId="bad2e420-4609-4246-bb29-babd7cfcf84a" isExtension="false" cacheUsage="ReadWrite" audited="true" smallImage="[Localization!Global_Images:Opportunity_List_16x16]" largeImage="[Localization!Global_Images:Opportunity_List_24x24]" onBeforeInsertMethodId="be2a12dc-ab82-40bb-9a35-84e480b92773" onAfterInsertMethodId="643dff39-8d8a-45b0-9d6e-5bfe6186dd4f" onBeforeUpdateMethodId="24cee8e1-2af4-455c-b37f-ab151407e791" onAfterUpdateMethodId="48988c22-4a24-4338-a20d-1b0780d7a9c4" onBeforeDeleteMethodId="ba124c54-dee7-4a02-bd11-862e19a652a0" onAfterDeleteMethodId="af13631b-5d6b-476b-a00b-5845cfcd44df" onCreateId="8badccb5-2911-406d-bfe2-a46ac96091e7">
+<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="3172551b-f476-45ea-98de-2bb04ddba687" lastModifiedUtc="2014-08-20T06:21:19.3148766Z" manageSchema="true" tableName="OPPORTUNITY" name="Opportunity" displayPropertyId="bad2e420-4609-4246-bb29-babd7cfcf84a" isExtension="false" cacheUsage="ReadWrite" audited="true" smallImage="[Localization!Global_Images:Opportunity_List_16x16]" largeImage="[Localization!Global_Images:Opportunity_List_24x24]" onBeforeInsertMethodId="be2a12dc-ab82-40bb-9a35-84e480b92773" onAfterInsertMethodId="643dff39-8d8a-45b0-9d6e-5bfe6186dd4f" onBeforeUpdateMethodId="24cee8e1-2af4-455c-b37f-ab151407e791" onAfterUpdateMethodId="48988c22-4a24-4338-a20d-1b0780d7a9c4" onBeforeDeleteMethodId="ba124c54-dee7-4a02-bd11-862e19a652a0" onAfterDeleteMethodId="af13631b-5d6b-476b-a00b-5845cfcd44df" onCreateId="8badccb5-2911-406d-bfe2-a46ac96091e7">
   <extendedMetaData />
   <ExtendedPropertiesCollection>
     <extendee type="Sage.Platform.Orm.Entities.OrmEntity">
@@ -907,6 +907,32 @@
       </ExtendedPropertiesCollection>
       <SystemDataType guid="30053f5a-8d40-4db1-b185-1e4128eb26cc">
         <StandardIdDataType />
+      </SystemDataType>
+    </property>
+    <property xsi:type="OrmFieldProperty" id="2113f09d-4dec-4c13-b12e-23a952c2f09c" lastModifiedUtc="2014-08-20T06:21:19.3138766Z" name="AreaMasterid" audited="false" columnName="AREAMASTERID" maxLength="10" precision="0" scale="0" ordinal="63" isReadOnly="false">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmFieldProperty">
+          <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">
+            <OrmEntityPropertySDataExtension generate="true" />
+          </extender>
+        </extendee>
+      </ExtendedPropertiesCollection>
+      <SystemDataType guid="ccc0f01d-7ba5-408e-8526-a3f942354b3a">
+        <TextDataType>
+          <Length>10</Length>
+        </TextDataType>
+      </SystemDataType>
+    </property>
+    <property xsi:type="OrmFieldProperty" id="d23056f5-4533-46a4-9fe7-f93917f623f2" lastModifiedUtc="2014-08-20T06:21:19.3148766Z" name="CustmerCode" audited="false" columnName="CUSTMERCODE" maxLength="0" precision="0" scale="0" ordinal="64" isReadOnly="false">
+      <ExtendedPropertiesCollection>
+        <extendee type="Sage.Platform.Orm.Entities.OrmFieldProperty">
+          <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">
+            <OrmEntityPropertySDataExtension generate="true" />
+          </extender>
+        </extendee>
+      </ExtendedPropertiesCollection>
+      <SystemDataType guid="47f90249-e4c8-4564-9ae6-e1fa9904f8b8">
+        <IntegerDataType />
       </SystemDataType>
     </property>
   </properties>

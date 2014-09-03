@@ -297,4 +297,46 @@
   <data name="ddlMKTSG.DependentLookups.Cmktsgdesc.PropertyDisplay" xml:space="preserve">
     <value>MKT Segment:</value>
   </data>
+  <data name="lkpBranchManager.LookupProperties..PropertyHeader" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lkpBranchManager.LookupProperties.User.UserName.PropertyHeader" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="lkpBranchManager.LookupProperties.User.Type.PropertyHeader" xml:space="preserve">
+    <value>User Type</value>
+  </data>
+  <data name="lkpBranchManager.LookupProperties.FirstName.PropertyHeader" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="lkpBranchManager.LookupProperties.UserInfo.FirstName.PropertyHeader" xml:space="preserve">
+    <value>UserInfo First Name</value>
+  </data>
+  <data name="lkpBranchManager.LookupProperties.UserInfo.LastName.PropertyHeader" xml:space="preserve">
+    <value>UserInfo Last Name</value>
+  </data>
+  <data name="lkpBranchManager.LookupProperties.UserInfo.NameLF.PropertyHeader" xml:space="preserve">
+    <value>UserInfo User Name (Last, First)</value>
+  </data>
+  <data name="lkpBranchManager.LookupProperties.UserInfo.UserName.PropertyHeader" xml:space="preserve">
+    <value>UserInfo User Name</value>
+  </data>
+  <data name="lkpBranchManager.LookupProperties.Type.PropertyHeader" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="lkpLeadEnteredBy.Caption" xml:space="preserve">
+    <value>Lead Entered By:</value>
+  </data>
+  <data name="lkpLeadEnteredBy.LookupProperties.Cemplname.PropertyHeader" xml:space="preserve">
+    <value>Employee Name</value>
+  </data>
+  <data name="lkpLeadEnteredBy.LookupProperties.Cemplcode.PropertyHeader" xml:space="preserve">
+    <value>Employee code</value>
+  </data>
+  <data name="lkpLeadEnteredBy.LookupProperties.Carea.PropertyHeader" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="lkpLeadEnteredBy.LookupProperties.Cjobrole.PropertyHeader" xml:space="preserve">
+    <value>Job Role</value>
+  </data>
 </root>

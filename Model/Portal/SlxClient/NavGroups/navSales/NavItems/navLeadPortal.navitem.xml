@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<NavigationItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="959f15b3-cef1-4843-b172-ff28251e0b03">
+  <ItemId>navLeadPortal</ItemId>
+  <NavUrl>InsertLead.aspx?modeid=Insert</NavUrl>
+  <LargeImageUrl>[Localization!Global_Images:Leads_32x32]</LargeImageUrl>
+  <SmallImageUrl>[Localization!Global_Images:Leads_24x24]</SmallImageUrl>
+  <ContextMenuId />
+  <Target />
+  <AppliedSecurity />
+</NavigationItem>

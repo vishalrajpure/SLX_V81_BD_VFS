@@ -98,7 +98,22 @@ MaxLength="32"  />
       </td>
       </tr>
 <tr>
-            <td></td>
+            <td  >
+ <div class=" lbl alignleft">
+   <asp:Label ID="lkpIndustry_lbl" AssociatedControlID="lkpIndustry" runat="server" Text="<%$ resources: lkpIndustry.Caption %>" ></asp:Label>
+ </div>   
+  <div   class="textcontrol lookup"   >
+<SalesLogix:LookupControl runat="server" ID="lkpIndustry" LookupEntityName="Indsgmst" LookupEntityTypeName="Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"  >
+<LookupProperties>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpIndustry.LookupProperties.Cmktsgdesc.PropertyHeader %>" PropertyName="Cmktsgdesc" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+<SalesLogix:LookupProperty PropertyHeader="<%$ resources: lkpIndustry.LookupProperties.Cindsgdesc.PropertyHeader %>" PropertyName="Cindsgdesc" PropertyType="System.String" PropertyFormat="None" PropertyFormatString="" UseAsResult="True" ExcludeFromFilters="False"></SalesLogix:LookupProperty>
+</LookupProperties>
+<LookupPreFilters>
+</LookupPreFilters>
+</SalesLogix:LookupControl>
+  </div>
+
+      </td>
                 <td  >
  <div class=" lbl alignleft">
    <asp:Label ID="AccManager_lbl" AssociatedControlID="AccManager" runat="server" Text="<%$ resources: AccManager.Caption %>" ></asp:Label>
@@ -109,21 +124,12 @@ MaxLength="32"  />
 
       </td>
                 <td  >
-<div class="dependency">
-<SalesLogix:DependencyLookupControl runat="server" ID="ddlMKTSG"  LabelCssClass="lbl"  >
-<LookupResultsHeaderStyle BackColor="ActiveCaption" Font-Bold="True" ForeColor="White" />
-<LookupDialogStyle BackColor="ButtonFace" />
-<LookupResultsStyle CellPadding="4" ForeColor="Black" />
-<DependentLookups>
- <SalesLogix:DependentLookup LookupEntityName="Indsgmst" LookupEntityTypeName="Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" DropDownDisplayProperty="Cindsgdesc" ParentProperty="" PropertyDisplay="<%$ resources: ddlMKTSG.DependentLookups.Cindsgdesc.PropertyDisplay %>" BindingPropertyName="Industry">
-  </SalesLogix:DependentLookup>
- <SalesLogix:DependentLookup LookupEntityName="Indsgmst" LookupEntityTypeName="Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" DropDownDisplayProperty="Cmktsgdesc" ParentProperty="Cindsgdesc" PropertyDisplay="<%$ resources: ddlMKTSG.DependentLookups.Cmktsgdesc.PropertyDisplay %>" BindingPropertyName="MktSegment">
-  </SalesLogix:DependentLookup>
-  </DependentLookups>
-  <LookupPreFilters>
-      </LookupPreFilters>
-</SalesLogix:DependencyLookupControl>
-</div>
+ <div class=" lbl alignleft">
+   <asp:Label ID="Owner_lbl" AssociatedControlID="Owner" runat="server" Text="<%$ resources: Owner.Caption %>" ></asp:Label>
+ </div>   
+   <div  class="textcontrol"  > 
+<SalesLogix:OwnerControl runat="server" ID="Owner" ButtonToolTip="<%$ resources: Owner.ButtonToolTip %>" Types="$qfcontrol.Types"  />
+  </div>
 
       </td>
       </tr>
@@ -135,16 +141,16 @@ MaxLength="32"  />
  Text="<%$ resources: btnAddress.Caption %>"  />
  
    <asp:ImageButton runat="server" ID="btnShowMap"
-ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Get_Map_16x16"  />
+Visible="false" ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Get_Map_16x16"  />
  
 </asp:Panel>
       </td>
                 <td  >
- <div class=" lbl alignleft">
-   <asp:Label ID="Owner_lbl" AssociatedControlID="Owner" runat="server" Text="<%$ resources: Owner.Caption %>" ></asp:Label>
- </div>   
-   <div  class="textcontrol"  > 
-<SalesLogix:OwnerControl runat="server" ID="Owner" ButtonToolTip="<%$ resources: Owner.ButtonToolTip %>" Types="$qfcontrol.Types"  />
+ <div class=" lbl alignleft" >
+   <asp:Label ID="Division_lbl" AssociatedControlID="Division" runat="server" Text="<%$ resources: Division.Caption %>" Visible="false" ></asp:Label>
+ </div>
+  <div  class="textcontrol"   >
+<asp:TextBox runat="server" ID="Division"  dojoType="Sage.UI.Controls.TextBox" MaxLength="64" Visible="false"  />
   </div>
 
       </td>
@@ -171,12 +177,21 @@ ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Get_Map_16x16"
 <tr>
             <td></td>
                 <td  >
- <div class=" lbl alignleft" >
-   <asp:Label ID="Division_lbl" AssociatedControlID="Division" runat="server" Text="<%$ resources: Division.Caption %>" Visible="false" ></asp:Label>
- </div>
-  <div  class="textcontrol"   >
-<asp:TextBox runat="server" ID="Division"  dojoType="Sage.UI.Controls.TextBox" MaxLength="64" Visible="false"  />
-  </div>
+<div class="dependency">
+<SalesLogix:DependencyLookupControl runat="server" ID="ddlMKTSG"  LabelCssClass="lbl" Visible="false"  >
+<LookupResultsHeaderStyle BackColor="ActiveCaption" Font-Bold="True" ForeColor="White" />
+<LookupDialogStyle BackColor="ButtonFace" />
+<LookupResultsStyle CellPadding="4" ForeColor="Black" />
+<DependentLookups>
+ <SalesLogix:DependentLookup LookupEntityName="Indsgmst" LookupEntityTypeName="Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" DropDownDisplayProperty="Cindsgdesc" ParentProperty="" PropertyDisplay="<%$ resources: ddlMKTSG.DependentLookups.Cindsgdesc.PropertyDisplay %>" BindingPropertyName="Industry">
+  </SalesLogix:DependentLookup>
+ <SalesLogix:DependentLookup LookupEntityName="Indsgmst" LookupEntityTypeName="Sage.Entity.Interfaces.IIndsgmst, Sage.Entity.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" DropDownDisplayProperty="Cmktsgdesc" ParentProperty="Cindsgdesc" PropertyDisplay="<%$ resources: ddlMKTSG.DependentLookups.Cmktsgdesc.PropertyDisplay %>" BindingPropertyName="MktSegment">
+  </SalesLogix:DependentLookup>
+  </DependentLookups>
+  <LookupPreFilters>
+      </LookupPreFilters>
+</SalesLogix:DependencyLookupControl>
+</div>
 
       </td>
                 <td  >
@@ -188,6 +203,11 @@ ImageUrl="~/ImageResource.axd?scope=global&type=Global_Images&key=Get_Map_16x16"
   </div>
 
       </td>
+      </tr>
+<tr>
+            <td></td>
+                <td></td>
+                <td></td>
       </tr>
 </table>
  
@@ -261,16 +281,18 @@ protected override void OnAddEntityBindings() {
                     // Fax.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding FaxTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Fax", Fax, "Text");
         BindingSource.Bindings.Add(FaxTextBinding);
+                    // lkpIndustry.LookupResultValue Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding lkpIndustryLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Indsgmst", lkpIndustry, "LookupResultValue");
+        BindingSource.Bindings.Add(lkpIndustryLookupResultValueBinding);
                     // AccManager.LookupResultValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding AccManagerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("AccountManager", AccManager, "LookupResultValue");
         BindingSource.Bindings.Add(AccManagerLookupResultValueBinding);
-      BindingSource.AddBindingProvider(ddlMKTSG as Sage.Platform.EntityBinding.IEntityBindingProvider);
-                 // ddlMKTSG.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding ddlMKTSGTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Industry", ddlMKTSG, "Text");
-        BindingSource.Bindings.Add(ddlMKTSGTextBinding);
-                             // Owner.LookupResultValue Binding
+                    // Owner.LookupResultValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding OwnerLookupResultValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Owner", Owner, "LookupResultValue", "", null);
         BindingSource.Bindings.Add(OwnerLookupResultValueBinding);
+                             // Division.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding DivisionTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Division", Division, "Text");
+        BindingSource.Bindings.Add(DivisionTextBinding);
                     // BusinessDescription.Text Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding BusinessDescriptionTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("BusinessDescription", BusinessDescription, "Text");
         BindingSource.Bindings.Add(BusinessDescriptionTextBinding);
@@ -333,9 +355,10 @@ protected override void OnAddEntityBindings() {
         Sage.Platform.WebPortal.Binding.WebEntityBinding AddressPrimaryAddressBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Address.PrimaryAddress", Address, "PrimaryAddress");
         AddressPrimaryAddressBinding.IgnoreFLSDisabling = true;
         BindingSource.Bindings.Add(AddressPrimaryAddressBinding);
-                    // Division.Text Binding
-        Sage.Platform.WebPortal.Binding.WebEntityBinding DivisionTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Division", Division, "Text");
-        BindingSource.Bindings.Add(DivisionTextBinding);
+      BindingSource.AddBindingProvider(ddlMKTSG as Sage.Platform.EntityBinding.IEntityBindingProvider);
+                 // ddlMKTSG.Text Binding
+        Sage.Platform.WebPortal.Binding.WebEntityBinding ddlMKTSGTextBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("Industry", ddlMKTSG, "Text");
+        BindingSource.Bindings.Add(ddlMKTSGTextBinding);
                     // pklSubType.PickListValue Binding
         Sage.Platform.WebPortal.Binding.WebEntityBinding pklSubTypePickListValueBinding = new Sage.Platform.WebPortal.Binding.WebEntityBinding("SubType", pklSubType, "PickListValue");
         BindingSource.Bindings.Add(pklSubTypePickListValueBinding);
@@ -346,9 +369,9 @@ protected override void OnAddEntityBindings() {
       
       
         }
-                                                                                                                              
+                                                                                                                                     
 protected void txtLegalName_ChangeAction(object sender, EventArgs e) {
-string qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + txtLegalName.Text.Trim() + "'";
+string qry = "select LegalCompanyName from LegalMaster where upper(LegalCompanyName) ='" + txtLegalName.Text.Trim().ToUpper() + "'";
 Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
 System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
 System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
@@ -373,14 +396,20 @@ if (DialogService != null)
 		DialogService.EntityID = account.Address.Id.ToString();
 	    DialogService.ShowDialog();
 	}*/
-	string script_FormatNumber1 = "window.showModalDialog('InsertAddress.aspx?type=Account&id=" + account.Address.Id.ToString() + "', '_blank', 'height=440,width=100,status=yes,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=no,titlebar=no' )";
-    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
+	if(txtLegalName.Enabled == false || txtLegalName.ReadOnly == true)
+	{}
+	else
+	{
+		string script_FormatNumber1 = "window.showModalDialog('InsertAddress.aspx?type=Account&id=" + account.Address.Id.ToString() + "', '_blank', 'dialogHeight=480,dialogWidth=100,status=no,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=no,titlebar=no' )";
+    	ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
+	}
 }
 
 }
 protected void btnShowMap_ClickAction(object sender, EventArgs e) {
 Sage.Entity.Interfaces.IAccount cnt = BindingSource.Current as Sage.Entity.Interfaces.IAccount;
-string url = "http://maps.google.com/maps?q=" + cnt.Address.Latitude + "," + cnt.Address.Logitude;
+//string url = "http://maps.google.com/maps?key=AIzaSyDKK-1E4tfTgGlBptK5TCCfap5coV_kzC0&q=" + cnt.Address.Latitude + "," + cnt.Address.Logitude;
+string url = "ViewMap.html?latlon=" + cnt.Address.Latitude + "," + cnt.Address.Logitude;
 ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open('" + url + "');",true);
 
 }
@@ -412,12 +441,12 @@ if(string.IsNullOrEmpty(account.MainPhone))
    DialogService.ShowMessage("Please Enter the MainPhone");
    return;
 }
-if(account.Type == "Customer" && account.Status != "LOST" && account.Status != "Active" )
+if(account.Type.ToUpper() == "CUSTOMER" && account.Status.ToUpper() != "LOST" && account.Status.ToUpper() != "ACTIVE" )
 {
 	DialogService.ShowMessage("Invalid Status of Account");
    	return;
 }
-if((account.Type == "Prospect"|| account.Type == "Suspect") && account.Status == "LOST")
+if((account.Type.ToUpper() == "PROSPECT"|| account.Type.ToUpper() == "SUSPECT") && account.Status.ToUpper() == "LOST")
 {
 	DialogService.ShowMessage("Invalid Status of Account");
    	return;
@@ -434,6 +463,27 @@ if(string.IsNullOrEmpty(account.Address.PostalCode))
 }
 else
 {
+		//string qry = "Select Account From Account where Account = '" + account.AccountName.Trim() + "'";
+	Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get<Sage.Platform.Data.IDataService>();
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	/*System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+	System.Data.DataTable dt = new System.Data.DataTable();
+	dataAdapterObj.Fill(dt);
+	if (dt.Rows.Count > 0)
+	{
+	    DialogService.ShowMessage("This Account is already exists");
+	    return;
+	}			*/
+	string qry = "select LegalCompanyName from LegalMaster where upper(LegalCompanyName) ='" + txtLegalName.Text.Trim().ToUpper() + "'";
+	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+    System.Data.DataTable dt = new System.Data.DataTable();
+    dataAdapterObj.Fill(dt);
+    if (dt.Rows.Count > 0)
+    {
+        DialogService.ShowMessage("This legal Entity is already exists");
+        return;
+    }
+	
 	//Session.Remove("Addressid");
 	DialogService.SetSpecs(400, 400, "UpdateAccountOptions", string.Empty);
 	DialogService.EntityType = typeof(Sage.Entity.Interfaces.IAccount);
@@ -443,6 +493,7 @@ else
 }
 protected void btnSaveAccount_ClickActionF(object sender, EventArgs e) {
 Sage.Entity.Interfaces.IAccount account = this.BindingSource.Current as Sage.Entity.Interfaces.IAccount;
+
 if(string.IsNullOrEmpty(account.AccountName))
 {
    DialogService.ShowMessage("Please Enter the AccountName");
@@ -458,12 +509,12 @@ if(string.IsNullOrEmpty(account.MainPhone))
    DialogService.ShowMessage("Please Enter the MainPhone");
    return;
 }
-if(account.Type == "Customer" && account.Status != "LOST" && account.Status != "Active" )
+if(account.Type.ToUpper() == "CUSTOMER" && account.Status.ToUpper() != "LOST" && account.Status.ToUpper() != "ACTIVE" )
 {
 	DialogService.ShowMessage("Invalid Status of Account");
    	return;
 }
-if((account.Type == "Prospect"|| account.Type == "Suspect") && account.Status == "LOST")
+if((account.Type.ToUpper() == "PROSPECT"|| account.Type.ToUpper() == "SUSPECT") && account.Status.ToUpper() == "LOST")
 {
 	DialogService.ShowMessage("Invalid Status of Account");
    	return;
@@ -493,7 +544,7 @@ else
 	    DialogService.ShowMessage("This Account is already exists");
 	    return;
 	}			*/
-	string qry = "select LegalCompanyName from LegalMaster where LegalCompanyName ='" + txtLegalName.Text.Trim() + "'";
+	string qry = "select LegalCompanyName from LegalMaster where upper(LegalCompanyName) ='" + txtLegalName.Text.Trim().ToUpper() + "'";
 	System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
     System.Data.DataTable dt = new System.Data.DataTable();
     dataAdapterObj.Fill(dt);
@@ -657,6 +708,11 @@ public class AccountDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityForm
     {
         get { return FindControl(ref _MainPhone, "MainPhone"); }
     }
+    private Sage.Platform.Controls.ILookupControl _lkpIndustry;
+    public  Sage.Platform.Controls.ILookupControl lkpIndustry
+    {
+        get { return FindControl(ref _lkpIndustry, "lkpIndustry"); }
+    }
     private Sage.Platform.Controls.IControlsListControl _ccAddress;
     public  Sage.Platform.Controls.IControlsListControl ccAddress
     {
@@ -697,15 +753,15 @@ public class AccountDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityForm
     {
         get { return FindControl(ref _AccManager, "AccManager"); }
     }
-    private Sage.Platform.Controls.IOwnerControl _Owner;
-    public  Sage.Platform.Controls.IOwnerControl Owner
-    {
-        get { return FindControl(ref _Owner, "Owner"); }
-    }
     private Sage.Platform.Controls.ITextBoxControl _Division;
     public  Sage.Platform.Controls.ITextBoxControl Division
     {
         get { return FindControl(ref _Division, "Division"); }
+    }
+    private Sage.Platform.Controls.IDependencyLookupControl _ddlMKTSG;
+    public  Sage.Platform.Controls.IDependencyLookupControl ddlMKTSG
+    {
+        get { return FindControl(ref _ddlMKTSG, "ddlMKTSG"); }
     }
     private Sage.Platform.Controls.IPickListControl _Status;
     public  Sage.Platform.Controls.IPickListControl Status
@@ -717,10 +773,10 @@ public class AccountDetailsAdapter : Sage.Platform.WebPortal.Adapters.EntityForm
     {
         get { return FindControl(ref _Fax, "Fax"); }
     }
-    private Sage.Platform.Controls.IDependencyLookupControl _ddlMKTSG;
-    public  Sage.Platform.Controls.IDependencyLookupControl ddlMKTSG
+    private Sage.Platform.Controls.IOwnerControl _Owner;
+    public  Sage.Platform.Controls.IOwnerControl Owner
     {
-        get { return FindControl(ref _ddlMKTSG, "ddlMKTSG"); }
+        get { return FindControl(ref _Owner, "Owner"); }
     }
     private Sage.Platform.Controls.ITextBoxControl _BusinessDescription;
     public  Sage.Platform.Controls.ITextBoxControl BusinessDescription

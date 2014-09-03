@@ -198,4 +198,7 @@
   <data name="grdOppCompetitors.8b2a3dea-a970-474d-b3d0-8d51563bd14a.FormatString" xml:space="preserve">
     <value> {0:P} </value>
   </data>
+  <data name="grdOppCompetitors.c943735b-bd29-4a8f-a2c1-cdca039857e6.ColumnHeading" xml:space="preserve">
+    <value>CompetitorRate</value>
+  </data>
 </root>

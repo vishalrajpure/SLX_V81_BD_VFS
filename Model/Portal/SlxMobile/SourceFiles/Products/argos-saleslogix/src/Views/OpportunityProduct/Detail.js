@@ -107,7 +107,7 @@ define('Mobile/SalesLogix/Views/OpportunityProduct/Detail', [
         },
         createToolLayout: function() {
             return this.tools || (this.tools = {
-                'tbar': [{
+                'tbar': [/*{
                         id: 'edit',
                         action: 'navigateToEditView',
                         security: App.getViewSecurity(this.editView, 'update')
@@ -116,7 +116,7 @@ define('Mobile/SalesLogix/Views/OpportunityProduct/Detail', [
                         icon: 'content/images/icons/del_24.png',
                         action: 'removeOpportunityProduct',
                         title: this.removeOppProductTitleText
-                    }]
+                    }*/]
             });
         },
         createLayout: function() {

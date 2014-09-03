@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
-<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="ba3e6813-21a1-4cea-b48a-0cb81f7c3ed7" lastModifiedUtc="2014-07-01T07:58:27.1503552Z" manageSchema="false" tableName="INDSGMST" name="Indsgmst" isExtension="false" audited="false" onBeforeInsertMethodId="97173bfd-3a42-41bb-8765-103b006533e4" onAfterInsertMethodId="dfad03fa-fede-4467-a8a9-c25aee59a518" onBeforeUpdateMethodId="92a79ce8-c883-4e3e-b233-e1045cff7d5d" onAfterUpdateMethodId="bcc0ba2c-bf8b-4f95-9828-467a51c431f5" onBeforeDeleteMethodId="3a1e2e4d-bca6-46fb-99aa-e3f8f0ce7b14" onAfterDeleteMethodId="bedc1280-6943-4e83-9877-501c10a3faf3" onCreateId="e621370f-4889-4bf9-9d9d-fa25da8e2929">
+<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="ba3e6813-21a1-4cea-b48a-0cb81f7c3ed7" lastModifiedUtc="2014-08-07T09:14:36.0664899Z" manageSchema="false" tableName="INDSGMST" name="Indsgmst" displayPropertyId="17f5f1f5-60a0-4394-97a5-59baf3738bd6" isExtension="false" audited="false" onBeforeInsertMethodId="97173bfd-3a42-41bb-8765-103b006533e4" onAfterInsertMethodId="dfad03fa-fede-4467-a8a9-c25aee59a518" onBeforeUpdateMethodId="92a79ce8-c883-4e3e-b233-e1045cff7d5d" onAfterUpdateMethodId="bcc0ba2c-bf8b-4f95-9828-467a51c431f5" onBeforeDeleteMethodId="3a1e2e4d-bca6-46fb-99aa-e3f8f0ce7b14" onAfterDeleteMethodId="bedc1280-6943-4e83-9877-501c10a3faf3" onCreateId="e621370f-4889-4bf9-9d9d-fa25da8e2929">
   <extendedMetaData />
   <ExtendedPropertiesCollection>
     <extendee type="Sage.Platform.Orm.Entities.OrmEntity">
       <extender guid="1589723d-0536-4bf3-bdd7-3f6f7fe165d0">
         <OrmEntityMetadataExtension>
+          <StringExpression>${Cmktsgdesc}</StringExpression>
+          <HistoryTypeName />
           <IsHistoryTable>false</IsHistoryTable>
         </OrmEntityMetadataExtension>
       </extender>

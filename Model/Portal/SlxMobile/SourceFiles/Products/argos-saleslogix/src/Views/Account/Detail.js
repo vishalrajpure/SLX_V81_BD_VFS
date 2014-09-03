@@ -27,7 +27,7 @@ define('Mobile/SalesLogix/Views/Account/Detail', [
         createUserText: 'create user',
         faxText: 'fax',
         importSourceText: 'lead source',
-        industryText: 'industry',
+        //industryText: 'industry',
         notesText: 'notes',
         ownerText: 'owner',
         phoneCallHistoryTitle: 'Phone Call',
@@ -42,19 +42,19 @@ define('Mobile/SalesLogix/Views/Account/Detail', [
         relatedItemsText: 'Related Items',
         relatedNotesText: 'Notes',
         relatedOpportunitiesText: 'Opportunities',
-        relatedTicketsText: 'Tickets',
+        //relatedTicketsText: 'Tickets',
         relatedAddressesText: 'Addresses',
         relatedAttachmentText: 'Attachments',
         relatedAttachmentTitleText: 'Account Attachments',
         statusText: 'status',
-        subTypeText: 'subtype',
+        //subTypeText: 'subtype',
         titleText: 'Account',
         typeText: 'type',
         webText: 'web',
         callMainNumberText: 'Call main number',
         scheduleActivityText: 'Schedule activity',
         addNoteText: 'Add note',
-        viewAddressText: 'View address',
+        viewAddressText: 'Address',
         moreDetailsText: 'More Details',
         calledText: 'Called ${0}',
 
@@ -68,6 +68,7 @@ define('Mobile/SalesLogix/Views/Account/Detail', [
             'AccountManager/UserInfo/FirstName',
             'AccountManager/UserInfo/LastName',
             'AccountName',
+			'LegalName',
             'Address/*',
             'BusinessDescription',
             'CreateDate',
@@ -76,18 +77,19 @@ define('Mobile/SalesLogix/Views/Account/Detail', [
             'Fax',
             'GlobalSyncID',
             'ImportSource',
-            'Industry',
+			'AccountId',
+            //'LegalName',
             'LeadSource/Description',
+			'Indsgmst/Cmktsgdesc',			
             'MainPhone',
             'Notes',
             'Owner/OwnerDescription',
             'Status',
-            'SubType',
+            //'SubType',
             'Type',
             'WebAddress'
         ],
         resourceKind: 'accounts',
-
         navigateToHistoryInsert: function(type, entry, complete) {
             var view = App.getView(this.historyEditView);
             if (view) {
@@ -170,7 +172,7 @@ define('Mobile/SalesLogix/Views/Account/Detail', [
                     resourceKind: 'opportunities',
                     aggregate: 'sum',
                     valueType: 'Mobile/SalesLogix/Aggregate'
-                }, {
+                }/*, {
                     chartType: 'bar',
                     formatter: 'bigNumber',
                     title: 'Total Tickets',
@@ -183,7 +185,7 @@ define('Mobile/SalesLogix/Views/Account/Detail', [
                     resourceKind: 'tickets',
                     aggregate: 'sum',
                     valueType: 'Mobile/SalesLogix/Aggregate'
-                }
+                }*/
             ];
         },
         createLayout: function() {
@@ -217,7 +219,7 @@ define('Mobile/SalesLogix/Views/Account/Detail', [
                             property: 'Address',
                             label: this.viewAddressText,
                             icon: 'content/images/icons/Map_24.png',
-                            action: 'viewAddress',
+                            //action: 'viewAddress',
                             disabled: this.checkAddress,
                             renderer: format.address.bindDelegate(this, true, ' ')
                         }]
@@ -228,6 +230,10 @@ define('Mobile/SalesLogix/Views/Account/Detail', [
                             name: 'AccountName',
                             property: 'AccountName',
                             label: this.accountText
+                        }, {
+						  name: 'LegalName',
+                            property: 'LegalName',
+                            label: 'Legal Name'
                         }, {
                             name: 'WebAddress',
                             property: 'WebAddress',
@@ -242,11 +248,11 @@ define('Mobile/SalesLogix/Views/Account/Detail', [
                             name: 'Type',
                             property: 'Type',
                             label: this.typeText
-                        }, {
+                        }, /*{
                             name: 'SubType',
                             property: 'SubType',
                             label: this.subTypeText
-                        }, {
+                        },*/ {
                             name: 'Status',
                             property: 'Status',
                             label: this.statusText
@@ -255,12 +261,12 @@ define('Mobile/SalesLogix/Views/Account/Detail', [
                     title: this.moreDetailsText,
                     collapsed: true,
                     name: 'MoreDetailsSection',
-                    children: [{
+                    children: [/*{
                             name: 'Industry',
                             property: 'Industry',
                             label: this.industryText,
                             type: 'text'
-                        }, {
+                        },*/ {
                             name: 'BusinessDescription',
                             property: 'BusinessDescription',
                             label: this.businessDescriptionText,
@@ -274,7 +280,14 @@ define('Mobile/SalesLogix/Views/Account/Detail', [
                             name: 'Owner.OwnerDescription',
                             property: 'Owner.OwnerDescription',
                             label: this.ownerText
-                        }, {
+                        },
+						{
+                            name: 'Indsgmst.Cmktsgdesc',
+                            property: 'Indsgmst.Cmktsgdesc',
+                            label: 'MKT segment',
+							//tpl: this.mktSegmentTemplate
+                        },
+						{
                             name: 'LeadSource.Description',
                             property: 'LeadSource.Description',
                             label: this.importSourceText
@@ -300,14 +313,15 @@ define('Mobile/SalesLogix/Views/Account/Detail', [
                             icon: 'content/images/icons/opportunity_24.png',
                             label: this.relatedOpportunitiesText,
                             where: this.formatRelatedQuery.bindDelegate(this, 'Account.id eq "${0}"'),
-                            view: 'opportunity_related'
-                        }, {
+                            view: 'opportunity_related',
+							visible : false
+                        }, /*{
                             name: 'TicketRelated',
                             icon: 'content/images/icons/Ticket_24x24.png',
                             label: this.relatedTicketsText,
                             where: this.formatRelatedQuery.bindDelegate(this, 'Account.id eq "${0}"'),
                             view: 'ticket_related'
-                        }, {
+                        }, */{
                             name: 'HistoryRelated',
                             icon: 'content/images/icons/journal_24.png',
                             label: this.relatedHistoriesText,

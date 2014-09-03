@@ -1,0 +1,79 @@
+20-08-2014 06:21:35
+INFO  2014-08-20 11:51:17,144 - Installing bundle...
+INFO  2014-08-20 11:51:17,191 - Performing pre-install.
+INFO  2014-08-20 11:51:17,196 - Installing context item: OPPORTUNITY Table (\Actions\Schema\CreateTable\OPPORTUNITY.xml)
+INFO  2014-08-20 11:51:17,201 - Successfully installed OPPORTUNITY Table (\Actions\Schema\CreateTable\OPPORTUNITY.xml)
+INFO  2014-08-20 11:51:17,204 - Installing action: CreateField OPPORTUNITY.AREAMASTERID (\Actions\Schema\CreateField\OPPORTUNITY.AREAMASTERID.xml)
+INFO  2014-08-20 11:51:18,495 - Successfully installed CreateField OPPORTUNITY.AREAMASTERID (\Actions\Schema\CreateField\OPPORTUNITY.AREAMASTERID.xml)
+INFO  2014-08-20 11:51:18,499 - Installing action: CreateField OPPORTUNITY.CUSTMERCODE (\Actions\Schema\CreateField\OPPORTUNITY.CUSTMERCODE.xml)
+INFO  2014-08-20 11:51:18,696 - Successfully installed CreateField OPPORTUNITY.CUSTMERCODE (\Actions\Schema\CreateField\OPPORTUNITY.CUSTMERCODE.xml)
+INFO  2014-08-20 11:51:18,701 - Saving context item: OPPORTUNITY Table (\Actions\Schema\CreateTable\OPPORTUNITY.xml)
+INFO  2014-08-20 11:51:18,704 - Successfully saved OPPORTUNITY Table (\Actions\Schema\CreateTable\OPPORTUNITY.xml)
+INFO  2014-08-20 11:51:18,708 - Saving action: CreateField OPPORTUNITY.AREAMASTERID (\Actions\Schema\CreateField\OPPORTUNITY.AREAMASTERID.xml)
+INFO  2014-08-20 11:51:18,712 - Successfully saved CreateField OPPORTUNITY.AREAMASTERID (\Actions\Schema\CreateField\OPPORTUNITY.AREAMASTERID.xml)
+INFO  2014-08-20 11:51:18,715 - Saving action: CreateField OPPORTUNITY.CUSTMERCODE (\Actions\Schema\CreateField\OPPORTUNITY.CUSTMERCODE.xml)
+INFO  2014-08-20 11:51:18,719 - Successfully saved CreateField OPPORTUNITY.CUSTMERCODE (\Actions\Schema\CreateField\OPPORTUNITY.CUSTMERCODE.xml)
+INFO  2014-08-20 11:51:18,724 - Installing context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-08-20 11:51:18,977 - Successfully installed Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-08-20 11:51:18,982 - Installing model item: Insert New Account (\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml)
+INFO  2014-08-20 11:51:19,163 - Successfully installed Insert New Account (\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml)
+INFO  2014-08-20 11:51:19,168 - Installing model item: AddNewAccount (Custom) (\Portal\SlxClient\ChildPages\InsertNewAccount\SmartParts\AddNewAccount.smartpart.xml)
+INFO  2014-08-20 11:51:19,190 - Successfully installed AddNewAccount (Custom) (\Portal\SlxClient\ChildPages\InsertNewAccount\SmartParts\AddNewAccount.smartpart.xml)
+INFO  2014-08-20 11:51:19,195 - Installing model item: AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\InsertNewAccount\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-08-20 11:51:19,206 - Successfully installed AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\InsertNewAccount\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-08-20 11:51:19,211 - Installing context item: Account (\Portal\SlxClient\ContextMenuItems\contextAccount\contextAccount.contextmenu.xml)
+INFO  2014-08-20 11:51:19,216 - Successfully installed Account (\Portal\SlxClient\ContextMenuItems\contextAccount\contextAccount.contextmenu.xml)
+INFO  2014-08-20 11:51:19,220 - Installing model item: New Contact/Account... (\Portal\SlxClient\ContextMenuItems\contextAccount\ContextMenuItems\menuItemNewContactAccount\menuItemNewContactAccount.contextmenu.xml)
+INFO  2014-08-20 11:51:19,272 - Successfully installed New Contact/Account... (\Portal\SlxClient\ContextMenuItems\contextAccount\ContextMenuItems\menuItemNewContactAccount\menuItemNewContactAccount.contextmenu.xml)
+INFO  2014-08-20 11:51:19,277 - Installing context item: Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-08-20 11:51:19,282 - Successfully installed Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-08-20 11:51:19,286 - Installing context item: Opportunity (\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml)
+INFO  2014-08-20 11:51:19,607 - Successfully installed Opportunity (\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml)
+INFO  2014-08-20 11:51:19,613 - Installing model item: OpportunityClosedWon (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityClosedWon.main.quickform.xml)
+INFO  2014-08-20 11:51:19,681 - Successfully installed OpportunityClosedWon (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityClosedWon.main.quickform.xml)
+INFO  2014-08-20 11:51:19,687 - Installing model item: OpportunityDetails (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityDetails.main.quickform.xml)
+INFO  2014-08-20 11:51:19,729 - Successfully installed OpportunityDetails (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityDetails.main.quickform.xml)
+INFO  2014-08-20 11:51:19,734 - Installing model item: OnBeforeUpdate (\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml)
+INFO  2014-08-20 11:51:19,742 - Successfully installed OnBeforeUpdate (\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml)
+INFO  2014-08-20 11:51:19,748 - Installing item: OnBeforeUpdate (\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml::Primary Steps::OnBeforeUpdate)
+INFO  2014-08-20 11:51:19,753 - Successfully installed OnBeforeUpdate (\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml::Primary Steps::OnBeforeUpdate)
+INFO  2014-08-20 11:51:19,757 - Installing item: OnBeforeUpdateStep (\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml::Post Execute Steps::OnBeforeUpdateStep)
+INFO  2014-08-20 11:51:19,788 - Successfully installed OnBeforeUpdateStep (\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml::Post Execute Steps::OnBeforeUpdateStep)
+INFO  2014-08-20 11:51:19,794 - Saving context item: Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-08-20 11:51:19,799 - Successfully saved Saleslogix Client (\Portal\SlxClient\SlxClient.cabapp.ptl.xml)
+INFO  2014-08-20 11:51:19,803 - Saving model item: Insert New Account (\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml)
+INFO  2014-08-20 11:51:19,808 - Successfully saved Insert New Account (\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml)
+INFO  2014-08-20 11:51:19,812 - Saving model item: AddNewAccount (Custom) (\Portal\SlxClient\ChildPages\InsertNewAccount\SmartParts\AddNewAccount.smartpart.xml)
+INFO  2014-08-20 11:51:19,817 - Successfully saved AddNewAccount (Custom) (\Portal\SlxClient\ChildPages\InsertNewAccount\SmartParts\AddNewAccount.smartpart.xml)
+INFO  2014-08-20 11:51:19,822 - Saving model item: AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\InsertNewAccount\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-08-20 11:51:19,826 - Successfully saved AddEditAddress (Custom) (\Portal\SlxClient\ChildPages\InsertNewAccount\SmartParts\AddEditAddress.smartpart.xml)
+INFO  2014-08-20 11:51:19,831 - Saving context item: Account (\Portal\SlxClient\ContextMenuItems\contextAccount\contextAccount.contextmenu.xml)
+INFO  2014-08-20 11:51:19,836 - Successfully saved Account (\Portal\SlxClient\ContextMenuItems\contextAccount\contextAccount.contextmenu.xml)
+INFO  2014-08-20 11:51:19,840 - Saving model item: New Contact/Account... (\Portal\SlxClient\ContextMenuItems\contextAccount\ContextMenuItems\menuItemNewContactAccount\menuItemNewContactAccount.contextmenu.xml)
+INFO  2014-08-20 11:51:19,845 - Successfully saved New Contact/Account... (\Portal\SlxClient\ContextMenuItems\contextAccount\ContextMenuItems\menuItemNewContactAccount\menuItemNewContactAccount.contextmenu.xml)
+INFO  2014-08-20 11:51:19,852 - Saving context item: Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-08-20 11:51:19,861 - Successfully saved Saleslogix Application Entities (\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml)
+INFO  2014-08-20 11:51:19,866 - Saving context item: Opportunity (\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml)
+INFO  2014-08-20 11:51:28,308 - Successfully saved Opportunity (\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml)
+INFO  2014-08-20 11:51:28,314 - Saving model item: OpportunityClosedWon (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityClosedWon.main.quickform.xml)
+INFO  2014-08-20 11:51:28,320 - Successfully saved OpportunityClosedWon (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityClosedWon.main.quickform.xml)
+INFO  2014-08-20 11:51:28,325 - Saving model item: OpportunityDetails (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityDetails.main.quickform.xml)
+INFO  2014-08-20 11:51:28,331 - Successfully saved OpportunityDetails (\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityDetails.main.quickform.xml)
+INFO  2014-08-20 11:51:28,336 - Saving model item: OnBeforeUpdate (\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml)
+INFO  2014-08-20 11:51:28,341 - Successfully saved OnBeforeUpdate (\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml)
+INFO  2014-08-20 11:51:28,378 - Saving item: OnBeforeUpdate (\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml::Primary Steps::OnBeforeUpdate)
+INFO  2014-08-20 11:51:28,383 - Successfully saved OnBeforeUpdate (\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml::Primary Steps::OnBeforeUpdate)
+INFO  2014-08-20 11:51:28,388 - Saving item: OnBeforeUpdateStep (\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml::Post Execute Steps::OnBeforeUpdateStep)
+INFO  2014-08-20 11:51:28,394 - Successfully saved OnBeforeUpdateStep (\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml::Post Execute Steps::OnBeforeUpdateStep)
+INFO  2014-08-20 11:51:28,401 - Configuring installed items.
+INFO  2014-08-20 11:51:28,407 - Configuring Saleslogix Client...
+INFO  2014-08-20 11:51:28,418 - Configuring Insert New Account...
+INFO  2014-08-20 11:51:33,910 - Configuring AddNewAccount (Custom)...
+INFO  2014-08-20 11:51:33,916 - Configuring AddEditAddress (Custom)...
+INFO  2014-08-20 11:51:33,920 - Configuring Account...
+INFO  2014-08-20 11:51:34,426 - Configuring New Contact/Account......
+INFO  2014-08-20 11:51:34,459 - Performing pre-commit to target project.
+INFO  2014-08-20 11:51:34,790 - Committing items to target project...
+INFO  2014-08-20 11:51:34,888 - Committing transactions...
+INFO  2014-08-20 11:51:35,459 - Copying bundle manifest to project.
+INFO  2014-08-20 11:51:36,795 - Install complete.

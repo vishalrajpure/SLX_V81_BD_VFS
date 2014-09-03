@@ -1646,4 +1646,27 @@
  <ref id="bedc1280-6943-4e83-9877-501c10a3faf3" url="\Entity Model\Saleslogix Application Entities\Indsgmst\OnAfterDelete.method.xml" />
  <ref id="e621370f-4889-4bf9-9d9d-fa25da8e2929" url="\Entity Model\Saleslogix Application Entities\Indsgmst\OnCreate.method.xml" />
  <ref id="ba3e6813-21a1-4cea-b48a-0cb81f7c3ed7" url="\Entity Model\Saleslogix Application Entities\Indsgmst\Indsgmst.INDSGMST.entity.xml" />
+ <ref id="59e862cf-c821-4be5-b1d2-9601c0dce450" url="\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityContacts_Detail.lueAssociateContacts_OnChange.method.xml" />
+ <ref id="9bd91c61-2aea-4dd8-b73d-eedc5f22d2e9" url="\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityProducts_Detail.lueAssociateProduct_OnChange.method.xml" />
+ <ref id="d21c7f7c-58a7-4cfd-801e-c9c7c2e1481a" url="\Entity Model\SalesLogix Application Entities\Opportunity\QuickForms\OpportunityClosedLost.main.quickform.xml" />
+ <ref id="50a29bf4-0a49-4cf6-9848-1b93209c6040" url="\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\Sage.SnippetLibrary.CSharp.@.50a29bf4-0a49-4cf6-9848-1b93209c6040.codesnippet.cs" />
+ <ref id="6c4f1f04-293f-4ff9-8cf4-550610931113" url="\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityDetails.main.quickform.xml" />
+ <ref id="5fc66ecc-305b-4b51-b311-59fa7479c5e0" url="\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\Sage.SnippetLibrary.CSharp.@.5fc66ecc-305b-4b51-b311-59fa7479c5e0.codesnippet.cs" />
+ <ref id="dd595584-f3bc-4c91-836c-371234a35774" url="\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityClosedWon.main.quickform.xml" />
+ <ref id="a1f7964c-1a32-44a7-8450-6db5093d1b66" url="\Entity Model\Saleslogix Application Entities\OppClosedWonCustomerCode\OnBeforeInsert.method.xml" />
+ <ref id="309022fd-7f47-4173-aedc-33f98d073057" url="\Entity Model\Saleslogix Application Entities\OppClosedWonCustomerCode\OnAfterInsert.method.xml" />
+ <ref id="2168c359-4b04-4235-9d68-1bae575ac805" url="\Entity Model\Saleslogix Application Entities\OppClosedWonCustomerCode\OnBeforeUpdate.method.xml" />
+ <ref id="a2226b13-508f-4882-85a2-620a4a80b731" url="\Entity Model\Saleslogix Application Entities\OppClosedWonCustomerCode\OnAfterUpdate.method.xml" />
+ <ref id="1f396c65-36cd-49e8-8b07-a8ab6d6d5e15" url="\Entity Model\Saleslogix Application Entities\OppClosedWonCustomerCode\OnBeforeDelete.method.xml" />
+ <ref id="30d0ed78-746f-4724-9d7d-d36e398a3b71" url="\Entity Model\Saleslogix Application Entities\OppClosedWonCustomerCode\OnAfterDelete.method.xml" />
+ <ref id="ae6596bc-9a3f-4509-b1af-e5df532b77ef" url="\Entity Model\Saleslogix Application Entities\OppClosedWonCustomerCode\OnCreate.method.xml" />
+ <ref id="db1c3aab-4b2b-447c-93cc-07bd364b61ae" url="\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterInsert.method.xml" />
+ <ref id="39544250-a2af-473c-a624-268a95cd2508" url="\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeInsert.method.xml" />
+ <ref id="c0e3421d-bed9-4fb8-aa25-64de15b659d8" url="\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeUpdate.method.xml" />
+ <ref id="47b2b63c-d060-425e-977f-6eebf42b0cb6" url="\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterUpdate.method.xml" />
+ <ref id="e1c562f7-17df-47d0-808e-055354cb4edf" url="\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeDelete.method.xml" />
+ <ref id="1a404ef1-738e-4eea-98a3-613982b1fc4a" url="\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterDelete.method.xml" />
+ <ref id="23556baf-9e3f-4db0-abf9-a0b4d83ea8a7" url="\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnCreate.method.xml" />
+ <ref id="372038da-d94d-4a08-83c1-62118c4d0a9f" url="\Entity Model\Relationships\Opportunity.OppClosedCustCode.372038dad94d4a0883c162118c4d0a9f.relationship.xml" />
+ <ref id="9a9b36bc-66f4-4ef5-8fb2-d971b91d39dd" url="\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml" />
 </modelItemIndex>

@@ -203,17 +203,18 @@
         </OnChangeAction>
       </QFCheckBox>
     </Control>
-    <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXNumeric, Sage.SalesLogix.QuickForms.QFControls">
-      <QFSLXNumeric>
+    <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
+      <QFTextBox>
+        <ColumnSpan>2</ColumnSpan>
         <Column>0</Column>
         <Row>5</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>txtCompetitorShareOfWellet</ControlId>
+        <ControlId>txtCompetitorRate</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>CompetitorShareOfWellet</DataItemName>
+            <DataItemName>CompetitorRate</DataItemName>
             <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
@@ -223,8 +224,9 @@
         <ExtendedProperties />
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
+        <Lines>3</Lines>
         <OnChangeAction>
-          <ResourceKey>txtCompetitorShareOfWellet</ResourceKey>
+          <ResourceKey>txtCompetitorRate</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
             <NoActionActionItem>
               <MethodName />
@@ -238,12 +240,96 @@
           <RefreshData>False</RefreshData>
         </OnChangeAction>
         <Required>false</Required>
-        <DecimalDigits>
-          <DecimalDigits>2</DecimalDigits>
-          <Strict>false</Strict>
-        </DecimalDigits>
-        <FormatType>Percent</FormatType>
-      </QFSLXNumeric>
+      </QFTextBox>
+    </Control>
+    <Control typeName="Sage.Platform.QuickForms.QFControls.QFControlsList, Sage.Platform.QuickForms.QFControls">
+      <QFControlsList>
+        <Column>0</Column>
+        <Row>6</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
+        <ControlId>QFControlsList</ControlId>
+        <DataBindings />
+        <ControlLabelPlacement>left</ControlLabelPlacement>
+        <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
+        <StyleScheme>qfActionContainer</StyleScheme>
+        <Caption />
+        <Controls>
+          <ControlsCollection>
+            <Control TypeName="Sage.Platform.QuickForms.Controls.QFButton, Sage.Platform.QuickForms">
+              <QFButton>
+                <Column>0</Column>
+                <Row>0</Row>
+                <HotKey>0</HotKey>
+                <TabIndex>0</TabIndex>
+                <ControlId>btnOk</ControlId>
+                <DataBindings />
+                <ControlLabelPlacement>none</ControlLabelPlacement>
+                <ExtendedProperties />
+                <CaptionAlignment>left</CaptionAlignment>
+                <StyleScheme>slxbutton</StyleScheme>
+                <ButtonType>StandardButton</ButtonType>
+                <Image />
+                <OnClientClick />
+                <OnClickAction>
+                  <ResourceKey>btnOk</ResourceKey>
+                  <Action typeName="Sage.Platform.QuickForms.ActionItems.BusinessRuleActionItem, Sage.Platform.QuickForms">
+                    <BusinessRuleActionItem>
+                      <BusinessRule>Save</BusinessRule>
+                      <Object>OpportunityCompetitor</Object>
+                      <Parameters />
+                      <PassResultsToNextAction>False</PassResultsToNextAction>
+                      <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+                        <NoActionActionItem>
+                          <MethodName />
+                        </NoActionActionItem>
+                      </OnComplete>
+                    </BusinessRuleActionItem>
+                  </Action>
+                  <IsDialogCloseAction>True</IsDialogCloseAction>
+                  <RunOnEveryRePaint>False</RunOnEveryRePaint>
+                  <DialogActionResult>DialogOK</DialogActionResult>
+                  <PerformsUpdate>True</PerformsUpdate>
+                  <AppliedSecurity />
+                  <RefreshData>False</RefreshData>
+                </OnClickAction>
+              </QFButton>
+            </Control>
+            <Control TypeName="Sage.Platform.QuickForms.Controls.QFButton, Sage.Platform.QuickForms">
+              <QFButton>
+                <Column>0</Column>
+                <Row>0</Row>
+                <HotKey>0</HotKey>
+                <TabIndex>0</TabIndex>
+                <ControlId>btnCancel</ControlId>
+                <DataBindings />
+                <ControlLabelPlacement>none</ControlLabelPlacement>
+                <ExtendedProperties />
+                <CaptionAlignment>left</CaptionAlignment>
+                <StyleScheme>slxbutton</StyleScheme>
+                <ButtonType>StandardButton</ButtonType>
+                <Image />
+                <OnClientClick />
+                <OnClickAction>
+                  <ResourceKey>btnCancel</ResourceKey>
+                  <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
+                    <NoActionActionItem>
+                      <MethodName />
+                    </NoActionActionItem>
+                  </Action>
+                  <IsDialogCloseAction>True</IsDialogCloseAction>
+                  <RunOnEveryRePaint>False</RunOnEveryRePaint>
+                  <DialogActionResult>DialogCancel</DialogActionResult>
+                  <PerformsUpdate>False</PerformsUpdate>
+                  <AppliedSecurity />
+                  <RefreshData>False</RefreshData>
+                </OnClickAction>
+              </QFButton>
+            </Control>
+          </ControlsCollection>
+        </Controls>
+      </QFControlsList>
     </Control>
     <Control typeName="Sage.Platform.QuickForms.Controls.QFTextBox, Sage.Platform.QuickForms">
       <QFTextBox>
@@ -402,11 +488,11 @@
         <Row>4</Row>
         <HotKey>0</HotKey>
         <TabIndex>0</TabIndex>
-        <ControlId>txtCompetitorRate</ControlId>
+        <ControlId>txtCompetitorShareOfWellet</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
             <DataSourceID>MainEntity</DataSourceID>
-            <DataItemName>CompetitorRate</DataItemName>
+            <DataItemName>CompetitorShareOfWellet</DataItemName>
             <ControlItemName>Text</ControlItemName>
             <FormatString />
             <NullValueString />
@@ -417,7 +503,7 @@
         <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <OnChangeAction>
-          <ResourceKey>txtCompetitorRate</ResourceKey>
+          <ResourceKey>txtCompetitorShareOfWellet</ResourceKey>
           <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
             <NoActionActionItem>
               <MethodName />
@@ -435,97 +521,8 @@
           <DecimalDigits>2</DecimalDigits>
           <Strict>false</Strict>
         </DecimalDigits>
-        <FormatType>Decimal</FormatType>
+        <FormatType>Percent</FormatType>
       </QFSLXNumeric>
-    </Control>
-    <Control typeName="Sage.Platform.QuickForms.QFControls.QFControlsList, Sage.Platform.QuickForms.QFControls">
-      <QFControlsList>
-        <Column>1</Column>
-        <Row>6</Row>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
-        <ControlId>QFControlsList</ControlId>
-        <DataBindings />
-        <ControlLabelPlacement>left</ControlLabelPlacement>
-        <ExtendedProperties />
-        <CaptionAlignment>left</CaptionAlignment>
-        <StyleScheme>qfActionContainer</StyleScheme>
-        <Caption />
-        <Controls>
-          <ControlsCollection>
-            <Control TypeName="Sage.Platform.QuickForms.Controls.QFButton, Sage.Platform.QuickForms">
-              <QFButton>
-                <Column>0</Column>
-                <Row>0</Row>
-                <HotKey>0</HotKey>
-                <TabIndex>0</TabIndex>
-                <ControlId>btnOk</ControlId>
-                <DataBindings />
-                <ControlLabelPlacement>none</ControlLabelPlacement>
-                <ExtendedProperties />
-                <CaptionAlignment>left</CaptionAlignment>
-                <StyleScheme>slxbutton</StyleScheme>
-                <ButtonType>StandardButton</ButtonType>
-                <Image />
-                <OnClientClick />
-                <OnClickAction>
-                  <ResourceKey>btnOk</ResourceKey>
-                  <Action typeName="Sage.Platform.QuickForms.ActionItems.BusinessRuleActionItem, Sage.Platform.QuickForms">
-                    <BusinessRuleActionItem>
-                      <BusinessRule>Save</BusinessRule>
-                      <Object>OpportunityCompetitor</Object>
-                      <Parameters />
-                      <PassResultsToNextAction>False</PassResultsToNextAction>
-                      <OnComplete typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-                        <NoActionActionItem>
-                          <MethodName />
-                        </NoActionActionItem>
-                      </OnComplete>
-                    </BusinessRuleActionItem>
-                  </Action>
-                  <IsDialogCloseAction>True</IsDialogCloseAction>
-                  <RunOnEveryRePaint>False</RunOnEveryRePaint>
-                  <DialogActionResult>DialogOK</DialogActionResult>
-                  <PerformsUpdate>True</PerformsUpdate>
-                  <AppliedSecurity />
-                  <RefreshData>False</RefreshData>
-                </OnClickAction>
-              </QFButton>
-            </Control>
-            <Control TypeName="Sage.Platform.QuickForms.Controls.QFButton, Sage.Platform.QuickForms">
-              <QFButton>
-                <Column>0</Column>
-                <Row>0</Row>
-                <HotKey>0</HotKey>
-                <TabIndex>0</TabIndex>
-                <ControlId>btnCancel</ControlId>
-                <DataBindings />
-                <ControlLabelPlacement>none</ControlLabelPlacement>
-                <ExtendedProperties />
-                <CaptionAlignment>left</CaptionAlignment>
-                <StyleScheme>slxbutton</StyleScheme>
-                <ButtonType>StandardButton</ButtonType>
-                <Image />
-                <OnClientClick />
-                <OnClickAction>
-                  <ResourceKey>btnCancel</ResourceKey>
-                  <Action typeName="Sage.Platform.QuickForms.ActionItems.NoActionActionItem, Sage.Platform.QuickForms">
-                    <NoActionActionItem>
-                      <MethodName />
-                    </NoActionActionItem>
-                  </Action>
-                  <IsDialogCloseAction>True</IsDialogCloseAction>
-                  <RunOnEveryRePaint>False</RunOnEveryRePaint>
-                  <DialogActionResult>DialogCancel</DialogActionResult>
-                  <PerformsUpdate>False</PerformsUpdate>
-                  <AppliedSecurity />
-                  <RefreshData>False</RefreshData>
-                </OnClickAction>
-              </QFButton>
-            </Control>
-          </ControlsCollection>
-        </Controls>
-      </QFControlsList>
     </Control>
   </Controls>
   <ToolControls>
@@ -561,11 +558,11 @@
   <Columns>
     <ColumnStyle>
       <SizeType>Percent</SizeType>
-      <Width>33.3333321</Width>
+      <Width>33</Width>
     </ColumnStyle>
     <ColumnStyle>
       <SizeType>Percent</SizeType>
-      <Width>33.3333321</Width>
+      <Width>33</Width>
     </ColumnStyle>
   </Columns>
   <Rows>

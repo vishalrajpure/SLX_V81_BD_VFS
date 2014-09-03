@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<SmartPartMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="6d63db1e-839a-4fa6-b97c-5a2ba19e7cc1">
+  <SmartPartId>AddNewAccount</SmartPartId>
+  <ReferencedModelId>00000000-0000-0000-0000-000000000000</ReferencedModelId>
+  <SmartPart>SmartParts\Account\AddNewAccount.ascx</SmartPart>
+  <TargetWorkspace>MainContent</TargetWorkspace>
+  <ShowInMode />
+  <Properties />
+  <AllowRoles />
+</SmartPartMapping>

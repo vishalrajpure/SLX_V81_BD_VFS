@@ -1,0 +1,1783 @@
+<?xml version="1.0"?>
+<BundleManifest id="3ebf1f0d-97d6-4544-85c0-d6df3b65dd14">
+  <bundleProperties>
+    <name>BD Insert Account changes</name>
+    <description><![CDATA[]]></description>
+    <address><![CDATA[]]></address>
+    <company />
+    <copyright><![CDATA[]]></copyright>
+    <majorVersion>0</majorVersion>
+    <minorVersion>0</minorVersion>
+    <revision>0</revision>
+    <build>5</build>
+    <autoIncrement>false</autoIncrement>
+    <installDate>0001-01-01T00:00:00</installDate>
+    <installPassword />
+    <formatVersion>8.1.0.1146</formatVersion>
+  </bundleProperties>
+  <bundleItemHierarchy>
+    <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.Platform.BundleModel.BundleManifestItem, Sage.Platform.BundleModel">
+      <BundleManifestItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <ItemId>3ebf1f0d-97d6-4544-85c0-d6df3b65dd14</ItemId>
+        <Url>\</Url>
+        <BundleItemType>Container</BundleItemType>
+        <Caption>BD Insert Account changes</Caption>
+      </BundleManifestItem>
+      <children>
+        <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntityModelContext, Sage.Platform">
+          <EntityModelContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <ItemId>entitymodel</ItemId>
+            <Url>\::Entity Model</Url>
+            <BundleItemType>Container</BundleItemType>
+            <Caption>Entity Model</Caption>
+          </EntityModelContext>
+          <children>
+            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.RelationshipsContext, Sage.Platform">
+              <RelationshipsContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <ItemId>entitymodel\relationships</ItemId>
+                <Url>\::Entity Model::Relationships</Url>
+                <BundleItemType>Container</BundleItemType>
+                <Caption>Relationships</Caption>
+              </RelationshipsContext>
+              <children>
+                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.RelationshipBundleItem, Sage.Platform">
+                  <RelationshipBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>05af1e5b-72cc-45f4-a965-97fd9ecbf218</ItemId>
+                    <Url>\Entity Model\Relationships\Account.Indsgmst.05af1e5b72cc45f4a96597fd9ecbf218.relationship.xml</Url>
+                    <BundleItemType>ModelItem</BundleItemType>
+                    <Caption>Account.Indsgmst M:1 Indsgmst</Caption>
+                  </RelationshipBundleItem>
+                </bundleItem>
+                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.RelationshipBundleItem, Sage.Platform">
+                  <RelationshipBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>adaba794-71b5-409a-be94-ec00121229f5</ItemId>
+                    <Url>\Entity Model\Relationships\Opportunity.OppClosedCustCode.adaba79471b5409abe94ec00121229f5.relationship.xml</Url>
+                    <BundleItemType>ModelItem</BundleItemType>
+                    <Caption>Opportunity.OppClosedCustCodes 1:M OppClosedCustCode.Opportunity</Caption>
+                  </RelationshipBundleItem>
+                </bundleItem>
+                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.RelationshipBundleItem, Sage.Platform">
+                  <RelationshipBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>ad645687-84f9-425d-9294-69b12bfa9dba</ItemId>
+                    <Url>\Entity Model\Relationships\Vwareamaster.OppClosedCustCode.ad64568784f9425d929469b12bfa9dba.relationship.xml</Url>
+                    <BundleItemType>ModelItem</BundleItemType>
+                    <Caption>Area Master.OppClosedCustCodes 1:M OppClosedCustCode.Vwareamaster</Caption>
+                  </RelationshipBundleItem>
+                </bundleItem>
+              </children>
+            </bundleItem>
+            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.PackagesContext, Sage.Platform">
+              <PackagesContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <ItemId>entitymodel\packages</ItemId>
+                <Url>\::Entity Model::Packages</Url>
+                <BundleItemType>Container</BundleItemType>
+                <Caption>Packages</Caption>
+              </PackagesContext>
+              <children>
+                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.PackageBundleItem, Sage.Platform">
+                  <PackageBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>7ddc7cbe-e71d-483a-8599-6c5c483ee050</ItemId>
+                    <Url>\Entity Model\Saleslogix Application Entities\SalesLogix Application Entities.T.package.xml</Url>
+                    <BundleItemType>Context</BundleItemType>
+                    <Caption>Saleslogix Application Entities</Caption>
+                  </PackageBundleItem>
+                  <children>
+                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntityBundleItem, Sage.Platform">
+                      <EntityBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <ItemId>ebfd715e-2b2f-4e5e-8c6d-cfc0d9b4ae52</ItemId>
+                        <Url>\Entity Model\Saleslogix Application Entities\Account\Account.ACCOUNT.entity.xml</Url>
+                        <BundleItemType>Context</BundleItemType>
+                        <Caption>Account</Caption>
+                      </EntityBundleItem>
+                      <children>
+                        <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntitySubFolderContext, Sage.Platform">
+                          <EntitySubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>ebfd715e-2b2f-4e5e-8c6d-cfc0d9b4ae52quickforms</ItemId>
+                            <Url>\Entity Model\Saleslogix Application Entities\Account\Account.ACCOUNT.entity.xml::Forms</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Forms</Caption>
+                            <ParentUrl>\Entity Model\Saleslogix Application Entities\Account\Account.ACCOUNT.entity.xml</ParentUrl>
+                            <CaptionKey>quickforms</CaptionKey>
+                          </EntitySubFolderContext>
+                          <children>
+                            <bundleItem modelId="b2741b79-02a2-4f4c-81cd-c204f82cf41c" itemTypeName="Sage.Platform.QuickForms.BundleSupport.QuickFormBundleItem, Sage.Platform.QuickForms">
+                              <QuickFormBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>576ae752-12aa-4d36-ba13-a8cca10c89c1</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\Account\QuickForms\AccountDetails.main.quickform.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>AccountDetails</Caption>
+                              </QuickFormBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                      </children>
+                    </bundleItem>
+                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntityBundleItem, Sage.Platform">
+                      <EntityBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <ItemId>3172551b-f476-45ea-98de-2bb04ddba687</ItemId>
+                        <Url>\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml</Url>
+                        <BundleItemType>Context</BundleItemType>
+                        <Caption>Opportunity</Caption>
+                      </EntityBundleItem>
+                      <children>
+                        <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntitySubFolderContext, Sage.Platform">
+                          <EntitySubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>3172551b-f476-45ea-98de-2bb04ddba687quickforms</ItemId>
+                            <Url>\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml::Forms</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Forms</Caption>
+                            <ParentUrl>\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml</ParentUrl>
+                            <CaptionKey>quickforms</CaptionKey>
+                          </EntitySubFolderContext>
+                          <children>
+                            <bundleItem modelId="b2741b79-02a2-4f4c-81cd-c204f82cf41c" itemTypeName="Sage.Platform.QuickForms.BundleSupport.QuickFormBundleItem, Sage.Platform.QuickForms">
+                              <QuickFormBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>d21c7f7c-58a7-4cfd-801e-c9c7c2e1481a</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityClosedLost.main.quickform.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OpportunityClosedLost</Caption>
+                              </QuickFormBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="b2741b79-02a2-4f4c-81cd-c204f82cf41c" itemTypeName="Sage.Platform.QuickForms.BundleSupport.QuickFormBundleItem, Sage.Platform.QuickForms">
+                              <QuickFormBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>53f5b8c1-f77c-4759-ad64-16875a7b599d</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityCompetitors.main.quickform.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OpportunityCompetitors</Caption>
+                              </QuickFormBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="b2741b79-02a2-4f4c-81cd-c204f82cf41c" itemTypeName="Sage.Platform.QuickForms.BundleSupport.QuickFormBundleItem, Sage.Platform.QuickForms">
+                              <QuickFormBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>6c4f1f04-293f-4ff9-8cf4-550610931113</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OpportunityDetails.main.quickform.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OpportunityDetails</Caption>
+                              </QuickFormBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="b2741b79-02a2-4f4c-81cd-c204f82cf41c" itemTypeName="Sage.Platform.QuickForms.BundleSupport.QuickFormBundleItem, Sage.Platform.QuickForms">
+                              <QuickFormBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>dbf69f1b-43fd-44c8-aac9-35113088c926</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\Opportunity\QuickForms\OppClosedCustCodes.main.quickform.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OppClosedCustCodes</Caption>
+                              </QuickFormBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                        <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntitySubFolderContext, Sage.Platform">
+                          <EntitySubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>3172551b-f476-45ea-98de-2bb04ddba687properties</ItemId>
+                            <Url>\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml::Properties</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Properties</Caption>
+                            <ParentUrl>\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml</ParentUrl>
+                            <CaptionKey>properties</CaptionKey>
+                          </EntitySubFolderContext>
+                        </bundleItem>
+                        <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntitySubFolderContext, Sage.Platform">
+                          <EntitySubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>3172551b-f476-45ea-98de-2bb04ddba687events</ItemId>
+                            <Url>\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml::Events</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Events</Caption>
+                            <ParentUrl>\Entity Model\Saleslogix Application Entities\Opportunity\Opportunity.OPPORTUNITY.entity.xml</ParentUrl>
+                            <CaptionKey>events</CaptionKey>
+                          </EntitySubFolderContext>
+                          <children>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleBundleItem, Sage.Platform">
+                              <BusinessRuleBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>24cee8e1-2af4-455c-b37f-ab151407e791</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OnBeforeUpdate</Caption>
+                              </BusinessRuleBundleItem>
+                              <children>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>24cee8e1-2af4-455c-b37f-ab151407e791pre</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml::Pre Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Pre Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml</ParentUrl>
+                                    <CaptionKey>pre</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>24cee8e1-2af4-455c-b37f-ab151407e791primary</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml::Primary Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Primary Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml</ParentUrl>
+                                    <CaptionKey>primary</CaptionKey>
+                                  </StepsSubFolderContext>
+                                  <children>
+                                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleStepBundleItem, Sage.Platform">
+                                      <BusinessRuleStepBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                        <ItemId>9943e527-c184-4dfe-b0b5-698911e0e8d3</ItemId>
+                                        <Url>\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml::Primary Steps::OnBeforeUpdate</Url>
+                                        <BundleItemType>Other</BundleItemType>
+                                        <Caption>OnBeforeUpdate</Caption>
+                                        <SerializationOptions>ProcessDependentUrls</SerializationOptions>
+                                        <InstallOptions>ProcessDependentUrls</InstallOptions>
+                                      </BusinessRuleStepBundleItem>
+                                    </bundleItem>
+                                  </children>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>24cee8e1-2af4-455c-b37f-ab151407e791post</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml::Post Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml</ParentUrl>
+                                    <CaptionKey>post</CaptionKey>
+                                  </StepsSubFolderContext>
+                                  <children>
+                                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleStepBundleItem, Sage.Platform">
+                                      <BusinessRuleStepBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                        <ItemId>8c664f5b-9d8e-4284-96b8-89102cd1bcd9</ItemId>
+                                        <Url>\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml::Post Execute Steps::OnBeforeUpdateStep</Url>
+                                        <BundleItemType>Other</BundleItemType>
+                                        <Caption>OnBeforeUpdateStep</Caption>
+                                        <SerializationOptions>ProcessDependentUrls</SerializationOptions>
+                                        <InstallOptions>ProcessDependentUrls</InstallOptions>
+                                      </BusinessRuleStepBundleItem>
+                                    </bundleItem>
+                                  </children>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>24cee8e1-2af4-455c-b37f-ab151407e791postflush</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml::Post Flush Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Flush Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\Opportunity\OnBeforeUpdate.method.xml</ParentUrl>
+                                    <CaptionKey>postflush</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                              </children>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                      </children>
+                    </bundleItem>
+                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntityBundleItem, Sage.Platform">
+                      <EntityBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <ItemId>f6d87855-19c1-4b30-8548-97f1b1b29e2c</ItemId>
+                        <Url>\Entity Model\Saleslogix Application Entities\OpportunityCompetitor\OpportunityCompetitor.OPPORTUNITY_COMPETITOR.entity.xml</Url>
+                        <BundleItemType>Context</BundleItemType>
+                        <Caption>OpportunityCompetitor</Caption>
+                      </EntityBundleItem>
+                      <children>
+                        <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntitySubFolderContext, Sage.Platform">
+                          <EntitySubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>f6d87855-19c1-4b30-8548-97f1b1b29e2cquickforms</ItemId>
+                            <Url>\Entity Model\Saleslogix Application Entities\OpportunityCompetitor\OpportunityCompetitor.OPPORTUNITY_COMPETITOR.entity.xml::Forms</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Forms</Caption>
+                            <ParentUrl>\Entity Model\Saleslogix Application Entities\OpportunityCompetitor\OpportunityCompetitor.OPPORTUNITY_COMPETITOR.entity.xml</ParentUrl>
+                            <CaptionKey>quickforms</CaptionKey>
+                          </EntitySubFolderContext>
+                          <children>
+                            <bundleItem modelId="b2741b79-02a2-4f4c-81cd-c204f82cf41c" itemTypeName="Sage.Platform.QuickForms.BundleSupport.QuickFormBundleItem, Sage.Platform.QuickForms">
+                              <QuickFormBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>f66fcf50-7ec5-4d7f-8e86-1f3a294fb982</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OpportunityCompetitor\QuickForms\EditOpportunityCompetitor.main.quickform.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>EditOpportunityCompetitor</Caption>
+                              </QuickFormBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                      </children>
+                    </bundleItem>
+                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntityBundleItem, Sage.Platform">
+                      <EntityBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <ItemId>ecc23318-592b-4987-a573-e79b50d8a7c3</ItemId>
+                        <Url>\Entity Model\Saleslogix Application Entities\Vwareamaster\Vwareamaster.VWAREAMASTER.entity.xml</Url>
+                        <BundleItemType>ModelItem</BundleItemType>
+                        <Caption>Vwareamaster</Caption>
+                      </EntityBundleItem>
+                    </bundleItem>
+                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntityBundleItem, Sage.Platform">
+                      <EntityBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <ItemId>9a9b36bc-66f4-4ef5-8fb2-d971b91d39dd</ItemId>
+                        <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml</Url>
+                        <BundleItemType>ModelItem</BundleItemType>
+                        <Caption>OppClosedCustCode</Caption>
+                      </EntityBundleItem>
+                      <children>
+                        <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntitySubFolderContext, Sage.Platform">
+                          <EntitySubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>9a9b36bc-66f4-4ef5-8fb2-d971b91d39ddproperties</ItemId>
+                            <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Properties</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Properties</Caption>
+                            <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml</ParentUrl>
+                            <CaptionKey>properties</CaptionKey>
+                          </EntitySubFolderContext>
+                          <children>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.PropertyBundleItem, Sage.Platform">
+                              <PropertyBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>901e8de3-c165-49d0-a958-83dddbe517e3</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Properties::OppClosedCustCodeId</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>OppClosedCustCodeId</Caption>
+                                <SerializationOptions>RecurseChildren</SerializationOptions>
+                                <InstallOptions>RecurseChildren</InstallOptions>
+                              </PropertyBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.PropertyBundleItem, Sage.Platform">
+                              <PropertyBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>10d68ef7-c8ea-4f1e-8621-d6222cdf0628</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Properties::OpportunityId</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>OpportunityId</Caption>
+                                <SerializationOptions>RecurseChildren</SerializationOptions>
+                                <InstallOptions>RecurseChildren</InstallOptions>
+                              </PropertyBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.PropertyBundleItem, Sage.Platform">
+                              <PropertyBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>1138f5cd-f6a1-4e28-8200-ddd368c7f4a1</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Properties::CreateUser</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>CreateUser</Caption>
+                                <SerializationOptions>RecurseChildren</SerializationOptions>
+                                <InstallOptions>RecurseChildren</InstallOptions>
+                              </PropertyBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.PropertyBundleItem, Sage.Platform">
+                              <PropertyBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>a6f50a3d-1679-431b-8504-700ec0db0aae</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Properties::CreateDate</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>CreateDate</Caption>
+                                <SerializationOptions>RecurseChildren</SerializationOptions>
+                                <InstallOptions>RecurseChildren</InstallOptions>
+                              </PropertyBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.PropertyBundleItem, Sage.Platform">
+                              <PropertyBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>2f850ebb-0bb2-41f2-988f-bca26be64bdc</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Properties::ModifyUser</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>ModifyUser</Caption>
+                                <SerializationOptions>RecurseChildren</SerializationOptions>
+                                <InstallOptions>RecurseChildren</InstallOptions>
+                              </PropertyBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.PropertyBundleItem, Sage.Platform">
+                              <PropertyBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>f0e013a2-9f1f-43b7-ba3d-98e363f96d37</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Properties::ModifyDate</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>ModifyDate</Caption>
+                                <SerializationOptions>RecurseChildren</SerializationOptions>
+                                <InstallOptions>RecurseChildren</InstallOptions>
+                              </PropertyBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.PropertyBundleItem, Sage.Platform">
+                              <PropertyBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>baa41b9a-9ba0-4a09-8513-98ffbd051542</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Properties::AreaMstID</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>AreaMstID</Caption>
+                                <SerializationOptions>RecurseChildren</SerializationOptions>
+                                <InstallOptions>RecurseChildren</InstallOptions>
+                              </PropertyBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.PropertyBundleItem, Sage.Platform">
+                              <PropertyBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>52fd3c87-079d-4ce9-ac4d-2056cead3aaa</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Properties::CustomerCode</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>CustomerCode</Caption>
+                                <SerializationOptions>RecurseChildren</SerializationOptions>
+                                <InstallOptions>RecurseChildren</InstallOptions>
+                              </PropertyBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                        <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntitySubFolderContext, Sage.Platform">
+                          <EntitySubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>9a9b36bc-66f4-4ef5-8fb2-d971b91d39ddrules</ItemId>
+                            <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Business Rules</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Business Rules</Caption>
+                            <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml</ParentUrl>
+                            <CaptionKey>rules</CaptionKey>
+                          </EntitySubFolderContext>
+                        </bundleItem>
+                        <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntitySubFolderContext, Sage.Platform">
+                          <EntitySubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>9a9b36bc-66f4-4ef5-8fb2-d971b91d39ddevents</ItemId>
+                            <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Events</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Events</Caption>
+                            <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml</ParentUrl>
+                            <CaptionKey>events</CaptionKey>
+                          </EntitySubFolderContext>
+                          <children>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleBundleItem, Sage.Platform">
+                              <BusinessRuleBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>1a404ef1-738e-4eea-98a3-613982b1fc4a</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterDelete.method.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OnAfterDelete</Caption>
+                              </BusinessRuleBundleItem>
+                              <children>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>1a404ef1-738e-4eea-98a3-613982b1fc4apre</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterDelete.method.xml::Pre Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Pre Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterDelete.method.xml</ParentUrl>
+                                    <CaptionKey>pre</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>1a404ef1-738e-4eea-98a3-613982b1fc4aprimary</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterDelete.method.xml::Primary Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Primary Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterDelete.method.xml</ParentUrl>
+                                    <CaptionKey>primary</CaptionKey>
+                                  </StepsSubFolderContext>
+                                  <children>
+                                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleStepBundleItem, Sage.Platform">
+                                      <BusinessRuleStepBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                        <ItemId>db1ebbcb-bfb9-42e8-afbe-5d0816f5f61c</ItemId>
+                                        <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterDelete.method.xml::Primary Steps::OnAfterDelete</Url>
+                                        <BundleItemType>Other</BundleItemType>
+                                        <Caption>OnAfterDelete</Caption>
+                                        <SerializationOptions>ProcessDependentUrls</SerializationOptions>
+                                        <InstallOptions>ProcessDependentUrls</InstallOptions>
+                                      </BusinessRuleStepBundleItem>
+                                    </bundleItem>
+                                  </children>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>1a404ef1-738e-4eea-98a3-613982b1fc4apost</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterDelete.method.xml::Post Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterDelete.method.xml</ParentUrl>
+                                    <CaptionKey>post</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>1a404ef1-738e-4eea-98a3-613982b1fc4apostflush</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterDelete.method.xml::Post Flush Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Flush Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterDelete.method.xml</ParentUrl>
+                                    <CaptionKey>postflush</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                              </children>
+                            </bundleItem>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleBundleItem, Sage.Platform">
+                              <BusinessRuleBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>db1c3aab-4b2b-447c-93cc-07bd364b61ae</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterInsert.method.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OnAfterInsert</Caption>
+                              </BusinessRuleBundleItem>
+                              <children>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>db1c3aab-4b2b-447c-93cc-07bd364b61aepre</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterInsert.method.xml::Pre Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Pre Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterInsert.method.xml</ParentUrl>
+                                    <CaptionKey>pre</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>db1c3aab-4b2b-447c-93cc-07bd364b61aeprimary</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterInsert.method.xml::Primary Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Primary Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterInsert.method.xml</ParentUrl>
+                                    <CaptionKey>primary</CaptionKey>
+                                  </StepsSubFolderContext>
+                                  <children>
+                                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleStepBundleItem, Sage.Platform">
+                                      <BusinessRuleStepBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                        <ItemId>cd32f52f-3d09-4ade-84a4-8a11beeb050a</ItemId>
+                                        <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterInsert.method.xml::Primary Steps::OnAfterInsert</Url>
+                                        <BundleItemType>Other</BundleItemType>
+                                        <Caption>OnAfterInsert</Caption>
+                                        <SerializationOptions>ProcessDependentUrls</SerializationOptions>
+                                        <InstallOptions>ProcessDependentUrls</InstallOptions>
+                                      </BusinessRuleStepBundleItem>
+                                    </bundleItem>
+                                  </children>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>db1c3aab-4b2b-447c-93cc-07bd364b61aepost</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterInsert.method.xml::Post Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterInsert.method.xml</ParentUrl>
+                                    <CaptionKey>post</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>db1c3aab-4b2b-447c-93cc-07bd364b61aepostflush</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterInsert.method.xml::Post Flush Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Flush Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterInsert.method.xml</ParentUrl>
+                                    <CaptionKey>postflush</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                              </children>
+                            </bundleItem>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleBundleItem, Sage.Platform">
+                              <BusinessRuleBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>47b2b63c-d060-425e-977f-6eebf42b0cb6</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterUpdate.method.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OnAfterUpdate</Caption>
+                              </BusinessRuleBundleItem>
+                              <children>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>47b2b63c-d060-425e-977f-6eebf42b0cb6pre</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterUpdate.method.xml::Pre Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Pre Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterUpdate.method.xml</ParentUrl>
+                                    <CaptionKey>pre</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>47b2b63c-d060-425e-977f-6eebf42b0cb6primary</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterUpdate.method.xml::Primary Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Primary Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterUpdate.method.xml</ParentUrl>
+                                    <CaptionKey>primary</CaptionKey>
+                                  </StepsSubFolderContext>
+                                  <children>
+                                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleStepBundleItem, Sage.Platform">
+                                      <BusinessRuleStepBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                        <ItemId>c1f8481e-1c9c-4ecf-a422-390f95e0f974</ItemId>
+                                        <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterUpdate.method.xml::Primary Steps::OnAfterUpdate</Url>
+                                        <BundleItemType>Other</BundleItemType>
+                                        <Caption>OnAfterUpdate</Caption>
+                                        <SerializationOptions>ProcessDependentUrls</SerializationOptions>
+                                        <InstallOptions>ProcessDependentUrls</InstallOptions>
+                                      </BusinessRuleStepBundleItem>
+                                    </bundleItem>
+                                  </children>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>47b2b63c-d060-425e-977f-6eebf42b0cb6post</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterUpdate.method.xml::Post Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterUpdate.method.xml</ParentUrl>
+                                    <CaptionKey>post</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>47b2b63c-d060-425e-977f-6eebf42b0cb6postflush</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterUpdate.method.xml::Post Flush Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Flush Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnAfterUpdate.method.xml</ParentUrl>
+                                    <CaptionKey>postflush</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                              </children>
+                            </bundleItem>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleBundleItem, Sage.Platform">
+                              <BusinessRuleBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>e1c562f7-17df-47d0-808e-055354cb4edf</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeDelete.method.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OnBeforeDelete</Caption>
+                              </BusinessRuleBundleItem>
+                              <children>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>e1c562f7-17df-47d0-808e-055354cb4edfpre</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeDelete.method.xml::Pre Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Pre Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeDelete.method.xml</ParentUrl>
+                                    <CaptionKey>pre</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>e1c562f7-17df-47d0-808e-055354cb4edfprimary</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeDelete.method.xml::Primary Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Primary Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeDelete.method.xml</ParentUrl>
+                                    <CaptionKey>primary</CaptionKey>
+                                  </StepsSubFolderContext>
+                                  <children>
+                                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleStepBundleItem, Sage.Platform">
+                                      <BusinessRuleStepBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                        <ItemId>0e7830f9-40f1-4bd5-beb5-1cf778c754d4</ItemId>
+                                        <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeDelete.method.xml::Primary Steps::OnBeforeDelete</Url>
+                                        <BundleItemType>Other</BundleItemType>
+                                        <Caption>OnBeforeDelete</Caption>
+                                        <SerializationOptions>ProcessDependentUrls</SerializationOptions>
+                                        <InstallOptions>ProcessDependentUrls</InstallOptions>
+                                      </BusinessRuleStepBundleItem>
+                                    </bundleItem>
+                                  </children>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>e1c562f7-17df-47d0-808e-055354cb4edfpost</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeDelete.method.xml::Post Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeDelete.method.xml</ParentUrl>
+                                    <CaptionKey>post</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>e1c562f7-17df-47d0-808e-055354cb4edfpostflush</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeDelete.method.xml::Post Flush Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Flush Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeDelete.method.xml</ParentUrl>
+                                    <CaptionKey>postflush</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                              </children>
+                            </bundleItem>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleBundleItem, Sage.Platform">
+                              <BusinessRuleBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>39544250-a2af-473c-a624-268a95cd2508</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeInsert.method.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OnBeforeInsert</Caption>
+                              </BusinessRuleBundleItem>
+                              <children>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>39544250-a2af-473c-a624-268a95cd2508pre</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeInsert.method.xml::Pre Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Pre Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeInsert.method.xml</ParentUrl>
+                                    <CaptionKey>pre</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>39544250-a2af-473c-a624-268a95cd2508primary</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeInsert.method.xml::Primary Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Primary Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeInsert.method.xml</ParentUrl>
+                                    <CaptionKey>primary</CaptionKey>
+                                  </StepsSubFolderContext>
+                                  <children>
+                                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleStepBundleItem, Sage.Platform">
+                                      <BusinessRuleStepBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                        <ItemId>5b1c9563-8577-4543-a5af-7905768ee3e0</ItemId>
+                                        <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeInsert.method.xml::Primary Steps::OnBeforeInsert</Url>
+                                        <BundleItemType>Other</BundleItemType>
+                                        <Caption>OnBeforeInsert</Caption>
+                                        <SerializationOptions>ProcessDependentUrls</SerializationOptions>
+                                        <InstallOptions>ProcessDependentUrls</InstallOptions>
+                                      </BusinessRuleStepBundleItem>
+                                    </bundleItem>
+                                  </children>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>39544250-a2af-473c-a624-268a95cd2508post</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeInsert.method.xml::Post Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeInsert.method.xml</ParentUrl>
+                                    <CaptionKey>post</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>39544250-a2af-473c-a624-268a95cd2508postflush</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeInsert.method.xml::Post Flush Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Flush Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeInsert.method.xml</ParentUrl>
+                                    <CaptionKey>postflush</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                              </children>
+                            </bundleItem>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleBundleItem, Sage.Platform">
+                              <BusinessRuleBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>c0e3421d-bed9-4fb8-aa25-64de15b659d8</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeUpdate.method.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OnBeforeUpdate</Caption>
+                              </BusinessRuleBundleItem>
+                              <children>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>c0e3421d-bed9-4fb8-aa25-64de15b659d8pre</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeUpdate.method.xml::Pre Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Pre Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeUpdate.method.xml</ParentUrl>
+                                    <CaptionKey>pre</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>c0e3421d-bed9-4fb8-aa25-64de15b659d8primary</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeUpdate.method.xml::Primary Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Primary Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeUpdate.method.xml</ParentUrl>
+                                    <CaptionKey>primary</CaptionKey>
+                                  </StepsSubFolderContext>
+                                  <children>
+                                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleStepBundleItem, Sage.Platform">
+                                      <BusinessRuleStepBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                        <ItemId>a09535e4-2f9f-4654-847e-2ef1743b8acb</ItemId>
+                                        <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeUpdate.method.xml::Primary Steps::OnBeforeUpdate</Url>
+                                        <BundleItemType>Other</BundleItemType>
+                                        <Caption>OnBeforeUpdate</Caption>
+                                        <SerializationOptions>ProcessDependentUrls</SerializationOptions>
+                                        <InstallOptions>ProcessDependentUrls</InstallOptions>
+                                      </BusinessRuleStepBundleItem>
+                                    </bundleItem>
+                                  </children>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>c0e3421d-bed9-4fb8-aa25-64de15b659d8post</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeUpdate.method.xml::Post Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeUpdate.method.xml</ParentUrl>
+                                    <CaptionKey>post</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>c0e3421d-bed9-4fb8-aa25-64de15b659d8postflush</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeUpdate.method.xml::Post Flush Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Flush Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnBeforeUpdate.method.xml</ParentUrl>
+                                    <CaptionKey>postflush</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                              </children>
+                            </bundleItem>
+                            <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleBundleItem, Sage.Platform">
+                              <BusinessRuleBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>23556baf-9e3f-4db0-abf9-a0b4d83ea8a7</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnCreate.method.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OnCreate</Caption>
+                              </BusinessRuleBundleItem>
+                              <children>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>23556baf-9e3f-4db0-abf9-a0b4d83ea8a7pre</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnCreate.method.xml::Pre Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Pre Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnCreate.method.xml</ParentUrl>
+                                    <CaptionKey>pre</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>23556baf-9e3f-4db0-abf9-a0b4d83ea8a7primary</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnCreate.method.xml::Primary Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Primary Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnCreate.method.xml</ParentUrl>
+                                    <CaptionKey>primary</CaptionKey>
+                                  </StepsSubFolderContext>
+                                  <children>
+                                    <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.BusinessRuleStepBundleItem, Sage.Platform">
+                                      <BusinessRuleStepBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                        <ItemId>b0246da9-0734-4e3e-8b18-da2d11373571</ItemId>
+                                        <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnCreate.method.xml::Primary Steps::OnCreate</Url>
+                                        <BundleItemType>Other</BundleItemType>
+                                        <Caption>OnCreate</Caption>
+                                        <SerializationOptions>ProcessDependentUrls</SerializationOptions>
+                                        <InstallOptions>ProcessDependentUrls</InstallOptions>
+                                      </BusinessRuleStepBundleItem>
+                                    </bundleItem>
+                                  </children>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>23556baf-9e3f-4db0-abf9-a0b4d83ea8a7post</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnCreate.method.xml::Post Execute Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Execute Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnCreate.method.xml</ParentUrl>
+                                    <CaptionKey>post</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                                <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.StepsSubFolderContext, Sage.Platform">
+                                  <StepsSubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>23556baf-9e3f-4db0-abf9-a0b4d83ea8a7postflush</ItemId>
+                                    <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnCreate.method.xml::Post Flush Steps</Url>
+                                    <BundleItemType>Container</BundleItemType>
+                                    <Caption>Post Flush Steps</Caption>
+                                    <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OnCreate.method.xml</ParentUrl>
+                                    <CaptionKey>postflush</CaptionKey>
+                                  </StepsSubFolderContext>
+                                </bundleItem>
+                              </children>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                        <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntitySubFolderContext, Sage.Platform">
+                          <EntitySubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>9a9b36bc-66f4-4ef5-8fb2-d971b91d39ddfilters</ItemId>
+                            <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Filters</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Filters</Caption>
+                            <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml</ParentUrl>
+                            <CaptionKey>filters</CaptionKey>
+                          </EntitySubFolderContext>
+                        </bundleItem>
+                        <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntitySubFolderContext, Sage.Platform">
+                          <EntitySubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>9a9b36bc-66f4-4ef5-8fb2-d971b91d39ddvalidationrules</ItemId>
+                            <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Validation Rules</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Validation Rules</Caption>
+                            <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml</ParentUrl>
+                            <CaptionKey>validationrules</CaptionKey>
+                          </EntitySubFolderContext>
+                        </bundleItem>
+                        <bundleItem modelId="a7bdd2d9-93b0-499d-9fd4-c3f7a5f94e28" itemTypeName="Sage.Platform.Orm.Entities.BundleSupport.EntitySubFolderContext, Sage.Platform">
+                          <EntitySubFolderContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>9a9b36bc-66f4-4ef5-8fb2-d971b91d39ddquickforms</ItemId>
+                            <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml::Forms</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Forms</Caption>
+                            <ParentUrl>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\OppClosedCustCode.OPPCLOSEDCUSTCODE.entity.xml</ParentUrl>
+                            <CaptionKey>quickforms</CaptionKey>
+                          </EntitySubFolderContext>
+                          <children>
+                            <bundleItem modelId="b2741b79-02a2-4f4c-81cd-c204f82cf41c" itemTypeName="Sage.Platform.QuickForms.BundleSupport.QuickFormBundleItem, Sage.Platform.QuickForms">
+                              <QuickFormBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>f3cc60a8-4948-41e7-9054-3830f8db5f2e</ItemId>
+                                <Url>\Entity Model\Saleslogix Application Entities\OppClosedCustCode\QuickForms\CustomerCodeDetails.main.quickform.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>CustomerCodeDetails</Caption>
+                              </QuickFormBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                      </children>
+                    </bundleItem>
+                  </children>
+                </bundleItem>
+              </children>
+            </bundleItem>
+          </children>
+        </bundleItem>
+        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ManagerBundleItem, Sage.Platform.WebPortal.Design">
+          <ManagerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <ItemId>\Portal</ItemId>
+            <Url>\Portal</Url>
+            <BundleItemType>Container</BundleItemType>
+            <Caption>Portals</Caption>
+          </ManagerBundleItem>
+          <children>
+            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <ItemId>861ac5fe-b571-4015-a55d-bf63e400e1e7</ItemId>
+                <Url>\Portal\SlxClient\SlxClient.cabapp.ptl.xml</Url>
+                <BundleItemType>Context</BundleItemType>
+                <Caption>Saleslogix Client</Caption>
+              </ModelItemBundleItem>
+              <children>
+                <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                  <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles</ItemId>
+                    <Url>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles</Url>
+                    <BundleItemType>Context</BundleItemType>
+                    <Caption>SupportFiles</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                  </LinkedFolderBundleItem>
+                  <children>
+                    <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                      <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <ItemId>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts</ItemId>
+                        <Url>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts</Url>
+                        <BundleItemType>Context</BundleItemType>
+                        <Caption>SmartParts</Caption>
+                        <InstallOptions>SkipItemAndChildren</InstallOptions>
+                      </LinkedFolderBundleItem>
+                      <children>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                          <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts\Address</ItemId>
+                            <Url>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts\Address</Url>
+                            <BundleItemType>Context</BundleItemType>
+                            <Caption>Address</Caption>
+                            <InstallOptions>SkipItemAndChildren</InstallOptions>
+                          </LinkedFolderBundleItem>
+                          <children>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                              <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>\Portal\SlxClient\SupportFiles\SmartParts\Address\AddEditAddress.ascx</ItemId>
+                                <Url>\Portal\SlxClient\SupportFiles\SmartParts\Address\AddEditAddress.ascx</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>AddEditAddress.ascx</Caption>
+                                <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                <IsLinkedFile>false</IsLinkedFile>
+                                <SourcePath>D:\WorkSpace\SLX_v81_BD_VFS\Model\Portal\SlxClient\SupportFiles\SmartParts\Address\AddEditAddress.ascx</SourcePath>
+                                <ParentModelItemUrl>\Portal\SlxClient\SlxClient.cabapp.ptl.xml</ParentModelItemUrl>
+                                <ProjectPath>SupportFiles\SmartParts\Address\AddEditAddress.ascx</ProjectPath>
+                              </LinkedFileBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                              <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>\Portal\SlxClient\SupportFiles\SmartParts\Address\AddEditAddress.ascx.cs</ItemId>
+                                <Url>\Portal\SlxClient\SupportFiles\SmartParts\Address\AddEditAddress.ascx.cs</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>AddEditAddress.ascx.cs</Caption>
+                                <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                <IsLinkedFile>false</IsLinkedFile>
+                                <SourcePath>D:\WorkSpace\SLX_v81_BD_VFS\Model\Portal\SlxClient\SupportFiles\SmartParts\Address\AddEditAddress.ascx.cs</SourcePath>
+                                <ParentModelItemUrl>\Portal\SlxClient\SlxClient.cabapp.ptl.xml</ParentModelItemUrl>
+                                <ProjectPath>SupportFiles\SmartParts\Address\AddEditAddress.ascx.cs</ProjectPath>
+                              </LinkedFileBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                              <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>\Portal\SlxClient\SupportFiles\SmartParts\Address\AddressList.ascx</ItemId>
+                                <Url>\Portal\SlxClient\SupportFiles\SmartParts\Address\AddressList.ascx</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>AddressList.ascx</Caption>
+                                <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                <IsLinkedFile>false</IsLinkedFile>
+                                <SourcePath>D:\WorkSpace\SLX_v81_BD_VFS\Model\Portal\SlxClient\SupportFiles\SmartParts\Address\AddressList.ascx</SourcePath>
+                                <ParentModelItemUrl>\Portal\SlxClient\SlxClient.cabapp.ptl.xml</ParentModelItemUrl>
+                                <ProjectPath>SupportFiles\SmartParts\Address\AddressList.ascx</ProjectPath>
+                              </LinkedFileBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                              <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>\Portal\SlxClient\SupportFiles\SmartParts\Address\AddressList.ascx.cs</ItemId>
+                                <Url>\Portal\SlxClient\SupportFiles\SmartParts\Address\AddressList.ascx.cs</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>AddressList.ascx.cs</Caption>
+                                <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                <IsLinkedFile>false</IsLinkedFile>
+                                <SourcePath>D:\WorkSpace\SLX_v81_BD_VFS\Model\Portal\SlxClient\SupportFiles\SmartParts\Address\AddressList.ascx.cs</SourcePath>
+                                <ParentModelItemUrl>\Portal\SlxClient\SlxClient.cabapp.ptl.xml</ParentModelItemUrl>
+                                <ProjectPath>SupportFiles\SmartParts\Address\AddressList.ascx.cs</ProjectPath>
+                              </LinkedFileBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                          <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts\TaskPane</ItemId>
+                            <Url>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts\TaskPane</Url>
+                            <BundleItemType>Context</BundleItemType>
+                            <Caption>TaskPane</Caption>
+                            <InstallOptions>SkipItemAndChildren</InstallOptions>
+                          </LinkedFolderBundleItem>
+                          <children>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                              <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts\TaskPane\CommonTasks</ItemId>
+                                <Url>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts\TaskPane\CommonTasks</Url>
+                                <BundleItemType>Context</BundleItemType>
+                                <Caption>CommonTasks</Caption>
+                                <InstallOptions>SkipItemAndChildren</InstallOptions>
+                              </LinkedFolderBundleItem>
+                              <children>
+                                <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                                  <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>\Portal\SlxClient\SupportFiles\SmartParts\TaskPane\CommonTasks\CommonTasksTasklet.ascx.cs</ItemId>
+                                    <Url>\Portal\SlxClient\SupportFiles\SmartParts\TaskPane\CommonTasks\CommonTasksTasklet.ascx.cs</Url>
+                                    <BundleItemType>Other</BundleItemType>
+                                    <Caption>CommonTasksTasklet.ascx.cs</Caption>
+                                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                    <IsLinkedFile>false</IsLinkedFile>
+                                    <SourcePath>D:\WorkSpace\SLX_v81_BD_VFS\Model\Portal\SlxClient\SupportFiles\SmartParts\TaskPane\CommonTasks\CommonTasksTasklet.ascx.cs</SourcePath>
+                                    <ParentModelItemUrl>\Portal\SlxClient\SlxClient.cabapp.ptl.xml</ParentModelItemUrl>
+                                    <ProjectPath>SupportFiles\SmartParts\TaskPane\CommonTasks\CommonTasksTasklet.ascx.cs</ProjectPath>
+                                  </LinkedFileBundleItem>
+                                </bundleItem>
+                                <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                                  <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>\Portal\SlxClient\SupportFiles\SmartParts\TaskPane\CommonTasks\CommonTasksTasklet.ascx</ItemId>
+                                    <Url>\Portal\SlxClient\SupportFiles\SmartParts\TaskPane\CommonTasks\CommonTasksTasklet.ascx</Url>
+                                    <BundleItemType>Other</BundleItemType>
+                                    <Caption>CommonTasksTasklet.ascx</Caption>
+                                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                    <IsLinkedFile>false</IsLinkedFile>
+                                    <SourcePath>D:\WorkSpace\SLX_v81_BD_VFS\Model\Portal\SlxClient\SupportFiles\SmartParts\TaskPane\CommonTasks\CommonTasksTasklet.ascx</SourcePath>
+                                    <ParentModelItemUrl>\Portal\SlxClient\SlxClient.cabapp.ptl.xml</ParentModelItemUrl>
+                                    <ProjectPath>SupportFiles\SmartParts\TaskPane\CommonTasks\CommonTasksTasklet.ascx</ProjectPath>
+                                  </LinkedFileBundleItem>
+                                </bundleItem>
+                              </children>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                          <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts\Contact</ItemId>
+                            <Url>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts\Contact</Url>
+                            <BundleItemType>Context</BundleItemType>
+                            <Caption>Contact</Caption>
+                            <InstallOptions>SkipItemAndChildren</InstallOptions>
+                          </LinkedFolderBundleItem>
+                          <children>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                              <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>\Portal\SlxClient\SupportFiles\SmartParts\Contact\InsertContact.ascx</ItemId>
+                                <Url>\Portal\SlxClient\SupportFiles\SmartParts\Contact\InsertContact.ascx</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>InsertContact.ascx</Caption>
+                                <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                <IsLinkedFile>false</IsLinkedFile>
+                                <SourcePath>D:\WorkSpace\SLX_v81_BD_VFS\Model\Portal\SlxClient\SupportFiles\SmartParts\Contact\InsertContact.ascx</SourcePath>
+                                <ParentModelItemUrl>\Portal\SlxClient\SlxClient.cabapp.ptl.xml</ParentModelItemUrl>
+                                <ProjectPath>SupportFiles\SmartParts\Contact\InsertContact.ascx</ProjectPath>
+                              </LinkedFileBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                          <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts\OpportunitySalesProcess</ItemId>
+                            <Url>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts\OpportunitySalesProcess</Url>
+                            <BundleItemType>Context</BundleItemType>
+                            <Caption>OpportunitySalesProcess</Caption>
+                            <InstallOptions>SkipItemAndChildren</InstallOptions>
+                          </LinkedFolderBundleItem>
+                          <children>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                              <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>\Portal\SlxClient\SupportFiles\SmartParts\OpportunitySalesProcess\OpportunitySalesProcess.ascx.cs</ItemId>
+                                <Url>\Portal\SlxClient\SupportFiles\SmartParts\OpportunitySalesProcess\OpportunitySalesProcess.ascx.cs</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>OpportunitySalesProcess.ascx.cs</Caption>
+                                <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                <IsLinkedFile>false</IsLinkedFile>
+                                <SourcePath>D:\WorkSpace\SLX_v81_BD_VFS\Model\Portal\SlxClient\SupportFiles\SmartParts\OpportunitySalesProcess\OpportunitySalesProcess.ascx.cs</SourcePath>
+                                <ParentModelItemUrl>\Portal\SlxClient\SlxClient.cabapp.ptl.xml</ParentModelItemUrl>
+                                <ProjectPath>SupportFiles\SmartParts\OpportunitySalesProcess\OpportunitySalesProcess.ascx.cs</ProjectPath>
+                              </LinkedFileBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                          <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts\Account</ItemId>
+                            <Url>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts\Account</Url>
+                            <BundleItemType>Context</BundleItemType>
+                            <Caption>Account</Caption>
+                            <InstallOptions>SkipItemAndChildren</InstallOptions>
+                          </LinkedFolderBundleItem>
+                          <children>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                              <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts\Account\App_LocalResources</ItemId>
+                                <Url>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\SupportFiles\SmartParts\Account\App_LocalResources</Url>
+                                <BundleItemType>Context</BundleItemType>
+                                <Caption>App_LocalResources</Caption>
+                                <InstallOptions>SkipItemAndChildren</InstallOptions>
+                              </LinkedFolderBundleItem>
+                              <children>
+                                <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                                  <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>\Portal\SlxClient\SupportFiles\SmartParts\Account\App_LocalResources\AddNewAccount.ascx.resx</ItemId>
+                                    <Url>\Portal\SlxClient\SupportFiles\SmartParts\Account\App_LocalResources\AddNewAccount.ascx.resx</Url>
+                                    <BundleItemType>Other</BundleItemType>
+                                    <Caption>AddNewAccount.ascx.resx</Caption>
+                                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                    <IsLinkedFile>false</IsLinkedFile>
+                                    <SourcePath>D:\WorkSpace\SLX_v81_BD_VFS\Model\Portal\SlxClient\SupportFiles\SmartParts\Account\App_LocalResources\AddNewAccount.ascx.resx</SourcePath>
+                                    <ParentModelItemUrl>\Portal\SlxClient\SlxClient.cabapp.ptl.xml</ParentModelItemUrl>
+                                    <ProjectPath>SupportFiles\SmartParts\Account\App_LocalResources\AddNewAccount.ascx.resx</ProjectPath>
+                                  </LinkedFileBundleItem>
+                                </bundleItem>
+                              </children>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                              <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>\Portal\SlxClient\SupportFiles\SmartParts\Account\AddNewAccount.ascx</ItemId>
+                                <Url>\Portal\SlxClient\SupportFiles\SmartParts\Account\AddNewAccount.ascx</Url>
+                                <BundleItemType>Other</BundleItemType>
+                                <Caption>AddNewAccount.ascx</Caption>
+                                <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                <IsLinkedFile>false</IsLinkedFile>
+                                <SourcePath>D:\WorkSpace\SLX_v81_BD_VFS\Model\Portal\SlxClient\SupportFiles\SmartParts\Account\AddNewAccount.ascx</SourcePath>
+                                <ParentModelItemUrl>\Portal\SlxClient\SlxClient.cabapp.ptl.xml</ParentModelItemUrl>
+                                <ProjectPath>SupportFiles\SmartParts\Account\AddNewAccount.ascx</ProjectPath>
+                              </LinkedFileBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                      </children>
+                    </bundleItem>
+                  </children>
+                </bundleItem>
+                <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                  <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\Pages</ItemId>
+                    <Url>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\Pages</Url>
+                    <BundleItemType>Container</BundleItemType>
+                    <Caption>Pages</Caption>
+                  </ContainerBundleItem>
+                  <children>
+                    <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                      <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <ItemId>8a3fa537-9c10-412d-b280-9fb08338392f</ItemId>
+                        <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml</Url>
+                        <BundleItemType>ModelItem</BundleItemType>
+                        <Caption>Insert New Account</Caption>
+                        <InstallOrderOptions>
+                          <BeforeAll>false</BeforeAll>
+                          <InstallAfter>01c9e8ab-a6f7-481e-a3b6-741e8da4c508</InstallAfter>
+                        </InstallOrderOptions>
+                      </ModelItemBundleItem>
+                      <children>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\Pages</ItemId>
+                            <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\Pages</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Pages</Caption>
+                          </ContainerBundleItem>
+                        </bundleItem>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\SmartParts</ItemId>
+                            <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\SmartParts</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>SmartParts</Caption>
+                          </ContainerBundleItem>
+                          <children>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>6d63db1e-839a-4fa6-b97c-5a2ba19e7cc1</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\SmartParts\AddNewAccount.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>AddNewAccount (Custom)</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>true</BeforeAll>
+                                  <InstallAfter>00000000-0000-0000-0000-000000000000</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>a1dffbc9-cb6c-42a6-952e-181d2e15beb0</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\SmartParts\AddEditAddress.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>AddEditAddress (Custom)</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>6d63db1e-839a-4fa6-b97c-5a2ba19e7cc1</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\Modules</ItemId>
+                            <Url>\Portal\SlxClient\ChildPages\InsertNewAccount\InsertNewAccount.page.xml\Modules</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Modules</Caption>
+                          </ContainerBundleItem>
+                        </bundleItem>
+                      </children>
+                    </bundleItem>
+                    <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                      <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <ItemId>129fbf4b-eca1-4eda-a1ad-9c99e54b1786</ItemId>
+                        <Url>\Portal\SlxClient\ChildPages\Opportunity\Opportunity.page.xml</Url>
+                        <BundleItemType>ModelItem</BundleItemType>
+                        <Caption>Opportunity Detail</Caption>
+                        <InstallOrderOptions>
+                          <BeforeAll>false</BeforeAll>
+                          <InstallAfter>c54b3414-00a6-4e96-9879-e39dd02c3e22</InstallAfter>
+                        </InstallOrderOptions>
+                      </ModelItemBundleItem>
+                      <children>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\ChildPages\Opportunity\Opportunity.page.xml\Pages</ItemId>
+                            <Url>\Portal\SlxClient\ChildPages\Opportunity\Opportunity.page.xml\Pages</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Pages</Caption>
+                          </ContainerBundleItem>
+                        </bundleItem>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\ChildPages\Opportunity\Opportunity.page.xml\SmartParts</ItemId>
+                            <Url>\Portal\SlxClient\ChildPages\Opportunity\Opportunity.page.xml\SmartParts</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>SmartParts</Caption>
+                          </ContainerBundleItem>
+                          <children>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>c21deb55-a270-4cc5-94ca-7fe68732d9e9</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityDetails.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OpportunityDetails</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>true</BeforeAll>
+                                  <InstallAfter>00000000-0000-0000-0000-000000000000</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>ff796754-6ad4-4818-a965-ff7de4d93f06</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\AttachmentList.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>AttachmentList (Custom)</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>c21deb55-a270-4cc5-94ca-7fe68732d9e9</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>ccb5ee1e-ec61-49e6-8817-c36aa8cda4d3</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityCompetitors.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OpportunityCompetitors</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>ff796754-6ad4-4818-a965-ff7de4d93f06</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>7b603823-0e13-4d47-80fc-46a29509752a</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityProducts_Detail.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OpportunityProducts_Detail</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>ccb5ee1e-ec61-49e6-8817-c36aa8cda4d3</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>c15fa4aa-ccd5-47ac-9293-12045fb5cdb3</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityContacts_Detail.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OpportunityContacts_Detail</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>7b603823-0e13-4d47-80fc-46a29509752a</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>12575842-d1ab-4a87-a4e7-f102e3fc7e95</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityClosedWon.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OpportunityClosedWon</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>c15fa4aa-ccd5-47ac-9293-12045fb5cdb3</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>59f385e6-b357-4c9c-8c11-7c5117f5bc8a</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityClosedLost.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OpportunityClosedLost</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>12575842-d1ab-4a87-a4e7-f102e3fc7e95</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>d171aeb8-4923-40fb-8195-52b926ea6be0</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityProduct.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>EditOpportunityProduct</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>59f385e6-b357-4c9c-8c11-7c5117f5bc8a</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>d2189957-8fa3-43ef-abb2-cfc178a0713b</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityContact.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>EditOpportunityContact</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>d171aeb8-4923-40fb-8195-52b926ea6be0</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>287a97df-e87c-4f72-87df-838d3d048c38</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\NotesHistoryList.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>NotesHistoryList (Custom)</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>d2189957-8fa3-43ef-abb2-cfc178a0713b</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>2c6625f1-e616-40fe-ad8f-ed30e89a0bb5</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunitySalesProcess.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OpportunitySalesProcess (Custom)</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>287a97df-e87c-4f72-87df-838d3d048c38</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>2a850d1b-845a-4752-9cc3-8c2003cec854</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\ManageStages.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>ManageStages (Custom)</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>2c6625f1-e616-40fe-ad8f-ed30e89a0bb5</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>218ef2a0-3019-46fb-9697-b0f53c82902a</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunitySummary.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OpportunitySummary (Custom)</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>2a850d1b-845a-4752-9cc3-8c2003cec854</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>1dbee70e-f55b-4f99-afba-c3f81a006ef6</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\ActivityList.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>ActivityList (Custom)</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>218ef2a0-3019-46fb-9697-b0f53c82902a</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>fcc1014a-e4fc-4822-802a-384f7acd3f45</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditOpportunityCompetitor.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>EditOpportunityCompetitor</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>1dbee70e-f55b-4f99-afba-c3f81a006ef6</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>44e3fd27-3bd1-4cc0-8f30-a668b3faeb32</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\UpdateOpportunityCurrency.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>UpdateOpportunityCurrency (Custom)</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>fcc1014a-e4fc-4822-802a-384f7acd3f45</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>3b5cb38e-a8b0-4dac-b70d-b3a17d3444ae</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\LiveGroupViewer.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>LiveGroupViewer (Custom)</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>44e3fd27-3bd1-4cc0-8f30-a668b3faeb32</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>a535a1ca-61bd-4ca4-8c84-acb39fbc5057</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\EditSalesPotential.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>EditSalesPotential</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>3b5cb38e-a8b0-4dac-b70d-b3a17d3444ae</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>560468a9-8182-4913-9e03-68b0e7563576</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OpportunityCampaigns.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OpportunityCampaigns</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>a535a1ca-61bd-4ca4-8c84-acb39fbc5057</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>fa9113f9-a287-44b1-a384-6e6be70a26cb</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\SalesOrders.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>SalesOrders</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>560468a9-8182-4913-9e03-68b0e7563576</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>ab309576-61ac-4aae-a869-4d60cba64a76</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\DroppedFutureOpp.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>DroppedFutureOpp</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>fa9113f9-a287-44b1-a384-6e6be70a26cb</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>3530748c-f518-4180-8b37-8790165c53bf</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\OppClosedCustCodes.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>OppClosedCustCodes</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>ab309576-61ac-4aae-a869-4d60cba64a76</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>2f5f8d4f-6751-4875-b0b5-d70204e3c4ca</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\SmartParts\CustomerCodeDetails.smartpart.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>CustomerCodeDetails</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>false</BeforeAll>
+                                  <InstallAfter>3530748c-f518-4180-8b37-8790165c53bf</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                          <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxClient\ChildPages\Opportunity\Opportunity.page.xml\Modules</ItemId>
+                            <Url>\Portal\SlxClient\ChildPages\Opportunity\Opportunity.page.xml\Modules</Url>
+                            <BundleItemType>Container</BundleItemType>
+                            <Caption>Modules</Caption>
+                          </ContainerBundleItem>
+                          <children>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>5a1c3aee-67f3-4ffe-9707-e4baa8180ecf</ItemId>
+                                <Url>\Portal\SlxClient\ChildPages\Opportunity\Modules\77b0c80bf1954ed98287e4ad2d203c73.module.xml</Url>
+                                <BundleItemType>ModelItem</BundleItemType>
+                                <Caption>Sage.SalesLogix.Client.GroupBuilder.Modules.GroupViewerModule</Caption>
+                                <InstallOrderOptions>
+                                  <BeforeAll>true</BeforeAll>
+                                  <InstallAfter>00000000-0000-0000-0000-000000000000</InstallAfter>
+                                </InstallOrderOptions>
+                              </ModelItemBundleItem>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                      </children>
+                    </bundleItem>
+                  </children>
+                </bundleItem>
+                <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                  <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\ContextMenuItems</ItemId>
+                    <Url>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\ContextMenuItems</Url>
+                    <BundleItemType>Container</BundleItemType>
+                    <Caption>Context Menus</Caption>
+                  </ContainerBundleItem>
+                  <children>
+                    <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                      <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <ItemId>5b7f205b-4979-4780-9bdb-158bc5bad914</ItemId>
+                        <Url>\Portal\SlxClient\ContextMenuItems\contextAccount\contextAccount.contextmenu.xml</Url>
+                        <BundleItemType>Context</BundleItemType>
+                        <Caption>Account</Caption>
+                        <InstallOrderOptions>
+                          <BeforeAll>false</BeforeAll>
+                          <InstallAfter>cea6cc03-6daf-422f-9c92-e38a9eee8bc9</InstallAfter>
+                        </InstallOrderOptions>
+                      </ModelItemBundleItem>
+                      <children>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                          <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>579bbf2a-7f67-4f44-a266-d24cac2dd159</ItemId>
+                            <Url>\Portal\SlxClient\ContextMenuItems\contextAccount\ContextMenuItems\menuItemNewContactAccount\menuItemNewContactAccount.contextmenu.xml</Url>
+                            <BundleItemType>ModelItem</BundleItemType>
+                            <Caption>New Contact/Account...</Caption>
+                            <InstallOrderOptions>
+                              <BeforeAll>false</BeforeAll>
+                              <InstallAfter>154bb989-3fd2-4fa7-87ee-4e56b6194a94</InstallAfter>
+                            </InstallOrderOptions>
+                          </ModelItemBundleItem>
+                        </bundleItem>
+                      </children>
+                    </bundleItem>
+                  </children>
+                </bundleItem>
+                <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ContainerBundleItem, Sage.Platform.WebPortal.Design">
+                  <ContainerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\MenuItems</ItemId>
+                    <Url>\Portal\SlxClient\SlxClient.cabapp.ptl.xml\MenuItems</Url>
+                    <BundleItemType>Container</BundleItemType>
+                    <Caption>Menus</Caption>
+                  </ContainerBundleItem>
+                  <children>
+                    <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                      <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <ItemId>20192b8b-5b49-4cde-919d-8e7c96ceb7d1</ItemId>
+                        <Url>\Portal\SlxClient\MenuItems\mnuNew\mnuNew.menu.xml</Url>
+                        <BundleItemType>Context</BundleItemType>
+                        <Caption>New</Caption>
+                        <InstallOrderOptions>
+                          <BeforeAll>true</BeforeAll>
+                          <InstallAfter>00000000-0000-0000-0000-000000000000</InstallAfter>
+                        </InstallOrderOptions>
+                      </ModelItemBundleItem>
+                      <children>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+                          <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>2e37008d-3b36-41ac-a310-9881805ac292</ItemId>
+                            <Url>\Portal\SlxClient\MenuItems\mnuNew\MenuItems\new_account\new_account.menu.xml</Url>
+                            <BundleItemType>ModelItem</BundleItemType>
+                            <Caption>Account...</Caption>
+                            <InstallOrderOptions>
+                              <BeforeAll>false</BeforeAll>
+                              <InstallAfter>18ff2685-8014-4aca-86bf-96323a27367f</InstallAfter>
+                            </InstallOrderOptions>
+                          </ModelItemBundleItem>
+                        </bundleItem>
+                      </children>
+                    </bundleItem>
+                  </children>
+                </bundleItem>
+              </children>
+            </bundleItem>
+          </children>
+        </bundleItem>
+      </children>
+    </bundleItem>
+  </bundleItemHierarchy>
+  <bundleActionHierarchy>
+    <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.Platform.BundleModel.RootBundleAction, Sage.Platform.BundleModel">
+      <RootBundleAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <ItemId>\Actions</ItemId>
+        <Url>\Actions</Url>
+        <BundleItemType>Container</BundleItemType>
+        <Caption>Bundle Actions</Caption>
+      </RootBundleAction>
+      <children>
+        <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.SchemaContainerAction, Sage.SalesLogix.BundleModel.BundleActions">
+          <SchemaContainerAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <ItemId>\Actions\Schema</ItemId>
+            <Url>\Actions\Schema</Url>
+            <BundleItemType>Container</BundleItemType>
+            <Caption>Schema</Caption>
+          </SchemaContainerAction>
+          <children>
+            <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateTableAction, Sage.SalesLogix.BundleModel.BundleActions">
+              <CreateTableAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <ItemId>\Actions\Schema\CreateTable\OPPCLOSEDCUSTCODE.xml</ItemId>
+                <Url>\Actions\Schema\CreateTable\OPPCLOSEDCUSTCODE.xml</Url>
+                <BundleItemType>Action</BundleItemType>
+                <Caption>CreateTable OPPCLOSEDCUSTCODE</Caption>
+                <TableName>OPPCLOSEDCUSTCODE</TableName>
+                <AllJoins>true</AllJoins>
+                <JoinIds>
+                  <string>jDEMOA000004</string>
+                </JoinIds>
+                <TableInfoTypeName>Sage.SalesLogix.SchemaSupport.SlxTableInfo, Sage.SalesLogix.SchemaSupport</TableInfoTypeName>
+              </CreateTableAction>
+              <children>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.OPPCLOSEDCUSTCODEID.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.OPPCLOSEDCUSTCODEID.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField OPPCLOSEDCUSTCODE.OPPCLOSEDCUSTCODEID</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>OPPCLOSEDCUSTCODE</TableName>
+                    <FieldName>OPPCLOSEDCUSTCODEID</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.OPPORTUNITYID.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.OPPORTUNITYID.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField OPPCLOSEDCUSTCODE.OPPORTUNITYID</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>OPPCLOSEDCUSTCODE</TableName>
+                    <FieldName>OPPORTUNITYID</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.CREATEUSER.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.CREATEUSER.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField OPPCLOSEDCUSTCODE.CREATEUSER</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>OPPCLOSEDCUSTCODE</TableName>
+                    <FieldName>CREATEUSER</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.CREATEDATE.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.CREATEDATE.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField OPPCLOSEDCUSTCODE.CREATEDATE</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>OPPCLOSEDCUSTCODE</TableName>
+                    <FieldName>CREATEDATE</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.MODIFYUSER.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.MODIFYUSER.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField OPPCLOSEDCUSTCODE.MODIFYUSER</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>OPPCLOSEDCUSTCODE</TableName>
+                    <FieldName>MODIFYUSER</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.MODIFYDATE.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.MODIFYDATE.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField OPPCLOSEDCUSTCODE.MODIFYDATE</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>OPPCLOSEDCUSTCODE</TableName>
+                    <FieldName>MODIFYDATE</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.AREAMSTID.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.AREAMSTID.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField OPPCLOSEDCUSTCODE.AREAMSTID</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>OPPCLOSEDCUSTCODE</TableName>
+                    <FieldName>AREAMSTID</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.CUSTOMERCODE.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.CUSTOMERCODE.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField OPPCLOSEDCUSTCODE.CUSTOMERCODE</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>OPPCLOSEDCUSTCODE</TableName>
+                    <FieldName>CUSTOMERCODE</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+                <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.SalesLogix.BundleModel.BundleActions.CreateFieldAction, Sage.SalesLogix.BundleModel.BundleActions">
+                  <CreateFieldAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.CAREA.xml</ItemId>
+                    <Url>\Actions\Schema\CreateField\OPPCLOSEDCUSTCODE.CAREA.xml</Url>
+                    <BundleItemType>Action</BundleItemType>
+                    <Caption>CreateField OPPCLOSEDCUSTCODE.CAREA</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                    <ColumnTypeName>Sage.SalesLogix.SchemaSupport.SlxDataColumn, Sage.SalesLogix.SchemaSupport</ColumnTypeName>
+                    <TableName>OPPCLOSEDCUSTCODE</TableName>
+                    <FieldName>CAREA</FieldName>
+                  </CreateFieldAction>
+                </bundleItem>
+              </children>
+            </bundleItem>
+          </children>
+        </bundleItem>
+      </children>
+    </bundleItem>
+  </bundleActionHierarchy>
+  <itemsToDelete />
+  <globalResources />
+</BundleManifest>

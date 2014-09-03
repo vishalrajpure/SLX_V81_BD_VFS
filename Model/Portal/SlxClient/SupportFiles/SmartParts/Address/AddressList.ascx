@@ -21,6 +21,7 @@
     <Columns>
         <asp:ButtonField CommandName="Edit" Text="<%$ resources: AddressGrid_Edit.Text %>" /> 
         <asp:ButtonField CommandName="Delete" Text="<%$ resources: AddressGrid_Delete.Text %>" />
+        <asp:ButtonField CommandName="Map" Visible ="false" Text="Show Map"/>
         <asp:TemplateField HeaderText="<%$ resources: AddressGrid_PrimaryAddress.HeaderText %>" SortExpression="PrimaryAddress">
             <ItemTemplate><%# ConvertBoolean(Eval("PrimaryAddress")) %></ItemTemplate>
         </asp:TemplateField>

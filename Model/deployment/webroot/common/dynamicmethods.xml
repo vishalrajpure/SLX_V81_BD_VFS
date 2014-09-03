@@ -6542,6 +6542,70 @@
     <dynamicMethod xsi:type="SimpleMethod" methodName="OAuthProviderScope.OnCreate.postflush" methodReturnMode="None" returnType="System.Void">
       <targets />
     </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="OppClosedCustCode.OnAfterDelete" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterDelete" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="OppClosedCustCode.OnAfterDelete.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="OppClosedCustCode.OnAfterInsert" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterInsert" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="OppClosedCustCode.OnAfterInsert.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="OppClosedCustCode.OnAfterUpdate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnAfterUpdate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="OppClosedCustCode.OnAfterUpdate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="OppClosedCustCode.OnBeforeDelete" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeDelete" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="OppClosedCustCode.OnBeforeDelete.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="OppClosedCustCode.OnBeforeInsert" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeInsert" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="OppClosedCustCode.OnBeforeInsert.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="OppClosedCustCode.OnBeforeUpdate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnBeforeUpdate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="OppClosedCustCode.OnBeforeUpdate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="OppClosedCustCode.OnCreate" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <primaryTarget targetType="Sage.Platform.Orm.DefaultCRUDEventHandler, Sage.Platform" targetMethod="OnCreate" />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="SimpleMethod" methodName="OppClosedCustCode.OnCreate.postflush" methodReturnMode="None" returnType="System.Void">
+      <targets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="CustomerCodeDetails.OnLoad1" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <postExecuteTargets />
+    </dynamicMethod>
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="CustomerCodeDetails.QFButton2_OnClick" methodReturnMode="None" returnType="System.Void">
+      <preExecuteTargets />
+      <postExecuteTargets />
+    </dynamicMethod>
     <dynamicMethod xsi:type="BusinessRuleMethod" methodName="Opportunity.CalculateSalesPotential" methodReturnMode="Object" returnType="System.Double">
       <preExecuteTargets />
       <primaryTarget targetType="Sage.SalesLogix.Opportunity.Rules, Sage.SalesLogix.BusinessRules" targetMethod="CalculateSalesPotential" />
@@ -6723,12 +6787,12 @@
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.OpportunityClosedWonEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="cmdCancel_OnClickStep1" />
       <postExecuteTargets />
     </dynamicMethod>
-    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="9b29144b-15ff-4341-a58d-928964044972.lueCompetitorReplaced_OnChange" methodReturnMode="None" returnType="System.Void">
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="18767034-dc80-4bed-bfca-6c0ed29503de.lueCompetitorReplaced_OnChange" methodReturnMode="None" returnType="System.Void">
       <preExecuteTargets />
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.OpportunityClosedWonEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="lueCompetitorReplaced_OnChange" />
       <postExecuteTargets />
     </dynamicMethod>
-    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="fcfb6462-f045-4ff0-8801-d32ecb196282.LoadAction1" methodReturnMode="None" returnType="System.Void">
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="d543b3fc-d36d-4a69-9519-a4f34d1c6570.LoadAction1" methodReturnMode="None" returnType="System.Void">
       <preExecuteTargets />
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.OpportunityCompetitorsEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="LoadAction1Step1" />
       <postExecuteTargets />
@@ -6743,7 +6807,7 @@
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.OpportunityCompetitorsEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="OnLoad1Step" />
       <postExecuteTargets />
     </dynamicMethod>
-    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="fac144a8-e9b5-4f7f-bd3a-efb6b983adea.SetDefaultOppContactInfo" methodReturnMode="None" returnType="System.Void">
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="a557995e-c90a-46d4-acbb-c4af6ff78fce.SetDefaultOppContactInfo" methodReturnMode="None" returnType="System.Void">
       <preExecuteTargets />
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.OpportunityContactsEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="SetDefaultOppContactInfo" />
       <postExecuteTargets />
@@ -8475,22 +8539,22 @@
       <primaryTarget targetType="Sage.SalesLogix.SalesOrder.SalesOrder, Sage.SalesLogix.BusinessRules" targetMethod="UnLockPricingForSOItems" />
       <postExecuteTargets />
     </dynamicMethod>
-    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="f0e60093-41ee-486a-97fe-465bb542fad6.lstbxBillingAddress_OnChange" methodReturnMode="None" returnType="System.Void">
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="9bc2f861-ccc1-418c-8cd3-d5e44bb96106.lstbxBillingAddress_OnChange" methodReturnMode="None" returnType="System.Void">
       <preExecuteTargets />
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.BillToShipToEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="lstbxBillingAddress_OnChange" />
       <postExecuteTargets />
     </dynamicMethod>
-    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="beea4424-bf63-4293-b568-400496126967.lstbxShippingAddress_OnChange" methodReturnMode="None" returnType="System.Void">
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="19642c88-286d-40e3-9fef-720c8a75de2b.lstbxShippingAddress_OnChange" methodReturnMode="None" returnType="System.Void">
       <preExecuteTargets />
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.BillToShipToEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="lstbxShippingAddress_OnChange" />
       <postExecuteTargets />
     </dynamicMethod>
-    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="d34041a7-db1a-44fd-9467-404e77a5709c.lueNameBilling_OnChange" methodReturnMode="None" returnType="System.Void">
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="a334a62c-9ffa-4615-8a9e-af89b73e6c56.lueNameBilling_OnChange" methodReturnMode="None" returnType="System.Void">
       <preExecuteTargets />
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.BillToShipToEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="lueNameBilling_OnChange" />
       <postExecuteTargets />
     </dynamicMethod>
-    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="4f3ff085-8a82-450b-b26e-77b1faa46d8c.lueNameShipping_OnChange" methodReturnMode="None" returnType="System.Void">
+    <dynamicMethod xsi:type="BusinessRuleMethod" methodName="a7ea0a45-5840-4be3-8cca-17cc55eeb77c.lueNameShipping_OnChange" methodReturnMode="None" returnType="System.Void">
       <preExecuteTargets />
       <primaryTarget targetType="Sage.BusinessRules.CodeSnippets.BillToShipToEventHandlers, Sage.SnippetLibrary.CSharp" targetMethod="lueNameShipping_OnChange" />
       <postExecuteTargets />

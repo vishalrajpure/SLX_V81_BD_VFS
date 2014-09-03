@@ -14,17 +14,24 @@
 
         return false;
     }
-
+    function querySt(ji) {
+        hu = window.location.search.substring(1);
+        gy = hu.split("&");
+        var type = "";
+        for (i = 0; i < gy.length; i++) {
+            ft = gy[i].split("=");
+            if (ft[0] == ji) {
+                type = ft[1];
+            }
+        }
+        return type;
+    }
 </script>
-
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
 <script lang="javascript" type="text/javascript">
 
     function Get() {
-        //alert("1");
-        var geocoder = new google.maps.Geocoder();
-        //alert(geocoder);
+        //var geocoder = new google.maps.Geocoder();
         var df = true;
         var address = document.getElementById('MainContent_AddEditAddress_txtAddress1').value + ',' + document.getElementById('MainContent_AddEditAddress_txtAddress2').value + ',' + document.getElementById('MainContent_AddEditAddress_txtAddress3').value + ',' + document.getElementById('MainContent_AddEditAddress_pklCity_Text').value + ',' + document.getElementById('MainContent_AddEditAddress_pklState_Text').value + ',' + document.getElementById('MainContent_AddEditAddress_pklCountry_Text').value + ',' + document.getElementById('MainContent_AddEditAddress_txtPostalCode').value;
         var add1 = document.getElementById('MainContent_AddEditAddress_txtAddress1').value;
@@ -38,29 +45,36 @@
             return false;
         }
 
-       // alert(address);
-        geocoder.geocode({ 'address': address }, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                var latitude = results[0].geometry.location.lat();
-                var longitude = results[0].geometry.location.lng();
-                document.cookie = "Latitude1=" + latitude;
-                document.cookie = "Logitute1=" + longitude;
-                document.getElementById('MainContent_AddEditAddress_btngetGL').click();
-                //document.getElementById('MainContent_AccountDetails_Address').value = address;
-                df = true;
-            } else {
-                alert("No Lat/Long match found for specified Address, Please Correct the address.")
-                df = false;
-            }
-        }); 
-        
-        
+        /* geocoder.geocode({ 'address': address }, function (results, status) {
+             if (status == google.maps.GeocoderStatus.OK) {
+                 var latitude = results[0].geometry.location.lat();
+                 var longitude = results[0].geometry.location.lng();
+                 document.cookie = "Latitude1=" + latitude;
+                 document.cookie = "Logitute1=" + longitude;
+                 var type = querySt("EntityID");
+                 if(type == "123123123123")
+                 {
+                     window.opener.document.getElementById('MainContent_InsertContact_txtAccountAddress').value = address;
+                     
+                 }
+                 document.getElementById('MainContent_AddEditAddress_btngetGL').click();
+                 //document.getElementById('MainContent_AccountDetails_Address').value = address;
+                 df = true;
+             }else {
+                     alert("Geocode was not successful for the following reason: " + status);
+                     df = false;
+                 }
+         
+         }); */
+        var type = querySt("EntityID");
+        if (type == "123123123123") {
+            window.opener.document.getElementById('MainContent_InsertContact_txtAccountAddress').value = address;
+
+        }
+
         return df;
     }
 </script>
-
-
-
 <div style="display:none">
     <asp:Panel ID="AddressForm_LTools" runat="server"></asp:Panel>
     <asp:Panel ID="AddressForm_CTools" runat="server"></asp:Panel>
@@ -197,29 +211,52 @@
     </tr>
     <tr>
         <td>
-            <asp:Label ID="Label2" AssociatedControlID="txtLatitude" runat="server" Text="Latitude:" ForeColor="Red"></asp:Label>
+        
+           <asp:Label ID="txtLatitude_lbl" AssociatedControlID="txtLatitude" runat="server" Text="Latitude:" ></asp:Label>
+        </td>
+         <td>
+            <SalesLogix:NumericControl runat="server" ID="txtLatitude"
+        MaxLength="13" DecimalDigits="10" Strict="False"  />
+         
+       
+            </td>
+        
+<!-- <td>
+            <asp:Label ID="Label2" AssociatedControlID="txtLatitude1" runat="server" Text="Latitude:" ForeColor="Red"></asp:Label>
         </td>
         <td style="width: 150px;">
-            <asp:TextBox runat="server" Enabled = "false" ID="txtLatitude" Style="width: 100%" MaxLength="64" />
-        </td>
+            <asp:TextBox runat="server" Enabled = "true" ID="txtLatitude1" Style="width: 100%" MaxLength="64" />
+        </td>-->
     </tr>
     <tr>
         <td>
-            <asp:Label ID="Label3" AssociatedControlID="txtLogitute" runat="server" Text="Logitute:" ForeColor="Red"></asp:Label>
+         
+           <asp:Label ID="txtLogitute_lbl" AssociatedControlID="txtLogitute" runat="server" Text="Longitude:" ></asp:Label>
+         </td>
+          <td> 
+            <SalesLogix:NumericControl runat="server" ID="txtLogitute"
+        MaxLength="13" DecimalDigits="10" Strict="False" 
+         />
+         
+        </td>
+        <!--<td>
+            <asp:Label ID="Label3" AssociatedControlID="txtLogitute1" runat="server" Text="Logitute:" ForeColor="Red"></asp:Label>
         </td>
         <td style="width: 150px;">
-            <asp:TextBox runat="server" Enabled = "false" ID="txtLogitute" Style="width: 100%" MaxLength="64" />
-        </td>
+            <asp:TextBox runat="server" Enabled = "true" ID="txtLogitute1" Style="width: 100%" MaxLength="64" />
+        </td>-->
     </tr>
     
 </table>
 <div class="button-bar alignright">
-    <asp:Button runat="server" ID="btngetGL1" CssClass="slxbutton" ToolTip="Ok" Text="Ok" OnClientClick="return Get()"/>
-    <asp:Button runat="server" ID="btnSave1" CssClass="slxbutton" ToolTip="Ok" Text ="Ok" OnClientClick="return GetLocation()"/>  
+    <asp:Button runat="server" ID="btngetGL1" CssClass="slxbutton" Visible="false" ToolTip="Ok" Text="Ok" OnClientClick="return Get()"/>
+    <asp:Button runat="server" ID="btngetGL" CssClass="slxbutton" OnClientClick="return Get()" ToolTip="Ok" Text="Ok" />
+    <asp:Button runat="server" ID="btnSave1" CssClass="slxbutton" Visible="false" ToolTip="Ok" Text ="Ok" OnClientClick="return GetLocation()"/> 
+    <asp:Button runat="server" ID="btnSave" CssClass="slxbutton" ToolTip="Ok" Text ="Ok" OnClientClick="return GetLocation()"/> 
     <asp:Button runat="server" ID="btnCancel" CssClass="slxbutton" ToolTip="btnCancel" meta:resourcekey="btnCancel" /> 
     <asp:Button runat="server" ID="btnCancelDetail" CssClass="slxbutton" ToolTip="Cancel" Text="Cancel" OnClick="btnCancelDetail_Click" /> 
 </div>
 <div>
-    <asp:Button runat="server" ID="btngetGL" CssClass="slxbutton" Width="1px" Height="1px"/>
-    <asp:Button runat="server" ID="btnSave" CssClass="slxbutton" Width="1px" Height="1px"/>
+    <!--<asp:Button runat="server" ID="btngetGL2" CssClass="slxbutton" Width="1px" Height="1px"/>
+    <asp:Button runat="server" ID="btnSave2" CssClass="slxbutton" Width="1px" Height="1px"/>-->
 </div>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<method xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="OrmOtherMethod" id="5dc1ea79-6759-49c8-b04f-4443654f6475" lastModifiedUtc="2014-08-22T08:10:00.133869Z" name="QFButton2_OnClick" methodType="Other" actionType="None" returnMode="None" isInstance="false" containerName="CustomerCodeDetails">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmOtherMethod" />
+  </ExtendedPropertiesCollection>
+  <parameter>
+    <OrmEntityMethodParam id="55e26e1c-fd44-4707-873b-7fcdd5df123b" paramName="form" sequence="0" paramType="ICustomerCodeDetails" />
+    <OrmEntityMethodParam id="0a7eabe9-0381-4ed3-a56b-917724259231" paramName="args" sequence="0" paramType="EventArgs" />
+  </parameter>
+  <preExecuteTargets />
+  <methodTargets />
+  <postExecuteTargets />
+  <postFlushTargets />
+</method>

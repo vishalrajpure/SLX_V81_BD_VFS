@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<relationship xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="adaba794-71b5-409a-be94-ec00121229f5" lastModifiedUtc="2014-08-22T13:54:20.4955741Z" parentEntityId="3172551b-f476-45ea-98de-2bb04ddba687" childEntityId="9a9b36bc-66f4-4ef5-8fb2-d971b91d39dd">
+  <extendedMetaData />
+  <ExtendedPropertiesCollection>
+    <extendee type="Sage.Platform.Orm.Entities.OrmRelationship" />
+  </ExtendedPropertiesCollection>
+  <parentProperty id="6d930cf3-6ef0-43d7-9162-968783e5c0b2" lastModifiedUtc="2014-08-22T13:54:17.6874134Z" name="OppClosedCustCodes" audited="false">
+    <ExtendedPropertiesCollection>
+      <extendee type="Sage.Platform.Orm.Entities.OrmRelationProperty">
+        <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">
+          <OrmEntityPropertySDataExtension generate="true" />
+        </extender>
+      </extendee>
+    </ExtendedPropertiesCollection>
+    <SystemDataType guid="2f770d03-c93c-4605-8ae8-7cdae04830d7">
+      <RelationshipDataType />
+    </SystemDataType>
+  </parentProperty>
+  <childProperty id="43bfff6f-55ca-431d-8108-8f7a8423efe2" lastModifiedUtc="2014-08-22T13:54:17.6904136Z" name="Opportunity" audited="false">
+    <ExtendedPropertiesCollection>
+      <extendee type="Sage.Platform.Orm.Entities.OrmRelationProperty">
+        <extender guid="ae60621d-9d91-3d9a-b9fb-eb6c8be12131">
+          <OrmEntityPropertySDataExtension generate="true" />
+        </extender>
+      </extendee>
+    </ExtendedPropertiesCollection>
+    <SystemDataType guid="2f770d03-c93c-4605-8ae8-7cdae04830d7">
+      <RelationshipDataType />
+    </SystemDataType>
+  </childProperty>
+  <column>
+    <OrmRelationshipColumn id="7992b58c-dd42-42cf-a317-4a28b14904f2" parentPropertyId="3e3db591-f7de-435b-a421-ef2c5e72aa2b" childPropertyId="10d68ef7-c8ea-4f1e-8621-d6222cdf0628" ordinal="0" />
+  </column>
+</relationship>

@@ -13,7 +13,7 @@ lueAccountName_lbl.ForeColor = System.Drawing.Color.Red;
 phnWorkPhone.ForeColor = System.Drawing.Color.Red;
 //adrContactAddress_lbl.ForeColor = System.Drawing.Color.Red;
 
-Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Entity.Interfaces.IContact;   
+
 /*if (contact != null)
 {
     Sage.Entity.Interfaces.IAddress objadd = Sage.Platform.EntityFactory.GetById&lt;Sage.Entity.Interfaces.IAddress&gt;(contact.Address.Id.ToString());
@@ -27,122 +27,139 @@ Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Ent
         txtAccountAddress.Text = _add;
     }
 }*/
-Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
 
-string _UserId = "", AccManager = "";
-Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
-_UserId = _IUserService.UserId; //get login Userid
-AccManager = Convert.ToString(contact.AccountManager.Id);
-if (AccManager.Trim() == _UserId.Trim() || Convert.ToString(contact.Account.AccountManager.Id) == _UserId.Trim() )
+if(!Page.IsPostBack)
 {
-    nmeContactName.Enabled = true;
-    lueAccountName.Enabled = true;
-    pklTitle.Enabled = true;
-    txtAssistant.Enabled = true;
-    txtSalutation.Enabled = true;
-    btnAddress.Enabled = true;
-   // txtAccountAddress.Enabled = true;
-    phnWorkPhone.Enabled = true;
-    phnFax.Enabled = true;
-    phnMobilePhone.Enabled = true;
-    phnHomePhone.Enabled = true;
-    phnOtherPhone.Enabled = true;
+	System.Collections.Hashtable keyPairs = new System.Collections.Hashtable();
+    string iniPath = Server.MapPath(@"Temp") + "\\Config.ini";
+    System.IO.TextReader
+        iniFile = null;
+    String strLine = null;
+    String currentRoot = null;
+    String[] keyPair = null;
+    string Conn = "";
 
-    cboPreferredContact.Enabled = true;
-	//cboPreferredContact.IsReadOnly = false;
-    emlEmailAddress.Enabled = true;
-    //urlWebAddress.Enabled = true;
-    chkIsPrimary.Enabled = true;
-    //chkIsServiceAuthorized.Enabled = true;
-    //chkDoNotSolicit.Enabled = true;
-    //chkDoNotEmail.Enabled = true;
-    //chkDoNotPhone.Enabled = true;
-    //chkDoNotMail.Enabled = true;
-    //chkDoNotFax.Enabled = true;
-    ownContactOwner.Enabled = true;
-    usrAcctMgr.Enabled = true;
 
-    pklContactType.Enabled = true;
-    pklContactStatus.Enabled = true;
-    //adrContactAddress.Enabled = true;
-    cmdSaveContactDetails.Enabled = true;
-	cmdDelete.Enabled = true;
-	cmdReset.Enabled = true;
-	cmdMoveContact.Enabled = true;
-	//pklContactType.IsReadOnly = false;
-	//pklContactStatus.IsReadOnly = false;
-	
-/* if (tabWorkspace != null)
+    if (System.IO.File.Exists(iniPath))
     {
-        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabopportunity = null;
-        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tableadsources = null;
-        foreach (Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tab in tabWorkspace.Tabs)
+        iniFile = new System.IO.StreamReader(iniPath);
+        strLine = iniFile.ReadLine();
+        while (strLine != null)
         {
-            if (tab.ID == "ContactOpportunities_Read")
+            strLine = strLine.Trim();//.ToUpper();
+            if (strLine != "")
             {
-                tabopportunity = tab;     
-				 
+                if (strLine.StartsWith("[") &amp;&amp; strLine.EndsWith("]"))
+                {
+                    currentRoot = strLine.Substring(1, strLine.Length - 2);
+                }
+                else
+                {
+                    keyPair = strLine.Split(new char[] { '=' }, 2);
+
+                    if (keyPair[0].ToString() == "constr")
+                    {
+                        Conn = keyPair[1].ToString();
+                        break;
+                    }
+                }
             }
-            if (tab.ID == "ContactLeadSources_Read")
-            {
-                tableadsources = tab;
-            }
+            strLine = iniFile.ReadLine();
         }
-        tabWorkspace.Tabs.Remove(tabopportunity);
-        tabWorkspace.Tabs.Remove(tableadsources);
-    }    */
-}
-else
-{
-    nmeContactName.Enabled = false;
-    lueAccountName.Enabled = false;
-    pklTitle.Enabled = false;
-	//pklTitle.IsReadOnly = false;
-    txtAssistant.Enabled = false;
-    txtSalutation.Enabled = false;
-    btnAddress.Enabled = false;
-    //txtAccountAddress.Enabled = false;
-    phnWorkPhone.Enabled = false;
-    phnFax.Enabled = false;
-    phnMobilePhone.Enabled = false;
-    phnHomePhone.Enabled = false;
-    phnOtherPhone.Enabled = false;
+        if (iniFile != null)
+            iniFile.Close();
 
-    cboPreferredContact.Enabled = false;
-	//cboPreferredContact.IsReadOnly = false;
-    emlEmailAddress.Enabled = false;
-    //urlWebAddress.Enabled = false;
-    chkIsPrimary.Enabled = false;
-    ownContactOwner.Enabled = false;
-    usrAcctMgr.Enabled = false;
-
-    pklContactType.Enabled = false;
-	//pklContactType.IsReadOnly = true;
-    pklContactStatus.Enabled = false;
-	//pklContactStatus.IsReadOnly = true;
-    //adrContactAddress.Enabled = false;
-    cmdSaveContactDetails.Enabled = false;
-	cmdDelete.Enabled = false;
-	cmdReset.Enabled = false;
-	cmdMoveContact.Enabled = false;
-	/*if (tabWorkspace != null)
+    }
+    Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Entity.Interfaces.IContact;   
+    //Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace tabWorkspace = PageWorkItem.Workspaces["TabControl"] as Sage.Platform.WebPortal.Workspaces.Tab.TabWorkspace;
+    string _UserId = "", AccManager = "";
+	Sage.Platform.Security.IUserService _IUserService = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Security.IUserService&gt;();
+	_UserId = _IUserService.UserId; //get login Userid
+	AccManager = Convert.ToString(contact.AccountManager.Id);
+    string qry = "select  USERID from (select USERID,UserCode, nullif(MANAGERID,USERID) MANAGER from USERSECURITY) connect by nocycle prior MANAGER= USERID start with USERID = ('" + contact.Account.AccountManager.Id.ToString() + "')" +
+				" Union select  USERID from (select USERID,UserCode, nullif(MANAGERID,USERID) MANAGER from USERSECURITY) connect by nocycle prior MANAGER= USERID start with USERID = ('" + contact.AccountManager.Id.ToString() + "')";;
+    Sage.Platform.Data.IDataService service1 = Sage.Platform.Application.ApplicationContext.Current.Services.Get&lt;Sage.Platform.Data.IDataService&gt;();
+    //System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(service1.GetConnectionString());
+	System.Data.OleDb.OleDbConnection conObj = new System.Data.OleDb.OleDbConnection(Conn);//"Provider=OraOLEDB.Oracle.1;Password=Ma$t3rk3y;Persist Security Info=True;User ID=sysdba;Data Source=BLUEDART");
+    System.Data.OleDb.OleDbDataAdapter dataAdapterObj = new System.Data.OleDb.OleDbDataAdapter(qry, conObj);
+    System.Data.DataTable dt = new System.Data.DataTable();
+    dataAdapterObj.Fill(dt);
+    bool flag = false;
+    if (dt.Rows.Count &gt; 0)
     {
-        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tabopportunity = null;
-        Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tableadsources = null;
-        foreach (Sage.Platform.WebPortal.Workspaces.Tab.TabInfo tab in tabWorkspace.Tabs)
+        for (int i = 0; i &lt; dt.Rows.Count; i++)
         {
-            if (tab.ID == "ContactOpportunities")
+            if ((AccManager.Trim() == _UserId.Trim() || Convert.ToString(dt.Rows[i][0].ToString()).Trim() == _UserId.Trim()))
             {
-                tabopportunity = tab;   
-            }
-            if (tab.ID == "ContactLeadSources")
-            {
-                tableadsources = tab;      
-            }
-        }
-        tabWorkspace.Tabs.Remove(tabopportunity);
-        tabWorkspace.Tabs.Remove(tableadsources);
-    }   */ 
+				nmeContactName.Enabled = true;
+			    lueAccountName.Enabled = true;
+			    pklTitle.Enabled = true;
+			    txtAssistant.Enabled = true;
+			    txtSalutation.Enabled = true;
+			    btnAddress.Enabled = true;
+			   // txtAccountAddress.Enabled = true;
+			    phnWorkPhone.Enabled = true;
+			    phnFax.Enabled = true;
+			    phnMobilePhone.Enabled = true;
+			    phnHomePhone.Enabled = true;
+			    phnOtherPhone.Enabled = true;
+
+			    cboPreferredContact.Enabled = true;
+				//cboPreferredContact.IsReadOnly = false;
+			    emlEmailAddress.Enabled = true;
+			    //urlWebAddress.Enabled = true;
+			    chkIsPrimary.Enabled = true;
+			    
+			    ownContactOwner.Enabled = true;
+			    usrAcctMgr.Enabled = true;
+
+			    pklContactType.Enabled = true;
+			    pklContactStatus.Enabled = true;
+			    //adrContactAddress.Enabled = true;
+			    cmdSaveContactDetails.Enabled = true;
+				cmdDelete.Enabled = true;
+				cmdReset.Enabled = true;
+				cmdMoveContact.Enabled = true;
+				flag = true;
+				
+			}
+		}
+	}
+	if(flag == false)
+	{
+		nmeContactName.Enabled = false;
+	    lueAccountName.Enabled = false;
+	    pklTitle.Enabled = false;
+		//pklTitle.IsReadOnly = false;
+	    txtAssistant.Enabled = false;
+	    txtSalutation.Enabled = false;
+	    btnAddress.Enabled = false;
+	    //txtAccountAddress.Enabled = false;
+	    phnWorkPhone.Enabled = false;
+	    phnFax.Enabled = false;
+	    phnMobilePhone.Enabled = false;
+	    phnHomePhone.Enabled = false;
+	    phnOtherPhone.Enabled = false;
+
+	    cboPreferredContact.Enabled = false;
+		//cboPreferredContact.IsReadOnly = false;
+	    emlEmailAddress.Enabled = false;
+	    //urlWebAddress.Enabled = false;
+	    chkIsPrimary.Enabled = false;
+	    ownContactOwner.Enabled = false;
+	    usrAcctMgr.Enabled = false;
+
+	    pklContactType.Enabled = false;
+		//pklContactType.IsReadOnly = true;
+	    pklContactStatus.Enabled = false;
+		//pklContactStatus.IsReadOnly = true;
+	    //adrContactAddress.Enabled = false;
+	    cmdSaveContactDetails.Enabled = false;
+		cmdDelete.Enabled = false;
+		cmdReset.Enabled = false;
+		cmdMoveContact.Enabled = false;
+		
+	}
 }
 </CSharpCodeSnippet>
         </CSharpSnippetActionItem>
@@ -168,12 +185,10 @@ else
   <Controls>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXPersonName, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXPersonName>
-        <CaptionAlignment>left</CaptionAlignment>
-        <ControlLabelPlacement>left</ControlLabelPlacement>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
         <Column>0</Column>
         <Row>0</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
         <ControlId>nmeContactName</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
@@ -212,7 +227,9 @@ else
             <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
         </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <NamePrefix />
         <NameFirst />
@@ -449,7 +466,7 @@ else
                   <ResourceKey>btnAddress</ResourceKey>
                   <Action typeName="Sage.Platform.QuickForms.ActionItems.CSharpSnippetActionItem, Sage.Platform.QuickForms">
                     <CSharpSnippetActionItem>
-                      <MethodName />
+                      <MethodName>btnAddress_ClickAction</MethodName>
                       <CSharpCodeSnippet>if (DialogService != null)
 {
 	Sage.Entity.Interfaces.IContact contact = this.BindingSource.Current as Sage.Entity.Interfaces.IContact;   
@@ -463,8 +480,14 @@ else
 		
 	    DialogService.ShowDialog();
 	}*/
-	string script_FormatNumber1 = "window.showModalDialog('InsertAddress.aspx?type=Account&amp;id=" + contact.Address.Id.ToString() + "', '_blank', 'height=440,width=100,status=yes,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=no,titlebar=no' )";
-    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
+	if(nmeContactName.Enabled == false || nmeContactName.ReadOnly == true)
+	{
+	}
+	else
+	{
+		string script_FormatNumber1 = "window.showModalDialog('InsertAddress.aspx?type=Account&amp;id=" + contact.Address.Id.ToString() + "', '_blank', 'dialogHeight=480,dialogWidth=100,status=yes,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=no,titlebar=no' )";
+    	ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
+	}
 }</CSharpCodeSnippet>
                     </CSharpSnippetActionItem>
                   </Action>
@@ -481,6 +504,7 @@ else
               <QFButton>
                 <Column>0</Column>
                 <Row>0</Row>
+                <Visible>false</Visible>
                 <HotKey>0</HotKey>
                 <TabIndex>0</TabIndex>
                 <ControlId>btnShowMap</ControlId>
@@ -498,7 +522,8 @@ else
                     <CSharpSnippetActionItem>
                       <MethodName>btnShowMap_ClickAction</MethodName>
                       <CSharpCodeSnippet>Sage.Entity.Interfaces.IContact cnt = BindingSource.Current as Sage.Entity.Interfaces.IContact;
-string url = "http://maps.google.com/maps?q=" + cnt.Address.Latitude + "," + cnt.Address.Logitude;
+//string url = "http://maps.google.com/maps?key=AIzaSyDKK-1E4tfTgGlBptK5TCCfap5coV_kzC0&amp;q=" + cnt.Address.Latitude + "," + cnt.Address.Logitude;
+string url = "ViewMap.html?latlon=" + cnt.Address.Latitude + "," + cnt.Address.Logitude;
 ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open('" + url + "');",true);</CSharpCodeSnippet>
                     </CSharpSnippetActionItem>
                   </Action>
@@ -871,12 +896,10 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
     </Control>
     <Control typeName="Sage.Platform.QuickForms.QFControls.QFListBox, Sage.Platform.QuickForms.QFControls">
       <QFListBox>
-        <CaptionAlignment>left</CaptionAlignment>
-        <ControlLabelPlacement>left</ControlLabelPlacement>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
         <Column>1</Column>
         <Row>5</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
         <ControlId>cboPreferredContact</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
@@ -887,7 +910,9 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
             <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
         </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <SelectedIndex>-1</SelectedIndex>
         <Items>
@@ -1009,12 +1034,10 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
     </Control>
     <Control typeName="Sage.SalesLogix.QuickForms.QFControls.QFSLXEmail, Sage.SalesLogix.QuickForms.QFControls">
       <QFSLXEmail>
-        <CaptionAlignment>left</CaptionAlignment>
-        <ControlLabelPlacement>left</ControlLabelPlacement>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
         <Column>2</Column>
         <Row>2</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
         <ControlId>emlEmailAddress</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
@@ -1025,7 +1048,9 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
             <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
         </DataBindings>
+        <ControlLabelPlacement>left</ControlLabelPlacement>
         <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <MaxLength>128</MaxLength>
         <OnChangeAction>
@@ -1134,12 +1159,10 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
     </Control>
     <Control typeName="Sage.Platform.QuickForms.QFControls.QFCheckBox, Sage.Platform.QuickForms.QFControls">
       <QFCheckBox>
-        <CaptionAlignment>left</CaptionAlignment>
-        <ControlLabelPlacement>right</ControlLabelPlacement>
-        <HotKey>0</HotKey>
-        <TabIndex>0</TabIndex>
         <Column>2</Column>
         <Row>5</Row>
+        <HotKey>0</HotKey>
+        <TabIndex>0</TabIndex>
         <ControlId>chkIsPrimary</ControlId>
         <DataBindings>
           <QuickFormPropertyDataBindingDefinition>
@@ -1150,7 +1173,9 @@ ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open(
             <NullValueString />
           </QuickFormPropertyDataBindingDefinition>
         </DataBindings>
+        <ControlLabelPlacement>right</ControlLabelPlacement>
         <ExtendedProperties />
+        <CaptionAlignment>left</CaptionAlignment>
         <StyleScheme />
         <Checked>false</Checked>
         <OnChangeAction>

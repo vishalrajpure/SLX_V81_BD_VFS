@@ -162,6 +162,15 @@ public partial class SmartParts_AddressList : EntityBoundSmartPartInfoProvider
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Validate1", script_FormatNumber1, true);
             return;
         }
+        if (e.CommandName.Equals("Map"))
+        {
+            int rowIndex = Convert.ToInt32(e.CommandArgument);
+            string Id = AddressGrid.DataKeys[rowIndex].Value.ToString();
+            IAddress adr = Sage.Platform.EntityFactory.GetById<IAddress>(Id);
+            string url = "ViewMap.html?latlon=" + adr.Latitude + "," + adr.Logitude;
+            ScriptManager.RegisterStartupScript(Page, typeof(Page), "ShowMap", "window.open('" + url + "');", true);
+            return;
+        }
         if (e.CommandName.Equals("Delete"))
         {
             int rowIndex = Convert.ToInt32(e.CommandArgument);

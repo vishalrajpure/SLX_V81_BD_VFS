@@ -14,4 +14,5 @@
   <Item Id="8945017e-d31f-49c5-8b2c-e05d1e1434c5">navEntitiesProcesses.navitem.xml</Item>
   <Item Id="d88f825d-f4c4-414b-89b3-5b6223be5548">navEntitiesProductsSales.navitem.xml</Item>
   <Item Id="b4c72c37-eade-4e02-b9b9-864c03168050">navEntitiesPackages.navitem.xml</Item>
+  <Item Id="959f15b3-cef1-4843-b172-ff28251e0b03">navLeadPortal.navitem.xml</Item>
 </ModelItems>

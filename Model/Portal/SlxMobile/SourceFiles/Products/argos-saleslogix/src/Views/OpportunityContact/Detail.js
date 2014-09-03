@@ -82,7 +82,7 @@ define('Mobile/SalesLogix/Views/OpportunityContact/Detail', [
         },
         createToolLayout: function() {
             return this.tools || (this.tools = {
-                'tbar': [{
+                'tbar': [/*{
                         id: 'edit',
                         action: 'navigateToEditView',
                         security: App.getViewSecurity(this.editView, 'update')
@@ -91,7 +91,7 @@ define('Mobile/SalesLogix/Views/OpportunityContact/Detail', [
                         icon: 'content/images/icons/del_24.png',
                         action: 'removeContact',
                         title: this.removeContactTitleText
-                    }]
+                    }*/]
             });
         },
         createLayout: function() {

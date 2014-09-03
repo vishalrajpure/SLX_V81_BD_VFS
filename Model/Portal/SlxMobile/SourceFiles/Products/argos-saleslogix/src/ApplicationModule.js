@@ -61,28 +61,29 @@ define('Mobile/SalesLogix/ApplicationModule', [
     'Mobile/SalesLogix/Views/Contract/List',
     'Mobile/SalesLogix/Views/ErrorLog/List',
     'Mobile/SalesLogix/Views/ErrorLog/Detail',
-    'Mobile/SalesLogix/Views/Event/List',
-    'Mobile/SalesLogix/Views/Event/Detail',
-    'Mobile/SalesLogix/Views/Event/Edit',
-    'Mobile/SalesLogix/Views/Lead/List',
-    'Mobile/SalesLogix/Views/Lead/Detail',
-    'Mobile/SalesLogix/Views/Lead/Edit',
+    //'Mobile/SalesLogix/Views/Event/List',
+    //'Mobile/SalesLogix/Views/Event/Detail',
+    //'Mobile/SalesLogix/Views/Event/Edit',
+    //'Mobile/SalesLogix/Views/Lead/List',
+    //'Mobile/SalesLogix/Views/Lead/Detail',
+    //'Mobile/SalesLogix/Views/Lead/Edit',
     'Mobile/SalesLogix/Views/LeadSource/List',
+	'Mobile/SalesLogix/Views/Indsgmst/List',
     'Mobile/SalesLogix/Views/Opportunity/List',
     'Mobile/SalesLogix/Views/Opportunity/Detail',
-    'Mobile/SalesLogix/Views/Opportunity/Edit',
+   // 'Mobile/SalesLogix/Views/Opportunity/Edit',
     'Mobile/SalesLogix/Views/OpportunityContact/List',
     'Mobile/SalesLogix/Views/OpportunityContact/Detail',
-    'Mobile/SalesLogix/Views/OpportunityContact/Edit',
+    //'Mobile/SalesLogix/Views/OpportunityContact/Edit',
     'Mobile/SalesLogix/Views/OpportunityProduct/List',
     'Mobile/SalesLogix/Views/OpportunityProduct/Detail',
-    'Mobile/SalesLogix/Views/OpportunityProduct/Edit',
+    //'Mobile/SalesLogix/Views/OpportunityProduct/Edit',
     'Mobile/SalesLogix/Views/Owner/List',
     'Mobile/SalesLogix/Views/Product/List',
     'Mobile/SalesLogix/Views/ProductProgram/List',
-    'Mobile/SalesLogix/Views/Ticket/List',
-    'Mobile/SalesLogix/Views/Ticket/Detail',
-    'Mobile/SalesLogix/Views/Ticket/Edit',
+    //'Mobile/SalesLogix/Views/Ticket/List',
+    //'Mobile/SalesLogix/Views/Ticket/Detail',
+    //'Mobile/SalesLogix/Views/Ticket/Edit',
     'Mobile/SalesLogix/Views/Ticket/UrgencyLookup',
     'Mobile/SalesLogix/Views/TicketActivity/List',
     'Mobile/SalesLogix/Views/TicketActivity/Detail',
@@ -168,28 +169,29 @@ define('Mobile/SalesLogix/ApplicationModule', [
     ContractList,
     ErrorLogList,
     ErrorLogDetail,
-    EventList,
-    EventDetail,
-    EventEdit,
-    LeadList,
-    LeadDetail,
-    LeadEdit,
+    //EventList,
+    //EventDetail,
+    //EventEdit,
+    //LeadList,
+    //LeadDetail,
+    //LeadEdit,
     LeadSourceList,
+	IndsgmstList,
     OpportunityList,
     OpportunityDetail,
-    OpportunityEdit,
+    //OpportunityEdit,
     OpportunityContactList,
     OpportunityContactDetail,
-    OpportunityContactEdit,
+    //OpportunityContactEdit,
     OpportunityProductList,
     OpportunityProductDetail,
-    OpportunityProductEdit,
+    //OpportunityProductEdit,
     OwnerList,
     ProductList,
     ProductProgramList,
-    TicketList,
-    TicketDetail,
-    TicketEdit,
+    //TicketList,
+    //TicketDetail,
+    //TicketEdit,
     TicketUrgencyLookup,
     TicketActivityList,
     TicketActivityDetail,
@@ -208,6 +210,8 @@ define('Mobile/SalesLogix/ApplicationModule', [
     MyAttachmentList
 ) {
     return declare('Mobile.SalesLogix.ApplicationModule', [ApplicationModule], {
+	 	regionText: 'region',
+		
         searchText: 'Lookup',
         loadViews: function() {
             this.inherited(arguments);
@@ -298,7 +302,7 @@ define('Mobile/SalesLogix/ApplicationModule', [
             this.registerView(new ErrorLogList());
             this.registerView(new ErrorLogDetail());
 
-            this.registerView(new EventEdit());
+            /*this.registerView(new EventEdit());
             this.registerView(new EventList({expose: false}));
             this.registerView(new EventDetail());
             this.registerView(new EventList({
@@ -307,9 +311,9 @@ define('Mobile/SalesLogix/ApplicationModule', [
                 defaultSearchTerm: function() {
                     return '';
                 }
-            }));
+            }));*/
 
-            this.registerView(new OpportunityEdit());
+            //this.registerView(new OpportunityEdit());
             this.registerView(new OpportunityList());
             this.registerView(new OpportunityDetail());
             this.registerView(new OpportunityList({
@@ -320,7 +324,7 @@ define('Mobile/SalesLogix/ApplicationModule', [
                 }
             }));
 
-            this.registerView(new OpportunityContactEdit());
+            //this.registerView(new OpportunityContactEdit());
             this.registerView(new OpportunityContactList());
             this.registerView(new OpportunityContactDetail());
             this.registerView(new OpportunityContactList({
@@ -344,12 +348,12 @@ define('Mobile/SalesLogix/ApplicationModule', [
                 expose: false
             }));
 
-            this.registerView(new OpportunityProductEdit({
+           /* this.registerView(new OpportunityProductEdit({
                 id: 'opportunityproduct_edit',
                 expose: false
-            }));
+            }));*/
 
-            this.registerView(new LeadEdit());
+            /*this.registerView(new LeadEdit());
             this.registerView(new LeadList());
             this.registerView(new LeadDetail());
             this.registerView(new LeadList({
@@ -358,9 +362,9 @@ define('Mobile/SalesLogix/ApplicationModule', [
                 defaultSearchTerm: function() {
                     return '';
                 }
-            }));
+            }));*/
 
-            this.registerView(new TicketList());
+            /*this.registerView(new TicketList());
             this.registerView(new TicketDetail());
             this.registerView(new TicketEdit());
             this.registerView(new TicketList({
@@ -369,7 +373,7 @@ define('Mobile/SalesLogix/ApplicationModule', [
                 defaultSearchTerm: function() {
                     return '';
                 }
-            }));
+            }));*/
 
             this.registerView(new TicketActivityList());
             this.registerView(new TicketActivityDetail());
@@ -446,6 +450,9 @@ define('Mobile/SalesLogix/ApplicationModule', [
             this.registerView(new LeadSourceList({
                 expose: false
             }));
+			 this.registerView(new IndsgmstList({
+                expose: false
+            }));
 
             this.registerView(new TicketUrgencyLookup({
                 expose: false
@@ -517,6 +524,7 @@ define('Mobile/SalesLogix/ApplicationModule', [
         },
         loadCustomizations: function() {
             this.loadBaseCustomizations();
+			this.registerAccountCustomizations();
         },
         loadBaseCustomizations: function() {
             lang.extend(List, {
@@ -529,6 +537,70 @@ define('Mobile/SalesLogix/ApplicationModule', [
             lang.extend(SearchWidget, {
                 searchText: this.searchText 
             });
+        },
+		 //Add Region to the Account edit view, and include a validation.
+           registerAccountCustomizations: function () {
+            this.registerCustomization('edit', 'Account_edit', {
+                at: function (row) { alert("1"); return row.name == 'faxText'; },
+                type: 'insert',
+                where: 'before',
+                value: {
+                    name: 'faxText',
+                    //label: this.regionText,
+                    type: 'text',
+                    //You can set the trigger to 'keyup' or 'blur'
+                    validationTrigger: 'blur', //On field exit
+                   /* validator: {                    
+                            fn: function (val, field) {
+                                if (this.fields['Fax'].getValue() !== 'none') {
+                                alert('We have clearance to this Secured Action!');
+								return false;								
+                           }*/                       
+                    }
+
+                   // validator: {		
+				   // value: {
+					//fn: function() { alert('We have clearance to this Secured Action!'); }
+                        //Not using the view parameter, but wanted to show
+                        //that it is available.
+                       // fn: function (value, field, view) {
+						// fn: function (value == 'Active') {
+                            //Don't let them change the value. [evil laugh]
+                           // return (value != field.originalValue);
+						    // return message:"Invalid Status";
+                        //},
+                        //Three parameters available for your message:
+                        //{0} = value
+                        //{1} = Field.name
+                        //{2} = Field.label
+                     //  message: "'${0}' is an invalid value for field '${2}'."
+                   // }
+                }
+            })
+			
+			  //Add a different default value when inserting a new Account
+            this.registerCustomization('edit', 'account_edit', {
+                
+                at: function (row) {                   
+                    return row.name === 'Type';
+                },
+                type: 'picklist',
+                readonly: true,
+                value: {
+                    'default': 'Prospect'
+                },
+				 at: function (row) {                   
+                    return row.name === 'Status';
+                },
+                type: 'picklist',
+                readonly: true,
+                value: {
+                    'default': 'Active'
+                }
+            }
+			
+			
+			);
         }
     });
 });

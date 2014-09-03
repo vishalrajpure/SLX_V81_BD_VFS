@@ -357,7 +357,7 @@ if(objopp != null)
 	if(objoppComp != null)
 	{
 	   // update 	
-		objoppComp.CompetitorRate = Convert.ToDecimal(txtCompetitorRate.Text);
+		objoppComp.CompetitorRate = txtCompetitorRate.Text;
 		objoppComp.CompetitorShareOfWellet = Convert.ToDecimal(txtCompetitorShareOfWellet.Text);
 		objoppComp.CurrentMajorCompetitor = chkCurrentMajorCompetitor.Checked;
 		objoppComp.Save();
@@ -378,7 +378,7 @@ if(objopp != null)
 				objoppComp1.Notes = objComp.Notes;
 			}
 			objoppComp1.Opportunity = objopp;
-			objoppComp1.CompetitorRate = Convert.ToDecimal(txtCompetitorRate.Text);
+			objoppComp1.CompetitorRate = txtCompetitorRate.Text;
 		    objoppComp1.CompetitorShareOfWellet = Convert.ToDecimal(txtCompetitorShareOfWellet.Text);
 		
 			objoppComp1.CurrentMajorCompetitor = chkCurrentMajorCompetitor.Checked;

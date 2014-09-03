@@ -21,4 +21,6 @@
   <Item Id="560468a9-8182-4913-9e03-68b0e7563576">OpportunityCampaigns.smartpart.xml</Item>
   <Item Id="fa9113f9-a287-44b1-a384-6e6be70a26cb">SalesOrders.smartpart.xml</Item>
   <Item Id="ab309576-61ac-4aae-a869-4d60cba64a76">DroppedFutureOpp.smartpart.xml</Item>
+  <Item Id="3530748c-f518-4180-8b37-8790165c53bf">OppClosedCustCodes.smartpart.xml</Item>
+  <Item Id="2f5f8d4f-6751-4875-b0b5-d70204e3c4ca">CustomerCodeDetails.smartpart.xml</Item>
 </ModelItems>

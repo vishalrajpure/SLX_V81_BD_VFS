@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="bc5510e8-5588-4b9b-a157-7c390ccd3079" lastModifiedUtc="2014-06-21T13:19:50.4672715Z" manageSchema="false" tableName="VWEMPMASTER" name="Vwempmaster" displayPropertyId="0759592c-37c4-4a62-9f2a-ed34b2005dd0" isExtension="false" audited="false" onBeforeInsertMethodId="7df23ae1-2fbf-4ca4-8dc3-698d7d5dc867" onAfterInsertMethodId="e34dd2ca-50a5-4f65-8682-2b5dbe46d2c7" onBeforeUpdateMethodId="faeb833c-f5b6-4d69-b676-44240bee3074" onAfterUpdateMethodId="8cceaa60-e7bf-4abe-9871-a9587ae01310" onBeforeDeleteMethodId="483fbf4a-e923-412b-b6b3-43805e2f7d9e" onAfterDeleteMethodId="1f962a3e-28d5-43f7-9fad-eb8d080ebd84" onCreateId="1dc8e99e-a7f3-464a-a7f9-432386fcb3f7">
+<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="bc5510e8-5588-4b9b-a157-7c390ccd3079" lastModifiedUtc="2014-08-05T06:38:21.8300159Z" manageSchema="false" tableName="VWEMPMASTER" name="Vwempmaster" displayPropertyId="a44b9d7e-97a8-4fdd-9975-fd98825eaba6" isExtension="false" audited="false" onBeforeInsertMethodId="7df23ae1-2fbf-4ca4-8dc3-698d7d5dc867" onAfterInsertMethodId="e34dd2ca-50a5-4f65-8682-2b5dbe46d2c7" onBeforeUpdateMethodId="faeb833c-f5b6-4d69-b676-44240bee3074" onAfterUpdateMethodId="8cceaa60-e7bf-4abe-9871-a9587ae01310" onBeforeDeleteMethodId="483fbf4a-e923-412b-b6b3-43805e2f7d9e" onAfterDeleteMethodId="1f962a3e-28d5-43f7-9fad-eb8d080ebd84" onCreateId="1dc8e99e-a7f3-464a-a7f9-432386fcb3f7">
   <extendedMetaData />
   <ExtendedPropertiesCollection>
     <extendee type="Sage.Platform.Orm.Entities.OrmEntity">
       <extender guid="1589723d-0536-4bf3-bdd7-3f6f7fe165d0">
         <OrmEntityMetadataExtension>
-          <StringExpression>${Cemplcode}</StringExpression>
+          <StringExpression>${Cemplname}</StringExpression>
           <IsHistoryTable>false</IsHistoryTable>
         </OrmEntityMetadataExtension>
       </extender>

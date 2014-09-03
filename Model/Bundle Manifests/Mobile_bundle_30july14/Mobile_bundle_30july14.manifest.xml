@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<BundleManifest id="43eb23a7-ac77-4c4a-bf98-fbbb4b4f5761">
+  <bundleProperties>
+    <name>Mobile_bundle_30july14</name>
+    <description><![CDATA[]]></description>
+    <address><![CDATA[]]></address>
+    <company />
+    <copyright><![CDATA[]]></copyright>
+    <majorVersion>0</majorVersion>
+    <minorVersion>0</minorVersion>
+    <revision>0</revision>
+    <build>3</build>
+    <autoIncrement>false</autoIncrement>
+    <installDate>2014-07-30T07:27:27.9651462Z</installDate>
+    <installPassword />
+    <formatVersion>8.1.0.1146</formatVersion>
+  </bundleProperties>
+  <bundleItemHierarchy>
+    <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.Platform.BundleModel.BundleManifestItem, Sage.Platform.BundleModel">
+      <BundleManifestItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <ItemId>43eb23a7-ac77-4c4a-bf98-fbbb4b4f5761</ItemId>
+        <Url>\</Url>
+        <BundleItemType>Container</BundleItemType>
+        <Caption>Mobile_bundle_30july14</Caption>
+      </BundleManifestItem>
+      <children>
+        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ManagerBundleItem, Sage.Platform.WebPortal.Design">
+          <ManagerBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <ItemId>\Portal</ItemId>
+            <Url>\Portal</Url>
+            <BundleItemType>Container</BundleItemType>
+            <Caption>Portals</Caption>
+          </ManagerBundleItem>
+          <children>
+            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.ModelItemBundleItem, Sage.Platform.WebPortal.Design">
+              <ModelItemBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <ItemId>8b4b9ec4-73da-4394-882c-714219f73ba6</ItemId>
+                <Url>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml</Url>
+                <BundleItemType>Context</BundleItemType>
+                <Caption>Saleslogix Mobile Client</Caption>
+              </ModelItemBundleItem>
+              <children>
+                <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                  <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ItemId>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles</ItemId>
+                    <Url>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles</Url>
+                    <BundleItemType>Context</BundleItemType>
+                    <Caption>SourceFiles</Caption>
+                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                  </LinkedFolderBundleItem>
+                  <children>
+                    <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                      <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <ItemId>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles\Products</ItemId>
+                        <Url>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles\Products</Url>
+                        <BundleItemType>Context</BundleItemType>
+                        <Caption>Products</Caption>
+                        <InstallOptions>SkipItemAndChildren</InstallOptions>
+                      </LinkedFolderBundleItem>
+                      <children>
+                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                          <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <ItemId>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles\Products\argos-saleslogix</ItemId>
+                            <Url>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles\Products\argos-saleslogix</Url>
+                            <BundleItemType>Context</BundleItemType>
+                            <Caption>argos-saleslogix</Caption>
+                            <InstallOptions>SkipItemAndChildren</InstallOptions>
+                          </LinkedFolderBundleItem>
+                          <children>
+                            <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                              <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                <ItemId>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles\Products\argos-saleslogix\src</ItemId>
+                                <Url>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles\Products\argos-saleslogix\src</Url>
+                                <BundleItemType>Context</BundleItemType>
+                                <Caption>src</Caption>
+                                <InstallOptions>SkipItemAndChildren</InstallOptions>
+                              </LinkedFolderBundleItem>
+                              <children>
+                                <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                                  <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles\Products\argos-saleslogix\src\Views</ItemId>
+                                    <Url>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles\Products\argos-saleslogix\src\Views</Url>
+                                    <BundleItemType>Context</BundleItemType>
+                                    <Caption>Views</Caption>
+                                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                  </LinkedFolderBundleItem>
+                                  <children>
+                                    <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                                      <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                        <ItemId>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\AddAccountContact.js</ItemId>
+                                        <Url>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\AddAccountContact.js</Url>
+                                        <BundleItemType>Other</BundleItemType>
+                                        <Caption>AddAccountContact.js</Caption>
+                                        <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                        <IsLinkedFile>false</IsLinkedFile>
+                                        <SourcePath>E:\SLX_V81_BD_VFS\Model\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\AddAccountContact.js</SourcePath>
+                                        <ParentModelItemUrl>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml</ParentModelItemUrl>
+                                        <ProjectPath>SourceFiles\Products\argos-saleslogix\src\Views\AddAccountContact.js</ProjectPath>
+                                      </LinkedFileBundleItem>
+                                    </bundleItem>
+                                    <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                                      <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                        <ItemId>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles\Products\argos-saleslogix\src\Views\Account</ItemId>
+                                        <Url>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles\Products\argos-saleslogix\src\Views\Account</Url>
+                                        <BundleItemType>Container</BundleItemType>
+                                        <Caption>Account</Caption>
+                                        <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                      </LinkedFolderBundleItem>
+                                      <children>
+                                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                                          <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                            <ItemId>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Account\Detail.js</ItemId>
+                                            <Url>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Account\Detail.js</Url>
+                                            <BundleItemType>Other</BundleItemType>
+                                            <Caption>Detail.js</Caption>
+                                            <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                            <IsLinkedFile>false</IsLinkedFile>
+                                            <SourcePath>E:\SLX_V81_BD_VFS\Model\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Account\Detail.js</SourcePath>
+                                            <ParentModelItemUrl>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml</ParentModelItemUrl>
+                                            <ProjectPath>SourceFiles\Products\argos-saleslogix\src\Views\Account\Detail.js</ProjectPath>
+                                          </LinkedFileBundleItem>
+                                        </bundleItem>
+                                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                                          <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                            <ItemId>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Account\Edit.js</ItemId>
+                                            <Url>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Account\Edit.js</Url>
+                                            <BundleItemType>Other</BundleItemType>
+                                            <Caption>Edit.js</Caption>
+                                            <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                            <IsLinkedFile>false</IsLinkedFile>
+                                            <SourcePath>E:\SLX_V81_BD_VFS\Model\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Account\Edit.js</SourcePath>
+                                            <ParentModelItemUrl>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml</ParentModelItemUrl>
+                                            <ProjectPath>SourceFiles\Products\argos-saleslogix\src\Views\Account\Edit.js</ProjectPath>
+                                          </LinkedFileBundleItem>
+                                        </bundleItem>
+                                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                                          <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                            <ItemId>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Account\List.js</ItemId>
+                                            <Url>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Account\List.js</Url>
+                                            <BundleItemType>Other</BundleItemType>
+                                            <Caption>List.js</Caption>
+                                            <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                            <IsLinkedFile>false</IsLinkedFile>
+                                            <SourcePath>E:\SLX_V81_BD_VFS\Model\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Account\List.js</SourcePath>
+                                            <ParentModelItemUrl>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml</ParentModelItemUrl>
+                                            <ProjectPath>SourceFiles\Products\argos-saleslogix\src\Views\Account\List.js</ProjectPath>
+                                          </LinkedFileBundleItem>
+                                        </bundleItem>
+                                      </children>
+                                    </bundleItem>
+                                    <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                                      <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                        <ItemId>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles\Products\argos-saleslogix\src\Views\Address</ItemId>
+                                        <Url>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles\Products\argos-saleslogix\src\Views\Address</Url>
+                                        <BundleItemType>Container</BundleItemType>
+                                        <Caption>Address</Caption>
+                                        <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                      </LinkedFolderBundleItem>
+                                      <children>
+                                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                                          <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                            <ItemId>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Address\Edit.js</ItemId>
+                                            <Url>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Address\Edit.js</Url>
+                                            <BundleItemType>Other</BundleItemType>
+                                            <Caption>Edit.js</Caption>
+                                            <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                            <IsLinkedFile>false</IsLinkedFile>
+                                            <SourcePath>E:\SLX_V81_BD_VFS\Model\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Address\Edit.js</SourcePath>
+                                            <ParentModelItemUrl>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml</ParentModelItemUrl>
+                                            <ProjectPath>SourceFiles\Products\argos-saleslogix\src\Views\Address\Edit.js</ProjectPath>
+                                          </LinkedFileBundleItem>
+                                        </bundleItem>
+                                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                                          <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                            <ItemId>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Address\List.js</ItemId>
+                                            <Url>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Address\List.js</Url>
+                                            <BundleItemType>Other</BundleItemType>
+                                            <Caption>List.js</Caption>
+                                            <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                            <IsLinkedFile>false</IsLinkedFile>
+                                            <SourcePath>E:\SLX_V81_BD_VFS\Model\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Address\List.js</SourcePath>
+                                            <ParentModelItemUrl>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml</ParentModelItemUrl>
+                                            <ProjectPath>SourceFiles\Products\argos-saleslogix\src\Views\Address\List.js</ProjectPath>
+                                          </LinkedFileBundleItem>
+                                        </bundleItem>
+                                      </children>
+                                    </bundleItem>
+                                    <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFolderBundleItem, Sage.Platform.WebPortal.Design">
+                                      <LinkedFolderBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                        <ItemId>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles\Products\argos-saleslogix\src\Views\Contact</ItemId>
+                                        <Url>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml\SourceFiles\Products\argos-saleslogix\src\Views\Contact</Url>
+                                        <BundleItemType>Container</BundleItemType>
+                                        <Caption>Contact</Caption>
+                                        <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                      </LinkedFolderBundleItem>
+                                      <children>
+                                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                                          <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                            <ItemId>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Contact\Detail.js</ItemId>
+                                            <Url>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Contact\Detail.js</Url>
+                                            <BundleItemType>Other</BundleItemType>
+                                            <Caption>Detail.js</Caption>
+                                            <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                            <IsLinkedFile>false</IsLinkedFile>
+                                            <SourcePath>E:\SLX_V81_BD_VFS\Model\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Contact\Detail.js</SourcePath>
+                                            <ParentModelItemUrl>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml</ParentModelItemUrl>
+                                            <ProjectPath>SourceFiles\Products\argos-saleslogix\src\Views\Contact\Detail.js</ProjectPath>
+                                          </LinkedFileBundleItem>
+                                        </bundleItem>
+                                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                                          <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                            <ItemId>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Contact\Edit.js</ItemId>
+                                            <Url>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Contact\Edit.js</Url>
+                                            <BundleItemType>Other</BundleItemType>
+                                            <Caption>Edit.js</Caption>
+                                            <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                            <IsLinkedFile>false</IsLinkedFile>
+                                            <SourcePath>E:\SLX_V81_BD_VFS\Model\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Contact\Edit.js</SourcePath>
+                                            <ParentModelItemUrl>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml</ParentModelItemUrl>
+                                            <ProjectPath>SourceFiles\Products\argos-saleslogix\src\Views\Contact\Edit.js</ProjectPath>
+                                          </LinkedFileBundleItem>
+                                        </bundleItem>
+                                        <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                                          <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                            <ItemId>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Contact\List.js</ItemId>
+                                            <Url>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Contact\List.js</Url>
+                                            <BundleItemType>Other</BundleItemType>
+                                            <Caption>List.js</Caption>
+                                            <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                            <IsLinkedFile>false</IsLinkedFile>
+                                            <SourcePath>E:\SLX_V81_BD_VFS\Model\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\Views\Contact\List.js</SourcePath>
+                                            <ParentModelItemUrl>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml</ParentModelItemUrl>
+                                            <ProjectPath>SourceFiles\Products\argos-saleslogix\src\Views\Contact\List.js</ProjectPath>
+                                          </LinkedFileBundleItem>
+                                        </bundleItem>
+                                      </children>
+                                    </bundleItem>
+                                  </children>
+                                </bundleItem>
+                                <bundleItem modelId="73d4e7d0-a7fa-40ae-8b45-1ad7ed954154" itemTypeName="Sage.Platform.WebPortal.Design.BundleSupport.LinkedFileBundleItem, Sage.Platform.WebPortal.Design">
+                                  <LinkedFileBundleItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                                    <ItemId>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\ApplicationModule.js</ItemId>
+                                    <Url>\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\ApplicationModule.js</Url>
+                                    <BundleItemType>Other</BundleItemType>
+                                    <Caption>ApplicationModule.js</Caption>
+                                    <InstallOptions>SkipItemAndChildren</InstallOptions>
+                                    <IsLinkedFile>false</IsLinkedFile>
+                                    <SourcePath>E:\SLX_V81_BD_VFS\Model\Portal\SlxMobile\SourceFiles\Products\argos-saleslogix\src\ApplicationModule.js</SourcePath>
+                                    <ParentModelItemUrl>\Portal\SlxMobile\SlxMobile.mobapp.ptl.xml</ParentModelItemUrl>
+                                    <ProjectPath>SourceFiles\Products\argos-saleslogix\src\ApplicationModule.js</ProjectPath>
+                                  </LinkedFileBundleItem>
+                                </bundleItem>
+                              </children>
+                            </bundleItem>
+                          </children>
+                        </bundleItem>
+                      </children>
+                    </bundleItem>
+                  </children>
+                </bundleItem>
+              </children>
+            </bundleItem>
+          </children>
+        </bundleItem>
+      </children>
+    </bundleItem>
+  </bundleItemHierarchy>
+  <bundleActionHierarchy>
+    <bundleItem modelId="af988c91-97c8-4527-b072-e021c9e2cb1a" itemTypeName="Sage.Platform.BundleModel.RootBundleAction, Sage.Platform.BundleModel">
+      <RootBundleAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <ItemId>\Actions</ItemId>
+        <Url>\Actions</Url>
+        <BundleItemType>Container</BundleItemType>
+        <Caption>Bundle Actions</Caption>
+      </RootBundleAction>
+    </bundleItem>
+  </bundleActionHierarchy>
+  <itemsToDelete />
+  <globalResources />
+</BundleManifest>
